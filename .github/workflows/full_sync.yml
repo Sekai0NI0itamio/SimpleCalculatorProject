@@ -6,7 +6,7 @@ on:
     types: [trigger-full-sync]
 
 env:
-  VERSION_CHUNKS: 10
+  VERSION_CHUNKS: 250  # Max parallel version fetch workers (GitHub limit = 256)
 
 jobs:
   discover:

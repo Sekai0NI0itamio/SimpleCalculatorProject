@@ -43,12 +43,22 @@ def get_all_project_ids():
 
 
 def split_projects_into_chunks(num_chunks: int = 10):
-    """Split all project IDs into N version chunks and save to disk."""
+    """Split all project IDs into N version chunks and save to disk.
+
+    If num_chunks > total projects, each project gets its own chunk (1:1).
+    If num_chunks > 256, cap at 256 (GitHub Actions matrix limit).
+    """
     ensure_dir("data/version_chunks")
     project_ids = get_all_project_ids()
-    print(f"Total projects: {len(project_ids)}")
+    total = len(project_ids)
+    print(f"Total projects: {total}")
 
-    chunk_size = (len(project_ids) + num_chunks - 1) // num_chunks
+    # Cap at GitHub Actions limit and ensure we don't exceed project count
+    num_chunks = min(num_chunks, 256, total)
+    if num_chunks == 0:
+        num_chunks = 1
+
+    chunk_size = (total + num_chunks - 1) // num_chunks
     chunks_info = []
 
     for i in range(num_chunks):
@@ -58,10 +68,16 @@ def split_projects_into_chunks(num_chunks: int = 10):
         if chunk:
             save_json(f"data/version_chunks/version_chunk_{i}.json", chunk)
             chunks_info.append({"index": i, "count": len(chunk)})
-            print(f"  Chunk {i}: {len(chunk)} projects")
+
+    print(f"  Chunks: {len(chunks_info)}")
+    print(f"  Avg size: ~{chunk_size} projects per chunk")
+    if chunk_size > 500:
+        print(f"  WARNING: {chunk_size} projects per chunk may take a while")
+    if chunk_size == 1:
+        print(f"  (1:1 — each project is its own chunk)")
 
     save_json("data/version_split.json", {"num_chunks": len(chunks_info), "chunks": chunks_info})
-    print(f"Split into {len(chunks_info)} chunks, saved to data/version_chunks/")
+    print(f"Saved split plan to data/version_split.json")
 
 
 def fetch_versions_chunk(chunk_index: int):

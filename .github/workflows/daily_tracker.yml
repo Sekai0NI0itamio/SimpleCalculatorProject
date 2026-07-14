@@ -8,7 +8,7 @@ on:
     types: [trigger-tracker]
 
 env:
-  VERSION_CHUNKS: 10  # Number of parallel version fetch workers
+  VERSION_CHUNKS: 250  # Max parallel version fetch workers (GitHub limit = 256)
 
 jobs:
   # ──────────────────────────────────────────────────────────
