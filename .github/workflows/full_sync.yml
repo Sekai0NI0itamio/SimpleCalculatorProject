@@ -5,8 +5,37 @@ on:
   repository_dispatch:
     types: [trigger-full-sync]
 
+env:
+  VERSION_CHUNKS: 10
+
 jobs:
-  full-sync:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      partition_list: ${{ steps.set_outputs.outputs.partition_list }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Discover
+        run: python src/discover.py
+      - name: Set outputs
+        id: set_outputs
+        run: |
+          echo "partition_list=$(python -c "import json; d=json.load(open('data/discovery.json')); print(json.dumps([p['index'] for p in d['partitions']]))")" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: discovery-data
+          path: data/
+          retention-days: 1
+
+  fetch-projects:
+    needs: [discover]
+    strategy:
+      matrix:
+        chunk: ${{ fromJson(needs.discover.outputs.partition_list) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,28 +43,95 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: discovery-data
+          path: data/
+      - name: Fetch projects chunk ${{ matrix.chunk }}
+        run: python src/fetch_projects.py --chunk ${{ matrix.chunk }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: projects-chunk-${{ matrix.chunk }}
+          path: data/chunks/projects_${{ matrix.chunk }}.json
+          retention-days: 1
+
+  split-versions:
+    needs: [fetch-projects]
+    runs-on: ubuntu-latest
+    outputs:
+      version_chunk_list: ${{ steps.set_version_chunks.outputs.version_chunk_list }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: projects-chunk-*
+          merge-multiple: true
+          path: data/chunks/
+      - name: Split projects into version chunks
+        run: python src/fetch_versions.py --split ${{ env.VERSION_CHUNKS }}
+      - name: Set version chunk outputs
+        id: set_version_chunks
+        run: |
+          echo "version_chunk_list=$(python -c "import json; d=json.load(open('data/version_split.json')); print(json.dumps([c['index'] for c in d['chunks']]))")" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: version-split
+          path: data/version_chunks/
+          retention-days: 1
+
+  fetch-versions:
+    needs: [split-versions]
+    strategy:
+      matrix:
+        chunk: ${{ fromJson(needs.split-versions.outputs.version_chunk_list) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: version-split
+          path: data/version_chunks/
+      - name: Fetch versions chunk ${{ matrix.chunk }}
+        run: python src/fetch_versions.py --chunk ${{ matrix.chunk }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: version-results-${{ matrix.chunk }}
+          path: data/version_results/
+          retention-days: 1
+
+  merge-versions:
+    needs: [fetch-versions]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: version-results-*
+          merge-multiple: true
+          path: data/version_results/
       - name: Download existing database
         run: |
           gh run download --name modrinth-db --dir data/ 2>/dev/null || true
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Discover
-        run: python src/discover.py
-      - name: Fetch all projects
-        run: |
-          # Run fetchers for each partition
-          python -c "
-          import json, subprocess
-          d = json.load(open('data/discovery.json'))
-          for p in d['partitions']:
-              subprocess.run(['python', 'src/fetch_projects.py', '--chunk', str(p['index'])])
-          "
-      - name: Fetch all versions
-        run: python src/fetch_versions.py
-      - name: Snapshot and analyze
-        run: |
-          python src/snapshot.py
-          python src/analyze.py
+      - name: Merge version chunks
+        run: python src/fetch_versions.py --merge
+      - name: Snapshot
+        run: python src/snapshot.py
+      - name: Analyze
+        run: python src/analyze.py
       - uses: actions/upload-artifact@v4
         with:
           name: modrinth-db

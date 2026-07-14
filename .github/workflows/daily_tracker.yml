@@ -7,7 +7,14 @@ on:
   repository_dispatch:
     types: [trigger-tracker]
 
+env:
+  VERSION_CHUNKS: 10  # Number of parallel version fetch workers
+
 jobs:
+  # ──────────────────────────────────────────────────────────
+  # PHASE 1: Discover — get total mod count, categories, and
+  #           create a partition plan for project fetching.
+  # ──────────────────────────────────────────────────────────
   discover:
     runs-on: ubuntu-latest
     outputs:
@@ -32,6 +39,10 @@ jobs:
           path: data/
           retention-days: 1
 
+  # ──────────────────────────────────────────────────────────
+  # PHASE 2: Fetch Projects — each matrix job handles one
+  #           category partition in parallel.
+  # ──────────────────────────────────────────────────────────
   fetch-projects:
     needs: [discover]
     strategy:
@@ -56,8 +67,48 @@ jobs:
           path: data/chunks/projects_${{ matrix.chunk }}.json
           retention-days: 1
 
-  fetch-versions:
+  # ──────────────────────────────────────────────────────────
+  # PHASE 3a: Split Versions — aggregate all project chunks
+  #           and split into N version chunks for parallel
+  #           version fetching.
+  # ──────────────────────────────────────────────────────────
+  split-versions:
     needs: [fetch-projects]
+    runs-on: ubuntu-latest
+    outputs:
+      version_chunk_list: ${{ steps.set_version_chunks.outputs.version_chunk_list }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: projects-chunk-*
+          merge-multiple: true
+          path: data/chunks/
+      - name: Split projects into version chunks
+        run: python src/fetch_versions.py --split ${{ env.VERSION_CHUNKS }}
+      - name: Set version chunk outputs
+        id: set_version_chunks
+        run: |
+          echo "version_chunk_list=$(python -c "import json; d=json.load(open('data/version_split.json')); print(json.dumps([c['index'] for c in d['chunks']]))")" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: version-split
+          path: data/version_chunks/
+          retention-days: 1
+
+  # ──────────────────────────────────────────────────────────
+  # PHASE 3b: Fetch Versions — parallel matrix jobs, each
+  #           fetching versions for a subset of projects.
+  # ──────────────────────────────────────────────────────────
+  fetch-versions:
+    needs: [split-versions]
+    strategy:
+      matrix:
+        chunk: ${{ fromJson(needs.split-versions.outputs.version_chunk_list) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -67,23 +118,48 @@ jobs:
       - run: pip install -r requirements.txt
       - uses: actions/download-artifact@v4
         with:
-          name: discovery-data
-          path: data/
+          name: version-split
+          path: data/version_chunks/
+      - name: Fetch versions chunk ${{ matrix.chunk }}
+        run: python src/fetch_versions.py --chunk ${{ matrix.chunk }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: version-results-${{ matrix.chunk }}
+          path: data/version_results/
+          retention-days: 1
+
+  # ──────────────────────────────────────────────────────────
+  # PHASE 3c: Merge Versions — merge all version chunk results
+  #           into the SQLite database.
+  # ──────────────────────────────────────────────────────────
+  merge-versions:
+    needs: [fetch-versions]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
       - uses: actions/download-artifact@v4
         with:
-          pattern: projects-chunk-*
+          pattern: version-results-*
           merge-multiple: true
-          path: data/chunks/
-      - name: Fetch versions
-        run: python src/fetch_versions.py
+          path: data/version_results/
+      - name: Merge version chunks into database
+        run: python src/fetch_versions.py --merge
       - uses: actions/upload-artifact@v4
         with:
           name: version-data
           path: data/version_summary.json
           retention-days: 1
 
+  # ──────────────────────────────────────────────────────────
+  # PHASE 4+5: Snapshot & Analyze — record daily download
+  #            counts and generate category-based reports.
+  # ──────────────────────────────────────────────────────────
   snapshot-and-analyze:
-    needs: [fetch-versions]
+    needs: [merge-versions]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

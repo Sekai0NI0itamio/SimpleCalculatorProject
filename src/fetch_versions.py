@@ -1,29 +1,30 @@
 #!/usr/bin/env python3
 """
-Phase 3: Fetch Versions
-- Reads all project IDs from all chunks
-- For each project, fetches all versions
-- Rate-limited: respects 300 req/min
-- Saves version data to database and data/version_summary.json
+Phase 3: Fetch Versions (parallel)
+
+Modes:
+  --split N        Split all projects into N version chunks (run after fetch-projects)
+  --chunk N        Fetch versions for chunk N (run in parallel GitHub Actions jobs)
+  --merge          Merge all chunk results into the database (run after all chunks done)
 """
 import glob
 import json
 import os
 import sys
 import time
+import argparse
 
 from utils import (
     MODRINTH_API_BASE, RATE_LIMIT, load_json, save_json,
-    create_session, rate_limit_sleep
+    create_session, rate_limit_sleep, ensure_dir
 )
 from db import Database
 
 
 def get_all_project_ids():
-    """Read all project IDs from all chunk files."""
+    """Read all project IDs from all chunk files (deduplicated)."""
     project_ids = []
     chunk_files = glob.glob("data/chunks/projects_*.json")
-    # Filter out _compact files
     chunk_files = [f for f in chunk_files if not f.endswith("_compact.json")]
 
     for chunk_file in sorted(chunk_files):
@@ -32,142 +33,180 @@ def get_all_project_ids():
             for p in projects:
                 project_ids.append(p["project_id"])
 
-    # Deduplicate while preserving order
     seen = set()
-    unique_ids = []
+    unique = []
     for pid in project_ids:
         if pid not in seen:
             seen.add(pid)
-            unique_ids.append(pid)
-
-    return unique_ids
-
-
-def fetch_project_versions(session, project_id):
-    """Fetch all versions for a project. Returns list of version dicts or None on 404."""
-    url = f"{MODRINTH_API_BASE}/project/{project_id}/version"
-    try:
-        resp = session.get(url)
-        if resp.status_code == 404:
-            return None  # Project deleted or removed
-        resp.raise_for_status()
-        rate_limit_sleep(resp.headers)
-        return resp.json()
-    except Exception as e:
-        print(f"    Error fetching versions for {project_id}: {e}")
-        return None
+            unique.append(pid)
+    return unique
 
 
-def extract_version_data(version, project_id):
-    """Extract relevant fields from a version dict."""
-    files_data = []
-    for f in version.get("files", []):
-        files_data.append({
-            "url": f.get("url"),
-            "filename": f.get("filename"),
-            "primary": f.get("primary", False)
-        })
+def split_projects_into_chunks(num_chunks: int = 10):
+    """Split all project IDs into N version chunks and save to disk."""
+    ensure_dir("data/version_chunks")
+    project_ids = get_all_project_ids()
+    print(f"Total projects: {len(project_ids)}")
 
-    return {
-        "id": version.get("id"),
-        "project_id": project_id,
-        "version_number": version.get("version_number", ""),
-        "name": version.get("name", ""),
-        "version_type": version.get("version_type", "release"),
-        "game_versions": json.dumps(version.get("game_versions", [])),
-        "loaders": json.dumps(version.get("loaders", [])),
-        "downloads": version.get("downloads", 0),
-        "files": json.dumps(files_data),
-        "date_published": version.get("date_published")
-    }
+    chunk_size = (len(project_ids) + num_chunks - 1) // num_chunks
+    chunks_info = []
+
+    for i in range(num_chunks):
+        start = i * chunk_size
+        end = start + chunk_size
+        chunk = project_ids[start:end]
+        if chunk:
+            save_json(f"data/version_chunks/version_chunk_{i}.json", chunk)
+            chunks_info.append({"index": i, "count": len(chunk)})
+            print(f"  Chunk {i}: {len(chunk)} projects")
+
+    save_json("data/version_split.json", {"num_chunks": len(chunks_info), "chunks": chunks_info})
+    print(f"Split into {len(chunks_info)} chunks, saved to data/version_chunks/")
+
+
+def fetch_versions_chunk(chunk_index: int):
+    """Fetch versions for a single chunk."""
+    print(f"=== Fetch Versions Chunk {chunk_index} ===")
+    chunk_path = f"data/version_chunks/version_chunk_{chunk_index}.json"
+    if not os.path.exists(chunk_path):
+        print(f"ERROR: {chunk_path} not found")
+        sys.exit(1)
+
+    project_ids = load_json(chunk_path)
+    print(f"Chunk {chunk_index}: {len(project_ids)} projects")
+
+    ensure_dir("data/version_results")
+    request_timestamps = []
+    session = create_session()
+    results = []
+    summary = {}
+    errors = []
+
+    for i, project_id in enumerate(project_ids):
+        # Rate limiting
+        now = time.time()
+        request_timestamps = [t for t in request_timestamps if now - t < 60]
+        if len(request_timestamps) >= RATE_LIMIT:
+            oldest = min(request_timestamps)
+            wait = 60 - (now - oldest)
+            if wait > 0:
+                print(f"  Rate limit reached, waiting {wait:.1f}s...")
+                time.sleep(wait + 0.5)
+            request_timestamps = []
+
+        if (i + 1) % 100 == 0:
+            print(f"  Progress: {i + 1}/{len(project_ids)}")
+
+        request_timestamps.append(time.time())
+        url = f"{MODRINTH_API_BASE}/project/{project_id}/version"
+        try:
+            resp = session.get(url)
+            rate_limit_sleep(resp.headers)
+            if resp.status_code == 404:
+                errors.append({"project_id": project_id, "error": "404"})
+                continue
+            resp.raise_for_status()
+            versions = resp.json()
+        except Exception as e:
+            print(f"    Error fetching {project_id}: {e}")
+            errors.append({"project_id": project_id, "error": str(e)})
+            continue
+
+        for v in versions:
+            files_data = [{"url": f.get("url"), "filename": f.get("filename"), "primary": f.get("primary", False)} for f in v.get("files", [])]
+            results.append({
+                "id": v.get("id"),
+                "project_id": project_id,
+                "version_number": v.get("version_number", ""),
+                "name": v.get("name", ""),
+                "version_type": v.get("version_type", "release"),
+                "game_versions": v.get("game_versions", []),
+                "loaders": v.get("loaders", []),
+                "downloads": v.get("downloads", 0),
+                "files": files_data,
+                "date_published": v.get("date_published"),
+            })
+
+        summary[project_id] = len(versions)
+
+    output = f"data/version_results/results_{chunk_index}.json"
+    save_json(output, {
+        "chunk_index": chunk_index,
+        "project_ids": project_ids,
+        "version_summary": summary,
+        "errors": errors,
+        "versions": results,
+    })
+    print(f"Chunk {chunk_index}: {len(results)} versions across {len(summary)} projects, {len(errors)} errors")
+
+
+def merge_all_chunks():
+    """Merge all version chunk results into the SQLite database."""
+    print("=== Merge Version Chunks ===")
+    ensure_dir("data/version_results")
+    db = Database("data/modrinth_tracker.db")
+
+    total_versions = 0
+    total_projects = 0
+    combined_summary = {}
+    all_errors = []
+
+    for f in sorted(glob.glob("data/version_results/results_*.json")):
+        data = load_json(f)
+        versions = data.get("versions", [])
+        summary = data.get("version_summary", {})
+        errors = data.get("errors", [])
+
+        for v in versions:
+            files_data = v.get("files", [])
+            db.upsert_version({
+                "id": v["id"],
+                "project_id": v["project_id"],
+                "version_number": v["version_number"],
+                "name": v["name"],
+                "version_type": v["version_type"],
+                "game_versions": json.dumps(v["game_versions"]),
+                "loaders": json.dumps(v["loaders"]),
+                "downloads": v["downloads"],
+                "files": json.dumps(files_data),
+                "date_published": v["date_published"],
+            })
+            total_versions += 1
+
+        combined_summary.update(summary)
+        total_projects += len(summary)
+        all_errors.extend(errors)
+
+    db.conn.commit()
+    print(f"Merged {total_versions} versions across {total_projects} projects")
+    if all_errors:
+        print(f"Total errors: {len(all_errors)}")
+
+    save_json("data/version_summary.json", {
+        "total_projects": total_projects,
+        "total_versions": total_versions,
+        "errors": len(all_errors),
+        "project_versions": combined_summary,
+    })
+
+    db.close()
+    print("=== Merge Complete ===")
 
 
 def main():
-    print("=== Phase 3: Fetch Versions ===")
+    parser = argparse.ArgumentParser(description="Fetch versions (parallel mode)")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--split", type=int, help="Split all projects into N version chunks")
+    group.add_argument("--chunk", type=int, help="Fetch versions for this chunk index")
+    group.add_argument("--merge", action="store_true", help="Merge all chunk results into DB")
+    args = parser.parse_args()
 
-    # Get all project IDs
-    project_ids = get_all_project_ids()
-    print(f"Found {len(project_ids)} unique projects across all chunks")
-
-    if not project_ids:
-        print("No projects found. Run fetch_projects.py first.")
-        return 1
-
-    # Open database
-    db = Database("data/modrinth_tracker.db")
-
-    # Track request timing for rate limiting
-    request_timestamps = []
-    session = create_session()
-
-    version_summary = {}
-    total_versions = 0
-    failed_projects = 0
-    skipped_projects = 0
-
-    for i, project_id in enumerate(project_ids):
-        # Rate limiting: ensure we don't exceed RATE_LIMIT requests per minute
-        current_time = time.time()
-        # Remove timestamps older than 60 seconds
-        request_timestamps = [t for t in request_timestamps if current_time - t < 60]
-
-        if len(request_timestamps) >= RATE_LIMIT:
-            # Wait until we can make another request
-            oldest = min(request_timestamps)
-            wait_time = 60 - (current_time - oldest)
-            if wait_time > 0:
-                print(f"  Rate limit reached, waiting {wait_time:.1f}s...")
-                time.sleep(wait_time + 0.5)
-            # Clear old timestamps
-            request_timestamps = []
-
-        # Progress update
-        if (i + 1) % 100 == 0:
-            print(f"  Progress: {i + 1}/{len(project_ids)} projects processed")
-
-        # Fetch versions
-        request_timestamps.append(time.time())
-        versions = fetch_project_versions(session, project_id)
-
-        if versions is None:
-            failed_projects += 1
-            continue
-
-        if len(versions) == 0:
-            skipped_projects += 1
-            continue
-
-        # Store versions in database
-        for version in versions:
-            version_data = extract_version_data(version, project_id)
-            db.upsert_version(version_data)
-            total_versions += 1
-
-        version_summary[project_id] = len(versions)
-
-        # Small delay between projects
-        time.sleep(0.1)
-
-    db.close()
-
-    print(f"\nResults:")
-    print(f"  Projects processed: {len(project_ids)}")
-    print(f"  Projects with versions: {len(project_ids) - failed_projects - skipped_projects}")
-    print(f"  Failed (404/deleted): {failed_projects}")
-    print(f"  Skipped (no versions): {skipped_projects}")
-    print(f"  Total versions stored: {total_versions}")
-
-    # Save version summary
-    save_json("data/version_summary.json", {
-        "total_projects": len(project_ids),
-        "total_versions": total_versions,
-        "failed_projects": failed_projects,
-        "project_versions": version_summary
-    })
-    print("Saved version summary to data/version_summary.json")
-
-    print("=== Fetch versions complete ===")
-    return 0
+    if args.split is not None:
+        split_projects_into_chunks(args.split)
+    elif args.chunk is not None:
+        fetch_versions_chunk(args.chunk)
+    elif args.merge:
+        merge_all_chunks()
 
 
 if __name__ == "__main__":
