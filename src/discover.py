@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """
 Phase 1: Discover
-- Query total project counts for ALL project types (mod, modpack,
+- Query total project count for a SINGLE project type (mod, modpack,
   resourcepack, shader, datapack, world)
 - Fetch all categories and all loaders from the Modrinth tag API
 - For each (project_type, category) pair, count projects
 - Create partition plan (subdividing by loader if > MAX_OFFSET)
-- Save to data/discovery.json, data/categories.json, data/loaders.json
+- Save to data/{project_type}/discovery.json, data/{project_type}/categories.json,
+  data/{project_type}/loaders.json
+
+This script now handles ONE project type per invocation.
 """
+import argparse
 import json
 import math
 import sys
@@ -15,11 +19,9 @@ import time
 
 from utils import (
     MODRINTH_API_BASE, PAGE_SIZE, MAX_OFFSET,
-    create_session, rate_limit_sleep, save_json, get_current_datetime
+    create_session, rate_limit_sleep, save_json, get_current_datetime,
+    get_project_type_dir, ensure_dir
 )
-
-# All project types to collect — the user wants EVERYTHING, not just mods
-ALL_PROJECT_TYPES = ["mod", "modpack", "resourcepack", "shader", "datapack", "world"]
 
 # Loaders used to subdivide large mod categories
 COMMON_LOADERS = ["fabric", "forge", "neoforge", "quilt"]
@@ -123,29 +125,86 @@ def fetch_loader_version_count(session, project_type, category_slug, loader, ver
     return data.get("total_hits", 0)
 
 
-def create_partition_plan(session, categories_by_type):
-    """Create partition plan across ALL project types.
+def create_partition_plan(session, project_type, cat_counts):
+    """Create partition plan for a single project type.
     Subdivides large categories by loader (and game version if needed).
 
-    categories_by_type: dict of {project_type: [(slug, count), ...]}
+    cat_counts: list of [(slug, count), ...] for this project type only.
     """
     partitions = []
     index = 0
 
-    for project_type in ALL_PROJECT_TYPES:
-        cat_counts = categories_by_type.get(project_type, [])
-        if not cat_counts:
+    print(f"  Planning partitions for {project_type} ({len(cat_counts)} categories)...")
+
+    for cat_slug, count in cat_counts:
+        if count == 0:
             continue
 
-        print(f"  Planning partitions for {project_type} ({len(cat_counts)} categories)...")
+        if count <= MAX_OFFSET:
+            # Single partition for this project_type + category
+            pages = math.ceil(count / PAGE_SIZE) if count > 0 else 1
+            partitions.append({
+                "index": index,
+                "facets": [
+                    ["project_type:" + project_type],
+                    ["categories:" + cat_slug]
+                ],
+                "pages": pages,
+                "category": cat_slug,
+                "project_type": project_type
+            })
+            index += 1
+        else:
+            # Subdivide by loader (only for mod project type —
+            # loaders don't apply to resourcepacks/shaders/etc.)
+            if project_type == "mod":
+                for loader in COMMON_LOADERS:
+                    loader_count = fetch_loader_count(session, project_type, cat_slug, loader)
+                    if loader_count == 0:
+                        continue
 
-        for cat_slug, count in cat_counts:
-            if count == 0:
-                continue
-
-            if count <= MAX_OFFSET:
-                # Single partition for this project_type + category
-                pages = math.ceil(count / PAGE_SIZE) if count > 0 else 1
+                    if loader_count <= MAX_OFFSET:
+                        pages = math.ceil(loader_count / PAGE_SIZE) if loader_count > 0 else 1
+                        partitions.append({
+                            "index": index,
+                            "facets": [
+                                ["project_type:" + project_type],
+                                ["categories:" + cat_slug],
+                                ["loader:" + loader]
+                            ],
+                            "pages": pages,
+                            "category": cat_slug,
+                            "project_type": project_type,
+                            "loader": loader
+                        })
+                        index += 1
+                    else:
+                        # Subdivide further by game versions
+                        for version in MAJOR_VERSIONS:
+                            ver_count = fetch_loader_version_count(
+                                session, project_type, cat_slug, loader, version
+                            )
+                            if ver_count == 0:
+                                continue
+                            pages = math.ceil(ver_count / PAGE_SIZE) if ver_count > 0 else 1
+                            partitions.append({
+                                "index": index,
+                                "facets": [
+                                    ["project_type:" + project_type],
+                                    ["categories:" + cat_slug],
+                                    ["loader:" + loader],
+                                    ["versions:" + version]
+                                ],
+                                "pages": pages,
+                                "category": cat_slug,
+                                "project_type": project_type,
+                                "loader": loader,
+                                "game_version": version
+                            })
+                            index += 1
+            else:
+                # For non-mod types, just take what we can (first 10000)
+                pages = math.ceil(MAX_OFFSET / PAGE_SIZE)
                 partitions.append({
                     "index": index,
                     "facets": [
@@ -157,85 +216,26 @@ def create_partition_plan(session, categories_by_type):
                     "project_type": project_type
                 })
                 index += 1
-            else:
-                # Subdivide by loader (only for mod project type —
-                # loaders don't apply to resourcepacks/shaders/etc.)
-                if project_type == "mod":
-                    for loader in COMMON_LOADERS:
-                        loader_count = fetch_loader_count(session, project_type, cat_slug, loader)
-                        if loader_count == 0:
-                            continue
-
-                        if loader_count <= MAX_OFFSET:
-                            pages = math.ceil(loader_count / PAGE_SIZE) if loader_count > 0 else 1
-                            partitions.append({
-                                "index": index,
-                                "facets": [
-                                    ["project_type:" + project_type],
-                                    ["categories:" + cat_slug],
-                                    ["loader:" + loader]
-                                ],
-                                "pages": pages,
-                                "category": cat_slug,
-                                "project_type": project_type,
-                                "loader": loader
-                            })
-                            index += 1
-                        else:
-                            # Subdivide further by game versions
-                            for version in MAJOR_VERSIONS:
-                                ver_count = fetch_loader_version_count(
-                                    session, project_type, cat_slug, loader, version
-                                )
-                                if ver_count == 0:
-                                    continue
-                                pages = math.ceil(ver_count / PAGE_SIZE) if ver_count > 0 else 1
-                                partitions.append({
-                                    "index": index,
-                                    "facets": [
-                                        ["project_type:" + project_type],
-                                        ["categories:" + cat_slug],
-                                        ["loader:" + loader],
-                                        ["versions:" + version]
-                                    ],
-                                    "pages": pages,
-                                    "category": cat_slug,
-                                    "project_type": project_type,
-                                    "loader": loader,
-                                    "game_version": version
-                                })
-                                index += 1
-                else:
-                    # For non-mod types, just take what we can (first 10000)
-                    pages = math.ceil(MAX_OFFSET / PAGE_SIZE)
-                    partitions.append({
-                        "index": index,
-                        "facets": [
-                            ["project_type:" + project_type],
-                            ["categories:" + cat_slug]
-                        ],
-                        "pages": pages,
-                        "category": cat_slug,
-                        "project_type": project_type
-                    })
-                    index += 1
 
     return partitions
 
 
 def main():
-    print("=== Phase 1: Discover (ALL project types) ===")
+    parser = argparse.ArgumentParser(description="Discover projects for a single project type")
+    parser.add_argument(
+        "--project-type", required=True,
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        help="Project type to discover"
+    )
+    args = parser.parse_args()
+
+    project_type = args.project_type
+    print(f"=== Phase 1: Discover ({project_type}) ===")
     session = create_session()
 
-    # ── Fetch total hits per project type ─────────────────────────
-    total_hits_all = 0
-    hits_by_type = {}
-    for ptype in ALL_PROJECT_TYPES:
-        count = fetch_total_hits(session, ptype)
-        hits_by_type[ptype] = count
-        total_hits_all += count
-        print(f"  {ptype}: {count:,} projects")
-    print(f"Total across all types: {total_hits_all:,}")
+    # ── Fetch total hits for this project type ───────────────────
+    total_hits = fetch_total_hits(session, project_type)
+    print(f"  {project_type}: {total_hits:,} projects")
 
     # ── Fetch ALL categories and loaders from tag API ──────────────
     print("Fetching all categories...")
@@ -247,50 +247,44 @@ def main():
     loader_names = sorted([l["name"] for l in all_loaders])
     print(f"Found {len(loader_names)} loaders: {', '.join(loader_names)}")
 
-    # ── Group categories by project_type ───────────────────────────
+    # ── Filter categories to this project type ────────────────────
     # Each category tag has a "project_type" field (e.g. "mod", "resourcepack")
-    categories_by_type = {}
-    for ptype in ALL_PROJECT_TYPES:
-        categories_by_type[ptype] = []
+    type_categories = [
+        cat for cat in all_categories
+        if cat.get("project_type", "mod") == project_type
+    ]
+    print(f"Categories for {project_type}: {len(type_categories)}")
 
-    for cat in all_categories:
-        ptype = cat.get("project_type", "mod")
-        if ptype in categories_by_type:
-            categories_by_type[ptype].append(cat)
-
-    # ── For each (project_type, category), get project count ───────
-    categories_with_counts_by_type = {}
-    for ptype in ALL_PROJECT_TYPES:
-        cats = categories_by_type.get(ptype, [])
-        if not cats:
+    # ── For each category, get project count ──────────────────────
+    print(f"Counting projects per category for {project_type}...")
+    cat_counts = []
+    for cat in type_categories:
+        slug = cat.get("name") or cat.get("slug") or ""
+        if not slug:
             continue
-        print(f"Counting projects per category for {ptype}...")
-        result = []
-        for cat in cats:
-            slug = cat.get("name") or cat.get("slug") or ""
-            if not slug:
-                continue
-            count = fetch_category_count(session, ptype, slug)
-            result.append((slug, count))
-            print(f"    {ptype}/{slug}: {count:,}")
-            time.sleep(0.1)
-        categories_with_counts_by_type[ptype] = result
+        count = fetch_category_count(session, project_type, slug)
+        cat_counts.append((slug, count))
+        print(f"    {project_type}/{slug}: {count:,}")
+        time.sleep(0.1)
 
     # ── Create partition plan ─────────────────────────────────────
     print("Creating partition plan...")
-    partitions = create_partition_plan(session, categories_with_counts_by_type)
+    partitions = create_partition_plan(session, project_type, cat_counts)
     print(f"Created {len(partitions)} partitions")
 
     # ── Save discovery data ───────────────────────────────────────
+    type_dir = get_project_type_dir(project_type)
+    ensure_dir(type_dir)
+
     discovery_data = {
-        "total_hits": total_hits_all,
-        "hits_by_type": hits_by_type,
-        "project_types": ALL_PROJECT_TYPES,
+        "project_type": project_type,
+        "total_hits": total_hits,
         "fetched_at": get_current_datetime(),
         "partitions": partitions
     }
-    save_json("data/discovery.json", discovery_data)
-    print("Saved discovery plan to data/discovery.json")
+    discovery_path = f"{type_dir}/discovery.json"
+    save_json(discovery_path, discovery_data)
+    print(f"Saved discovery plan to {discovery_path}")
 
     # ── Save categories data (with header field for filtering) ────
     # The "header" field distinguishes content categories ("categories")
@@ -303,16 +297,18 @@ def main():
             "icon": c.get("icon"),
             "project_type": c.get("project_type", "mod")
         }
-        for c in all_categories
+        for c in type_categories
     ]
-    save_json("data/categories.json", categories_data)
-    print("Saved categories to data/categories.json")
+    categories_path = f"{type_dir}/categories.json"
+    save_json(categories_path, categories_data)
+    print(f"Saved categories to {categories_path}")
 
     # ── Save loader names (used to filter loaders from categories) ─
-    save_json("data/loaders.json", loader_names)
-    print("Saved loader names to data/loaders.json")
+    loaders_path = f"{type_dir}/loaders.json"
+    save_json(loaders_path, loader_names)
+    print(f"Saved loader names to {loaders_path}")
 
-    print("=== Discover complete ===")
+    print(f"=== Discover ({project_type}) complete ===")
     return 0
 
 

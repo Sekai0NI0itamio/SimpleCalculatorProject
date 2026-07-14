@@ -1,25 +1,29 @@
 #!/usr/bin/env python3
 """
 Phase 4: Snapshot
-- Reads all project data from chunks and all version data from the DB
-- Records today's download counts for EVERY project and EVERY version
-- FIRST RUN: marks today as the baseline date (day 0)
-- SCOPE CHANGE: if the project type scope changed since the baseline
-  (e.g. adding datapacks/resourcepacks), resets the baseline so all
-  new project types get a fair starting point
-- Saves to database
+- Reads all project data from data/{project_type}/chunks/ (deduplicated by project_id)
+- Saves a raw snapshot to data/{project_type}/raw/{timestamp}.json
+  (compact: project_id, slug, title, downloads, follows, categories, project_type)
+- Updates the DB: upserts all projects and records daily project/version snapshots
+
+NO baseline logic here — analyze.py derives everything from the raw snapshot history.
 """
+import argparse
 import glob
 import json
 import sys
 
-from utils import load_json, get_current_date
+from utils import (
+    load_json, save_json, ensure_dir, get_current_date, get_timestamp,
+    get_project_type_dir, get_raw_dir
+)
 from db import Database
 
 
-def get_all_project_data():
+def get_all_project_data(project_type):
     """Read all project data from all chunk files, deduplicating by project_id."""
-    chunk_files = glob.glob("data/chunks/projects_*.json")
+    type_dir = get_project_type_dir(project_type)
+    chunk_files = glob.glob(f"{type_dir}/chunks/projects_*.json")
     chunk_files = [f for f in chunk_files if not f.endswith("_compact.json")]
 
     project_map = {}
@@ -34,132 +38,105 @@ def get_all_project_data():
     return list(project_map.values())
 
 
-def check_baseline_scope(db, today):
-    """Check if the baseline was set with a different set of project types.
-    If so, reset the baseline so the new project types get a fair start.
-
-    Returns the effective baseline date (may differ from the stored one
-    if a reset happened)."""
-    discovery = load_json("data/discovery.json")
-    if not discovery:
-        return db.get_baseline_date()
-
-    current_scope = ",".join(sorted(discovery.get("project_types", ["mod"])))
-    baseline_scope = db.get_metadata("baseline_scope")
-
-    baseline_date = db.get_baseline_date()
-    is_first_run = baseline_date is None
-
-    if is_first_run:
-        print(f"FIRST RUN — setting baseline date to {today}")
-        db.set_baseline_date(today)
-        db.set_metadata("baseline_scope", current_scope)
-        return today
-
-    if baseline_scope != current_scope:
-        print(f"SCOPE CHANGE detected!")
-        print(f"  Baseline scope:  {baseline_scope or '(none)'}")
-        print(f"  Current scope:   {current_scope}")
-        print(f"  Resetting baseline to {today}...")
-        db.reset_baseline(today)
-        db.set_metadata("baseline_scope", current_scope)
-        return today
-
-    print(f"Baseline date: {baseline_date} (scope: {baseline_scope})")
-    return baseline_date
-
-
 def main():
-    print("=== Phase 4: Snapshot ===")
+    parser = argparse.ArgumentParser(description="Take a daily snapshot for a project type")
+    parser.add_argument(
+        "--project-type", required=True,
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        help="Project type to snapshot"
+    )
+    args = parser.parse_args()
+
+    project_type = args.project_type
+    print(f"=== Phase 4: Snapshot ({project_type}) ===")
 
     today = get_current_date()
-    print(f"Taking snapshot for date: {today}")
+    timestamp = get_timestamp()
+    print(f"Taking snapshot for date: {today} (timestamp: {timestamp})")
 
     # Load all project data
-    projects = get_all_project_data()
+    projects = get_all_project_data(project_type)
     print(f"Loaded {len(projects)} projects from chunks")
 
     if not projects:
-        print("No projects found. Run fetch_projects.py first.")
+        print(f"No projects found for {project_type}. Run fetch_projects.py first.")
         return 1
 
-    # Open database
-    db = Database("data/modrinth_tracker.db")
+    # ── Build raw snapshot (compact — no description/icon_url) ────
+    raw_projects = []
+    total_downloads = 0
+    for p in projects:
+        downloads = p.get("downloads", 0) or 0
+        total_downloads += downloads
 
-    # ── Baseline scope check ──────────────────────────────────────
-    baseline_date = check_baseline_scope(db, today)
-    is_first_run = (baseline_date == today)
+        # categories is stored as a JSON string in chunk files
+        cats_raw = p.get("categories", "[]")
+        if isinstance(cats_raw, str):
+            try:
+                cats = json.loads(cats_raw)
+            except (json.JSONDecodeError, TypeError):
+                cats = []
+        elif isinstance(cats_raw, list):
+            cats = cats_raw
+        else:
+            cats = []
 
-    # ── Record project snapshots ──────────────────────────────────
+        raw_projects.append({
+            "project_id": p.get("project_id"),
+            "slug": p.get("slug", ""),
+            "title": p.get("title", ""),
+            "downloads": downloads,
+            "follows": p.get("follows", 0) or 0,
+            "categories": cats,
+            "project_type": p.get("project_type", project_type),
+        })
+
+    raw_snapshot = {
+        "timestamp": timestamp,
+        "date": today,
+        "project_type": project_type,
+        "project_count": len(raw_projects),
+        "total_downloads": total_downloads,
+        "projects": raw_projects,
+    }
+
+    raw_dir = get_raw_dir(project_type)
+    ensure_dir(raw_dir)
+    raw_path = f"{raw_dir}/{timestamp}.json"
+    save_json(raw_path, raw_snapshot)
+    print(f"Saved raw snapshot to {raw_path} ({len(raw_projects)} projects, {total_downloads:,} downloads)")
+
+    # ── Update the database ───────────────────────────────────────
+    db = Database(project_type)
+
+    # Upsert all projects + record daily project snapshots
     project_count = 0
     for project in projects:
         project_id = project["project_id"]
-        downloads = project.get("downloads", 0)
-        follows = project.get("follows", 0)
+        downloads = project.get("downloads", 0) or 0
+        follows = project.get("follows", 0) or 0
 
-        db.record_project_snapshot(project_id, today, downloads, follows)
         db.upsert_project(project)
+        db.record_project_snapshot(project_id, today, downloads, follows)
         project_count += 1
 
     print(f"Recorded snapshots for {project_count} projects")
 
-    # ── Record version snapshots ──────────────────────────────────
-    cursor = db.conn.execute("SELECT id, project_id, downloads FROM versions")
+    # Record version snapshots from the DB's versions table
+    cursor = db.conn.execute("SELECT id, downloads FROM versions")
     versions = cursor.fetchall()
     version_count = 0
     for version in versions:
         version_id = version["id"]
-        version_downloads = version["downloads"]
+        version_downloads = version["downloads"] or 0
         db.record_version_snapshot(version_id, today, version_downloads)
         version_count += 1
 
     print(f"Recorded snapshots for {version_count} versions")
 
-    # ── Calculate category stats (deltas from baseline) ───────────
-    baseline_cat_stats = db.get_baseline_category_stats()
-
-    # Group projects by category
-    category_projects = {}
-    for project in projects:
-        try:
-            cats = json.loads(project.get("categories", "[]"))
-        except (json.JSONDecodeError, TypeError):
-            cats = []
-
-        for cat in cats:
-            if cat not in category_projects:
-                category_projects[cat] = []
-            category_projects[cat].append(project)
-
-    # Calculate and record category stats for ALL categories
-    # (including loaders — analyze.py will filter them for display)
-    for cat, cat_projects in category_projects.items():
-        total_downloads = sum(p.get("downloads", 0) for p in cat_projects)
-        project_count_cat = len(cat_projects)
-        avg_downloads = total_downloads / project_count_cat if project_count_cat > 0 else 0.0
-
-        if is_first_run:
-            # On first run, new_downloads = total_downloads (baseline)
-            new_downloads = total_downloads
-        else:
-            # On subsequent runs, new_downloads = delta from baseline
-            baseline_total = baseline_cat_stats.get(cat, {}).get("total_downloads", 0)
-            new_downloads = max(0, total_downloads - baseline_total)
-
-        db.record_category_stats(
-            cat, today, total_downloads, project_count_cat, avg_downloads, new_downloads
-        )
-
-    print(f"Recorded stats for {len(category_projects)} categories")
-
     db.close()
 
-    # Save snapshot date
-    with open("data/snapshot_date.txt", "w") as f:
-        f.write(today)
-    print(f"Saved snapshot date to data/snapshot_date.txt")
-
-    print("=== Snapshot complete ===")
+    print(f"=== Snapshot ({project_type}) complete ===")
     return 0
 
 

@@ -1,0 +1,50 @@
+name: Daily Modrinth Tracker
+
+on:
+  schedule:
+    - cron: '0 16 * * *'  # 16:00 UTC = 00:00 Beijing time (UTC+8)
+  workflow_dispatch:       # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  # All 6 project types run in parallel at 00:00 Beijing time.
+  # Each calls the reusable workflow which handles the full pipeline:
+  # discover → fetch-projects → split-versions → fetch-versions → merge → snapshot → analyze → commit
+
+  mod:
+    uses: ./.github/workflows/tracker-reusable.yml
+    with:
+      project_type: mod
+      version_chunks: 30
+
+  modpack:
+    uses: ./.github/workflows/tracker-reusable.yml
+    with:
+      project_type: modpack
+      version_chunks: 10
+
+  resourcepack:
+    uses: ./.github/workflows/tracker-reusable.yml
+    with:
+      project_type: resourcepack
+      version_chunks: 10
+
+  shader:
+    uses: ./.github/workflows/tracker-reusable.yml
+    with:
+      project_type: shader
+      version_chunks: 5
+
+  datapack:
+    uses: ./.github/workflows/tracker-reusable.yml
+    with:
+      project_type: datapack
+      version_chunks: 10
+
+  world:
+    uses: ./.github/workflows/tracker-reusable.yml
+    with:
+      project_type: world
+      version_chunks: 5

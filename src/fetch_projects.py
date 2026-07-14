@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
 Phase 2: Fetch Projects
-- Accepts --chunk argument with partition index
-- Fetches all pages for that partition
-- Saves project data to data/chunks/projects_{chunk}.json
+- Accepts --project-type and --chunk arguments
+- Fetches all pages for that partition (for the given project type)
+- Saves project data to data/{project_type}/chunks/projects_{chunk}.json
+  and data/{project_type}/chunks/projects_{chunk}_compact.json
 """
 import argparse
 import json
-import math
 import sys
 import time
 
 from utils import (
     MODRINTH_API_BASE, PAGE_SIZE, load_json, save_json, ensure_dir,
-    create_session, rate_limit_sleep
+    create_session, rate_limit_sleep, get_project_type_dir
 )
 
 
@@ -62,16 +62,24 @@ def extract_compact_project_data(hit):
 
 def main():
     parser = argparse.ArgumentParser(description="Fetch projects for a partition chunk")
+    parser.add_argument(
+        "--project-type", required=True,
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        help="Project type to fetch"
+    )
     parser.add_argument("--chunk", type=int, required=True, help="Partition index to fetch")
     args = parser.parse_args()
 
+    project_type = args.project_type
     chunk = args.chunk
-    print(f"=== Phase 2: Fetch Projects (chunk {chunk}) ===")
+    print(f"=== Phase 2: Fetch Projects ({project_type}, chunk {chunk}) ===")
+
+    type_dir = get_project_type_dir(project_type)
 
     # Load discovery data
-    discovery = load_json("data/discovery.json")
+    discovery = load_json(f"{type_dir}/discovery.json")
     if not discovery:
-        print("Error: data/discovery.json not found. Run discover.py first.")
+        print(f"Error: {type_dir}/discovery.json not found. Run discover.py first.")
         return 1
 
     # Find the partition
@@ -82,7 +90,7 @@ def main():
             break
 
     if not partition:
-        print(f"Error: Partition with index {chunk} not found in discovery.json")
+        print(f"Error: Partition with index {chunk} not found in {type_dir}/discovery.json")
         return 1
 
     print(f"Fetching partition: category={partition.get('category')}, "
@@ -126,17 +134,18 @@ def main():
     print(f"Fetched {len(all_projects)} projects total")
 
     # Save full data
-    ensure_dir("data/chunks")
-    output_path = f"data/chunks/projects_{chunk}.json"
+    chunks_dir = f"{type_dir}/chunks"
+    ensure_dir(chunks_dir)
+    output_path = f"{chunks_dir}/projects_{chunk}.json"
     save_json(output_path, all_projects)
     print(f"Saved full project data to {output_path}")
 
     # Save compact data
-    compact_path = f"data/chunks/projects_{chunk}_compact.json"
+    compact_path = f"{chunks_dir}/projects_{chunk}_compact.json"
     save_json(compact_path, compact_projects)
     print(f"Saved compact project data to {compact_path}")
 
-    print(f"=== Fetch projects chunk {chunk} complete ===")
+    print(f"=== Fetch projects ({project_type}) chunk {chunk} complete ===")
     return 0
 
 

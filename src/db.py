@@ -5,10 +5,19 @@ from datetime import datetime
 
 
 class Database:
-    """SQLite database manager for the Modrinth Tracker."""
+    """SQLite database manager for the Modrinth Tracker.
+    Each project type has its own separate database file."""
 
     def __init__(self, db_path: str):
-        """Initialize database connection and create tables."""
+        """Initialize database connection and create tables.
+        db_path can be a full path or just a project_type (in which case
+        data/{project_type}/{project_type}.db is used)."""
+        # If just a project type is passed, build the full path
+        if "/" not in db_path and not db_path.endswith(".db"):
+            from utils import get_db_path, ensure_dir
+            ptype = db_path
+            db_path = get_db_path(ptype)
+            ensure_dir(f"data/{ptype}")
         self.db_path = db_path
         self.conn = sqlite3.connect(db_path)
         self.conn.row_factory = sqlite3.Row

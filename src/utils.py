@@ -89,3 +89,28 @@ def get_current_date() -> str:
 def get_current_datetime() -> str:
     """Get current datetime in ISO format (Beijing time, UTC+8)."""
     return datetime.now(BEIJING_TZ).isoformat(timespec="seconds")
+
+
+def get_timestamp() -> str:
+    """Get filesystem-safe timestamp: YYYY-MM-DDTHH-MM-SS (Beijing time)."""
+    return datetime.now(BEIJING_TZ).strftime("%Y-%m-%dT%H-%M-%S")
+
+
+def get_project_type_dir(project_type: str) -> str:
+    """Get the data directory for a specific project type."""
+    return f"data/{project_type}"
+
+
+def get_raw_dir(project_type: str) -> str:
+    """Get the raw snapshots directory for a project type."""
+    return f"data/{project_type}/raw"
+
+
+def get_analysis_dir(project_type: str) -> str:
+    """Get the analysis stack directory for a project type."""
+    return f"data/{project_type}/analysis"
+
+
+def get_db_path(project_type: str) -> str:
+    """Get the SQLite DB path for a project type."""
+    return f"data/{project_type}/{project_type}.db"
