@@ -269,7 +269,22 @@ def main():
 
     # ── Create partition plan ─────────────────────────────────────
     print("Creating partition plan...")
-    partitions = create_partition_plan(session, project_type, cat_counts)
+    if cat_counts:
+        partitions = create_partition_plan(session, project_type, cat_counts)
+    else:
+        # No categories for this project type (e.g. datapack, world).
+        # Create a single partition that fetches ALL projects of this type.
+        print(f"  No categories for {project_type} — creating single bulk partition")
+        pages = math.ceil(total_hits / PAGE_SIZE) if total_hits > 0 else 1
+        # Cap at MAX_OFFSET (10000 results per API limit)
+        pages = min(pages, math.ceil(MAX_OFFSET / PAGE_SIZE))
+        partitions = [{
+            "index": 0,
+            "facets": [["project_type:" + project_type]],
+            "pages": pages,
+            "project_type": project_type,
+            "category": None
+        }]
     print(f"Created {len(partitions)} partitions")
 
     # ── Save discovery data ───────────────────────────────────────

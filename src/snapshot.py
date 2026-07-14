@@ -59,8 +59,23 @@ def main():
     print(f"Loaded {len(projects)} projects from chunks")
 
     if not projects:
-        print(f"No projects found for {project_type}. Run fetch_projects.py first.")
-        return 1
+        print(f"No projects found for {project_type} — creating empty snapshot")
+        # Still create an empty raw snapshot so analyze.py has data to work with
+        raw_snapshot = {
+            "timestamp": timestamp,
+            "date": today,
+            "project_type": project_type,
+            "project_count": 0,
+            "total_downloads": 0,
+            "projects": [],
+        }
+        raw_dir = get_raw_dir(project_type)
+        ensure_dir(raw_dir)
+        raw_path = f"{raw_dir}/{timestamp}.json"
+        save_json(raw_path, raw_snapshot)
+        print(f"Saved empty raw snapshot to {raw_path}")
+        print(f"=== Snapshot ({project_type}) complete ===")
+        return 0
 
     # ── Build raw snapshot (compact — no description/icon_url) ────
     raw_projects = []
