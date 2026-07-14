@@ -21,6 +21,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
       - name: Run super analysis
         run: python src/super_analysis.py
+      - name: Commit reports to repository
+        run: |
+          git config user.name "Super Analysis Bot"
+          git config user.email "tracker-bot@users.noreply.github.com"
+          git add reports/super_analysis/
+          git diff --staged --quiet || git commit -m "chore: auto-update super analysis report $(date +%Y-%m-%d)"
+          git push
       - uses: actions/upload-artifact@v4
         with:
           name: super-analysis-report
