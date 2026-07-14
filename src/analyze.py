@@ -30,6 +30,10 @@ from db import Database
 COMPETITION_PENALTY_WEIGHT = 0.5
 MIN_PROJECTS_THRESHOLD = 5
 
+# Loader categories that should be excluded from category_rankings
+# (they are tracked separately in loader_rankings)
+LOADER_CATEGORIES = {"fabric", "forge", "neoforge", "quilt", "liteloader", "rift"}
+
 
 # ═══════════════════════════════════════════════════════════════════
 #  DELTA COMPUTATION
@@ -355,8 +359,11 @@ def main():
     # ── Save structured JSON for the app ──────────────────────────
 
     # Build category_rankings for the app's TrackerDashboard
+    # Exclude loader categories (fabric, forge, etc.) — they are tracked in loader_rankings
     category_rankings = []
     for cd in category_deltas:
+        if cd["category"] in LOADER_CATEGORIES:
+            continue
         category_rankings.append({
             "category": cd["category"],
             "projects": cd["current_projects"],
@@ -467,6 +474,7 @@ def main():
         "category_rankings": category_rankings,
         "loader_rankings": loader_rankings,
         "top_projects": top_projects[:20],
+        "top_version_loaders": top_version_loaders[:20],
         "recommendations": recommendations[:5],
         "trends": analysis["trends"],
     }
