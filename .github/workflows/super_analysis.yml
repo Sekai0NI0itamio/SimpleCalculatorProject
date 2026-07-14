@@ -1,0 +1,28 @@
+name: Super Computer Analysis
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-super-analysis]
+
+jobs:
+  super-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Download latest database
+        run: |
+          gh run download --name modrinth-db --dir data/ 2>/dev/null || echo "No existing DB found"
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Run super analysis
+        run: python src/super_analysis.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: super-analysis-report
+          path: reports/super_analysis/
+          retention-days: 90
