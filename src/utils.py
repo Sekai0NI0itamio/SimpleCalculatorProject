@@ -2,10 +2,13 @@
 import json
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+
+# Beijing timezone (UTC+8) — all dates in the tracker use Beijing time
+BEIJING_TZ = timezone(timedelta(hours=8))
 
 MODRINTH_API_BASE = "https://api.modrinth.com/v2"
 PAGE_SIZE = 100
@@ -79,10 +82,10 @@ def ensure_dir(path):
 
 
 def get_current_date() -> str:
-    """Get current date in YYYY-MM-DD format."""
-    return datetime.now().strftime("%Y-%m-%d")
+    """Get current date in YYYY-MM-DD format (Beijing time, UTC+8)."""
+    return datetime.now(BEIJING_TZ).strftime("%Y-%m-%d")
 
 
 def get_current_datetime() -> str:
-    """Get current datetime in ISO format."""
-    return datetime.now().isoformat(timespec="seconds")
+    """Get current datetime in ISO format (Beijing time, UTC+8)."""
+    return datetime.now(BEIJING_TZ).isoformat(timespec="seconds")

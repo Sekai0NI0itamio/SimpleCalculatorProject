@@ -91,19 +91,37 @@ class Database:
 
     def get_baseline_date(self) -> str | None:
         """Get the baseline date from metadata, or None if not set."""
+        return self.get_metadata("baseline_date")
+
+    def set_baseline_date(self, date: str):
+        """Set the baseline date in metadata."""
+        self.set_metadata("baseline_date", date)
+
+    def get_metadata(self, key: str) -> str | None:
+        """Get a metadata value by key, or None if not set."""
         cursor = self.conn.execute(
-            "SELECT value FROM metadata WHERE key = 'baseline_date'"
+            "SELECT value FROM metadata WHERE key = ?", (key,)
         )
         row = cursor.fetchone()
         return row["value"] if row else None
 
-    def set_baseline_date(self, date: str):
-        """Set the baseline date in metadata."""
+    def set_metadata(self, key: str, value: str):
+        """Set a metadata value."""
         self.conn.execute(
-            "INSERT OR REPLACE INTO metadata (key, value) VALUES ('baseline_date', ?)",
-            (date,),
+            "INSERT OR REPLACE INTO metadata (key, value) VALUES (?, ?)",
+            (key, value),
         )
         self.conn.commit()
+
+    def reset_baseline(self, new_date: str):
+        """Reset the baseline: clear all snapshots and category stats,
+        then set the new baseline date. Used when the project type scope
+        changes (e.g. adding datapacks, resourcepacks, etc.)."""
+        self.conn.execute("DELETE FROM daily_project_snapshots")
+        self.conn.execute("DELETE FROM daily_version_snapshots")
+        self.conn.execute("DELETE FROM daily_category_stats")
+        self.set_baseline_date(new_date)
+        print(f"  Baseline reset to {new_date} — old snapshots cleared")
 
     # ── Project CRUD ──────────────────────────────────────────────
 

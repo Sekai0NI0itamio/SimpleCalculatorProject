@@ -4,10 +4,18 @@ Phase 5: Analyze — Baseline-Driven Market Intelligence
 
 All analysis is based on deltas from the baseline (first captured data).
 This gives us:
-  - Which MODS gained the most downloads since tracking began
+  - Which PROJECTS gained the most downloads since tracking began
   - Which VERSION+LOADER combos gained the most downloads
-  - Which CATEGORIES are booming
+  - Which CATEGORIES (content only — no loaders/resolutions/features) are booming
   - Which LOADERS are gaining market share
+
+Category filtering:
+  - Loads loader names from data/loaders.json (from /tag/loader API)
+  - Loads category headers from data/categories.json (from /tag/category API)
+  - Excludes loader names AND categories with header != "categories"
+  - This properly separates content categories (adventure, utility, etc.)
+    from loaders (fabric, forge, paper, bukkit, etc.) and from
+    resolutions (16x, 32x) / features (atmosphere, bloom, etc.)
 
 Outputs:
   - reports/daily_report_{date}.md  — human-readable markdown report
@@ -16,7 +24,6 @@ Outputs:
 """
 
 import json
-import math
 import os
 import sys
 from collections import defaultdict
@@ -30,9 +37,37 @@ from db import Database
 COMPETITION_PENALTY_WEIGHT = 0.5
 MIN_PROJECTS_THRESHOLD = 5
 
-# Loader categories that should be excluded from category_rankings
-# (they are tracked separately in loader_rankings)
-LOADER_CATEGORIES = {"fabric", "forge", "neoforge", "quilt", "liteloader", "rift"}
+# Content category headers — only "categories" header is a real content
+# category. Other headers ("resolutions", "features", "performance impact",
+# "minecraft_server_*") are metadata tags, not content categories.
+CONTENT_CATEGORY_HEADER = "categories"
+
+
+def load_exclusion_sets():
+    """Load loader names and category headers from data files.
+    Returns (loader_names_set, excluded_category_names_set, content_category_names_set).
+
+    - loader_names_set: all loader names from /tag/loader (fabric, forge, etc.)
+    - excluded_category_names_set: category names that are NOT content categories
+      (resolutions like 16x, features like atmosphere, etc.)
+    - content_category_names_set: category names with header == "categories"
+    """
+    loaders = load_json("data/loaders.json") or []
+    loader_set = set(loaders)
+
+    categories = load_json("data/categories.json") or []
+    excluded = set()
+    content = set()
+    for cat in categories:
+        name = cat.get("slug") or cat.get("name", "")
+        header = cat.get("header", "")
+        if header == CONTENT_CATEGORY_HEADER:
+            content.add(name)
+        else:
+            # Resolutions, features, performance impact, server tags, etc.
+            excluded.add(name)
+
+    return loader_set, excluded, content
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -41,9 +76,7 @@ LOADER_CATEGORIES = {"fabric", "forge", "neoforge", "quilt", "liteloader", "rift
 
 
 def compute_project_deltas(db, today):
-    """Compute download deltas from baseline for every project.
-    Returns list of {project_id, title, slug, categories, baseline_downloads,
-                      current_downloads, delta_downloads, delta_follows}."""
+    """Compute download deltas from baseline for every project."""
     baseline = db.get_baseline_project_snapshots()
     current = db.get_latest_project_snapshots(today)
 
@@ -78,10 +111,7 @@ def compute_project_deltas(db, today):
 
 
 def compute_version_deltas(db, today):
-    """Compute download deltas from baseline for every version.
-    Returns list of {version_id, project_id, version_number, loaders,
-                      game_versions, baseline_downloads, current_downloads,
-                      delta_downloads}."""
+    """Compute download deltas from baseline for every version."""
     baseline = db.get_baseline_version_snapshots()
     cursor = db.conn.execute(
         "SELECT id, project_id, version_number, loaders, game_versions, downloads FROM versions"
@@ -120,61 +150,19 @@ def compute_version_deltas(db, today):
     return rows
 
 
-def compute_loader_deltas(version_deltas):
-    """Aggregate version deltas by loader.
-    Returns list of {loader, projects, total_delta, avg_delta}."""
-    loader_data = defaultdict(lambda: {"total_delta": 0, "project_ids": set()})
-    for vd in version_deltas:
-        for loader in vd["loaders"]:
-            loader_data[loader]["total_delta"] += vd["delta_downloads"]
-            loader_data[loader]["project_ids"].add(vd["project_id"])
-
-    rows = []
-    for loader, data in loader_data.items():
-        rows.append({
-            "loader": loader,
-            "projects": len(data["project_ids"]),
-            "total_delta": data["total_delta"],
-            "avg_delta": data["total_delta"] // max(len(data["project_ids"]), 1),
-        })
-    rows.sort(key=lambda r: r["total_delta"], reverse=True)
-    return rows
-
-
-def compute_loader_version_combos(version_deltas):
-    """Aggregate version deltas by (game_version, loader) combo.
-    Returns list of {game_version, loader, projects, total_delta, avg_delta}."""
-    combo_data = defaultdict(lambda: {"total_delta": 0, "project_ids": set()})
-    for vd in version_deltas:
-        for loader in vd["loaders"]:
-            for gv in vd["game_versions"]:
-                key = (gv, loader)
-                combo_data[key]["total_delta"] += vd["delta_downloads"]
-                combo_data[key]["project_ids"].add(vd["project_id"])
-
-    rows = []
-    for (gv, loader), data in combo_data.items():
-        rows.append({
-            "game_version": gv,
-            "loader": loader,
-            "projects": len(data["project_ids"]),
-            "total_delta": data["total_delta"],
-            "avg_delta": data["total_delta"] // max(len(data["project_ids"]), 1),
-        })
-    rows.sort(key=lambda r: r["total_delta"], reverse=True)
-    return rows
-
-
 # ═══════════════════════════════════════════════════════════════════
-#  CATEGORY ANALYSIS (baseline-based)
+#  CATEGORY + LOADER ANALYSIS (baseline-based)
 # ═══════════════════════════════════════════════════════════════════
 
 
 def compute_category_deltas(db, today):
-    """Compute category deltas from baseline.
+    """Compute category deltas from baseline for ALL categories.
     Returns list of {category, baseline_downloads, current_downloads,
                       delta_downloads, baseline_projects, current_projects,
-                      baseline_avg, current_avg, delta_pct}."""
+                      baseline_avg, current_avg, delta_pct}.
+
+    This includes BOTH content categories AND loaders — the caller
+    is responsible for splitting them based on data/loaders.json."""
     baseline_cats = db.get_baseline_category_stats()
     current_cats = db.get_categories_for_date(today)
 
@@ -197,8 +185,15 @@ def compute_category_deltas(db, today):
             "current_avg": cc["avg_downloads"],
         })
 
-    rows.sort(key=lambda r: r["delta_downloads"], reverse=True)
+    rows.sort(key=lambda r: r["current_downloads"], reverse=True)
     return rows
+
+
+def compute_total_downloads(db):
+    """Compute total downloads across ALL projects (regardless of category)."""
+    cursor = db.conn.execute("SELECT SUM(downloads) as total FROM projects")
+    row = cursor.fetchone()
+    return row["total"] if row and row["total"] else 0
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -206,7 +201,7 @@ def compute_category_deltas(db, today):
 # ═══════════════════════════════════════════════════════════════════
 
 
-def generate_recommendations(category_deltas, loader_deltas, version_deltas, project_deltas):
+def generate_recommendations(category_deltas, loader_deltas, version_deltas, project_deltas, db):
     """Generate actionable recommendations based on baseline deltas."""
     lines = []
 
@@ -214,7 +209,7 @@ def generate_recommendations(category_deltas, loader_deltas, version_deltas, pro
         lines.append("_Insufficient data for recommendations. First run may still be in progress._")
         return "\n".join(lines)
 
-    # Top growing categories
+    # Top growing content categories
     top_cats = [c for c in category_deltas if c["current_projects"] >= MIN_PROJECTS_THRESHOLD][:5]
     if top_cats:
         lines.append("### Top Growing Categories (Since Baseline)")
@@ -229,7 +224,8 @@ def generate_recommendations(category_deltas, loader_deltas, version_deltas, pro
             )
         lines.append("")
 
-    # Top growing loaders
+    # Top growing loaders (loader_deltas has same structure as category_deltas,
+    # with "category" being the loader name)
     if loader_deltas:
         lines.append("### Loader Growth (Since Baseline)")
         lines.append("")
@@ -237,8 +233,8 @@ def generate_recommendations(category_deltas, loader_deltas, version_deltas, pro
         lines.append("|--------|----------|-------------|---------------|")
         for ld in loader_deltas[:5]:
             lines.append(
-                f"| {ld['loader']} | {ld['projects']} | {ld['total_delta']:+,} | "
-                f"{ld['avg_delta']:,} |"
+                f"| {ld['category']} | {ld['current_projects']} | {ld['delta_downloads']:+,} | "
+                f"{ld['current_avg']:,.0f} |"
             )
         lines.append("")
 
@@ -252,7 +248,7 @@ def generate_recommendations(category_deltas, loader_deltas, version_deltas, pro
             loaders_str = ", ".join(vd["loaders"][:2])
             gv_str = ", ".join(vd["game_versions"][:2])
             label = f"{gv_str} / {loaders_str}" if gv_str else loaders_str
-            project = db.get_project(vd["project_id"]) if 'db' in dir() else None
+            project = db.get_project(vd["project_id"])
             pname = project["title"] if project else vd["project_id"][:8]
             lines.append(
                 f"| {label} | {pname} | {vd['delta_downloads']:+,} |"
@@ -287,6 +283,10 @@ def main():
     today = get_current_date()
     db = Database("data/modrinth_tracker.db")
 
+    # ── Load exclusion sets for filtering ─────────────────────────
+    loader_set, excluded_cats, content_cats = load_exclusion_sets()
+    print(f"  Loaded {len(loader_set)} loader names, {len(excluded_cats)} non-content categories, {len(content_cats)} content categories")
+
     # ── Compute all deltas ────────────────────────────────────────
 
     project_deltas = compute_project_deltas(db, today)
@@ -295,18 +295,40 @@ def main():
     version_deltas = compute_version_deltas(db, today)
     print(f"  Version deltas: {len(version_deltas)} versions with growth")
 
-    loader_deltas = compute_loader_deltas(version_deltas)
-    print(f"  Loader deltas:  {len(loader_deltas)} loaders")
-
-    combo_deltas = compute_loader_version_combos(version_deltas)
-    print(f"  Combo deltas:   {len(combo_deltas)} version+loader combos")
-
     category_deltas = compute_category_deltas(db, today)
-    print(f"  Category deltas: {len(category_deltas)} categories")
+    print(f"  Category deltas: {len(category_deltas)} total (before filtering)")
+
+    # Compute total downloads directly from the projects table
+    total_downloads = compute_total_downloads(db)
+    print(f"  Total downloads (all projects): {total_downloads:,}")
+
+    # ── Split category deltas into content categories vs loaders ──
+    # A category is a "loader" if it's in the loader_set (from /tag/loader)
+    # A category is a "content category" if it's in content_cats (header == "categories")
+    # Everything else (resolutions, features, server tags) is excluded from both
+    content_category_deltas = []
+    loader_category_deltas = []
+    for cd in category_deltas:
+        cat = cd["category"]
+        if cat in loader_set:
+            loader_category_deltas.append(cd)
+        elif cat in content_cats and cat not in excluded_cats:
+            content_category_deltas.append(cd)
+        # else: skip (resolutions, features, minecraft_server_*, etc.)
+
+    print(f"  Content categories: {len(content_category_deltas)}")
+    print(f"  Loader categories: {len(loader_category_deltas)}")
+
+    # ── Compute loader deltas from version data (for growth tracking) ──
+    loader_version_deltas = defaultdict(lambda: {"total_delta": 0, "project_ids": set()})
+    for vd in version_deltas:
+        for loader in vd["loaders"]:
+            loader_version_deltas[loader]["total_delta"] += vd["delta_downloads"]
+            loader_version_deltas[loader]["project_ids"].add(vd["project_id"])
 
     # ── Generate report ───────────────────────────────────────────
 
-    recs = generate_recommendations(category_deltas, loader_deltas, version_deltas, project_deltas)
+    recs = generate_recommendations(content_category_deltas, loader_category_deltas, version_deltas, project_deltas, db)
 
     # Get totals
     total_projects = len(db.get_all_projects())
@@ -320,6 +342,7 @@ def main():
         f"**Baseline Date:** {baseline_date}",
         f"**Total Projects:** {total_projects:,}",
         f"**Total Versions:** {total_versions:,}",
+        f"**Total Downloads:** {total_downloads:,}",
         f"**Projects with Growth:** {len(project_deltas):,}",
         f"**Versions with Growth:** {len(version_deltas):,}",
         f"",
@@ -328,16 +351,30 @@ def main():
         recs if recs else "_Collecting data..._",
         f"",
         f"---",
-        f"## Category Rankings by Download Growth",
+        f"## Category Rankings by Download Growth (Content Categories Only)",
         f"",
         f"| # | Category | Δ Downloads | Δ % | Projects | Avg Downloads |",
         f"|---|----------|-------------|------|----------|---------------|",
     ]
-    for i, cd in enumerate(category_deltas, 1):
+    for i, cd in enumerate(content_category_deltas, 1):
         sign = "+" if cd["delta_pct"] >= 0 else ""
         sections.append(
             f"| {i} | {cd['category']} | {cd['delta_downloads']:+,} | {sign}{cd['delta_pct']}% | "
             f"{cd['current_projects']} | {cd['current_avg']:,.0f} |"
+        )
+
+    sections.append("")
+    sections.append("---")
+    sections.append("")
+    sections.append(f"## Loader Rankings")
+    sections.append("")
+    sections.append("| # | Loader | Projects | Total Downloads | Avg Downloads | Δ Downloads |")
+    sections.append("|---|--------|----------|------------------|---------------|-------------|")
+    for i, ld in enumerate(loader_category_deltas, 1):
+        sign = "+" if ld["delta_pct"] >= 0 else ""
+        sections.append(
+            f"| {i} | {ld['category']} | {ld['current_projects']} | {ld['current_downloads']:,} | "
+            f"{ld['current_avg']:,.0f} | {ld['delta_downloads']:+,} |"
         )
 
     sections.append("")
@@ -358,12 +395,9 @@ def main():
 
     # ── Save structured JSON for the app ──────────────────────────
 
-    # Build category_rankings for the app's TrackerDashboard
-    # Exclude loader categories (fabric, forge, etc.) — they are tracked in loader_rankings
+    # Build category_rankings (content categories ONLY)
     category_rankings = []
-    for cd in category_deltas:
-        if cd["category"] in LOADER_CATEGORIES:
-            continue
+    for cd in content_category_deltas:
         category_rankings.append({
             "category": cd["category"],
             "projects": cd["current_projects"],
@@ -373,13 +407,15 @@ def main():
             "growth_pct": cd["delta_pct"],
         })
 
-    # Build loader_rankings
+    # Build loader_rankings from category stats (so it shows data even on baseline day)
     loader_rankings = []
-    for ld in loader_deltas:
+    for ld in loader_category_deltas:
         loader_rankings.append({
-            "loader": ld["loader"],
-            "projects": ld["projects"],
-            "total_downloads": ld["total_delta"],
+            "loader": ld["category"],
+            "projects": ld["current_projects"],
+            "total_downloads": ld["current_downloads"],
+            "avg_downloads": ld["current_avg"],
+            "growth_pct": ld["delta_pct"],
         })
 
     # Build top_projects
@@ -394,9 +430,9 @@ def main():
             "current_downloads": pd["current_downloads"],
         })
 
-    # Build recommendations
+    # Build recommendations (content categories only)
     recommendations = []
-    for cd in category_deltas[:10]:
+    for cd in content_category_deltas[:10]:
         if cd["current_projects"] < MIN_PROJECTS_THRESHOLD:
             continue
         # Find best loader for this category from version deltas
@@ -412,7 +448,6 @@ def main():
                     for loader in vd["loaders"]:
                         cat_loader_deltas[loader] += vd["delta_downloads"]
         best_loader = max(cat_loader_deltas, key=cat_loader_deltas.get) if cat_loader_deltas else "fabric"
-        # Opportunity score based on avg_delta * growth
         opp_score = round(
             (cd["current_avg"] ** 0.7) * (max(cd["delta_downloads"], 1) ** 0.3)
             / max(cd["current_projects"] ** COMPETITION_PENALTY_WEIGHT, 1),
@@ -450,6 +485,7 @@ def main():
         "baseline_date": baseline_date,
         "total_projects": total_projects,
         "total_versions": total_versions,
+        "total_downloads": total_downloads,
         "category_rankings": category_rankings,
         "loader_rankings": loader_rankings,
         "top_projects": top_projects,
@@ -471,6 +507,7 @@ def main():
         "report_date": today,
         "total_projects": total_projects,
         "total_versions": total_versions,
+        "total_downloads": total_downloads,
         "category_rankings": category_rankings,
         "loader_rankings": loader_rankings,
         "top_projects": top_projects[:20],

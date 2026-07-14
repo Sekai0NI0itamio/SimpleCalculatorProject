@@ -4,8 +4,9 @@ Phase 4: Snapshot
 - Reads all project data from chunks and all version data from the DB
 - Records today's download counts for EVERY project and EVERY version
 - FIRST RUN: marks today as the baseline date (day 0)
-- SUBSEQUENT RUNS: records snapshots, category stats computed by
-  comparing against the baseline
+- SCOPE CHANGE: if the project type scope changed since the baseline
+  (e.g. adding datapacks/resourcepacks), resets the baseline so all
+  new project types get a fair starting point
 - Saves to database
 """
 import glob
@@ -33,6 +34,41 @@ def get_all_project_data():
     return list(project_map.values())
 
 
+def check_baseline_scope(db, today):
+    """Check if the baseline was set with a different set of project types.
+    If so, reset the baseline so the new project types get a fair start.
+
+    Returns the effective baseline date (may differ from the stored one
+    if a reset happened)."""
+    discovery = load_json("data/discovery.json")
+    if not discovery:
+        return db.get_baseline_date()
+
+    current_scope = ",".join(sorted(discovery.get("project_types", ["mod"])))
+    baseline_scope = db.get_metadata("baseline_scope")
+
+    baseline_date = db.get_baseline_date()
+    is_first_run = baseline_date is None
+
+    if is_first_run:
+        print(f"FIRST RUN — setting baseline date to {today}")
+        db.set_baseline_date(today)
+        db.set_metadata("baseline_scope", current_scope)
+        return today
+
+    if baseline_scope != current_scope:
+        print(f"SCOPE CHANGE detected!")
+        print(f"  Baseline scope:  {baseline_scope or '(none)'}")
+        print(f"  Current scope:   {current_scope}")
+        print(f"  Resetting baseline to {today}...")
+        db.reset_baseline(today)
+        db.set_metadata("baseline_scope", current_scope)
+        return today
+
+    print(f"Baseline date: {baseline_date} (scope: {baseline_scope})")
+    return baseline_date
+
+
 def main():
     print("=== Phase 4: Snapshot ===")
 
@@ -50,16 +86,9 @@ def main():
     # Open database
     db = Database("data/modrinth_tracker.db")
 
-    # ── Baseline tracking ─────────────────────────────────────────
-    baseline_date = db.get_baseline_date()
-    is_first_run = baseline_date is None
-
-    if is_first_run:
-        print(f"FIRST RUN — setting baseline date to {today}")
-        db.set_baseline_date(today)
-        baseline_date = today
-    else:
-        print(f"Baseline date: {baseline_date}")
+    # ── Baseline scope check ──────────────────────────────────────
+    baseline_date = check_baseline_scope(db, today)
+    is_first_run = (baseline_date == today)
 
     # ── Record project snapshots ──────────────────────────────────
     project_count = 0
@@ -88,7 +117,6 @@ def main():
 
     # ── Calculate category stats (deltas from baseline) ───────────
     baseline_cat_stats = db.get_baseline_category_stats()
-    baseline_project_snaps = db.get_baseline_project_snapshots()
 
     # Group projects by category
     category_projects = {}
@@ -103,7 +131,8 @@ def main():
                 category_projects[cat] = []
             category_projects[cat].append(project)
 
-    # Calculate and record category stats
+    # Calculate and record category stats for ALL categories
+    # (including loaders — analyze.py will filter them for display)
     for cat, cat_projects in category_projects.items():
         total_downloads = sum(p.get("downloads", 0) for p in cat_projects)
         project_count_cat = len(cat_projects)
