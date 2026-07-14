@@ -189,6 +189,8 @@ jobs:
         run: python src/snapshot.py
       - name: Analyze
         run: python src/analyze.py
+      - name: Market Analytics
+        run: python src/analytics.py
       - name: Commit reports to repository
         run: |
           git config user.name "Modrinth Tracker Bot"
