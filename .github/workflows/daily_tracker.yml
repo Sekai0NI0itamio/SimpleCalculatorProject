@@ -1,0 +1,130 @@
+name: Daily Modrinth Tracker
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-tracker]
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      partition_count: ${{ steps.set_outputs.outputs.partition_count }}
+      partition_list: ${{ steps.set_outputs.outputs.partition_list }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Discover
+        run: python src/discover.py
+      - name: Set outputs
+        id: set_outputs
+        run: |
+          echo "partition_count=$(python -c "import json; d=json.load(open('data/discovery.json')); print(len(d['partitions']))")" >> $GITHUB_OUTPUT
+          echo "partition_list=$(python -c "import json; d=json.load(open('data/discovery.json')); print(json.dumps([p['index'] for p in d['partitions']]))")" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: discovery-data
+          path: data/
+          retention-days: 1
+
+  fetch-projects:
+    needs: [discover]
+    strategy:
+      matrix:
+        chunk: ${{ fromJson(needs.discover.outputs.partition_list) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: discovery-data
+          path: data/
+      - name: Fetch projects chunk ${{ matrix.chunk }}
+        run: python src/fetch_projects.py --chunk ${{ matrix.chunk }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: projects-chunk-${{ matrix.chunk }}
+          path: data/chunks/projects_${{ matrix.chunk }}.json
+          retention-days: 1
+
+  fetch-versions:
+    needs: [fetch-projects]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: discovery-data
+          path: data/
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: projects-chunk-*
+          merge-multiple: true
+          path: data/chunks/
+      - name: Fetch versions
+        run: python src/fetch_versions.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: version-data
+          path: data/version_summary.json
+          retention-days: 1
+
+  snapshot-and-analyze:
+    needs: [fetch-versions]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: discovery-data
+          path: data/
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: projects-chunk-*
+          merge-multiple: true
+          path: data/chunks/
+      - uses: actions/download-artifact@v4
+        with:
+          name: version-data
+          path: data/
+      - name: Download existing database
+        run: |
+          gh run download --name modrinth-db --dir data/ 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Snapshot
+        run: python src/snapshot.py
+      - name: Analyze
+        run: python src/analyze.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: modrinth-db
+          path: data/modrinth_tracker.db
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: daily-reports
+          path: reports/
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: snapshot-data
+          path: data/snapshot_date.txt
+          retention-days: 1

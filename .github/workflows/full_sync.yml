@@ -1,0 +1,48 @@
+name: Full Version Sync
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-full-sync]
+
+jobs:
+  full-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Download existing database
+        run: |
+          gh run download --name modrinth-db --dir data/ 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Discover
+        run: python src/discover.py
+      - name: Fetch all projects
+        run: |
+          # Run fetchers for each partition
+          python -c "
+          import json, subprocess
+          d = json.load(open('data/discovery.json'))
+          for p in d['partitions']:
+              subprocess.run(['python', 'src/fetch_projects.py', '--chunk', str(p['index'])])
+          "
+      - name: Fetch all versions
+        run: python src/fetch_versions.py
+      - name: Snapshot and analyze
+        run: |
+          python src/snapshot.py
+          python src/analyze.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: modrinth-db
+          path: data/modrinth_tracker.db
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: daily-reports
+          path: reports/
+          retention-days: 90
