@@ -177,9 +177,13 @@ def main():
     print(f"Found {len(categories)} mod categories")
 
     # For each category, get count
+    # Note: The API response uses "name" as the slug string
     categories_with_counts = []
     for cat in categories:
-        slug = cat["slug"]
+        slug = cat.get("name") or cat.get("slug") or ""
+        if not slug:
+            print(f"  Skipping category with no slug: {cat.get('header', 'unknown')}")
+            continue
         count = fetch_category_count(session, slug)
         categories_with_counts.append((slug, count))
         print(f"  Category '{slug}': {count} projects")
@@ -205,8 +209,9 @@ def main():
     # Save categories data
     categories_data = [
         {
-            "slug": c["slug"],
-            "name": c.get("name", c["slug"]),
+            "slug": c.get("name") or c.get("slug", ""),
+            "name": c.get("name", ""),
+            "header": c.get("header", ""),
             "icon": c.get("icon"),
             "project_type": c.get("project_type", "mod")
         }
