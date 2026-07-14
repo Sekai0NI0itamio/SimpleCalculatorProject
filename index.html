@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modrinth Market Analytics</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --orange: #d29922;
+    --purple: #bc8cff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 24px;
+  }
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 20px; margin-bottom: 16px; color: var(--accent); }
+  h3 { font-size: 16px; margin-bottom: 12px; color: var(--text); }
+
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 12px; }
+  .header .subtitle { color: var(--text-muted); font-size: 14px; }
+  .header .stats { display: flex; gap: 20px; font-size: 14px; }
+  .header .stats span { background: var(--card); padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border); }
+
+  .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px; position: relative;
+  }
+  .card h3 { margin-bottom: 8px; font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .card .value { font-size: 22px; font-weight: 600; }
+  .card .desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .card .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 12px; font-weight: 500; margin-top: 8px;
+  }
+  .tag.green { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag.red { background: rgba(248,81,73,0.15); color: var(--red); }
+  .tag.orange { background: rgba(210,153,34,0.15); color: var(--orange); }
+  .tag.purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+
+  .section { margin-bottom: 40px; }
+  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+
+  table {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+    background: var(--card); border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  th {
+    background: #1c2128; color: var(--text-muted); font-weight: 500;
+    text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border);
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(88,166,255,0.04); }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .positive { color: var(--green); }
+  .negative { color: var(--red); }
+
+  .tabs { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
+  .tab {
+    padding: 8px 16px; border-radius: 6px; cursor: pointer;
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text-muted); font-size: 13px; font-weight: 500;
+  }
+  .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .loading { text-align: center; padding: 80px 0; color: var(--text-muted); }
+  .loading .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .empty { padding: 32px; text-align: center; color: var(--text-muted); background: var(--card); border-radius: 8px; border: 1px solid var(--border); }
+
+  .flex-wrap { display: flex; gap: 24px; flex-wrap: wrap; }
+  .flex-grow { flex: 1; min-width: 300px; }
+
+  .signal-indicator { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <h1>📊 Modrinth Market Analytics</h1>
+      <div class="subtitle">Track categories, opportunities &amp; trends across the Modrinth ecosystem</div>
+    </div>
+    <div class="stats" id="headerStats">
+      <span>Projects: <strong id="totalProjects">—</strong></span>
+      <span>Versions: <strong id="totalVersions">—</strong></span>
+      <span>Updated: <strong id="updatedAt">—</strong></span>
+    </div>
+  </div>
+
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <div>Loading analytics data...</div>
+  </div>
+
+  <div id="dashboard" style="display:none">
+
+    <!-- Executive Summary Cards -->
+    <div class="section">
+      <h2>Executive Summary</h2>
+      <div class="summary-cards" id="summaryCards"></div>
+    </div>
+
+    <!-- Tabbed Analysis -->
+    <div class="section">
+      <div class="tabs" id="tabs">
+        <div class="tab active" data-tab="opportunity">Opportunity Matrix</div>
+        <div class="tab" data-tab="rankings">Category Rankings</div>
+        <div class="tab" data-tab="synergies">Cross-Category Synergies</div>
+        <div class="tab" data-tab="combos">Category+Loader Combos</div>
+        <div class="tab" data-tab="saturation">Market Saturation</div>
+        <div class="tab" data-tab="momentum">Growth Momentum</div>
+        <div class="tab" data-tab="loaders">Loader Market Fit</div>
+        <div class="tab" data-tab="versions">Version Lifecycle</div>
+        <div class="tab" data-tab="gaps">Market Gaps</div>
+        <div class="tab" data-tab="recommendations">Investment Recommendations</div>
+      </div>
+
+      <div id="tab-content-opportunity" class="tab-content active"></div>
+      <div id="tab-content-rankings" class="tab-content"></div>
+      <div id="tab-content-synergies" class="tab-content"></div>
+      <div id="tab-content-combos" class="tab-content"></div>
+      <div id="tab-content-saturation" class="tab-content"></div>
+      <div id="tab-content-momentum" class="tab-content"></div>
+      <div id="tab-content-loaders" class="tab-content"></div>
+      <div id="tab-content-versions" class="tab-content"></div>
+      <div id="tab-content-gaps" class="tab-content"></div>
+      <div id="tab-content-recommendations" class="tab-content"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('reports/latest_analysis.json')
+    .then(r => { if (!r.ok) throw new Error('No data yet'); return r.json(); })
+    .then(renderDashboard)
+    .catch(err => {
+      document.getElementById('loading').innerHTML = `
+        <div style="color: var(--text-muted);">
+          <div style="font-size: 48px; margin-bottom: 16px;">📡</div>
+          <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Waiting for data</div>
+          <div>Run the Daily Modrinth Tracker workflow first.</div>
+          <div style="margin-top: 16px; font-size: 13px;">
+            Go to <strong>Actions</strong> → <strong>Daily Modrinth Tracker</strong> → <strong>Run workflow</strong>
+          </div>
+        </div>`;
+    });
+
+  // Tab switching
+  document.getElementById('tabs').addEventListener('click', e => {
+    const tab = e.target.closest('.tab');
+    if (!tab) return;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+    document.getElementById('tab-content-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+function renderDashboard(data) {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'block';
+
+  document.getElementById('totalProjects').textContent = (data.total_projects || 0).toLocaleString();
+  document.getElementById('totalVersions').textContent = (data.total_versions || 0).toLocaleString();
+  document.getElementById('updatedAt').textContent = data.report_date || '—';
+
+  renderSummaryCards(data);
+  renderOpportunity(data);
+  renderRankings(data);
+  renderSynergies(data);
+  renderCombos(data);
+  renderSaturation(data);
+  renderMomentum(data);
+  renderLoaders(data);
+  renderVersions(data);
+  renderGaps(data);
+  renderRecommendations(data);
+}
+
+function renderSummaryCards(data) {
+  const es = data.executive_summary || {};
+  const container = document.getElementById('summaryCards');
+  const items = [];
+
+  if (es.top_opportunities && es.top_opportunities.length) {
+    const top = es.top_opportunities[0];
+    items.push(`
+      <div class="card">
+        <h3>Top Opportunity</h3>
+        <div class="value">${top.category}</div>
+        <div class="desc">${top.avg_downloads.toLocaleString()} avg downloads — ${top.projects} competitors</div>
+        <div class="tag green">Score: ${top.opportunity_score}</div>
+      </div>
+    `);
+  }
+  if (es.best_bets && es.best_bets.length) {
+    const bet = es.best_bets[0];
+    items.push(`
+      <div class="card">
+        <h3>Best Bet to Build</h3>
+        <div class="value">${bet.category}</div>
+        <div class="desc">For ${bet.loader} — est. ${bet.expected_downloads.toLocaleString()} downloads</div>
+        <div class="tag ${bet.roi === 'High' ? 'green' : bet.roi === 'Low' ? 'red' : 'orange'}">${bet.roi} ROI · ${bet.competition} competition</div>
+      </div>
+    `);
+  }
+  if (es.top_trending && es.top_trending.length) {
+    const t = es.top_trending[0];
+    const cls = t.momentum_pct > 10 ? 'green' : t.momentum_pct > 0 ? 'orange' : 'red';
+    items.push(`
+      <div class="card">
+        <h3>Fastest Growing</h3>
+        <div class="value">${t.category}</div>
+        <div class="desc">${t.momentum_pct}% momentum</div>
+        <div class="tag ${cls}">${t.signal}</div>
+      </div>
+    `);
+  }
+
+  const market = data.market_saturation || {};
+  if (market.underserved && market.underserved.length) {
+    const u = market.underserved[0];
+    items.push(`
+      <div class="card">
+        <h3>Under-Served Niche</h3>
+        <div class="value">${u.category}</div>
+        <div class="desc">${u.avg_downloads.toLocaleString()} avg downloads — ${u.projects} projects</div>
+        <div class="tag purple">Under-Served</div>
+      </div>
+    `);
+  }
+
+  container.innerHTML = items.join('');
+}
+
+function renderTable(containerId, headers, rows, formatters) {
+  const el = document.getElementById(containerId);
+  if (!rows || !rows.length) {
+    el.innerHTML = '<div class="empty">No data available yet. Run the workflow first.</div>';
+    return;
+  }
+  let html = '<table><thead><tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr></thead><tbody>';
+  for (const row of rows) {
+    html += '<tr>';
+    for (let i = 0; i < headers.length; i++) {
+      const val = formatters[i] ? formatters[i](row) : row[headers[i]] ?? '—';
+      html += `<td>${val}</td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderOpportunity(data) {
+  const rows = data.category_opportunity || [];
+  renderTable('tab-content-opportunity', ['Category', 'Projects', 'Avg Downloads', 'New Today', 'Opportunity Score', 'Avg Δ%'], rows, [
+    r => r.category,
+    r => r.projects.toLocaleString(),
+    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
+    r => `<span class="num">${r.new_downloads.toLocaleString()}</span>`,
+    r => `<span class="num"><strong>${r.opportunity_score}</strong></span>`,
+    r => `<span class="num ${r.avg_change_pct >= 0 ? 'positive' : 'negative'}">${r.avg_change_pct >= 0 ? '+' : ''}${r.avg_change_pct}%</span>`,
+  ]);
+}
+
+function renderRankings(data) {
+  const rows = data.category_rankings || [];
+  renderTable('tab-content-rankings', ['#', 'Category', 'Projects', 'Total Downloads', 'Avg Downloads', 'New Today', 'Growth %'], rows, [
+    (r, i) => i + 1,
+    r => r.category,
+    r => r.projects.toLocaleString(),
+    r => `<span class="num">${r.total_downloads.toLocaleString()}</span>`,
+    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
+    r => `<span class="num">${r.new_downloads.toLocaleString()}</span>`,
+    r => `<span class="num ${r.growth_pct >= 0 ? 'positive' : 'negative'}">${r.growth_pct >= 0 ? '+' : ''}${r.growth_pct}%</span>`,
+  ]);
+}
+
+function renderSynergies(data) {
+  const rows = data.cross_category_synergies || [];
+  renderTable('tab-content-synergies', ['Combination', 'Avg Downloads', 'Projects', 'Boost Factor'], rows, [
+    r => r.combination ? r.combination.join(' + ') : '—',
+    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
+    r => r.projects.toLocaleString(),
+    r => `<span class="num"><strong>${r.boost_factor}x</strong></span>`,
+  ]);
+}
+
+function renderCombos(data) {
+  const rows = data.category_loader_combos || [];
+  renderTable('tab-content-combos', ['Category', 'Loader', 'Projects', 'Total Downloads', 'Avg / Project'], rows, [
+    r => r.category,
+    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
+    r => r.projects.toLocaleString(),
+    r => `<span class="num">${r.total_downloads.toLocaleString()}</span>`,
+    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
+  ]);
+}
+
+function renderSaturation(data) {
+  const sat = data.market_saturation || {};
+  const over = sat.oversaturated || [];
+  const under = sat.underserved || [];
+  let html = '<div class="flex-wrap">';
+
+  html += '<div class="flex-grow">';
+  html += '<h3>🔴 Oversaturated (Avoid)</h3>';
+  if (over.length) {
+    html += '<table><thead><tr><th>Category</th><th>Projects</th><th>Avg Downloads</th></tr></thead><tbody>';
+    for (const r of over) html += `<tr><td>${r.category}</td><td class="num">${r.projects.toLocaleString()}</td><td class="num">${r.avg_downloads.toLocaleString()}</td></tr>`;
+    html += '</tbody></table>';
+  } else {
+    html += '<div class="empty">None found</div>';
+  }
+  html += '</div>';
+
+  html += '<div class="flex-grow">';
+  html += '<h3>🟢 Under-Served (Opportunity)</h3>';
+  if (under.length) {
+    html += '<table><thead><tr><th>Category</th><th>Projects</th><th>Avg Downloads</th></tr></thead><tbody>';
+    for (const r of under) html += `<tr><td>${r.category}</td><td class="num">${r.projects.toLocaleString()}</td><td class="num">${r.avg_downloads.toLocaleString()}</td></tr>`;
+    html += '</tbody></table>';
+  } else {
+    html += '<div class="empty">None found</div>';
+  }
+  html += '</div></div>';
+
+  document.getElementById('tab-content-saturation').innerHTML = html;
+}
+
+function renderMomentum(data) {
+  const rows = data.growth_momentum || [];
+  renderTable('tab-content-momentum', ['Category', 'Momentum %', 'Signal', 'Avg Daily New Downloads'], rows, [
+    r => r.category,
+    r => `<span class="num ${r.momentum_pct >= 0 ? 'positive' : 'negative'}">${r.momentum_pct >= 0 ? '+' : ''}${r.momentum_pct}%</span>`,
+    r => r.signal || '—',
+    r => `<span class="num">${(r.avg_daily_new || 0).toLocaleString()}</span>`,
+  ]);
+}
+
+function renderLoaders(data) {
+  const rows = data.loader_market_fit || [];
+  renderTable('tab-content-loaders', ['Loader', 'Projects', 'Market Share', 'Download Share', 'Efficiency'], rows, [
+    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
+    r => r.projects.toLocaleString(),
+    r => `${r.market_share}%`,
+    r => `${r.download_share}%`,
+    r => `<span class="num"><strong>${r.efficiency_ratio}</strong></span>`,
+  ]);
+}
+
+function renderVersions(data) {
+  const rows = data.version_lifecycle || [];
+  renderTable('tab-content-versions', ['Version', 'Stage', 'Projects', 'Total Downloads'], rows, [
+    r => r.version,
+    r => {
+      const colors = { emerging: 'green', peak: 'orange', mature: 'purple', legacy: 'red' };
+      return `<span class="tag ${colors[r.stage] || 'orange'}">${r.stage}</span>`;
+    },
+    r => r.projects.toLocaleString(),
+    r => `<span class="num">${r.total_downloads.toLocaleString()}</span>`,
+  ]);
+}
+
+function renderGaps(data) {
+  const rows = data.market_gaps || [];
+  renderTable('tab-content-gaps', ['Category', 'Loader', 'Current Projects', 'Total in Category', 'Avg Downloads', 'Loader Share', 'Gap Score'], rows, [
+    r => r.category,
+    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
+    r => r.current_projects.toLocaleString(),
+    r => r.total_projects.toLocaleString(),
+    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
+    r => `${r.loader_share}%`,
+    r => `<span class="num"><strong>${r.gap_score}</strong></span>`,
+  ]);
+}
+
+function renderRecommendations(data) {
+  const rows = data.investment_recommendations || [];
+  renderTable('tab-content-recommendations', ['Rank', 'What to Build', 'Loader', 'Expected Downloads', 'Competition', 'Risk', 'ROI', 'Reasoning'], rows, [
+    r => r.rank,
+    r => `<strong>${r.category}</strong>`,
+    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
+    r => `<span class="num">${r.expected_downloads.toLocaleString()}</span>`,
+    r => {
+      const c = { Low: 'green', Medium: 'orange', High: 'red' };
+      return `<span class="tag ${c[r.competition] || 'orange'}">${r.competition}</span>`;
+    },
+    r => `${r.risk_score}/10`,
+    r => {
+      const c = { High: 'green', Medium: 'orange', Low: 'red' };
+      return `<span class="tag ${c[r.roi] || 'orange'}">${r.roi}</span>`;
+    },
+    r => r.reasoning || '—',
+  ]);
+}
+</script>
+</body>
+</html>
