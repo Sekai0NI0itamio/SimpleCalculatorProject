@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """
 Phase 4: Snapshot
-- Reads all project data from chunks
-- Records today's download counts for all projects and versions
-- Calculates daily deltas and category stats
+- Reads all project data from chunks and all version data from the DB
+- Records today's download counts for EVERY project and EVERY version
+- FIRST RUN: marks today as the baseline date (day 0)
+- SUBSEQUENT RUNS: records snapshots, category stats computed by
+  comparing against the baseline
 - Saves to database
 """
 import glob
 import json
 import sys
 
-from utils import load_json, save_json, get_current_date
+from utils import load_json, get_current_date
 from db import Database
 
 
@@ -31,12 +33,6 @@ def get_all_project_data():
     return list(project_map.values())
 
 
-def get_all_version_data():
-    """Read all version data from the database."""
-    # We'll read from DB directly in the main flow
-    pass
-
-
 def main():
     print("=== Phase 4: Snapshot ===")
 
@@ -54,7 +50,18 @@ def main():
     # Open database
     db = Database("data/modrinth_tracker.db")
 
-    # Record project snapshots
+    # ── Baseline tracking ─────────────────────────────────────────
+    baseline_date = db.get_baseline_date()
+    is_first_run = baseline_date is None
+
+    if is_first_run:
+        print(f"FIRST RUN — setting baseline date to {today}")
+        db.set_baseline_date(today)
+        baseline_date = today
+    else:
+        print(f"Baseline date: {baseline_date}")
+
+    # ── Record project snapshots ──────────────────────────────────
     project_count = 0
     for project in projects:
         project_id = project["project_id"]
@@ -67,8 +74,7 @@ def main():
 
     print(f"Recorded snapshots for {project_count} projects")
 
-    # Record version snapshots
-    # Get all versions from database
+    # ── Record version snapshots ──────────────────────────────────
     cursor = db.conn.execute("SELECT id, project_id, downloads FROM versions")
     versions = cursor.fetchall()
     version_count = 0
@@ -80,7 +86,10 @@ def main():
 
     print(f"Recorded snapshots for {version_count} versions")
 
-    # Calculate category stats
+    # ── Calculate category stats (deltas from baseline) ───────────
+    baseline_cat_stats = db.get_baseline_category_stats()
+    baseline_project_snaps = db.get_baseline_project_snapshots()
+
     # Group projects by category
     category_projects = {}
     for project in projects:
@@ -94,28 +103,22 @@ def main():
                 category_projects[cat] = []
             category_projects[cat].append(project)
 
-    # Get yesterday's category stats for comparison
-    yesterday_cursor = db.conn.execute(
-        "SELECT category, total_downloads FROM daily_category_stats WHERE date < ? ORDER BY date DESC LIMIT 100",
-        (today,)
-    )
-    yesterday_stats = {}
-    for row in yesterday_cursor.fetchall():
-        if row["category"] not in yesterday_stats:
-            yesterday_stats[row["category"]] = row["total_downloads"]
-
     # Calculate and record category stats
     for cat, cat_projects in category_projects.items():
         total_downloads = sum(p.get("downloads", 0) for p in cat_projects)
-        project_count = len(cat_projects)
-        avg_downloads = total_downloads / project_count if project_count > 0 else 0.0
+        project_count_cat = len(cat_projects)
+        avg_downloads = total_downloads / project_count_cat if project_count_cat > 0 else 0.0
 
-        # Calculate new downloads compared to yesterday
-        yesterday_downloads = yesterday_stats.get(cat, 0)
-        new_downloads = max(0, total_downloads - yesterday_downloads)
+        if is_first_run:
+            # On first run, new_downloads = total_downloads (baseline)
+            new_downloads = total_downloads
+        else:
+            # On subsequent runs, new_downloads = delta from baseline
+            baseline_total = baseline_cat_stats.get(cat, {}).get("total_downloads", 0)
+            new_downloads = max(0, total_downloads - baseline_total)
 
         db.record_category_stats(
-            cat, today, total_downloads, project_count, avg_downloads, new_downloads
+            cat, today, total_downloads, project_count_cat, avg_downloads, new_downloads
         )
 
     print(f"Recorded stats for {len(category_projects)} categories")

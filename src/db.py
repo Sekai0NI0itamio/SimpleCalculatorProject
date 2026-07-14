@@ -79,8 +79,33 @@ class Database:
                 total_new_downloads INTEGER DEFAULT 0,
                 UNIQUE(category, date)
             );
+
+            CREATE TABLE IF NOT EXISTS metadata (
+                key TEXT PRIMARY KEY,
+                value TEXT NOT NULL
+            );
         """)
         self.conn.commit()
+
+    # ── Baseline tracking ──────────────────────────────────────────
+
+    def get_baseline_date(self) -> str | None:
+        """Get the baseline date from metadata, or None if not set."""
+        cursor = self.conn.execute(
+            "SELECT value FROM metadata WHERE key = 'baseline_date'"
+        )
+        row = cursor.fetchone()
+        return row["value"] if row else None
+
+    def set_baseline_date(self, date: str):
+        """Set the baseline date in metadata."""
+        self.conn.execute(
+            "INSERT OR REPLACE INTO metadata (key, value) VALUES ('baseline_date', ?)",
+            (date,),
+        )
+        self.conn.commit()
+
+    # ── Project CRUD ──────────────────────────────────────────────
 
     def upsert_project(self, data: dict):
         """Insert or update a project record."""
@@ -155,6 +180,8 @@ class Database:
         ))
         self.conn.commit()
 
+    # ── Daily snapshots ───────────────────────────────────────────
+
     def record_project_snapshot(self, project_id, date, downloads, follows):
         """Record a daily snapshot for a project."""
         self.conn.execute("""
@@ -189,7 +216,63 @@ class Database:
         """, (category, date, total_downloads, project_count, avg_downloads, new_downloads))
         self.conn.commit()
 
-    def get_project(self, project_id) -> dict:
+    # ── Baseline delta queries ────────────────────────────────────
+
+    def get_baseline_project_snapshots(self) -> dict[str, int]:
+        """Get the baseline download counts for all projects.
+        Returns dict of {project_id: downloads_at_baseline}."""
+        baseline = self.get_baseline_date()
+        if not baseline:
+            return {}
+        cursor = self.conn.execute(
+            "SELECT project_id, downloads FROM daily_project_snapshots WHERE date = ?",
+            (baseline,),
+        )
+        return {row["project_id"]: row["downloads"] for row in cursor.fetchall()}
+
+    def get_baseline_version_snapshots(self) -> dict[str, int]:
+        """Get the baseline download counts for all versions.
+        Returns dict of {version_id: downloads_at_baseline}."""
+        baseline = self.get_baseline_date()
+        if not baseline:
+            return {}
+        cursor = self.conn.execute(
+            "SELECT version_id, downloads FROM daily_version_snapshots WHERE date = ?",
+            (baseline,),
+        )
+        return {row["version_id"]: row["downloads"] for row in cursor.fetchall()}
+
+    def get_baseline_category_stats(self) -> dict[str, dict]:
+        """Get the baseline category stats.
+        Returns dict of {category: {total_downloads, project_count, avg_downloads}}."""
+        baseline = self.get_baseline_date()
+        if not baseline:
+            return {}
+        cursor = self.conn.execute(
+            "SELECT * FROM daily_category_stats WHERE date = ?",
+            (baseline,),
+        )
+        return {row["category"]: dict(row) for row in cursor.fetchall()}
+
+    def get_latest_project_snapshots(self, date: str) -> dict[str, int]:
+        """Get the latest download counts for all projects on a given date."""
+        cursor = self.conn.execute(
+            "SELECT project_id, downloads FROM daily_project_snapshots WHERE date = ?",
+            (date,),
+        )
+        return {row["project_id"]: row["downloads"] for row in cursor.fetchall()}
+
+    def get_latest_version_snapshots(self, date: str) -> dict[str, int]:
+        """Get the latest download counts for all versions on a given date."""
+        cursor = self.conn.execute(
+            "SELECT version_id, downloads FROM daily_version_snapshots WHERE date = ?",
+            (date,),
+        )
+        return {row["version_id"]: row["downloads"] for row in cursor.fetchall()}
+
+    # ── Query helpers ─────────────────────────────────────────────
+
+    def get_project(self, project_id) -> dict | None:
         """Get a project by ID, returns dict or None."""
         cursor = self.conn.execute("SELECT * FROM projects WHERE project_id = ?", (project_id,))
         row = cursor.fetchone()

@@ -2,10 +2,7 @@ name: Daily Modrinth Tracker
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight UTC
-  workflow_dispatch:
-  repository_dispatch:
-    types: [trigger-tracker]
+    - cron: '0 16 * * *'  # 16:00 UTC = 00:00 Beijing (UTC+8)
 
 permissions:
   contents: write
@@ -133,7 +130,8 @@ jobs:
 
   # ──────────────────────────────────────────────────────────
   # PHASE 3c: Merge Versions — merge all version chunk results
-  #           into the SQLite database.
+  #           into the SQLite database, preserving history from
+  #           the previous run's database artifact.
   # ──────────────────────────────────────────────────────────
   merge-versions:
     needs: [fetch-versions]
@@ -149,17 +147,24 @@ jobs:
           pattern: version-results-*
           merge-multiple: true
           path: data/version_results/
+      # Download the previous run's database so history is preserved
+      - name: Download existing database
+        run: |
+          gh run download --name modrinth-db --dir data/ --repo ${{ github.repository }} 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Merge version chunks into database
         run: python src/fetch_versions.py --merge
       - uses: actions/upload-artifact@v4
         with:
-          name: version-data
-          path: data/version_summary.json
+          name: merged-db
+          path: data/modrinth_tracker.db
           retention-days: 1
 
   # ──────────────────────────────────────────────────────────
   # PHASE 4+5: Snapshot & Analyze — record daily download
-  #            counts and generate category-based reports.
+  #            counts for EVERY project and EVERY version,
+  #            then generate baseline-based analysis reports.
   # ──────────────────────────────────────────────────────────
   snapshot-and-analyze:
     needs: [merge-versions]
@@ -179,21 +184,15 @@ jobs:
           pattern: projects-chunk-*
           merge-multiple: true
           path: data/chunks/
+      # Download the merged database from the current run
       - uses: actions/download-artifact@v4
         with:
-          name: version-data
+          name: merged-db
           path: data/
-      - name: Download existing database
-        run: |
-          gh run download --name modrinth-db --dir data/ --repo ${{ github.repository }} 2>/dev/null || true
-        env:
-          GH_TOKEN: ${{ github.token }}
       - name: Snapshot
         run: python src/snapshot.py
       - name: Analyze
         run: python src/analyze.py
-      - name: Market Analytics
-        run: python src/analytics.py
       - name: Commit reports to repository
         run: |
           git config user.name "Modrinth Tracker Bot"
