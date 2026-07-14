@@ -1,1066 +1,537 @@
 {
   "report_date": "2026-07-14",
-  "fetched_at": "2026-07-14T11:26:40.700306+00:00",
-  "total_projects": 45199,
-  "total_versions": 0,
-  "executive_summary": {
-    "top_opportunities": [
-      {
-        "category": "rift",
-        "avg_downloads": 3240601.125,
-        "projects": 16,
-        "opportunity_score": 1861236.6
-      },
-      {
-        "category": "liteloader",
-        "avg_downloads": 2808481.090909091,
-        "projects": 11,
-        "opportunity_score": 1738573.1
-      },
-      {
-        "category": "waterfall",
-        "avg_downloads": 1829403.5294117648,
-        "projects": 34,
-        "opportunity_score": 903678.0
-      },
-      {
-        "category": "bungeecord",
-        "avg_downloads": 1293663.1176470588,
-        "projects": 51,
-        "opportunity_score": 589260.3
-      },
-      {
-        "category": "modloader",
-        "avg_downloads": 988490.5324675324,
-        "projects": 77,
-        "opportunity_score": 414643.0
-      }
-    ],
-    "top_trending": [],
-    "best_bets": [
-      {
-        "category": "modloader",
-        "loader": "quilt",
-        "expected_downloads": 494245,
-        "roi": "Medium",
-        "competition": "Low"
-      },
-      {
-        "category": "modloader",
-        "loader": "neoforge",
-        "expected_downloads": 494245,
-        "roi": "Medium",
-        "competition": "Low"
-      },
-      {
-        "category": "bta-babric",
-        "loader": "forge",
-        "expected_downloads": 13264,
-        "roi": "Medium",
-        "competition": "Low"
-      },
-      {
-        "category": "bta-babric",
-        "loader": "quilt",
-        "expected_downloads": 13264,
-        "roi": "Medium",
-        "competition": "Low"
-      },
-      {
-        "category": "bta-babric",
-        "loader": "neoforge",
-        "expected_downloads": 13264,
-        "roi": "Medium",
-        "competition": "Low"
-      }
-    ]
-  },
-  "category_opportunity": [
-    {
-      "category": "rift",
-      "projects": 16,
-      "total_downloads": 51849618,
-      "avg_downloads": 3240601.125,
-      "new_downloads": 51849618,
-      "opportunity_score": 1861236.6,
-      "avg_change_pct": 324060112.5
-    },
-    {
-      "category": "liteloader",
-      "projects": 11,
-      "total_downloads": 30893292,
-      "avg_downloads": 2808481.090909091,
-      "new_downloads": 30893292,
-      "opportunity_score": 1738573.1,
-      "avg_change_pct": 280848109.1
-    },
-    {
-      "category": "waterfall",
-      "projects": 34,
-      "total_downloads": 62199720,
-      "avg_downloads": 1829403.5294117648,
-      "new_downloads": 62199720,
-      "opportunity_score": 903678.0,
-      "avg_change_pct": 182940352.9
-    },
-    {
-      "category": "bungeecord",
-      "projects": 51,
-      "total_downloads": 65976819,
-      "avg_downloads": 1293663.1176470588,
-      "new_downloads": 65976819,
-      "opportunity_score": 589260.3,
-      "avg_change_pct": 129366311.8
-    },
-    {
-      "category": "modloader",
-      "projects": 77,
-      "total_downloads": 76113771,
-      "avg_downloads": 988490.5324675324,
-      "new_downloads": 76113771,
-      "opportunity_score": 414643.0,
-      "avg_change_pct": 98849053.2
-    },
-    {
-      "category": "babric",
-      "projects": 139,
-      "total_downloads": 139960430,
-      "avg_downloads": 1006909.5683453238,
-      "new_downloads": 139960430,
-      "opportunity_score": 375307.7,
-      "avg_change_pct": 100690956.8
-    },
-    {
-      "category": "velocity",
-      "projects": 76,
-      "total_downloads": 66462367,
-      "avg_downloads": 874504.8289473684,
-      "new_downloads": 66462367,
-      "opportunity_score": 367789.6,
-      "avg_change_pct": 87450482.9
-    },
-    {
-      "category": "folia",
-      "projects": 175,
-      "total_downloads": 166839673,
-      "avg_downloads": 953369.56,
-      "new_downloads": 166839673,
-      "opportunity_score": 339354.5,
-      "avg_change_pct": 95336956.0
-    },
-    {
-      "category": "ornithe",
-      "projects": 64,
-      "total_downloads": 48757995,
-      "avg_downloads": 761843.671875,
-      "new_downloads": 48757995,
-      "opportunity_score": 331611.7,
-      "avg_change_pct": 76184367.2
-    },
-    {
-      "category": "bukkit",
-      "projects": 274,
-      "total_downloads": 188368136,
-      "avg_downloads": 687474.9489051095,
-      "new_downloads": 188368136,
-      "opportunity_score": 223721.0,
-      "avg_change_pct": 68747494.9
-    },
-    {
-      "category": "library",
-      "projects": 3258,
-      "total_downloads": 3002369373,
-      "avg_downloads": 921537.5607734807,
-      "new_downloads": 3002369373,
-      "opportunity_score": 182777.5,
-      "avg_change_pct": 92153756.1
-    },
-    {
-      "category": "sponge",
-      "projects": 44,
-      "total_downloads": 16730496,
-      "avg_downloads": 380238.54545454547,
-      "new_downloads": 16730496,
-      "opportunity_score": 178388.0,
-      "avg_change_pct": 38023854.5
-    },
-    {
-      "category": "purpur",
-      "projects": 299,
-      "total_downloads": 157493026,
-      "avg_downloads": 526732.5284280936,
-      "new_downloads": 157493026,
-      "opportunity_score": 168444.1,
-      "avg_change_pct": 52673252.8
-    },
-    {
-      "category": "spigot",
-      "projects": 325,
-      "total_downloads": 164953577,
-      "avg_downloads": 507549.4676923077,
-      "new_downloads": 164953577,
-      "opportunity_score": 159625.3,
-      "avg_change_pct": 50754946.8
-    },
-    {
-      "category": "optimization",
-      "projects": 3321,
-      "total_downloads": 2229124090,
-      "avg_downloads": 671220.743751882,
-      "new_downloads": 2229124090,
-      "opportunity_score": 132620.8,
-      "avg_change_pct": 67122074.4
-    },
-    {
-      "category": "paper",
-      "projects": 440,
-      "total_downloads": 195649711,
-      "avg_downloads": 444658.4340909091,
-      "new_downloads": 195649711,
-      "opportunity_score": 131624.3,
-      "avg_change_pct": 44465843.4
-    },
-    {
-      "category": "quilt",
-      "projects": 6680,
-      "total_downloads": 4556967103,
-      "avg_downloads": 682180.7040419162,
-      "new_downloads": 4556967103,
-      "opportunity_score": 117204.5,
-      "avg_change_pct": 68218070.4
-    },
-    {
-      "category": "legacy-fabric",
-      "projects": 95,
-      "total_downloads": 21406474,
-      "avg_downloads": 225331.3052631579,
-      "new_downloads": 21406474,
-      "opportunity_score": 90631.0,
-      "avg_change_pct": 22533130.5
-    },
-    {
-      "category": "java-agent",
-      "projects": 28,
-      "total_downloads": 4478837,
-      "avg_downloads": 159958.4642857143,
-      "new_downloads": 4478837,
-      "opportunity_score": 82144.0,
-      "avg_change_pct": 15995846.4
-    },
-    {
-      "category": "neoforge",
-      "projects": 17316,
-      "total_downloads": 7919951889,
-      "avg_downloads": 457377.678967429,
-      "new_downloads": 7919951889,
-      "opportunity_score": 64950.9,
-      "avg_change_pct": 45737767.9
-    },
-    {
-      "category": "forge",
-      "projects": 22151,
-      "total_downloads": 7533147775,
-      "avg_downloads": 340081.61143966415,
-      "new_downloads": 7533147775,
-      "opportunity_score": 45973.2,
-      "avg_change_pct": 34008161.1
-    },
-    {
-      "category": "fabric",
-      "projects": 26330,
-      "total_downloads": 8778404192,
-      "avg_downloads": 333399.32366122294,
-      "new_downloads": 8778404192,
-      "opportunity_score": 43538.6,
-      "avg_change_pct": 33339932.4
-    },
-    {
-      "category": "decoration",
-      "projects": 6946,
-      "total_downloads": 1753221171,
-      "avg_downloads": 252407.3093866974,
-      "new_downloads": 1753221171,
-      "opportunity_score": 43028.4,
-      "avg_change_pct": 25240730.9
-    },
-    {
-      "category": "worldgen",
-      "projects": 7700,
-      "total_downloads": 1732028456,
-      "avg_downloads": 224938.7605194805,
-      "new_downloads": 1732028456,
-      "opportunity_score": 37563.5,
-      "avg_change_pct": 22493876.1
-    },
-    {
-      "category": "storage",
-      "projects": 3583,
-      "total_downloads": 651961928,
-      "avg_downloads": 181959.79012001117,
-      "new_downloads": 651961928,
-      "opportunity_score": 35410.0,
-      "avg_change_pct": 18195979.0
-    }
-  ],
+  "baseline_date": "2026-07-14",
+  "total_projects": 45249,
+  "total_versions": 617448,
   "category_rankings": [
     {
       "category": "fabric",
-      "projects": 26330,
-      "total_downloads": 8778404192,
-      "avg_downloads": 333399.32366122294,
-      "new_downloads": 8778404192,
-      "growth_pct": 877840419200.0
+      "projects": 26361,
+      "total_downloads": 8791243575,
+      "avg_downloads": 333494.3126209173,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "neoforge",
-      "projects": 17316,
-      "total_downloads": 7919951889,
-      "avg_downloads": 457377.678967429,
-      "new_downloads": 7919951889,
-      "growth_pct": 791995188900.0
+      "projects": 17347,
+      "total_downloads": 7932028780,
+      "avg_downloads": 457256.5158240618,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "forge",
-      "projects": 22151,
-      "total_downloads": 7533147775,
-      "avg_downloads": 340081.61143966415,
-      "new_downloads": 7533147775,
-      "growth_pct": 753314777500.0
+      "projects": 22171,
+      "total_downloads": 7543751967,
+      "avg_downloads": 340253.1219611204,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "quilt",
-      "projects": 6680,
-      "total_downloads": 4556967103,
-      "avg_downloads": 682180.7040419162,
-      "new_downloads": 4556967103,
-      "growth_pct": 455696710300.0
+      "projects": 6683,
+      "total_downloads": 4563180506,
+      "avg_downloads": 682804.2055962891,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "utility",
-      "projects": 20211,
-      "total_downloads": 4416036574,
-      "avg_downloads": 218496.68863490177,
-      "new_downloads": 4416036574,
-      "growth_pct": 441603657400.0
+      "projects": 20237,
+      "total_downloads": 4423125402,
+      "avg_downloads": 218566.2599199486,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "library",
-      "projects": 3258,
-      "total_downloads": 3002369373,
-      "avg_downloads": 921537.5607734807,
-      "new_downloads": 3002369373,
-      "growth_pct": 300236937300.0
+      "projects": 3260,
+      "total_downloads": 3006573105,
+      "avg_downloads": 922261.6886503068,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "optimization",
-      "projects": 3321,
-      "total_downloads": 2229124090,
-      "avg_downloads": 671220.743751882,
-      "new_downloads": 2229124090,
-      "growth_pct": 222912409000.0
+      "projects": 3323,
+      "total_downloads": 2232406986,
+      "avg_downloads": 671804.6903400542,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "adventure",
-      "projects": 13472,
-      "total_downloads": 2222425338,
-      "avg_downloads": 164966.25133610453,
-      "new_downloads": 2222425338,
-      "growth_pct": 222242533800.0
+      "projects": 13482,
+      "total_downloads": 2225463066,
+      "avg_downloads": 165069.2082777036,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "decoration",
-      "projects": 6946,
-      "total_downloads": 1753221171,
-      "avg_downloads": 252407.3093866974,
-      "new_downloads": 1753221171,
-      "growth_pct": 175322117100.0
+      "projects": 6951,
+      "total_downloads": 1755765742,
+      "avg_downloads": 252591.82016975974,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "worldgen",
-      "projects": 7700,
-      "total_downloads": 1732028456,
-      "avg_downloads": 224938.7605194805,
-      "new_downloads": 1732028456,
-      "growth_pct": 173202845600.0
+      "projects": 7707,
+      "total_downloads": 1734370900,
+      "avg_downloads": 225038.39366809395,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "game-mechanics",
-      "projects": 18601,
-      "total_downloads": 1535401311,
-      "avg_downloads": 82544.01973012203,
-      "new_downloads": 1535401311,
-      "growth_pct": 153540131100.0
+      "projects": 18627,
+      "total_downloads": 1538382508,
+      "avg_downloads": 82588.84994899876,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "mobs",
-      "projects": 9964,
-      "total_downloads": 1117368300,
-      "avg_downloads": 112140.53592934564,
-      "new_downloads": 1117368300,
-      "growth_pct": 111736830000.0
+      "projects": 9971,
+      "total_downloads": 1119638414,
+      "avg_downloads": 112289.48089459432,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "equipment",
-      "projects": 10847,
-      "total_downloads": 1091479306,
-      "avg_downloads": 100624.99363879414,
-      "new_downloads": 1091479306,
-      "growth_pct": 109147930600.0
+      "projects": 10857,
+      "total_downloads": 1093032256,
+      "avg_downloads": 100675.34825458229,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "management",
-      "projects": 6818,
-      "total_downloads": 881525124,
-      "avg_downloads": 129293.79935464945,
-      "new_downloads": 881525124,
-      "growth_pct": 88152512400.0
+      "projects": 6826,
+      "total_downloads": 882947425,
+      "avg_downloads": 129350.63360679754,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "food",
-      "projects": 5661,
-      "total_downloads": 698096113,
-      "avg_downloads": 123316.74845433669,
-      "new_downloads": 698096113,
-      "growth_pct": 69809611300.0
+      "projects": 5663,
+      "total_downloads": 699061842,
+      "avg_downloads": 123443.729825181,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "storage",
-      "projects": 3583,
-      "total_downloads": 651961928,
-      "avg_downloads": 181959.79012001117,
-      "new_downloads": 651961928,
-      "growth_pct": 65196192800.0
+      "projects": 3584,
+      "total_downloads": 652868567,
+      "avg_downloads": 182161.98856026787,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "technology",
-      "projects": 7412,
-      "total_downloads": 643618008,
-      "avg_downloads": 86834.5936319482,
-      "new_downloads": 643618008,
-      "growth_pct": 64361800800.0
+      "projects": 7422,
+      "total_downloads": 644627446,
+      "avg_downloads": 86853.60361088655,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "social",
-      "projects": 4604,
-      "total_downloads": 578974874,
-      "avg_downloads": 125754.75108601217,
-      "new_downloads": 578974874,
-      "growth_pct": 57897487400.0
+      "projects": 4606,
+      "total_downloads": 579820040,
+      "avg_downloads": 125883.63873208858,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "transportation",
-      "projects": 3403,
-      "total_downloads": 575330170,
-      "avg_downloads": 169065.58037026154,
-      "new_downloads": 575330170,
-      "growth_pct": 57533017000.0
+      "projects": 3410,
+      "total_downloads": 576175304,
+      "avg_downloads": 168966.36480938416,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "magic",
-      "projects": 6452,
-      "total_downloads": 470225233,
-      "avg_downloads": 72880.53828270304,
-      "new_downloads": 470225233,
-      "growth_pct": 47022523300.0
+      "projects": 6463,
+      "total_downloads": 470867622,
+      "avg_downloads": 72855.89076280365,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "cursed",
-      "projects": 6805,
-      "total_downloads": 448072626,
-      "avg_downloads": 65844.6180749449,
-      "new_downloads": 448072626,
-      "growth_pct": 44807262600.0
+      "projects": 6822,
+      "total_downloads": 448779431,
+      "avg_downloads": 65784.14409264145,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "datapack",
-      "projects": 3838,
-      "total_downloads": 412212872,
-      "avg_downloads": 107403.04116727463,
-      "new_downloads": 412212872,
-      "growth_pct": 41221287200.0
+      "projects": 3843,
+      "total_downloads": 412808069,
+      "avg_downloads": 107418.1808482956,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "paper",
       "projects": 440,
-      "total_downloads": 195649711,
-      "avg_downloads": 444658.4340909091,
-      "new_downloads": 195649711,
-      "growth_pct": 19564971100.0
+      "total_downloads": 195973834,
+      "avg_downloads": 445395.07727272727,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "bukkit",
       "projects": 274,
-      "total_downloads": 188368136,
-      "avg_downloads": 687474.9489051095,
-      "new_downloads": 188368136,
-      "growth_pct": 18836813600.0
+      "total_downloads": 188673871,
+      "avg_downloads": 688590.7700729927,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "folia",
-      "projects": 175,
-      "total_downloads": 166839673,
-      "avg_downloads": 953369.56,
-      "new_downloads": 166839673,
-      "growth_pct": 16683967300.0
+      "projects": 176,
+      "total_downloads": 167126213,
+      "avg_downloads": 949580.7556818182,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "spigot",
       "projects": 325,
-      "total_downloads": 164953577,
-      "avg_downloads": 507549.4676923077,
-      "new_downloads": 164953577,
-      "growth_pct": 16495357700.0
+      "total_downloads": 165227359,
+      "avg_downloads": 508391.87384615385,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "purpur",
       "projects": 299,
-      "total_downloads": 157493026,
-      "avg_downloads": 526732.5284280936,
-      "new_downloads": 157493026,
-      "growth_pct": 15749302600.0
+      "total_downloads": 157756956,
+      "avg_downloads": 527615.237458194,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "babric",
       "projects": 139,
-      "total_downloads": 139960430,
-      "avg_downloads": 1006909.5683453238,
-      "new_downloads": 139960430,
-      "growth_pct": 13996043000.0
+      "total_downloads": 140192656,
+      "avg_downloads": 1008580.2589928057,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "economy",
-      "projects": 1840,
-      "total_downloads": 104760316,
-      "avg_downloads": 56934.95434782609,
-      "new_downloads": 104760316,
-      "growth_pct": 10476031600.0
+      "projects": 1841,
+      "total_downloads": 104913846,
+      "avg_downloads": 56987.423139598046,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "modloader",
       "projects": 77,
-      "total_downloads": 76113771,
-      "avg_downloads": 988490.5324675324,
-      "new_downloads": 76113771,
-      "growth_pct": 7611377100.0
+      "total_downloads": 76224733,
+      "avg_downloads": 989931.5974025974,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "velocity",
       "projects": 76,
-      "total_downloads": 66462367,
-      "avg_downloads": 874504.8289473684,
-      "new_downloads": 66462367,
-      "growth_pct": 6646236700.0
+      "total_downloads": 66553192,
+      "avg_downloads": 875699.8947368421,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "bungeecord",
       "projects": 51,
-      "total_downloads": 65976819,
-      "avg_downloads": 1293663.1176470588,
-      "new_downloads": 65976819,
-      "growth_pct": 6597681900.0
+      "total_downloads": 66066892,
+      "avg_downloads": 1295429.2549019607,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "waterfall",
       "projects": 34,
-      "total_downloads": 62199720,
-      "avg_downloads": 1829403.5294117648,
-      "new_downloads": 62199720,
-      "growth_pct": 6219972000.0
+      "total_downloads": 62287126,
+      "avg_downloads": 1831974.294117647,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "minigame",
       "projects": 1839,
-      "total_downloads": 62160958,
-      "avg_downloads": 33801.49972811311,
-      "new_downloads": 62160958,
-      "growth_pct": 6216095800.0
+      "total_downloads": 62248666,
+      "avg_downloads": 33849.193039695485,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "rift",
       "projects": 16,
-      "total_downloads": 51849618,
-      "avg_downloads": 3240601.125,
-      "new_downloads": 51849618,
-      "growth_pct": 5184961800.0
+      "total_downloads": 51933032,
+      "avg_downloads": 3245814.5,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "ornithe",
       "projects": 64,
-      "total_downloads": 48757995,
-      "avg_downloads": 761843.671875,
-      "new_downloads": 48757995,
-      "growth_pct": 4875799500.0
+      "total_downloads": 48839412,
+      "avg_downloads": 763115.8125,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "liteloader",
       "projects": 11,
-      "total_downloads": 30893292,
-      "avg_downloads": 2808481.090909091,
-      "new_downloads": 30893292,
-      "growth_pct": 3089329200.0
+      "total_downloads": 30948946,
+      "avg_downloads": 2813540.5454545454,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "legacy-fabric",
       "projects": 95,
-      "total_downloads": 21406474,
-      "avg_downloads": 225331.3052631579,
-      "new_downloads": 21406474,
-      "growth_pct": 2140647400.0
+      "total_downloads": 21461068,
+      "avg_downloads": 225905.97894736842,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "sponge",
       "projects": 44,
-      "total_downloads": 16730496,
-      "avg_downloads": 380238.54545454547,
-      "new_downloads": 16730496,
-      "growth_pct": 1673049600.0
+      "total_downloads": 16753183,
+      "avg_downloads": 380754.1590909091,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "geyser",
       "projects": 2,
-      "total_downloads": 6476382,
-      "avg_downloads": 3238191.0,
-      "new_downloads": 6476382,
-      "growth_pct": 647638200.0
+      "total_downloads": 6483195,
+      "avg_downloads": 3241597.5,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "minecraft",
       "projects": 76,
-      "total_downloads": 6291587,
-      "avg_downloads": 82784.03947368421,
-      "new_downloads": 6291587,
-      "growth_pct": 629158700.0
+      "total_downloads": 6304703,
+      "avg_downloads": 82956.61842105263,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "java-agent",
       "projects": 28,
-      "total_downloads": 4478837,
-      "avg_downloads": 159958.4642857143,
-      "new_downloads": 4478837,
-      "growth_pct": 447883700.0
+      "total_downloads": 4483390,
+      "avg_downloads": 160121.07142857142,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "bta-babric",
       "projects": 105,
-      "total_downloads": 2785632,
-      "avg_downloads": 26529.82857142857,
-      "new_downloads": 2785632,
-      "growth_pct": 278563200.0
+      "total_downloads": 2788372,
+      "avg_downloads": 26555.92380952381,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "nilloader",
       "projects": 10,
-      "total_downloads": 106227,
-      "avg_downloads": 10622.7,
-      "new_downloads": 106227,
-      "growth_pct": 10622700.0
+      "total_downloads": 106425,
+      "avg_downloads": 10642.5,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "iris",
       "projects": 1,
-      "total_downloads": 11030,
-      "avg_downloads": 11030.0,
-      "new_downloads": 11030,
-      "growth_pct": 1103000.0
+      "total_downloads": 11084,
+      "avg_downloads": 11084.0,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "optifine",
       "projects": 1,
-      "total_downloads": 11030,
-      "avg_downloads": 11030.0,
-      "new_downloads": 11030,
-      "growth_pct": 1103000.0
+      "total_downloads": 11084,
+      "avg_downloads": 11084.0,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "multiplayer",
       "projects": 2,
-      "total_downloads": 5072,
-      "avg_downloads": 2536.0,
-      "new_downloads": 5072,
-      "growth_pct": 507200.0
+      "total_downloads": 5088,
+      "avg_downloads": 2544.0,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "lightweight",
       "projects": 1,
-      "total_downloads": 3068,
-      "avg_downloads": 3068.0,
-      "new_downloads": 3068,
-      "growth_pct": 306800.0
+      "total_downloads": 3080,
+      "avg_downloads": 3080.0,
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "16x",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "blocks",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "entities",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "environment",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "gui",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "items",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "tweaks",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     },
     {
       "category": "vanilla-like",
       "projects": 1,
       "total_downloads": 892,
       "avg_downloads": 892.0,
-      "new_downloads": 892,
-      "growth_pct": 89200.0
+      "new_downloads": 0,
+      "growth_pct": 0.0
     }
   ],
-  "cross_category_synergies": [
+  "loader_rankings": [],
+  "top_projects": [],
+  "top_version_loaders": [],
+  "recommendations": [
     {
-      "combination": [
-        "datapack",
-        "equipment"
-      ],
-      "avg_downloads": 17896209,
-      "projects": 5,
-      "boost_factor": 3.4
+      "category": "fabric",
+      "suggested_loader": "fabric",
+      "opportunity_score": 45.3,
+      "reasoning": "Fabric has +0 new downloads (+0.0%) since baseline with 26361 projects. Best loader: fabric.",
+      "expected_downloads": 333494
     },
     {
-      "combination": [
-        "decoration",
-        "optimization"
-      ],
-      "avg_downloads": 22755066,
-      "projects": 10,
-      "boost_factor": 2.1
+      "category": "neoforge",
+      "suggested_loader": "fabric",
+      "opportunity_score": 69.6,
+      "reasoning": "Neoforge has +0 new downloads (+0.0%) since baseline with 17347 projects. Best loader: fabric.",
+      "expected_downloads": 457256
     },
     {
-      "combination": [
-        "cursed",
-        "optimization"
-      ],
-      "avg_downloads": 24386430,
-      "projects": 5,
-      "boost_factor": 2.1
+      "category": "forge",
+      "suggested_loader": "fabric",
+      "opportunity_score": 50.0,
+      "reasoning": "Forge has +0 new downloads (+0.0%) since baseline with 22171 projects. Best loader: fabric.",
+      "expected_downloads": 340253
     },
     {
-      "combination": [
-        "datapack",
-        "game-mechanics"
-      ],
-      "avg_downloads": 10342658,
-      "projects": 10,
-      "boost_factor": 2.0
+      "category": "quilt",
+      "suggested_loader": "fabric",
+      "opportunity_score": 148.4,
+      "reasoning": "Quilt has +0 new downloads (+0.0%) since baseline with 6683 projects. Best loader: fabric.",
+      "expected_downloads": 682804
     },
     {
-      "combination": [
-        "bukkit",
-        "utility"
-      ],
-      "avg_downloads": 21253839,
-      "projects": 7,
-      "boost_factor": 1.7
+      "category": "utility",
+      "suggested_loader": "fabric",
+      "opportunity_score": 38.4,
+      "reasoning": "Utility has +0 new downloads (+0.0%) since baseline with 20237 projects. Best loader: fabric.",
+      "expected_downloads": 218566
     },
     {
-      "combination": [
-        "cursed",
-        "equipment"
-      ],
-      "avg_downloads": 10570602,
-      "projects": 7,
-      "boost_factor": 1.7
+      "category": "library",
+      "suggested_loader": "fabric",
+      "opportunity_score": 262.3,
+      "reasoning": "Library has +0 new downloads (+0.0%) since baseline with 3260 projects. Best loader: fabric.",
+      "expected_downloads": 922261
     },
     {
-      "combination": [
-        "library",
-        "management"
-      ],
-      "avg_downloads": 18103422,
-      "projects": 13,
-      "boost_factor": 1.6
+      "category": "optimization",
+      "suggested_loader": "fabric",
+      "opportunity_score": 208.1,
+      "reasoning": "Optimization has +0 new downloads (+0.0%) since baseline with 3323 projects. Best loader: fabric.",
+      "expected_downloads": 671804
     },
     {
-      "combination": [
-        "adventure",
-        "transportation"
-      ],
-      "avg_downloads": 10746592,
-      "projects": 30,
-      "boost_factor": 1.6
+      "category": "adventure",
+      "suggested_loader": "fabric",
+      "opportunity_score": 38.7,
+      "reasoning": "Adventure has +0 new downloads (+0.0%) since baseline with 13482 projects. Best loader: fabric.",
+      "expected_downloads": 165069
     },
     {
-      "combination": [
-        "folia",
-        "utility"
-      ],
-      "avg_downloads": 21353186,
-      "projects": 7,
-      "boost_factor": 1.6
+      "category": "decoration",
+      "suggested_loader": "fabric",
+      "opportunity_score": 72.6,
+      "reasoning": "Decoration has +0 new downloads (+0.0%) since baseline with 6951 projects. Best loader: fabric.",
+      "expected_downloads": 252591
     },
     {
-      "combination": [
-        "paper",
-        "utility"
-      ],
-      "avg_downloads": 19040203,
-      "projects": 8,
-      "boost_factor": 1.6
-    },
-    {
-      "combination": [
-        "spigot",
-        "utility"
-      ],
-      "avg_downloads": 21353186,
-      "projects": 7,
-      "boost_factor": 1.6
-    },
-    {
-      "combination": [
-        "management",
-        "social"
-      ],
-      "avg_downloads": 12487220,
-      "projects": 9,
-      "boost_factor": 1.6
-    },
-    {
-      "combination": [
-        "game-mechanics",
-        "technology"
-      ],
-      "avg_downloads": 7341521,
-      "projects": 25,
-      "boost_factor": 1.5
+      "category": "worldgen",
+      "suggested_loader": "fabric",
+      "opportunity_score": 63.6,
+      "reasoning": "Worldgen has +0 new downloads (+0.0%) since baseline with 7707 projects. Best loader: fabric.",
+      "expected_downloads": 225038
     }
   ],
-  "category_loader_combos": [],
-  "market_saturation": {
-    "oversaturated": [
-      {
-        "category": "minigame",
-        "projects": 1839,
-        "avg_downloads": 33801.49972811311
-      },
-      {
-        "category": "bta-babric",
-        "projects": 105,
-        "avg_downloads": 26529.82857142857
-      }
-    ],
-    "underserved": [
-      {
-        "category": "rift",
-        "projects": 16,
-        "avg_downloads": 3240601.125
-      },
-      {
-        "category": "liteloader",
-        "projects": 11,
-        "avg_downloads": 2808481.090909091
-      },
-      {
-        "category": "waterfall",
-        "projects": 34,
-        "avg_downloads": 1829403.5294117648
-      },
-      {
-        "category": "sponge",
-        "projects": 44,
-        "avg_downloads": 380238.54545454547
-      }
-    ]
-  },
-  "growth_momentum": [],
-  "loader_market_fit": [
-    {
-      "loader": "quilt",
-      "market_share": 14.8,
-      "download_share": 46.0,
-      "efficiency_ratio": 3.11,
-      "projects": 6680,
-      "total_downloads": 4556967103
-    },
-    {
-      "loader": "neoforge",
-      "market_share": 38.3,
-      "download_share": 79.9,
-      "efficiency_ratio": 2.09,
-      "projects": 17316,
-      "total_downloads": 7919951889
-    },
-    {
-      "loader": "forge",
-      "market_share": 49.0,
-      "download_share": 76.0,
-      "efficiency_ratio": 1.55,
-      "projects": 22151,
-      "total_downloads": 7533147775
-    },
-    {
-      "loader": "fabric",
-      "market_share": 58.3,
-      "download_share": 88.5,
-      "efficiency_ratio": 1.52,
-      "projects": 26330,
-      "total_downloads": 8778404192
-    }
-  ],
-  "version_lifecycle": [],
-  "market_gaps": [
-    {
-      "category": "modloader",
-      "loader": "quilt",
-      "current_projects": 3,
-      "total_projects": 77,
-      "avg_downloads": 988490,
-      "loader_share": 3.9,
-      "gap_score": 603.4
-    },
-    {
-      "category": "modloader",
-      "loader": "neoforge",
-      "current_projects": 6,
-      "total_projects": 77,
-      "avg_downloads": 988490,
-      "loader_share": 7.8,
-      "gap_score": 218.2
-    },
-    {
-      "category": "bta-babric",
-      "loader": "forge",
-      "current_projects": 6,
-      "total_projects": 105,
-      "avg_downloads": 26529,
-      "loader_share": 5.7,
-      "gap_score": 11.4
-    },
-    {
-      "category": "bta-babric",
-      "loader": "quilt",
-      "current_projects": 6,
-      "total_projects": 105,
-      "avg_downloads": 26529,
-      "loader_share": 5.7,
-      "gap_score": 11.4
-    },
-    {
-      "category": "bta-babric",
-      "loader": "neoforge",
-      "current_projects": 8,
-      "total_projects": 105,
-      "avg_downloads": 26529,
-      "loader_share": 7.6,
-      "gap_score": 6.3
-    },
-    {
-      "category": "food",
-      "loader": "quilt",
-      "current_projects": 566,
-      "total_projects": 5661,
-      "avg_downloads": 123316,
-      "loader_share": 10.0,
-      "gap_score": 0.0
-    }
-  ],
-  "investment_recommendations": [
-    {
-      "rank": 1,
-      "category": "modloader",
-      "loader": "quilt",
-      "expected_downloads": 494245,
-      "competition": "Low",
-      "risk_score": 3,
-      "roi": "Medium",
-      "reasoning": "quilt projects outperform per-project averages; only 3 existing projects in this combo"
-    },
-    {
-      "rank": 2,
-      "category": "modloader",
-      "loader": "neoforge",
-      "expected_downloads": 494245,
-      "competition": "Low",
-      "risk_score": 3,
-      "roi": "Medium",
-      "reasoning": "neoforge projects outperform per-project averages; only 6 existing projects in this combo"
-    },
-    {
-      "rank": 3,
-      "category": "bta-babric",
-      "loader": "forge",
-      "expected_downloads": 13264,
-      "competition": "Low",
-      "risk_score": 3,
-      "roi": "Medium",
-      "reasoning": "forge projects outperform per-project averages; only 6 existing projects in this combo"
-    },
-    {
-      "rank": 4,
-      "category": "bta-babric",
-      "loader": "quilt",
-      "expected_downloads": 13264,
-      "competition": "Low",
-      "risk_score": 3,
-      "roi": "Medium",
-      "reasoning": "quilt projects outperform per-project averages; only 6 existing projects in this combo"
-    },
-    {
-      "rank": 5,
-      "category": "bta-babric",
-      "loader": "neoforge",
-      "expected_downloads": 13264,
-      "competition": "Low",
-      "risk_score": 3,
-      "roi": "Medium",
-      "reasoning": "neoforge projects outperform per-project averages; only 8 existing projects in this combo"
-    },
-    {
-      "rank": 6,
-      "category": "food",
-      "loader": "quilt",
-      "expected_downloads": 61658,
-      "competition": "High",
-      "risk_score": 8,
-      "roi": "Low",
-      "reasoning": "quilt projects outperform per-project averages; only 566 existing projects in this combo"
-    }
-  ],
-  "top_growing_projects": []
+  "trends": {
+    "new_projects_24h": 0,
+    "new_versions_24h": 0,
+    "top_gainer": "N/A",
+    "top_gainer_downloads": 0
+  }
 }
