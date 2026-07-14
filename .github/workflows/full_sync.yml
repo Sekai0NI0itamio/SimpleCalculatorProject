@@ -126,7 +126,7 @@ jobs:
           path: data/version_results/
       - name: Download existing database
         run: |
-          gh run download --name modrinth-db --dir data/ 2>/dev/null || true
+          gh run download --name modrinth-db --dir data/ --repo ${{ github.repository }} 2>/dev/null || true
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Merge version chunks

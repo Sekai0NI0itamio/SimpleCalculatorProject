@@ -715,8 +715,21 @@ def main():
 
     # ── Save structured summary JSON ────────────────────────────
 
+    # Compute category growth_pct in main scope
+    prev_date_cursor = db.conn.execute(
+        "SELECT DISTINCT date FROM daily_category_stats WHERE date < ? ORDER BY date DESC LIMIT 1",
+        (today,),
+    )
+    prev_date_row = prev_date_cursor.fetchone()
+    prev_cat_map = {}
+    if prev_date_row:
+        prev_cats = db.get_categories_for_date(prev_date_row["date"])
+        prev_cat_map = {c["category"]: c["total_downloads"] for c in prev_cats}
+
     summary = {
-        "date": today,
+        "report_date": today,
+        "total_projects": len(db.get_all_projects()),
+        "total_versions": db.conn.execute("SELECT COUNT(*) FROM versions").fetchone()[0],
         "executive_summary": {
             "top_opportunities": [
                 {
@@ -737,13 +750,18 @@ def main():
                 for r in momentum_rows[:5]
             ],
         },
-        "categories": [
+        "category_rankings": [
             {
                 "category": c["category"],
+                "projects": c["project_count"],
                 "total_downloads": c["total_downloads"],
-                "project_count": c["project_count"],
                 "avg_downloads": c["avg_downloads"],
                 "new_downloads": c["total_new_downloads"],
+                "growth_pct": round(
+                    ((c["total_downloads"] - prev_cat_map.get(c["category"], 0))
+                     / max(prev_cat_map.get(c["category"], 0), 1)) * 100,
+                    4
+                ) if prev_cat_map else 0,
                 "opportunity_score": next(
                     (
                         r["opportunity_score"]

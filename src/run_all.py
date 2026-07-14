@@ -57,8 +57,26 @@ def main():
                          f"python src/fetch_projects.py --chunk {chunk}"):
             print(f"Warning: Chunk {chunk} failed, continuing...")
 
-    # Phase 3: Fetch Versions
-    if not run_phase("Phase 3: Fetch Versions", "python src/fetch_versions.py"):
+    # Phase 3: Fetch Versions — split all projects into chunks, then fetch each chunk sequentially
+    if not run_phase("Phase 3a: Split Versions", "python src/fetch_versions.py --split 10"):
+        return 1
+
+    # Load version split to know how many chunks
+    try:
+        with open("data/version_split.json", "r") as f:
+            vsplit = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading version_split.json: {e}")
+        return 1
+
+    chunks = vsplit.get("chunks", [])
+    for chunk_info in chunks:
+        chunk_idx = chunk_info["index"]
+        if not run_phase(f"Phase 3b: Fetch Versions (chunk {chunk_idx})",
+                         f"python src/fetch_versions.py --chunk {chunk_idx}"):
+            print(f"Warning: Version chunk {chunk_idx} failed, continuing...")
+
+    if not run_phase("Phase 3c: Merge Versions", "python src/fetch_versions.py --merge"):
         return 1
 
     # Phase 4: Snapshot

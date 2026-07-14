@@ -566,10 +566,10 @@ def analyze_version_lifecycle(db):
                     dates.append(datetime.fromisoformat(proj_dates[pid]))
                 except (ValueError, TypeError):
                     pass
-        avg_age = (
-            (now - (sum(dates, datetime.min) / max(len(dates), 1))) if dates else None
+        avg_age_days = (
+            (now.timestamp() - sum(d.timestamp() for d in dates) / len(dates)) / 86400
+            if dates else 365
         )
-        age_days = avg_age.days if avg_age else 365
 
         try:
             parts = version.split(".")
@@ -577,14 +577,14 @@ def analyze_version_lifecycle(db):
             if major == 1 and minor >= 21:
                 stage = "peak"
             elif major == 1 and minor >= 20:
-                stage = "emerging" if age_days < 180 else "peak"
+                stage = "emerging" if avg_age_days < 180 else "peak"
             elif major == 1 and minor >= 18:
                 stage = "mature"
             else:
                 stage = "legacy"
-            if stage == "peak" and age_days > 365:
+            if stage == "peak" and avg_age_days > 365:
                 stage = "mature"
-            if stage == "emerging" and age_days > 180:
+            if stage == "emerging" and avg_age_days > 180:
                 stage = "peak"
         except (ValueError, IndexError):
             stage = "mature"
