@@ -58,19 +58,25 @@ def load_merged_versions(project_type):
 
 
 def load_versions_from_latest_snapshot(project_type):
-    """Fallback: load version data from the most recent raw snapshot.
+    """Fallback: load version data from the most recent raw snapshot that HAS versions.
     Used on sub-hour runs where versions_merged.json.gz is not available
     (version fetching only happens on main hour).
+
+    Searches backwards from the most recent snapshot to find one with version data.
+    This ensures sub-hour snapshots always carry forward version data from the
+    last main-hour run, even if intermediate sub-hour snapshots don't have it.
     """
     from utils import list_snapshot_files
     raw_dir = get_raw_dir(project_type)
     files = list_snapshot_files(raw_dir)
     if not files:
         return []
-    latest = load_json(files[-1])
-    if not latest:
-        return []
-    return latest.get("versions", [])
+    # Search backwards from most recent to find a snapshot with versions
+    for f in reversed(files):
+        data = load_json(f)
+        if data and data.get("versions"):
+            return data["versions"]
+    return []
 
 
 def main():
