@@ -352,16 +352,21 @@
     <div class="summary-stats" id="historySummary"></div>
     <!-- Next Run Countdown -->
     <div class="section" style="margin-bottom:24px;">
-      <div class="pt-summary" style="grid-template-columns:1fr 1fr;">
+      <div class="pt-summary" style="grid-template-columns:1fr 1fr 1fr;">
         <div class="pt-stat" style="border-color:rgba(88,166,255,0.3);background:rgba(88,166,255,0.03);">
           <div class="pt-label">Next Run (UTC)</div>
-          <div class="pt-value" id="nextRunUtc" style="font-size:16px;font-family:monospace;">—</div>
+          <div class="pt-value" id="nextRunUtc" style="font-size:14px;font-family:monospace;">—</div>
           <div class="ss-meta">Every 2 hours at even UTC hours</div>
         </div>
         <div class="pt-stat" style="border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.03);">
-          <div class="pt-label">Countdown</div>
-          <div class="pt-value" id="nextRunCountdown" style="font-size:18px;font-family:monospace;color:var(--emerald);">—</div>
-          <div class="ss-meta" id="nextRunBeijing">Beijing: —</div>
+          <div class="pt-label">Next Run (Beijing)</div>
+          <div class="pt-value" id="nextRunBeijing" style="font-size:14px;font-family:monospace;">—</div>
+          <div class="ss-meta" id="nextRunCountdown">—</div>
+        </div>
+        <div class="pt-stat" id="workflowStatusCard" style="border-color:rgba(139,148,158,0.3);background:rgba(139,148,158,0.02);">
+          <div class="pt-label">Workflow Status</div>
+          <div class="pt-value" id="workflowStatusText" style="font-size:14px;">—</div>
+          <div class="ss-meta" id="workflowStatusMeta">Checking...</div>
         </div>
       </div>
     </div>
@@ -414,6 +419,8 @@ document.addEventListener('DOMContentLoaded', () => {
       renderAnalysis();
       renderHistory();
       startCountdown();
+      checkWorkflowStatus();
+      setInterval(checkWorkflowStatus, 30000); // poll every 30s
     })
     .catch(() => {
       document.getElementById('loading').innerHTML = `
@@ -913,11 +920,54 @@ function startCountdown() {
     const bjEl = document.getElementById('nextRunBeijing');
     if (utcEl) utcEl.textContent = utcStr;
     if (cdEl) cdEl.textContent = cdStr;
-    if (bjEl) bjEl.textContent = 'Beijing: ' + bjStr;
+    if (bjEl) bjEl.textContent = bjStr + ' (UTC+8)';
   }
 
   update();
   countdownTimer = setInterval(update, 1000);
+}
+
+function checkWorkflowStatus() {
+  fetch('reports/workflow_status.json')
+    .then(r => r.json())
+    .then(data => {
+      const card = document.getElementById('workflowStatusCard');
+      const textEl = document.getElementById('workflowStatusText');
+      const metaEl = document.getElementById('workflowStatusMeta');
+      if (!card || !textEl || !metaEl) return;
+
+      const status = data.status || 'idle';
+      if (status === 'running') {
+        card.style.borderColor = 'rgba(245,158,11,0.4)';
+        card.style.background = 'rgba(245,158,11,0.05)';
+        textEl.innerHTML = '<span style="color:var(--amber);">&#9679; Running</span>';
+        const started = data.started_at ? new Date(data.started_at) : null;
+        const elapsed = started ? Math.floor((Date.now() - started.getTime()) / 1000) : 0;
+        metaEl.textContent = started
+          ? 'Started ' + started.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC') + ' · Elapsed ' + fmtDuration(elapsed)
+          : 'Workflow is running...';
+      } else if (status === 'completed') {
+        card.style.borderColor = 'rgba(63,185,80,0.3)';
+        card.style.background = 'rgba(63,185,80,0.03)';
+        textEl.innerHTML = '<span style="color:var(--green);">&#10003; Completed</span>';
+        const finished = data.last_finished ? new Date(data.last_finished) : null;
+        metaEl.textContent = finished
+          ? 'Finished ' + finished.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC')
+          : 'Last run completed';
+      } else {
+        card.style.borderColor = 'rgba(139,148,158,0.3)';
+        card.style.background = 'rgba(139,148,158,0.02)';
+        textEl.innerHTML = '<span style="color:var(--text-muted);">&#9679; Idle</span>';
+        const lastRun = data.last_run || data.last_finished;
+        metaEl.textContent = lastRun
+          ? 'Last run: ' + new Date(lastRun).toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC')
+          : 'Waiting for next run';
+      }
+    })
+    .catch(() => {
+      const metaEl = document.getElementById('workflowStatusMeta');
+      if (metaEl) metaEl.textContent = 'Status unavailable';
+    });
 }
 
 function renderHistory() {

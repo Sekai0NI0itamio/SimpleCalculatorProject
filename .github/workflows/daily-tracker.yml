@@ -26,6 +26,22 @@ jobs:
             echo "mode=hourly" >> $GITHUB_OUTPUT
           fi
 
+  # Set workflow status to "running" so the website shows a live indicator
+  set-status-running:
+    needs: check-mode
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set status to running
+        run: |
+          NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "{\"status\":\"running\",\"started_at\":\"$NOW\",\"last_finished\":null}" > reports/workflow_status.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/workflow_status.json
+          git diff --staged --quiet || git commit -m "Workflow started"
+          git push || echo "push failed (may be concurrent)"
+
   # All 6 project types run in parallel every 2 hours.
   # Every run does the FULL pipeline (discover → fetch-projects → split-versions →
   # fetch-versions → merge → snapshot → analyze → render charts → commit).
@@ -35,7 +51,7 @@ jobs:
   #   hourly (every other even hour) — 2h delta with velocity predictions
 
   mod:
-    needs: check-mode
+    needs: [check-mode, set-status-running]
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: mod
@@ -102,3 +118,10 @@ jobs:
           git add reports/
           git diff --staged --quiet || git commit -m "Update combined website report"
           git push
+      - name: Set status to completed
+        run: |
+          NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "{\"status\":\"completed\",\"started_at\":null,\"last_finished\":\"$NOW\"}" > reports/workflow_status.json
+          git add reports/workflow_status.json
+          git commit -m "Workflow completed" || true
+          git push || echo "push failed"
