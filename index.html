@@ -439,6 +439,22 @@ function escHtml(s) {
   if (!s) return '';
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+function fmtTs(ts) {
+  if (!ts) return '—';
+  // Format: 2026-07-15T09-57-35 -> 2026-07-15 09:57:35
+  const parts = ts.split('T');
+  if (parts.length === 2) {
+    return parts[0] + ' ' + parts[1].replace(/-/g, ':');
+  }
+  return ts;
+}
+function fmtDuration(sec) {
+  if (!sec || sec <= 0) return '<1s';
+  if (sec < 60) return sec + 's';
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return m + 'm' + (s > 0 ? s + 's' : '');
+}
 
 // ═══════════════════════════════════════════════════════════════════
 //  HOME PAGE
@@ -921,6 +937,7 @@ function renderHistory() {
   const hourlyCount = runs.filter(r => r.analysis_type === 'hourly').length;
   const totalData = runs.reduce((sum, r) => sum + (r.totals.file_size || 0), 0);
   const totalProjects = runs.reduce((sum, r) => sum + (r.totals.projects || 0), 0);
+  const totalRaw = runs.reduce((sum, r) => sum + (r.totals.raw_size || 0), 0);
 
   document.getElementById('historySummary').innerHTML = `
     <div class="summary-stat">
@@ -930,28 +947,32 @@ function renderHistory() {
     </div>
     <div class="summary-stat">
       <div class="ss-label">Latest Run</div>
-      <div class="ss-value" style="font-size:14px;">${(latest.timestamp||'').replace('T',' ').replace(/-/g,':').replace(/:/g,':').slice(0,19)}</div>
-      <div class="ss-meta">${latest.analysis_type} &middot; ${latest.totals.type_count} types</div>
+      <div class="ss-value" style="font-size:13px;">${fmtTs(latest.start_time)}</div>
+      <div class="ss-meta">${latest.analysis_type} &middot; ${latest.totals.type_count} types &middot; ${fmtDuration(latest.duration_seconds)}</div>
     </div>
     <div class="summary-stat">
-      <div class="ss-label">Total Data Processed</div>
+      <div class="ss-label">Data Processed</div>
       <div class="ss-value">${(totalData/1024/1024).toFixed(1)} MB</div>
-      <div class="ss-meta">across all runs</div>
+      <div class="ss-meta">analysis files</div>
     </div>
     <div class="summary-stat">
-      <div class="ss-label">Cumulative Projects</div>
+      <div class="ss-label">Cumulative Evaluated</div>
       <div class="ss-value">${fmt(totalProjects)}</div>
-      <div class="ss-meta">analyzed across runs</div>
+      <div class="ss-meta">projects across runs</div>
     </div>
   `;
 
   // Render runs table — each run is expandable to show per-type breakdown
   document.getElementById('runHistory').innerHTML = runs.map((run, i) => {
-    const ts = run.timestamp || '';
-    const displayTs = ts.replace('T', ' ').replace(/-/g, ':').replace(/(\d{2}):(\d{2}):(\d{2})$/, '$1:$2:$3');
+    const startTs = fmtTs(run.start_time || '');
+    const endTs = fmtTs(run.end_time || '');
+    const duration = fmtDuration(run.duration_seconds || 0);
+    const isSingleType = run.start_time === run.end_time;
     const t = run.totals || {};
     const fs = t.file_size || 0;
-    const fsStr = fs > 1024*1024 ? (fs/1024/1024).toFixed(1) + ' MB' : fs > 1024 ? (fs/1024).toFixed(0) + ' KB' : fs + ' B';
+    const rs = t.raw_size || 0;
+    const fsStr = fs > 1024*1024 ? (fs/1024/1024).toFixed(1)+'MB' : fs > 1024 ? (fs/1024).toFixed(0)+'KB' : fs+'B';
+    const rsStr = rs > 1024*1024 ? (rs/1024/1024).toFixed(1)+'MB' : rs > 1024 ? (rs/1024).toFixed(0)+'KB' : '';
     const typeTag = run.analysis_type === 'daily' ? 'emerald' : 'blue';
 
     // Build per-type breakdown
@@ -975,18 +996,22 @@ function renderHistory() {
     return `<div class="run-entry" style="margin-bottom:8px;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
       <div class="opp-header" onclick="toggleOppDetail(this)" style="padding:12px 16px;">
         <div style="flex:1;min-width:0;">
-          <div style="font-size:13px;font-weight:600;font-family:'SF Mono','Consolas',monospace;">${displayTs}</div>
+          <div style="font-size:13px;font-weight:600;font-family:'SF Mono','Consolas',monospace;">
+            ${startTs}
+            ${!isSingleType ? `<span style="color:var(--text-muted);font-weight:400;"> → ${endTs.split(' ').pop()}</span>` : ''}
+          </div>
           <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">
             <span class="tag ${typeTag}">${run.analysis_type}</span>
             <span style="margin-left:8px">${t.type_count||0} types</span>
             <span style="margin-left:8px">${fmt(t.projects)} projects</span>
             <span style="margin-left:8px">${fmt(t.versions)} versions</span>
             <span style="margin-left:8px">${fmt(t.downloads)} downloads</span>
+            ${t.new_downloads ? `<span style="margin-left:8px;color:var(--green)">${fmtDelta(t.new_downloads)} new</span>` : ''}
           </div>
         </div>
         <div style="text-align:right;flex-shrink:0;">
-          <div style="font-size:14px;font-weight:700;font-family:'SF Mono','Consolas',monospace;color:var(--text-muted);">${fsStr}</div>
-          <div style="font-size:10px;color:var(--text-muted);">data size</div>
+          <div style="font-size:13px;font-weight:700;font-family:'SF Mono','Consolas',monospace;color:var(--accent);">${duration}</div>
+          <div style="font-size:10px;color:var(--text-muted);">${fsStr}</div>
         </div>
         <div class="opp-chevron">&#9660;</div>
       </div>

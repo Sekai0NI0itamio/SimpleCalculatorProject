@@ -190,21 +190,29 @@ def combine_analyses(data_dir):
 
 
 def collect_run_history(data_dir):
-    """Collect run history from all analysis files across all project types.
+    """Collect run history from all analysis and raw snapshot files.
 
-    Returns a list of run entries, each with timestamp, per-type stats, and
-    total data volume (projects, versions, downloads, file size).
+    Groups entries within 15-minute windows into actual workflow runs.
+    Each run shows: start time, end time, duration, how much data was evaluated.
+
+    Returns a list of run entries sorted by start time descending.
     """
     data_dir = Path(data_dir)
-    # Collect all analysis files with their metadata
-    # Keyed by timestamp (rounded to nearest 2-hour slot) to group
-    runs = []  # list of {timestamp, types: {pt: {summary, file_size, analysis_type}}}
+    WINDOW_MINUTES = 15  # Group entries within this window as one run
 
     all_entries = []
     for pt in PROJECT_TYPES:
         analysis_dir = data_dir / pt / "analysis"
+        raw_dir = data_dir / pt / "raw"
         if not analysis_dir.exists():
             continue
+
+        # Build a map of timestamp -> raw snapshot file size for this type
+        raw_size_map = {}
+        if raw_dir.exists():
+            for f in raw_dir.glob("*.json.gz"):
+                raw_size_map[f.stem.replace(".json", "")] = f.stat().st_size
+
         for f in analysis_dir.glob("*.json"):
             data = load_json(str(f))
             if not data:
@@ -214,6 +222,14 @@ def collect_run_history(data_dir):
                 continue
             summary = data.get("summary", {})
             file_size = f.stat().st_size
+
+            # Find matching raw snapshot size
+            raw_size = 0
+            for raw_key, rs in raw_size_map.items():
+                if raw_key in ts or ts in raw_key:
+                    raw_size = rs
+                    break
+
             all_entries.append({
                 "timestamp": ts,
                 "project_type": pt,
@@ -228,48 +244,106 @@ def collect_run_history(data_dir):
                     "new_downloads_since_baseline": summary.get("new_downloads_since_baseline", 0),
                 },
                 "file_size": file_size,
+                "raw_size": raw_size,
             })
 
-    # Group by timestamp
-    from collections import defaultdict
-    by_ts = defaultdict(dict)
-    for entry in all_entries:
-        ts = entry["timestamp"]
-        pt = entry["project_type"]
-        by_ts[ts][pt] = entry
+    if not all_entries:
+        return []
 
-    # Build run entries sorted by timestamp descending
-    for ts in sorted(by_ts.keys(), reverse=True):
-        types_data = by_ts[ts]
-        # Compute totals for this run
-        total_projects = sum(
-            e["summary"]["total_projects"] for e in types_data.values()
-        )
-        total_versions = sum(
-            e["summary"]["total_versions"] for e in types_data.values()
-        )
-        total_downloads = sum(
-            e["summary"]["total_downloads"] for e in types_data.values()
-        )
-        total_file_size = sum(e["file_size"] for e in types_data.values())
-        # Determine the dominant analysis type
-        analysis_types = set(e["analysis_type"] for e in types_data.values())
+    # Sort by timestamp
+    all_entries.sort(key=lambda e: e["timestamp"])
+
+    # Group into time windows
+    from datetime import datetime, timedelta
+    groups = []
+    current_group = [all_entries[0]]
+    current_ts = _parse_ts(all_entries[0]["timestamp"])
+
+    for entry in all_entries[1:]:
+        entry_ts = _parse_ts(entry["timestamp"])
+        if entry_ts and current_ts:
+            diff = abs((entry_ts - current_ts).total_seconds()) / 60
+            if diff <= WINDOW_MINUTES:
+                current_group.append(entry)
+                current_ts = entry_ts  # Update to latest timestamp in group
+                continue
+        # Start new group
+        groups.append(current_group)
+        current_group = [entry]
+        current_ts = entry_ts
+
+    if current_group:
+        groups.append(current_group)
+
+    # Build run entries
+    runs = []
+    for group in groups:
+        # Sort group by timestamp
+        group.sort(key=lambda e: e["timestamp"])
+        start_ts = group[0]["timestamp"]
+        end_ts = group[-1]["timestamp"]
+        start_dt = _parse_ts(start_ts)
+        end_dt = _parse_ts(end_ts)
+
+        # Duration in seconds
+        duration_sec = 0
+        if start_dt and end_dt:
+            duration_sec = int((end_dt - start_dt).total_seconds())
+
+        # Deduplicate by project type (keep the latest entry per type in the group)
+        type_map = {}
+        for e in group:
+            pt = e["project_type"]
+            if pt not in type_map or e["timestamp"] > type_map[pt]["timestamp"]:
+                type_map[pt] = e
+
+        # Compute totals
+        total_projects = sum(e["summary"]["total_projects"] for e in type_map.values())
+        total_versions = sum(e["summary"]["total_versions"] for e in type_map.values())
+        total_downloads = sum(e["summary"]["total_downloads"] for e in type_map.values())
+        total_new = sum(e["summary"]["new_downloads_since_baseline"] for e in type_map.values())
+        total_file_size = sum(e["file_size"] for e in type_map.values())
+        total_raw_size = sum(e["raw_size"] for e in type_map.values())
+
+        analysis_types = set(e["analysis_type"] for e in type_map.values())
         dominant_type = "daily" if "daily" in analysis_types else "hourly"
 
         runs.append({
-            "timestamp": ts,
+            "start_time": start_ts,
+            "end_time": end_ts,
+            "duration_seconds": duration_sec,
             "analysis_type": dominant_type,
-            "types": types_data,
+            "types": {pt: e for pt, e in type_map.items()},
             "totals": {
                 "projects": total_projects,
                 "versions": total_versions,
                 "downloads": total_downloads,
+                "new_downloads": total_new,
                 "file_size": total_file_size,
-                "type_count": len(types_data),
+                "raw_size": total_raw_size,
+                "type_count": len(type_map),
             },
         })
 
+    # Sort by start time descending (newest first)
+    runs.sort(key=lambda r: r["start_time"], reverse=True)
     return runs
+
+
+def _parse_ts(ts_str):
+    """Parse a timestamp string like '2026-07-15T09-57-35' into a datetime."""
+    try:
+        # Handle format: 2026-07-15T09-57-35
+        # Split on T: date = 2026-07-15, time = 09-57-35
+        date_part, time_part = ts_str.split("T")
+        time_part = time_part.replace("-", ":")
+        return datetime.strptime(f"{date_part} {time_part}", "%Y-%m-%d %H:%M:%S")
+    except (ValueError, TypeError):
+        pass
+    try:
+        return datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return None
 
 
 def main():
