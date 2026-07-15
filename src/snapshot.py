@@ -68,6 +68,8 @@ def main():
             "project_count": 0,
             "total_downloads": 0,
             "projects": [],
+            "versions": [],
+            "version_count": 0,
         }
         raw_dir = get_raw_dir(project_type)
         ensure_dir(raw_dir)
@@ -115,6 +117,40 @@ def main():
         "projects": raw_projects,
     }
 
+    # ── Load version data from DB (if available) ──────────────────
+    # Version data is populated by fetch_versions.py --merge.
+    # On sub-hour runs (no version fetch), the DB may have stale or no version data.
+    db = Database(project_type)
+    version_count = db.conn.execute("SELECT COUNT(*) FROM versions").fetchone()[0]
+    if version_count > 0:
+        print(f"Loading {version_count} versions from DB...")
+        cursor = db.conn.execute(
+            "SELECT id, project_id, version_number, loaders, game_versions, downloads FROM versions"
+        )
+        raw_versions = []
+        for row in cursor.fetchall():
+            try:
+                loaders = json.loads(row["loaders"]) if row["loaders"] else []
+            except (json.JSONDecodeError, TypeError):
+                loaders = []
+            try:
+                game_versions = json.loads(row["game_versions"]) if row["game_versions"] else []
+            except (json.JSONDecodeError, TypeError):
+                game_versions = []
+            raw_versions.append({
+                "version_id": row["id"],
+                "project_id": row["project_id"],
+                "version_number": row["version_number"],
+                "loaders": loaders,
+                "game_versions": game_versions,
+                "downloads": row["downloads"] or 0,
+            })
+        raw_snapshot["versions"] = raw_versions
+        raw_snapshot["version_count"] = len(raw_versions)
+        print(f"Added {len(raw_versions)} versions to snapshot")
+    else:
+        print("No version data in DB (fetch-versions may have been skipped)")
+
     raw_dir = get_raw_dir(project_type)
     ensure_dir(raw_dir)
     raw_path = f"{raw_dir}/{timestamp}.json"
@@ -122,7 +158,7 @@ def main():
     print(f"Saved raw snapshot to {raw_path} ({len(raw_projects)} projects, {total_downloads:,} downloads)")
 
     # ── Update the database ───────────────────────────────────────
-    db = Database(project_type)
+    # (DB already opened above for version loading)
 
     # Upsert all projects + record daily project snapshots
     project_count = 0

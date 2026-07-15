@@ -261,26 +261,28 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+
+          # Always commit raw snapshots + analysis + charts
+          git add data/${{ inputs.project_type }}/raw/ \
+                 data/${{ inputs.project_type }}/analysis/ \
+                 data/${{ inputs.project_type }}/charts/ \
+                 2>/dev/null || true
+
           if [ "${{ inputs.is_main }}" = "true" ]; then
-            git add data/${{ inputs.project_type }}/raw/ \
-                   data/${{ inputs.project_type }}/analysis/ \
-                   data/${{ inputs.project_type }}/latest_analysis.json \
-                   data/${{ inputs.project_type }}/charts/ \
+            # Main hour: also commit discovery, latest_analysis, DB
+            git add data/${{ inputs.project_type }}/latest_analysis.json \
                    data/${{ inputs.project_type }}/discovery.json \
                    data/${{ inputs.project_type }}/categories.json \
                    data/${{ inputs.project_type }}/loaders.json \
+                   data/${{ inputs.project_type }}/${{ inputs.project_type }}.db \
                    2>/dev/null || true
             COMMIT_MSG="tracker: ${{ inputs.project_type }} main daily snapshot $(date -u +%Y-%m-%dT%H:%M)"
           else
-            git add data/${{ inputs.project_type }}/raw/ \
-                   data/${{ inputs.project_type }}/analysis/ \
-                   data/${{ inputs.project_type }}/latest_sub_analysis.json \
-                   data/${{ inputs.project_type }}/charts/ \
+            git add data/${{ inputs.project_type }}/latest_sub_analysis.json \
                    2>/dev/null || true
             COMMIT_MSG="tracker: ${{ inputs.project_type }} sub snapshot $(date -u +%Y-%m-%dT%H:%M)"
           fi
-          
+
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main || true
@@ -289,11 +291,11 @@ jobs:
             sleep 10
           done
 
-      # Upload DB (main hour only — sub hours don't change versions)
+      # Upload DB as artifact (for same-run download by other jobs)
       - name: Upload DB
         if: ${{ inputs.is_main == true }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.project_type }}-db
           path: data/${{ inputs.project_type }}/${{ inputs.project_type }}.db
-          retention-days: 90
+          retention-days: 1

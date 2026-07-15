@@ -2,13 +2,11 @@
 __pycache__/
 
 # Temporary pipeline artifacts (not committed to git)
-# DBs are stored as GitHub Actions artifacts, not in git
 data/*/chunks/
 data/*/version_chunks/
 data/*/version_results/
 data/*/version_split.json
 data/*/version_summary.json
-data/*/*.db
 data/*/*.db-wal
 data/*/*.db-shm
 
