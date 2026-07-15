@@ -115,7 +115,7 @@ jobs:
   # ──────────────────────────────────────────────────────────────
   split-versions:
     needs: fetch-projects
-    if: ${{ inputs.is_main == true }}
+    if: ${{ always() && inputs.is_main == true && needs.fetch-projects.result == 'success' }}
     runs-on: ubuntu-latest
     outputs:
       version_chunk_list: ${{ steps.set-matrix.outputs.version_chunk_list }}
@@ -153,7 +153,7 @@ jobs:
   # ──────────────────────────────────────────────────────────────
   fetch-versions:
     needs: split-versions
-    if: ${{ inputs.is_main == true }}
+    if: ${{ always() && inputs.is_main == true && needs.split-versions.result == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
