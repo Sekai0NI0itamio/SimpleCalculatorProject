@@ -183,7 +183,93 @@ def combine_analyses(data_dir):
         "versions": total_versions,
     }
 
+    # Collect run history
+    report["run_history"] = collect_run_history(data_dir)
+
     return report
+
+
+def collect_run_history(data_dir):
+    """Collect run history from all analysis files across all project types.
+
+    Returns a list of run entries, each with timestamp, per-type stats, and
+    total data volume (projects, versions, downloads, file size).
+    """
+    data_dir = Path(data_dir)
+    # Collect all analysis files with their metadata
+    # Keyed by timestamp (rounded to nearest 2-hour slot) to group
+    runs = []  # list of {timestamp, types: {pt: {summary, file_size, analysis_type}}}
+
+    all_entries = []
+    for pt in PROJECT_TYPES:
+        analysis_dir = data_dir / pt / "analysis"
+        if not analysis_dir.exists():
+            continue
+        for f in analysis_dir.glob("*.json"):
+            data = load_json(str(f))
+            if not data:
+                continue
+            ts = data.get("timestamp", "")
+            if not ts:
+                continue
+            summary = data.get("summary", {})
+            file_size = f.stat().st_size
+            all_entries.append({
+                "timestamp": ts,
+                "project_type": pt,
+                "analysis_type": data.get("analysis_type", "hourly"),
+                "date": data.get("date", ""),
+                "baseline_date": data.get("baseline_date", ""),
+                "hours_between": data.get("hours_between", 0),
+                "summary": {
+                    "total_projects": summary.get("total_projects", 0),
+                    "total_versions": summary.get("total_versions", 0),
+                    "total_downloads": summary.get("total_downloads", 0),
+                    "new_downloads_since_baseline": summary.get("new_downloads_since_baseline", 0),
+                },
+                "file_size": file_size,
+            })
+
+    # Group by timestamp
+    from collections import defaultdict
+    by_ts = defaultdict(dict)
+    for entry in all_entries:
+        ts = entry["timestamp"]
+        pt = entry["project_type"]
+        by_ts[ts][pt] = entry
+
+    # Build run entries sorted by timestamp descending
+    for ts in sorted(by_ts.keys(), reverse=True):
+        types_data = by_ts[ts]
+        # Compute totals for this run
+        total_projects = sum(
+            e["summary"]["total_projects"] for e in types_data.values()
+        )
+        total_versions = sum(
+            e["summary"]["total_versions"] for e in types_data.values()
+        )
+        total_downloads = sum(
+            e["summary"]["total_downloads"] for e in types_data.values()
+        )
+        total_file_size = sum(e["file_size"] for e in types_data.values())
+        # Determine the dominant analysis type
+        analysis_types = set(e["analysis_type"] for e in types_data.values())
+        dominant_type = "daily" if "daily" in analysis_types else "hourly"
+
+        runs.append({
+            "timestamp": ts,
+            "analysis_type": dominant_type,
+            "types": types_data,
+            "totals": {
+                "projects": total_projects,
+                "versions": total_versions,
+                "downloads": total_downloads,
+                "file_size": total_file_size,
+                "type_count": len(types_data),
+            },
+        })
+
+    return runs
 
 
 def main():
@@ -206,6 +292,8 @@ def main():
     print(f"  Combined categories: {len(report['combined']['category_rankings'])}")
     has_opp = report.get("opportunity_analysis") and report["opportunity_analysis"].get("top_10_opportunities")
     print(f"  Opportunity analysis: {'yes' if has_opp else 'no'}")
+    run_history = report.get("run_history", [])
+    print(f"  Run history: {len(run_history)} runs recorded")
 
 
 if __name__ == "__main__":

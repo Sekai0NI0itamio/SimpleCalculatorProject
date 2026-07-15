@@ -272,6 +272,7 @@
     <div class="nav-links">
       <button class="nav-link active" data-page="home">Home</button>
       <button class="nav-link" data-page="analysis">Decision Engine</button>
+      <button class="nav-link" data-page="history">History of Runs</button>
     </div>
     <div class="nav-stats" id="navStats"></div>
   </div>
@@ -341,6 +342,20 @@
       <div id="globalVLPairs"></div>
     </div>
   </div>
+
+  <!-- ========== HISTORY OF RUNS PAGE ========== -->
+  <div id="page-history" class="page" style="display:none">
+    <div class="page-header">
+      <h1>History of Runs</h1>
+      <div class="subtitle">Every data retrieval, its timestamp, and how much data was evaluated</div>
+    </div>
+    <div class="summary-stats" id="historySummary"></div>
+    <div class="section">
+      <div class="section-title">All Runs</div>
+      <div class="section-subtitle">Click a run to expand and see per-project-type breakdown</div>
+      <div id="runHistory"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -382,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('loading').style.display = 'none';
       renderHome();
       renderAnalysis();
+      renderHistory();
     })
     .catch(() => {
       document.getElementById('loading').innerHTML = `
@@ -825,6 +841,112 @@ function toggleOppDetail(header) {
   const isOpen = detail.classList.contains('open');
   detail.classList.toggle('open',!isOpen);
   chevron.innerHTML = isOpen ? '&#9660;' : '&#9650;';
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  HISTORY OF RUNS PAGE
+// ═══════════════════════════════════════════════════════════════════
+
+function renderHistory() {
+  const d = reportData;
+  if (!d) return;
+  document.getElementById('page-history').style.display = 'block';
+
+  const runs = d.run_history || [];
+  if (!runs.length) {
+    document.getElementById('runHistory').innerHTML = '<div class="empty">No run history yet</div>';
+    return;
+  }
+
+  // Summary stats
+  const latest = runs[0];
+  const totalRuns = runs.length;
+  const dailyCount = runs.filter(r => r.analysis_type === 'daily').length;
+  const hourlyCount = runs.filter(r => r.analysis_type === 'hourly').length;
+  const totalData = runs.reduce((sum, r) => sum + (r.totals.file_size || 0), 0);
+  const totalProjects = runs.reduce((sum, r) => sum + (r.totals.projects || 0), 0);
+
+  document.getElementById('historySummary').innerHTML = `
+    <div class="summary-stat">
+      <div class="ss-label">Total Runs</div>
+      <div class="ss-value">${totalRuns}</div>
+      <div class="ss-meta">${dailyCount} daily, ${hourlyCount} hourly</div>
+    </div>
+    <div class="summary-stat">
+      <div class="ss-label">Latest Run</div>
+      <div class="ss-value" style="font-size:14px;">${(latest.timestamp||'').replace('T',' ').replace(/-/g,':').replace(/:/g,':').slice(0,19)}</div>
+      <div class="ss-meta">${latest.analysis_type} &middot; ${latest.totals.type_count} types</div>
+    </div>
+    <div class="summary-stat">
+      <div class="ss-label">Total Data Processed</div>
+      <div class="ss-value">${(totalData/1024/1024).toFixed(1)} MB</div>
+      <div class="ss-meta">across all runs</div>
+    </div>
+    <div class="summary-stat">
+      <div class="ss-label">Cumulative Projects</div>
+      <div class="ss-value">${fmt(totalProjects)}</div>
+      <div class="ss-meta">analyzed across runs</div>
+    </div>
+  `;
+
+  // Render runs table — each run is expandable to show per-type breakdown
+  document.getElementById('runHistory').innerHTML = runs.map((run, i) => {
+    const ts = run.timestamp || '';
+    const displayTs = ts.replace('T', ' ').replace(/-/g, ':').replace(/(\d{2}):(\d{2}):(\d{2})$/, '$1:$2:$3');
+    const t = run.totals || {};
+    const fs = t.file_size || 0;
+    const fsStr = fs > 1024*1024 ? (fs/1024/1024).toFixed(1) + ' MB' : fs > 1024 ? (fs/1024).toFixed(0) + ' KB' : fs + ' B';
+    const typeTag = run.analysis_type === 'daily' ? 'emerald' : 'blue';
+
+    // Build per-type breakdown
+    const types = run.types || {};
+    const typeRows = Object.keys(types).sort().map(pt => {
+      const e = types[pt];
+      const s = e.summary || {};
+      const ef = e.file_size || 0;
+      const efStr = ef > 1024*1024 ? (ef/1024/1024).toFixed(1)+'MB' : ef > 1024 ? (ef/1024).toFixed(0)+'KB' : ef+'B';
+      return `<tr>
+        <td><span class="tag blue" style="text-transform:capitalize">${pt}</span></td>
+        <td class="num">${fmt(s.total_projects)}</td>
+        <td class="num">${fmt(s.total_versions)}</td>
+        <td class="num">${fmt(s.total_downloads)}</td>
+        <td class="num positive">${fmtDelta(s.new_downloads_since_baseline)}</td>
+        <td class="num"><span class="tag">${e.analysis_type||'hourly'}</span></td>
+        <td class="num" style="color:var(--text-muted);font-size:11px">${efStr}</td>
+      </tr>`;
+    }).join('');
+
+    return `<div class="run-entry" style="margin-bottom:8px;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+      <div class="opp-header" onclick="toggleOppDetail(this)" style="padding:12px 16px;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:600;font-family:'SF Mono','Consolas',monospace;">${displayTs}</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">
+            <span class="tag ${typeTag}">${run.analysis_type}</span>
+            <span style="margin-left:8px">${t.type_count||0} types</span>
+            <span style="margin-left:8px">${fmt(t.projects)} projects</span>
+            <span style="margin-left:8px">${fmt(t.versions)} versions</span>
+            <span style="margin-left:8px">${fmt(t.downloads)} downloads</span>
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div style="font-size:14px;font-weight:700;font-family:'SF Mono','Consolas',monospace;color:var(--text-muted);">${fsStr}</div>
+          <div style="font-size:10px;color:var(--text-muted);">data size</div>
+        </div>
+        <div class="opp-chevron">&#9660;</div>
+      </div>
+      <div class="opp-detail">
+        <div class="opp-detail-inner">
+          <table>
+            <thead><tr>
+              <th>Project Type</th><th class="num">Projects</th><th class="num">Versions</th>
+              <th class="num">Downloads</th><th class="num">New</th><th class="num">Analysis</th><th class="num">Size</th>
+            </tr></thead>
+            <tbody>${typeRows}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>`;
+  }).join('') || '<div class="empty">No run history yet</div>';
 }
 </script>
 </body>
