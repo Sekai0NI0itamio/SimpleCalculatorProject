@@ -209,6 +209,15 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
     top_projects = top_projects[:50]
 
     # ── Top version+loader growth (aggregated by game_version+loader pair) ──
+    # Normalize game_version (strip whitespace) and loader (lowercase) so that
+    # variations like "26.2 " vs "26.2" or "Fabric" vs "fabric" aggregate into
+    # the same bucket instead of producing duplicate-looking rows.
+    def _norm_gv(gv):
+        return (gv or "").strip()
+
+    def _norm_loader(loader):
+        return (loader or "").strip().lower()
+
     vl_pair_stats = {}
     for v in current_versions:
         vid = v.get("version_id")
@@ -224,11 +233,13 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         game_versions = v.get("game_versions", []) or []
         for loader in loaders:
             for gv in game_versions:
-                key = (gv, loader)
+                norm_gv = _norm_gv(gv)
+                norm_loader = _norm_loader(loader)
+                key = (norm_gv, norm_loader)
                 if key not in vl_pair_stats:
                     vl_pair_stats[key] = {
-                        "game_version": gv,
-                        "loader": loader,
+                        "game_version": norm_gv,
+                        "loader": norm_loader,
                         "delta_downloads": 0,
                         "project_count": 0,
                         "top_project_id": pid,
@@ -246,6 +257,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
     top_version_loaders = sorted(vl_pair_stats.values(), key=lambda x: x["delta_downloads"], reverse=True)[:200]
 
     # ── Per-project version+loader pairs (for project detail panel) ──
+    # Aggregated by (norm_gv, norm_loader) per project so each project has at
+    # most one entry per unique VL combo (no duplicates even if a project has
+    # multiple version files targeting the same game_version+loader).
     project_vl_pairs = {}
     for v in current_versions:
         vid = v.get("version_id")
@@ -261,32 +275,51 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
             continue
         loaders = v.get("loaders", []) or []
         game_versions = v.get("game_versions", []) or []
+        if pid not in project_vl_pairs:
+            project_vl_pairs[pid] = {}
+        proj_map = project_vl_pairs[pid]
         for loader in loaders:
             for gv in game_versions:
-                if pid not in project_vl_pairs:
-                    project_vl_pairs[pid] = []
-                project_vl_pairs[pid].append({
-                    "game_version": gv,
-                    "loader": loader,
-                    "delta_downloads": delta,
-                })
+                norm_gv = _norm_gv(gv)
+                norm_loader = _norm_loader(loader)
+                key = (norm_gv, norm_loader)
+                if key not in proj_map:
+                    proj_map[key] = {
+                        "game_version": norm_gv,
+                        "loader": norm_loader,
+                        "delta_downloads": 0,
+                    }
+                proj_map[key]["delta_downloads"] += delta
 
-    for pid in project_vl_pairs:
-        project_vl_pairs[pid].sort(key=lambda x: x["delta_downloads"], reverse=True)
+    # Convert per-project maps to sorted lists
+    project_vl_pairs_list = {}
+    for pid, proj_map in project_vl_pairs.items():
+        sorted_list = sorted(proj_map.values(), key=lambda x: x["delta_downloads"], reverse=True)
+        project_vl_pairs_list[pid] = sorted_list
+    project_vl_pairs = project_vl_pairs_list
 
     # ── All project deltas (for the full scrollable list) ──────────
-    all_project_deltas = [
-        {
-            "project_id": p["project_id"],
+    # Embed each project's top-N VL pairs directly so the app can render the
+    # project detail popup without fetching the large project_vl_pairs.json
+    # file (which is 2-63MB per type). Top 10 is enough for the popup.
+    TOP_VL_PER_PROJECT = 10
+    all_project_deltas = []
+    for p in current_projects:
+        pid = p["project_id"]
+        cur_dl = p.get("downloads", 0)
+        delta = cur_dl - baseline_map.get(pid, 0)
+        if delta <= 0:
+            continue
+        proj_vls = project_vl_pairs.get(pid, [])[:TOP_VL_PER_PROJECT]
+        all_project_deltas.append({
+            "project_id": pid,
             "title": p.get("title", ""),
             "slug": p.get("slug", ""),
             "categories": p.get("categories", []),
-            "current_downloads": p.get("downloads", 0),
-            "delta_downloads": p.get("downloads", 0) - baseline_map.get(p["project_id"], 0),
-        }
-        for p in current_projects
-        if p.get("downloads", 0) - baseline_map.get(p["project_id"], 0) > 0
-    ]
+            "current_downloads": cur_dl,
+            "delta_downloads": delta,
+            "top_vl_pairs": proj_vls,
+        })
     all_project_deltas.sort(key=lambda x: x["delta_downloads"], reverse=True)
 
     return {
