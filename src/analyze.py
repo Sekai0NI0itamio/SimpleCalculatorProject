@@ -164,6 +164,33 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         })
     category_rankings.sort(key=lambda x: x["new_downloads"], reverse=True)
 
+    # ── Category trending projects ─────────────────────────────────
+    # For each content category, collect the top 50 projects ranked by their
+    # download increase (delta) over the captured time frame. This answers
+    # "which mods in this category are currently being downloaded the most?"
+    # and provides investment/trending suggestions per category.
+    TOP_TRENDING_PER_CAT = 50
+    category_trending = {}
+    for cat, projs in cat_projects.items():
+        trending = []
+        for p in projs:
+            pid = p["project_id"]
+            cur_dl = p.get("downloads", 0)
+            base_dl = baseline_map.get(pid, 0)
+            delta = cur_dl - base_dl
+            if delta > 0:
+                trending.append({
+                    "project_id": pid,
+                    "title": p.get("title", ""),
+                    "slug": p.get("slug", ""),
+                    "categories": p.get("categories", []),
+                    "current_downloads": cur_dl,
+                    "delta_downloads": delta,
+                    "growth_pct": round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2),
+                })
+        trending.sort(key=lambda x: x["delta_downloads"], reverse=True)
+        category_trending[cat] = trending[:TOP_TRENDING_PER_CAT]
+
     # ── Loader rankings ────────────────────────────────────────────
     loader_stats = {}
     for p in current_projects:
@@ -325,6 +352,7 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
     return {
         "summary": summary,
         "category_rankings": category_rankings,
+        "category_trending": category_trending,
         "loader_rankings": loader_rankings,
         "top_projects": top_projects,
         "top_version_loaders": top_version_loaders,
@@ -392,6 +420,9 @@ def main():
     print(f"  New downloads: {analysis_data['summary']['new_downloads_since_baseline']:+,}")
     print(f"  Projects with delta > 0: {len(analysis_data['all_project_deltas']):,}")
     print(f"  VL pairs: {len(analysis_data['top_version_loaders'])}")
+    cat_trending = analysis_data.get("category_trending", {})
+    trending_total = sum(len(v) for v in cat_trending.values())
+    print(f"  Category trending: {len(cat_trending)} categories, {trending_total} trending projects")
 
     # ── Save ──────────────────────────────────────────────────────
     timestamp = get_timestamp()

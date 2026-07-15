@@ -41,6 +41,7 @@ def combine_analyses(data_dir):
             "top_projects": [],
             "top_version_loaders": [],
             "category_rankings": [],
+            "category_trending": {},
             "loader_rankings": [],
         },
     }
@@ -49,6 +50,8 @@ def combine_analyses(data_dir):
     all_top_vl = {}  # key: (game_version, loader) -> aggregated stats
     all_category_rankings = {}
     all_loader_rankings = {}
+    # Combined category trending: category -> list of trending projects (with type)
+    all_category_trending = {}
 
     for pt in PROJECT_TYPES:
         analysis = load_latest_analysis(data_dir, pt)
@@ -62,6 +65,7 @@ def combine_analyses(data_dir):
             "analysis_type": analysis.get("analysis_type", "hourly"),
             "summary": analysis.get("summary", {}),
             "category_rankings": analysis.get("category_rankings", [])[:10],
+            "category_trending": analysis.get("category_trending", {}),
             "loader_rankings": analysis.get("loader_rankings", [])[:10],
             "top_projects": analysis.get("top_projects", [])[:20],
             "top_version_loaders": analysis.get("top_version_loaders", [])[:200],
@@ -135,6 +139,14 @@ def combine_analyses(data_dir):
             all_loader_rankings[key]["total_downloads"] += ld.get("total_downloads", 0)
             all_loader_rankings[key]["new_downloads"] += ld.get("new_downloads", 0)
 
+        # Merge category trending (top 50 per category across all project types)
+        cat_trending = analysis.get("category_trending", {}) or {}
+        for cat, trending_list in cat_trending.items():
+            if cat not in all_category_trending:
+                all_category_trending[cat] = []
+            for p in trending_list:
+                all_category_trending[cat].append({**p, "project_type": pt})
+
     # Sort and assign
     all_top_projects.sort(key=lambda x: x.get("delta_downloads", 0), reverse=True)
     report["combined"]["top_projects"] = all_top_projects[:50]
@@ -156,6 +168,14 @@ def combine_analyses(data_dir):
         key=lambda x: x["new_downloads"],
         reverse=True,
     )[:20]
+
+    # Combined category trending: for each category, take the top 50 trending
+    # projects across ALL project types (sorted by delta_downloads descending).
+    combined_trending = {}
+    for cat, trending_list in all_category_trending.items():
+        trending_list.sort(key=lambda x: x.get("delta_downloads", 0), reverse=True)
+        combined_trending[cat] = trending_list[:50]
+    report["combined"]["category_trending"] = combined_trending
 
     # Compute total stats
     total_projects = sum(
@@ -342,6 +362,9 @@ def main():
     print(f"  Combined top projects: {len(report['combined']['top_projects'])}")
     print(f"  Combined top VL pairs: {len(report['combined']['top_version_loaders'])}")
     print(f"  Combined categories: {len(report['combined']['category_rankings'])}")
+    cat_trending = report["combined"].get("category_trending", {})
+    trending_total = sum(len(v) for v in cat_trending.values())
+    print(f"  Combined category trending: {len(cat_trending)} categories, {trending_total} trending projects")
     print(f"  Run history: {len(report.get('run_history', []))} runs recorded")
     return 0
 
