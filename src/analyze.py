@@ -910,6 +910,14 @@ def main():
 
     # ── Assemble final analysis ───────────────────────────────────
     timestamp = get_timestamp()
+
+    # Extract project_vl_pairs and save as a separate file (too large for main analysis)
+    project_vl_pairs = analysis_data.pop("project_vl_pairs", {})
+    type_dir = get_project_type_dir(project_type)
+    vl_pairs_path = f"{type_dir}/project_vl_pairs.json"
+    save_json(vl_pairs_path, project_vl_pairs)
+    print(f"Saved project_vl_pairs to {vl_pairs_path} ({len(project_vl_pairs)} projects)")
+
     analysis = {
         "timestamp": timestamp,
         "date": current_date,
@@ -931,7 +939,6 @@ def main():
     print(f"Saved analysis to {analysis_path}")
 
     # Save latest analysis (for the app)
-    type_dir = get_project_type_dir(project_type)
     latest_path = f"{type_dir}/latest_analysis.json"
     save_json(latest_path, analysis)
     print(f"Saved latest analysis to {latest_path}")
