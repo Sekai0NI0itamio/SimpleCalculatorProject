@@ -66,7 +66,7 @@ def combine_analyses(data_dir):
     }
 
     all_top_projects = []
-    all_top_vl = []
+    all_top_vl = {}  # key: (game_version, loader) -> aggregated stats
     all_category_rankings = {}
     all_loader_rankings = {}
     all_growth_ranking = []
@@ -115,12 +115,36 @@ def combine_analyses(data_dir):
                 "project_type": pt,
             })
 
-        # Collect top VL pairs with type prefix
+        # Aggregate VL pairs by (game_version, loader) across ALL project types
+        # Per user: "1.20.1 fabric and 1.20.1 forge are TWO different things"
+        # Each (game_version, loader) pair is summed across all project types.
         for vl in analysis.get("top_version_loaders", []):
-            all_top_vl.append({
-                **vl,
-                "project_type": pt,
-            })
+            gv = vl.get("game_version", "")
+            loader = vl.get("loader", "")
+            key = (gv, loader)
+            if key not in all_top_vl:
+                all_top_vl[key] = {
+                    "game_version": gv,
+                    "loader": loader,
+                    "delta_downloads": 0,
+                    "project_count": 0,
+                    "top_project_id": "",
+                    "top_project_title": "",
+                    "top_project_delta": 0,
+                    "types": {},
+                }
+            stat = all_top_vl[key]
+            stat["delta_downloads"] += vl.get("delta_downloads", 0)
+            stat["project_count"] += vl.get("project_count", 0)
+            # Track the single top project across all types for this VL pair
+            if vl.get("top_project_delta", 0) > stat["top_project_delta"]:
+                stat["top_project_delta"] = vl.get("top_project_delta", 0)
+                stat["top_project_id"] = vl.get("top_project_id", "")
+                stat["top_project_title"] = vl.get("top_project_title", "")
+            stat["types"][pt] = {
+                "delta_downloads": vl.get("delta_downloads", 0),
+                "project_count": vl.get("project_count", 0),
+            }
 
         # Merge category rankings
         for cat in analysis.get("category_rankings", []):
@@ -171,8 +195,12 @@ def combine_analyses(data_dir):
     all_rising_stars.sort(key=lambda x: x.get("growth_pct", 0), reverse=True)
     report["combined"]["rising_stars"] = all_rising_stars[:50]
 
-    all_top_vl.sort(key=lambda x: x.get("delta_downloads", 0), reverse=True)
-    report["combined"]["top_version_loaders"] = all_top_vl[:50]
+    # Sort VL pairs by total delta_downloads across all types
+    report["combined"]["top_version_loaders"] = sorted(
+        all_top_vl.values(),
+        key=lambda x: x["delta_downloads"],
+        reverse=True,
+    )[:50]
 
     # Sort category rankings by new_downloads
     report["combined"]["category_rankings"] = sorted(

@@ -329,19 +329,19 @@
 
     <!-- Cross-Type Combined Sections -->
     <div class="section">
-      <div class="section-title">Top 3 Fastest Growing Projects (All Types)</div>
-      <div class="section-subtitle">Projects with the highest download increase across all project types</div>
-      <div class="grid-3" id="top3Mods"></div>
+      <div class="section-title">Top Growing Projects — What to Build Next</div>
+      <div class="section-subtitle">Ranked by growth rate across all project types. Higher % = faster growing.</div>
+      <div id="top3Mods"></div>
     </div>
 
     <div class="section">
-      <div class="section-title">Categories with Most Increase</div>
-      <div class="section-subtitle">Categories ranked by total download growth</div>
+      <div class="section-title">Categories with Most Increase — Where to Focus</div>
+      <div class="section-subtitle">Categories ranked by total download growth across all types</div>
       <div id="topCategories"></div>
     </div>
 
     <div class="section">
-      <div class="section-title">Top 5 Version+Loader Combinations</div>
+      <div class="section-title">All Version+Loader Combinations Ranked</div>
       <div class="section-subtitle">Highest download growth by version-loader pair. 1.20.1 Fabric and 1.20.1 Forge are separate entries.</div>
       <div id="topVLPairs"></div>
     </div>
@@ -752,33 +752,60 @@ function renderPerTypeCategories(info, pt) {
 function renderTop3Combined(d) {
   const combined = d.combined || {};
   // Use growth_ranking if available, otherwise fall back to top_projects
-  const top3 = (combined.growth_ranking || combined.top_projects || []).slice(0, 3);
+  const all = (combined.growth_ranking || combined.top_projects || []);
+  const top = all.slice(0, 10);
+  const rest = all.slice(10);
   const rankCls = ['rank-1','rank-2','rank-3'];
-  document.getElementById('top3Mods').innerHTML = top3.length ? top3.map((p,i) => `
-    <div class="mod-card ${rankCls[i]}">
-      <div class="rank-badge">${i+1}</div>
-      <div class="mod-name">${escHtml(p.title||'Unknown')}</div>
-      <div class="mod-type">${p.project_type||'mod'}</div>
-      <div class="mod-stats">
-        <div class="stat">
-          <div class="stat-value positive">${fmtPct(p.growth_pct)}</div>
-          <div class="stat-label">Growth Rate</div>
+  document.getElementById('top3Mods').innerHTML = top.length ? `
+    <div class="grid-3">
+      ${top.map((p,i) => `
+        <div class="mod-card ${rankCls[i]||''}">
+          <div class="rank-badge">${i+1}</div>
+          <div class="mod-name">${escHtml(p.title||'Unknown')}</div>
+          <div class="mod-type">${p.project_type||'mod'}</div>
+          <div class="mod-stats">
+            <div class="stat">
+              <div class="stat-value positive">${fmtPct(p.growth_pct)}</div>
+              <div class="stat-label">Growth Rate</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">${fmt(p.current_downloads)}</div>
+              <div class="stat-label">Total</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
+              <div class="stat-label">New</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value" style="font-size:12px">${(p.categories||[]).slice(0,2).join(', ')||'—'}</div>
+              <div class="stat-label">Categories</div>
+            </div>
+          </div>
         </div>
-        <div class="stat">
-          <div class="stat-value">${fmt(p.current_downloads)}</div>
-          <div class="stat-label">Total</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
-          <div class="stat-label">New</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">${(p.categories||[]).slice(0,2).join(', ')||'—'}</div>
-          <div class="stat-label">Categories</div>
-        </div>
-      </div>
+      `).join('')}
     </div>
-  `).join('') : '<div class="empty">No data yet</div>';
+    ${rest.length ? `<div class="view-all-link" onclick="toggleFullList('combined-growth')">View all ${all.length} &#9660;</div>
+    <div id="full-combined-growth" style="display:none;">
+      <table style="margin-top:12px;">
+        <thead><tr>
+          <th>#</th><th>Project</th><th>Type</th>
+          <th class="num">Growth</th><th class="num">New</th><th class="num">Total</th>
+        </tr></thead>
+        <tbody>
+          ${rest.map((p,i) => `
+            <tr>
+              <td>${i+11}</td>
+              <td><strong>${escHtml(p.title||'Unknown')}</strong></td>
+              <td>${p.project_type||'mod'}</td>
+              <td class="num positive">${fmtPct(p.growth_pct)}</td>
+              <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
+              <td class="num">${fmt(p.current_downloads)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>` : ''}
+  ` : '<div class="empty">No data yet</div>';
 }
 
 function renderTopCategories(d) {
@@ -791,7 +818,7 @@ function renderTopCategories(d) {
         <th class="num">Growth</th><th>Types</th>
       </tr></thead>
       <tbody>
-        ${cats.slice(0,10).map((c,i) => `
+        ${cats.map((c,i) => `
           <tr>
             <td>${i+1}</td><td><strong>${c.category}</strong></td>
             <td class="num">${fmt(c.projects)}</td>
@@ -808,36 +835,21 @@ function renderTopCategories(d) {
 
 function renderTopVLPairs(d) {
   const topVL = (d.combined || {}).top_version_loaders || [];
-  const vlMap = new Map();
-  for (const vl of topVL) {
-    for (const gv of (vl.game_versions||[])) {
-      for (const ld of (vl.loaders||[])) {
-        const key = gv+'|'+ld;
-        const ex = vlMap.get(key);
-        if (!ex || (vl.delta_downloads||0) > (ex.delta_downloads||0)) {
-          vlMap.set(key, {...vl, _gv:gv, _ld:ld});
-        }
-      }
-    }
-  }
-  const unique = Array.from(vlMap.values())
-    .sort((a,b) => (b.delta_downloads||0)-(a.delta_downloads||0)).slice(0,5);
-
-  document.getElementById('topVLPairs').innerHTML = unique.length ? `
+  document.getElementById('topVLPairs').innerHTML = topVL.length ? `
     <table>
       <thead><tr>
-        <th>#</th><th>Game Version</th><th>Loader</th><th>Project</th>
-        <th class="num">Delta</th><th>Type</th>
+        <th>#</th><th>Game Version</th><th>Loader</th>
+        <th class="num">Delta</th><th class="num">Projects</th><th>Top Project</th>
       </tr></thead>
       <tbody>
-        ${unique.map((vl,i) => `
+        ${topVL.map((vl,i) => `
           <tr>
             <td>${i+1}</td>
-            <td><span class="mono" style="font-weight:600">${vl._gv}</span></td>
-            <td>${loaderTag(vl._ld)}</td>
-            <td>${escHtml(vl.project_title||'—')}</td>
+            <td><span class="mono" style="font-weight:600">${vl.game_version||'—'}</span></td>
+            <td>${loaderTag(vl.loader||'')}</td>
             <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
-            <td><span class="tag blue">${vl.project_type||'mod'}</span></td>
+            <td class="num">${fmt(vl.project_count||0)}</td>
+            <td>${escHtml(vl.top_project_title||'—')}</td>
           </tr>
         `).join('')}
       </tbody>

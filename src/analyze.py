@@ -347,12 +347,12 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
     # ═══════════════════════════════════════════════════════════════
     #  GROWTH RATE RANKING (by percentage, not absolute)
     # ═══════════════════════════════════════════════════════════════
-    #  Filter: baseline > 1000 downloads (avoid noise from tiny mods)
+    #  Filter: baseline > 100 downloads (avoid noise from brand new mods)
     #  Sort by growth_pct descending
     # ═══════════════════════════════════════════════════════════════
     growth_ranking = [
         p for p in top_projects
-        if p["baseline_downloads"] > 1000 and p["delta_downloads"] > 0
+        if p["baseline_downloads"] > 100 and p["delta_downloads"] > 0
     ]
     growth_ranking.sort(key=lambda x: x["growth_pct"], reverse=True)
     growth_ranking = growth_ranking[:50]
@@ -372,9 +372,11 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
     rising_stars.sort(key=lambda x: x["growth_pct"], reverse=True)
     rising_stars = rising_stars[:50]
 
-    # ── Top version+loader growth ─────────────────────────────────
+    # ── Top version+loader growth (aggregated by game_version+loader pair) ──
+    #  Per user request: "1.20.1 fabric and 1.20.1 forge are TWO different things"
+    #  Aggregate across ALL projects for each (game_version, loader) pair
     project_title_map = {p["project_id"]: p.get("title", "") for p in current_projects}
-    top_version_loaders = []
+    vl_pair_stats = {}  # key: (game_version, loader) -> {delta, project_count, top_project}
     for v in current_versions:
         vid = v.get("version_id")
         if not vid:
@@ -382,19 +384,33 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         current_dl = v.get("downloads", 0) or 0
         baseline_dl = baseline_version_map.get(vid, 0)
         delta = current_dl - baseline_dl
-        if delta > 0:
-            pid = v.get("project_id", "")
-            top_version_loaders.append({
-                "version_id": vid,
-                "project_id": pid,
-                "project_title": project_title_map.get(pid, pid),
-                "version_number": v.get("version_number", ""),
-                "loaders": v.get("loaders", []) or [],
-                "game_versions": v.get("game_versions", []) or [],
-                "delta_downloads": delta,
-            })
-    top_version_loaders.sort(key=lambda x: x["delta_downloads"], reverse=True)
-    top_version_loaders = top_version_loaders[:50]
+        if delta <= 0:
+            continue
+        pid = v.get("project_id", "")
+        loaders = v.get("loaders", []) or []
+        game_versions = v.get("game_versions", []) or []
+        for loader in loaders:
+            for gv in game_versions:
+                key = (gv, loader)
+                if key not in vl_pair_stats:
+                    vl_pair_stats[key] = {
+                        "game_version": gv,
+                        "loader": loader,
+                        "delta_downloads": 0,
+                        "project_count": 0,
+                        "top_project_id": pid,
+                        "top_project_title": project_title_map.get(pid, pid),
+                        "top_project_delta": 0,
+                    }
+                stat = vl_pair_stats[key]
+                stat["delta_downloads"] += delta
+                stat["project_count"] += 1
+                if delta > stat["top_project_delta"]:
+                    stat["top_project_delta"] = delta
+                    stat["top_project_id"] = pid
+                    stat["top_project_title"] = project_title_map.get(pid, pid)
+
+    top_version_loaders = sorted(vl_pair_stats.values(), key=lambda x: x["delta_downloads"], reverse=True)[:50]
 
     # ── Distribution ──────────────────────────────────────────────
     downloads_list = [p.get("downloads", 0) for p in current_projects]
