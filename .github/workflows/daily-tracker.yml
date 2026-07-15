@@ -34,7 +34,7 @@ jobs:
     with:
       project_type: mod
       version_chunks: 30
-      is_main: ${{ needs.check-hour.outputs.is_main }}
+      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
 
   modpack:
     needs: check-hour
@@ -42,7 +42,7 @@ jobs:
     with:
       project_type: modpack
       version_chunks: 10
-      is_main: ${{ needs.check-hour.outputs.is_main }}
+      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
 
   resourcepack:
     needs: check-hour
@@ -50,7 +50,7 @@ jobs:
     with:
       project_type: resourcepack
       version_chunks: 10
-      is_main: ${{ needs.check-hour.outputs.is_main }}
+      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
 
   shader:
     needs: check-hour
@@ -58,7 +58,7 @@ jobs:
     with:
       project_type: shader
       version_chunks: 5
-      is_main: ${{ needs.check-hour.outputs.is_main }}
+      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
 
   datapack:
     needs: check-hour
@@ -66,7 +66,7 @@ jobs:
     with:
       project_type: datapack
       version_chunks: 10
-      is_main: ${{ needs.check-hour.outputs.is_main }}
+      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
 
   world:
     needs: check-hour
@@ -74,4 +74,4 @@ jobs:
     with:
       project_type: world
       version_chunks: 5
-      is_main: ${{ needs.check-hour.outputs.is_main }}
+      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
