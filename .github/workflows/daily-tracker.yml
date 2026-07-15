@@ -40,7 +40,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add reports/workflow_status.json
           git diff --staged --quiet || git commit -m "Workflow started"
-          git push || echo "push failed (may be concurrent)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break || sleep 3; done
 
   # All 6 project types run in parallel every 2 hours.
   # Every run does the FULL pipeline (discover → fetch-projects → split-versions →
@@ -117,11 +117,13 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add reports/
           git diff --staged --quiet || git commit -m "Update combined website report"
-          git push
+          for i in 1 2 3; do git pull --rebase origin main && git push && break || sleep 3; done
       - name: Set status to completed
+        if: ${{ always() }}
         run: |
+          git pull --rebase origin main
           NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           echo "{\"status\":\"completed\",\"started_at\":null,\"last_finished\":\"$NOW\"}" > reports/workflow_status.json
           git add reports/workflow_status.json
           git commit -m "Workflow completed" || true
-          git push || echo "push failed"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break || sleep 3; done
