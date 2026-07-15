@@ -410,7 +410,55 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                     stat["top_project_id"] = pid
                     stat["top_project_title"] = project_title_map.get(pid, pid)
 
-    top_version_loaders = sorted(vl_pair_stats.values(), key=lambda x: x["delta_downloads"], reverse=True)[:50]
+    top_version_loaders = sorted(vl_pair_stats.values(), key=lambda x: x["delta_downloads"], reverse=True)[:200]
+
+    # ── Per-project version+loader pairs (for project detail panel) ──
+    #  When user clicks a project, show its individual VL pairs ranked by delta
+    project_vl_pairs = {}  # key: project_id -> list of {game_version, loader, delta_downloads}
+    for v in current_versions:
+        vid = v.get("version_id")
+        if not vid:
+            continue
+        current_dl = v.get("downloads", 0) or 0
+        baseline_dl = baseline_version_map.get(vid, 0)
+        delta = current_dl - baseline_dl
+        if delta <= 0:
+            continue
+        pid = v.get("project_id", "")
+        if not pid:
+            continue
+        loaders = v.get("loaders", []) or []
+        game_versions = v.get("game_versions", []) or []
+        for loader in loaders:
+            for gv in game_versions:
+                if pid not in project_vl_pairs:
+                    project_vl_pairs[pid] = []
+                project_vl_pairs[pid].append({
+                    "game_version": gv,
+                    "loader": loader,
+                    "delta_downloads": delta,
+                })
+
+    # Sort each project's VL pairs by delta descending
+    for pid in project_vl_pairs:
+        project_vl_pairs[pid].sort(key=lambda x: x["delta_downloads"], reverse=True)
+
+    # ── All project deltas (for the full scrollable list) ──────────
+    #  Includes ALL projects with delta > 0, sorted by delta descending
+    #  Minimal fields to keep file size reasonable
+    all_project_deltas = [
+        {
+            "project_id": p["project_id"],
+            "title": p.get("title", ""),
+            "slug": p.get("slug", ""),
+            "categories": p.get("categories", []),
+            "current_downloads": p.get("downloads", 0),
+            "delta_downloads": p.get("downloads", 0) - baseline_map.get(p["project_id"], 0),
+        }
+        for p in current_projects
+        if p.get("downloads", 0) - baseline_map.get(p["project_id"], 0) > 0
+    ]
+    all_project_deltas.sort(key=lambda x: x["delta_downloads"], reverse=True)
 
     # ── Distribution ──────────────────────────────────────────────
     downloads_list = [p.get("downloads", 0) for p in current_projects]
@@ -525,6 +573,8 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         "loader_rankings": loader_rankings,
         "top_projects": top_projects,
         "top_version_loaders": top_version_loaders,
+        "all_project_deltas": all_project_deltas,
+        "project_vl_pairs": project_vl_pairs,
         "distribution": distribution,
         "concentration": concentration,
         "category_loader_combos": category_loader_combos,
