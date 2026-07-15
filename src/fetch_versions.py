@@ -98,6 +98,22 @@ def fetch_versions_chunk(project_type, chunk_index: int):
         out_path = f"{results_dir}/results_{chunk_index}.json"
         save_json(out_path, {"versions": [], "version_summary": {}, "errors": []})
         return
+    chunk_data = load_json(chunk_path)
+    if not chunk_data:
+        print(f"Failed to load chunk file {chunk_path}")
+        return
+    # Chunk file is a JSON array of project IDs, or an object with project_ids key
+    if isinstance(chunk_data, list):
+        project_ids = chunk_data
+    elif isinstance(chunk_data, dict):
+        project_ids = chunk_data.get("project_ids", []) or chunk_data.get("projects", [])
+    else:
+        project_ids = []
+    if not project_ids:
+        print(f"Chunk {chunk_index} has no project_ids — creating empty result")
+        out_path = f"{results_dir}/results_{chunk_index}.json"
+        save_json(out_path, {"versions": [], "version_summary": {}, "errors": []})
+        return
     request_timestamps = []
     session = create_session()
     results = []
