@@ -6,45 +6,29 @@
 <title>Modrinth Market Analytics — Decision Engine</title>
 <style>
   :root {
-    --bg: #0d1117;
-    --card: #161b22;
-    --border: #30363d;
-    --text: #c9d1d9;
-    --text-muted: #8b949e;
-    --accent: #58a6ff;
-    --green: #3fb950;
-    --red: #f85149;
-    --orange: #d29922;
-    --purple: #bc8cff;
-    --amber: #f59e0b;
-    --emerald: #10b981;
-    --violet: #8b5cf6;
-    --sky: #38bdf8;
-    --rose: #f43f5e;
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --green: #3fb950; --red: #f85149; --orange: #d29922; --purple: #bc8cff;
+    --amber: #f59e0b; --emerald: #10b981; --violet: #8b5cf6;
+    --sky: #38bdf8; --rose: #f43f5e;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg); color: var(--text); line-height: 1.5;
-    min-height: 100vh;
+    background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh;
   }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
   /* Navigation */
   nav {
-    border-bottom: 1px solid var(--border);
-    background: rgba(13,17,23,0.95);
-    position: sticky; top: 0; z-index: 100;
-    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); background: rgba(13,17,23,0.95);
+    position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px);
   }
   nav .nav-inner {
     max-width: 1200px; margin: 0 auto; padding: 0 20px;
     display: flex; align-items: center; height: 52px;
   }
-  nav .logo {
-    font-size: 16px; font-weight: 700; color: var(--text);
-    margin-right: 32px; letter-spacing: -0.3px;
-  }
+  nav .logo { font-size: 16px; font-weight: 700; margin-right: 32px; letter-spacing: -0.3px; }
   nav .logo span { color: var(--accent); }
   nav .nav-links { display: flex; gap: 4px; }
   nav .nav-link {
@@ -59,34 +43,69 @@
   /* Pages */
   .page { display: none; padding: 32px 0; }
   .page.active { display: block; }
-
-  /* Header */
-  .page-header { margin-bottom: 32px; }
+  .page-header { margin-bottom: 24px; }
   .page-header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
   .page-header .subtitle { color: var(--text-muted); font-size: 14px; }
 
-  /* Cards */
-  .card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 20px;
-  }
-  .card-header {
-    display: flex; align-items: center; gap: 8px;
-    margin-bottom: 12px; font-size: 11px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.5px;
-    color: var(--text-muted);
-  }
-  .card-header .icon { width: 16px; height: 16px; }
+  .section { margin-bottom: 40px; }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+  .section-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
 
-  /* Grids */
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  /* Summary stats */
+  .summary-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .summary-stat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 14px 16px;
+  }
+  .summary-stat .ss-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .summary-stat .ss-value { font-size: 20px; font-weight: 700; }
+  .ss-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Project Type Tabs */
+  .pt-tabs { display: flex; gap: 4px; margin-bottom: 20px; flex-wrap: wrap; }
+  .pt-tab {
+    padding: 7px 16px; border-radius: 6px; cursor: pointer;
+    font-size: 13px; font-weight: 500; border: 1px solid var(--border);
+    background: var(--card); color: var(--text-muted);
+    transition: all 0.15s; text-transform: capitalize;
+  }
+  .pt-tab:hover { color: var(--text); border-color: var(--text-muted); }
+  .pt-tab.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+  .pt-tab .pt-count { font-size: 10px; opacity: 0.7; margin-left: 4px; }
+  .pt-content { display: none; }
+  .pt-content.active { display: block; }
+
+  /* Per-type summary row */
+  .pt-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .pt-stat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px;
+  }
+  .pt-stat .pt-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
+  .pt-stat .pt-value { font-size: 18px; font-weight: 700; margin-top: 2px; }
+
+  /* Charts Grid */
+  .charts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 16px; margin-bottom: 20px; }
+  .chart-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden;
+  }
+  .chart-card .chart-label {
+    padding: 8px 12px; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.3px; color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .chart-card img {
+    width: 100%; height: auto; display: block;
+    background: #0a0e13;
+  }
+  .chart-card img.loading-img { min-height: 200px; background: #0a0e13; }
 
   /* Top Mod Cards */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
   .mod-card {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 20px; position: relative;
-    overflow: hidden;
+    border-radius: 10px; padding: 20px; position: relative; overflow: hidden;
   }
   .mod-card.rank-1 { border-color: rgba(245,158,11,0.3); }
   .mod-card.rank-2 { border-color: rgba(148,163,184,0.3); }
@@ -104,8 +123,7 @@
   .mod-card .mod-type {
     display: inline-block; padding: 2px 8px; border-radius: 4px;
     font-size: 11px; font-weight: 500; margin-bottom: 12px;
-    background: rgba(88,166,255,0.1); color: var(--accent);
-    text-transform: capitalize;
+    background: rgba(88,166,255,0.1); color: var(--accent); text-transform: capitalize;
   }
   .mod-card .mod-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .mod-card .stat { text-align: center; }
@@ -132,7 +150,7 @@
   .negative { color: var(--red); }
   .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
 
-  /* Tags / Badges */
+  /* Tags */
   .tag {
     display: inline-block; padding: 2px 8px; border-radius: 4px;
     font-size: 11px; font-weight: 500;
@@ -150,25 +168,14 @@
   .tag.loader-neoforge { background: rgba(188,140,255,0.15); color: var(--purple); }
   .tag.loader-quilt { background: rgba(88,166,255,0.15); color: var(--accent); }
 
-  .section { margin-bottom: 40px; }
-  .section-title {
-    font-size: 18px; font-weight: 600; margin-bottom: 4px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .section-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
-
-  /* Opportunity Card */
-  .opp-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; overflow: hidden;
-  }
+  /* Opportunity Cards */
+  .opp-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
   .opp-card.confidence-high { border-color: rgba(16,185,129,0.3); }
   .opp-card.confidence-medium { border-color: rgba(245,158,11,0.3); }
   .opp-card.rank-top { border-color: rgba(88,166,255,0.3); }
   .opp-header {
     display: flex; align-items: center; gap: 12px;
-    padding: 14px 16px; cursor: pointer;
-    transition: background 0.1s;
+    padding: 14px 16px; cursor: pointer; transition: background 0.1s;
   }
   .opp-header:hover { background: rgba(88,166,255,0.03); }
   .opp-rank {
@@ -184,29 +191,18 @@
   .opp-name { font-size: 14px; font-weight: 600; }
   .opp-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
   .opp-meta span { margin-right: 12px; }
-  .opp-score {
-    text-align: right; flex-shrink: 0;
-  }
-  .opp-score .score-num {
-    font-size: 22px; font-weight: 700; font-family: 'SF Mono', 'Consolas', monospace;
-  }
+  .opp-score { text-align: right; flex-shrink: 0; }
+  .opp-score .score-num { font-size: 22px; font-weight: 700; font-family: 'SF Mono', 'Consolas', monospace; }
   .opp-score .score-num.high { color: var(--emerald); }
   .opp-score .score-num.med { color: var(--amber); }
   .opp-score .score-num.low { color: var(--text-muted); }
   .opp-score .score-label { font-size: 10px; color: var(--text-muted); }
   .opp-chevron { color: var(--text-muted); flex-shrink: 0; }
-
-  .opp-detail {
-    padding: 0 16px 16px; border-top: 1px solid var(--border);
-    display: none;
-  }
+  .opp-detail { padding: 0 16px 16px; border-top: 1px solid var(--border); display: none; }
   .opp-detail.open { display: block; }
   .opp-detail-inner { padding-top: 12px; }
   .opp-desc { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
-
-  /* Meters */
   .meter-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .meter { }
   .meter-label { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px; }
   .meter-label .name { color: var(--text-muted); }
   .meter-label .val { font-weight: 600; }
@@ -214,7 +210,6 @@
   .meter-bar .fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
   .meter-bar .fill.demand { background: rgba(16,185,129,0.5); }
   .meter-bar .fill.supply { background: rgba(244,63,94,0.5); }
-
   .info-box {
     background: rgba(48,54,61,0.3); border: 1px solid var(--border);
     border-radius: 8px; padding: 12px; margin-bottom: 12px;
@@ -224,14 +219,11 @@
     font-size: 11px; font-weight: 600; text-transform: uppercase;
     color: var(--text-muted); margin-bottom: 8px;
   }
-  .info-box .vl-target {
-    display: flex; align-items: center; gap: 8px; font-size: 13px;
-  }
+  .info-box .vl-target { display: flex; align-items: center; gap: 8px; font-size: 13px; }
   .info-box .vl-target .version { font-weight: 600; }
   .info-box .vl-target .arrow { color: var(--text-muted); font-size: 11px; }
   .info-box .vl-target .loader-name { font-weight: 600; text-transform: capitalize; }
   .info-box .vl-target .sub { font-size: 11px; color: var(--text-muted); }
-
   .reasons { margin-bottom: 12px; }
   .reasons .reason {
     display: flex; align-items: flex-start; gap: 6px;
@@ -242,57 +234,33 @@
   }
   .reasons .reason .dot.primary { background: var(--emerald); }
   .reasons .reason .dot.secondary { background: var(--text-muted); }
-
   .risk-flags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
   .risk-flag {
-    padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 500;
-    border: 1px solid;
+    padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 500; border: 1px solid;
   }
   .risk-flag.sev-high { border-color: rgba(248,81,73,0.3); color: var(--red); background: rgba(248,81,73,0.06); }
   .risk-flag.sev-medium { border-color: rgba(210,153,34,0.3); color: var(--orange); background: rgba(210,153,34,0.06); }
   .risk-flag.sev-low { border-color: rgba(139,148,158,0.3); color: var(--text-muted); background: rgba(139,148,158,0.06); }
-
   .scenario-bands { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center; }
   .scenario-band { padding: 8px; background: rgba(48,54,61,0.2); border-radius: 6px; }
   .scenario-band .band-label { font-size: 10px; color: var(--text-muted); }
   .scenario-band .band-val { font-size: 14px; font-weight: 700; font-family: 'SF Mono', 'Consolas', monospace; }
-
   .example-projects { display: flex; flex-wrap: wrap; gap: 4px; }
-  .example-proj {
-    padding: 2px 8px; border-radius: 4px; font-size: 11px;
-    background: rgba(48,54,61,0.3); color: var(--text-muted);
-  }
-
-  /* Emerging concepts grid */
+  .example-proj { padding: 2px 8px; border-radius: 4px; font-size: 11px; background: rgba(48,54,61,0.3); color: var(--text-muted); }
   .emerging-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-  .emerging-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 16px;
-  }
+  .emerging-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
   .emerging-card .e-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
   .emerging-card .e-stats { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
 
   .loading { text-align: center; padding: 100px 0; color: var(--text-muted); }
   .loading .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .empty { padding: 32px; text-align: center; color: var(--text-muted); background: var(--card); border-radius: 8px; border: 1px solid var(--border); }
 
-  .summary-stats {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px; margin-bottom: 32px;
-  }
-  .summary-stat {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 16px;
-  }
-  .summary-stat .ss-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-  .summary-stat .ss-value { font-size: 22px; font-weight: 700; }
-
   @media (max-width: 768px) {
-    .grid-2 { grid-template-columns: 1fr; }
-    .meter-row { grid-template-columns: 1fr; }
+    .grid-2, .meter-row { grid-template-columns: 1fr; }
     nav .nav-stats { display: none; }
+    .charts-grid { grid-template-columns: 1fr; }
     .opp-header { flex-wrap: wrap; }
   }
 </style>
@@ -319,25 +287,31 @@
   <div id="page-home" class="page active" style="display:none">
     <div class="page-header">
       <h1>Market Overview</h1>
-      <div class="subtitle">This week's top movers across Modrinth</div>
+      <div class="subtitle">Top movers and charts across all Modrinth project types</div>
     </div>
     <div class="summary-stats" id="summaryStats"></div>
 
-    <!-- Top 3 Fastest Growing Mods -->
+    <!-- Per-Project-Type Tabs -->
     <div class="section">
-      <div class="section-title">Top 3 Fastest Growing Mods This Week</div>
-      <div class="section-subtitle">Projects with the highest download increase</div>
+      <div class="section-title">Project Type Breakdown</div>
+      <div class="section-subtitle">Click a project type to see its charts and top projects</div>
+      <div class="pt-tabs" id="ptTabs"></div>
+      <div id="ptContents"></div>
+    </div>
+
+    <!-- Cross-Type Combined Sections -->
+    <div class="section">
+      <div class="section-title">Top 3 Fastest Growing Projects (All Types)</div>
+      <div class="section-subtitle">Projects with the highest download increase across all project types</div>
       <div class="grid-3" id="top3Mods"></div>
     </div>
 
-    <!-- Top Categories -->
     <div class="section">
       <div class="section-title">Categories with Most Increase</div>
-      <div class="section-subtitle">Categories ranked by total download growth this week</div>
+      <div class="section-subtitle">Categories ranked by total download growth</div>
       <div id="topCategories"></div>
     </div>
 
-    <!-- Top 5 VL Pairs -->
     <div class="section">
       <div class="section-title">Top 5 Version+Loader Combinations</div>
       <div class="section-subtitle">Highest download growth by version-loader pair. 1.20.1 Fabric and 1.20.1 Forge are separate entries.</div>
@@ -370,12 +344,28 @@
 </div>
 
 <script>
-// ── State ──────────────────────────────────────────────────────────
+const PROJECT_TYPES = ['mod', 'modpack', 'resourcepack', 'shader', 'datapack', 'world'];
+const PT_LABELS = { mod:'Mods', modpack:'Modpacks', resourcepack:'Resource Packs', shader:'Shaders', datapack:'Data Packs', world:'Worlds' };
+
+const CHART_NAMES = [
+  { file:'trend', label:'Download Trend' },
+  { file:'categories', label:'Categories' },
+  { file:'loaders', label:'Loaders' },
+  { file:'distribution', label:'Distribution' },
+  { file:'concentration', label:'Concentration' },
+  { file:'top_projects', label:'Top Projects' },
+  { file:'velocity', label:'Velocity' },
+  { file:'prediction', label:'Predictions' },
+  { file:'top_movers_2h', label:'Top Movers (2h)' },
+  { file:'velocity_by_category', label:'Velocity by Category' },
+  { file:'hourly_heatmap', label:'Hourly Heatmap' },
+  { file:'recommendations', label:'Recommendations' },
+];
+
 let reportData = null;
 
 // ── Init ────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // Navigation
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
@@ -385,7 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Load data
   fetch('reports/latest_analysis.json')
     .then(r => { if (!r.ok) throw new Error('No data'); return r.json(); })
     .then(data => {
@@ -394,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderHome();
       renderAnalysis();
     })
-    .catch(err => {
+    .catch(() => {
       document.getElementById('loading').innerHTML = `
         <div style="color: var(--text-muted);">
           <div style="font-size: 48px; margin-bottom: 16px;">&#128200;</div>
@@ -409,18 +398,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ── Formatting Helpers ──────────────────────────────────────────────
 function fmt(n) { return n != null ? n.toLocaleString() : '—'; }
-function fmtDelta(n) {
-  if (n == null) return '—';
-  const sign = n >= 0 ? '+' : '';
-  return sign + n.toLocaleString();
-}
-function fmtPct(n) {
-  if (n == null) return '—';
-  return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
-}
+function fmtDelta(n) { if (n == null) return '—'; return (n >= 0 ? '+' : '') + n.toLocaleString(); }
+function fmtPct(n) { if (n == null) return '—'; return (n >= 0 ? '+' : '') + n.toFixed(1) + '%'; }
 function loaderTag(loader) {
-  const cls = 'loader-' + (loader || '').toLowerCase();
-  return `<span class="tag ${cls}">${loader}</span>`;
+  return `<span class="tag loader-${(loader||'').toLowerCase()}">${loader}</span>`;
+}
+function escHtml(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -432,7 +417,6 @@ function renderHome() {
   if (!d) return;
   document.getElementById('page-home').style.display = 'block';
 
-  // Summary stats
   const totals = d.totals || {};
   document.getElementById('summaryStats').innerHTML = `
     <div class="summary-stat">
@@ -448,8 +432,12 @@ function renderHome() {
       <div class="ss-value">${fmt(totals.versions)}</div>
     </div>
     <div class="summary-stat">
-      <div class="ss-label">Generated</div>
-      <div class="ss-value" style="font-size:14px;">${(d.generated_at || '').slice(0, 16).replace('T', ' ')}</div>
+      <div class="ss-label">Project Types</div>
+      <div class="ss-value">${Object.keys(d.project_types||{}).length}</div>
+    </div>
+    <div class="summary-stat">
+      <div class="ss-label">Updated</div>
+      <div class="ss-value" style="font-size:14px;">${(d.generated_at||'').slice(0,16).replace('T',' ')}</div>
     </div>
   `;
   document.getElementById('navStats').innerHTML = `
@@ -457,17 +445,164 @@ function renderHome() {
     <span>Downloads: <strong>${fmt(totals.downloads)}</strong></span>
   `;
 
-  // Top 3 Mods
-  const combined = d.combined || {};
-  const topProjects = combined.top_projects || [];
-  const top3 = topProjects.slice(0, 3);
-  const rankCls = ['rank-1', 'rank-2', 'rank-3'];
+  renderProjectTypeTabs(d);
+  renderTop3Combined(d);
+  renderTopCategories(d);
+  renderTopVLPairs(d);
+}
 
-  document.getElementById('top3Mods').innerHTML = top3.map((p, i) => `
+// ── Project Type Tabs ───────────────────────────────────────────────
+
+function renderProjectTypeTabs(d) {
+  const pts = d.project_types || {};
+  const tabsHtml = PROJECT_TYPES.map((pt, i) => {
+    const info = pts[pt] || {};
+    const summary = info.summary || {};
+    const count = summary.total_projects ? fmt(summary.total_projects) : '—';
+    return `<div class="pt-tab${i === 0 ? ' active' : ''}" data-pt="${pt}">
+      ${PT_LABELS[pt] || pt}<span class="pt-count">(${count})</span>
+    </div>`;
+  }).join('');
+  document.getElementById('ptTabs').innerHTML = tabsHtml;
+
+  // Build content for each type
+  const contentsHtml = PROJECT_TYPES.map((pt, i) => {
+    const info = pts[pt] || {};
+    return `<div class="pt-content${i === 0 ? ' active' : ''}" data-pt="${pt}">
+      ${renderPerTypeSummary(info, pt)}
+      ${renderPerTypeCharts(pt)}
+      ${renderPerTypeTopProjects(info, pt)}
+      ${renderPerTypeCategories(info, pt)}
+    </div>`;
+  }).join('');
+  document.getElementById('ptContents').innerHTML = contentsHtml;
+
+  // Tab click handler
+  document.querySelectorAll('.pt-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const pt = tab.dataset.pt;
+      document.querySelectorAll('.pt-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.pt-content').forEach(c => c.classList.remove('active'));
+      document.querySelector(`.pt-content[data-pt="${pt}"]`).classList.add('active');
+    });
+  });
+}
+
+function renderPerTypeSummary(info, pt) {
+  const summary = info.summary || {};
+  const delta = summary.new_downloads_since_baseline || 0;
+  const analysisType = info.analysis_type || 'hourly';
+  const date = info.date || '—';
+  return `
+    <div class="pt-summary">
+      <div class="pt-stat">
+        <div class="pt-label">Projects</div>
+        <div class="pt-value">${fmt(summary.total_projects)}</div>
+        <div class="ss-meta">${analysisType} analysis</div>
+      </div>
+      <div class="pt-stat">
+        <div class="pt-label">Downloads</div>
+        <div class="pt-value">${fmt(summary.total_downloads)}</div>
+      </div>
+      <div class="pt-stat">
+        <div class="pt-label">Versions</div>
+        <div class="pt-value">${fmt(summary.total_versions)}</div>
+      </div>
+      <div class="pt-stat">
+        <div class="pt-label">New Downloads</div>
+        <div class="pt-value positive">${fmtDelta(delta)}</div>
+        <div class="ss-meta">since ${date}</div>
+      </div>
+    </div>`;
+}
+
+function renderPerTypeCharts(pt) {
+  return `
+    <div class="section-title" style="font-size:14px; margin-bottom:10px;">Charts</div>
+    <div class="charts-grid">
+      ${CHART_NAMES.map(c => `
+        <div class="chart-card">
+          <div class="chart-label">${c.label}</div>
+          <img src="data/${pt}/charts/${c.file}.png" alt="${c.label}" loading="lazy"
+               onerror="this.parentElement.style.display='none'"
+               onload="this.classList.remove('loading-img')"
+               class="loading-img">
+        </div>
+      `).join('')}
+    </div>`;
+}
+
+function renderPerTypeTopProjects(info, pt) {
+  const projects = info.top_projects || [];
+  if (!projects.length) return '';
+  const top3 = projects.slice(0, 3);
+  const rankCls = ['rank-1','rank-2','rank-3'];
+  return `
+    <div class="section-title" style="font-size:14px; margin-bottom:10px;">Top 3 Growing in ${PT_LABELS[pt]||pt}</div>
+    <div class="grid-3" style="margin-bottom:20px;">
+      ${top3.map((p,i) => `
+        <div class="mod-card ${rankCls[i]}">
+          <div class="rank-badge">${i+1}</div>
+          <div class="mod-name">${escHtml(p.title||'Unknown')}</div>
+          <div class="mod-stats">
+            <div class="stat">
+              <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
+              <div class="stat-label">New Downloads</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">${fmt(p.current_downloads)}</div>
+              <div class="stat-label">Total</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value ${(p.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(p.growth_pct)}</div>
+              <div class="stat-label">Growth</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">${(p.categories||[]).slice(0,2).join(', ')||'—'}</div>
+              <div class="stat-label">Categories</div>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>`;
+}
+
+function renderPerTypeCategories(info, pt) {
+  const cats = info.category_rankings || [];
+  if (!cats.length) return '';
+  return `
+    <div class="section-title" style="font-size:14px; margin-bottom:10px;">Category Rankings — ${PT_LABELS[pt]||pt}</div>
+    <table>
+      <thead><tr>
+        <th>#</th><th>Category</th><th class="num">Projects</th>
+        <th class="num">Downloads</th><th class="num">New</th><th class="num">Growth</th>
+      </tr></thead>
+      <tbody>
+        ${cats.slice(0,10).map((c,i) => `
+          <tr>
+            <td>${i+1}</td><td><strong>${c.category}</strong></td>
+            <td class="num">${fmt(c.projects)}</td>
+            <td class="num">${fmt(c.total_downloads)}</td>
+            <td class="num positive">${fmtDelta(c.new_downloads)}</td>
+            <td class="num ${(c.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(c.growth_pct)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ── Combined Cross-Type Sections ────────────────────────────────────
+
+function renderTop3Combined(d) {
+  const combined = d.combined || {};
+  const top3 = (combined.top_projects || []).slice(0, 3);
+  const rankCls = ['rank-1','rank-2','rank-3'];
+  document.getElementById('top3Mods').innerHTML = top3.length ? top3.map((p,i) => `
     <div class="mod-card ${rankCls[i]}">
-      <div class="rank-badge">${i + 1}</div>
-      <div class="mod-name">${escHtml(p.title || 'Unknown')}</div>
-      <div class="mod-type">${p.project_type || 'mod'}</div>
+      <div class="rank-badge">${i+1}</div>
+      <div class="mod-name">${escHtml(p.title||'Unknown')}</div>
+      <div class="mod-type">${p.project_type||'mod'}</div>
       <div class="mod-stats">
         <div class="stat">
           <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
@@ -475,82 +610,78 @@ function renderHome() {
         </div>
         <div class="stat">
           <div class="stat-value">${fmt(p.current_downloads)}</div>
-          <div class="stat-label">Total Downloads</div>
+          <div class="stat-label">Total</div>
         </div>
         <div class="stat">
-          <div class="stat-value ${(p.growth_pct || 0) >= 0 ? 'positive' : 'negative'}">${fmtPct(p.growth_pct)}</div>
+          <div class="stat-value ${(p.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(p.growth_pct)}</div>
           <div class="stat-label">Growth</div>
         </div>
         <div class="stat">
-          <div class="stat-value">${(p.categories || []).slice(0, 2).join(', ') || '—'}</div>
+          <div class="stat-value">${(p.categories||[]).slice(0,2).join(', ')||'—'}</div>
           <div class="stat-label">Categories</div>
         </div>
       </div>
     </div>
-  `).join('') || '<div class="empty">No data yet</div>';
+  `).join('') : '<div class="empty">No data yet</div>';
+}
 
-  // Top Categories
-  const catRankings = combined.category_rankings || [];
-  const topCats = catRankings.slice(0, 10);
-  document.getElementById('topCategories').innerHTML = topCats.length ? `
+function renderTopCategories(d) {
+  const cats = (d.combined || {}).category_rankings || [];
+  document.getElementById('topCategories').innerHTML = cats.length ? `
     <table>
       <thead><tr>
         <th>#</th><th>Category</th><th class="num">Projects</th>
-        <th class="num">Total Downloads</th><th class="num">New This Week</th>
-        <th class="num">Growth %</th><th>Types</th>
+        <th class="num">Total Downloads</th><th class="num">New</th>
+        <th class="num">Growth</th><th>Types</th>
       </tr></thead>
       <tbody>
-        ${topCats.map((c, i) => `
+        ${cats.slice(0,10).map((c,i) => `
           <tr>
-            <td>${i + 1}</td>
-            <td><strong>${c.category}</strong></td>
+            <td>${i+1}</td><td><strong>${c.category}</strong></td>
             <td class="num">${fmt(c.projects)}</td>
             <td class="num">${fmt(c.total_downloads)}</td>
             <td class="num positive">${fmtDelta(c.new_downloads)}</td>
-            <td class="num ${(c.growth_pct || 0) >= 0 ? 'positive' : 'negative'}">${fmtPct(c.growth_pct)}</td>
-            <td>${Object.keys(c.types || {}).map(t => `<span class="tag blue" style="margin-right:2px">${t}</span>`).join('')}</td>
+            <td class="num ${(c.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(c.growth_pct)}</td>
+            <td>${Object.keys(c.types||{}).map(t=>`<span class="tag blue" style="margin-right:2px">${t}</span>`).join('')}</td>
           </tr>
         `).join('')}
       </tbody>
     </table>
-  ` : '<div class="empty">No category data yet</div>';
+  ` : '<div class="empty">No data yet</div>';
+}
 
-  // Top 5 VL Pairs — each VL pair is a unique combination of version + loader
-  const topVL = combined.top_version_loaders || [];
-  // Deduplicate by (game_version, loader) combination, keeping highest delta
+function renderTopVLPairs(d) {
+  const topVL = (d.combined || {}).top_version_loaders || [];
   const vlMap = new Map();
   for (const vl of topVL) {
-    const gvs = vl.game_versions || [];
-    const lds = vl.loaders || [];
-    for (const gv of gvs) {
-      for (const ld of lds) {
-        const key = gv + '|' + ld;
-        const existing = vlMap.get(key);
-        if (!existing || (vl.delta_downloads || 0) > (existing.delta_downloads || 0)) {
-          vlMap.set(key, { ...vl, _gv: gv, _ld: ld });
+    for (const gv of (vl.game_versions||[])) {
+      for (const ld of (vl.loaders||[])) {
+        const key = gv+'|'+ld;
+        const ex = vlMap.get(key);
+        if (!ex || (vl.delta_downloads||0) > (ex.delta_downloads||0)) {
+          vlMap.set(key, {...vl, _gv:gv, _ld:ld});
         }
       }
     }
   }
-  const uniqueVL = Array.from(vlMap.values())
-    .sort((a, b) => (b.delta_downloads || 0) - (a.delta_downloads || 0))
-    .slice(0, 5);
+  const unique = Array.from(vlMap.values())
+    .sort((a,b) => (b.delta_downloads||0)-(a.delta_downloads||0)).slice(0,5);
 
-  document.getElementById('topVLPairs').innerHTML = uniqueVL.length ? `
+  document.getElementById('topVLPairs').innerHTML = unique.length ? `
     <table>
       <thead><tr>
         <th>#</th><th>Game Version</th><th>Loader</th><th>Project</th>
-        <th class="num">Delta Downloads</th><th>Type</th>
+        <th class="num">Delta</th><th>Type</th>
       </tr></thead>
       <tbody>
-        ${uniqueVL.map((vl, i) => `
+        ${unique.map((vl,i) => `
           <tr>
-            <td>${i + 1}</td>
+            <td>${i+1}</td>
             <td><span class="mono" style="font-weight:600">${vl._gv}</span></td>
             <td>${loaderTag(vl._ld)}</td>
-            <td>${escHtml(vl.project_title || '—')}</td>
+            <td>${escHtml(vl.project_title||'—')}</td>
             <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
-            <td><span class="tag blue">${vl.project_type || 'mod'}</span></td>
+            <td><span class="tag blue">${vl.project_type||'mod'}</span></td>
           </tr>
         `).join('')}
       </tbody>
@@ -566,46 +697,41 @@ function renderAnalysis() {
   const d = reportData;
   if (!d) return;
   document.getElementById('page-analysis').style.display = 'block';
-
   const opp = d.opportunity_analysis;
   if (!opp || !opp.top_10_opportunities || !opp.top_10_opportunities.length) {
-    document.getElementById('opportunities').innerHTML =
-      '<div class="empty">No opportunity data yet. Run the daily pipeline first.</div>';
+    document.getElementById('opportunities').innerHTML = '<div class="empty">No opportunity data yet. Run the daily pipeline (00:00 UTC) first.</div>';
     document.getElementById('emergingConcepts').innerHTML = '';
     document.getElementById('globalVLPairs').innerHTML = '';
     return;
   }
-
   renderOpportunities(opp.top_10_opportunities);
   renderEmergingConcepts(opp.emerging_concepts || []);
   renderGlobalVL(opp.global_vl_recommendations || []);
 }
 
-function renderOpportunities(opportunities) {
-  document.getElementById('opportunities').innerHTML = opportunities.map((opp, i) => {
-    const rank = i + 1;
-    const rankCls = rank === 1 ? 'r1' : rank === 2 ? 'r2' : rank === 3 ? 'r3' : 'rn';
-    const confCls = 'confidence-' + (opp.confidence_level || 'low');
-    const topCls = rank <= 3 ? ' rank-top' : '';
-    const scoreCls = opp.opportunity_score >= 60 ? 'high' : opp.opportunity_score >= 40 ? 'med' : 'low';
+function renderOpportunities(opps) {
+  document.getElementById('opportunities').innerHTML = opps.map((opp,i) => {
+    const rank = i+1;
+    const rankCls = rank===1?'r1':rank===2?'r2':rank===3?'r3':'rn';
+    const confCls = 'confidence-'+(opp.confidence_level||'low');
+    const topCls = rank<=3?' rank-top':'';
+    const scoreCls = opp.opportunity_score>=60?'high':opp.opportunity_score>=40?'med':'low';
     const bestVL = opp.recommended_version_loader;
     const nextVL = opp.next_best_version_loader;
     const gw = opp.growth_window;
-    const tte = gw ? gw.time_to_enter : '';
-    const tteLabel = tte === 'build_now' ? 'Build Now' : tte === 'monitor' ? 'Monitor' : tte === 'avoid' ? 'Avoid' : '';
-    const tteCls = tte === 'build_now' ? 'emerald' : tte === 'monitor' ? 'amber' : tte === 'avoid' ? 'rose' : '';
-
-    return `
-    <div class="opp-card ${confCls}${topCls}" style="margin-bottom:12px">
+    const tte = gw?gw.time_to_enter:'';
+    const tteLabel = tte==='build_now'?'Build Now':tte==='monitor'?'Monitor':tte==='avoid'?'Avoid':'';
+    const tteCls = tte==='build_now'?'emerald':tte==='monitor'?'amber':tte==='avoid'?'rose':'';
+    return `<div class="opp-card ${confCls}${topCls}" style="margin-bottom:12px">
       <div class="opp-header" onclick="toggleOppDetail(this)">
         <div class="opp-rank ${rankCls}">${rank}</div>
         <div class="opp-info">
-          <div class="opp-name">${escHtml(opp.cluster_label || opp.cluster_id)}</div>
+          <div class="opp-name">${escHtml(opp.cluster_label||opp.cluster_id)}</div>
           <div class="opp-meta">
             <span>${opp.project_count} projects</span>
             <span>${fmt(opp.total_downloads_in_cluster)} downloads</span>
-            <span class="tag ${opp.confidence_level === 'high' ? 'emerald' : opp.confidence_level === 'medium' ? 'amber' : ''}">${opp.confidence_level || 'low'} confidence</span>
-            ${tte ? `<span class="tag ${tteCls}">${tteLabel}</span>` : ''}
+            <span class="tag ${opp.confidence_level==='high'?'emerald':opp.confidence_level==='medium'?'amber':''}">${opp.confidence_level||'low'} conf</span>
+            ${tte?`<span class="tag ${tteCls}">${tteLabel}</span>`:''}
           </div>
         </div>
         <div class="opp-score">
@@ -614,116 +740,91 @@ function renderOpportunities(opportunities) {
         </div>
         <div class="opp-chevron">&#9660;</div>
       </div>
-      <div class="opp-detail">
-        <div class="opp-detail-inner">
-          <div class="opp-desc">${escHtml(opp.cluster_description || '')}</div>
-          <div class="meter-row">
-            <div class="meter">
-              <div class="meter-label"><span class="name">Demand</span><span class="val" style="color:var(--emerald)">${opp.demand_score.toFixed(1)}</span></div>
-              <div class="meter-bar"><div class="fill demand" style="width:${Math.min(100, opp.demand_score)}%"></div></div>
-            </div>
-            <div class="meter">
-              <div class="meter-label"><span class="name">Supply (Competition)</span><span class="val" style="color:var(--rose)">${opp.supply_score.toFixed(1)}</span></div>
-              <div class="meter-bar"><div class="fill supply" style="width:${Math.min(100, opp.supply_score)}%"></div></div>
-            </div>
+      <div class="opp-detail"><div class="opp-detail-inner">
+        <div class="opp-desc">${escHtml(opp.cluster_description||'')}</div>
+        <div class="meter-row">
+          <div class="meter">
+            <div class="meter-label"><span class="name">Demand</span><span class="val" style="color:var(--emerald)">${opp.demand_score.toFixed(1)}</span></div>
+            <div class="meter-bar"><div class="fill demand" style="width:${Math.min(100,opp.demand_score)}%"></div></div>
           </div>
-          ${bestVL ? `
-          <div class="info-box">
-            <div class="info-box-header">&#127919; Recommended Target</div>
-            <div class="vl-target">
-              <span class="version mono">${bestVL.game_version}</span>
-              <span class="arrow">&#8594;</span>
-              <span class="loader-name">${bestVL.loader}</span>
-              <span class="sub">(${bestVL.project_count} existing, ${fmtDelta(bestVL.total_delta)} delta)</span>
-              ${bestVL.under_served_boost > 0 ? '<span class="tag emerald">Under-served</span>' : ''}
-            </div>
-            ${nextVL ? `<div class="vl-target" style="margin-top:4px;font-size:11px;color:var(--text-muted)">Next best: <span class="mono">${nextVL.game_version}</span> <span class="arrow">&#8594;</span> <span style="text-transform:capitalize">${nextVL.loader}</span></div>` : ''}
-          </div>` : ''}
-          ${gw ? `
-          <div class="info-box">
-            <div class="info-box-header">&#128200; Growth Forecast</div>
-            <div class="scenario-bands">
-              <div class="scenario-band"><div class="band-label">Conservative</div><div class="band-val" style="color:var(--text-muted)">${fmt(gw.scenario_bands.conservative)}/day</div></div>
-              <div class="scenario-band"><div class="band-label">Base</div><div class="band-val">${fmt(gw.scenario_bands.base)}/day</div></div>
-              <div class="scenario-band"><div class="band-label">Aggressive</div><div class="band-val" style="color:var(--emerald)">${fmt(gw.scenario_bands.aggressive)}/day</div></div>
-            </div>
-          </div>` : ''}
-          ${opp.reason_codes && opp.reason_codes.length ? `
-          <div class="reasons">
-            <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px">Why This Ranked Here</div>
-            ${opp.reason_codes.map(rc => `
-              <div class="reason"><div class="dot ${rc.priority}"></div>${escHtml(rc.message)}</div>
-            `).join('')}
-          </div>` : ''}
-          ${opp.risk_flags && opp.risk_flags.length ? `
-          <div class="risk-flags">
-            ${opp.risk_flags.map(rf => `<span class="risk-flag sev-${rf.severity}" title="${escHtml(rf.message)}">${rf.type.replace(/_/g, ' ')}</span>`).join('')}
-          </div>` : ''}
-          ${opp.top_example_projects && opp.top_example_projects.length ? `
-          <div class="example-projects" style="margin-top:8px">
-            ${opp.top_example_projects.map(n => `<span class="example-proj">${escHtml(n)}</span>`).join('')}
-          </div>` : ''}
+          <div class="meter">
+            <div class="meter-label"><span class="name">Supply (Competition)</span><span class="val" style="color:var(--rose)">${opp.supply_score.toFixed(1)}</span></div>
+            <div class="meter-bar"><div class="fill supply" style="width:${Math.min(100,opp.supply_score)}%"></div></div>
+          </div>
         </div>
-      </div>
+        ${bestVL?`<div class="info-box">
+          <div class="info-box-header">&#127919; Recommended Target</div>
+          <div class="vl-target">
+            <span class="version mono">${bestVL.game_version}</span>
+            <span class="arrow">&#8594;</span>
+            <span class="loader-name">${bestVL.loader}</span>
+            <span class="sub">(${bestVL.project_count} existing, ${fmtDelta(bestVL.total_delta)} delta)</span>
+            ${bestVL.under_served_boost>0?'<span class="tag emerald">Under-served</span>':''}
+          </div>
+          ${nextVL?`<div class="vl-target" style="margin-top:4px;font-size:11px;color:var(--text-muted)">Next best: <span class="mono">${nextVL.game_version}</span> <span class="arrow">&#8594;</span> <span style="text-transform:capitalize">${nextVL.loader}</span></div>`:''}
+        </div>`:''}
+        ${gw?`<div class="info-box">
+          <div class="info-box-header">&#128200; Growth Forecast</div>
+          <div class="scenario-bands">
+            <div class="scenario-band"><div class="band-label">Conservative</div><div class="band-val" style="color:var(--text-muted)">${fmt(gw.scenario_bands.conservative)}/day</div></div>
+            <div class="scenario-band"><div class="band-label">Base</div><div class="band-val">${fmt(gw.scenario_bands.base)}/day</div></div>
+            <div class="scenario-band"><div class="band-label">Aggressive</div><div class="band-val" style="color:var(--emerald)">${fmt(gw.scenario_bands.aggressive)}/day</div></div>
+          </div>
+        </div>`:''}
+        ${opp.reason_codes&&opp.reason_codes.length?`<div class="reasons">
+          <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px">Why This Ranked Here</div>
+          ${opp.reason_codes.map(rc=>`<div class="reason"><div class="dot ${rc.priority}"></div>${escHtml(rc.message)}</div>`).join('')}
+        </div>`:''}
+        ${opp.risk_flags&&opp.risk_flags.length?`<div class="risk-flags">
+          ${opp.risk_flags.map(rf=>`<span class="risk-flag sev-${rf.severity}" title="${escHtml(rf.message)}">${rf.type.replace(/_/g,' ')}</span>`).join('')}
+        </div>`:''}
+        ${opp.top_example_projects&&opp.top_example_projects.length?`<div class="example-projects" style="margin-top:8px">
+          ${opp.top_example_projects.map(n=>`<span class="example-proj">${escHtml(n)}</span>`).join('')}
+        </div>`:''}
+      </div></div>
     </div>`;
   }).join('');
 }
 
 function renderEmergingConcepts(concepts) {
-  if (!concepts.length) {
-    document.getElementById('emergingConcepts').innerHTML = '<div class="empty">No emerging concepts detected yet</div>';
-    return;
-  }
-  document.getElementById('emergingConcepts').innerHTML = concepts.slice(0, 6).map(c => `
+  document.getElementById('emergingConcepts').innerHTML = concepts.length ? concepts.slice(0,6).map(c=>`
     <div class="emerging-card">
-      <div class="e-name">${escHtml(c.cluster_label || c.cluster_id)}</div>
-      <div class="e-stats">
-        ${c.project_count} projects &middot; +${fmt(c.growth_velocity)}/hr &middot; Score: ${(c.opportunity_score || 0).toFixed(1)}
-      </div>
-      ${c.top_examples ? `<div class="example-projects">${c.top_examples.slice(0,3).map(n => `<span class="example-proj">${escHtml(n)}</span>`).join('')}</div>` : ''}
+      <div class="e-name">${escHtml(c.cluster_label||c.cluster_id)}</div>
+      <div class="e-stats">${c.project_count} projects &middot; +${fmt(c.growth_velocity)}/hr &middot; Score: ${(c.opportunity_score||0).toFixed(1)}</div>
+      ${c.top_examples?`<div class="example-projects">${c.top_examples.slice(0,3).map(n=>`<span class="example-proj">${escHtml(n)}</span>`).join('')}</div>`:''}
     </div>
-  `).join('');
+  `).join('') : '<div class="empty">No emerging concepts detected yet</div>';
 }
 
 function renderGlobalVL(pairs) {
-  if (!pairs.length) {
-    document.getElementById('globalVLPairs').innerHTML = '<div class="empty">No VL pair data yet</div>';
-    return;
-  }
-  document.getElementById('globalVLPairs').innerHTML = `
+  document.getElementById('globalVLPairs').innerHTML = pairs.length ? `
     <table>
       <thead><tr>
         <th>#</th><th>Game Version</th><th>Loader</th><th class="num">Projects</th>
         <th class="num">Delta</th><th class="num">Score</th>
       </tr></thead>
       <tbody>
-        ${pairs.slice(0, 15).map((p, i) => `
+        ${pairs.slice(0,15).map((p,i)=>`
           <tr>
-            <td>${i + 1}</td>
+            <td>${i+1}</td>
             <td><span class="mono" style="font-weight:600">${p.game_version}</span></td>
             <td>${loaderTag(p.loader)}</td>
             <td class="num">${p.project_count}</td>
             <td class="num positive">${fmtDelta(p.total_delta)}</td>
-            <td class="num"><span style="font-weight:600;color:${p.opportunity_score >= 50 ? 'var(--emerald)' : p.opportunity_score >= 30 ? 'var(--amber)' : 'var(--text-muted)'}">${(p.opportunity_score || 0).toFixed(1)}</span></td>
+            <td class="num"><span style="font-weight:600;color:${p.opportunity_score>=50?'var(--emerald)':p.opportunity_score>=30?'var(--amber)':'var(--text-muted)'}">${(p.opportunity_score||0).toFixed(1)}</span></td>
           </tr>
         `).join('')}
       </tbody>
     </table>
-  `;
+  ` : '<div class="empty">No VL pair data yet</div>';
 }
 
-// ── Toggle opportunity detail ──────────────────────────────────────
 function toggleOppDetail(header) {
   const detail = header.nextElementSibling;
   const chevron = header.querySelector('.opp-chevron');
   const isOpen = detail.classList.contains('open');
-  detail.classList.toggle('open', !isOpen);
+  detail.classList.toggle('open',!isOpen);
   chevron.innerHTML = isOpen ? '&#9660;' : '&#9650;';
-}
-
-function escHtml(str) {
-  if (!str) return '';
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 </script>
 </body>
