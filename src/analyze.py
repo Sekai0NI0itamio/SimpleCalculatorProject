@@ -86,15 +86,23 @@ def population_std_dev(values, mean):
 
 
 def parse_snapshot_timestamp(snapshot):
-    """Parse a snapshot's timestamp into a datetime object (Beijing time)."""
+    """Parse a snapshot's timestamp into a datetime object (Beijing time).
+    Handles format: '2026-07-15T09-18-56' (date T hour-min-sec)
+    """
     ts_str = snapshot.get("timestamp", "")
-    # Formats: "2026-07-15T09-18-56" or "2026-07-15T09:18:56"
-    ts_str = ts_str.replace("-", ":", 2).replace("-", ":", 1)  # first 2 dashes to colons
+    if not ts_str:
+        return None
+    # Replace all '-' after the 'T' with ':' to get ISO-like format
+    # Result: '2026-07-15T09:18:56'
+    if "T" in ts_str:
+        date_part, time_part = ts_str.split("T", 1)
+        time_part = time_part.replace("-", ":")
+        ts_str = f"{date_part}T{time_part}"
     try:
-        return datetime.strptime(ts_str, "%Y:%m:%dT%H:%M:%S").replace(tzinfo=BEIJING_TZ)
-    except ValueError:
+        return datetime.fromisoformat(ts_str).replace(tzinfo=BEIJING_TZ)
+    except (ValueError, TypeError):
         try:
-            return datetime.fromisoformat(ts_str).astimezone(BEIJING_TZ)
+            return datetime.strptime(ts_str, "%Y-%m-%dT%H:%M:%S").replace(tzinfo=BEIJING_TZ)
         except (ValueError, TypeError):
             return None
 
@@ -440,6 +448,177 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
 
 
 # ═══════════════════════════════════════════════════════════════════
+#  TRENDING ANALYSIS — Composite scoring system
+# ═══════════════════════════════════════════════════════════════════
+#
+#  The trending score balances multiple factors to identify projects
+#  that are genuinely "trending" — not just the biggest projects
+#  getting their usual daily downloads.
+#
+#  Formula:
+#    RGR  = Relative Growth Rate = (delta / baseline) * 100  (%)
+#    AGS  = Absolute Growth Score = log(1 + delta) * 10
+#    SF   = Size Factor = 1 / (1 + log(1 + baseline / 1000))
+#           (smaller projects get a higher score)
+#    VEL  = Velocity = delta / hours_between (downloads per hour)
+#
+#    TRENDING_SCORE = RGR * 0.35 + AGS * 0.25 + SF * 30 * 0.20 + VEL * 0.20
+#
+#  Example:
+#    Sodium (65M downloads, +1000/day):  trending_score ≈ 26
+#    CoolProject (1K downloads, +500/day): trending_score ≈ 54
+#    → CoolProject is correctly identified as more "trending"
+#
+#  We produce BOTH simple (absolute delta) and advanced (trending score)
+#  rankings so you can compare them side by side.
+# ═══════════════════════════════════════════════════════════════════
+
+
+def compute_trending_score(baseline_downloads, delta, hours_between):
+    """Compute a composite trending score for a single project.
+
+    Parameters:
+      baseline_downloads: downloads at the baseline snapshot
+      delta: downloads gained since baseline
+      hours_between: hours elapsed between baseline and current
+
+    Returns a dict with all component scores and the final trending_score.
+    """
+    # ── Relative Growth Rate (RGR) ────────────────────────────────
+    if baseline_downloads > 0:
+        rgr = (delta / baseline_downloads) * 100
+    else:
+        rgr = 100.0 if delta > 0 else 0.0
+
+    # ── Absolute Growth Score (AGS) ───────────────────────────────
+    ags = math.log(1 + abs(delta)) * 10
+
+    # ── Size Factor (SF) ──────────────────────────────────────────
+    # Smaller projects get a higher factor. For a project with 1K downloads,
+    # SF ≈ 0.59. For a project with 65M, SF ≈ 0.08.
+    size_factor = 1.0 / (1.0 + math.log(1 + max(baseline_downloads, 0) / 1000.0))
+
+    # ── Velocity (VEL) ────────────────────────────────────────────
+    velocity = delta / max(hours_between, 1)
+
+    # ── Composite Trending Score ──────────────────────────────────
+    trending_score = (
+        rgr * 0.35 +
+        ags * 0.25 +
+        size_factor * 30 * 0.20 +
+        velocity * 0.20
+    )
+
+    return {
+        "trending_score": round(trending_score, 2),
+        "components": {
+            "relative_growth_pct": round(rgr, 4),
+            "absolute_growth_score": round(ags, 2),
+            "size_factor": round(size_factor, 4),
+            "velocity": round(velocity, 2),
+        },
+        "weights": {
+            "relative_growth": 0.35,
+            "absolute_growth": 0.25,
+            "size_factor": 0.20,
+            "velocity": 0.20,
+        },
+    }
+
+
+def build_trending_analysis(top_projects, hours_between, current_snapshot, baseline_snapshot):
+    """Build trending analysis with both simple and advanced rankings.
+
+    Returns a dict with:
+      - formula: explanation of the trending score formula
+      - simple_ranking: top 50 by absolute delta (downloads gained)
+      - advanced_ranking: top 50 by trending_score (composite)
+      - rising_stars: top 20 small projects (<5000 downloads) with high relative growth
+      - velocity_ranking: top 30 by downloads per hour
+      - momentum_ranking: top 30 by trending_score * velocity
+    """
+    # ── Compute trending scores for all projects ──────────────────
+    scored_projects = []
+    for p in top_projects:
+        baseline = p.get("baseline_downloads", 0)
+        delta = p.get("delta_downloads", 0)
+        if delta <= 0:
+            continue  # skip projects with no growth
+
+        ts = compute_trending_score(baseline, delta, hours_between)
+        p["trending_score"] = ts["trending_score"]
+        p["trending_components"] = ts["components"]
+        p["velocity"] = ts["components"]["velocity"]
+        scored_projects.append(p)
+
+    # ── Simple Ranking (absolute delta) ───────────────────────────
+    simple_ranking = sorted(scored_projects, key=lambda x: x["delta_downloads"], reverse=True)[:50]
+
+    # ── Advanced Ranking (trending score) ─────────────────────────
+    advanced_ranking = sorted(scored_projects, key=lambda x: x["trending_score"], reverse=True)[:50]
+
+    # ── Rising Stars (small projects with high relative growth) ───
+    # Projects with baseline < 5000 downloads and growth > 10%
+    rising_stars = [
+        p for p in scored_projects
+        if p["baseline_downloads"] < 5000
+        and p["trending_components"]["relative_growth_pct"] > 10
+    ]
+    rising_stars.sort(key=lambda x: x["trending_score"], reverse=True)
+    rising_stars = rising_stars[:20]
+
+    # ── Velocity Ranking (downloads per hour) ─────────────────────
+    velocity_ranking = sorted(scored_projects, key=lambda x: x["velocity"], reverse=True)[:30]
+
+    # ── Momentum Ranking (trending_score * velocity) ──────────────
+    for p in scored_projects:
+        p["momentum"] = round(p["trending_score"] * p["velocity"], 2)
+    momentum_ranking = sorted(scored_projects, key=lambda x: x["momentum"], reverse=True)[:30]
+
+    # ── Summary stats ─────────────────────────────────────────────
+    all_scores = [p["trending_score"] for p in scored_projects]
+    all_velocities = [p["velocity"] for p in scored_projects]
+    all_rgrs = [p["trending_components"]["relative_growth_pct"] for p in scored_projects]
+
+    stats = {
+        "projects_scored": len(scored_projects),
+        "avg_trending_score": round(sum(all_scores) / len(all_scores), 2) if all_scores else 0,
+        "median_trending_score": round(percentile(sorted(all_scores), 50), 2) if all_scores else 0,
+        "avg_velocity": round(sum(all_velocities) / len(all_velocities), 2) if all_velocities else 0,
+        "avg_relative_growth": round(sum(all_rgrs) / len(all_rgrs), 4) if all_rgrs else 0,
+    }
+
+    return {
+        "formula": {
+            "description": (
+                "Composite trending score that balances relative growth (percentage), "
+                "absolute growth (log of delta), project size (smaller = higher), "
+                "and velocity (downloads per hour)."
+            ),
+            "equation": "RGR*0.35 + AGS*0.25 + SF*30*0.20 + VEL*0.20",
+            "components": {
+                "RGR": "Relative Growth Rate = (delta / baseline) * 100 (%)",
+                "AGS": "Absolute Growth Score = log(1 + delta) * 10",
+                "SF": "Size Factor = 1 / (1 + log(1 + baseline / 1000))",
+                "VEL": "Velocity = delta / hours_between",
+            },
+            "weights": {
+                "relative_growth": 0.35,
+                "absolute_growth": 0.25,
+                "size_factor": 0.20,
+                "velocity": 0.20,
+            },
+        },
+        "stats": stats,
+        "simple_ranking": simple_ranking,
+        "advanced_ranking": advanced_ranking,
+        "rising_stars": rising_stars,
+        "velocity_ranking": velocity_ranking,
+        "momentum_ranking": momentum_ranking,
+    }
+
+
+# ═══════════════════════════════════════════════════════════════════
 #  HOURLY MODE: 2-hour velocity + predictions
 # ═══════════════════════════════════════════════════════════════════
 
@@ -554,6 +733,21 @@ def main():
           f"{analysis_data['summary']['total_downloads']:,} downloads")
     print(f"  New downloads: {analysis_data['summary']['new_downloads_since_baseline']:+,}")
 
+    # ── Trending Analysis (both simple and advanced) ──────────────
+    # Compute the actual hours between current and baseline snapshots
+    actual_hours = hours_back
+    if current_ts and baseline_snapshot:
+        baseline_ts = parse_snapshot_timestamp(baseline_snapshot)
+        if baseline_ts:
+            actual_hours = abs((current_ts - baseline_ts).total_seconds() / 3600)
+    trending_analysis = build_trending_analysis(
+        analysis_data["top_projects"], actual_hours,
+        current_snapshot, baseline_snapshot
+    )
+    print(f"  Trending: {trending_analysis['stats']['projects_scored']:,} projects scored, "
+          f"avg trending score: {trending_analysis['stats']['avg_trending_score']:.2f}, "
+          f"rising stars: {len(trending_analysis['rising_stars'])}")
+
     # ── Hourly extras ─────────────────────────────────────────────
     if mode == "hourly":
         hourly_extras = build_hourly_extras(analysis_data, current_snapshot, baseline_snapshot)
@@ -572,6 +766,7 @@ def main():
         "baseline_date": baseline_snapshot.get("date", ""),
         "hours_between": hours_back,
         **analysis_data,
+        "trending_analysis": trending_analysis,
         **hourly_extras,
     }
 

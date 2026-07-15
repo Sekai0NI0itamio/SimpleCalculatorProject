@@ -68,8 +68,14 @@ def number_formatter(_x, _pos):
 
 def parse_snapshot_time(timestamp_str):
     """Parse a snapshot timestamp 'YYYY-MM-DDTHH-MM-SS' as Beijing time."""
+    if not timestamp_str:
+        return None
+    if "T" in timestamp_str:
+        date_part, time_part = timestamp_str.split("T", 1)
+        time_part = time_part.replace("-", ":")
+        timestamp_str = f"{date_part}T{time_part}"
     try:
-        dt = datetime.strptime(timestamp_str, "%Y-%m-%dT%H-%M-%S")
+        dt = datetime.fromisoformat(timestamp_str)
         return dt.replace(tzinfo=BEIJING_TZ)
     except (ValueError, TypeError):
         return None
