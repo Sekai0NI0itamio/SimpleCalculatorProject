@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-07-15T23-30-14",
-  "date": "2026-07-15",
+  "timestamp": "2026-07-16T01-20-02",
+  "date": "2026-07-16",
   "project_type": "mod",
   "analysis_type": "hourly",
   "baseline_date": "2026-07-15",
   "hours_between": 2,
   "summary": {
-    "total_projects": 45359,
+    "total_projects": 45358,
     "total_versions": 618132,
-    "total_downloads": 9976261609,
+    "total_downloads": 9976261502,
     "baseline_date": "2026-07-15",
-    "current_date": "2026-07-15",
+    "current_date": "2026-07-16",
     "new_projects_since_baseline": 0,
     "new_downloads_since_baseline": 0
   },
@@ -63,14 +63,21 @@
       "total_projects": 45359,
       "delta_from_baseline": 0,
       "growth_pct": 0.0
+    },
+    {
+      "date": "2026-07-16",
+      "total_downloads": 9976261502,
+      "total_projects": 45358,
+      "delta_from_baseline": -107,
+      "growth_pct": -0.0
     }
   ],
   "category_rankings": [
     {
       "category": "utility",
-      "projects": 20295,
-      "total_downloads": 4439930786,
-      "avg_downloads": 218769.69,
+      "projects": 20294,
+      "total_downloads": 4439930679,
+      "avg_downloads": 218780.46,
       "new_downloads": 0,
       "growth_pct": 0.0,
       "market_share": 44.5
@@ -185,9 +192,9 @@
     },
     {
       "category": "social",
-      "projects": 4632,
-      "total_downloads": 582619533,
-      "avg_downloads": 125781.42,
+      "projects": 4631,
+      "total_downloads": 582619426,
+      "avg_downloads": 125808.56,
       "new_downloads": 0,
       "growth_pct": 0.0,
       "market_share": 5.84
@@ -241,9 +248,9 @@
   "loader_rankings": [
     {
       "loader": "fabric",
-      "projects": 26423,
-      "total_downloads": 8839697174,
-      "avg_downloads": 334545.55,
+      "projects": 26422,
+      "total_downloads": 8839697067,
+      "avg_downloads": 334558.21,
       "growth_pct": 0.0,
       "market_share": 88.61
     },
@@ -2397,17 +2404,17 @@
   ],
   "top_version_loaders": [],
   "distribution": {
-    "mean": 219940.07,
+    "mean": 219944.92,
     "median": 878.0,
-    "std_dev": 2875261.98,
+    "std_dev": 2875293.49,
     "min": 0,
     "max": 208478013,
-    "p25": 205.0,
+    "p25": 205.25,
     "p50": 878.0,
     "p75": 5792.0,
-    "p90": 55878.8,
-    "p95": 266470.0,
-    "p99": 4057283.66,
+    "p90": 55880.2,
+    "p95": 266478.0,
+    "p99": 4057294.89,
     "gini_coefficient": 0.9772
   },
   "concentration": {
@@ -2421,8 +2428,8 @@
     {
       "category": "utility",
       "loader": "fabric",
-      "projects": 13675,
-      "total_downloads": 4075007395,
+      "projects": 13674,
+      "total_downloads": 4075007288,
       "delta_downloads": 0
     },
     {
@@ -2606,8 +2613,8 @@
       "category": "social",
       "suggested_loader": "fabric",
       "opportunity_score": 54.6,
-      "reasoning": "Social has +0 new downloads since baseline with 4632 projects and avg 125,781 downloads. Suggested loader: fabric.",
-      "expected_downloads": 125781
+      "reasoning": "Social has +0 new downloads since baseline with 4631 projects and avg 125,809 downloads. Suggested loader: fabric.",
+      "expected_downloads": 125808
     },
     {
       "category": "economy",
@@ -2641,8 +2648,8 @@
       "category": "utility",
       "suggested_loader": "fabric",
       "opportunity_score": 38.4,
-      "reasoning": "Utility has +0 new downloads since baseline with 20295 projects and avg 218,770 downloads. Suggested loader: fabric.",
-      "expected_downloads": 218769
+      "reasoning": "Utility has +0 new downloads since baseline with 20294 projects and avg 218,780 downloads. Suggested loader: fabric.",
+      "expected_downloads": 218780
     },
     {
       "category": "minigame",
