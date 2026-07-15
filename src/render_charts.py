@@ -2,10 +2,14 @@
 """
 Render PNG charts from analysis data.
 
-Called AFTER analyze.py (main mode) or predictive_analyze.py (sub mode).
+Both daily and hourly modes read from data/{type}/latest_analysis.json.
+The same analysis file is used — the mode just selects which charts to render.
 
-Main mode  (--mode main): reads data/{type}/latest_analysis.json
-Sub mode   (--mode sub) : reads data/{type}/latest_sub_analysis.json
+Daily mode  (--mode daily) : 7 charts — trend, categories, loaders,
+    distribution, concentration, top_projects, recommendations
+
+Hourly mode (--mode hourly): 5 charts — velocity, prediction,
+    top_movers_2h, velocity_by_category, hourly_heatmap
 
 Charts are saved to data/{project_type}/charts/ as PNG files.
 
@@ -72,9 +76,7 @@ def parse_snapshot_time(timestamp_str):
 
 
 def load_latest_raw(project_type):
-    """Load the most recent raw snapshot (for distribution histograms).
-    Handles both .json and .json.gz files.
-    """
+    """Load the most recent raw snapshot."""
     raw_dir = get_raw_dir(project_type)
     files = list_snapshot_files(raw_dir)
     if not files:
@@ -83,9 +85,7 @@ def load_latest_raw(project_type):
 
 
 def load_recent_raw(project_type, hours=24):
-    """Load raw snapshots from the last `hours`, sorted chronologically.
-    Handles both .json and .json.gz files.
-    """
+    """Load raw snapshots from the last `hours`, sorted chronologically."""
     raw_dir = get_raw_dir(project_type)
     files = list_snapshot_files(raw_dir)
     cutoff = datetime.now(BEIJING_TZ) - timedelta(hours=hours)
@@ -140,7 +140,7 @@ def bar_color(i):
 
 
 # ═══════════════════════════════════════════════════════════════════
-#  MAIN MODE CHARTS
+#  DAILY MODE CHARTS (7 charts)
 # ═══════════════════════════════════════════════════════════════════
 
 
@@ -148,7 +148,7 @@ def render_trend(analysis, charts_dir):
     """1. trend.png — total_downloads over time with baseline reference line."""
     fig, ax = new_figure()
     style_axes(ax)
-    ax.set_title("Total Downloads Over Time")
+    ax.set_title("Total Downloads Over Time (24h Daily)")
     ax.set_xlabel("Date")
     ax.set_ylabel("Total Downloads")
 
@@ -191,7 +191,7 @@ def render_categories(analysis, charts_dir):
         save_chart(fig, f"{charts_dir}/categories.png")
         return
 
-    cats = list(reversed(cats))  # so the largest is on top
+    cats = list(reversed(cats))
     names = [c.get("category", "") for c in cats]
     totals = [c.get("total_downloads", 0) for c in cats]
     shares = [c.get("market_share", 0.0) for c in cats]
@@ -300,7 +300,6 @@ def render_concentration(analysis, charts_dir):
         ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height(),
                 f"{val:.1f}", ha="center", va="bottom", color=TEXT_COLOR, fontsize=10)
 
-    # Concentration level annotation based on HHI (0-10000 scale)
     if hhi < 1500:
         level = "Low concentration"
     elif hhi < 2500:
@@ -314,10 +313,10 @@ def render_concentration(analysis, charts_dir):
 
 
 def render_top_projects(analysis, charts_dir):
-    """6. top_projects.png — top 10 projects by delta_downloads (or total if all deltas 0)."""
+    """6. top_projects.png — top 10 projects by delta_downloads."""
     fig, ax = new_figure()
     style_axes(ax)
-    ax.set_title("Top 10 Projects")
+    ax.set_title("Top 10 Projects by Growth")
     ax.set_xlabel("Downloads")
     ax.set_ylabel("Project")
 
@@ -367,49 +366,38 @@ def render_recommendations(analysis, charts_dir):
     save_chart(fig, f"{charts_dir}/recommendations.png")
 
 
-def render_main(project_type, analysis, charts_dir):
-    """Render all main-mode charts."""
-    render_trend(analysis, charts_dir)
-    render_categories(analysis, charts_dir)
-    render_loaders(analysis, charts_dir)
-    render_distribution(analysis, project_type, charts_dir)
-    render_concentration(analysis, charts_dir)
-    render_top_projects(analysis, charts_dir)
-    render_recommendations(analysis, charts_dir)
-
-
 # ═══════════════════════════════════════════════════════════════════
-#  SUB MODE CHARTS
+#  HOURLY MODE CHARTS (5 charts)
 # ═══════════════════════════════════════════════════════════════════
 
 
 def render_velocity(analysis, charts_dir):
-    """1. velocity.png — downloads gained per 2h interval over last 24h."""
+    """1. velocity.png — top 10 movers by downloads_per_hour in last 2h."""
     fig, ax = new_figure()
     style_axes(ax)
-    ax.set_title("Downloads Gained per 2h Interval (Last 24h)")
-    ax.set_xlabel("Time Window")
-    ax.set_ylabel("Downloads Gained")
+    ax.set_title("Top 10 Movers — Velocity (Last 2h)")
+    ax.set_xlabel("Downloads per Hour")
+    ax.set_ylabel("Project")
 
-    pattern = analysis.get("hourly_pattern", [])
-    if not pattern:
+    movers = analysis.get("top_movers", [])[:10]
+    if not movers:
         show_no_data(ax)
         save_chart(fig, f"{charts_dir}/velocity.png")
         return
 
-    labels = [p.get("hour_label", "") for p in pattern]
-    values = [p.get("downloads_gained", 0) for p in pattern]
-    colors = [bar_color(i) for i in range(len(pattern))]
+    movers = list(reversed(movers))
+    names = [m.get("title", "") or m.get("slug", "") for m in movers]
+    values = [m.get("downloads_per_hour", 0) for m in movers]
+    colors = [bar_color(i) for i in range(len(movers))]
 
-    ax.bar(labels, values, color=colors)
-    ax.yaxis.set_major_formatter(FuncFormatter(number_formatter))
-    plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
-    ax.grid(True, axis="y", color=GRID_COLOR, linestyle="-", linewidth=0.5, alpha=0.5)
+    ax.barh(names, values, color=colors)
+    ax.xaxis.set_major_formatter(FuncFormatter(number_formatter))
+    ax.grid(True, axis="x", color=GRID_COLOR, linestyle="-", linewidth=0.5, alpha=0.5)
     save_chart(fig, f"{charts_dir}/velocity.png")
 
 
 def render_prediction(analysis, project_type, charts_dir):
-    """2. prediction.png — actual total_downloads (24h) + dashed predicted trajectory."""
+    """2. prediction.png — actual total_downloads + dashed predicted trajectory."""
     fig, ax = new_figure()
     style_axes(ax)
     ax.set_title("Download Trajectory & Prediction")
@@ -425,7 +413,6 @@ def render_prediction(analysis, project_type, charts_dir):
     times = [parse_snapshot_time(s.get("timestamp", "")) for s in snaps]
     totals = [s.get("total_downloads", 0) for s in snaps]
 
-    # Drop any unparseable timestamps
     pts = [(t, v) for t, v in zip(times, totals) if t is not None]
     if not pts:
         show_no_data(ax)
@@ -437,11 +424,11 @@ def render_prediction(analysis, project_type, charts_dir):
             linewidth=2, label="Actual")
 
     # Predicted trajectory to the next main hour
-    preds = analysis.get("predictions", {})
-    hours_main = analysis.get("hours_until_main", 0)
-    predicted_total = preds.get("predicted_daily_total", totals[-1])
+    velocity = analysis.get("velocity", {})
+    predicted_total = velocity.get("predicted_daily_total", totals[-1])
     last_time = times[-1]
-    end_time = last_time + timedelta(hours=max(0, hours_main))
+    # Extend 2 hours ahead (to next recording)
+    end_time = last_time + timedelta(hours=2)
     ax.plot([last_time, end_time], [totals[-1], predicted_total],
             linestyle="--", color=BAR_COLORS[1], linewidth=2, label="Predicted")
     ax.scatter([end_time], [predicted_total], color=BAR_COLORS[1], zorder=5)
@@ -461,7 +448,7 @@ def render_top_movers(analysis, charts_dir):
     ax.set_xlabel("Downloads Gained (2h)")
     ax.set_ylabel("Project")
 
-    movers = analysis.get("top_movers_2h", [])[:10]
+    movers = analysis.get("top_movers", [])[:10]
     if not movers:
         show_no_data(ax)
         save_chart(fig, f"{charts_dir}/top_movers_2h.png")
@@ -469,7 +456,7 @@ def render_top_movers(analysis, charts_dir):
 
     movers = list(reversed(movers))
     names = [m.get("title", "") or m.get("slug", "") for m in movers]
-    values = [m.get("delta_2h", 0) for m in movers]
+    values = [m.get("delta_downloads", 0) for m in movers]
     colors = [bar_color(i) for i in range(len(movers))]
 
     ax.barh(names, values, color=colors)
@@ -479,10 +466,10 @@ def render_top_movers(analysis, charts_dir):
 
 
 def render_velocity_by_category(analysis, charts_dir):
-    """4. velocity_by_category.png — top 10 categories by velocity (downloads/hour)."""
+    """4. velocity_by_category.png — top 10 categories by velocity."""
     fig, ax = new_figure()
     style_axes(ax)
-    ax.set_title("Top 10 Categories by Velocity")
+    ax.set_title("Top 10 Categories by Velocity (2h)")
     ax.set_xlabel("Velocity (downloads/hour)")
     ax.set_ylabel("Category")
 
@@ -494,7 +481,7 @@ def render_velocity_by_category(analysis, charts_dir):
 
     cats = list(reversed(cats))
     names = [c.get("category", "") for c in cats]
-    values = [c.get("total_velocity", 0) for c in cats]
+    values = [c.get("downloads_per_hour", 0) for c in cats]
     colors = [bar_color(i) for i in range(len(cats))]
 
     ax.barh(names, values, color=colors)
@@ -504,37 +491,40 @@ def render_velocity_by_category(analysis, charts_dir):
 
 
 def render_hourly_heatmap(analysis, charts_dir):
-    """5. hourly_heatmap.png — bar chart of downloads by hour window."""
+    """5. hourly_heatmap.png — velocity summary card."""
     fig, ax = new_figure()
     style_axes(ax)
-    ax.set_title("Downloads by Hour Window")
-    ax.set_xlabel("Hour Window")
-    ax.set_ylabel("Downloads Gained")
+    ax.set_title("2-Hour Velocity Summary")
+    ax.set_xlabel("Metric")
+    ax.set_ylabel("Value")
 
-    pattern = analysis.get("hourly_pattern", [])
-    if not pattern:
+    v = analysis.get("velocity", {})
+    if not v:
         show_no_data(ax)
         save_chart(fig, f"{charts_dir}/hourly_heatmap.png")
         return
 
-    labels = [p.get("hour_label", "") for p in pattern]
-    values = [p.get("downloads_gained", 0) for p in pattern]
-    colors = [bar_color(i) for i in range(len(pattern))]
-
-    ax.bar(labels, values, color=colors)
+    labels = ["Total Delta", "Downloads/Hour", "Predicted Daily"]
+    values = [
+        v.get("total_delta", 0),
+        v.get("downloads_per_hour", 0),
+        v.get("predicted_daily_total", 0),
+    ]
+    colors = [bar_color(0), bar_color(1), bar_color(2)]
+    bars = ax.bar(labels, values, color=colors)
     ax.yaxis.set_major_formatter(FuncFormatter(number_formatter))
-    plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
     ax.grid(True, axis="y", color=GRID_COLOR, linestyle="-", linewidth=0.5, alpha=0.5)
+
+    for bar, val in zip(bars, values):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height(),
+                f"{format_number(val)}", ha="center", va="bottom",
+                color=TEXT_COLOR, fontsize=10)
+
+    confidence = v.get("confidence", "low")
+    ax.text(0.98, 0.95, f"Confidence: {confidence}", ha="right", va="top",
+            transform=ax.transAxes, color=TEXT_COLOR, fontsize=12,
+            bbox=dict(facecolor=BG_COLOR, edgecolor=GRID_COLOR, boxstyle="round,pad=0.4"))
     save_chart(fig, f"{charts_dir}/hourly_heatmap.png")
-
-
-def render_sub(project_type, analysis, charts_dir):
-    """Render all sub-mode charts."""
-    render_velocity(analysis, charts_dir)
-    render_prediction(analysis, project_type, charts_dir)
-    render_top_movers(analysis, charts_dir)
-    render_velocity_by_category(analysis, charts_dir)
-    render_hourly_heatmap(analysis, charts_dir)
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -550,8 +540,8 @@ def main():
         help="Project type to render charts for",
     )
     parser.add_argument(
-        "--mode", required=True, choices=["main", "sub"],
-        help="Analysis mode: 'main' (from analyze.py) or 'sub' (from predictive_analyze.py)",
+        "--mode", required=True, choices=["daily", "hourly"],
+        help="Analysis mode: daily (24h) or hourly (2h)",
     )
     args = parser.parse_args()
     project_type = args.project_type
@@ -560,24 +550,31 @@ def main():
     print(f"=== Render Charts ({project_type}, mode={mode}) ===")
 
     type_dir = get_project_type_dir(project_type)
-    if mode == "main":
-        analysis_path = f"{type_dir}/latest_analysis.json"
-    else:
-        analysis_path = f"{type_dir}/latest_sub_analysis.json"
+    analysis_path = f"{type_dir}/latest_analysis.json"
 
     analysis = load_json(analysis_path)
     if not analysis:
         print(f"Error: analysis file not found at {analysis_path}. "
-              f"Run {'analyze.py' if mode == 'main' else 'predictive_analyze.py'} first.")
+              f"Run analyze.py first.")
         return 1
 
     charts_dir = f"{type_dir}/charts"
     ensure_dir(charts_dir)
 
-    if mode == "main":
-        render_main(project_type, analysis, charts_dir)
+    if mode == "daily":
+        render_trend(analysis, charts_dir)
+        render_categories(analysis, charts_dir)
+        render_loaders(analysis, charts_dir)
+        render_distribution(analysis, project_type, charts_dir)
+        render_concentration(analysis, charts_dir)
+        render_top_projects(analysis, charts_dir)
+        render_recommendations(analysis, charts_dir)
     else:
-        render_sub(project_type, analysis, charts_dir)
+        render_velocity(analysis, charts_dir)
+        render_prediction(analysis, project_type, charts_dir)
+        render_top_movers(analysis, charts_dir)
+        render_velocity_by_category(analysis, charts_dir)
+        render_hourly_heatmap(analysis, charts_dir)
 
     print(f"=== Render Charts ({project_type}, mode={mode}) complete ===")
     return 0

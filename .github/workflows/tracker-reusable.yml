@@ -10,10 +10,10 @@ on:
         required: false
         type: number
         default: 20
-      is_main:
-        required: false
-        type: boolean
-        default: false
+      analysis_mode:
+        required: true
+        type: string
+        description: "daily or hourly"
 
 permissions:
   contents: write
@@ -23,12 +23,11 @@ env:
 
 jobs:
   # ──────────────────────────────────────────────────────────────
-  # PHASE 1: Discover — find partitions for this project type
-  # (MAIN HOUR ONLY — sub hours reuse existing discovery.json)
+  # PHASE 1: Discover — find partitions (only if discovery.json is stale)
+  # Runs faster on subsequent runs by reusing cached discovery.json
   # ──────────────────────────────────────────────────────────────
   discover:
     runs-on: ubuntu-latest
-    if: ${{ inputs.is_main == true }}
     outputs:
       partition_list: ${{ steps.set-matrix.outputs.partition_list }}
     steps:
@@ -37,10 +36,19 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
+      - name: Check if discovery.json exists
+        id: check
+        run: |
+          if [ -f "data/${{ inputs.project_type }}/discovery.json" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
       - name: Discover projects
+        if: ${{ steps.check.outputs.exists == 'false' }}
         run: python src/discover.py --project-type ${{ inputs.project_type }}
       - id: set-matrix
-        name: Generate partition matrix
+        name: Read partition matrix
         run: |
           python -c "
           import json
@@ -58,45 +66,23 @@ jobs:
             data/${{ inputs.project_type }}/loaders.json
 
   # ──────────────────────────────────────────────────────────────
-  # PHASE 1 (SUB HOUR): Load discovery from repo checkout
-  # On sub hours, we need the discovery.json from the repo to know partitions
-  # ──────────────────────────────────────────────────────────────
-  load-discovery:
-    runs-on: ubuntu-latest
-    if: ${{ inputs.is_main != true }}
-    outputs:
-      partition_list: ${{ steps.set-matrix.outputs.partition_list }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: set-matrix
-        name: Read partition matrix from existing discovery.json
-        run: |
-          python -c "
-          import json
-          d = json.load(open('data/${{ inputs.project_type }}/discovery.json'))
-          print(json.dumps(list(range(len(d['partitions'])))))
-          " > /tmp/matrix.txt
-          echo "partition_list=$(cat /tmp/matrix.txt)" >> $GITHUB_OUTPUT
-
-  # ──────────────────────────────────────────────────────────────
   # PHASE 2: Fetch Projects (parallel matrix)
-  # ALWAYS run — both main and sub hours need current download counts
+  # ALWAYS run — re-fetches current download counts every 2 hours
   # ──────────────────────────────────────────────────────────────
   fetch-projects:
-    needs: [discover, load-discovery]
-    if: ${{ always() && (needs.discover.result == 'success' || needs.load-discovery.result == 'success') }}
+    needs: discover
+    if: ${{ always() && needs.discover.result == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        chunk: ${{ fromJSON(needs.discover.outputs.partition_list || needs.load-discovery.outputs.partition_list) }}
+        chunk: ${{ fromJSON(needs.discover.outputs.partition_list) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Download discovery data (main hour)
-        if: ${{ inputs.is_main == true }}
+      - name: Download discovery data
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.project_type }}-discovery
@@ -108,14 +94,14 @@ jobs:
         with:
           name: ${{ inputs.project_type }}-projects-${{ matrix.chunk }}
           path: data/${{ inputs.project_type }}/chunks/projects_${{ matrix.chunk }}.json
-          retention-days: 1  # Short retention for sub-hour runs
+          retention-days: 1
 
   # ──────────────────────────────────────────────────────────────
-  # PHASE 3a: Split versions (MAIN HOUR ONLY)
+  # PHASE 3a: Split versions (ALWAYS — every 2 hours)
   # ──────────────────────────────────────────────────────────────
   split-versions:
     needs: fetch-projects
-    if: ${{ always() && inputs.is_main == true && needs.fetch-projects.result == 'success' }}
+    if: ${{ always() && needs.fetch-projects.result == 'success' }}
     runs-on: ubuntu-latest
     outputs:
       version_chunk_list: ${{ steps.set-matrix.outputs.version_chunk_list }}
@@ -149,11 +135,11 @@ jobs:
           path: data/${{ inputs.project_type }}/version_chunks/
 
   # ──────────────────────────────────────────────────────────────
-  # PHASE 3b: Fetch versions (parallel matrix) — MAIN HOUR ONLY
+  # PHASE 3b: Fetch versions (parallel matrix) — ALWAYS
   # ──────────────────────────────────────────────────────────────
   fetch-versions:
     needs: split-versions
-    if: ${{ always() && inputs.is_main == true && needs.split-versions.result == 'success' }}
+    if: ${{ always() && needs.split-versions.result == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -180,12 +166,10 @@ jobs:
 
   # ──────────────────────────────────────────────────────────────
   # PHASE 4+5: Merge, Snapshot, Analyze, Render Charts, Commit
-  # MAIN HOUR: merge versions → snapshot → main analysis → main charts → commit
-  # SUB HOUR:  snapshot → predictive analysis → sub charts → commit
-  #
-  # NO DB: Raw snapshots are the single source of truth. The raw snapshot
-  # is saved as .json.gz (gzip-compressed) to fit under GitHub's 100MB file
-  # size limit. analyze.py reads version data directly from the snapshots.
+  # ALWAYS runs full pipeline.
+  # analysis_mode determines which baseline is used:
+  #   daily  → 24h comparison (runs at 00:00 UTC / 08:00 Beijing)
+  #   hourly → 2h comparison (runs every 2 hours)
   # ──────────────────────────────────────────────────────────────
   finalize:
     needs: [fetch-projects, fetch-versions]
@@ -198,9 +182,8 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
 
-      # Download discovery data (for categories.json + loaders.json used by analyze)
-      - name: Download discovery data (main hour)
-        if: ${{ inputs.is_main == true }}
+      # Download discovery data
+      - name: Download discovery data
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.project_type }}-discovery
@@ -214,73 +197,47 @@ jobs:
           path: data/${{ inputs.project_type }}/chunks/
           merge-multiple: true
 
-      # Download all version results (MAIN HOUR ONLY)
+      # Download all version results
       - name: Download all version results
-        if: ${{ inputs.is_main == true }}
         uses: actions/download-artifact@v4
         with:
           pattern: ${{ inputs.project_type }}-version-results-*
           path: data/${{ inputs.project_type }}/version_results/
           merge-multiple: true
 
-      # MAIN HOUR: Merge versions into versions_merged.json.gz (no DB)
+      # Merge versions
       - name: Merge versions
-        if: ${{ inputs.is_main == true }}
         run: python src/fetch_versions.py --project-type ${{ inputs.project_type }} --merge
 
-      # ALWAYS: Snapshot (saves as .json.gz — gzip compressed to fit under GitHub 100MB limit)
+      # Snapshot (saves as .json.gz)
       - name: Snapshot
         run: python src/snapshot.py --project-type ${{ inputs.project_type }}
 
-      # MAIN HOUR: Main analysis (reads from raw snapshots — no DB)
-      - name: Main analysis
-        if: ${{ inputs.is_main == true }}
-        run: python src/analyze.py --project-type ${{ inputs.project_type }}
+      # Analyze (daily or hourly mode)
+      - name: Analyze (${{ inputs.analysis_mode }})
+        run: python src/analyze.py --project-type ${{ inputs.project_type }} --mode ${{ inputs.analysis_mode }}
 
-      # MAIN HOUR: Render main charts
-      - name: Render main charts
-        if: ${{ inputs.is_main == true }}
-        run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode main
-
-      # SUB HOUR: Predictive analysis
-      - name: Predictive analysis
-        if: ${{ inputs.is_main != true }}
-        run: python src/predictive_analyze.py --project-type ${{ inputs.project_type }}
-
-      # SUB HOUR: Render sub charts
-      - name: Render sub charts
-        if: ${{ inputs.is_main != true }}
-        run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode sub
+      # Render charts
+      - name: Render charts
+        run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode ${{ inputs.analysis_mode }}
 
       # Commit data files to git
-      # NOTE: .json.gz raw snapshots are committed (compressed to fit under 100MB)
-      # DB is NOT committed (not needed — analyze.py reads from raw snapshots)
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Always commit raw snapshots + analysis + charts
-          # Raw snapshots are .json.gz files (gzip-compressed)
+          # Always commit raw snapshots (.json.gz), analysis, charts, latest_analysis
           git add data/${{ inputs.project_type }}/raw/ \
                  data/${{ inputs.project_type }}/analysis/ \
                  data/${{ inputs.project_type }}/charts/ \
+                 data/${{ inputs.project_type }}/latest_analysis.json \
+                 data/${{ inputs.project_type }}/discovery.json \
+                 data/${{ inputs.project_type }}/categories.json \
+                 data/${{ inputs.project_type }}/loaders.json \
                  2>/dev/null || true
 
-          if [ "${{ inputs.is_main }}" = "true" ]; then
-            # Main hour: also commit discovery, latest_analysis
-            git add data/${{ inputs.project_type }}/latest_analysis.json \
-                   data/${{ inputs.project_type }}/discovery.json \
-                   data/${{ inputs.project_type }}/categories.json \
-                   data/${{ inputs.project_type }}/loaders.json \
-                   2>/dev/null || true
-            COMMIT_MSG="tracker: ${{ inputs.project_type }} main daily snapshot $(date -u +%Y-%m-%dT%H:%M)"
-          else
-            git add data/${{ inputs.project_type }}/latest_sub_analysis.json \
-                   2>/dev/null || true
-            COMMIT_MSG="tracker: ${{ inputs.project_type }} sub snapshot $(date -u +%Y-%m-%dT%H:%M)"
-          fi
-
+          COMMIT_MSG="tracker: ${{ inputs.project_type }} ${{ inputs.analysis_mode }} snapshot $(date -u +%Y-%m-%dT%H:%M)"
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main || true

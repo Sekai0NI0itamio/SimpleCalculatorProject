@@ -146,6 +146,8 @@ def main():
             "follows": p.get("follows", 0) or 0,
             "categories": cats,
             "project_type": p.get("project_type", project_type),
+            "client_side": p.get("client_side", "unknown"),
+            "server_side": p.get("server_side", "unknown"),
         })
 
     # ── Load version data ────────────────────────────────────────

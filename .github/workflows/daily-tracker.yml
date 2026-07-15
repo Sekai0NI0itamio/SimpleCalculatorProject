@@ -9,69 +9,75 @@ permissions:
   contents: write
 
 jobs:
-  # Determine if this is the main hour (00:00 UTC = 08:00 Beijing)
-  check-hour:
+  # Determine analysis mode from UTC hour
+  # 00:00 UTC = 08:00 Beijing → daily (24h comparison)
+  # Other hours → hourly (2h comparison)
+  check-mode:
     runs-on: ubuntu-latest
     outputs:
-      is_main: ${{ steps.check.outputs.is_main }}
+      analysis_mode: ${{ steps.check.outputs.mode }}
     steps:
       - id: check
         run: |
           HOUR=$(date -u +%H)
           if [ "$HOUR" = "00" ]; then
-            echo "is_main=true" >> $GITHUB_OUTPUT
+            echo "mode=daily" >> $GITHUB_OUTPUT
           else
-            echo "is_main=false" >> $GITHUB_OUTPUT
+            echo "mode=hourly" >> $GITHUB_OUTPUT
           fi
 
   # All 6 project types run in parallel every 2 hours.
-  # On main hour (00:00 UTC): full pipeline (discover → fetch-projects → split-versions → fetch-versions → merge → snapshot → analyze → commit)
-  # On sub hours: lightweight (fetch-projects → snapshot → predictive analysis → render charts → commit)
+  # Every run does the FULL pipeline (discover → fetch-projects → split-versions →
+  # fetch-versions → merge → snapshot → analyze → render charts → commit).
+  #
+  # Analysis mode:
+  #   daily  (00:00 UTC / 08:00 Beijing) — 24h day-over-day comparison
+  #   hourly (every other even hour) — 2h delta with velocity predictions
 
   mod:
-    needs: check-hour
+    needs: check-mode
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: mod
       version_chunks: 30
-      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
+      analysis_mode: ${{ needs.check-mode.outputs.analysis_mode }}
 
   modpack:
-    needs: check-hour
+    needs: check-mode
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: modpack
       version_chunks: 10
-      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
+      analysis_mode: ${{ needs.check-mode.outputs.analysis_mode }}
 
   resourcepack:
-    needs: check-hour
+    needs: check-mode
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: resourcepack
       version_chunks: 10
-      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
+      analysis_mode: ${{ needs.check-mode.outputs.analysis_mode }}
 
   shader:
-    needs: check-hour
+    needs: check-mode
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: shader
       version_chunks: 5
-      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
+      analysis_mode: ${{ needs.check-mode.outputs.analysis_mode }}
 
   datapack:
-    needs: check-hour
+    needs: check-mode
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: datapack
       version_chunks: 10
-      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
+      analysis_mode: ${{ needs.check-mode.outputs.analysis_mode }}
 
   world:
-    needs: check-hour
+    needs: check-mode
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: world
       version_chunks: 5
-      is_main: ${{ fromJSON(needs.check-hour.outputs.is_main) }}
+      analysis_mode: ${{ needs.check-mode.outputs.analysis_mode }}
