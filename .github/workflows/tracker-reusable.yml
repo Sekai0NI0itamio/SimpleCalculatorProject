@@ -220,21 +220,17 @@ jobs:
       - name: Analyze (${{ inputs.analysis_mode }})
         run: python src/analyze.py --project-type ${{ inputs.project_type }} --mode ${{ inputs.analysis_mode }}
 
-      # Render charts
-      - name: Render charts
-        run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode ${{ inputs.analysis_mode }}
-
       # Commit data files to git
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Always commit raw snapshots (.json.gz), analysis, charts, latest_analysis
+          # Always commit raw snapshots (.json.gz), analysis, latest_analysis, project_vl_pairs
           git add data/${{ inputs.project_type }}/raw/ \
                  data/${{ inputs.project_type }}/analysis/ \
-                 data/${{ inputs.project_type }}/charts/ \
                  data/${{ inputs.project_type }}/latest_analysis.json \
+                 data/${{ inputs.project_type }}/project_vl_pairs.json \
                  data/${{ inputs.project_type }}/discovery.json \
                  data/${{ inputs.project_type }}/categories.json \
                  data/${{ inputs.project_type }}/loaders.json \

@@ -2,7 +2,7 @@
 """
 Generate a combined website report from all project type analyses.
 
-Loads the latest daily analysis for each project type, combines them into a
+Loads the latest analysis for each project type, combines them into a
 single JSON report served to the website at reports/latest_analysis.json.
 """
 
@@ -18,10 +18,7 @@ PROJECT_TYPES = ["mod", "modpack", "resourcepack", "shader", "datapack", "world"
 
 
 def load_latest_analysis(data_dir, project_type):
-    """Load the latest analysis (any mode) for a project type.
-
-    Returns the analysis dict or None if no analysis exists.
-    """
+    """Load the latest analysis for a project type."""
     analysis_dir = Path(data_dir) / project_type / "analysis"
     if not analysis_dir.exists():
         return None
@@ -30,20 +27,6 @@ def load_latest_analysis(data_dir, project_type):
     for f in files:
         data = load_json(str(f))
         if data:
-            return data
-    return None
-
-
-def load_latest_daily_analysis(data_dir, project_type):
-    """Load the latest DAILY analysis for a project type."""
-    analysis_dir = Path(data_dir) / project_type / "analysis"
-    if not analysis_dir.exists():
-        return None
-
-    files = sorted(analysis_dir.glob("*.json"), reverse=True)
-    for f in files:
-        data = load_json(str(f))
-        if data and data.get("analysis_type") == "daily":
             return data
     return None
 
@@ -59,18 +42,13 @@ def combine_analyses(data_dir):
             "top_version_loaders": [],
             "category_rankings": [],
             "loader_rankings": [],
-            "growth_ranking": [],
-            "rising_stars": [],
         },
-        "opportunity_analysis": None,
     }
 
     all_top_projects = []
     all_top_vl = {}  # key: (game_version, loader) -> aggregated stats
     all_category_rankings = {}
     all_loader_rankings = {}
-    all_growth_ranking = []
-    all_rising_stars = []
 
     for pt in PROJECT_TYPES:
         analysis = load_latest_analysis(data_dir, pt)
@@ -88,37 +66,13 @@ def combine_analyses(data_dir):
             "top_projects": analysis.get("top_projects", [])[:20],
             "top_version_loaders": analysis.get("top_version_loaders", [])[:200],
             "all_project_deltas": analysis.get("all_project_deltas", [])[:500],
-            "trending_analysis": analysis.get("trending_analysis", {}),
-            "composition_bias": analysis.get("composition_bias", {}),
-            "growth_ranking": analysis.get("growth_ranking", [])[:20],
-            "heavy_hitter_adjusted": analysis.get("heavy_hitter_adjusted", [])[:20],
-            "rising_stars": analysis.get("rising_stars", [])[:20],
         }
 
         # Collect top projects with type prefix
         for p in analysis.get("top_projects", []):
-            all_top_projects.append({
-                **p,
-                "project_type": pt,
-            })
-
-        # Collect growth ranking with type prefix
-        for p in analysis.get("growth_ranking", []):
-            all_growth_ranking.append({
-                **p,
-                "project_type": pt,
-            })
-
-        # Collect rising stars with type prefix
-        for p in analysis.get("rising_stars", []):
-            all_rising_stars.append({
-                **p,
-                "project_type": pt,
-            })
+            all_top_projects.append({**p, "project_type": pt})
 
         # Aggregate VL pairs by (game_version, loader) across ALL project types
-        # Per user: "1.20.1 fabric and 1.20.1 forge are TWO different things"
-        # Each (game_version, loader) pair is summed across all project types.
         for vl in analysis.get("top_version_loaders", []):
             gv = vl.get("game_version", "")
             loader = vl.get("loader", "")
@@ -137,7 +91,6 @@ def combine_analyses(data_dir):
             stat = all_top_vl[key]
             stat["delta_downloads"] += vl.get("delta_downloads", 0)
             stat["project_count"] += vl.get("project_count", 0)
-            # Track the single top project across all types for this VL pair
             if vl.get("top_project_delta", 0) > stat["top_project_delta"]:
                 stat["top_project_delta"] = vl.get("top_project_delta", 0)
                 stat["top_project_id"] = vl.get("top_project_id", "")
@@ -182,35 +135,22 @@ def combine_analyses(data_dir):
             all_loader_rankings[key]["total_downloads"] += ld.get("total_downloads", 0)
             all_loader_rankings[key]["new_downloads"] += ld.get("new_downloads", 0)
 
-        # Use mod's opportunity analysis (most relevant for mod building decisions)
-        if pt == "mod" and analysis.get("opportunity_analysis"):
-            report["opportunity_analysis"] = analysis["opportunity_analysis"]
-
-    # Sort and deduplicate
+    # Sort and assign
     all_top_projects.sort(key=lambda x: x.get("delta_downloads", 0), reverse=True)
     report["combined"]["top_projects"] = all_top_projects[:50]
 
-    all_growth_ranking.sort(key=lambda x: x.get("growth_pct", 0), reverse=True)
-    report["combined"]["growth_ranking"] = all_growth_ranking[:50]
-
-    all_rising_stars.sort(key=lambda x: x.get("growth_pct", 0), reverse=True)
-    report["combined"]["rising_stars"] = all_rising_stars[:50]
-
-    # Sort VL pairs by total delta_downloads across all types
     report["combined"]["top_version_loaders"] = sorted(
         all_top_vl.values(),
         key=lambda x: x["delta_downloads"],
         reverse=True,
     )[:50]
 
-    # Sort category rankings by new_downloads
     report["combined"]["category_rankings"] = sorted(
         all_category_rankings.values(),
         key=lambda x: x["new_downloads"],
         reverse=True,
     )[:20]
 
-    # Sort loader rankings by new_downloads
     report["combined"]["loader_rankings"] = sorted(
         all_loader_rankings.values(),
         key=lambda x: x["new_downloads"],
@@ -247,15 +187,9 @@ def combine_analyses(data_dir):
 
 
 def collect_run_history(data_dir):
-    """Collect run history from all analysis and raw snapshot files.
-
-    Groups entries within 15-minute windows into actual workflow runs.
-    Each run shows: start time, end time, duration, how much data was evaluated.
-
-    Returns a list of run entries sorted by start time descending.
-    """
+    """Collect run history from all analysis files."""
     data_dir = Path(data_dir)
-    WINDOW_MINUTES = 15  # Group entries within this window as one run
+    WINDOW_MINUTES = 15
 
     all_entries = []
     for pt in PROJECT_TYPES:
@@ -264,7 +198,6 @@ def collect_run_history(data_dir):
         if not analysis_dir.exists():
             continue
 
-        # Build a map of timestamp -> raw snapshot file size for this type
         raw_size_map = {}
         if raw_dir.exists():
             for f in raw_dir.glob("*.json.gz"):
@@ -280,7 +213,6 @@ def collect_run_history(data_dir):
             summary = data.get("summary", {})
             file_size = f.stat().st_size
 
-            # Find matching raw snapshot size
             raw_size = 0
             for raw_key, rs in raw_size_map.items():
                 if raw_key in ts or ts in raw_key:
@@ -307,10 +239,8 @@ def collect_run_history(data_dir):
     if not all_entries:
         return []
 
-    # Sort by timestamp
     all_entries.sort(key=lambda e: e["timestamp"])
 
-    # Group into time windows
     from datetime import datetime, timedelta
     groups = []
     current_group = [all_entries[0]]
@@ -322,9 +252,8 @@ def collect_run_history(data_dir):
             diff = abs((entry_ts - current_ts).total_seconds()) / 60
             if diff <= WINDOW_MINUTES:
                 current_group.append(entry)
-                current_ts = entry_ts  # Update to latest timestamp in group
+                current_ts = entry_ts
                 continue
-        # Start new group
         groups.append(current_group)
         current_group = [entry]
         current_ts = entry_ts
@@ -332,29 +261,24 @@ def collect_run_history(data_dir):
     if current_group:
         groups.append(current_group)
 
-    # Build run entries
     runs = []
     for group in groups:
-        # Sort group by timestamp
         group.sort(key=lambda e: e["timestamp"])
         start_ts = group[0]["timestamp"]
         end_ts = group[-1]["timestamp"]
         start_dt = _parse_ts(start_ts)
         end_dt = _parse_ts(end_ts)
 
-        # Duration in seconds
         duration_sec = 0
         if start_dt and end_dt:
             duration_sec = int((end_dt - start_dt).total_seconds())
 
-        # Deduplicate by project type (keep the latest entry per type in the group)
         type_map = {}
         for e in group:
             pt = e["project_type"]
             if pt not in type_map or e["timestamp"] > type_map[pt]["timestamp"]:
                 type_map[pt] = e
 
-        # Compute totals
         total_projects = sum(e["summary"]["total_projects"] for e in type_map.values())
         total_versions = sum(e["summary"]["total_versions"] for e in type_map.values())
         total_downloads = sum(e["summary"]["total_downloads"] for e in type_map.values())
@@ -382,14 +306,12 @@ def collect_run_history(data_dir):
             },
         })
 
-    # Filter out empty runs (no data collected)
     runs = [r for r in runs if not (
         r["totals"]["projects"] == 0 and
         r["totals"]["versions"] == 0 and
         r["totals"]["downloads"] == 0
     )]
 
-    # Sort by start time descending (newest first)
     runs.sort(key=lambda r: r["start_time"], reverse=True)
     return runs
 
@@ -397,42 +319,32 @@ def collect_run_history(data_dir):
 def _parse_ts(ts_str):
     """Parse a timestamp string like '2026-07-15T09-57-35' into a datetime."""
     try:
-        # Handle format: 2026-07-15T09-57-35
-        # Split on T: date = 2026-07-15, time = 09-57-35
         date_part, time_part = ts_str.split("T")
-        time_part = time_part.replace("-", ":")
-        return datetime.strptime(f"{date_part} {time_part}", "%Y-%m-%d %H:%M:%S")
-    except (ValueError, TypeError):
-        pass
-    try:
-        return datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+        time_part = time_part.replace("-", "")
+        dt = datetime.strptime(f"{date_part}{time_part}", "%Y-%m-%d%H%M%S")
+        return dt.replace(tzinfo=timezone.utc)
     except (ValueError, TypeError):
         return None
 
 
 def main():
-    script_dir = Path(__file__).resolve().parent
-    project_root = script_dir.parent
-    data_dir = project_root / "data"
-    reports_dir = project_root / "reports"
-
-    ensure_dir(str(reports_dir))
-
-    print("Generating combined website report...")
+    data_dir = os.environ.get("DATA_DIR", "data")
     report = combine_analyses(data_dir)
 
+    reports_dir = Path("reports")
+    ensure_dir(str(reports_dir))
     output_path = reports_dir / "latest_analysis.json"
     save_json(str(output_path), report)
-    print(f"  Saved to {output_path}")
-    print(f"  Project types: {list(report['project_types'].keys())}")
+
+    print(f"Report generated at {output_path}")
+    print(f"  Total projects: {report['totals']['projects']:,}")
+    print(f"  Total downloads: {report['totals']['downloads']:,}")
     print(f"  Combined top projects: {len(report['combined']['top_projects'])}")
     print(f"  Combined top VL pairs: {len(report['combined']['top_version_loaders'])}")
     print(f"  Combined categories: {len(report['combined']['category_rankings'])}")
-    has_opp = report.get("opportunity_analysis") and report["opportunity_analysis"].get("top_10_opportunities")
-    print(f"  Opportunity analysis: {'yes' if has_opp else 'no'}")
-    run_history = report.get("run_history", [])
-    print(f"  Run history: {len(run_history)} runs recorded")
+    print(f"  Run history: {len(report.get('run_history', []))} runs recorded")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

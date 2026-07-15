@@ -6,14 +6,12 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Modrinth Market Analytics — Decision Engine</title>
+<title>Modrinth Market Analytics</title>
 <style>
   :root {
     --bg: #0d1117; --card: #161b22; --border: #30363d;
     --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
     --green: #3fb950; --red: #f85149; --orange: #d29922; --purple: #bc8cff;
-    --amber: #f59e0b; --emerald: #10b981; --violet: #8b5cf6;
-    --sky: #38bdf8; --rose: #f43f5e;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -22,7 +20,6 @@
   }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-  /* Navigation */
   nav {
     border-bottom: 1px solid var(--border); background: rgba(13,17,23,0.95);
     position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px);
@@ -43,7 +40,6 @@
   nav .nav-link.active { color: #fff; background: var(--accent); }
   nav .nav-stats { margin-left: auto; display: flex; gap: 16px; font-size: 12px; color: var(--text-muted); }
 
-  /* Pages */
   .page { display: none; padding: 32px 0; }
   .page.active { display: block; }
   .page-header { margin-bottom: 24px; }
@@ -54,7 +50,6 @@
   .section-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
   .section-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
 
-  /* Summary stats */
   .summary-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
   .summary-stat {
     background: var(--card); border: 1px solid var(--border);
@@ -62,9 +57,7 @@
   }
   .summary-stat .ss-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
   .summary-stat .ss-value { font-size: 20px; font-weight: 700; }
-  .ss-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
 
-  /* Project Type Tabs */
   .pt-tabs { display: flex; gap: 4px; margin-bottom: 20px; flex-wrap: wrap; }
   .pt-tab {
     padding: 7px 16px; border-radius: 6px; cursor: pointer;
@@ -78,7 +71,6 @@
   .pt-content { display: none; }
   .pt-content.active { display: block; }
 
-  /* Per-type summary row */
   .pt-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px; }
   .pt-stat {
     background: var(--card); border: 1px solid var(--border);
@@ -87,78 +79,6 @@
   .pt-stat .pt-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
   .pt-stat .pt-value { font-size: 18px; font-weight: 700; margin-top: 2px; }
 
-  /* Charts Grid */
-  .charts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 16px; margin-bottom: 20px; }
-  .chart-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; overflow: hidden;
-  }
-  .chart-card .chart-label {
-    padding: 8px 12px; font-size: 11px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.3px; color: var(--text-muted);
-    border-bottom: 1px solid var(--border);
-  }
-  .chart-card img {
-    width: 100%; height: auto; display: block;
-    background: #0a0e13;
-  }
-  .chart-card img.loading-img { min-height: 200px; background: #0a0e13; }
-
-  /* Top Mod Cards */
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-  .mod-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 20px; position: relative; overflow: hidden;
-  }
-  .mod-card.rank-1 { border-color: rgba(245,158,11,0.3); }
-  .mod-card.rank-2 { border-color: rgba(148,163,184,0.3); }
-  .mod-card.rank-3 { border-color: rgba(180,83,9,0.3); }
-  .mod-card .rank-badge {
-    position: absolute; top: 12px; right: 12px;
-    width: 28px; height: 28px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 700;
-  }
-  .mod-card.rank-1 .rank-badge { background: rgba(245,158,11,0.15); color: var(--amber); }
-  .mod-card.rank-2 .rank-badge { background: rgba(148,163,184,0.15); color: #94a3b8; }
-  .mod-card.rank-3 .rank-badge { background: rgba(180,83,9,0.15); color: #b45309; }
-  .mod-card .mod-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; padding-right: 36px; }
-  .mod-card .mod-type {
-    display: inline-block; padding: 2px 8px; border-radius: 4px;
-    font-size: 11px; font-weight: 500; margin-bottom: 12px;
-    background: rgba(88,166,255,0.1); color: var(--accent); text-transform: capitalize;
-  }
-  .mod-card .mod-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .mod-card .stat { text-align: center; }
-  .mod-card .stat-value { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
-  .mod-card .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .mod-card .stat-value.positive { color: var(--green); }
-
-  .ranking-tab {
-    background: transparent;
-    border: 1px solid rgba(48,54,61,0.8);
-    color: var(--text-muted);
-    padding: 5px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .ranking-tab:hover { border-color: rgba(88,166,255,0.4); color: var(--text-primary); }
-  .ranking-tab.active { background: rgba(88,166,255,0.12); border-color: var(--accent); color: var(--accent); }
-
-  .view-all-link {
-    text-align: center;
-    padding: 8px;
-    font-size: 12px;
-    color: var(--accent);
-    cursor: pointer;
-    border-radius: 0 0 6px 6px;
-    transition: background 0.15s;
-  }
-  .view-all-link:hover { background: rgba(88,166,255,0.06); }
-
-  /* Tables */
   table {
     width: 100%; border-collapse: collapse; font-size: 13px;
     background: var(--card); border-radius: 8px; overflow: hidden;
@@ -177,119 +97,23 @@
   .negative { color: var(--red); }
   .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
 
-  /* Tags */
   .tag {
     display: inline-block; padding: 2px 8px; border-radius: 4px;
     font-size: 11px; font-weight: 500;
   }
+  .tag.blue { background: rgba(88,166,255,0.15); color: var(--accent); }
   .tag.green { background: rgba(63,185,80,0.15); color: var(--green); }
-  .tag.red { background: rgba(248,81,73,0.15); color: var(--red); }
   .tag.orange { background: rgba(210,153,34,0.15); color: var(--orange); }
   .tag.purple { background: rgba(188,140,255,0.15); color: var(--purple); }
-  .tag.blue { background: rgba(88,166,255,0.15); color: var(--accent); }
-  .tag.emerald { background: rgba(16,185,129,0.15); color: var(--emerald); }
-  .tag.amber { background: rgba(245,158,11,0.15); color: var(--amber); }
-  .tag.rose { background: rgba(244,63,94,0.15); color: var(--rose); }
-  .tag.loader-fabric { background: rgba(63,185,80,0.15); color: var(--green); }
-  .tag.loader-forge { background: rgba(210,153,34,0.15); color: var(--orange); }
-  .tag.loader-neoforge { background: rgba(188,140,255,0.15); color: var(--purple); }
-  .tag.loader-quilt { background: rgba(88,166,255,0.15); color: var(--accent); }
 
-  /* Opportunity Cards */
-  .opp-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  .opp-card.confidence-high { border-color: rgba(16,185,129,0.3); }
-  .opp-card.confidence-medium { border-color: rgba(245,158,11,0.3); }
-  .opp-card.rank-top { border-color: rgba(88,166,255,0.3); }
-  .opp-header {
-    display: flex; align-items: center; gap: 12px;
-    padding: 14px 16px; cursor: pointer; transition: background 0.1s;
-  }
-  .opp-header:hover { background: rgba(88,166,255,0.03); }
-  .opp-rank {
-    width: 28px; height: 28px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 700; flex-shrink: 0;
-  }
-  .opp-rank.r1 { background: rgba(245,158,11,0.15); color: var(--amber); }
-  .opp-rank.r2 { background: rgba(148,163,184,0.15); color: #94a3b8; }
-  .opp-rank.r3 { background: rgba(180,83,9,0.15); color: #b45309; }
-  .opp-rank.rn { background: rgba(48,54,61,0.5); color: var(--text-muted); }
-  .opp-info { flex: 1; min-width: 0; }
-  .opp-name { font-size: 14px; font-weight: 600; }
-  .opp-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .opp-meta span { margin-right: 12px; }
-  .opp-score { text-align: right; flex-shrink: 0; }
-  .opp-score .score-num { font-size: 22px; font-weight: 700; font-family: 'SF Mono', 'Consolas', monospace; }
-  .opp-score .score-num.high { color: var(--emerald); }
-  .opp-score .score-num.med { color: var(--amber); }
-  .opp-score .score-num.low { color: var(--text-muted); }
-  .opp-score .score-label { font-size: 10px; color: var(--text-muted); }
-  .opp-chevron { color: var(--text-muted); flex-shrink: 0; }
-  .opp-detail { padding: 0 16px 16px; border-top: 1px solid var(--border); display: none; }
-  .opp-detail.open { display: block; }
-  .opp-detail-inner { padding-top: 12px; }
-  .opp-desc { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
-  .meter-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .meter-label { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px; }
-  .meter-label .name { color: var(--text-muted); }
-  .meter-label .val { font-weight: 600; }
-  .meter-bar { height: 6px; background: rgba(48,54,61,0.5); border-radius: 3px; overflow: hidden; }
-  .meter-bar .fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
-  .meter-bar .fill.demand { background: rgba(16,185,129,0.5); }
-  .meter-bar .fill.supply { background: rgba(244,63,94,0.5); }
-  .info-box {
-    background: rgba(48,54,61,0.3); border: 1px solid var(--border);
-    border-radius: 8px; padding: 12px; margin-bottom: 12px;
-  }
-  .info-box-header {
-    display: flex; align-items: center; gap: 6px;
-    font-size: 11px; font-weight: 600; text-transform: uppercase;
-    color: var(--text-muted); margin-bottom: 8px;
-  }
-  .info-box .vl-target { display: flex; align-items: center; gap: 8px; font-size: 13px; }
-  .info-box .vl-target .version { font-weight: 600; }
-  .info-box .vl-target .arrow { color: var(--text-muted); font-size: 11px; }
-  .info-box .vl-target .loader-name { font-weight: 600; text-transform: capitalize; }
-  .info-box .vl-target .sub { font-size: 11px; color: var(--text-muted); }
-  .reasons { margin-bottom: 12px; }
-  .reasons .reason {
-    display: flex; align-items: flex-start; gap: 6px;
-    font-size: 11px; color: var(--text-muted); margin-bottom: 4px;
-  }
-  .reasons .reason .dot {
-    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
-  }
-  .reasons .reason .dot.primary { background: var(--emerald); }
-  .reasons .reason .dot.secondary { background: var(--text-muted); }
-  .risk-flags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-  .risk-flag {
-    padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 500; border: 1px solid;
-  }
-  .risk-flag.sev-high { border-color: rgba(248,81,73,0.3); color: var(--red); background: rgba(248,81,73,0.06); }
-  .risk-flag.sev-medium { border-color: rgba(210,153,34,0.3); color: var(--orange); background: rgba(210,153,34,0.06); }
-  .risk-flag.sev-low { border-color: rgba(139,148,158,0.3); color: var(--text-muted); background: rgba(139,148,158,0.06); }
-  .scenario-bands { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center; }
-  .scenario-band { padding: 8px; background: rgba(48,54,61,0.2); border-radius: 6px; }
-  .scenario-band .band-label { font-size: 10px; color: var(--text-muted); }
-  .scenario-band .band-val { font-size: 14px; font-weight: 700; font-family: 'SF Mono', 'Consolas', monospace; }
-  .example-projects { display: flex; flex-wrap: wrap; gap: 4px; }
-  .example-proj { padding: 2px 8px; border-radius: 4px; font-size: 11px; background: rgba(48,54,61,0.3); color: var(--text-muted); }
-  .emerging-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-  .emerging-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
-  .emerging-card .e-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-  .emerging-card .e-stats { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
+  .empty { text-align: center; padding: 24px; color: var(--text-muted); font-size: 13px; }
 
-  .loading { text-align: center; padding: 100px 0; color: var(--text-muted); }
-  .loading .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .empty { padding: 32px; text-align: center; color: var(--text-muted); background: var(--card); border-radius: 8px; border: 1px solid var(--border); }
-
-  @media (max-width: 768px) {
-    .grid-2, .meter-row { grid-template-columns: 1fr; }
-    nav .nav-stats { display: none; }
-    .charts-grid { grid-template-columns: 1fr; }
-    .opp-header { flex-wrap: wrap; }
+  .countdown-card {
+    background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.3);
+    border-radius: 8px; padding: 8px 16px; text-align: center;
   }
+  .countdown-card .cd-label { font-size: 10px; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; }
+  .countdown-card .cd-value { font-size: 22px; font-weight: 700; color: var(--orange); font-family: 'SF Mono', 'Consolas', monospace; }
 </style>
 </head>
 <body>
@@ -297,283 +121,147 @@
   <div class="nav-inner">
     <div class="logo">Modrinth <span>Analytics</span></div>
     <div class="nav-links">
-      <button class="nav-link active" data-page="home">Home</button>
-      <button class="nav-link" data-page="analysis">Decision Engine</button>
-      <button class="nav-link" data-page="history">History of Runs</button>
+      <button class="nav-link active" onclick="switchPage('home')">Home</button>
+      <button class="nav-link" onclick="switchPage('history')">History of Runs</button>
     </div>
     <div class="nav-stats" id="navStats"></div>
   </div>
 </nav>
 
 <div class="container">
-  <div id="loading" class="loading">
-    <div class="spinner"></div>
-    <div>Loading analytics data...</div>
-  </div>
-
-  <!-- ========== HOME PAGE ========== -->
-  <div id="page-home" class="page active">
+  <!-- HOME PAGE -->
+  <div class="page active" id="page-home">
     <div class="page-header">
       <h1>Market Overview</h1>
-      <div class="subtitle">Top movers and charts across all Modrinth project types</div>
+      <div class="subtitle">Simple rankings — what's growing fastest across Modrinth</div>
     </div>
+
     <div class="summary-stats" id="summaryStats"></div>
 
-    <!-- Per-Project-Type Tabs (General + each type) -->
+    <div class="summary-stats" id="countdownRow" style="grid-template-columns: repeat(4, 1fr);"></div>
+
+    <!-- Project Type Tabs -->
     <div class="section">
       <div class="section-title">Market Breakdown</div>
-      <div class="section-subtitle">General = full overview & best growing projects. Click a type for its own rankings & VL pairs.</div>
+      <div class="section-subtitle">General = full overview. Click a type for its own rankings.</div>
       <div class="pt-tabs" id="ptTabs"></div>
       <div id="ptContents"></div>
     </div>
   </div>
 
-  <!-- ========== ANALYSIS PAGE ========== -->
-  <div id="page-analysis" class="page">
-    <div class="page-header">
-      <h1>Decision Engine</h1>
-      <div class="subtitle">Top 10 mods you should build next — ranked by opportunity score</div>
-    </div>
-    <div class="section">
-      <div class="section-title">Top 10 Opportunities</div>
-      <div class="section-subtitle">Ranked by demand vs supply. Higher score = better opportunity.</div>
-      <div id="opportunities"></div>
-    </div>
-    <div class="section">
-      <div class="section-title">Emerging Concepts</div>
-      <div class="section-subtitle">Fast-growing niches with low competition</div>
-      <div class="emerging-grid" id="emergingConcepts"></div>
-    </div>
-    <div class="section">
-      <div class="section-title">Best Version+Loader Pairs</div>
-      <div class="section-subtitle">Under-served pairs with high demand across all projects</div>
-      <div id="globalVLPairs"></div>
-    </div>
-  </div>
-
-  <!-- ========== HISTORY OF RUNS PAGE ========== -->
-  <div id="page-history" class="page">
+  <!-- HISTORY PAGE -->
+  <div class="page" id="page-history">
     <div class="page-header">
       <h1>History of Runs</h1>
-      <div class="subtitle">Every data retrieval, its timestamp, and how much data was evaluated</div>
+      <div class="subtitle">All data collection runs</div>
     </div>
-    <div class="summary-stats" id="historySummary"></div>
-    <!-- Next Run Countdown -->
-    <div class="section" style="margin-bottom:24px;">
-      <div class="pt-summary" style="grid-template-columns:1fr 1fr 1fr 1fr;">
-        <div class="pt-stat" style="border-color:rgba(88,166,255,0.3);background:rgba(88,166,255,0.03);">
-          <div class="pt-label">Next Run (UTC)</div>
-          <div class="pt-value" id="nextRunUtc" style="font-size:14px;font-family:monospace;">—</div>
-          <div class="ss-meta">Every 2 hours at even UTC hours</div>
-        </div>
-        <div class="pt-stat" style="border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.03);">
-          <div class="pt-label">Next Run (Beijing)</div>
-          <div class="pt-value" id="nextRunBeijing" style="font-size:14px;font-family:monospace;">—</div>
-          <div class="ss-meta">UTC+8 &middot; every 2 hours</div>
-        </div>
-        <div class="pt-stat" style="border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.03);">
-          <div class="pt-label">Countdown</div>
-          <div class="pt-value" id="nextRunCountdown" style="font-size:22px;font-family:'SF Mono','Consolas',monospace;color:var(--amber);">—</div>
-          <div class="ss-meta">until next data retrieval</div>
-        </div>
-        <div class="pt-stat" id="workflowStatusCard" style="border-color:rgba(139,148,158,0.3);background:rgba(139,148,158,0.02);">
-          <div class="pt-label">Workflow Status</div>
-          <div class="pt-value" id="workflowStatusText" style="font-size:14px;">—</div>
-          <div class="ss-meta" id="workflowStatusMeta">Checking...</div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="section-title">All Runs</div>
-      <div class="section-subtitle">Click a run to expand and see per-project-type breakdown</div>
-      <div id="runHistory"></div>
-    </div>
+    <div id="runHistory"></div>
   </div>
 </div>
 
 <script>
-const PROJECT_TYPES = ['mod', 'modpack', 'resourcepack', 'shader', 'datapack', 'world'];
-const PT_LABELS = { mod:'Mods', modpack:'Modpacks', resourcepack:'Resource Packs', shader:'Shaders', datapack:'Data Packs', world:'Worlds' };
+const PROJECT_TYPES = ["mod","modpack","resourcepack","shader","datapack","world"];
+const PT_LABELS = {mod:"Mods",modpack:"Modpacks",resourcepack:"Resource Packs",shader:"Shaders",datapack:"Data Packs",world:"Worlds"};
+let DATA = null;
 
-const CHART_NAMES = [
-  { file:'trend', label:'Download Trend' },
-  { file:'categories', label:'Categories' },
-  { file:'loaders', label:'Loaders' },
-  { file:'distribution', label:'Distribution' },
-  { file:'concentration', label:'Concentration' },
-  { file:'top_projects', label:'Top Projects' },
-  { file:'velocity', label:'Velocity' },
-  { file:'prediction', label:'Predictions' },
-  { file:'top_movers_2h', label:'Top Movers (2h)' },
-  { file:'velocity_by_category', label:'Velocity by Category' },
-  { file:'hourly_heatmap', label:'Hourly Heatmap' },
-  { file:'recommendations', label:'Recommendations' },
-];
-
-let reportData = null;
-
-// ── Init ────────────────────────────────────────────────────────────
-function loadData() {
-  fetch('reports/latest_analysis.json?_=' + Date.now())
-    .then(r => { if (!r.ok) throw new Error('No data'); return r.json(); })
-    .then(data => {
-      const prev = reportData;
-      reportData = data;
-      document.getElementById('loading').style.display = 'none';
-      if (!prev) {
-        renderHome();
-        renderAnalysis();
-        renderHistory();
-        startCountdown();
-        checkWorkflowStatus();
-        setInterval(checkWorkflowStatus, 30000);
-      } else if (data.generated_at !== prev.generated_at) {
-        // Data changed — re-render
-        renderHome();
-        renderAnalysis();
-        renderHistory();
-      }
-    })
-    .catch(() => {
-      if (!reportData) {
-        document.getElementById('loading').innerHTML = `
-          <div style="color: var(--text-muted);">
-            <div style="font-size: 48px; margin-bottom: 16px;">&#128200;</div>
-            <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Waiting for data</div>
-            <div>Run the pipeline first to generate the report.</div>
-            <div style="margin-top: 12px; font-size: 13px;">
-              <code>python3 src/generate_report.py</code>
-            </div>
-          </div>`;
-      }
-    });
+function fmt(n) {
+  if (n == null || isNaN(n)) return '—';
+  if (n >= 1e9) return (n/1e9).toFixed(1)+'B';
+  if (n >= 1e6) return (n/1e6).toFixed(1)+'M';
+  if (n >= 1e3) return (n/1e3).toFixed(1)+'K';
+  return n.toLocaleString();
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById('page-' + link.dataset.page).classList.add('active');
-    });
-  });
-
-  loadData();
-  // Auto-refresh every 2 minutes
-  setInterval(loadData, 120000);
-});
-
-// ── Formatting Helpers ──────────────────────────────────────────────
-function fmt(n) { return n != null ? n.toLocaleString() : '—'; }
-function fmtDelta(n) { if (n == null) return '—'; return (n >= 0 ? '+' : '') + n.toLocaleString(); }
-function fmtPct(n) { if (n == null) return '—'; return (n >= 0 ? '+' : '') + n.toFixed(1) + '%'; }
+function fmtDelta(n) { return (n>=0?'+':'')+fmt(Math.abs(n)).replace(/\.0$/,''); }
+function fmtPct(n) { return (n>=0?'+':'')+n.toFixed(2)+'%'; }
+function escHtml(s) { return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function loaderTag(loader) {
-  return `<span class="tag loader-${(loader||'').toLowerCase()}">${loader}</span>`;
-}
-function escHtml(s) {
-  if (!s) return '';
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-function fmtTs(ts) {
-  if (!ts) return '—';
-  // Format: 2026-07-15T09-57-35 -> 2026-07-15 09:57:35
-  const parts = ts.split('T');
-  if (parts.length === 2) {
-    return parts[0] + ' ' + parts[1].replace(/-/g, ':');
-  }
-  return ts;
-}
-function fmtDuration(sec) {
-  if (!sec || sec <= 0) return '<1s';
-  if (sec < 60) return sec + 's';
-  const m = Math.floor(sec / 60);
-  const s = sec % 60;
-  return m + 'm' + (s > 0 ? s + 's' : '');
+  const colors = {fabric:'green',forge:'orange',neoforge:'purple',quilt:'blue',iris:'blue',minecraft:'blue',optifine:'orange'};
+  const cls = colors[loader?.toLowerCase()] || 'blue';
+  return `<span class="tag ${cls}">${escHtml(loader||'—')}</span>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  HOME PAGE
-// ═══════════════════════════════════════════════════════════════════
+async function loadData() {
+  try {
+    const res = await fetch('reports/latest_analysis.json?_=' + Date.now());
+    if (!res.ok) return;
+    DATA = await res.json();
+    render();
+  } catch (e) { console.error('Failed to load:', e); }
+}
 
-function renderHome() {
-  const d = reportData;
-  if (!d) return;
+function switchPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  event.target.classList.add('active');
+  if (page === 'history') renderHistory();
+}
 
-  const totals = d.totals || {};
+function render() {
+  if (!DATA) return;
+  const totals = DATA.totals || {};
+  document.getElementById('navStats').innerHTML = `Projects: ${fmt(totals.projects||0)} · Downloads: ${fmt(totals.downloads||0)}`;
+  renderSummary();
+  renderCountdown();
+  renderProjectTypeTabs();
+}
+
+function renderSummary() {
+  const t = DATA.totals || {};
+  const ts = DATA.generated_at || '';
   document.getElementById('summaryStats').innerHTML = `
-    <div class="summary-stat">
-      <div class="ss-label">Total Projects</div>
-      <div class="ss-value">${fmt(totals.projects)}</div>
-    </div>
-    <div class="summary-stat">
-      <div class="ss-label">Total Downloads</div>
-      <div class="ss-value">${fmt(totals.downloads)}</div>
-    </div>
-    <div class="summary-stat">
-      <div class="ss-label">Total Versions</div>
-      <div class="ss-value">${fmt(totals.versions)}</div>
-    </div>
-    <div class="summary-stat">
-      <div class="ss-label">Project Types</div>
-      <div class="ss-value">${Object.keys(d.project_types||{}).length}</div>
-    </div>
-    <div class="summary-stat">
-      <div class="ss-label">Updated</div>
-      <div class="ss-value" style="font-size:14px;">${(d.generated_at||'').slice(0,16).replace('T',' ')}</div>
-    </div>
+    <div class="summary-stat"><div class="ss-label">Total Projects</div><div class="ss-value">${fmt(t.projects||0)}</div></div>
+    <div class="summary-stat"><div class="ss-label">Total Downloads</div><div class="ss-value">${fmt(t.downloads||0)}</div></div>
+    <div class="summary-stat"><div class="ss-label">Total Versions</div><div class="ss-value">${fmt(t.versions||0)}</div></div>
+    <div class="summary-stat"><div class="ss-label">Updated</div><div class="ss-value" style="font-size:14px">${ts.slice(0,16).replace('T',' ')}</div></div>
   `;
-  document.getElementById('navStats').innerHTML = `
-    <span>Projects: <strong>${fmt(totals.projects)}</strong></span>
-    <span>Downloads: <strong>${fmt(totals.downloads)}</strong></span>
-  `;
-
-  renderProjectTypeTabs(d);
 }
 
-// ── Project Type Tabs ───────────────────────────────────────────────
+function renderCountdown() {
+  const now = new Date();
+  const nextUTC = new Date(Math.ceil(now.getTime() / (2*3600*1000)) * (2*3600*1000));
+  const diff = nextUTC - now;
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  const beijingTime = new Date(now.getTime() + 8*3600*1000).toISOString().slice(0,16).replace('T',' ');
+  const utcTime = now.toISOString().slice(0,16).replace('T',' ');
+  const cd = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  document.getElementById('countdownRow').innerHTML = `
+    <div class="summary-stat"><div class="ss-label">UTC Time</div><div class="ss-value" style="font-size:14px;font-family:'SF Mono',monospace">${utcTime}</div></div>
+    <div class="summary-stat"><div class="ss-label">Beijing Time</div><div class="ss-value" style="font-size:14px;font-family:'SF Mono',monospace">${beijingTime}</div></div>
+    <div class="countdown-card"><div class="cd-label">Next Run</div><div class="cd-value">${cd}</div></div>
+    <div class="summary-stat"><div class="ss-label">Workflow</div><div class="ss-value" style="font-size:14px">—</div></div>
+  `;
+}
 
-function renderProjectTypeTabs(d) {
-  const pts = d.project_types || {};
-  const totals = d.totals || {};
-
-  // General tab comes first, then each project type
-  const generalTab = `<div class="pt-tab active" data-pt="general">
-    General<span class="pt-count">(${totals.projects ? fmt(totals.projects) : '—'})</span>
-  </div>`;
-  const typeTabs = PROJECT_TYPES.map((pt) => {
+function renderProjectTypeTabs() {
+  const pts = DATA.project_types || {};
+  const totals = DATA.totals || {};
+  const generalTab = `<div class="pt-tab active" data-pt="general">General<span class="pt-count">(${fmt(totals.projects||0)})</span></div>`;
+  const typeTabs = PROJECT_TYPES.map(pt => {
     const info = pts[pt] || {};
-    const summary = info.summary || {};
-    const count = summary.total_projects ? fmt(summary.total_projects) : '—';
-    return `<div class="pt-tab" data-pt="${pt}">
-      ${PT_LABELS[pt] || pt}<span class="pt-count">(${count})</span>
-    </div>`;
+    const s = info.summary || {};
+    return `<div class="pt-tab" data-pt="${pt}">${PT_LABELS[pt]}<span class="pt-count">(${fmt(s.total_projects||0)})</span></div>`;
   }).join('');
   document.getElementById('ptTabs').innerHTML = generalTab + typeTabs;
 
-  // General content: combined overview
   const generalContent = `<div class="pt-content active" data-pt="general">
-    ${renderGeneralSummary(d)}
-    ${renderGeneralTopProjects(d)}
-    ${renderGeneralCategories(d)}
-    ${renderGeneralVLPairs(d)}
+    ${renderGeneralTopProjects()}
+    ${renderGeneralCategories()}
+    ${renderGeneralVLPairs()}
   </div>`;
-
-  // Per-type content
-  const typeContents = PROJECT_TYPES.map((pt) => {
+  const typeContents = PROJECT_TYPES.map(pt => {
     const info = pts[pt] || {};
     return `<div class="pt-content" data-pt="${pt}">
-      ${renderPerTypeSummary(info, pt)}
-      ${renderPerTypeCharts(pt)}
-      ${renderPerTypeTopProjects(info, pt)}
-      ${renderPerTypeCategories(info, pt)}
-      ${renderPerTypeVLPairs(info, pt)}
+      ${renderPerTypeSummary(info)}
+      ${renderPerTypeTopProjects(info)}
+      ${renderPerTypeCategories(info)}
+      ${renderPerTypeVLPairs(info)}
     </div>`;
   }).join('');
-
   document.getElementById('ptContents').innerHTML = generalContent + typeContents;
 
-  // Tab click handler
   document.querySelectorAll('.pt-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const pt = tab.dataset.pt;
@@ -585,673 +273,170 @@ function renderProjectTypeTabs(d) {
   });
 }
 
-function renderPerTypeSummary(info, pt) {
-  const summary = info.summary || {};
-  const delta = summary.new_downloads_since_baseline || 0;
-  const analysisType = info.analysis_type || 'hourly';
-  const date = info.date || '—';
-  return `
-    <div class="pt-summary">
-      <div class="pt-stat">
-        <div class="pt-label">Projects</div>
-        <div class="pt-value">${fmt(summary.total_projects)}</div>
-        <div class="ss-meta">${analysisType} analysis</div>
-      </div>
-      <div class="pt-stat">
-        <div class="pt-label">Downloads</div>
-        <div class="pt-value">${fmt(summary.total_downloads)}</div>
-      </div>
-      <div class="pt-stat">
-        <div class="pt-label">Versions</div>
-        <div class="pt-value">${fmt(summary.total_versions)}</div>
-      </div>
-      <div class="pt-stat">
-        <div class="pt-label">New Downloads</div>
-        <div class="pt-value positive">${fmtDelta(delta)}</div>
-        <div class="ss-meta">since ${date}</div>
-      </div>
-    </div>`;
-}
+// ── General Tab ──────────────────────────────────────────────────
 
-function renderPerTypeCharts(pt) {
-  return `
-    <div class="section-title" style="font-size:14px; margin-bottom:10px;">Charts</div>
-    <div class="charts-grid">
-      ${CHART_NAMES.map(c => `
-        <div class="chart-card">
-          <div class="chart-label">${c.label}</div>
-          <img src="data/${pt}/charts/${c.file}.png?_=${new Date().getTime()}" alt="${c.label}" loading="lazy"
-               onerror="this.parentElement.style.display='none'"
-               onload="this.classList.remove('loading-img')"
-               class="loading-img">
-        </div>
-      `).join('')}
-    </div>`;
-}
-
-function renderPerTypeTopProjects(info, pt) {
-  const projects = info.top_projects || [];
-  if (!projects.length) return '';
-  const bias = info.composition_bias || {};
-  const growth = info.growth_ranking || [];
-  const adjusted = info.heavy_hitter_adjusted || [];
-  const stars = info.rising_stars || [];
-
-  // Choose the best ranking to show by default
-  const defaultRanking = 'growth'; // growth | adjusted | delta | stars
-  const rankCls = ['rank-1','rank-2','rank-3'];
-
-  return `
-    <div class="section-title" style="font-size:14px; margin-bottom:6px;">Top Projects — ${PT_LABELS[pt]||pt}</div>
-    ${bias.is_heavy_hitter_driven ? `
-    <div class="section" style="margin-bottom:12px; padding:10px 14px; border-left:3px solid var(--amber); background:rgba(245,158,11,0.06); border-radius:0 6px 6px 0;">
-      <div style="font-size:13px; color:var(--amber); font-weight:600;">&#9888; Heavy-Hitter Bias Detected</div>
-      <div style="font-size:12px; color:var(--text-muted);">${bias.interpretation||''}</div>
-      <div style="font-size:12px; color:var(--text-muted);">Top 3: ${(bias.top3_projects||[]).map(p=>escHtml(p.title)).join(', ')} account for ${bias.top3_share_pct}% of growth.</div>
-    </div>` : ''}
-
-    <div class="ranking-tabs" style="margin-bottom:12px; display:flex; gap:6px; flex-wrap:wrap;">
-      <button class="ranking-tab active" data-rk="growth" onclick="switchRanking(this,'${pt}','growth')">Growth Rate</button>
-      <button class="ranking-tab" data-rk="adjusted" onclick="switchRanking(this,'${pt}','adjusted')">Heavy-Hitter Adjusted</button>
-      <button class="ranking-tab" data-rk="delta" onclick="switchRanking(this,'${pt}','delta')">Absolute Delta</button>
-      <button class="ranking-tab" data-rk="stars" onclick="switchRanking(this,'${pt}','stars')">Rising Stars</button>
-    </div>
-
-    <div class="ranking-panel" id="ranking-${pt}-growth" style="display:block;">
-      ${renderRankingTable(growth.slice(0,10), 'growth_pct', pt)}
-      <div class="view-all-link" onclick="toggleFullList('${pt}-growth')">View all ${growth.length} &#9660;</div>
-      <div id="full-${pt}-growth" style="display:none;">${renderRankingTable(growth.slice(10), 'growth_pct', pt)}</div>
-    </div>
-    <div class="ranking-panel" id="ranking-${pt}-adjusted" style="display:none;">
-      ${renderRankingTable(adjusted.slice(0,10), 'delta_downloads', pt)}
-      <div class="view-all-link" onclick="toggleFullList('${pt}-adjusted')">View all ${adjusted.length} &#9660;</div>
-      <div id="full-${pt}-adjusted" style="display:none;">${renderRankingTable(adjusted.slice(10), 'delta_downloads', pt)}</div>
-    </div>
-    <div class="ranking-panel" id="ranking-${pt}-delta" style="display:none;">
-      ${renderRankingTable(projects.slice(0,10), 'delta_downloads', pt)}
-      <div class="view-all-link" onclick="toggleFullList('${pt}-delta')">View all ${projects.length} &#9660;</div>
-      <div id="full-${pt}-delta" style="display:none;">${renderRankingTable(projects.slice(10), 'delta_downloads', pt)}</div>
-    </div>
-    <div class="ranking-panel" id="ranking-${pt}-stars" style="display:none;">
-      ${renderRankingTable(stars.slice(0,10), 'growth_pct', pt)}
-      <div class="view-all-link" onclick="toggleFullList('${pt}-stars')">View all ${stars.length} &#9660;</div>
-      <div id="full-${pt}-stars" style="display:none;">${renderRankingTable(stars.slice(10), 'growth_pct', pt)}</div>
-    </div>`;
-}
-
-function renderRankingTable(items, sortKey, pt) {
-  if (!items.length) return '<div class="empty" style="padding:20px;">No projects in this ranking</div>';
-  return `<table>
-    <thead><tr>
-      <th>#</th><th>Project</th><th class="num">New</th><th class="num">Total</th><th class="num">Growth</th><th>Categories</th>
-    </tr></thead>
-    <tbody>${items.map((p,i) => `
-      <tr>
-        <td>${i+1}</td>
-        <td><strong>${escHtml(p.title||'Unknown')}</strong></td>
-        <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
-        <td class="num">${fmt(p.current_downloads)}</td>
-        <td class="num ${(p.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(p.growth_pct)}</td>
-        <td>${(p.categories||[]).slice(0,2).join(', ')||'—'}</td>
-      </tr>`).join('')}
-    </tbody></table>`;
-}
-
-function switchRanking(btn, pt, rk) {
-  btn.parentElement.querySelectorAll('.ranking-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('[id^="ranking-' + pt + '-"]').forEach(p => p.style.display = 'none');
-  const panel = document.getElementById('ranking-' + pt + '-' + rk);
-  if (panel) panel.style.display = 'block';
-}
-
-function toggleFullList(id) {
-  const el = document.getElementById('full-' + id);
-  const link = el.previousElementSibling;
-  if (el.style.display === 'none') {
-    el.style.display = 'block';
-    link.innerHTML = 'Collapse &#9650;';
-  } else {
-    el.style.display = 'none';
-    link.innerHTML = 'View all &#9660;';
-  }
-}
-
-function renderPerTypeCategories(info, pt) {
-  const cats = info.category_rankings || [];
-  if (!cats.length) return '';
-  return `
-    <div class="section-title" style="font-size:14px; margin-bottom:10px;">Category Rankings — ${PT_LABELS[pt]||pt}</div>
-    <table>
-      <thead><tr>
-        <th>#</th><th>Category</th><th class="num">Projects</th>
-        <th class="num">Downloads</th><th class="num">New</th><th class="num">Growth</th>
-      </tr></thead>
-      <tbody>
-        ${cats.slice(0,10).map((c,i) => `
-          <tr>
-            <td>${i+1}</td><td><strong>${c.category}</strong></td>
-            <td class="num">${fmt(c.projects)}</td>
-            <td class="num">${fmt(c.total_downloads)}</td>
-            <td class="num positive">${fmtDelta(c.new_downloads)}</td>
-            <td class="num ${(c.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(c.growth_pct)}</td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>`;
-}
-
-// ── General Tab (combined overview) ─────────────────────────────────
-
-function renderGeneralSummary(d) {
-  const totals = d.totals || {};
-  const pts = d.project_types || {};
-  let typeBreakdown = PROJECT_TYPES.map(pt => {
-    const info = pts[pt] || {};
-    const s = info.summary || {};
-    return `<span class="tag blue" style="margin-right:4px">${PT_LABELS[pt]||pt}: ${fmt(s.total_projects||0)}</span>`;
-  }).join('');
-  return `
-    <div class="pt-summary">
-      <div class="pt-stat">
-        <div class="pt-label">Total Projects</div>
-        <div class="pt-value">${fmt(totals.projects||0)}</div>
-      </div>
-      <div class="pt-stat">
-        <div class="pt-label">Total Downloads</div>
-        <div class="pt-value">${fmt(totals.downloads||0)}</div>
-      </div>
-      <div class="pt-stat">
-        <div class="pt-label">Total Versions</div>
-        <div class="pt-value">${fmt(totals.versions||0)}</div>
-      </div>
-      <div class="pt-stat">
-        <div class="pt-label">Types</div>
-        <div class="pt-value">${PROJECT_TYPES.length}</div>
-      </div>
-    </div>
-    <div style="margin:10px 0 20px; font-size:12px; color:var(--text-muted);">${typeBreakdown}</div>`;
-}
-
-function renderGeneralTopProjects(d) {
-  const combined = d.combined || {};
-  const all = (combined.growth_ranking || combined.top_projects || []);
-  const top = all.slice(0, 10);
-  const rest = all.slice(10);
-  const rankCls = ['rank-1','rank-2','rank-3'];
+function renderGeneralTopProjects() {
+  const all = (DATA.combined || {}).top_projects || [];
   return `
     <div class="section-title">Top Growing Projects — What to Build Next</div>
-    <div class="section-subtitle">Ranked by growth rate across all project types. Higher % = faster growing.</div>
-    ${top.length ? `
-    <div class="grid-3">
-      ${top.map((p,i) => `
-        <div class="mod-card ${rankCls[i]||''}">
-          <div class="rank-badge">${i+1}</div>
-          <div class="mod-name">${escHtml(p.title||'Unknown')}</div>
-          <div class="mod-type">${p.project_type||'mod'}</div>
-          <div class="mod-stats">
-            <div class="stat">
-              <div class="stat-value positive">${fmtPct(p.growth_pct)}</div>
-              <div class="stat-label">Growth Rate</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">${fmt(p.current_downloads)}</div>
-              <div class="stat-label">Total</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
-              <div class="stat-label">New</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value" style="font-size:12px">${(p.categories||[]).slice(0,2).join(', ')||'—'}</div>
-              <div class="stat-label">Categories</div>
-            </div>
-          </div>
-        </div>
-      `).join('')}
-    </div>
-    ${rest.length ? `<div class="view-all-link" onclick="toggleFullList('combined-growth')">View all ${all.length} &#9660;</div>
-    <div id="full-combined-growth" style="display:none;">
-      <table style="margin-top:12px;">
-        <thead><tr>
-          <th>#</th><th>Project</th><th>Type</th>
-          <th class="num">Growth</th><th class="num">New</th><th class="num">Total</th>
-        </tr></thead>
-        <tbody>
-          ${rest.map((p,i) => `
-            <tr>
-              <td>${i+11}</td>
-              <td><strong>${escHtml(p.title||'Unknown')}</strong></td>
-              <td>${p.project_type||'mod'}</td>
-              <td class="num positive">${fmtPct(p.growth_pct)}</td>
-              <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
-              <td class="num">${fmt(p.current_downloads)}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>` : ''}
-  ` : '<div class="empty">No data yet</div>'}`;
+    <div class="section-subtitle">Ranked by download increase across all project types</div>
+    ${all.length ? `
+    <table>
+      <thead><tr><th>#</th><th>Project</th><th>Type</th><th class="num">Increase</th><th class="num">Total</th></tr></thead>
+      <tbody>
+        ${all.map((p,i) => `<tr>
+          <td>${i+1}</td>
+          <td><strong>${escHtml(p.title||'')}</strong></td>
+          <td><span class="tag blue">${p.project_type||'mod'}</span></td>
+          <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
+          <td class="num">${fmt(p.current_downloads)}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>` : '<div class="empty">No data yet</div>'}`;
 }
 
-function renderGeneralCategories(d) {
-  const cats = (d.combined || {}).category_rankings || [];
+function renderGeneralCategories() {
+  const cats = (DATA.combined || {}).category_rankings || [];
   return `
     <div class="section-title" style="margin-top:32px;">Categories with Most Increase — Where to Focus</div>
     <div class="section-subtitle">Categories ranked by total download growth across all types</div>
     ${cats.length ? `
     <table>
-      <thead><tr>
-        <th>#</th><th>Category</th><th class="num">Projects</th>
-        <th class="num">Total Downloads</th><th class="num">New</th>
-        <th class="num">Growth</th><th>Types</th>
-      </tr></thead>
+      <thead><tr><th>#</th><th>Category</th><th class="num">Projects</th><th class="num">Total</th><th class="num">New</th><th>Types</th></tr></thead>
       <tbody>
-        ${cats.map((c,i) => `
-          <tr>
-            <td>${i+1}</td><td><strong>${c.category}</strong></td>
-            <td class="num">${fmt(c.projects)}</td>
-            <td class="num">${fmt(c.total_downloads)}</td>
-            <td class="num positive">${fmtDelta(c.new_downloads)}</td>
-            <td class="num ${(c.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(c.growth_pct)}</td>
-            <td>${Object.keys(c.types||{}).map(t=>`<span class="tag blue" style="margin-right:2px">${t}</span>`).join('')}</td>
-          </tr>
-        `).join('')}
+        ${cats.map((c,i) => `<tr>
+          <td>${i+1}</td><td><strong>${escHtml(c.category)}</strong></td>
+          <td class="num">${fmt(c.projects)}</td>
+          <td class="num">${fmt(c.total_downloads)}</td>
+          <td class="num positive">${fmtDelta(c.new_downloads)}</td>
+          <td>${Object.keys(c.types||{}).map(t=>`<span class="tag blue" style="margin-right:2px">${t}</span>`).join('')}</td>
+        </tr>`).join('')}
       </tbody>
-    </table>
-  ` : '<div class="empty">No data yet</div>'}`;
+    </table>` : '<div class="empty">No data yet</div>'}`;
 }
 
-function renderGeneralVLPairs(d) {
-  const topVL = (d.combined || {}).top_version_loaders || [];
+function renderGeneralVLPairs() {
+  const topVL = (DATA.combined || {}).top_version_loaders || [];
   return `
     <div class="section-title" style="margin-top:32px;">All Version+Loader Combinations Ranked</div>
-    <div class="section-subtitle">Highest download growth by version-loader pair across all project types.</div>
+    <div class="section-subtitle">Highest download growth by version-loader pair across all types</div>
     ${topVL.length ? `
     <table>
-      <thead><tr>
-        <th>#</th><th>Game Version</th><th>Loader</th>
-        <th class="num">Delta</th><th class="num">Projects</th><th>Top Project</th>
-      </tr></thead>
+      <thead><tr><th>#</th><th>Game Version</th><th>Loader</th><th class="num">Delta</th><th class="num">Projects</th><th>Top Project</th></tr></thead>
       <tbody>
-        ${topVL.map((vl,i) => `
-          <tr>
-            <td>${i+1}</td>
-            <td><span class="mono" style="font-weight:600">${vl.game_version||'—'}</span></td>
-            <td>${loaderTag(vl.loader||'')}</td>
-            <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
-            <td class="num">${fmt(vl.project_count||0)}</td>
-            <td>${escHtml(vl.top_project_title||'—')}</td>
-          </tr>
-        `).join('')}
+        ${topVL.map((vl,i) => `<tr>
+          <td>${i+1}</td>
+          <td><span class="mono" style="font-weight:600">${escHtml(vl.game_version||'—')}</span></td>
+          <td>${loaderTag(vl.loader||'')}</td>
+          <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
+          <td class="num">${fmt(vl.project_count||0)}</td>
+          <td>${escHtml(vl.top_project_title||'—')}</td>
+        </tr>`).join('')}
       </tbody>
-    </table>
-  ` : '<div class="empty">No VL pair data yet</div>'}`;
+    </table>` : '<div class="empty">No data yet</div>'}`;
 }
 
-// ── Per-Type VL Pairs ───────────────────────────────────────────────
+// ── Per-Type ─────────────────────────────────────────────────────
 
-function renderPerTypeVLPairs(info, pt) {
-  const vls = info.top_version_loaders || [];
-  if (!vls.length) return '';
+function renderPerTypeSummary(info) {
+  const s = info.summary || {};
   return `
-    <div class="section-title" style="font-size:14px; margin-top:24px; margin-bottom:10px;">Version+Loader Combinations — ${PT_LABELS[pt]||pt}</div>
+    <div class="pt-summary">
+      <div class="pt-stat"><div class="pt-label">Projects</div><div class="pt-value">${fmt(s.total_projects||0)}</div></div>
+      <div class="pt-stat"><div class="pt-label">Versions</div><div class="pt-value">${fmt(s.total_versions||0)}</div></div>
+      <div class="pt-stat"><div class="pt-label">Downloads</div><div class="pt-value">${fmt(s.total_downloads||0)}</div></div>
+      <div class="pt-stat"><div class="pt-label">New Downloads</div><div class="pt-value positive">${fmtDelta(s.new_downloads_since_baseline||0)}</div></div>
+    </div>`;
+}
+
+function renderPerTypeTopProjects(info) {
+  const all = info.all_project_deltas || info.top_projects || [];
+  return `
+    <div class="section-title" style="font-size:14px;margin-bottom:10px;">Projects by Increase</div>
+    ${all.length ? `
     <table>
-      <thead><tr>
-        <th>#</th><th>Game Version</th><th>Loader</th>
-        <th class="num">Delta</th><th class="num">Projects</th><th>Top Project</th>
-      </tr></thead>
+      <thead><tr><th>#</th><th>Project</th><th class="num">Increase</th><th class="num">Total</th></tr></thead>
       <tbody>
-        ${vls.map((vl,i) => `
-          <tr>
-            <td>${i+1}</td>
-            <td><span class="mono" style="font-weight:600">${vl.game_version||'—'}</span></td>
-            <td>${loaderTag(vl.loader||'')}</td>
-            <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
-            <td class="num">${fmt(vl.project_count||0)}</td>
-            <td>${escHtml(vl.top_project_title||'—')}</td>
-          </tr>
-        `).join('')}
+        ${all.map((p,i) => `<tr>
+          <td>${i+1}</td>
+          <td><strong>${escHtml(p.title||'')}</strong></td>
+          <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
+          <td class="num">${fmt(p.current_downloads)}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>` : '<div class="empty">No data yet</div>'}`;
+}
+
+function renderPerTypeCategories(info) {
+  const cats = info.category_rankings || [];
+  if (!cats.length) return '';
+  return `
+    <div class="section-title" style="font-size:14px;margin-top:20px;margin-bottom:10px;">Categories by Increase</div>
+    <table>
+      <thead><tr><th>#</th><th>Category</th><th class="num">Projects</th><th class="num">New</th><th class="num">Growth</th></tr></thead>
+      <tbody>
+        ${cats.map((c,i) => `<tr>
+          <td>${i+1}</td><td><strong>${escHtml(c.category)}</strong></td>
+          <td class="num">${fmt(c.projects)}</td>
+          <td class="num positive">${fmtDelta(c.new_downloads)}</td>
+          <td class="num">${fmtPct(c.growth_pct||0)}</td>
+        </tr>`).join('')}
       </tbody>
     </table>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  ANALYSIS PAGE (Decision Engine)
-// ═══════════════════════════════════════════════════════════════════
-
-function renderAnalysis() {
-  const d = reportData;
-  if (!d) return;
-  const opp = d.opportunity_analysis;
-  if (!opp || !opp.top_10_opportunities || !opp.top_10_opportunities.length) {
-    document.getElementById('opportunities').innerHTML = '<div class="empty">No opportunity data yet. Run the daily pipeline (00:00 UTC) first.</div>';
-    document.getElementById('emergingConcepts').innerHTML = '';
-    document.getElementById('globalVLPairs').innerHTML = '';
-    return;
-  }
-  renderOpportunities(opp.top_10_opportunities);
-  renderEmergingConcepts(opp.emerging_concepts || []);
-  renderGlobalVL(opp.global_vl_recommendations || []);
-}
-
-function renderOpportunities(opps) {
-  document.getElementById('opportunities').innerHTML = opps.map((opp,i) => {
-    const rank = i+1;
-    const rankCls = rank===1?'r1':rank===2?'r2':rank===3?'r3':'rn';
-    const confCls = 'confidence-'+(opp.confidence_level||'low');
-    const topCls = rank<=3?' rank-top':'';
-    const scoreCls = opp.opportunity_score>=60?'high':opp.opportunity_score>=40?'med':'low';
-    const bestVL = opp.recommended_version_loader;
-    const nextVL = opp.next_best_version_loader;
-    const gw = opp.growth_window;
-    const tte = gw?gw.time_to_enter:'';
-    const tteLabel = tte==='build_now'?'Build Now':tte==='monitor'?'Monitor':tte==='avoid'?'Avoid':'';
-    const tteCls = tte==='build_now'?'emerald':tte==='monitor'?'amber':tte==='avoid'?'rose':'';
-    return `<div class="opp-card ${confCls}${topCls}" style="margin-bottom:12px">
-      <div class="opp-header" onclick="toggleOppDetail(this)">
-        <div class="opp-rank ${rankCls}">${rank}</div>
-        <div class="opp-info">
-          <div class="opp-name">${escHtml(opp.cluster_label||opp.cluster_id)}</div>
-          <div class="opp-meta">
-            <span>${opp.project_count} projects</span>
-            <span>${fmt(opp.total_downloads_in_cluster)} downloads</span>
-            <span class="tag ${opp.confidence_level==='high'?'emerald':opp.confidence_level==='medium'?'amber':''}">${opp.confidence_level||'low'} conf</span>
-            ${tte?`<span class="tag ${tteCls}">${tteLabel}</span>`:''}
-          </div>
-        </div>
-        <div class="opp-score">
-          <div class="score-num ${scoreCls}">${opp.opportunity_score.toFixed(0)}</div>
-          <div class="score-label">/100</div>
-        </div>
-        <div class="opp-chevron">&#9660;</div>
-      </div>
-      <div class="opp-detail"><div class="opp-detail-inner">
-        <div class="opp-desc">${escHtml(opp.cluster_description||'')}</div>
-        <div class="meter-row">
-          <div class="meter">
-            <div class="meter-label"><span class="name">Demand</span><span class="val" style="color:var(--emerald)">${opp.demand_score.toFixed(1)}</span></div>
-            <div class="meter-bar"><div class="fill demand" style="width:${Math.min(100,opp.demand_score)}%"></div></div>
-          </div>
-          <div class="meter">
-            <div class="meter-label"><span class="name">Supply (Competition)</span><span class="val" style="color:var(--rose)">${opp.supply_score.toFixed(1)}</span></div>
-            <div class="meter-bar"><div class="fill supply" style="width:${Math.min(100,opp.supply_score)}%"></div></div>
-          </div>
-        </div>
-        ${bestVL?`<div class="info-box">
-          <div class="info-box-header">&#127919; Recommended Target</div>
-          <div class="vl-target">
-            <span class="version mono">${bestVL.game_version}</span>
-            <span class="arrow">&#8594;</span>
-            <span class="loader-name">${bestVL.loader}</span>
-            <span class="sub">(${bestVL.project_count} existing, ${fmtDelta(bestVL.total_delta)} delta)</span>
-            ${bestVL.under_served_boost>0?'<span class="tag emerald">Under-served</span>':''}
-          </div>
-          ${nextVL?`<div class="vl-target" style="margin-top:4px;font-size:11px;color:var(--text-muted)">Next best: <span class="mono">${nextVL.game_version}</span> <span class="arrow">&#8594;</span> <span style="text-transform:capitalize">${nextVL.loader}</span></div>`:''}
-        </div>`:''}
-        ${gw?`<div class="info-box">
-          <div class="info-box-header">&#128200; Growth Forecast</div>
-          <div class="scenario-bands">
-            <div class="scenario-band"><div class="band-label">Conservative</div><div class="band-val" style="color:var(--text-muted)">${fmt(gw.scenario_bands.conservative)}/day</div></div>
-            <div class="scenario-band"><div class="band-label">Base</div><div class="band-val">${fmt(gw.scenario_bands.base)}/day</div></div>
-            <div class="scenario-band"><div class="band-label">Aggressive</div><div class="band-val" style="color:var(--emerald)">${fmt(gw.scenario_bands.aggressive)}/day</div></div>
-          </div>
-        </div>`:''}
-        ${opp.reason_codes&&opp.reason_codes.length?`<div class="reasons">
-          <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px">Why This Ranked Here</div>
-          ${opp.reason_codes.map(rc=>`<div class="reason"><div class="dot ${rc.priority}"></div>${escHtml(rc.message)}</div>`).join('')}
-        </div>`:''}
-        ${opp.risk_flags&&opp.risk_flags.length?`<div class="risk-flags">
-          ${opp.risk_flags.map(rf=>`<span class="risk-flag sev-${rf.severity}" title="${escHtml(rf.message)}">${rf.type.replace(/_/g,' ')}</span>`).join('')}
-        </div>`:''}
-        ${opp.top_example_projects&&opp.top_example_projects.length?`<div class="example-projects" style="margin-top:8px">
-          ${opp.top_example_projects.map(n=>`<span class="example-proj">${escHtml(n)}</span>`).join('')}
-        </div>`:''}
-      </div></div>
-    </div>`;
-  }).join('');
-}
-
-function renderEmergingConcepts(concepts) {
-  document.getElementById('emergingConcepts').innerHTML = concepts.length ? concepts.slice(0,6).map(c=>`
-    <div class="emerging-card">
-      <div class="e-name">${escHtml(c.cluster_label||c.cluster_id)}</div>
-      <div class="e-stats">${c.project_count} projects &middot; +${fmt(c.growth_velocity)}/hr &middot; Score: ${(c.opportunity_score||0).toFixed(1)}</div>
-      ${c.top_examples?`<div class="example-projects">${c.top_examples.slice(0,3).map(n=>`<span class="example-proj">${escHtml(n)}</span>`).join('')}</div>`:''}
-    </div>
-  `).join('') : '<div class="empty">No emerging concepts detected yet</div>';
-}
-
-function renderGlobalVL(pairs) {
-  document.getElementById('globalVLPairs').innerHTML = pairs.length ? `
+function renderPerTypeVLPairs(info) {
+  const vls = info.top_version_loaders || [];
+  if (!vls.length) return '';
+  return `
+    <div class="section-title" style="font-size:14px;margin-top:20px;margin-bottom:10px;">Version+Loader by Increase</div>
     <table>
-      <thead><tr>
-        <th>#</th><th>Game Version</th><th>Loader</th><th class="num">Projects</th>
-        <th class="num">Delta</th><th class="num">Score</th>
-      </tr></thead>
+      <thead><tr><th>#</th><th>Game Version</th><th>Loader</th><th class="num">Delta</th><th class="num">Projects</th><th>Top Project</th></tr></thead>
       <tbody>
-        ${pairs.slice(0,15).map((p,i)=>`
-          <tr>
-            <td>${i+1}</td>
-            <td><span class="mono" style="font-weight:600">${p.game_version}</span></td>
-            <td>${loaderTag(p.loader)}</td>
-            <td class="num">${p.project_count}</td>
-            <td class="num positive">${fmtDelta(p.total_delta)}</td>
-            <td class="num"><span style="font-weight:600;color:${p.opportunity_score>=50?'var(--emerald)':p.opportunity_score>=30?'var(--amber)':'var(--text-muted)'}">${(p.opportunity_score||0).toFixed(1)}</span></td>
-          </tr>
-        `).join('')}
+        ${vls.map((vl,i) => `<tr>
+          <td>${i+1}</td>
+          <td><span class="mono" style="font-weight:600">${escHtml(vl.game_version||'—')}</span></td>
+          <td>${loaderTag(vl.loader||'')}</td>
+          <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
+          <td class="num">${fmt(vl.project_count||0)}</td>
+          <td>${escHtml(vl.top_project_title||'—')}</td>
+        </tr>`).join('')}
       </tbody>
-    </table>
-  ` : '<div class="empty">No VL pair data yet</div>';
+    </table>`;
 }
 
-function toggleOppDetail(header) {
-  const detail = header.nextElementSibling;
-  const chevron = header.querySelector('.opp-chevron');
-  const isOpen = detail.classList.contains('open');
-  detail.classList.toggle('open',!isOpen);
-  chevron.innerHTML = isOpen ? '&#9660;' : '&#9650;';
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  HISTORY OF RUNS PAGE
-// ═══════════════════════════════════════════════════════════════════
-
-let countdownTimer = null;
-
-function startCountdown() {
-  if (countdownTimer) clearInterval(countdownTimer);
-
-  function update() {
-    const now = new Date();
-    // Next even UTC hour (0, 2, 4, ... 22)
-    const next = new Date(Date.UTC(
-      now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
-      now.getUTCHours(), 0, 0, 0
-    ));
-    // If current hour is odd, or we're past the current even hour's start,
-    // advance to the next even hour
-    if (now.getUTCHours() % 2 !== 0) {
-      next.setUTCHours(now.getUTCHours() + 1);
-    } else if (now.getTime() >= next.getTime()) {
-      next.setUTCHours(now.getUTCHours() + 2);
-    }
-
-    const diff = next.getTime() - now.getTime();
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-
-    const cdStr = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    const utcStr = next.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC');
-
-    const bj = new Date(next.getTime() + 8 * 3600000);
-    const bjStr = bj.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,'');
-
-    const utcEl = document.getElementById('nextRunUtc');
-    const cdEl = document.getElementById('nextRunCountdown');
-    const bjEl = document.getElementById('nextRunBeijing');
-    if (utcEl) utcEl.textContent = utcStr;
-    if (cdEl) cdEl.textContent = cdStr;
-    if (bjEl) bjEl.textContent = bjStr + ' (UTC+8)';
-  }
-
-  update();
-  countdownTimer = setInterval(update, 1000);
-}
-
-function checkWorkflowStatus() {
-  fetch('reports/workflow_status.json?_=' + Date.now())
-    .then(r => r.json())
-    .then(data => {
-      const card = document.getElementById('workflowStatusCard');
-      const textEl = document.getElementById('workflowStatusText');
-      const metaEl = document.getElementById('workflowStatusMeta');
-      if (!card || !textEl || !metaEl) return;
-
-      const status = data.status || 'idle';
-      if (status === 'running') {
-        card.style.borderColor = 'rgba(245,158,11,0.4)';
-        card.style.background = 'rgba(245,158,11,0.05)';
-        textEl.innerHTML = '<span style="color:var(--amber);">&#9679; Running</span>';
-        const started = data.started_at ? new Date(data.started_at) : null;
-        const elapsed = started ? Math.floor((Date.now() - started.getTime()) / 1000) : 0;
-        metaEl.textContent = started
-          ? 'Started ' + started.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC') + ' · Elapsed ' + fmtDuration(elapsed)
-          : 'Workflow is running...';
-      } else if (status === 'completed') {
-        card.style.borderColor = 'rgba(63,185,80,0.3)';
-        card.style.background = 'rgba(63,185,80,0.03)';
-        textEl.innerHTML = '<span style="color:var(--green);">&#10003; Completed</span>';
-        const finished = data.last_finished ? new Date(data.last_finished) : null;
-        metaEl.textContent = finished
-          ? 'Finished ' + finished.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC')
-          : 'Last run completed';
-      } else {
-        card.style.borderColor = 'rgba(139,148,158,0.3)';
-        card.style.background = 'rgba(139,148,158,0.02)';
-        textEl.innerHTML = '<span style="color:var(--text-muted);">&#9679; Idle</span>';
-        const lastRun = data.last_run || data.last_finished;
-        metaEl.textContent = lastRun
-          ? 'Last run: ' + new Date(lastRun).toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC')
-          : 'Waiting for next run';
-      }
-    })
-    .catch(() => {
-      const metaEl = document.getElementById('workflowStatusMeta');
-      if (metaEl) metaEl.textContent = 'Status unavailable';
-    });
-}
+// ── History Page ──────────────────────────────────────────────────
 
 function renderHistory() {
-  const d = reportData;
-  if (!d) return;
-
-  const runs = d.run_history || [];
-  if (!runs.length) {
-    document.getElementById('runHistory').innerHTML = '<div class="empty">No run history yet</div>';
-    return;
-  }
-
-  // Summary stats
-  const latest = runs[0];
-  const totalRuns = runs.length;
-  const dailyCount = runs.filter(r => r.analysis_type === 'daily').length;
-  const hourlyCount = runs.filter(r => r.analysis_type === 'hourly').length;
-  const totalData = runs.reduce((sum, r) => sum + (r.totals.file_size || 0), 0);
-  const totalProjects = runs.reduce((sum, r) => sum + (r.totals.projects || 0), 0);
-  const totalRaw = runs.reduce((sum, r) => sum + (r.totals.raw_size || 0), 0);
-
-  document.getElementById('historySummary').innerHTML = `
-    <div class="summary-stat">
-      <div class="ss-label">Total Runs</div>
-      <div class="ss-value">${totalRuns}</div>
-      <div class="ss-meta">${dailyCount} daily, ${hourlyCount} hourly</div>
-    </div>
-    <div class="summary-stat">
-      <div class="ss-label">Latest Run</div>
-      <div class="ss-value" style="font-size:13px;">${fmtTs(latest.start_time)}</div>
-      <div class="ss-meta">${latest.analysis_type} &middot; ${latest.totals.type_count} types &middot; ${fmtDuration(latest.duration_seconds)}</div>
-    </div>
-    <div class="summary-stat">
-      <div class="ss-label">Data Processed</div>
-      <div class="ss-value">${(totalData/1024/1024).toFixed(1)} MB</div>
-      <div class="ss-meta">analysis files</div>
-    </div>
-    <div class="summary-stat">
-      <div class="ss-label">Cumulative Evaluated</div>
-      <div class="ss-value">${fmt(totalProjects)}</div>
-      <div class="ss-meta">projects across runs</div>
-    </div>
-  `;
-
-  // Render runs table — each run is expandable to show per-type breakdown
-  document.getElementById('runHistory').innerHTML = runs.map((run, i) => {
-    const startTs = fmtTs(run.start_time || '');
-    const endTs = fmtTs(run.end_time || '');
-    const duration = fmtDuration(run.duration_seconds || 0);
-    const isSingleType = run.start_time === run.end_time;
-    const t = run.totals || {};
-    const fs = t.file_size || 0;
-    const rs = t.raw_size || 0;
-    const fsStr = fs > 1024*1024 ? (fs/1024/1024).toFixed(1)+'MB' : fs > 1024 ? (fs/1024).toFixed(0)+'KB' : fs+'B';
-    const rsStr = rs > 1024*1024 ? (rs/1024/1024).toFixed(1)+'MB' : rs > 1024 ? (rs/1024).toFixed(0)+'KB' : '';
-    const typeTag = run.analysis_type === 'daily' ? 'emerald' : 'blue';
-
-    // Build per-type breakdown
-    const types = run.types || {};
-    const typeRows = Object.keys(types).sort().map(pt => {
-      const e = types[pt];
-      const s = e.summary || {};
-      const ef = e.file_size || 0;
-      const efStr = ef > 1024*1024 ? (ef/1024/1024).toFixed(1)+'MB' : ef > 1024 ? (ef/1024).toFixed(0)+'KB' : ef+'B';
-      return `<tr>
-        <td><span class="tag blue" style="text-transform:capitalize">${pt}</span></td>
-        <td class="num">${fmt(s.total_projects)}</td>
-        <td class="num">${fmt(s.total_versions)}</td>
-        <td class="num">${fmt(s.total_downloads)}</td>
-        <td class="num positive">${fmtDelta(s.new_downloads_since_baseline)}</td>
-        <td class="num"><span class="tag">${e.analysis_type||'hourly'}</span></td>
-        <td class="num" style="color:var(--text-muted);font-size:11px">${efStr}</td>
-      </tr>`;
-    }).join('');
-
-    return `<div class="run-entry" style="margin-bottom:8px;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-      <div class="opp-header" onclick="toggleOppDetail(this)" style="padding:12px 16px;">
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:13px;font-weight:600;font-family:'SF Mono','Consolas',monospace;">
-            ${startTs}
-            ${!isSingleType ? `<span style="color:var(--text-muted);font-weight:400;"> → ${endTs.split(' ').pop()}</span>` : ''}
-          </div>
-          <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">
-            <span class="tag ${typeTag}">${run.analysis_type}</span>
-            <span style="margin-left:8px">${t.type_count||0} types</span>
-            <span style="margin-left:8px">${fmt(t.projects)} projects</span>
-            <span style="margin-left:8px">${fmt(t.versions)} versions</span>
-            <span style="margin-left:8px">${fmt(t.downloads)} downloads</span>
-            ${t.new_downloads ? `<span style="margin-left:8px;color:var(--green)">${fmtDelta(t.new_downloads)} new</span>` : ''}
-          </div>
-        </div>
-        <div style="text-align:right;flex-shrink:0;">
-          <div style="font-size:13px;font-weight:700;font-family:'SF Mono','Consolas',monospace;color:var(--accent);">${duration}</div>
-          <div style="font-size:10px;color:var(--text-muted);">${fsStr}</div>
-        </div>
-        <div class="opp-chevron">&#9660;</div>
-      </div>
-      <div class="opp-detail">
-        <div class="opp-detail-inner">
-          <table>
-            <thead><tr>
-              <th>Project Type</th><th class="num">Projects</th><th class="num">Versions</th>
-              <th class="num">Downloads</th><th class="num">New</th><th class="num">Analysis</th><th class="num">Size</th>
-            </tr></thead>
-            <tbody>${typeRows}</tbody>
-          </table>
-        </div>
-      </div>
-    </div>`;
-  }).join('') || '<div class="empty">No run history yet</div>';
+  if (!DATA) return;
+  const runs = DATA.run_history || [];
+  document.getElementById('runHistory').innerHTML = runs.length ? `
+    <table>
+      <thead><tr><th>Start</th><th>End</th><th>Duration</th><th>Type</th><th class="num">Projects</th><th class="num">Downloads</th><th class="num">New</th><th>Types</th></tr></thead>
+      <tbody>
+        ${runs.map(r => {
+          const dur = r.duration_seconds > 60 ? Math.floor(r.duration_seconds/60)+'m' : r.duration_seconds+'s';
+          return `<tr>
+            <td class="mono">${escHtml(r.start_time)}</td>
+            <td class="mono">${escHtml(r.end_time)}</td>
+            <td>${dur}</td>
+            <td>${r.analysis_type}</td>
+            <td class="num">${fmt(r.totals.projects)}</td>
+            <td class="num">${fmt(r.totals.downloads)}</td>
+            <td class="num positive">${fmtDelta(r.totals.new_downloads)}</td>
+            <td>${r.totals.type_count}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  ` : '<div class="empty">No runs recorded yet</div>';
 }
+
+// ── Init ─────────────────────────────────────────────────────────
+
+loadData();
+setInterval(renderCountdown, 1000);
+setInterval(loadData, 120000);
 </script>
 </body>
 </html>
