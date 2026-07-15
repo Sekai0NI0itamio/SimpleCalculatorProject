@@ -57,6 +57,22 @@ def load_merged_versions(project_type):
     return data.get("versions", [])
 
 
+def load_versions_from_latest_snapshot(project_type):
+    """Fallback: load version data from the most recent raw snapshot.
+    Used on sub-hour runs where versions_merged.json.gz is not available
+    (version fetching only happens on main hour).
+    """
+    from utils import list_snapshot_files
+    raw_dir = get_raw_dir(project_type)
+    files = list_snapshot_files(raw_dir)
+    if not files:
+        return []
+    latest = load_json(files[-1])
+    if not latest:
+        return []
+    return latest.get("versions", [])
+
+
 def main():
     parser = argparse.ArgumentParser(description="Take a daily snapshot for a project type")
     parser.add_argument(
@@ -126,13 +142,29 @@ def main():
             "project_type": p.get("project_type", project_type),
         })
 
-    # ── Load version data from merged file ───────────────────────
+    # ── Load version data ────────────────────────────────────────
+    # On main hour: read from versions_merged.json.gz (just created by fetch_versions --merge)
+    # On sub hour: fall back to the latest raw snapshot's version data
+    #   (version data doesn't change between sub hours — only project download counts do)
     raw_versions = []
     merged_versions = load_merged_versions(project_type)
+    versions_source = "versions_merged.json.gz"
+
+    if not merged_versions:
+        # Sub-hour fallback: read from latest raw snapshot
+        merged_versions = load_versions_from_latest_snapshot(project_type)
+        versions_source = "latest raw snapshot (sub-hour fallback)"
+
     if merged_versions:
-        print(f"Loaded {len(merged_versions)} versions from versions_merged.json.gz")
+        print(f"Loaded {len(merged_versions)} versions from {versions_source}")
         for v in merged_versions:
-            # game_versions and loaders are already lists in the merged file
+            # Handle both formats:
+            # - versions_merged: uses "id" key (from Modrinth API)
+            # - latest snapshot: uses "version_id" key (our snapshot format)
+            vid = v.get("id") or v.get("version_id")
+            if not vid:
+                continue
+            # game_versions and loaders are already lists in both formats
             gv = v.get("game_versions", [])
             ld = v.get("loaders", [])
             if isinstance(gv, str):
@@ -146,7 +178,7 @@ def main():
                 except (json.JSONDecodeError, TypeError):
                     ld = []
             raw_versions.append({
-                "version_id": v.get("id"),
+                "version_id": vid,
                 "project_id": v.get("project_id"),
                 "version_number": v.get("version_number", ""),
                 "loaders": ld,
@@ -155,7 +187,7 @@ def main():
             })
         print(f"  Processed {len(raw_versions)} version entries")
     else:
-        print("  No version data available (fetch-versions may have been skipped)")
+        print("  No version data available (no merged file and no previous snapshot with versions)")
 
     raw_snapshot = {
         "timestamp": timestamp,
