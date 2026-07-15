@@ -1,13 +1,14 @@
 {
-  "timestamp": "2026-07-15T08-35-18",
+  "timestamp": "2026-07-15T09-49-08",
   "date": "2026-07-15",
   "project_type": "mod",
-  "analysis_type": "main",
+  "analysis_type": "hourly",
   "baseline_date": "2026-07-15",
+  "hours_between": 2,
   "summary": {
-    "total_projects": 45294,
-    "total_versions": 0,
-    "total_downloads": 9944731160,
+    "total_projects": 45293,
+    "total_versions": 617990,
+    "total_downloads": 9944730455,
     "baseline_date": "2026-07-15",
     "current_date": "2026-07-15",
     "new_projects_since_baseline": 0,
@@ -27,6 +28,20 @@
       "total_projects": 45294,
       "delta_from_baseline": 0,
       "growth_pct": 0.0
+    },
+    {
+      "date": "2026-07-15",
+      "total_downloads": 9944731160,
+      "total_projects": 45294,
+      "delta_from_baseline": 0,
+      "growth_pct": 0.0
+    },
+    {
+      "date": "2026-07-15",
+      "total_downloads": 9944730455,
+      "total_projects": 45293,
+      "delta_from_baseline": -705,
+      "growth_pct": -0.0
     }
   ],
   "category_rankings": [
@@ -95,18 +110,18 @@
     },
     {
       "category": "mobs",
-      "projects": 9983,
-      "total_downloads": 1121258243,
-      "avg_downloads": 112316.76,
+      "projects": 9982,
+      "total_downloads": 1121257538,
+      "avg_downloads": 112327.94,
       "new_downloads": 0,
       "growth_pct": 0.0,
       "market_share": 11.27
     },
     {
       "category": "equipment",
-      "projects": 10868,
-      "total_downloads": 1094637844,
-      "avg_downloads": 100721.19,
+      "projects": 10867,
+      "total_downloads": 1094637139,
+      "avg_downloads": 100730.39,
       "new_downloads": 0,
       "growth_pct": 0.0,
       "market_share": 11.01
@@ -158,9 +173,9 @@
     },
     {
       "category": "transportation",
-      "projects": 3413,
-      "total_downloads": 577002336,
-      "avg_downloads": 169060.16,
+      "projects": 3412,
+      "total_downloads": 577001631,
+      "avg_downloads": 169109.5,
       "new_downloads": 0,
       "growth_pct": 0.0,
       "market_share": 5.8
@@ -205,9 +220,9 @@
   "loader_rankings": [
     {
       "loader": "fabric",
-      "projects": 26381,
-      "total_downloads": 8804456211,
-      "avg_downloads": 333742.32,
+      "projects": 26380,
+      "total_downloads": 8804455506,
+      "avg_downloads": 333754.95,
       "growth_pct": 0.0,
       "market_share": 88.53
     },
@@ -449,6 +464,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 81422381,
       "current_downloads": 81422381,
       "delta_downloads": 0,
@@ -475,6 +492,8 @@
         "technology",
         "utility"
       ],
+      "client_side": "unknown",
+      "server_side": "unknown",
       "baseline_downloads": 62177909,
       "current_downloads": 62177909,
       "delta_downloads": 0,
@@ -493,6 +512,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 21778056,
       "current_downloads": 21778056,
       "delta_downloads": 0,
@@ -510,6 +531,8 @@
         "neoforge",
         "utility"
       ],
+      "client_side": "optional",
+      "server_side": "optional",
       "baseline_downloads": 19692677,
       "current_downloads": 19692677,
       "delta_downloads": 0,
@@ -528,6 +551,8 @@
         "quilt",
         "worldgen"
       ],
+      "client_side": "optional",
+      "server_side": "required",
       "baseline_downloads": 15223105,
       "current_downloads": 15223105,
       "delta_downloads": 0,
@@ -546,6 +571,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 10610285,
       "current_downloads": 10610285,
       "delta_downloads": 0,
@@ -562,6 +589,8 @@
         "quilt",
         "social"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 10081321,
       "current_downloads": 10081321,
       "delta_downloads": 0,
@@ -578,6 +607,8 @@
         "neoforge",
         "utility"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 8225080,
       "current_downloads": 8225080,
       "delta_downloads": 0,
@@ -594,6 +625,8 @@
         "optimization",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 7321884,
       "current_downloads": 7321884,
       "delta_downloads": 0,
@@ -614,6 +647,8 @@
         "neoforge",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 6966372,
       "current_downloads": 6966372,
       "delta_downloads": 0,
@@ -630,6 +665,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 6331762,
       "current_downloads": 6331762,
       "delta_downloads": 0,
@@ -648,6 +685,8 @@
         "neoforge",
         "quilt"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 6327231,
       "current_downloads": 6327231,
       "delta_downloads": 0,
@@ -662,6 +701,8 @@
         "fabric",
         "optimization"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 6227692,
       "current_downloads": 6227692,
       "delta_downloads": 0,
@@ -677,6 +718,8 @@
         "neoforge",
         "optimization"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 5533502,
       "current_downloads": 5533502,
       "delta_downloads": 0,
@@ -695,6 +738,8 @@
         "neoforge",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 4738045,
       "current_downloads": 4738045,
       "delta_downloads": 0,
@@ -710,6 +755,8 @@
         "neoforge",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 4185359,
       "current_downloads": 4185359,
       "delta_downloads": 0,
@@ -725,6 +772,8 @@
         "forge",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 4050357,
       "current_downloads": 4050357,
       "delta_downloads": 0,
@@ -740,6 +789,8 @@
         "game-mechanics",
         "worldgen"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 3782318,
       "current_downloads": 3782318,
       "delta_downloads": 0,
@@ -756,6 +807,8 @@
         "forge",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 3582031,
       "current_downloads": 3582031,
       "delta_downloads": 0,
@@ -782,6 +835,8 @@
         "utility",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 3295230,
       "current_downloads": 3295230,
       "delta_downloads": 0,
@@ -798,6 +853,8 @@
         "forge",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 3160054,
       "current_downloads": 3160054,
       "delta_downloads": 0,
@@ -817,6 +874,8 @@
         "utility",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 3103352,
       "current_downloads": 3103352,
       "delta_downloads": 0,
@@ -831,6 +890,8 @@
         "fabric",
         "transportation"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 3056102,
       "current_downloads": 3056102,
       "delta_downloads": 0,
@@ -847,6 +908,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 3015085,
       "current_downloads": 3015085,
       "delta_downloads": 0,
@@ -863,6 +926,8 @@
         "neoforge",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 2396733,
       "current_downloads": 2396733,
       "delta_downloads": 0,
@@ -879,6 +944,8 @@
         "neoforge",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 2288442,
       "current_downloads": 2288442,
       "delta_downloads": 0,
@@ -894,6 +961,8 @@
         "game-mechanics",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 2237646,
       "current_downloads": 2237646,
       "delta_downloads": 0,
@@ -909,6 +978,8 @@
         "game-mechanics",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 2176408,
       "current_downloads": 2176408,
       "delta_downloads": 0,
@@ -926,6 +997,8 @@
         "storage",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 2044455,
       "current_downloads": 2044455,
       "delta_downloads": 0,
@@ -942,6 +1015,8 @@
         "mobs",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1957213,
       "current_downloads": 1957213,
       "delta_downloads": 0,
@@ -959,6 +1034,8 @@
         "mobs",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1924961,
       "current_downloads": 1924961,
       "delta_downloads": 0,
@@ -981,6 +1058,8 @@
         "transportation",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1887504,
       "current_downloads": 1887504,
       "delta_downloads": 0,
@@ -998,6 +1077,8 @@
         "neoforge",
         "social"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1855937,
       "current_downloads": 1855937,
       "delta_downloads": 0,
@@ -1019,6 +1100,8 @@
         "storage",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 1802411,
       "current_downloads": 1802411,
       "delta_downloads": 0,
@@ -1035,6 +1118,8 @@
         "game-mechanics",
         "quilt"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1783388,
       "current_downloads": 1783388,
       "delta_downloads": 0,
@@ -1054,6 +1139,8 @@
         "neoforge",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1672211,
       "current_downloads": 1672211,
       "delta_downloads": 0,
@@ -1072,6 +1159,8 @@
         "transportation",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1638918,
       "current_downloads": 1638918,
       "delta_downloads": 0,
@@ -1089,6 +1178,8 @@
         "mobs",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1629075,
       "current_downloads": 1629075,
       "delta_downloads": 0,
@@ -1107,6 +1198,8 @@
         "neoforge",
         "worldgen"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 1615210,
       "current_downloads": 1615210,
       "delta_downloads": 0,
@@ -1122,6 +1215,8 @@
         "forge",
         "magic"
       ],
+      "client_side": "unknown",
+      "server_side": "unknown",
       "baseline_downloads": 1566116,
       "current_downloads": 1566116,
       "delta_downloads": 0,
@@ -1147,6 +1242,8 @@
         "spigot",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "optional",
       "baseline_downloads": 1496404,
       "current_downloads": 1496404,
       "delta_downloads": 0,
@@ -1164,6 +1261,8 @@
         "mobs",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1409127,
       "current_downloads": 1409127,
       "delta_downloads": 0,
@@ -1180,6 +1279,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 1359731,
       "current_downloads": 1359731,
       "delta_downloads": 0,
@@ -1196,6 +1297,8 @@
         "fabric",
         "food"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1328397,
       "current_downloads": 1328397,
       "delta_downloads": 0,
@@ -1212,6 +1315,8 @@
         "neoforge",
         "quilt"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1318039,
       "current_downloads": 1318039,
       "delta_downloads": 0,
@@ -1235,6 +1340,8 @@
         "social",
         "worldgen"
       ],
+      "client_side": "optional",
+      "server_side": "optional",
       "baseline_downloads": 1298544,
       "current_downloads": 1298544,
       "delta_downloads": 0,
@@ -1252,6 +1359,8 @@
         "game-mechanics",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1286706,
       "current_downloads": 1286706,
       "delta_downloads": 0,
@@ -1271,6 +1380,8 @@
         "mobs",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1286545,
       "current_downloads": 1286545,
       "delta_downloads": 0,
@@ -1285,6 +1396,8 @@
         "fabric",
         "storage"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1277122,
       "current_downloads": 1277122,
       "delta_downloads": 0,
@@ -1302,6 +1415,8 @@
         "mobs",
         "technology"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1276696,
       "current_downloads": 1276696,
       "delta_downloads": 0,
@@ -1316,6 +1431,8 @@
         "forge",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1273100,
       "current_downloads": 1273100,
       "delta_downloads": 0,
@@ -1331,6 +1448,8 @@
         "fabric",
         "quilt"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 1215768,
       "current_downloads": 1215768,
       "delta_downloads": 0,
@@ -1349,6 +1468,8 @@
         "neoforge",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1203354,
       "current_downloads": 1203354,
       "delta_downloads": 0,
@@ -1363,6 +1484,8 @@
         "fabric",
         "storage"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1179863,
       "current_downloads": 1179863,
       "delta_downloads": 0,
@@ -1380,6 +1503,8 @@
         "management",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1170948,
       "current_downloads": 1170948,
       "delta_downloads": 0,
@@ -1402,6 +1527,8 @@
         "utility",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1159909,
       "current_downloads": 1159909,
       "delta_downloads": 0,
@@ -1420,6 +1547,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 1143288,
       "current_downloads": 1143288,
       "delta_downloads": 0,
@@ -1436,6 +1565,8 @@
         "neoforge",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 1133653,
       "current_downloads": 1133653,
       "delta_downloads": 0,
@@ -1450,6 +1581,8 @@
         "fabric",
         "optimization"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 1060187,
       "current_downloads": 1060187,
       "delta_downloads": 0,
@@ -1467,6 +1600,8 @@
         "neoforge",
         "technology"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1040891,
       "current_downloads": 1040891,
       "delta_downloads": 0,
@@ -1483,6 +1618,8 @@
         "technology",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 1032342,
       "current_downloads": 1032342,
       "delta_downloads": 0,
@@ -1497,6 +1634,8 @@
         "forge",
         "social"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 1014471,
       "current_downloads": 1014471,
       "delta_downloads": 0,
@@ -1521,6 +1660,8 @@
         "transportation",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 984231,
       "current_downloads": 984231,
       "delta_downloads": 0,
@@ -1537,6 +1678,8 @@
         "minigame",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 934110,
       "current_downloads": 934110,
       "delta_downloads": 0,
@@ -1553,6 +1696,8 @@
         "mobs",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 930181,
       "current_downloads": 930181,
       "delta_downloads": 0,
@@ -1570,6 +1715,8 @@
         "mobs",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 891940,
       "current_downloads": 891940,
       "delta_downloads": 0,
@@ -1584,6 +1731,8 @@
         "fabric",
         "storage"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 862562,
       "current_downloads": 862562,
       "delta_downloads": 0,
@@ -1601,6 +1750,8 @@
         "neoforge",
         "quilt"
       ],
+      "client_side": "optional",
+      "server_side": "optional",
       "baseline_downloads": 803286,
       "current_downloads": 803286,
       "delta_downloads": 0,
@@ -1617,6 +1768,8 @@
         "mobs",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 778872,
       "current_downloads": 778872,
       "delta_downloads": 0,
@@ -1633,6 +1786,8 @@
         "game-mechanics",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 768648,
       "current_downloads": 768648,
       "delta_downloads": 0,
@@ -1654,6 +1809,8 @@
         "utility",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 768141,
       "current_downloads": 768141,
       "delta_downloads": 0,
@@ -1670,6 +1827,8 @@
         "game-mechanics",
         "neoforge"
       ],
+      "client_side": "optional",
+      "server_side": "required",
       "baseline_downloads": 762363,
       "current_downloads": 762363,
       "delta_downloads": 0,
@@ -1688,6 +1847,8 @@
         "neoforge",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 752136,
       "current_downloads": 752136,
       "delta_downloads": 0,
@@ -1705,6 +1866,8 @@
         "magic",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 720084,
       "current_downloads": 720084,
       "delta_downloads": 0,
@@ -1721,6 +1884,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 705200,
       "current_downloads": 705200,
       "delta_downloads": 0,
@@ -1736,6 +1901,8 @@
         "fabric",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 698449,
       "current_downloads": 698449,
       "delta_downloads": 0,
@@ -1752,6 +1919,8 @@
         "mobs",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 689497,
       "current_downloads": 689497,
       "delta_downloads": 0,
@@ -1774,6 +1943,8 @@
         "quilt",
         "worldgen"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 646091,
       "current_downloads": 646091,
       "delta_downloads": 0,
@@ -1789,6 +1960,8 @@
         "mobs",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 643912,
       "current_downloads": 643912,
       "delta_downloads": 0,
@@ -1806,6 +1979,8 @@
         "management",
         "minigame"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 628868,
       "current_downloads": 628868,
       "delta_downloads": 0,
@@ -1821,6 +1996,8 @@
         "food",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 610802,
       "current_downloads": 610802,
       "delta_downloads": 0,
@@ -1836,6 +2013,8 @@
         "forge",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 602459,
       "current_downloads": 602459,
       "delta_downloads": 0,
@@ -1854,6 +2033,8 @@
         "mobs",
         "quilt"
       ],
+      "client_side": "unknown",
+      "server_side": "unknown",
       "baseline_downloads": 597637,
       "current_downloads": 597637,
       "delta_downloads": 0,
@@ -1870,6 +2051,8 @@
         "library",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 595641,
       "current_downloads": 595641,
       "delta_downloads": 0,
@@ -1884,6 +2067,8 @@
         "fabric",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 595546,
       "current_downloads": 595546,
       "delta_downloads": 0,
@@ -1910,6 +2095,8 @@
         "utility",
         "worldgen"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 579496,
       "current_downloads": 579496,
       "delta_downloads": 0,
@@ -1931,6 +2118,8 @@
         "utility",
         "worldgen"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 578386,
       "current_downloads": 578386,
       "delta_downloads": 0,
@@ -1952,6 +2141,8 @@
         "utility",
         "worldgen"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 578146,
       "current_downloads": 578146,
       "delta_downloads": 0,
@@ -1971,6 +2162,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 561664,
       "current_downloads": 561664,
       "delta_downloads": 0,
@@ -1985,6 +2178,8 @@
         "forge",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 532072,
       "current_downloads": 532072,
       "delta_downloads": 0,
@@ -2001,6 +2196,8 @@
         "mobs",
         "quilt"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 523390,
       "current_downloads": 523390,
       "delta_downloads": 0,
@@ -2017,6 +2214,8 @@
         "game-mechanics",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 518385,
       "current_downloads": 518385,
       "delta_downloads": 0,
@@ -2036,6 +2235,8 @@
         "optimization",
         "utility"
       ],
+      "client_side": "required",
+      "server_side": "unsupported",
       "baseline_downloads": 517497,
       "current_downloads": 517497,
       "delta_downloads": 0,
@@ -2052,6 +2253,8 @@
         "forge",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 510162,
       "current_downloads": 510162,
       "delta_downloads": 0,
@@ -2067,6 +2270,8 @@
         "quilt",
         "utility"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 507371,
       "current_downloads": 507371,
       "delta_downloads": 0,
@@ -2091,6 +2296,8 @@
         "quilt",
         "spigot"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 506769,
       "current_downloads": 506769,
       "delta_downloads": 0,
@@ -2105,6 +2312,8 @@
         "forge",
         "mobs"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 506242,
       "current_downloads": 506242,
       "delta_downloads": 0,
@@ -2121,6 +2330,8 @@
         "mobs",
         "neoforge"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 505304,
       "current_downloads": 505304,
       "delta_downloads": 0,
@@ -2137,6 +2348,8 @@
         "management",
         "utility"
       ],
+      "client_side": "unsupported",
+      "server_side": "required",
       "baseline_downloads": 491204,
       "current_downloads": 491204,
       "delta_downloads": 0,
@@ -2155,25 +2368,811 @@
         "storage",
         "transportation"
       ],
+      "client_side": "required",
+      "server_side": "required",
       "baseline_downloads": 486891,
       "current_downloads": 486891,
       "delta_downloads": 0,
       "growth_pct": 0.0
     }
   ],
-  "top_version_loaders": [],
+  "top_version_loaders": [
+    {
+      "version_id": "HpMb5wGb",
+      "project_id": "9s6osm5g",
+      "project_title": "Cloth Config API",
+      "version_number": "15.0.140+fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 21827236
+    },
+    {
+      "version_id": "1MKTLiiG",
+      "project_id": "lhGA9TYQ",
+      "project_title": "Architectury API",
+      "version_number": "9.2.14+forge",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 21121215
+    },
+    {
+      "version_id": "UTbfe5d1",
+      "project_id": "sk9rgfiA",
+      "project_title": "Embeddium",
+      "version_number": "0.3.31+mc1.20.1",
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 20932709
+    },
+    {
+      "version_id": "t8TXrZvZ",
+      "project_id": "9s6osm5g",
+      "project_title": "Cloth Config API",
+      "version_number": "11.1.136+forge",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 20869660
+    },
+    {
+      "version_id": "DG5Fn9Sz",
+      "project_id": "uXXizFIs",
+      "project_title": "FerriteCore",
+      "version_number": "6.0.1",
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 20168739
+    },
+    {
+      "version_id": "iQ1SwGc3",
+      "project_id": "GchcoXML",
+      "project_title": "Oculus",
+      "version_number": "1.20.1-1.8.0",
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 19241868
+    },
+    {
+      "version_id": "zyOBB7J4",
+      "project_id": "ccKDOlHs",
+      "project_title": "oωo (owo-lib)",
+      "version_number": "0.11.2+1.20",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 17806476
+    },
+    {
+      "version_id": "unerR5MN",
+      "project_id": "uXXizFIs",
+      "project_title": "FerriteCore",
+      "version_number": "6.0.1",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1",
+        "1.20.2"
+      ],
+      "delta_downloads": 17628259
+    },
+    {
+      "version_id": "XdXDExVF",
+      "project_id": "EsAfCjCV",
+      "project_title": "AppleSkin",
+      "version_number": "2.5.1+mc1.20.1",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 17022404
+    },
+    {
+      "version_id": "zsoi0dso",
+      "project_id": "YL57xq9U",
+      "project_title": "Iris Shaders",
+      "version_number": "1.8.8+1.21.1-fabric",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 17010852
+    },
+    {
+      "version_id": "u1OEbNKx",
+      "project_id": "AANobbMI",
+      "project_title": "Sodium",
+      "version_number": "mc1.21.1-0.6.13-fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 16716398
+    },
+    {
+      "version_id": "skYziQQL",
+      "project_id": "J81TRJWm",
+      "project_title": "Konkrete",
+      "version_number": "1.8.0-1.20-1.20.1-forge",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 15084056
+    },
+    {
+      "version_id": "WbL7MStR",
+      "project_id": "lhGA9TYQ",
+      "project_title": "Architectury API",
+      "version_number": "9.2.14+fabric",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 14939154
+    },
+    {
+      "version_id": "3siYJiWG",
+      "project_id": "8qkXwOnk",
+      "project_title": "More Chat History",
+      "version_number": "1.3.1",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.20.5",
+        "1.20.6",
+        "1.21",
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4",
+        "1.21.5",
+        "1.21.6",
+        "1.21.7",
+        "1.21.8",
+        "1.21.9",
+        "1.21.10",
+        "1.21.11"
+      ],
+      "delta_downloads": 14814201
+    },
+    {
+      "version_id": "5xvCCRjJ",
+      "project_id": "NRjRiSSD",
+      "project_title": "Memory Leak Fix",
+      "version_number": "v1.1.5",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.17",
+        "1.17.1",
+        "1.18",
+        "1.18.1",
+        "1.18.2",
+        "1.19",
+        "1.19.1",
+        "1.19.2",
+        "1.19.3",
+        "1.19.4",
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4"
+      ],
+      "delta_downloads": 14689256
+    },
+    {
+      "version_id": "hmeyC41q",
+      "project_id": "ordsPcFz",
+      "project_title": "Kotlin for Forge",
+      "version_number": "4.11.0",
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.19.3",
+        "1.19.4",
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4"
+      ],
+      "delta_downloads": 14668022
+    },
+    {
+      "version_id": "Wto0RchG",
+      "project_id": "lhGA9TYQ",
+      "project_title": "Architectury API",
+      "version_number": "13.0.8+fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 14431659
+    },
+    {
+      "version_id": "anDafurZ",
+      "project_id": "PtjYWJkn",
+      "project_title": "Sodium Extra",
+      "version_number": "mc1.21.1-0.6.0+fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 13979450
+    },
+    {
+      "version_id": "ZSNsJrPI",
+      "project_id": "gvQqBUqZ",
+      "project_title": "Lithium",
+      "version_number": "mc1.20.1-0.11.2",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 13678158
+    },
+    {
+      "version_id": "Acz3ttTp",
+      "project_id": "fQEb0iXm",
+      "project_title": "Krypton",
+      "version_number": "0.2.8",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4"
+      ],
+      "delta_downloads": 13667895
+    },
+    {
+      "version_id": "lJlW5r8R",
+      "project_id": "CVT4pFB2",
+      "project_title": "Melody",
+      "version_number": "1.0.3-1.20.1-1.20.4-forge",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4"
+      ],
+      "delta_downloads": 13623083
+    },
+    {
+      "version_id": "B2L4LeMV",
+      "project_id": "2RKFTmiB",
+      "project_title": "ToolTipFix",
+      "version_number": "1.1.1-1.20",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4",
+        "1.20.5",
+        "1.20.6",
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 13042345
+    },
+    {
+      "version_id": "Qvrc7DuG",
+      "project_id": "J81TRJWm",
+      "project_title": "Konkrete",
+      "version_number": "1.9.9-1.21-fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 12795521
+    },
+    {
+      "version_id": "2xQdCMyG",
+      "project_id": "9s6osm5g",
+      "project_title": "Cloth Config API",
+      "version_number": "11.1.136+fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 12700239
+    },
+    {
+      "version_id": "VDHlG2JK",
+      "project_id": "OhduvhIc",
+      "project_title": "VeinMiner",
+      "version_number": "2.4.2",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.21.2",
+        "1.21.3",
+        "1.21.4",
+        "1.21.5"
+      ],
+      "delta_downloads": 12655762
+    },
+    {
+      "version_id": "3w0IxNtk",
+      "project_id": "NRjRiSSD",
+      "project_title": "Memory Leak Fix",
+      "version_number": "v1.1.5",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.17",
+        "1.17.1",
+        "1.18",
+        "1.18.1",
+        "1.18.2",
+        "1.19",
+        "1.19.1",
+        "1.19.2",
+        "1.19.3",
+        "1.19.4",
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4"
+      ],
+      "delta_downloads": 12503766
+    },
+    {
+      "version_id": "OqxSeb4n",
+      "project_id": "CVT4pFB2",
+      "project_title": "Melody",
+      "version_number": "1.0.10-1.21-fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1",
+        "1.21.4"
+      ],
+      "delta_downloads": 12491763
+    },
+    {
+      "version_id": "tNwsir0K",
+      "project_id": "uy4Cnpcm",
+      "project_title": "Bookshelf",
+      "version_number": "20.2.13",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 12341424
+    },
+    {
+      "version_id": "b5ZiCjAr",
+      "project_id": "EsAfCjCV",
+      "project_title": "AppleSkin",
+      "version_number": "3.0.6+mc1.21",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1",
+        "1.21.2"
+      ],
+      "delta_downloads": 12304563
+    },
+    {
+      "version_id": "CtMpt7Jr",
+      "project_id": "uXXizFIs",
+      "project_title": "FerriteCore",
+      "version_number": "8.0.0-fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21.5",
+        "1.21.6",
+        "1.21.7",
+        "1.21.8",
+        "1.21.9",
+        "1.21.10"
+      ],
+      "delta_downloads": 12250772
+    },
+    {
+      "version_id": "xuX40TN5",
+      "project_id": "9s6osm5g",
+      "project_title": "Cloth Config API",
+      "version_number": "21.11.153+fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21.11"
+      ],
+      "delta_downloads": 12087205
+    },
+    {
+      "version_id": "xcauwnEB",
+      "project_id": "EsAfCjCV",
+      "project_title": "AppleSkin",
+      "version_number": "2.5.1+mc1.20",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 12067574
+    },
+    {
+      "version_id": "6rPDKAT8",
+      "project_id": "rLLJ1OZM",
+      "project_title": "CoroUtil",
+      "version_number": "1.20.1-1.3.7",
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 12067153
+    },
+    {
+      "version_id": "IPQlZkz1",
+      "project_id": "vvuO3ImH",
+      "project_title": "Curios API",
+      "version_number": "5.14.1+1.20.1",
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 12052552
+    },
+    {
+      "version_id": "bwKMSBhn",
+      "project_id": "uXXizFIs",
+      "project_title": "FerriteCore",
+      "version_number": "7.0.2-hotfix-fabric",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21.1"
+      ],
+      "delta_downloads": 11924592
+    },
+    {
+      "version_id": "i5tSkVBH",
+      "project_id": "P7dR8mSH",
+      "project_title": "Fabric API",
+      "version_number": "0.141.3+1.21.11",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.21.11"
+      ],
+      "delta_downloads": 11751813
+    },
+    {
+      "version_id": "4SHylIO9",
+      "project_id": "hvFnDODi",
+      "project_title": "LazyDFU",
+      "version_number": "0.1.3",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.19",
+        "1.19.1",
+        "1.19.2",
+        "1.19.3",
+        "1.19.4",
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4",
+        "1.20.5",
+        "1.20.6"
+      ],
+      "delta_downloads": 11451297
+    },
+    {
+      "version_id": "g5igndAv",
+      "project_id": "umyGl7zF",
+      "project_title": "KubeJS",
+      "version_number": "2001.6.5-build.16+forge",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 11404920
+    },
+    {
+      "version_id": "jiDwS0W1",
+      "project_id": "fQEb0iXm",
+      "project_title": "Krypton",
+      "version_number": "0.2.3",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 11089428
+    },
+    {
+      "version_id": "7JVXOe3K",
+      "project_id": "aC3cM3Vq",
+      "project_title": "Mouse Tweaks",
+      "version_number": "1.20.1-2.25.1-forge",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 10947043
+    },
+    {
+      "version_id": "pdAXmKcS",
+      "project_id": "onSQdWhM",
+      "project_title": "libIPN",
+      "version_number": "forge-1.20-4.0.2",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 10798596
+    },
+    {
+      "version_id": "JB1fLQnc",
+      "project_id": "ccKDOlHs",
+      "project_title": "oωo (owo-lib)",
+      "version_number": "0.12.15.4+1.21",
+      "loaders": [
+        "fabric",
+        "quilt"
+      ],
+      "game_versions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "delta_downloads": 10722221
+    },
+    {
+      "version_id": "jxUqRzSD",
+      "project_id": "HXF82T3G",
+      "project_title": "Biomes O' Plenty",
+      "version_number": "19.0.0.96",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 10635089
+    },
+    {
+      "version_id": "hn2TlcOt",
+      "project_id": "DnNYdJsx",
+      "project_title": "Chat Animation [Smooth Chat]",
+      "version_number": "1.0.5",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.3",
+        "1.20.4"
+      ],
+      "delta_downloads": 10600375
+    },
+    {
+      "version_id": "XGIsoVGT",
+      "project_id": "H8CaAYZC",
+      "project_title": "Starlight (Fabric)",
+      "version_number": "1.1.2+1.20",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 10524421
+    },
+    {
+      "version_id": "DijQLauD",
+      "project_id": "qnQsVE2z",
+      "project_title": "Quark",
+      "version_number": "1.20.1-4.0-462",
+      "loaders": [
+        "forge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 10499853
+    },
+    {
+      "version_id": "7QwyTILr",
+      "project_id": "gc8OEnCC",
+      "project_title": "BetterEnd",
+      "version_number": "4.0.11",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 10434080
+    },
+    {
+      "version_id": "7ZwnSrVW",
+      "project_id": "DjLobEOy",
+      "project_title": "Towns and Towers",
+      "version_number": "1.12",
+      "loaders": [
+        "fabric",
+        "forge"
+      ],
+      "game_versions": [
+        "1.19.3",
+        "1.19.4",
+        "1.20",
+        "1.20.1",
+        "1.20.2",
+        "1.20.4"
+      ],
+      "delta_downloads": 10357916
+    },
+    {
+      "version_id": "XoIASRVU",
+      "project_id": "2cMuAZAp",
+      "project_title": "Alex's Mobs",
+      "version_number": "1.22.9",
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.20.1"
+      ],
+      "delta_downloads": 10255083
+    },
+    {
+      "version_id": "HeZZR2kF",
+      "project_id": "qQyHxfxd",
+      "project_title": "No Chat Reports",
+      "version_number": "Fabric-1.20.1-v2.2.2",
+      "loaders": [
+        "fabric"
+      ],
+      "game_versions": [
+        "1.20",
+        "1.20.1"
+      ],
+      "delta_downloads": 10101873
+    }
+  ],
   "distribution": {
-    "mean": 219559.57,
+    "mean": 219564.4,
     "median": 889.0,
-    "std_dev": 2854328.56,
+    "std_dev": 2854359.88,
     "min": 0,
     "max": 205863711,
     "p25": 210.0,
     "p50": 889.0,
-    "p75": 5869.75,
+    "p75": 5870.0,
     "p90": 56264.0,
-    "p95": 268397.05,
-    "p99": 4052388.19,
+    "p95": 268398.2,
+    "p99": 4052412.36,
     "gini_coefficient": 0.9771
   },
   "concentration": {
@@ -2351,8 +3350,8 @@
       "category": "transportation",
       "suggested_loader": "forge",
       "opportunity_score": 78.2,
-      "reasoning": "Transportation has +0 new downloads since baseline with 3413 projects and avg 169,060 downloads. Suggested loader: forge.",
-      "expected_downloads": 169060
+      "reasoning": "Transportation has +0 new downloads since baseline with 3412 projects and avg 169,110 downloads. Suggested loader: forge.",
+      "expected_downloads": 169109
     },
     {
       "category": "decoration",
@@ -2421,8 +3420,8 @@
       "category": "mobs",
       "suggested_loader": "forge",
       "opportunity_score": 34.3,
-      "reasoning": "Mobs has +0 new downloads since baseline with 9983 projects and avg 112,317 downloads. Suggested loader: forge.",
-      "expected_downloads": 112316
+      "reasoning": "Mobs has +0 new downloads since baseline with 9982 projects and avg 112,328 downloads. Suggested loader: forge.",
+      "expected_downloads": 112327
     },
     {
       "category": "technology",
@@ -2442,8 +3441,8 @@
       "category": "equipment",
       "suggested_loader": "forge",
       "opportunity_score": 30.5,
-      "reasoning": "Equipment has +0 new downloads since baseline with 10868 projects and avg 100,721 downloads. Suggested loader: forge.",
-      "expected_downloads": 100721
+      "reasoning": "Equipment has +0 new downloads since baseline with 10867 projects and avg 100,730 downloads. Suggested loader: forge.",
+      "expected_downloads": 100730
     },
     {
       "category": "cursed",
@@ -2459,5 +3458,318 @@
       "reasoning": "Game-Mechanics has +0 new downloads since baseline with 18645 projects and avg 82,641 downloads. Suggested loader: fabric.",
       "expected_downloads": 82640
     }
-  ]
+  ],
+  "velocity": {
+    "hours": 2.0,
+    "total_delta": 0,
+    "downloads_per_hour": 0.0,
+    "predicted_daily_total": 0,
+    "predicted_daily_growth": 0,
+    "confidence": "low"
+  },
+  "top_movers": [
+    {
+      "project_id": "PtjYWJkn",
+      "title": "Sodium Extra",
+      "slug": "sodium-extra",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "OhduvhIc",
+      "title": "VeinMiner",
+      "slug": "veinminer",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "ZP7xHXtw",
+      "title": "Remove Reloading Screen",
+      "slug": "rrls",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "u58R1TMW",
+      "title": "Sinytra Connector",
+      "slug": "connector",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "cl223EMc",
+      "title": "Cristel Lib",
+      "slug": "cristel-lib",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "705gWllI",
+      "title": "EMIffect",
+      "slug": "emiffect",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "CllP7wW0",
+      "title": "Smooth Scrolling",
+      "slug": "smooth-scroll",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "67kVxsaO",
+      "title": "Load My F***ing Tags",
+      "slug": "lmft",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "oY2B1pjg",
+      "title": "Embeddium (Rubidium) Extra",
+      "slug": "rubidium-extra",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "KdJhOYVV",
+      "title": "Philips Ruins",
+      "slug": "philips-ruins",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "rIC2XJV4",
+      "title": "ViaFabricPlus",
+      "slug": "viafabricplus",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "dOGM7ccu",
+      "title": "Nyf's Spiders",
+      "slug": "nyfs-spiders",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "blWBX5n1",
+      "title": "kennytvs-epic-force-close-loading-screen-mod-for-fabric",
+      "slug": "forcecloseworldloadingscreen",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "2gvRmQXx",
+      "title": "Radium",
+      "slug": "radium",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "p1WH6sHr",
+      "title": "From The Fog",
+      "slug": "from-the-fog",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "ySnjMzLg",
+      "title": "Accessories Compatibility Layer",
+      "slug": "accessories-compat-layer",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "hIZHlLOF",
+      "title": "The Man From The Fog",
+      "slug": "the-man-from-the-fog",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "QmTVMKNG",
+      "title": "BetterEnd Crashed Ships Tweaks",
+      "slug": "betterend-crashed-ships-tweaks",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "oOi0CKes",
+      "title": "Diagonal Windows",
+      "slug": "diagonal-windows",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "YgrSDjlb",
+      "title": "Bountiful Fares",
+      "slug": "bountiful-fares",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "FQgc8dib",
+      "title": "Diagonal Walls",
+      "slug": "diagonal-walls",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "JaNmzvA8",
+      "title": "Chunks fade in",
+      "slug": "chunks-fade-in",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "O9C0qdu8",
+      "title": "Quartz Elevator",
+      "slug": "quartz-elevator",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "o4y0N2hu",
+      "title": "BetterHurtCam",
+      "slug": "betterhurtcam",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "TocuaDpt",
+      "title": "The Broken Script",
+      "slug": "the-broken-script",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "yke6wdGF",
+      "title": "Tweakerge",
+      "slug": "tweakerge",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "vevAjqG0",
+      "title": "IJM's Tweaks",
+      "slug": "ijm-tweaks",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "EfXlyDWr",
+      "title": "WantedItems",
+      "slug": "wanteditems",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "FrZIkosK",
+      "title": "Forgotten Graves",
+      "slug": "forgotten-graves",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "hTju2zcV",
+      "title": "The Knocker",
+      "slug": "the-knocker",
+      "delta_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    }
+  ],
+  "velocity_by_category": [
+    {
+      "category": "utility",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "library",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "optimization",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "adventure",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "decoration",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "worldgen",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "game-mechanics",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "mobs",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "equipment",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "management",
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    }
+  ],
+  "hourly_analysis": true
 }
