@@ -2,49 +2,76 @@ name: Daily Modrinth Tracker
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 00:00 UTC = 08:00 Beijing time (UTC+8)
+    - cron: '0 */2 * * *'  # Every 2 hours at :00 UTC
   workflow_dispatch:       # Allow manual trigger
 
 permissions:
   contents: write
 
 jobs:
-  # All 6 project types run in parallel at 00:00 Beijing time.
-  # Each calls the reusable workflow which handles the full pipeline:
-  # discover → fetch-projects → split-versions → fetch-versions → merge → snapshot → analyze → commit
+  # Determine if this is the main hour (00:00 UTC = 08:00 Beijing)
+  check-hour:
+    runs-on: ubuntu-latest
+    outputs:
+      is_main: ${{ steps.check.outputs.is_main }}
+    steps:
+      - id: check
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "00" ]; then
+            echo "is_main=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_main=false" >> $GITHUB_OUTPUT
+          fi
+
+  # All 6 project types run in parallel every 2 hours.
+  # On main hour (00:00 UTC): full pipeline (discover → fetch-projects → split-versions → fetch-versions → merge → snapshot → analyze → commit)
+  # On sub hours: lightweight (fetch-projects → snapshot → predictive analysis → render charts → commit)
 
   mod:
+    needs: check-hour
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: mod
       version_chunks: 30
+      is_main: ${{ needs.check-hour.outputs.is_main }}
 
   modpack:
+    needs: check-hour
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: modpack
       version_chunks: 10
+      is_main: ${{ needs.check-hour.outputs.is_main }}
 
   resourcepack:
+    needs: check-hour
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: resourcepack
       version_chunks: 10
+      is_main: ${{ needs.check-hour.outputs.is_main }}
 
   shader:
+    needs: check-hour
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: shader
       version_chunks: 5
+      is_main: ${{ needs.check-hour.outputs.is_main }}
 
   datapack:
+    needs: check-hour
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: datapack
       version_chunks: 10
+      is_main: ${{ needs.check-hour.outputs.is_main }}
 
   world:
+    needs: check-hour
     uses: ./.github/workflows/tracker-reusable.yml
     with:
       project_type: world
       version_chunks: 5
+      is_main: ${{ needs.check-hour.outputs.is_main }}

@@ -10,6 +10,10 @@ on:
         required: false
         type: number
         default: 20
+      is_main:
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -20,9 +24,11 @@ env:
 jobs:
   # ──────────────────────────────────────────────────────────────
   # PHASE 1: Discover — find partitions for this project type
+  # (MAIN HOUR ONLY — sub hours reuse existing discovery.json)
   # ──────────────────────────────────────────────────────────────
   discover:
     runs-on: ubuntu-latest
+    if: ${{ inputs.is_main }}
     outputs:
       partition_list: ${{ steps.set-matrix.outputs.partition_list }}
     steps:
@@ -52,21 +58,45 @@ jobs:
             data/${{ inputs.project_type }}/loaders.json
 
   # ──────────────────────────────────────────────────────────────
+  # PHASE 1 (SUB HOUR): Load discovery from repo checkout
+  # On sub hours, we need the discovery.json from the repo to know partitions
+  # ──────────────────────────────────────────────────────────────
+  load-discovery:
+    runs-on: ubuntu-latest
+    if: ${{ !inputs.is_main }}
+    outputs:
+      partition_list: ${{ steps.set-matrix.outputs.partition_list }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set-matrix
+        name: Read partition matrix from existing discovery.json
+        run: |
+          python -c "
+          import json
+          d = json.load(open('data/${{ inputs.project_type }}/discovery.json'))
+          print(json.dumps(list(range(len(d['partitions'])))))
+          " > /tmp/matrix.txt
+          echo "partition_list=$(cat /tmp/matrix.txt)" >> $GITHUB_OUTPUT
+
+  # ──────────────────────────────────────────────────────────────
   # PHASE 2: Fetch Projects (parallel matrix)
+  # ALWAYS run — both main and sub hours need current download counts
   # ──────────────────────────────────────────────────────────────
   fetch-projects:
-    needs: discover
+    needs: [discover, load-discovery]
+    if: ${{ always() && (needs.discover.result == 'success' || needs.load-discovery.result == 'success') }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        chunk: ${{ fromJSON(needs.discover.outputs.partition_list) }}
+        chunk: ${{ fromJSON(needs.discover.outputs.partition_list || needs.load-discovery.outputs.partition_list) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Download discovery data
+      - name: Download discovery data (main hour)
+        if: ${{ inputs.is_main }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.project_type }}-discovery
@@ -78,13 +108,14 @@ jobs:
         with:
           name: ${{ inputs.project_type }}-projects-${{ matrix.chunk }}
           path: data/${{ inputs.project_type }}/chunks/projects_${{ matrix.chunk }}.json
-          retention-days: 3
+          retention-days: 1  # Short retention for sub-hour runs
 
   # ──────────────────────────────────────────────────────────────
-  # PHASE 3a: Split versions
+  # PHASE 3a: Split versions (MAIN HOUR ONLY)
   # ──────────────────────────────────────────────────────────────
   split-versions:
     needs: fetch-projects
+    if: ${{ inputs.is_main }}
     runs-on: ubuntu-latest
     outputs:
       version_chunk_list: ${{ steps.set-matrix.outputs.version_chunk_list }}
@@ -116,13 +147,13 @@ jobs:
         with:
           name: ${{ inputs.project_type }}-version-chunks
           path: data/${{ inputs.project_type }}/version_chunks/
-          retention-days: 3
 
   # ──────────────────────────────────────────────────────────────
-  # PHASE 3b: Fetch versions (parallel matrix)
+  # PHASE 3b: Fetch versions (parallel matrix) — MAIN HOUR ONLY
   # ──────────────────────────────────────────────────────────────
   fetch-versions:
     needs: split-versions
+    if: ${{ inputs.is_main }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -145,13 +176,16 @@ jobs:
         with:
           name: ${{ inputs.project_type }}-version-results-${{ matrix.chunk }}
           path: data/${{ inputs.project_type }}/version_results/results_${{ matrix.chunk }}.json
-          retention-days: 3
+          retention-days: 1
 
   # ──────────────────────────────────────────────────────────────
-  # PHASE 4+5: Merge, Snapshot, Analyze, Commit
+  # PHASE 4+5: Merge, Snapshot, Analyze, Render Charts, Commit
+  # MAIN HOUR: merge versions → snapshot → main analysis → main charts → commit
+  # SUB HOUR:  snapshot → predictive analysis → sub charts → commit
   # ──────────────────────────────────────────────────────────────
   finalize:
-    needs: fetch-versions
+    needs: [fetch-projects, fetch-versions]
+    if: ${{ always() && needs.fetch-projects.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -160,14 +194,15 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
 
-      # Download discovery data (categories.json, loaders.json for analysis)
-      - name: Download discovery data
+      # Download discovery data (for categories.json + loaders.json used by analyze)
+      - name: Download discovery data (main hour)
+        if: ${{ inputs.is_main }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.project_type }}-discovery
           path: data/${{ inputs.project_type }}/
 
-      # Download all project chunks (for snapshot)
+      # Download all project chunks
       - name: Download all project chunks
         uses: actions/download-artifact@v4
         with:
@@ -175,15 +210,16 @@ jobs:
           path: data/${{ inputs.project_type }}/chunks/
           merge-multiple: true
 
-      # Download all version results (for merge)
+      # Download all version results (MAIN HOUR ONLY)
       - name: Download all version results
+        if: ${{ inputs.is_main }}
         uses: actions/download-artifact@v4
         with:
           pattern: ${{ inputs.project_type }}-version-results-*
           path: data/${{ inputs.project_type }}/version_results/
           merge-multiple: true
 
-      # Download previous DB (if exists — first run will have no DB)
+      # Download previous DB
       - name: Download previous DB
         uses: actions/download-artifact@v4
         with:
@@ -191,31 +227,61 @@ jobs:
           path: data/${{ inputs.project_type }}/
         continue-on-error: true
 
-      # Merge versions into DB
+      # MAIN HOUR: Merge versions
       - name: Merge versions
+        if: ${{ inputs.is_main }}
         run: python src/fetch_versions.py --project-type ${{ inputs.project_type }} --merge
 
-      # Snapshot — save raw data + update DB
+      # ALWAYS: Snapshot
       - name: Snapshot
         run: python src/snapshot.py --project-type ${{ inputs.project_type }}
 
-      # Analyze — compute all metrics from historical data
-      - name: Analyze
+      # MAIN HOUR: Main analysis
+      - name: Main analysis
+        if: ${{ inputs.is_main }}
         run: python src/analyze.py --project-type ${{ inputs.project_type }}
+
+      # MAIN HOUR: Render main charts
+      - name: Render main charts
+        if: ${{ inputs.is_main }}
+        run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode main
+
+      # SUB HOUR: Predictive analysis
+      - name: Predictive analysis
+        if: ${{ !inputs.is_main }}
+        run: python src/predictive_analyze.py --project-type ${{ inputs.project_type }}
+
+      # SUB HOUR: Render sub charts
+      - name: Render sub charts
+        if: ${{ !inputs.is_main }}
+        run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode sub
 
       # Commit data files to git
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/${{ inputs.project_type }}/raw/ \
-                 data/${{ inputs.project_type }}/analysis/ \
-                 data/${{ inputs.project_type }}/latest_analysis.json \
-                 data/${{ inputs.project_type }}/discovery.json \
-                 data/${{ inputs.project_type }}/categories.json \
-                 data/${{ inputs.project_type }}/loaders.json \
-                 2>/dev/null || true
-          git commit -m "tracker: ${{ inputs.project_type }} daily snapshot $(date -u +%Y-%m-%d)" || echo "No changes to commit"
+          
+          if [ "${{ inputs.is_main }}" = "true" ]; then
+            git add data/${{ inputs.project_type }}/raw/ \
+                   data/${{ inputs.project_type }}/analysis/ \
+                   data/${{ inputs.project_type }}/latest_analysis.json \
+                   data/${{ inputs.project_type }}/charts/ \
+                   data/${{ inputs.project_type }}/discovery.json \
+                   data/${{ inputs.project_type }}/categories.json \
+                   data/${{ inputs.project_type }}/loaders.json \
+                   2>/dev/null || true
+            COMMIT_MSG="tracker: ${{ inputs.project_type }} main daily snapshot $(date -u +%Y-%m-%dT%H:%M)"
+          else
+            git add data/${{ inputs.project_type }}/raw/ \
+                   data/${{ inputs.project_type }}/analysis/ \
+                   data/${{ inputs.project_type }}/latest_sub_analysis.json \
+                   data/${{ inputs.project_type }}/charts/ \
+                   2>/dev/null || true
+            COMMIT_MSG="tracker: ${{ inputs.project_type }} sub snapshot $(date -u +%Y-%m-%dT%H:%M)"
+          fi
+          
+          git commit -m "$COMMIT_MSG" || echo "No changes to commit"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main || true
             git push origin main && break
@@ -223,8 +289,9 @@ jobs:
             sleep 10
           done
 
-      # Upload DB for next run
+      # Upload DB (main hour only — sub hours don't change versions)
       - name: Upload DB
+        if: ${{ inputs.is_main }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.project_type }}-db

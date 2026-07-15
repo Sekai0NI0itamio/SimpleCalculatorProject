@@ -446,6 +446,7 @@ def main():
         "timestamp": timestamp,
         "date": current_date,
         "project_type": project_type,
+        "analysis_type": "main",
         "baseline_date": baseline_date,
         "summary": summary,
         "trend": trend,
