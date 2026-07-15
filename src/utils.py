@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import gzip
 import json
 import os
 import time
@@ -61,18 +62,28 @@ def rate_limit_sleep(resp_headers):
 
 
 def load_json(path):
-    """Load JSON from a file."""
+    """Load JSON from a file. Auto-handles .gz files."""
     if not os.path.exists(path):
         return None
+    if path.endswith(".gz"):
+        with gzip.open(path, "rt", encoding="utf-8") as f:
+            return json.load(f)
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def save_json(path, data):
-    """Save JSON to a file with proper formatting."""
+def save_json(path, data, compress=False):
+    """Save JSON to a file with proper formatting. If compress=True, save as .gz."""
     ensure_dir(os.path.dirname(path))
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    if compress or path.endswith(".gz"):
+        if not path.endswith(".gz"):
+            path = path + ".gz"
+        with gzip.open(path, "wt", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+    else:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+    return path
 
 
 def ensure_dir(path):
@@ -114,3 +125,25 @@ def get_analysis_dir(project_type: str) -> str:
 def get_db_path(project_type: str) -> str:
     """Get the SQLite DB path for a project type."""
     return f"data/{project_type}/{project_type}.db"
+
+
+def list_snapshot_files(directory: str) -> list:
+    """List all snapshot files in a directory, handling both .json and .json.gz.
+    Returns sorted list of full paths. Prefers .json.gz over .json for the same timestamp
+    (since .json is uncompressed and shouldn't be committed for large types).
+    """
+    if not os.path.exists(directory):
+        return []
+    json_files = {f for f in os.listdir(directory) if f.endswith(".json")}
+    gz_files = {f[:-3] for f in os.listdir(directory) if f.endswith(".json.gz")}
+    # If both .json and .json.gz exist for same timestamp, prefer .gz
+    timestamps = json_files | gz_files
+    files = []
+    for ts in sorted(timestamps):
+        gz_path = f"{directory}/{ts}.gz"
+        json_path = f"{directory}/{ts}"
+        if os.path.exists(gz_path):
+            files.append(gz_path)
+        elif os.path.exists(json_path):
+            files.append(json_path)
+    return files

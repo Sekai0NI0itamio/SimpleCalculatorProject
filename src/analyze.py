@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Phase 5: Analyze — History-Based Market Intelligence
+Phase 5: Analyze — History-based Market Intelligence
 
 All analysis is derived from the raw snapshot history stored in
 data/{project_type}/raw/. The first snapshot is the baseline, the last
-is the current state. Version download data comes from the project-type DB.
+is the current state. Version download data is read directly from the
+raw snapshots (no DB needed).
 
 Outputs:
   - data/{project_type}/analysis/{timestamp}.json  — full analysis
@@ -17,16 +18,15 @@ Category filtering:
   - Loaders, resolutions, features, etc. are excluded from category rankings
 """
 import argparse
-import glob
 import json
 import math
 import sys
 
 from utils import (
     load_json, save_json, ensure_dir, get_timestamp,
-    get_project_type_dir, get_raw_dir, get_analysis_dir
+    get_project_type_dir, get_raw_dir, get_analysis_dir,
+    list_snapshot_files
 )
-from db import Database
 
 CONTENT_CATEGORY_HEADER = "categories"
 
@@ -95,9 +95,11 @@ def parse_json_field(val):
 
 
 def load_all_snapshots(project_type):
-    """Load all raw snapshots sorted by filename (timestamp)."""
+    """Load all raw snapshots sorted by filename (timestamp).
+    Handles both .json and .json.gz files.
+    """
     raw_dir = get_raw_dir(project_type)
-    snapshot_files = sorted(glob.glob(f"{raw_dir}/*.json"))
+    snapshot_files = list_snapshot_files(raw_dir)
     snapshots = []
     for f in snapshot_files:
         data = load_json(f)
@@ -169,8 +171,25 @@ def main():
     loader_names, loader_set, content_cat_names = load_filter_sets(project_type)
     print(f"  Loaders: {len(loader_names)}, content categories: {len(content_cat_names)}")
 
-    # ── Open DB for version data ──────────────────────────────────
-    db = Database(project_type)
+    # ── Build version maps from snapshots (no DB) ────────────────
+    # Use the first snapshot that actually has version data as the version baseline.
+    # (Older snapshots may not have versions if they were recorded before the
+    # version-fetching feature was added.)
+    current_versions = current_snapshot.get("versions", [])
+    version_baseline_snapshot = None
+    for snap in snapshots:
+        if snap.get("versions"):
+            version_baseline_snapshot = snap
+            break
+    if version_baseline_snapshot:
+        baseline_versions = version_baseline_snapshot.get("versions", [])
+        version_baseline_date = version_baseline_snapshot.get("date", baseline_date)
+        print(f"  Version baseline: {version_baseline_date} ({len(baseline_versions):,} versions)")
+    else:
+        baseline_versions = []
+        version_baseline_date = baseline_date
+        print(f"  Version baseline: none (no snapshots have version data yet)")
+    baseline_version_map = {v["version_id"]: v.get("downloads", 0) for v in baseline_versions}
 
     # ── Summary ───────────────────────────────────────────────────
     new_projects_since_baseline = sum(1 for pid in current_map if pid not in baseline_map)
@@ -180,13 +199,14 @@ def main():
         if delta > 0:
             new_downloads_since_baseline += delta
 
-    total_versions = db.conn.execute("SELECT COUNT(*) FROM versions").fetchone()[0]
+    total_versions = len(current_versions)
 
     summary = {
         "total_projects": current_snapshot.get("project_count", len(current_projects)),
         "total_versions": total_versions,
         "total_downloads": current_total_downloads,
         "baseline_date": baseline_date,
+        "version_baseline_date": version_baseline_date,
         "current_date": current_date,
         "new_projects_since_baseline": new_projects_since_baseline,
         "new_downloads_since_baseline": new_downloads_since_baseline,
@@ -298,27 +318,25 @@ def main():
     print(f"  Top projects: {len(top_projects)} (by delta_downloads)")
 
     # ── Top version+loader growth ─────────────────────────────────
-    baseline_version_map = db.get_latest_version_snapshots(baseline_date)
     project_title_map = {p["project_id"]: p.get("title", "") for p in current_projects}
 
-    cursor = db.conn.execute(
-        "SELECT id, project_id, version_number, loaders, game_versions, downloads FROM versions"
-    )
     top_version_loaders = []
-    for row in cursor.fetchall():
-        vid = row["id"]
-        current_dl = row["downloads"] or 0
+    for v in current_versions:
+        vid = v.get("version_id")
+        if not vid:
+            continue
+        current_dl = v.get("downloads", 0) or 0
         baseline_dl = baseline_version_map.get(vid, 0)
         delta = current_dl - baseline_dl
         if delta > 0:
-            pid = row["project_id"]
+            pid = v.get("project_id", "")
             top_version_loaders.append({
                 "version_id": vid,
                 "project_id": pid,
                 "project_title": project_title_map.get(pid, pid),
-                "version_number": row["version_number"],
-                "loaders": parse_json_field(row["loaders"]),
-                "game_versions": parse_json_field(row["game_versions"]),
+                "version_number": v.get("version_number", ""),
+                "loaders": v.get("loaders", []) or [],
+                "game_versions": v.get("game_versions", []) or [],
                 "delta_downloads": delta,
             })
     top_version_loaders.sort(key=lambda x: x["delta_downloads"], reverse=True)
@@ -437,8 +455,6 @@ def main():
         })
     recommendations.sort(key=lambda x: x["opportunity_score"], reverse=True)
     print(f"  Recommendations: {len(recommendations)}")
-
-    db.close()
 
     # ── Assemble final analysis ───────────────────────────────────
     timestamp = get_timestamp()

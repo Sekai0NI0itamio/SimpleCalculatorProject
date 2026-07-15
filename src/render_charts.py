@@ -12,7 +12,6 @@ Charts are saved to data/{project_type}/charts/ as PNG files.
 Theme: dark background (#0a0a0a), white text, colored bars.
 """
 import argparse
-import glob
 import sys
 from datetime import datetime, timedelta
 
@@ -24,6 +23,7 @@ import numpy as np
 
 from utils import (
     load_json, ensure_dir, get_project_type_dir, get_raw_dir, BEIJING_TZ,
+    list_snapshot_files,
 )
 
 # ── Theme & layout constants ──────────────────────────────────────
@@ -72,18 +72,22 @@ def parse_snapshot_time(timestamp_str):
 
 
 def load_latest_raw(project_type):
-    """Load the most recent raw snapshot (for distribution histograms)."""
+    """Load the most recent raw snapshot (for distribution histograms).
+    Handles both .json and .json.gz files.
+    """
     raw_dir = get_raw_dir(project_type)
-    files = sorted(glob.glob(f"{raw_dir}/*.json"))
+    files = list_snapshot_files(raw_dir)
     if not files:
         return None
     return load_json(files[-1])
 
 
 def load_recent_raw(project_type, hours=24):
-    """Load raw snapshots from the last `hours`, sorted chronologically."""
+    """Load raw snapshots from the last `hours`, sorted chronologically.
+    Handles both .json and .json.gz files.
+    """
     raw_dir = get_raw_dir(project_type)
-    files = sorted(glob.glob(f"{raw_dir}/*.json"))
+    files = list_snapshot_files(raw_dir)
     cutoff = datetime.now(BEIJING_TZ) - timedelta(hours=hours)
     snaps = []
     for f in files:

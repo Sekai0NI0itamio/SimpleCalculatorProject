@@ -16,14 +16,13 @@ Outputs:
   - data/{project_type}/latest_sub_analysis.json
 """
 import argparse
-import glob
 import sys
 from datetime import datetime, timedelta
 
 from utils import (
     load_json, save_json, ensure_dir, get_timestamp,
     get_current_date, get_project_type_dir, get_raw_dir, get_analysis_dir,
-    BEIJING_TZ,
+    BEIJING_TZ, list_snapshot_files,
 )
 
 CONTENT_CATEGORY_HEADER = "categories"
@@ -47,9 +46,11 @@ def parse_snapshot_time(timestamp_str):
 
 
 def load_recent_snapshots(project_type, window_hours=SNAPSHOT_WINDOW_HOURS):
-    """Load raw snapshots from the last `window_hours`, sorted chronologically."""
+    """Load raw snapshots from the last `window_hours`, sorted chronologically.
+    Handles both .json and .json.gz files.
+    """
     raw_dir = get_raw_dir(project_type)
-    snapshot_files = sorted(glob.glob(f"{raw_dir}/*.json"))
+    snapshot_files = list_snapshot_files(raw_dir)
     cutoff = datetime.now(BEIJING_TZ) - timedelta(hours=window_hours)
     snapshots = []
     for f in snapshot_files:

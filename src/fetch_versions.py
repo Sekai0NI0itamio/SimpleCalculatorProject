@@ -20,7 +20,6 @@ from utils import (
     MODRINTH_API_BASE, RATE_LIMIT, load_json, save_json,
     create_session, rate_limit_sleep, ensure_dir, get_project_type_dir
 )
-from db import Database
 
 
 def get_all_project_ids(project_type):
@@ -137,7 +136,9 @@ def fetch_versions_chunk(project_type, chunk_index: int):
             continue
 
         for v in versions:
-            files_data = [{"url": f.get("url"), "filename": f.get("filename"), "primary": f.get("primary", False)} for f in v.get("files", [])]
+            # NOTE: 'files' field is intentionally omitted — only download counts
+            # are needed for analysis, not file URLs/names. This keeps DB and
+            # raw snapshots small enough to fit in git.
             results.append({
                 "id": v.get("id"),
                 "project_id": project_id,
@@ -147,7 +148,6 @@ def fetch_versions_chunk(project_type, chunk_index: int):
                 "game_versions": v.get("game_versions", []),
                 "loaders": v.get("loaders", []),
                 "downloads": v.get("downloads", 0),
-                "files": files_data,
                 "date_published": v.get("date_published"),
             })
 
@@ -165,17 +165,22 @@ def fetch_versions_chunk(project_type, chunk_index: int):
 
 
 def merge_all_chunks(project_type):
-    """Merge all version chunk results into the SQLite database."""
+    """Merge all version chunk results into a single JSON file.
+
+    NOTE: No longer writes to SQLite DB — the merged file is read by
+    snapshot.py and included in the raw snapshot. This avoids the 100MB
+    GitHub file size limit that the DB was hitting.
+    """
     print(f"=== Merge Version Chunks ({project_type}) ===")
     type_dir = get_project_type_dir(project_type)
     results_dir = f"{type_dir}/version_results"
     ensure_dir(results_dir)
-    db = Database(project_type)
 
     total_versions = 0
     total_projects = 0
     combined_summary = {}
     all_errors = []
+    all_versions = []
 
     for f in sorted(glob.glob(f"{results_dir}/results_*.json")):
         data = load_json(f)
@@ -183,31 +188,27 @@ def merge_all_chunks(project_type):
         summary = data.get("version_summary", {})
         errors = data.get("errors", [])
 
-        for v in versions:
-            files_data = v.get("files", [])
-            db.upsert_version({
-                "id": v["id"],
-                "project_id": v["project_id"],
-                "version_number": v["version_number"],
-                "name": v["name"],
-                "version_type": v["version_type"],
-                "game_versions": json.dumps(v["game_versions"]),
-                "loaders": json.dumps(v["loaders"]),
-                "downloads": v["downloads"],
-                "files": json.dumps(files_data),
-                "date_published": v["date_published"],
-            })
-            total_versions += 1
-
+        all_versions.extend(versions)
+        total_versions += len(versions)
         combined_summary.update(summary)
         total_projects += len(summary)
         all_errors.extend(errors)
 
-    db.conn.commit()
     print(f"Merged {total_versions} versions across {total_projects} projects")
     if all_errors:
         print(f"Total errors: {len(all_errors)}")
 
+    # Save merged versions as compressed JSON (gzip)
+    merged_path = f"{type_dir}/versions_merged.json.gz"
+    save_json(merged_path, {
+        "total_projects": total_projects,
+        "total_versions": total_versions,
+        "errors": len(all_errors),
+        "versions": all_versions,
+    }, compress=True)
+    print(f"Saved merged versions to {merged_path} (compressed)")
+
+    # Also save a small summary file (uncompressed, for quick inspection)
     save_json(f"{type_dir}/version_summary.json", {
         "total_projects": total_projects,
         "total_versions": total_versions,
@@ -215,7 +216,6 @@ def merge_all_chunks(project_type):
         "project_versions": combined_summary,
     })
 
-    db.close()
     print(f"=== Merge Complete ({project_type}) ===")
 
 

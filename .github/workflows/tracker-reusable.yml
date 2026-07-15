@@ -182,6 +182,10 @@ jobs:
   # PHASE 4+5: Merge, Snapshot, Analyze, Render Charts, Commit
   # MAIN HOUR: merge versions → snapshot → main analysis → main charts → commit
   # SUB HOUR:  snapshot → predictive analysis → sub charts → commit
+  #
+  # NO DB: Raw snapshots are the single source of truth. The raw snapshot
+  # is saved as .json.gz (gzip-compressed) to fit under GitHub's 100MB file
+  # size limit. analyze.py reads version data directly from the snapshots.
   # ──────────────────────────────────────────────────────────────
   finalize:
     needs: [fetch-projects, fetch-versions]
@@ -219,24 +223,16 @@ jobs:
           path: data/${{ inputs.project_type }}/version_results/
           merge-multiple: true
 
-      # Download previous DB
-      - name: Download previous DB
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ inputs.project_type }}-db
-          path: data/${{ inputs.project_type }}/
-        continue-on-error: true
-
-      # MAIN HOUR: Merge versions
+      # MAIN HOUR: Merge versions into versions_merged.json.gz (no DB)
       - name: Merge versions
         if: ${{ inputs.is_main == true }}
         run: python src/fetch_versions.py --project-type ${{ inputs.project_type }} --merge
 
-      # ALWAYS: Snapshot
+      # ALWAYS: Snapshot (saves as .json.gz — gzip compressed to fit under GitHub 100MB limit)
       - name: Snapshot
         run: python src/snapshot.py --project-type ${{ inputs.project_type }}
 
-      # MAIN HOUR: Main analysis
+      # MAIN HOUR: Main analysis (reads from raw snapshots — no DB)
       - name: Main analysis
         if: ${{ inputs.is_main == true }}
         run: python src/analyze.py --project-type ${{ inputs.project_type }}
@@ -257,24 +253,26 @@ jobs:
         run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode sub
 
       # Commit data files to git
+      # NOTE: .json.gz raw snapshots are committed (compressed to fit under 100MB)
+      # DB is NOT committed (not needed — analyze.py reads from raw snapshots)
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Always commit raw snapshots + analysis + charts
+          # Raw snapshots are .json.gz files (gzip-compressed)
           git add data/${{ inputs.project_type }}/raw/ \
                  data/${{ inputs.project_type }}/analysis/ \
                  data/${{ inputs.project_type }}/charts/ \
                  2>/dev/null || true
 
           if [ "${{ inputs.is_main }}" = "true" ]; then
-            # Main hour: also commit discovery, latest_analysis, DB
+            # Main hour: also commit discovery, latest_analysis
             git add data/${{ inputs.project_type }}/latest_analysis.json \
                    data/${{ inputs.project_type }}/discovery.json \
                    data/${{ inputs.project_type }}/categories.json \
                    data/${{ inputs.project_type }}/loaders.json \
-                   data/${{ inputs.project_type }}/${{ inputs.project_type }}.db \
                    2>/dev/null || true
             COMMIT_MSG="tracker: ${{ inputs.project_type }} main daily snapshot $(date -u +%Y-%m-%dT%H:%M)"
           else
@@ -290,12 +288,3 @@ jobs:
             echo "Push failed, retrying in 10s..."
             sleep 10
           done
-
-      # Upload DB as artifact (for same-run download by other jobs)
-      - name: Upload DB
-        if: ${{ inputs.is_main == true }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ inputs.project_type }}-db
-          path: data/${{ inputs.project_type }}/${{ inputs.project_type }}.db
-          retention-days: 1

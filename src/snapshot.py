@@ -2,22 +2,24 @@
 """
 Phase 4: Snapshot
 - Reads all project data from data/{project_type}/chunks/ (deduplicated by project_id)
-- Saves a raw snapshot to data/{project_type}/raw/{timestamp}.json
-  (compact: project_id, slug, title, downloads, follows, categories, project_type)
-- Updates the DB: upserts all projects and records daily project/version snapshots
+- Reads merged version data from data/{project_type}/versions_merged.json.gz (if present)
+- Saves a raw snapshot to data/{project_type}/raw/{timestamp}.json.gz (compressed)
+  Fields per project: project_id, slug, title, downloads, follows, categories, project_type
+  Fields per version: version_id, project_id, version_number, loaders, game_versions, downloads
 
-NO baseline logic here — analyze.py derives everything from the raw snapshot history.
+NO DB usage — all data is derived from raw snapshots in analyze.py.
+The raw snapshot is the single source of truth.
 """
 import argparse
 import glob
 import json
+import os
 import sys
 
 from utils import (
     load_json, save_json, ensure_dir, get_current_date, get_timestamp,
     get_project_type_dir, get_raw_dir
 )
-from db import Database
 
 
 def get_all_project_data(project_type):
@@ -36,6 +38,23 @@ def get_all_project_data(project_type):
                     project_map[pid] = p
 
     return list(project_map.values())
+
+
+def load_merged_versions(project_type):
+    """Load merged version data from versions_merged.json.gz.
+    Returns list of version dicts or empty list if file doesn't exist.
+    """
+    type_dir = get_project_type_dir(project_type)
+    merged_path = f"{type_dir}/versions_merged.json.gz"
+    if not os.path.exists(merged_path):
+        # Try uncompressed version (legacy)
+        merged_path = f"{type_dir}/versions_merged.json"
+        if not os.path.exists(merged_path):
+            return []
+    data = load_json(merged_path)
+    if not data:
+        return []
+    return data.get("versions", [])
 
 
 def main():
@@ -60,7 +79,6 @@ def main():
 
     if not projects:
         print(f"No projects found for {project_type} — creating empty snapshot")
-        # Still create an empty raw snapshot so analyze.py has data to work with
         raw_snapshot = {
             "timestamp": timestamp,
             "date": today,
@@ -73,13 +91,13 @@ def main():
         }
         raw_dir = get_raw_dir(project_type)
         ensure_dir(raw_dir)
-        raw_path = f"{raw_dir}/{timestamp}.json"
-        save_json(raw_path, raw_snapshot)
+        raw_path = f"{raw_dir}/{timestamp}.json.gz"
+        save_json(raw_path, raw_snapshot, compress=True)
         print(f"Saved empty raw snapshot to {raw_path}")
         print(f"=== Snapshot ({project_type}) complete ===")
         return 0
 
-    # ── Build raw snapshot (compact — no description/icon_url) ────
+    # ── Build project entries ────────────────────────────────────
     raw_projects = []
     total_downloads = 0
     for p in projects:
@@ -108,6 +126,37 @@ def main():
             "project_type": p.get("project_type", project_type),
         })
 
+    # ── Load version data from merged file ───────────────────────
+    raw_versions = []
+    merged_versions = load_merged_versions(project_type)
+    if merged_versions:
+        print(f"Loaded {len(merged_versions)} versions from versions_merged.json.gz")
+        for v in merged_versions:
+            # game_versions and loaders are already lists in the merged file
+            gv = v.get("game_versions", [])
+            ld = v.get("loaders", [])
+            if isinstance(gv, str):
+                try:
+                    gv = json.loads(gv)
+                except (json.JSONDecodeError, TypeError):
+                    gv = []
+            if isinstance(ld, str):
+                try:
+                    ld = json.loads(ld)
+                except (json.JSONDecodeError, TypeError):
+                    ld = []
+            raw_versions.append({
+                "version_id": v.get("id"),
+                "project_id": v.get("project_id"),
+                "version_number": v.get("version_number", ""),
+                "loaders": ld,
+                "game_versions": gv,
+                "downloads": v.get("downloads", 0) or 0,
+            })
+        print(f"  Processed {len(raw_versions)} version entries")
+    else:
+        print("  No version data available (fetch-versions may have been skipped)")
+
     raw_snapshot = {
         "timestamp": timestamp,
         "date": today,
@@ -115,77 +164,23 @@ def main():
         "project_count": len(raw_projects),
         "total_downloads": total_downloads,
         "projects": raw_projects,
+        "versions": raw_versions,
+        "version_count": len(raw_versions),
     }
 
-    # ── Load version data from DB (if available) ──────────────────
-    # Version data is populated by fetch_versions.py --merge.
-    # On sub-hour runs (no version fetch), the DB may have stale or no version data.
-    db = Database(project_type)
-    version_count = db.conn.execute("SELECT COUNT(*) FROM versions").fetchone()[0]
-    if version_count > 0:
-        print(f"Loading {version_count} versions from DB...")
-        cursor = db.conn.execute(
-            "SELECT id, project_id, version_number, loaders, game_versions, downloads FROM versions"
-        )
-        raw_versions = []
-        for row in cursor.fetchall():
-            try:
-                loaders = json.loads(row["loaders"]) if row["loaders"] else []
-            except (json.JSONDecodeError, TypeError):
-                loaders = []
-            try:
-                game_versions = json.loads(row["game_versions"]) if row["game_versions"] else []
-            except (json.JSONDecodeError, TypeError):
-                game_versions = []
-            raw_versions.append({
-                "version_id": row["id"],
-                "project_id": row["project_id"],
-                "version_number": row["version_number"],
-                "loaders": loaders,
-                "game_versions": game_versions,
-                "downloads": row["downloads"] or 0,
-            })
-        raw_snapshot["versions"] = raw_versions
-        raw_snapshot["version_count"] = len(raw_versions)
-        print(f"Added {len(raw_versions)} versions to snapshot")
-    else:
-        print("No version data in DB (fetch-versions may have been skipped)")
-
+    # Save raw snapshot compressed (gzip) to fit under GitHub's 100MB file size limit
     raw_dir = get_raw_dir(project_type)
     ensure_dir(raw_dir)
-    raw_path = f"{raw_dir}/{timestamp}.json"
-    save_json(raw_path, raw_snapshot)
-    print(f"Saved raw snapshot to {raw_path} ({len(raw_projects)} projects, {total_downloads:,} downloads)")
+    raw_path = f"{raw_dir}/{timestamp}.json.gz"
+    save_json(raw_path, raw_snapshot, compress=True)
 
-    # ── Update the database ───────────────────────────────────────
-    # (DB already opened above for version loading)
-
-    # Upsert all projects + record daily project snapshots
-    project_count = 0
-    for project in projects:
-        project_id = project["project_id"]
-        downloads = project.get("downloads", 0) or 0
-        follows = project.get("follows", 0) or 0
-
-        db.upsert_project(project)
-        db.record_project_snapshot(project_id, today, downloads, follows)
-        project_count += 1
-
-    print(f"Recorded snapshots for {project_count} projects")
-
-    # Record version snapshots from the DB's versions table
-    cursor = db.conn.execute("SELECT id, downloads FROM versions")
-    versions = cursor.fetchall()
-    version_count = 0
-    for version in versions:
-        version_id = version["id"]
-        version_downloads = version["downloads"] or 0
-        db.record_version_snapshot(version_id, today, version_downloads)
-        version_count += 1
-
-    print(f"Recorded snapshots for {version_count} versions")
-
-    db.close()
+    # Print summary
+    raw_size = os.path.getsize(raw_path)
+    print(f"Saved raw snapshot to {raw_path}")
+    print(f"  Projects: {len(raw_projects):,}")
+    print(f"  Versions: {len(raw_versions):,}")
+    print(f"  Total downloads: {total_downloads:,}")
+    print(f"  Compressed size: {raw_size / 1024 / 1024:.2f} MB")
 
     print(f"=== Snapshot ({project_type}) complete ===")
     return 0
