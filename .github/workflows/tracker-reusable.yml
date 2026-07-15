@@ -125,7 +125,9 @@ jobs:
           python -c "
           import json
           d = json.load(open('data/${{ inputs.project_type }}/version_split.json'))
-          print(json.dumps(list(range(d['num_chunks']))))
+          n = d['num_chunks']
+          # If no chunks, output a single dummy chunk so the matrix isn't empty
+          print(json.dumps(list(range(n)) if n > 0 else [0]))
           " > /tmp/vmatrix.txt
           echo "version_chunk_list=$(cat /tmp/vmatrix.txt)" >> $GITHUB_OUTPUT
       - name: Upload version chunks
@@ -200,6 +202,7 @@ jobs:
       # Download all version results
       - name: Download all version results
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           pattern: ${{ inputs.project_type }}-version-results-*
           path: data/${{ inputs.project_type }}/version_results/

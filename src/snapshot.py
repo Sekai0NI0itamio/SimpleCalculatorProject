@@ -207,6 +207,27 @@ def main():
     else:
         print("  No version data available (no merged file and no previous snapshot with versions)")
 
+    # ── Recompute project downloads from version data ─────────────
+    # The Modrinth search API returns cached download counts that don't
+    # update in real-time. Version-level downloads (from /project/{id}/version)
+    # are more current. We recompute each project's downloads by summing
+    # its version downloads, so deltas between snapshots are accurate.
+    if raw_versions:
+        pid_downloads = {}
+        for v in raw_versions:
+            pid = v.get("project_id")
+            if pid:
+                pid_downloads[pid] = pid_downloads.get(pid, 0) + v.get("downloads", 0)
+        total_downloads = 0
+        for p in raw_projects:
+            pid = p.get("project_id")
+            if pid and pid in pid_downloads:
+                p["downloads"] = pid_downloads[pid]
+            total_downloads += p.get("downloads", 0)
+        print(f"  Recalculated total downloads from versions: {total_downloads:,}")
+    else:
+        print("  Using project-level downloads (no version data available)")
+
     raw_snapshot = {
         "timestamp": timestamp,
         "date": today,

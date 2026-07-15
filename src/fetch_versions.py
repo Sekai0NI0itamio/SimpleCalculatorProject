@@ -90,15 +90,14 @@ def fetch_versions_chunk(project_type, chunk_index: int):
     print(f"=== Fetch Versions Chunk {chunk_index} ({project_type}) ===")
     type_dir = get_project_type_dir(project_type)
     chunk_path = f"{type_dir}/version_chunks/version_chunk_{chunk_index}.json"
-    if not os.path.exists(chunk_path):
-        print(f"ERROR: {chunk_path} not found")
-        sys.exit(1)
-
-    project_ids = load_json(chunk_path)
-    print(f"Chunk {chunk_index}: {len(project_ids)} projects")
-
     results_dir = f"{type_dir}/version_results"
     ensure_dir(results_dir)
+
+    if not os.path.exists(chunk_path):
+        print(f"No chunk file at {chunk_path} — creating empty result (0 projects)")
+        out_path = f"{results_dir}/results_{chunk_index}.json"
+        save_json(out_path, {"versions": [], "version_summary": {}, "errors": []})
+        return
     request_timestamps = []
     session = create_session()
     results = []
