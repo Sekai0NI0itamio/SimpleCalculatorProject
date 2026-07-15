@@ -142,12 +142,22 @@ def main():
             "project_id": p.get("project_id"),
             "slug": p.get("slug", ""),
             "title": p.get("title", ""),
+            "description": p.get("description", ""),
             "downloads": downloads,
             "follows": p.get("follows", 0) or 0,
             "categories": cats,
             "project_type": p.get("project_type", project_type),
             "client_side": p.get("client_side", "unknown"),
             "server_side": p.get("server_side", "unknown"),
+            "date_created": p.get("date_created", ""),
+            "date_modified": p.get("date_modified", ""),
+            "status": p.get("status", "unknown"),
+            "icon_url": p.get("icon_url", ""),
+            "issues_url": p.get("issues_url", ""),
+            "source_url": p.get("source_url", ""),
+            "wiki_url": p.get("wiki_url", ""),
+            "discord_url": p.get("discord_url", ""),
+            "license": p.get("license", {}),
         })
 
     # ── Load version data ────────────────────────────────────────

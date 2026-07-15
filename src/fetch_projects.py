@@ -34,6 +34,15 @@ def fetch_page(session, facets, offset):
 
 def extract_project_data(hit):
     """Extract relevant fields from a search hit."""
+    # Handle license: Modrinth API returns a license object {id, name, url}
+    license_raw = hit.get("license")
+    if isinstance(license_raw, dict):
+        license_data = {"id": license_raw.get("id", ""), "name": license_raw.get("name", "")}
+    elif isinstance(license_raw, str):
+        license_data = {"id": license_raw, "name": license_raw}
+    else:
+        license_data = {}
+
     return {
         "project_id": hit.get("project_id"),
         "slug": hit.get("slug", ""),
@@ -47,7 +56,14 @@ def extract_project_data(hit):
         "follows": hit.get("follows", 0),
         "icon_url": hit.get("icon_url"),
         "date_created": hit.get("date_created"),
-        "date_modified": hit.get("date_modified")
+        "date_modified": hit.get("date_modified"),
+        "status": hit.get("status", "unknown"),
+        "issues_url": hit.get("issues_url", ""),
+        "source_url": hit.get("source_url", ""),
+        "wiki_url": hit.get("wiki_url", ""),
+        "discord_url": hit.get("discord_url", ""),
+        "license": license_data,
+        "versions": hit.get("versions", []),
     }
 
 

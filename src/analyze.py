@@ -31,6 +31,7 @@ from utils import (
     get_project_type_dir, get_raw_dir, get_analysis_dir,
     list_snapshot_files, BEIJING_TZ,
 )
+from opportunity import build_opportunity_analysis
 
 CONTENT_CATEGORY_HEADER = "categories"
 
@@ -756,6 +757,19 @@ def main():
     else:
         hourly_extras = {}
 
+    # ── Opportunity Analysis (Decision Engine) ─────────────────────
+    # Only run on daily mode — the decision engine needs enough data to be meaningful.
+    # Running on 2-hour data would produce noisy/volatile recommendations.
+    if mode == "daily":
+        opportunity_analysis = build_opportunity_analysis(
+            current_snapshot, baseline_snapshot, actual_hours,
+            loader_names, loader_set
+        )
+        print(f"  Opportunity: {len(opportunity_analysis.get('opportunities', []))} opportunities, "
+              f"{len(opportunity_analysis.get('emerging_concepts', []))} emerging concepts")
+    else:
+        opportunity_analysis = {"note": "opportunity_analysis_only_on_daily_mode"}
+
     # ── Assemble final analysis ───────────────────────────────────
     timestamp = get_timestamp()
     analysis = {
@@ -767,6 +781,7 @@ def main():
         "hours_between": hours_back,
         **analysis_data,
         "trending_analysis": trending_analysis,
+        "opportunity_analysis": opportunity_analysis,
         **hourly_extras,
     }
 

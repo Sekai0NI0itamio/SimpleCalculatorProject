@@ -81,3 +81,24 @@ jobs:
       project_type: world
       version_chunks: 5
       analysis_mode: ${{ needs.check-mode.outputs.analysis_mode }}
+
+  # Generate combined website report after all project types are done
+  generate-report:
+    needs: [mod, modpack, resourcepack, shader, datapack, world]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Generate combined report
+        run: python src/generate_report.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          git diff --staged --quiet || git commit -m "Update combined website report"
+          git push

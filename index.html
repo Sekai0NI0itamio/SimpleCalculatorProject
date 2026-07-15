@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modrinth Market Analytics</title>
+<title>Modrinth Market Analytics — Decision Engine</title>
 <style>
   :root {
     --bg: #0d1117;
@@ -16,405 +16,714 @@
     --red: #f85149;
     --orange: #d29922;
     --purple: #bc8cff;
+    --amber: #f59e0b;
+    --emerald: #10b981;
+    --violet: #8b5cf6;
+    --sky: #38bdf8;
+    --rose: #f43f5e;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg); color: var(--text); line-height: 1.6;
-    padding: 24px;
+    background: var(--bg); color: var(--text); line-height: 1.5;
+    min-height: 100vh;
   }
-  .container { max-width: 1400px; margin: 0 auto; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-  h1 { font-size: 28px; margin-bottom: 4px; }
-  h2 { font-size: 20px; margin-bottom: 16px; color: var(--accent); }
-  h3 { font-size: 16px; margin-bottom: 12px; color: var(--text); }
+  /* Navigation */
+  nav {
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,17,23,0.95);
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  nav .nav-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; height: 52px;
+  }
+  nav .logo {
+    font-size: 16px; font-weight: 700; color: var(--text);
+    margin-right: 32px; letter-spacing: -0.3px;
+  }
+  nav .logo span { color: var(--accent); }
+  nav .nav-links { display: flex; gap: 4px; }
+  nav .nav-link {
+    padding: 6px 16px; border-radius: 6px; cursor: pointer;
+    color: var(--text-muted); font-size: 13px; font-weight: 500;
+    border: none; background: none; transition: all 0.15s;
+  }
+  nav .nav-link:hover { color: var(--text); background: var(--card); }
+  nav .nav-link.active { color: #fff; background: var(--accent); }
+  nav .nav-stats { margin-left: auto; display: flex; gap: 16px; font-size: 12px; color: var(--text-muted); }
 
-  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 12px; }
-  .header .subtitle { color: var(--text-muted); font-size: 14px; }
-  .header .stats { display: flex; gap: 20px; font-size: 14px; }
-  .header .stats span { background: var(--card); padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border); }
+  /* Pages */
+  .page { display: none; padding: 32px 0; }
+  .page.active { display: block; }
 
-  .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  /* Header */
+  .page-header { margin-bottom: 32px; }
+  .page-header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  .page-header .subtitle { color: var(--text-muted); font-size: 14px; }
+
+  /* Cards */
   .card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
-    padding: 20px; position: relative;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px;
   }
-  .card h3 { margin-bottom: 8px; font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-  .card .value { font-size: 22px; font-weight: 600; }
-  .card .desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-  .card .tag {
+  .card-header {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 12px; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--text-muted);
+  }
+  .card-header .icon { width: 16px; height: 16px; }
+
+  /* Grids */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* Top Mod Cards */
+  .mod-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; position: relative;
+    overflow: hidden;
+  }
+  .mod-card.rank-1 { border-color: rgba(245,158,11,0.3); }
+  .mod-card.rank-2 { border-color: rgba(148,163,184,0.3); }
+  .mod-card.rank-3 { border-color: rgba(180,83,9,0.3); }
+  .mod-card .rank-badge {
+    position: absolute; top: 12px; right: 12px;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .mod-card.rank-1 .rank-badge { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .mod-card.rank-2 .rank-badge { background: rgba(148,163,184,0.15); color: #94a3b8; }
+  .mod-card.rank-3 .rank-badge { background: rgba(180,83,9,0.15); color: #b45309; }
+  .mod-card .mod-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; padding-right: 36px; }
+  .mod-card .mod-type {
     display: inline-block; padding: 2px 8px; border-radius: 4px;
-    font-size: 12px; font-weight: 500; margin-top: 8px;
+    font-size: 11px; font-weight: 500; margin-bottom: 12px;
+    background: rgba(88,166,255,0.1); color: var(--accent);
+    text-transform: capitalize;
   }
-  .tag.green { background: rgba(63,185,80,0.15); color: var(--green); }
-  .tag.red { background: rgba(248,81,73,0.15); color: var(--red); }
-  .tag.orange { background: rgba(210,153,34,0.15); color: var(--orange); }
-  .tag.purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .mod-card .mod-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mod-card .stat { text-align: center; }
+  .mod-card .stat-value { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .mod-card .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .mod-card .stat-value.positive { color: var(--green); }
 
-  .section { margin-bottom: 40px; }
-  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-
+  /* Tables */
   table {
-    width: 100%; border-collapse: collapse; font-size: 14px;
+    width: 100%; border-collapse: collapse; font-size: 13px;
     background: var(--card); border-radius: 8px; overflow: hidden;
     border: 1px solid var(--border);
   }
   th {
     background: #1c2128; color: var(--text-muted); font-weight: 500;
     text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border);
-    font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
   }
   td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
   tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(88,166,255,0.04); }
+  tr:hover td { background: rgba(88,166,255,0.03); }
   .num { text-align: right; font-variant-numeric: tabular-nums; }
   .positive { color: var(--green); }
   .negative { color: var(--red); }
+  .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
 
-  .tabs { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
-  .tab {
-    padding: 8px 16px; border-radius: 6px; cursor: pointer;
-    background: var(--card); border: 1px solid var(--border);
-    color: var(--text-muted); font-size: 13px; font-weight: 500;
+  /* Tags / Badges */
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 500;
   }
-  .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
+  .tag.green { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag.red { background: rgba(248,81,73,0.15); color: var(--red); }
+  .tag.orange { background: rgba(210,153,34,0.15); color: var(--orange); }
+  .tag.purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .tag.blue { background: rgba(88,166,255,0.15); color: var(--accent); }
+  .tag.emerald { background: rgba(16,185,129,0.15); color: var(--emerald); }
+  .tag.amber { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .tag.rose { background: rgba(244,63,94,0.15); color: var(--rose); }
+  .tag.loader-fabric { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag.loader-forge { background: rgba(210,153,34,0.15); color: var(--orange); }
+  .tag.loader-neoforge { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .tag.loader-quilt { background: rgba(88,166,255,0.15); color: var(--accent); }
 
-  .loading { text-align: center; padding: 80px 0; color: var(--text-muted); }
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 18px; font-weight: 600; margin-bottom: 4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+
+  /* Opportunity Card */
+  .opp-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+  }
+  .opp-card.confidence-high { border-color: rgba(16,185,129,0.3); }
+  .opp-card.confidence-medium { border-color: rgba(245,158,11,0.3); }
+  .opp-card.rank-top { border-color: rgba(88,166,255,0.3); }
+  .opp-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; cursor: pointer;
+    transition: background 0.1s;
+  }
+  .opp-header:hover { background: rgba(88,166,255,0.03); }
+  .opp-rank {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  .opp-rank.r1 { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .opp-rank.r2 { background: rgba(148,163,184,0.15); color: #94a3b8; }
+  .opp-rank.r3 { background: rgba(180,83,9,0.15); color: #b45309; }
+  .opp-rank.rn { background: rgba(48,54,61,0.5); color: var(--text-muted); }
+  .opp-info { flex: 1; min-width: 0; }
+  .opp-name { font-size: 14px; font-weight: 600; }
+  .opp-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .opp-meta span { margin-right: 12px; }
+  .opp-score {
+    text-align: right; flex-shrink: 0;
+  }
+  .opp-score .score-num {
+    font-size: 22px; font-weight: 700; font-family: 'SF Mono', 'Consolas', monospace;
+  }
+  .opp-score .score-num.high { color: var(--emerald); }
+  .opp-score .score-num.med { color: var(--amber); }
+  .opp-score .score-num.low { color: var(--text-muted); }
+  .opp-score .score-label { font-size: 10px; color: var(--text-muted); }
+  .opp-chevron { color: var(--text-muted); flex-shrink: 0; }
+
+  .opp-detail {
+    padding: 0 16px 16px; border-top: 1px solid var(--border);
+    display: none;
+  }
+  .opp-detail.open { display: block; }
+  .opp-detail-inner { padding-top: 12px; }
+  .opp-desc { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
+
+  /* Meters */
+  .meter-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .meter { }
+  .meter-label { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px; }
+  .meter-label .name { color: var(--text-muted); }
+  .meter-label .val { font-weight: 600; }
+  .meter-bar { height: 6px; background: rgba(48,54,61,0.5); border-radius: 3px; overflow: hidden; }
+  .meter-bar .fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
+  .meter-bar .fill.demand { background: rgba(16,185,129,0.5); }
+  .meter-bar .fill.supply { background: rgba(244,63,94,0.5); }
+
+  .info-box {
+    background: rgba(48,54,61,0.3); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px; margin-bottom: 12px;
+  }
+  .info-box-header {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 8px;
+  }
+  .info-box .vl-target {
+    display: flex; align-items: center; gap: 8px; font-size: 13px;
+  }
+  .info-box .vl-target .version { font-weight: 600; }
+  .info-box .vl-target .arrow { color: var(--text-muted); font-size: 11px; }
+  .info-box .vl-target .loader-name { font-weight: 600; text-transform: capitalize; }
+  .info-box .vl-target .sub { font-size: 11px; color: var(--text-muted); }
+
+  .reasons { margin-bottom: 12px; }
+  .reasons .reason {
+    display: flex; align-items: flex-start; gap: 6px;
+    font-size: 11px; color: var(--text-muted); margin-bottom: 4px;
+  }
+  .reasons .reason .dot {
+    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
+  }
+  .reasons .reason .dot.primary { background: var(--emerald); }
+  .reasons .reason .dot.secondary { background: var(--text-muted); }
+
+  .risk-flags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .risk-flag {
+    padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 500;
+    border: 1px solid;
+  }
+  .risk-flag.sev-high { border-color: rgba(248,81,73,0.3); color: var(--red); background: rgba(248,81,73,0.06); }
+  .risk-flag.sev-medium { border-color: rgba(210,153,34,0.3); color: var(--orange); background: rgba(210,153,34,0.06); }
+  .risk-flag.sev-low { border-color: rgba(139,148,158,0.3); color: var(--text-muted); background: rgba(139,148,158,0.06); }
+
+  .scenario-bands { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center; }
+  .scenario-band { padding: 8px; background: rgba(48,54,61,0.2); border-radius: 6px; }
+  .scenario-band .band-label { font-size: 10px; color: var(--text-muted); }
+  .scenario-band .band-val { font-size: 14px; font-weight: 700; font-family: 'SF Mono', 'Consolas', monospace; }
+
+  .example-projects { display: flex; flex-wrap: wrap; gap: 4px; }
+  .example-proj {
+    padding: 2px 8px; border-radius: 4px; font-size: 11px;
+    background: rgba(48,54,61,0.3); color: var(--text-muted);
+  }
+
+  /* Emerging concepts grid */
+  .emerging-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .emerging-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px;
+  }
+  .emerging-card .e-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .emerging-card .e-stats { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
+
+  .loading { text-align: center; padding: 100px 0; color: var(--text-muted); }
   .loading .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
   .empty { padding: 32px; text-align: center; color: var(--text-muted); background: var(--card); border-radius: 8px; border: 1px solid var(--border); }
 
-  .flex-wrap { display: flex; gap: 24px; flex-wrap: wrap; }
-  .flex-grow { flex: 1; min-width: 300px; }
+  .summary-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-bottom: 32px;
+  }
+  .summary-stat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px;
+  }
+  .summary-stat .ss-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .summary-stat .ss-value { font-size: 22px; font-weight: 700; }
 
-  .signal-indicator { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  @media (max-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .meter-row { grid-template-columns: 1fr; }
+    nav .nav-stats { display: none; }
+    .opp-header { flex-wrap: wrap; }
+  }
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <div>
-      <h1>📊 Modrinth Market Analytics</h1>
-      <div class="subtitle">Track categories, opportunities &amp; trends across the Modrinth ecosystem</div>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Modrinth <span>Analytics</span></div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="analysis">Decision Engine</button>
     </div>
-    <div class="stats" id="headerStats">
-      <span>Projects: <strong id="totalProjects">—</strong></span>
-      <span>Versions: <strong id="totalVersions">—</strong></span>
-      <span>Updated: <strong id="updatedAt">—</strong></span>
-    </div>
+    <div class="nav-stats" id="navStats"></div>
   </div>
+</nav>
 
+<div class="container">
   <div id="loading" class="loading">
     <div class="spinner"></div>
     <div>Loading analytics data...</div>
   </div>
 
-  <div id="dashboard" style="display:none">
+  <!-- ========== HOME PAGE ========== -->
+  <div id="page-home" class="page active" style="display:none">
+    <div class="page-header">
+      <h1>Market Overview</h1>
+      <div class="subtitle">This week's top movers across Modrinth</div>
+    </div>
+    <div class="summary-stats" id="summaryStats"></div>
 
-    <!-- Executive Summary Cards -->
+    <!-- Top 3 Fastest Growing Mods -->
     <div class="section">
-      <h2>Executive Summary</h2>
-      <div class="summary-cards" id="summaryCards"></div>
+      <div class="section-title">Top 3 Fastest Growing Mods This Week</div>
+      <div class="section-subtitle">Projects with the highest download increase</div>
+      <div class="grid-3" id="top3Mods"></div>
     </div>
 
-    <!-- Tabbed Analysis -->
+    <!-- Top Categories -->
     <div class="section">
-      <div class="tabs" id="tabs">
-        <div class="tab active" data-tab="opportunity">Opportunity Matrix</div>
-        <div class="tab" data-tab="rankings">Category Rankings</div>
-        <div class="tab" data-tab="synergies">Cross-Category Synergies</div>
-        <div class="tab" data-tab="combos">Category+Loader Combos</div>
-        <div class="tab" data-tab="saturation">Market Saturation</div>
-        <div class="tab" data-tab="momentum">Growth Momentum</div>
-        <div class="tab" data-tab="loaders">Loader Market Fit</div>
-        <div class="tab" data-tab="versions">Version Lifecycle</div>
-        <div class="tab" data-tab="gaps">Market Gaps</div>
-        <div class="tab" data-tab="recommendations">Investment Recommendations</div>
-      </div>
+      <div class="section-title">Categories with Most Increase</div>
+      <div class="section-subtitle">Categories ranked by total download growth this week</div>
+      <div id="topCategories"></div>
+    </div>
 
-      <div id="tab-content-opportunity" class="tab-content active"></div>
-      <div id="tab-content-rankings" class="tab-content"></div>
-      <div id="tab-content-synergies" class="tab-content"></div>
-      <div id="tab-content-combos" class="tab-content"></div>
-      <div id="tab-content-saturation" class="tab-content"></div>
-      <div id="tab-content-momentum" class="tab-content"></div>
-      <div id="tab-content-loaders" class="tab-content"></div>
-      <div id="tab-content-versions" class="tab-content"></div>
-      <div id="tab-content-gaps" class="tab-content"></div>
-      <div id="tab-content-recommendations" class="tab-content"></div>
+    <!-- Top 5 VL Pairs -->
+    <div class="section">
+      <div class="section-title">Top 5 Version+Loader Combinations</div>
+      <div class="section-subtitle">Highest download growth by version-loader pair. 1.20.1 Fabric and 1.20.1 Forge are separate entries.</div>
+      <div id="topVLPairs"></div>
+    </div>
+  </div>
+
+  <!-- ========== ANALYSIS PAGE ========== -->
+  <div id="page-analysis" class="page" style="display:none">
+    <div class="page-header">
+      <h1>Decision Engine</h1>
+      <div class="subtitle">Top 10 mods you should build next — ranked by opportunity score</div>
+    </div>
+    <div class="section">
+      <div class="section-title">Top 10 Opportunities</div>
+      <div class="section-subtitle">Ranked by demand vs supply. Higher score = better opportunity.</div>
+      <div id="opportunities"></div>
+    </div>
+    <div class="section">
+      <div class="section-title">Emerging Concepts</div>
+      <div class="section-subtitle">Fast-growing niches with low competition</div>
+      <div class="emerging-grid" id="emergingConcepts"></div>
+    </div>
+    <div class="section">
+      <div class="section-title">Best Version+Loader Pairs</div>
+      <div class="section-subtitle">Under-served pairs with high demand across all projects</div>
+      <div id="globalVLPairs"></div>
     </div>
   </div>
 </div>
 
 <script>
+// ── State ──────────────────────────────────────────────────────────
+let reportData = null;
+
+// ── Init ────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  // Navigation
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + link.dataset.page).classList.add('active');
+    });
+  });
+
+  // Load data
   fetch('reports/latest_analysis.json')
-    .then(r => { if (!r.ok) throw new Error('No data yet'); return r.json(); })
-    .then(renderDashboard)
+    .then(r => { if (!r.ok) throw new Error('No data'); return r.json(); })
+    .then(data => {
+      reportData = data;
+      document.getElementById('loading').style.display = 'none';
+      renderHome();
+      renderAnalysis();
+    })
     .catch(err => {
       document.getElementById('loading').innerHTML = `
         <div style="color: var(--text-muted);">
-          <div style="font-size: 48px; margin-bottom: 16px;">📡</div>
+          <div style="font-size: 48px; margin-bottom: 16px;">&#128200;</div>
           <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Waiting for data</div>
-          <div>Run the Daily Modrinth Tracker workflow first.</div>
-          <div style="margin-top: 16px; font-size: 13px;">
-            Go to <strong>Actions</strong> → <strong>Daily Modrinth Tracker</strong> → <strong>Run workflow</strong>
+          <div>Run the pipeline first to generate the report.</div>
+          <div style="margin-top: 12px; font-size: 13px;">
+            <code>python3 src/generate_report.py</code>
           </div>
         </div>`;
     });
-
-  // Tab switching
-  document.getElementById('tabs').addEventListener('click', e => {
-    const tab = e.target.closest('.tab');
-    if (!tab) return;
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
-    document.getElementById('tab-content-' + tab.dataset.tab).classList.add('active');
-  });
 });
 
-function renderDashboard(data) {
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('dashboard').style.display = 'block';
-
-  document.getElementById('totalProjects').textContent = (data.total_projects || 0).toLocaleString();
-  document.getElementById('totalVersions').textContent = (data.total_versions || 0).toLocaleString();
-  document.getElementById('updatedAt').textContent = data.report_date || '—';
-
-  renderSummaryCards(data);
-  renderOpportunity(data);
-  renderRankings(data);
-  renderSynergies(data);
-  renderCombos(data);
-  renderSaturation(data);
-  renderMomentum(data);
-  renderLoaders(data);
-  renderVersions(data);
-  renderGaps(data);
-  renderRecommendations(data);
+// ── Formatting Helpers ──────────────────────────────────────────────
+function fmt(n) { return n != null ? n.toLocaleString() : '—'; }
+function fmtDelta(n) {
+  if (n == null) return '—';
+  const sign = n >= 0 ? '+' : '';
+  return sign + n.toLocaleString();
+}
+function fmtPct(n) {
+  if (n == null) return '—';
+  return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
+}
+function loaderTag(loader) {
+  const cls = 'loader-' + (loader || '').toLowerCase();
+  return `<span class="tag ${cls}">${loader}</span>`;
 }
 
-function renderSummaryCards(data) {
-  const es = data.executive_summary || {};
-  const container = document.getElementById('summaryCards');
-  const items = [];
+// ═══════════════════════════════════════════════════════════════════
+//  HOME PAGE
+// ═══════════════════════════════════════════════════════════════════
 
-  if (es.top_opportunities && es.top_opportunities.length) {
-    const top = es.top_opportunities[0];
-    items.push(`
-      <div class="card">
-        <h3>Top Opportunity</h3>
-        <div class="value">${top.category}</div>
-        <div class="desc">${top.avg_downloads.toLocaleString()} avg downloads — ${top.projects} competitors</div>
-        <div class="tag green">Score: ${top.opportunity_score}</div>
-      </div>
-    `);
-  }
-  if (es.best_bets && es.best_bets.length) {
-    const bet = es.best_bets[0];
-    items.push(`
-      <div class="card">
-        <h3>Best Bet to Build</h3>
-        <div class="value">${bet.category}</div>
-        <div class="desc">For ${bet.loader} — est. ${bet.expected_downloads.toLocaleString()} downloads</div>
-        <div class="tag ${bet.roi === 'High' ? 'green' : bet.roi === 'Low' ? 'red' : 'orange'}">${bet.roi} ROI · ${bet.competition} competition</div>
-      </div>
-    `);
-  }
-  if (es.top_trending && es.top_trending.length) {
-    const t = es.top_trending[0];
-    const cls = t.momentum_pct > 10 ? 'green' : t.momentum_pct > 0 ? 'orange' : 'red';
-    items.push(`
-      <div class="card">
-        <h3>Fastest Growing</h3>
-        <div class="value">${t.category}</div>
-        <div class="desc">${t.momentum_pct}% momentum</div>
-        <div class="tag ${cls}">${t.signal}</div>
-      </div>
-    `);
-  }
+function renderHome() {
+  const d = reportData;
+  if (!d) return;
+  document.getElementById('page-home').style.display = 'block';
 
-  const market = data.market_saturation || {};
-  if (market.underserved && market.underserved.length) {
-    const u = market.underserved[0];
-    items.push(`
-      <div class="card">
-        <h3>Under-Served Niche</h3>
-        <div class="value">${u.category}</div>
-        <div class="desc">${u.avg_downloads.toLocaleString()} avg downloads — ${u.projects} projects</div>
-        <div class="tag purple">Under-Served</div>
-      </div>
-    `);
-  }
+  // Summary stats
+  const totals = d.totals || {};
+  document.getElementById('summaryStats').innerHTML = `
+    <div class="summary-stat">
+      <div class="ss-label">Total Projects</div>
+      <div class="ss-value">${fmt(totals.projects)}</div>
+    </div>
+    <div class="summary-stat">
+      <div class="ss-label">Total Downloads</div>
+      <div class="ss-value">${fmt(totals.downloads)}</div>
+    </div>
+    <div class="summary-stat">
+      <div class="ss-label">Total Versions</div>
+      <div class="ss-value">${fmt(totals.versions)}</div>
+    </div>
+    <div class="summary-stat">
+      <div class="ss-label">Generated</div>
+      <div class="ss-value" style="font-size:14px;">${(d.generated_at || '').slice(0, 16).replace('T', ' ')}</div>
+    </div>
+  `;
+  document.getElementById('navStats').innerHTML = `
+    <span>Projects: <strong>${fmt(totals.projects)}</strong></span>
+    <span>Downloads: <strong>${fmt(totals.downloads)}</strong></span>
+  `;
 
-  container.innerHTML = items.join('');
+  // Top 3 Mods
+  const combined = d.combined || {};
+  const topProjects = combined.top_projects || [];
+  const top3 = topProjects.slice(0, 3);
+  const rankCls = ['rank-1', 'rank-2', 'rank-3'];
+
+  document.getElementById('top3Mods').innerHTML = top3.map((p, i) => `
+    <div class="mod-card ${rankCls[i]}">
+      <div class="rank-badge">${i + 1}</div>
+      <div class="mod-name">${escHtml(p.title || 'Unknown')}</div>
+      <div class="mod-type">${p.project_type || 'mod'}</div>
+      <div class="mod-stats">
+        <div class="stat">
+          <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
+          <div class="stat-label">New Downloads</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">${fmt(p.current_downloads)}</div>
+          <div class="stat-label">Total Downloads</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value ${(p.growth_pct || 0) >= 0 ? 'positive' : 'negative'}">${fmtPct(p.growth_pct)}</div>
+          <div class="stat-label">Growth</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">${(p.categories || []).slice(0, 2).join(', ') || '—'}</div>
+          <div class="stat-label">Categories</div>
+        </div>
+      </div>
+    </div>
+  `).join('') || '<div class="empty">No data yet</div>';
+
+  // Top Categories
+  const catRankings = combined.category_rankings || [];
+  const topCats = catRankings.slice(0, 10);
+  document.getElementById('topCategories').innerHTML = topCats.length ? `
+    <table>
+      <thead><tr>
+        <th>#</th><th>Category</th><th class="num">Projects</th>
+        <th class="num">Total Downloads</th><th class="num">New This Week</th>
+        <th class="num">Growth %</th><th>Types</th>
+      </tr></thead>
+      <tbody>
+        ${topCats.map((c, i) => `
+          <tr>
+            <td>${i + 1}</td>
+            <td><strong>${c.category}</strong></td>
+            <td class="num">${fmt(c.projects)}</td>
+            <td class="num">${fmt(c.total_downloads)}</td>
+            <td class="num positive">${fmtDelta(c.new_downloads)}</td>
+            <td class="num ${(c.growth_pct || 0) >= 0 ? 'positive' : 'negative'}">${fmtPct(c.growth_pct)}</td>
+            <td>${Object.keys(c.types || {}).map(t => `<span class="tag blue" style="margin-right:2px">${t}</span>`).join('')}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  ` : '<div class="empty">No category data yet</div>';
+
+  // Top 5 VL Pairs — each VL pair is a unique combination of version + loader
+  const topVL = combined.top_version_loaders || [];
+  // Deduplicate by (game_version, loader) combination, keeping highest delta
+  const vlMap = new Map();
+  for (const vl of topVL) {
+    const gvs = vl.game_versions || [];
+    const lds = vl.loaders || [];
+    for (const gv of gvs) {
+      for (const ld of lds) {
+        const key = gv + '|' + ld;
+        const existing = vlMap.get(key);
+        if (!existing || (vl.delta_downloads || 0) > (existing.delta_downloads || 0)) {
+          vlMap.set(key, { ...vl, _gv: gv, _ld: ld });
+        }
+      }
+    }
+  }
+  const uniqueVL = Array.from(vlMap.values())
+    .sort((a, b) => (b.delta_downloads || 0) - (a.delta_downloads || 0))
+    .slice(0, 5);
+
+  document.getElementById('topVLPairs').innerHTML = uniqueVL.length ? `
+    <table>
+      <thead><tr>
+        <th>#</th><th>Game Version</th><th>Loader</th><th>Project</th>
+        <th class="num">Delta Downloads</th><th>Type</th>
+      </tr></thead>
+      <tbody>
+        ${uniqueVL.map((vl, i) => `
+          <tr>
+            <td>${i + 1}</td>
+            <td><span class="mono" style="font-weight:600">${vl._gv}</span></td>
+            <td>${loaderTag(vl._ld)}</td>
+            <td>${escHtml(vl.project_title || '—')}</td>
+            <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
+            <td><span class="tag blue">${vl.project_type || 'mod'}</span></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  ` : '<div class="empty">No VL pair data yet</div>';
 }
 
-function renderTable(containerId, headers, rows, formatters) {
-  const el = document.getElementById(containerId);
-  if (!rows || !rows.length) {
-    el.innerHTML = '<div class="empty">No data available yet. Run the workflow first.</div>';
+// ═══════════════════════════════════════════════════════════════════
+//  ANALYSIS PAGE (Decision Engine)
+// ═══════════════════════════════════════════════════════════════════
+
+function renderAnalysis() {
+  const d = reportData;
+  if (!d) return;
+  document.getElementById('page-analysis').style.display = 'block';
+
+  const opp = d.opportunity_analysis;
+  if (!opp || !opp.top_10_opportunities || !opp.top_10_opportunities.length) {
+    document.getElementById('opportunities').innerHTML =
+      '<div class="empty">No opportunity data yet. Run the daily pipeline first.</div>';
+    document.getElementById('emergingConcepts').innerHTML = '';
+    document.getElementById('globalVLPairs').innerHTML = '';
     return;
   }
-  let html = '<table><thead><tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr></thead><tbody>';
-  for (const row of rows) {
-    html += '<tr>';
-    for (let i = 0; i < headers.length; i++) {
-      const val = formatters[i] ? formatters[i](row) : row[headers[i]] ?? '—';
-      html += `<td>${val}</td>`;
-    }
-    html += '</tr>';
+
+  renderOpportunities(opp.top_10_opportunities);
+  renderEmergingConcepts(opp.emerging_concepts || []);
+  renderGlobalVL(opp.global_vl_recommendations || []);
+}
+
+function renderOpportunities(opportunities) {
+  document.getElementById('opportunities').innerHTML = opportunities.map((opp, i) => {
+    const rank = i + 1;
+    const rankCls = rank === 1 ? 'r1' : rank === 2 ? 'r2' : rank === 3 ? 'r3' : 'rn';
+    const confCls = 'confidence-' + (opp.confidence_level || 'low');
+    const topCls = rank <= 3 ? ' rank-top' : '';
+    const scoreCls = opp.opportunity_score >= 60 ? 'high' : opp.opportunity_score >= 40 ? 'med' : 'low';
+    const bestVL = opp.recommended_version_loader;
+    const nextVL = opp.next_best_version_loader;
+    const gw = opp.growth_window;
+    const tte = gw ? gw.time_to_enter : '';
+    const tteLabel = tte === 'build_now' ? 'Build Now' : tte === 'monitor' ? 'Monitor' : tte === 'avoid' ? 'Avoid' : '';
+    const tteCls = tte === 'build_now' ? 'emerald' : tte === 'monitor' ? 'amber' : tte === 'avoid' ? 'rose' : '';
+
+    return `
+    <div class="opp-card ${confCls}${topCls}" style="margin-bottom:12px">
+      <div class="opp-header" onclick="toggleOppDetail(this)">
+        <div class="opp-rank ${rankCls}">${rank}</div>
+        <div class="opp-info">
+          <div class="opp-name">${escHtml(opp.cluster_label || opp.cluster_id)}</div>
+          <div class="opp-meta">
+            <span>${opp.project_count} projects</span>
+            <span>${fmt(opp.total_downloads_in_cluster)} downloads</span>
+            <span class="tag ${opp.confidence_level === 'high' ? 'emerald' : opp.confidence_level === 'medium' ? 'amber' : ''}">${opp.confidence_level || 'low'} confidence</span>
+            ${tte ? `<span class="tag ${tteCls}">${tteLabel}</span>` : ''}
+          </div>
+        </div>
+        <div class="opp-score">
+          <div class="score-num ${scoreCls}">${opp.opportunity_score.toFixed(0)}</div>
+          <div class="score-label">/100</div>
+        </div>
+        <div class="opp-chevron">&#9660;</div>
+      </div>
+      <div class="opp-detail">
+        <div class="opp-detail-inner">
+          <div class="opp-desc">${escHtml(opp.cluster_description || '')}</div>
+          <div class="meter-row">
+            <div class="meter">
+              <div class="meter-label"><span class="name">Demand</span><span class="val" style="color:var(--emerald)">${opp.demand_score.toFixed(1)}</span></div>
+              <div class="meter-bar"><div class="fill demand" style="width:${Math.min(100, opp.demand_score)}%"></div></div>
+            </div>
+            <div class="meter">
+              <div class="meter-label"><span class="name">Supply (Competition)</span><span class="val" style="color:var(--rose)">${opp.supply_score.toFixed(1)}</span></div>
+              <div class="meter-bar"><div class="fill supply" style="width:${Math.min(100, opp.supply_score)}%"></div></div>
+            </div>
+          </div>
+          ${bestVL ? `
+          <div class="info-box">
+            <div class="info-box-header">&#127919; Recommended Target</div>
+            <div class="vl-target">
+              <span class="version mono">${bestVL.game_version}</span>
+              <span class="arrow">&#8594;</span>
+              <span class="loader-name">${bestVL.loader}</span>
+              <span class="sub">(${bestVL.project_count} existing, ${fmtDelta(bestVL.total_delta)} delta)</span>
+              ${bestVL.under_served_boost > 0 ? '<span class="tag emerald">Under-served</span>' : ''}
+            </div>
+            ${nextVL ? `<div class="vl-target" style="margin-top:4px;font-size:11px;color:var(--text-muted)">Next best: <span class="mono">${nextVL.game_version}</span> <span class="arrow">&#8594;</span> <span style="text-transform:capitalize">${nextVL.loader}</span></div>` : ''}
+          </div>` : ''}
+          ${gw ? `
+          <div class="info-box">
+            <div class="info-box-header">&#128200; Growth Forecast</div>
+            <div class="scenario-bands">
+              <div class="scenario-band"><div class="band-label">Conservative</div><div class="band-val" style="color:var(--text-muted)">${fmt(gw.scenario_bands.conservative)}/day</div></div>
+              <div class="scenario-band"><div class="band-label">Base</div><div class="band-val">${fmt(gw.scenario_bands.base)}/day</div></div>
+              <div class="scenario-band"><div class="band-label">Aggressive</div><div class="band-val" style="color:var(--emerald)">${fmt(gw.scenario_bands.aggressive)}/day</div></div>
+            </div>
+          </div>` : ''}
+          ${opp.reason_codes && opp.reason_codes.length ? `
+          <div class="reasons">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px">Why This Ranked Here</div>
+            ${opp.reason_codes.map(rc => `
+              <div class="reason"><div class="dot ${rc.priority}"></div>${escHtml(rc.message)}</div>
+            `).join('')}
+          </div>` : ''}
+          ${opp.risk_flags && opp.risk_flags.length ? `
+          <div class="risk-flags">
+            ${opp.risk_flags.map(rf => `<span class="risk-flag sev-${rf.severity}" title="${escHtml(rf.message)}">${rf.type.replace(/_/g, ' ')}</span>`).join('')}
+          </div>` : ''}
+          ${opp.top_example_projects && opp.top_example_projects.length ? `
+          <div class="example-projects" style="margin-top:8px">
+            ${opp.top_example_projects.map(n => `<span class="example-proj">${escHtml(n)}</span>`).join('')}
+          </div>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderEmergingConcepts(concepts) {
+  if (!concepts.length) {
+    document.getElementById('emergingConcepts').innerHTML = '<div class="empty">No emerging concepts detected yet</div>';
+    return;
   }
-  html += '</tbody></table>';
-  el.innerHTML = html;
+  document.getElementById('emergingConcepts').innerHTML = concepts.slice(0, 6).map(c => `
+    <div class="emerging-card">
+      <div class="e-name">${escHtml(c.cluster_label || c.cluster_id)}</div>
+      <div class="e-stats">
+        ${c.project_count} projects &middot; +${fmt(c.growth_velocity)}/hr &middot; Score: ${(c.opportunity_score || 0).toFixed(1)}
+      </div>
+      ${c.top_examples ? `<div class="example-projects">${c.top_examples.slice(0,3).map(n => `<span class="example-proj">${escHtml(n)}</span>`).join('')}</div>` : ''}
+    </div>
+  `).join('');
 }
 
-function renderOpportunity(data) {
-  const rows = data.category_opportunity || [];
-  renderTable('tab-content-opportunity', ['Category', 'Projects', 'Avg Downloads', 'New Today', 'Opportunity Score', 'Avg Δ%'], rows, [
-    r => r.category,
-    r => r.projects.toLocaleString(),
-    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
-    r => `<span class="num">${r.new_downloads.toLocaleString()}</span>`,
-    r => `<span class="num"><strong>${r.opportunity_score}</strong></span>`,
-    r => `<span class="num ${r.avg_change_pct >= 0 ? 'positive' : 'negative'}">${r.avg_change_pct >= 0 ? '+' : ''}${r.avg_change_pct}%</span>`,
-  ]);
-}
-
-function renderRankings(data) {
-  const rows = data.category_rankings || [];
-  renderTable('tab-content-rankings', ['#', 'Category', 'Projects', 'Total Downloads', 'Avg Downloads', 'New Today', 'Growth %'], rows, [
-    (r, i) => i + 1,
-    r => r.category,
-    r => r.projects.toLocaleString(),
-    r => `<span class="num">${r.total_downloads.toLocaleString()}</span>`,
-    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
-    r => `<span class="num">${r.new_downloads.toLocaleString()}</span>`,
-    r => `<span class="num ${r.growth_pct >= 0 ? 'positive' : 'negative'}">${r.growth_pct >= 0 ? '+' : ''}${r.growth_pct}%</span>`,
-  ]);
-}
-
-function renderSynergies(data) {
-  const rows = data.cross_category_synergies || [];
-  renderTable('tab-content-synergies', ['Combination', 'Avg Downloads', 'Projects', 'Boost Factor'], rows, [
-    r => r.combination ? r.combination.join(' + ') : '—',
-    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
-    r => r.projects.toLocaleString(),
-    r => `<span class="num"><strong>${r.boost_factor}x</strong></span>`,
-  ]);
-}
-
-function renderCombos(data) {
-  const rows = data.category_loader_combos || [];
-  renderTable('tab-content-combos', ['Category', 'Loader', 'Projects', 'Total Downloads', 'Avg / Project'], rows, [
-    r => r.category,
-    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
-    r => r.projects.toLocaleString(),
-    r => `<span class="num">${r.total_downloads.toLocaleString()}</span>`,
-    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
-  ]);
-}
-
-function renderSaturation(data) {
-  const sat = data.market_saturation || {};
-  const over = sat.oversaturated || [];
-  const under = sat.underserved || [];
-  let html = '<div class="flex-wrap">';
-
-  html += '<div class="flex-grow">';
-  html += '<h3>🔴 Oversaturated (Avoid)</h3>';
-  if (over.length) {
-    html += '<table><thead><tr><th>Category</th><th>Projects</th><th>Avg Downloads</th></tr></thead><tbody>';
-    for (const r of over) html += `<tr><td>${r.category}</td><td class="num">${r.projects.toLocaleString()}</td><td class="num">${r.avg_downloads.toLocaleString()}</td></tr>`;
-    html += '</tbody></table>';
-  } else {
-    html += '<div class="empty">None found</div>';
+function renderGlobalVL(pairs) {
+  if (!pairs.length) {
+    document.getElementById('globalVLPairs').innerHTML = '<div class="empty">No VL pair data yet</div>';
+    return;
   }
-  html += '</div>';
-
-  html += '<div class="flex-grow">';
-  html += '<h3>🟢 Under-Served (Opportunity)</h3>';
-  if (under.length) {
-    html += '<table><thead><tr><th>Category</th><th>Projects</th><th>Avg Downloads</th></tr></thead><tbody>';
-    for (const r of under) html += `<tr><td>${r.category}</td><td class="num">${r.projects.toLocaleString()}</td><td class="num">${r.avg_downloads.toLocaleString()}</td></tr>`;
-    html += '</tbody></table>';
-  } else {
-    html += '<div class="empty">None found</div>';
-  }
-  html += '</div></div>';
-
-  document.getElementById('tab-content-saturation').innerHTML = html;
+  document.getElementById('globalVLPairs').innerHTML = `
+    <table>
+      <thead><tr>
+        <th>#</th><th>Game Version</th><th>Loader</th><th class="num">Projects</th>
+        <th class="num">Delta</th><th class="num">Score</th>
+      </tr></thead>
+      <tbody>
+        ${pairs.slice(0, 15).map((p, i) => `
+          <tr>
+            <td>${i + 1}</td>
+            <td><span class="mono" style="font-weight:600">${p.game_version}</span></td>
+            <td>${loaderTag(p.loader)}</td>
+            <td class="num">${p.project_count}</td>
+            <td class="num positive">${fmtDelta(p.total_delta)}</td>
+            <td class="num"><span style="font-weight:600;color:${p.opportunity_score >= 50 ? 'var(--emerald)' : p.opportunity_score >= 30 ? 'var(--amber)' : 'var(--text-muted)'}">${(p.opportunity_score || 0).toFixed(1)}</span></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
 }
 
-function renderMomentum(data) {
-  const rows = data.growth_momentum || [];
-  renderTable('tab-content-momentum', ['Category', 'Momentum %', 'Signal', 'Avg Daily New Downloads'], rows, [
-    r => r.category,
-    r => `<span class="num ${r.momentum_pct >= 0 ? 'positive' : 'negative'}">${r.momentum_pct >= 0 ? '+' : ''}${r.momentum_pct}%</span>`,
-    r => r.signal || '—',
-    r => `<span class="num">${(r.avg_daily_new || 0).toLocaleString()}</span>`,
-  ]);
+// ── Toggle opportunity detail ──────────────────────────────────────
+function toggleOppDetail(header) {
+  const detail = header.nextElementSibling;
+  const chevron = header.querySelector('.opp-chevron');
+  const isOpen = detail.classList.contains('open');
+  detail.classList.toggle('open', !isOpen);
+  chevron.innerHTML = isOpen ? '&#9660;' : '&#9650;';
 }
 
-function renderLoaders(data) {
-  const rows = data.loader_market_fit || [];
-  renderTable('tab-content-loaders', ['Loader', 'Projects', 'Market Share', 'Download Share', 'Efficiency'], rows, [
-    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
-    r => r.projects.toLocaleString(),
-    r => `${r.market_share}%`,
-    r => `${r.download_share}%`,
-    r => `<span class="num"><strong>${r.efficiency_ratio}</strong></span>`,
-  ]);
-}
-
-function renderVersions(data) {
-  const rows = data.version_lifecycle || [];
-  renderTable('tab-content-versions', ['Version', 'Stage', 'Projects', 'Total Downloads'], rows, [
-    r => r.version,
-    r => {
-      const colors = { emerging: 'green', peak: 'orange', mature: 'purple', legacy: 'red' };
-      return `<span class="tag ${colors[r.stage] || 'orange'}">${r.stage}</span>`;
-    },
-    r => r.projects.toLocaleString(),
-    r => `<span class="num">${r.total_downloads.toLocaleString()}</span>`,
-  ]);
-}
-
-function renderGaps(data) {
-  const rows = data.market_gaps || [];
-  renderTable('tab-content-gaps', ['Category', 'Loader', 'Current Projects', 'Total in Category', 'Avg Downloads', 'Loader Share', 'Gap Score'], rows, [
-    r => r.category,
-    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
-    r => r.current_projects.toLocaleString(),
-    r => r.total_projects.toLocaleString(),
-    r => `<span class="num">${r.avg_downloads.toLocaleString()}</span>`,
-    r => `${r.loader_share}%`,
-    r => `<span class="num"><strong>${r.gap_score}</strong></span>`,
-  ]);
-}
-
-function renderRecommendations(data) {
-  const rows = data.investment_recommendations || [];
-  renderTable('tab-content-recommendations', ['Rank', 'What to Build', 'Loader', 'Expected Downloads', 'Competition', 'Risk', 'ROI', 'Reasoning'], rows, [
-    r => r.rank,
-    r => `<strong>${r.category}</strong>`,
-    r => `<span class="tag ${r.loader === 'fabric' ? 'green' : r.loader === 'forge' ? 'orange' : r.loader === 'neoforge' ? 'purple' : 'red'}">${r.loader}</span>`,
-    r => `<span class="num">${r.expected_downloads.toLocaleString()}</span>`,
-    r => {
-      const c = { Low: 'green', Medium: 'orange', High: 'red' };
-      return `<span class="tag ${c[r.competition] || 'orange'}">${r.competition}</span>`;
-    },
-    r => `${r.risk_score}/10`,
-    r => {
-      const c = { High: 'green', Medium: 'orange', Low: 'red' };
-      return `<span class="tag ${c[r.roi] || 'orange'}">${r.roi}</span>`;
-    },
-    r => r.reasoning || '—',
-  ]);
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 </script>
 </body>
