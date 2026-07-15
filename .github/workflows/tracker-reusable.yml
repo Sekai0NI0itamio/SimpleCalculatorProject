@@ -28,7 +28,7 @@ jobs:
   # ──────────────────────────────────────────────────────────────
   discover:
     runs-on: ubuntu-latest
-    if: ${{ inputs.is_main }}
+    if: ${{ inputs.is_main == true }}
     outputs:
       partition_list: ${{ steps.set-matrix.outputs.partition_list }}
     steps:
@@ -63,7 +63,7 @@ jobs:
   # ──────────────────────────────────────────────────────────────
   load-discovery:
     runs-on: ubuntu-latest
-    if: ${{ !inputs.is_main }}
+    if: ${{ inputs.is_main != true }}
     outputs:
       partition_list: ${{ steps.set-matrix.outputs.partition_list }}
     steps:
@@ -96,7 +96,7 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - name: Download discovery data (main hour)
-        if: ${{ inputs.is_main }}
+        if: ${{ inputs.is_main == true }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.project_type }}-discovery
@@ -115,7 +115,7 @@ jobs:
   # ──────────────────────────────────────────────────────────────
   split-versions:
     needs: fetch-projects
-    if: ${{ inputs.is_main }}
+    if: ${{ inputs.is_main == true }}
     runs-on: ubuntu-latest
     outputs:
       version_chunk_list: ${{ steps.set-matrix.outputs.version_chunk_list }}
@@ -153,7 +153,7 @@ jobs:
   # ──────────────────────────────────────────────────────────────
   fetch-versions:
     needs: split-versions
-    if: ${{ inputs.is_main }}
+    if: ${{ inputs.is_main == true }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -196,7 +196,7 @@ jobs:
 
       # Download discovery data (for categories.json + loaders.json used by analyze)
       - name: Download discovery data (main hour)
-        if: ${{ inputs.is_main }}
+        if: ${{ inputs.is_main == true }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.project_type }}-discovery
@@ -212,7 +212,7 @@ jobs:
 
       # Download all version results (MAIN HOUR ONLY)
       - name: Download all version results
-        if: ${{ inputs.is_main }}
+        if: ${{ inputs.is_main == true }}
         uses: actions/download-artifact@v4
         with:
           pattern: ${{ inputs.project_type }}-version-results-*
@@ -229,7 +229,7 @@ jobs:
 
       # MAIN HOUR: Merge versions
       - name: Merge versions
-        if: ${{ inputs.is_main }}
+        if: ${{ inputs.is_main == true }}
         run: python src/fetch_versions.py --project-type ${{ inputs.project_type }} --merge
 
       # ALWAYS: Snapshot
@@ -238,22 +238,22 @@ jobs:
 
       # MAIN HOUR: Main analysis
       - name: Main analysis
-        if: ${{ inputs.is_main }}
+        if: ${{ inputs.is_main == true }}
         run: python src/analyze.py --project-type ${{ inputs.project_type }}
 
       # MAIN HOUR: Render main charts
       - name: Render main charts
-        if: ${{ inputs.is_main }}
+        if: ${{ inputs.is_main == true }}
         run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode main
 
       # SUB HOUR: Predictive analysis
       - name: Predictive analysis
-        if: ${{ !inputs.is_main }}
+        if: ${{ inputs.is_main != true }}
         run: python src/predictive_analyze.py --project-type ${{ inputs.project_type }}
 
       # SUB HOUR: Render sub charts
       - name: Render sub charts
-        if: ${{ !inputs.is_main }}
+        if: ${{ inputs.is_main != true }}
         run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode sub
 
       # Commit data files to git
@@ -291,7 +291,7 @@ jobs:
 
       # Upload DB (main hour only — sub hours don't change versions)
       - name: Upload DB
-        if: ${{ inputs.is_main }}
+        if: ${{ inputs.is_main == true }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.project_type }}-db
