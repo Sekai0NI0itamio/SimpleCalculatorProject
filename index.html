@@ -134,6 +134,30 @@
   .mod-card .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
   .mod-card .stat-value.positive { color: var(--green); }
 
+  .ranking-tab {
+    background: transparent;
+    border: 1px solid rgba(48,54,61,0.8);
+    color: var(--text-muted);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .ranking-tab:hover { border-color: rgba(88,166,255,0.4); color: var(--text-primary); }
+  .ranking-tab.active { background: rgba(88,166,255,0.12); border-color: var(--accent); color: var(--accent); }
+
+  .view-all-link {
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    color: var(--accent);
+    cursor: pointer;
+    border-radius: 0 0 6px 6px;
+    transition: background 0.15s;
+  }
+  .view-all-link:hover { background: rgba(88,166,255,0.06); }
+
   /* Tables */
   table {
     width: 100%; border-collapse: collapse; font-size: 13px;
@@ -602,7 +626,7 @@ function renderPerTypeCharts(pt) {
       ${CHART_NAMES.map(c => `
         <div class="chart-card">
           <div class="chart-label">${c.label}</div>
-          <img src="data/${pt}/charts/${c.file}.png" alt="${c.label}" loading="lazy"
+          <img src="data/${pt}/charts/${c.file}.png?_=${new Date().getTime()}" alt="${c.label}" loading="lazy"
                onerror="this.parentElement.style.display='none'"
                onload="this.classList.remove('loading-img')"
                class="loading-img">
@@ -614,36 +638,89 @@ function renderPerTypeCharts(pt) {
 function renderPerTypeTopProjects(info, pt) {
   const projects = info.top_projects || [];
   if (!projects.length) return '';
-  const top3 = projects.slice(0, 3);
+  const bias = info.composition_bias || {};
+  const growth = info.growth_ranking || [];
+  const adjusted = info.heavy_hitter_adjusted || [];
+  const stars = info.rising_stars || [];
+
+  // Choose the best ranking to show by default
+  const defaultRanking = 'growth'; // growth | adjusted | delta | stars
   const rankCls = ['rank-1','rank-2','rank-3'];
+
   return `
-    <div class="section-title" style="font-size:14px; margin-bottom:10px;">Top 3 Growing in ${PT_LABELS[pt]||pt}</div>
-    <div class="grid-3" style="margin-bottom:20px;">
-      ${top3.map((p,i) => `
-        <div class="mod-card ${rankCls[i]}">
-          <div class="rank-badge">${i+1}</div>
-          <div class="mod-name">${escHtml(p.title||'Unknown')}</div>
-          <div class="mod-stats">
-            <div class="stat">
-              <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
-              <div class="stat-label">New Downloads</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">${fmt(p.current_downloads)}</div>
-              <div class="stat-label">Total</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value ${(p.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(p.growth_pct)}</div>
-              <div class="stat-label">Growth</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">${(p.categories||[]).slice(0,2).join(', ')||'—'}</div>
-              <div class="stat-label">Categories</div>
-            </div>
-          </div>
-        </div>
-      `).join('')}
+    <div class="section-title" style="font-size:14px; margin-bottom:6px;">Top Projects — ${PT_LABELS[pt]||pt}</div>
+    ${bias.is_heavy_hitter_driven ? `
+    <div class="section" style="margin-bottom:12px; padding:10px 14px; border-left:3px solid var(--amber); background:rgba(245,158,11,0.06); border-radius:0 6px 6px 0;">
+      <div style="font-size:13px; color:var(--amber); font-weight:600;">&#9888; Heavy-Hitter Bias Detected</div>
+      <div style="font-size:12px; color:var(--text-muted);">${bias.interpretation||''}</div>
+      <div style="font-size:12px; color:var(--text-muted);">Top 3: ${(bias.top3_projects||[]).map(p=>escHtml(p.title)).join(', ')} account for ${bias.top3_share_pct}% of growth.</div>
+    </div>` : ''}
+
+    <div class="ranking-tabs" style="margin-bottom:12px; display:flex; gap:6px; flex-wrap:wrap;">
+      <button class="ranking-tab active" data-rk="growth" onclick="switchRanking(this,'${pt}','growth')">Growth Rate</button>
+      <button class="ranking-tab" data-rk="adjusted" onclick="switchRanking(this,'${pt}','adjusted')">Heavy-Hitter Adjusted</button>
+      <button class="ranking-tab" data-rk="delta" onclick="switchRanking(this,'${pt}','delta')">Absolute Delta</button>
+      <button class="ranking-tab" data-rk="stars" onclick="switchRanking(this,'${pt}','stars')">Rising Stars</button>
+    </div>
+
+    <div class="ranking-panel" id="ranking-${pt}-growth" style="display:block;">
+      ${renderRankingTable(growth.slice(0,10), 'growth_pct', pt)}
+      <div class="view-all-link" onclick="toggleFullList('${pt}-growth')">View all ${growth.length} &#9660;</div>
+      <div id="full-${pt}-growth" style="display:none;">${renderRankingTable(growth.slice(10), 'growth_pct', pt)}</div>
+    </div>
+    <div class="ranking-panel" id="ranking-${pt}-adjusted" style="display:none;">
+      ${renderRankingTable(adjusted.slice(0,10), 'delta_downloads', pt)}
+      <div class="view-all-link" onclick="toggleFullList('${pt}-adjusted')">View all ${adjusted.length} &#9660;</div>
+      <div id="full-${pt}-adjusted" style="display:none;">${renderRankingTable(adjusted.slice(10), 'delta_downloads', pt)}</div>
+    </div>
+    <div class="ranking-panel" id="ranking-${pt}-delta" style="display:none;">
+      ${renderRankingTable(projects.slice(0,10), 'delta_downloads', pt)}
+      <div class="view-all-link" onclick="toggleFullList('${pt}-delta')">View all ${projects.length} &#9660;</div>
+      <div id="full-${pt}-delta" style="display:none;">${renderRankingTable(projects.slice(10), 'delta_downloads', pt)}</div>
+    </div>
+    <div class="ranking-panel" id="ranking-${pt}-stars" style="display:none;">
+      ${renderRankingTable(stars.slice(0,10), 'growth_pct', pt)}
+      <div class="view-all-link" onclick="toggleFullList('${pt}-stars')">View all ${stars.length} &#9660;</div>
+      <div id="full-${pt}-stars" style="display:none;">${renderRankingTable(stars.slice(10), 'growth_pct', pt)}</div>
     </div>`;
+}
+
+function renderRankingTable(items, sortKey, pt) {
+  if (!items.length) return '<div class="empty" style="padding:20px;">No projects in this ranking</div>';
+  return `<table>
+    <thead><tr>
+      <th>#</th><th>Project</th><th class="num">New</th><th class="num">Total</th><th class="num">Growth</th><th>Categories</th>
+    </tr></thead>
+    <tbody>${items.map((p,i) => `
+      <tr>
+        <td>${i+1}</td>
+        <td><strong>${escHtml(p.title||'Unknown')}</strong></td>
+        <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
+        <td class="num">${fmt(p.current_downloads)}</td>
+        <td class="num ${(p.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(p.growth_pct)}</td>
+        <td>${(p.categories||[]).slice(0,2).join(', ')||'—'}</td>
+      </tr>`).join('')}
+    </tbody></table>`;
+}
+
+function switchRanking(btn, pt, rk) {
+  btn.parentElement.querySelectorAll('.ranking-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[id^="ranking-' + pt + '-"]').forEach(p => p.style.display = 'none');
+  const panel = document.getElementById('ranking-' + pt + '-' + rk);
+  if (panel) panel.style.display = 'block';
+}
+
+function toggleFullList(id) {
+  const el = document.getElementById('full-' + id);
+  const link = el.previousElementSibling;
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    link.innerHTML = 'Collapse &#9650;';
+  } else {
+    el.style.display = 'none';
+    link.innerHTML = 'View all &#9660;';
+  }
 }
 
 function renderPerTypeCategories(info, pt) {
@@ -674,7 +751,8 @@ function renderPerTypeCategories(info, pt) {
 
 function renderTop3Combined(d) {
   const combined = d.combined || {};
-  const top3 = (combined.top_projects || []).slice(0, 3);
+  // Use growth_ranking if available, otherwise fall back to top_projects
+  const top3 = (combined.growth_ranking || combined.top_projects || []).slice(0, 3);
   const rankCls = ['rank-1','rank-2','rank-3'];
   document.getElementById('top3Mods').innerHTML = top3.length ? top3.map((p,i) => `
     <div class="mod-card ${rankCls[i]}">
@@ -683,16 +761,16 @@ function renderTop3Combined(d) {
       <div class="mod-type">${p.project_type||'mod'}</div>
       <div class="mod-stats">
         <div class="stat">
-          <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
-          <div class="stat-label">New Downloads</div>
+          <div class="stat-value positive">${fmtPct(p.growth_pct)}</div>
+          <div class="stat-label">Growth Rate</div>
         </div>
         <div class="stat">
           <div class="stat-value">${fmt(p.current_downloads)}</div>
           <div class="stat-label">Total</div>
         </div>
         <div class="stat">
-          <div class="stat-value ${(p.growth_pct||0)>=0?'positive':'negative'}">${fmtPct(p.growth_pct)}</div>
-          <div class="stat-label">Growth</div>
+          <div class="stat-value positive">${fmtDelta(p.delta_downloads)}</div>
+          <div class="stat-label">New</div>
         </div>
         <div class="stat">
           <div class="stat-value">${(p.categories||[]).slice(0,2).join(', ')||'—'}</div>

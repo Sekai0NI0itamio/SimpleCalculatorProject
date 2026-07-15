@@ -304,6 +304,74 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
     top_projects.sort(key=lambda x: x["delta_downloads"], reverse=True)
     top_projects = top_projects[:100]
 
+    # ═══════════════════════════════════════════════════════════════
+    #  COMPOSITION BIAS TEST (Analytical Decision Protocol Phase 3A)
+    # ═══════════════════════════════════════════════════════════════
+    #  "If top 3 items account for > 60% of the group's delta,
+    #   it's NOT a genuine trend — it's a heavy-hitter effect."
+    # ═══════════════════════════════════════════════════════════════
+    total_delta = sum(p["delta_downloads"] for p in top_projects if p["delta_downloads"] > 0)
+    top3_delta = sum(p["delta_downloads"] for p in top_projects[:3] if p["delta_downloads"] > 0)
+    top3_pct = (top3_delta / total_delta * 100) if total_delta > 0 else 0
+    composition_bias = {
+        "total_positive_delta": total_delta,
+        "top3_delta": top3_delta,
+        "top3_share_pct": round(top3_pct, 2),
+        "is_heavy_hitter_driven": top3_pct > 60,
+        "top3_projects": [
+            {"title": p["title"], "delta": p["delta_downloads"], "pct_of_total": round(p["delta_downloads"]/total_delta*100,2) if total_delta > 0 else 0}
+            for p in top_projects[:3] if p["delta_downloads"] > 0
+        ],
+        "interpretation": (
+            f"Top 3 projects account for {top3_pct:.1f}% of all growth. "
+            + ("This is a HEAVY-HITTER EFFECT — the ranking reflects popularity, not genuine trends."
+               if top3_pct > 60 else
+               "Growth is broadly distributed — this represents a genuine trend across the ecosystem.")
+        ),
+    }
+
+    # ═══════════════════════════════════════════════════════════════
+    #  HEAVY-HITTER REMOVAL TEST (Protocol Phase 3B)
+    # ═══════════════════════════════════════════════════════════════
+    #  Remove top 5% by total downloads and re-rank
+    # ═══════════════════════════════════════════════════════════════
+    downloads_sorted = sorted([p["current_downloads"] for p in top_projects], reverse=True)
+    top5pct_threshold = downloads_sorted[max(0, min(len(downloads_sorted) - 1, int(len(downloads_sorted) * 0.05)))] if downloads_sorted else 0
+    heavy_hitter_adjusted = [
+        p for p in top_projects
+        if p["current_downloads"] < top5pct_threshold and p["delta_downloads"] > 0
+    ]
+    heavy_hitter_adjusted.sort(key=lambda x: x["delta_downloads"], reverse=True)
+    heavy_hitter_adjusted = heavy_hitter_adjusted[:50]
+
+    # ═══════════════════════════════════════════════════════════════
+    #  GROWTH RATE RANKING (by percentage, not absolute)
+    # ═══════════════════════════════════════════════════════════════
+    #  Filter: baseline > 1000 downloads (avoid noise from tiny mods)
+    #  Sort by growth_pct descending
+    # ═══════════════════════════════════════════════════════════════
+    growth_ranking = [
+        p for p in top_projects
+        if p["baseline_downloads"] > 1000 and p["delta_downloads"] > 0
+    ]
+    growth_ranking.sort(key=lambda x: x["growth_pct"], reverse=True)
+    growth_ranking = growth_ranking[:50]
+
+    # ═══════════════════════════════════════════════════════════════
+    #  RISING STARS (Protocol Phase 3D — alternative explanations)
+    # ═══════════════════════════════════════════════════════════════
+    #  Mods with high growth rates but NOT already massive
+    #  Baseline < 100,000 downloads, growth > 0.5%, delta > 100
+    # ═══════════════════════════════════════════════════════════════
+    rising_stars = [
+        p for p in top_projects
+        if p["baseline_downloads"] < 100000
+        and p["delta_downloads"] > 100
+        and p["growth_pct"] > 0.5
+    ]
+    rising_stars.sort(key=lambda x: x["growth_pct"], reverse=True)
+    rising_stars = rising_stars[:50]
+
     # ── Top version+loader growth ─────────────────────────────────
     project_title_map = {p["project_id"]: p.get("title", "") for p in current_projects}
     top_version_loaders = []
@@ -445,6 +513,10 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         "concentration": concentration,
         "category_loader_combos": category_loader_combos,
         "recommendations": recommendations,
+        "composition_bias": composition_bias,
+        "heavy_hitter_adjusted": heavy_hitter_adjusted,
+        "growth_ranking": growth_ranking,
+        "rising_stars": rising_stars,
     }
 
 

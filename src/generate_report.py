@@ -59,6 +59,8 @@ def combine_analyses(data_dir):
             "top_version_loaders": [],
             "category_rankings": [],
             "loader_rankings": [],
+            "growth_ranking": [],
+            "rising_stars": [],
         },
         "opportunity_analysis": None,
     }
@@ -67,6 +69,8 @@ def combine_analyses(data_dir):
     all_top_vl = []
     all_category_rankings = {}
     all_loader_rankings = {}
+    all_growth_ranking = []
+    all_rising_stars = []
 
     for pt in PROJECT_TYPES:
         analysis = load_latest_analysis(data_dir, pt)
@@ -84,11 +88,29 @@ def combine_analyses(data_dir):
             "top_projects": analysis.get("top_projects", [])[:20],
             "top_version_loaders": analysis.get("top_version_loaders", [])[:20],
             "trending_analysis": analysis.get("trending_analysis", {}),
+            "composition_bias": analysis.get("composition_bias", {}),
+            "growth_ranking": analysis.get("growth_ranking", [])[:20],
+            "heavy_hitter_adjusted": analysis.get("heavy_hitter_adjusted", [])[:20],
+            "rising_stars": analysis.get("rising_stars", [])[:20],
         }
 
         # Collect top projects with type prefix
         for p in analysis.get("top_projects", []):
             all_top_projects.append({
+                **p,
+                "project_type": pt,
+            })
+
+        # Collect growth ranking with type prefix
+        for p in analysis.get("growth_ranking", []):
+            all_growth_ranking.append({
+                **p,
+                "project_type": pt,
+            })
+
+        # Collect rising stars with type prefix
+        for p in analysis.get("rising_stars", []):
+            all_rising_stars.append({
                 **p,
                 "project_type": pt,
             })
@@ -142,6 +164,12 @@ def combine_analyses(data_dir):
     # Sort and deduplicate
     all_top_projects.sort(key=lambda x: x.get("delta_downloads", 0), reverse=True)
     report["combined"]["top_projects"] = all_top_projects[:50]
+
+    all_growth_ranking.sort(key=lambda x: x.get("growth_pct", 0), reverse=True)
+    report["combined"]["growth_ranking"] = all_growth_ranking[:50]
+
+    all_rising_stars.sort(key=lambda x: x.get("growth_pct", 0), reverse=True)
+    report["combined"]["rising_stars"] = all_rising_stars[:50]
 
     all_top_vl.sort(key=lambda x: x.get("delta_downloads", 0), reverse=True)
     report["combined"]["top_version_loaders"] = all_top_vl[:50]
