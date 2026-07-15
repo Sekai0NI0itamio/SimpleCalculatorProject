@@ -325,6 +325,13 @@ def collect_run_history(data_dir):
             },
         })
 
+    # Filter out empty runs (no data collected)
+    runs = [r for r in runs if not (
+        r["totals"]["projects"] == 0 and
+        r["totals"]["versions"] == 0 and
+        r["totals"]["downloads"] == 0
+    )]
+
     # Sort by start time descending (newest first)
     runs.sort(key=lambda r: r["start_time"], reverse=True)
     return runs
