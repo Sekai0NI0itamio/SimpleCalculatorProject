@@ -352,7 +352,7 @@
     <div class="summary-stats" id="historySummary"></div>
     <!-- Next Run Countdown -->
     <div class="section" style="margin-bottom:24px;">
-      <div class="pt-summary" style="grid-template-columns:1fr 1fr 1fr;">
+      <div class="pt-summary" style="grid-template-columns:1fr 1fr 1fr 1fr;">
         <div class="pt-stat" style="border-color:rgba(88,166,255,0.3);background:rgba(88,166,255,0.03);">
           <div class="pt-label">Next Run (UTC)</div>
           <div class="pt-value" id="nextRunUtc" style="font-size:14px;font-family:monospace;">—</div>
@@ -361,7 +361,12 @@
         <div class="pt-stat" style="border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.03);">
           <div class="pt-label">Next Run (Beijing)</div>
           <div class="pt-value" id="nextRunBeijing" style="font-size:14px;font-family:monospace;">—</div>
-          <div class="ss-meta" id="nextRunCountdown">—</div>
+          <div class="ss-meta">UTC+8 &middot; every 2 hours</div>
+        </div>
+        <div class="pt-stat" style="border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.03);">
+          <div class="pt-label">Countdown</div>
+          <div class="pt-value" id="nextRunCountdown" style="font-size:22px;font-family:'SF Mono','Consolas',monospace;color:var(--amber);">—</div>
+          <div class="ss-meta">until next data retrieval</div>
         </div>
         <div class="pt-stat" id="workflowStatusCard" style="border-color:rgba(139,148,158,0.3);background:rgba(139,148,158,0.02);">
           <div class="pt-label">Workflow Status</div>
