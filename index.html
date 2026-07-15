@@ -285,7 +285,7 @@
   </div>
 
   <!-- ========== HOME PAGE ========== -->
-  <div id="page-home" class="page active" style="display:none">
+  <div id="page-home" class="page active">
     <div class="page-header">
       <h1>Market Overview</h1>
       <div class="subtitle">Top movers and charts across all Modrinth project types</div>
@@ -321,7 +321,7 @@
   </div>
 
   <!-- ========== ANALYSIS PAGE ========== -->
-  <div id="page-analysis" class="page" style="display:none">
+  <div id="page-analysis" class="page">
     <div class="page-header">
       <h1>Decision Engine</h1>
       <div class="subtitle">Top 10 mods you should build next — ranked by opportunity score</div>
@@ -344,12 +344,27 @@
   </div>
 
   <!-- ========== HISTORY OF RUNS PAGE ========== -->
-  <div id="page-history" class="page" style="display:none">
+  <div id="page-history" class="page">
     <div class="page-header">
       <h1>History of Runs</h1>
       <div class="subtitle">Every data retrieval, its timestamp, and how much data was evaluated</div>
     </div>
     <div class="summary-stats" id="historySummary"></div>
+    <!-- Next Run Countdown -->
+    <div class="section" style="margin-bottom:24px;">
+      <div class="pt-summary" style="grid-template-columns:1fr 1fr;">
+        <div class="pt-stat" style="border-color:rgba(88,166,255,0.3);background:rgba(88,166,255,0.03);">
+          <div class="pt-label">Next Run (UTC)</div>
+          <div class="pt-value" id="nextRunUtc" style="font-size:16px;font-family:monospace;">—</div>
+          <div class="ss-meta">Every 2 hours at even UTC hours</div>
+        </div>
+        <div class="pt-stat" style="border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.03);">
+          <div class="pt-label">Countdown</div>
+          <div class="pt-value" id="nextRunCountdown" style="font-size:18px;font-family:monospace;color:var(--emerald);">—</div>
+          <div class="ss-meta" id="nextRunBeijing">Beijing: —</div>
+        </div>
+      </div>
+    </div>
     <div class="section">
       <div class="section-title">All Runs</div>
       <div class="section-subtitle">Click a run to expand and see per-project-type breakdown</div>
@@ -398,6 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderHome();
       renderAnalysis();
       renderHistory();
+      startCountdown();
     })
     .catch(() => {
       document.getElementById('loading').innerHTML = `
@@ -431,7 +447,6 @@ function escHtml(s) {
 function renderHome() {
   const d = reportData;
   if (!d) return;
-  document.getElementById('page-home').style.display = 'block';
 
   const totals = d.totals || {};
   document.getElementById('summaryStats').innerHTML = `
@@ -712,7 +727,6 @@ function renderTopVLPairs(d) {
 function renderAnalysis() {
   const d = reportData;
   if (!d) return;
-  document.getElementById('page-analysis').style.display = 'block';
   const opp = d.opportunity_analysis;
   if (!opp || !opp.top_10_opportunities || !opp.top_10_opportunities.length) {
     document.getElementById('opportunities').innerHTML = '<div class="empty">No opportunity data yet. Run the daily pipeline (00:00 UTC) first.</div>';
@@ -847,10 +861,52 @@ function toggleOppDetail(header) {
 //  HISTORY OF RUNS PAGE
 // ═══════════════════════════════════════════════════════════════════
 
+let countdownTimer = null;
+
+function startCountdown() {
+  if (countdownTimer) clearInterval(countdownTimer);
+
+  function update() {
+    const now = new Date();
+    // Next even UTC hour (0, 2, 4, ... 22)
+    const next = new Date(Date.UTC(
+      now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
+      now.getUTCHours(), 0, 0, 0
+    ));
+    // If current hour is odd, or we're past the current even hour's start,
+    // advance to the next even hour
+    if (now.getUTCHours() % 2 !== 0) {
+      next.setUTCHours(now.getUTCHours() + 1);
+    } else if (now.getTime() >= next.getTime()) {
+      next.setUTCHours(now.getUTCHours() + 2);
+    }
+
+    const diff = next.getTime() - now.getTime();
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    const cdStr = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    const utcStr = next.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,' UTC');
+
+    const bj = new Date(next.getTime() + 8 * 3600000);
+    const bjStr = bj.toISOString().replace('T',' ').replace(/:\d{2}\.\d{3}Z$/,'');
+
+    const utcEl = document.getElementById('nextRunUtc');
+    const cdEl = document.getElementById('nextRunCountdown');
+    const bjEl = document.getElementById('nextRunBeijing');
+    if (utcEl) utcEl.textContent = utcStr;
+    if (cdEl) cdEl.textContent = cdStr;
+    if (bjEl) bjEl.textContent = 'Beijing: ' + bjStr;
+  }
+
+  update();
+  countdownTimer = setInterval(update, 1000);
+}
+
 function renderHistory() {
   const d = reportData;
   if (!d) return;
-  document.getElementById('page-history').style.display = 'block';
 
   const runs = d.run_history || [];
   if (!runs.length) {
