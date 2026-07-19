@@ -1,106 +1,707 @@
 {
-  "timestamp": "2026-07-19T19-22-42",
+  "timestamp": "2026-07-19T21-26-04",
   "date": "2026-07-19",
   "project_type": "modpack",
   "analysis_type": "hourly",
   "baseline_date": "2026-07-19",
   "hours_between": 2,
   "summary": {
-    "total_projects": 16651,
-    "total_versions": 154705,
-    "total_downloads": 141812485,
+    "total_projects": 16654,
+    "total_versions": 154734,
+    "total_downloads": 141814938,
     "baseline_date": "2026-07-19",
     "current_date": "2026-07-19",
-    "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 0
+    "new_projects_since_baseline": 5,
+    "new_downloads_since_baseline": 3891
   },
   "category_rankings": [
     {
-      "category": "adventure",
-      "projects": 10105,
-      "total_downloads": 77388470,
-      "new_downloads": 0,
-      "growth_pct": 0.0
-    },
-    {
-      "category": "lightweight",
-      "projects": 7279,
-      "total_downloads": 79071811,
-      "new_downloads": 0,
-      "growth_pct": 0.0
-    },
-    {
       "category": "multiplayer",
-      "projects": 11255,
-      "total_downloads": 114459641,
-      "new_downloads": 0,
-      "growth_pct": 0.0
-    },
-    {
-      "category": "optimization",
-      "projects": 10545,
-      "total_downloads": 91401505,
-      "new_downloads": 0,
-      "growth_pct": 0.0
-    },
-    {
-      "category": "challenging",
-      "projects": 3430,
-      "total_downloads": 45265090,
-      "new_downloads": 0,
-      "growth_pct": 0.0
-    },
-    {
-      "category": "combat",
-      "projects": 5080,
-      "total_downloads": 56269992,
-      "new_downloads": 0,
+      "projects": 11259,
+      "total_downloads": 114462190,
+      "new_downloads": 2491,
       "growth_pct": 0.0
     },
     {
       "category": "kitchen-sink",
-      "projects": 2125,
-      "total_downloads": 12450535,
-      "new_downloads": 0,
+      "projects": 2130,
+      "total_downloads": 12453183,
+      "new_downloads": 2389,
+      "growth_pct": 0.02
+    },
+    {
+      "category": "technology",
+      "projects": 4988,
+      "total_downloads": 19661052,
+      "new_downloads": 1497,
+      "growth_pct": 0.01
+    },
+    {
+      "category": "adventure",
+      "projects": 10105,
+      "total_downloads": 77388533,
+      "new_downloads": 104,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "challenging",
+      "projects": 3432,
+      "total_downloads": 45265347,
+      "new_downloads": 3,
       "growth_pct": 0.0
     },
     {
       "category": "quests",
-      "projects": 1296,
-      "total_downloads": 15859145,
-      "new_downloads": 0,
+      "projects": 1298,
+      "total_downloads": 15859401,
+      "new_downloads": 2,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "combat",
+      "projects": 5083,
+      "total_downloads": 56270324,
+      "new_downloads": 1,
       "growth_pct": 0.0
     },
     {
       "category": "magic",
-      "projects": 2633,
-      "total_downloads": 12741295,
-      "new_downloads": 0,
+      "projects": 2634,
+      "total_downloads": 12741296,
+      "new_downloads": 1,
       "growth_pct": 0.0
     },
     {
-      "category": "technology",
-      "projects": 4984,
-      "total_downloads": 19659555,
-      "new_downloads": 0,
-      "growth_pct": 0.0
+      "category": "optimization",
+      "projects": 10546,
+      "total_downloads": 91400091,
+      "new_downloads": -1392,
+      "growth_pct": -0.0
+    },
+    {
+      "category": "lightweight",
+      "projects": 7280,
+      "total_downloads": 79080112,
+      "new_downloads": -1393,
+      "growth_pct": -0.0
     }
   ],
   "category_trending": {
-    "adventure": [],
-    "lightweight": [],
-    "multiplayer": [],
-    "optimization": [],
-    "challenging": [],
-    "combat": [],
-    "kitchen-sink": [],
-    "quests": [],
-    "magic": [],
-    "technology": []
+    "adventure": [
+      {
+        "project_id": "uY3NKfo4",
+        "title": "Dr.BAD [UPDATE V2]",
+        "slug": "dr.bad",
+        "categories": [
+          "adventure",
+          "forge",
+          "multiplayer",
+          "technology"
+        ],
+        "current_downloads": 1496,
+        "delta_downloads": 1496,
+        "growth_pct": 0.0
+      },
+      {
+        "project_id": "gX76zLnX",
+        "title": "Optimized Vanilla Extra (OVE)",
+        "slug": "optimized-vanilla-extra",
+        "categories": [
+          "adventure",
+          "challenging",
+          "fabric",
+          "multiplayer",
+          "optimization",
+          "quests"
+        ],
+        "current_downloads": 631,
+        "delta_downloads": 2,
+        "growth_pct": 0.32
+      },
+      {
+        "project_id": "ELUD6BuN",
+        "title": "Isle of Berk (Scales and Skies)",
+        "slug": "scales-and-skies",
+        "categories": [
+          "adventure",
+          "challenging",
+          "combat",
+          "forge",
+          "magic"
+        ],
+        "current_downloads": 45631,
+        "delta_downloads": 1,
+        "growth_pct": 0.0
+      },
+      {
+        "project_id": "X0kixzcF",
+        "title": "Vanilla Reinvented",
+        "slug": "vanilla-reinvented",
+        "categories": [
+          "adventure",
+          "kitchen-sink",
+          "lightweight",
+          "neoforge"
+        ],
+        "current_downloads": 368,
+        "delta_downloads": 1,
+        "growth_pct": 0.27
+      },
+      {
+        "project_id": "EjCfl0xa",
+        "title": "Tenqui's MC: Director's Cut",
+        "slug": "tenquis-mc-directors-cut",
+        "categories": [
+          "adventure",
+          "fabric",
+          "lightweight",
+          "multiplayer",
+          "optimization"
+        ],
+        "current_downloads": 45,
+        "delta_downloads": 1,
+        "growth_pct": 2.27
+      }
+    ],
+    "lightweight": [
+      {
+        "project_id": "X0kixzcF",
+        "title": "Vanilla Reinvented",
+        "slug": "vanilla-reinvented",
+        "categories": [
+          "adventure",
+          "kitchen-sink",
+          "lightweight",
+          "neoforge"
+        ],
+        "current_downloads": 368,
+        "delta_downloads": 1,
+        "growth_pct": 0.27
+      },
+      {
+        "project_id": "EjCfl0xa",
+        "title": "Tenqui's MC: Director's Cut",
+        "slug": "tenquis-mc-directors-cut",
+        "categories": [
+          "adventure",
+          "fabric",
+          "lightweight",
+          "multiplayer",
+          "optimization"
+        ],
+        "current_downloads": 45,
+        "delta_downloads": 1,
+        "growth_pct": 2.27
+      },
+      {
+        "project_id": "ToZDqgfH",
+        "title": "OptiFabricium",
+        "slug": "optifabricium",
+        "categories": [
+          "fabric",
+          "lightweight",
+          "multiplayer",
+          "optimization"
+        ],
+        "current_downloads": 550,
+        "delta_downloads": 1,
+        "growth_pct": 0.18
+      },
+      {
+        "project_id": "O6ORZ3CA",
+        "title": "GateFPS",
+        "slug": "gatefps",
+        "categories": [
+          "fabric",
+          "lightweight",
+          "optimization",
+          "technology"
+        ],
+        "current_downloads": 298,
+        "delta_downloads": 1,
+        "growth_pct": 0.34
+      }
+    ],
+    "multiplayer": [
+      {
+        "project_id": "m9fHbDhN",
+        "title": "the huge TNT pack",
+        "slug": "the-huge-tnt-pack",
+        "categories": [
+          "forge",
+          "kitchen-sink",
+          "multiplayer"
+        ],
+        "current_downloads": 2388,
+        "delta_downloads": 2388,
+        "growth_pct": 0.0
+      },
+      {
+        "project_id": "uY3NKfo4",
+        "title": "Dr.BAD [UPDATE V2]",
+        "slug": "dr.bad",
+        "categories": [
+          "adventure",
+          "forge",
+          "multiplayer",
+          "technology"
+        ],
+        "current_downloads": 1496,
+        "delta_downloads": 1496,
+        "growth_pct": 0.0
+      },
+      {
+        "project_id": "gX76zLnX",
+        "title": "Optimized Vanilla Extra (OVE)",
+        "slug": "optimized-vanilla-extra",
+        "categories": [
+          "adventure",
+          "challenging",
+          "fabric",
+          "multiplayer",
+          "optimization",
+          "quests"
+        ],
+        "current_downloads": 631,
+        "delta_downloads": 2,
+        "growth_pct": 0.32
+      },
+      {
+        "project_id": "EjCfl0xa",
+        "title": "Tenqui's MC: Director's Cut",
+        "slug": "tenquis-mc-directors-cut",
+        "categories": [
+          "adventure",
+          "fabric",
+          "lightweight",
+          "multiplayer",
+          "optimization"
+        ],
+        "current_downloads": 45,
+        "delta_downloads": 1,
+        "growth_pct": 2.27
+      },
+      {
+        "project_id": "ToZDqgfH",
+        "title": "OptiFabricium",
+        "slug": "optifabricium",
+        "categories": [
+          "fabric",
+          "lightweight",
+          "multiplayer",
+          "optimization"
+        ],
+        "current_downloads": 550,
+        "delta_downloads": 1,
+        "growth_pct": 0.18
+      }
+    ],
+    "optimization": [
+      {
+        "project_id": "gX76zLnX",
+        "title": "Optimized Vanilla Extra (OVE)",
+        "slug": "optimized-vanilla-extra",
+        "categories": [
+          "adventure",
+          "challenging",
+          "fabric",
+          "multiplayer",
+          "optimization",
+          "quests"
+        ],
+        "current_downloads": 631,
+        "delta_downloads": 2,
+        "growth_pct": 0.32
+      },
+      {
+        "project_id": "EjCfl0xa",
+        "title": "Tenqui's MC: Director's Cut",
+        "slug": "tenquis-mc-directors-cut",
+        "categories": [
+          "adventure",
+          "fabric",
+          "lightweight",
+          "multiplayer",
+          "optimization"
+        ],
+        "current_downloads": 45,
+        "delta_downloads": 1,
+        "growth_pct": 2.27
+      },
+      {
+        "project_id": "ToZDqgfH",
+        "title": "OptiFabricium",
+        "slug": "optifabricium",
+        "categories": [
+          "fabric",
+          "lightweight",
+          "multiplayer",
+          "optimization"
+        ],
+        "current_downloads": 550,
+        "delta_downloads": 1,
+        "growth_pct": 0.18
+      },
+      {
+        "project_id": "O6ORZ3CA",
+        "title": "GateFPS",
+        "slug": "gatefps",
+        "categories": [
+          "fabric",
+          "lightweight",
+          "optimization",
+          "technology"
+        ],
+        "current_downloads": 298,
+        "delta_downloads": 1,
+        "growth_pct": 0.34
+      }
+    ],
+    "challenging": [
+      {
+        "project_id": "gX76zLnX",
+        "title": "Optimized Vanilla Extra (OVE)",
+        "slug": "optimized-vanilla-extra",
+        "categories": [
+          "adventure",
+          "challenging",
+          "fabric",
+          "multiplayer",
+          "optimization",
+          "quests"
+        ],
+        "current_downloads": 631,
+        "delta_downloads": 2,
+        "growth_pct": 0.32
+      },
+      {
+        "project_id": "ELUD6BuN",
+        "title": "Isle of Berk (Scales and Skies)",
+        "slug": "scales-and-skies",
+        "categories": [
+          "adventure",
+          "challenging",
+          "combat",
+          "forge",
+          "magic"
+        ],
+        "current_downloads": 45631,
+        "delta_downloads": 1,
+        "growth_pct": 0.0
+      }
+    ],
+    "combat": [
+      {
+        "project_id": "ELUD6BuN",
+        "title": "Isle of Berk (Scales and Skies)",
+        "slug": "scales-and-skies",
+        "categories": [
+          "adventure",
+          "challenging",
+          "combat",
+          "forge",
+          "magic"
+        ],
+        "current_downloads": 45631,
+        "delta_downloads": 1,
+        "growth_pct": 0.0
+      }
+    ],
+    "kitchen-sink": [
+      {
+        "project_id": "m9fHbDhN",
+        "title": "the huge TNT pack",
+        "slug": "the-huge-tnt-pack",
+        "categories": [
+          "forge",
+          "kitchen-sink",
+          "multiplayer"
+        ],
+        "current_downloads": 2388,
+        "delta_downloads": 2388,
+        "growth_pct": 0.0
+      },
+      {
+        "project_id": "X0kixzcF",
+        "title": "Vanilla Reinvented",
+        "slug": "vanilla-reinvented",
+        "categories": [
+          "adventure",
+          "kitchen-sink",
+          "lightweight",
+          "neoforge"
+        ],
+        "current_downloads": 368,
+        "delta_downloads": 1,
+        "growth_pct": 0.27
+      }
+    ],
+    "quests": [
+      {
+        "project_id": "gX76zLnX",
+        "title": "Optimized Vanilla Extra (OVE)",
+        "slug": "optimized-vanilla-extra",
+        "categories": [
+          "adventure",
+          "challenging",
+          "fabric",
+          "multiplayer",
+          "optimization",
+          "quests"
+        ],
+        "current_downloads": 631,
+        "delta_downloads": 2,
+        "growth_pct": 0.32
+      }
+    ],
+    "magic": [
+      {
+        "project_id": "ELUD6BuN",
+        "title": "Isle of Berk (Scales and Skies)",
+        "slug": "scales-and-skies",
+        "categories": [
+          "adventure",
+          "challenging",
+          "combat",
+          "forge",
+          "magic"
+        ],
+        "current_downloads": 45631,
+        "delta_downloads": 1,
+        "growth_pct": 0.0
+      }
+    ],
+    "technology": [
+      {
+        "project_id": "uY3NKfo4",
+        "title": "Dr.BAD [UPDATE V2]",
+        "slug": "dr.bad",
+        "categories": [
+          "adventure",
+          "forge",
+          "multiplayer",
+          "technology"
+        ],
+        "current_downloads": 1496,
+        "delta_downloads": 1496,
+        "growth_pct": 0.0
+      },
+      {
+        "project_id": "O6ORZ3CA",
+        "title": "GateFPS",
+        "slug": "gatefps",
+        "categories": [
+          "fabric",
+          "lightweight",
+          "optimization",
+          "technology"
+        ],
+        "current_downloads": 298,
+        "delta_downloads": 1,
+        "growth_pct": 0.34
+      }
+    ]
   },
   "loader_rankings": [],
-  "top_projects": [],
-  "top_version_loaders": [],
+  "top_projects": [
+    {
+      "project_id": "m9fHbDhN",
+      "title": "the huge TNT pack",
+      "slug": "the-huge-tnt-pack",
+      "categories": [
+        "forge",
+        "kitchen-sink",
+        "multiplayer"
+      ],
+      "current_downloads": 2388,
+      "baseline_downloads": 0,
+      "delta_downloads": 2388,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "uY3NKfo4",
+      "title": "Dr.BAD [UPDATE V2]",
+      "slug": "dr.bad",
+      "categories": [
+        "adventure",
+        "forge",
+        "multiplayer",
+        "technology"
+      ],
+      "current_downloads": 1496,
+      "baseline_downloads": 0,
+      "delta_downloads": 1496,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "gX76zLnX",
+      "title": "Optimized Vanilla Extra (OVE)",
+      "slug": "optimized-vanilla-extra",
+      "categories": [
+        "adventure",
+        "challenging",
+        "fabric",
+        "multiplayer",
+        "optimization",
+        "quests"
+      ],
+      "current_downloads": 631,
+      "baseline_downloads": 629,
+      "delta_downloads": 2,
+      "growth_pct": 0.32
+    },
+    {
+      "project_id": "ELUD6BuN",
+      "title": "Isle of Berk (Scales and Skies)",
+      "slug": "scales-and-skies",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "forge",
+        "magic"
+      ],
+      "current_downloads": 45631,
+      "baseline_downloads": 45630,
+      "delta_downloads": 1,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "X0kixzcF",
+      "title": "Vanilla Reinvented",
+      "slug": "vanilla-reinvented",
+      "categories": [
+        "adventure",
+        "kitchen-sink",
+        "lightweight",
+        "neoforge"
+      ],
+      "current_downloads": 368,
+      "baseline_downloads": 367,
+      "delta_downloads": 1,
+      "growth_pct": 0.27
+    },
+    {
+      "project_id": "EjCfl0xa",
+      "title": "Tenqui's MC: Director's Cut",
+      "slug": "tenquis-mc-directors-cut",
+      "categories": [
+        "adventure",
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 45,
+      "baseline_downloads": 44,
+      "delta_downloads": 1,
+      "growth_pct": 2.27
+    },
+    {
+      "project_id": "ToZDqgfH",
+      "title": "OptiFabricium",
+      "slug": "optifabricium",
+      "categories": [
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 550,
+      "baseline_downloads": 549,
+      "delta_downloads": 1,
+      "growth_pct": 0.18
+    },
+    {
+      "project_id": "O6ORZ3CA",
+      "title": "GateFPS",
+      "slug": "gatefps",
+      "categories": [
+        "fabric",
+        "lightweight",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 298,
+      "baseline_downloads": 297,
+      "delta_downloads": 1,
+      "growth_pct": 0.34
+    }
+  ],
+  "top_version_loaders": [
+    {
+      "game_version": "1.19.4",
+      "loader": "forge",
+      "delta_downloads": 2388,
+      "project_count": 2,
+      "top_project_id": "m9fHbDhN",
+      "top_project_title": "the huge TNT pack",
+      "top_project_delta": 2212
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "forge",
+      "delta_downloads": 1496,
+      "project_count": 2,
+      "top_project_id": "uY3NKfo4",
+      "top_project_title": "Dr.BAD [UPDATE V2]",
+      "top_project_delta": 1263
+    },
+    {
+      "game_version": "26.2",
+      "loader": "fabric",
+      "delta_downloads": 2,
+      "project_count": 2,
+      "top_project_id": "gX76zLnX",
+      "top_project_title": "Optimized Vanilla Extra (OVE)",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "forge",
+      "delta_downloads": 1,
+      "project_count": 1,
+      "top_project_id": "ELUD6BuN",
+      "top_project_title": "Isle of Berk (Scales and Skies)",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "project_count": 1,
+      "top_project_id": "gX76zLnX",
+      "top_project_title": "Optimized Vanilla Extra (OVE)",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "neoforge",
+      "delta_downloads": 1,
+      "project_count": 1,
+      "top_project_id": "X0kixzcF",
+      "top_project_title": "Vanilla Reinvented",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "project_count": 1,
+      "top_project_id": "EjCfl0xa",
+      "top_project_title": "Tenqui's MC: Director's Cut",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "26.1",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "project_count": 1,
+      "top_project_id": "O6ORZ3CA",
+      "top_project_title": "GateFPS",
+      "top_project_delta": 1
+    }
+  ],
   "trend_history": [
     {
       "date": "2026-07-15",
@@ -176,9 +777,9 @@
     },
     {
       "date": "2026-07-19",
-      "timestamp": "2026-07-19T19-21-38",
-      "total_downloads": 141812485,
-      "new_downloads": 105638,
+      "timestamp": "2026-07-19T21-25-10",
+      "total_downloads": 141814938,
+      "new_downloads": 108091,
       "new_projects": 0,
       "analysis_type": "daily"
     }
@@ -241,8 +842,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 77388470,
-        "new_downloads": 58044,
+        "total_downloads": 77388533,
+        "new_downloads": 58107,
         "growth_pct": 0.08
       }
     ],
@@ -303,8 +904,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 99300247,
-        "new_downloads": 79379,
+        "total_downloads": 99298814,
+        "new_downloads": 77946,
         "growth_pct": 0.08
       }
     ],
@@ -365,9 +966,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 79071811,
-        "new_downloads": 61195,
-        "growth_pct": 0.08
+        "total_downloads": 79080112,
+        "new_downloads": 69496,
+        "growth_pct": 0.09
       }
     ],
     "multiplayer": [
@@ -427,8 +1028,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 114459641,
-        "new_downloads": 86086,
+        "total_downloads": 114462190,
+        "new_downloads": 88635,
         "growth_pct": 0.08
       }
     ],
@@ -489,8 +1090,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 91401505,
-        "new_downloads": 75406,
+        "total_downloads": 91400091,
+        "new_downloads": 73992,
         "growth_pct": 0.08
       }
     ],
@@ -551,9 +1152,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 45265090,
-        "new_downloads": 29307,
-        "growth_pct": 0.06
+        "total_downloads": 45265347,
+        "new_downloads": 29564,
+        "growth_pct": 0.07
       }
     ],
     "combat": [
@@ -613,8 +1214,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 56269992,
-        "new_downloads": 37444,
+        "total_downloads": 56270324,
+        "new_downloads": 37776,
         "growth_pct": 0.07
       }
     ],
@@ -675,9 +1276,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 12450535,
-        "new_downloads": 7327,
-        "growth_pct": 0.06
+        "total_downloads": 12453183,
+        "new_downloads": 9975,
+        "growth_pct": 0.08
       }
     ],
     "forge": [
@@ -737,9 +1338,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 45740074,
-        "new_downloads": 27613,
-        "growth_pct": 0.06
+        "total_downloads": 45742562,
+        "new_downloads": 30101,
+        "growth_pct": 0.07
       }
     ],
     "neoforge": [
@@ -799,9 +1400,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 15024737,
-        "new_downloads": 17963,
-        "growth_pct": 0.12
+        "total_downloads": 15022272,
+        "new_downloads": 15498,
+        "growth_pct": 0.1
       }
     ],
     "quests": [
@@ -861,8 +1462,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 15859145,
-        "new_downloads": 10781,
+        "total_downloads": 15859401,
+        "new_downloads": 11037,
         "growth_pct": 0.07
       }
     ],
@@ -923,8 +1524,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 12741295,
-        "new_downloads": 8657,
+        "total_downloads": 12741296,
+        "new_downloads": 8658,
         "growth_pct": 0.07
       }
     ],
@@ -985,9 +1586,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 19659555,
-        "new_downloads": 13417,
-        "growth_pct": 0.07
+        "total_downloads": 19661052,
+        "new_downloads": 14914,
+        "growth_pct": 0.08
       }
     ],
     "quilt": [
@@ -2289,8 +2890,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 23073417,
-        "delta_downloads": 14721,
+        "total_downloads": 23073398,
+        "delta_downloads": 14702,
         "project_count": 13512
       }
     ],
@@ -2351,9 +2952,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 23645512,
-        "delta_downloads": 12190,
-        "project_count": 22555
+        "total_downloads": 23644994,
+        "delta_downloads": 11672,
+        "project_count": 22556
       }
     ],
     "26.1.2\u0001fabric": [
@@ -2415,7 +3016,7 @@
         "date": "2026-07-19",
         "total_downloads": 3398186,
         "delta_downloads": 9386,
-        "project_count": 3299
+        "project_count": 3303
       }
     ],
     "1.21.11\u0001fabric": [
@@ -2475,8 +3076,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 9691034,
-        "delta_downloads": 12640,
+        "total_downloads": 9691013,
+        "delta_downloads": 12619,
         "project_count": 8408
       }
     ],
@@ -2601,7 +3202,7 @@
         "date": "2026-07-19",
         "total_downloads": 3655414,
         "delta_downloads": 2165,
-        "project_count": 4823
+        "project_count": 4824
       }
     ],
     "1.21.6\u0001fabric": [
@@ -2661,8 +3262,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 608785,
-        "delta_downloads": 323,
+        "total_downloads": 608786,
+        "delta_downloads": 324,
         "project_count": 1822
       }
     ],
@@ -2909,9 +3510,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 4802207,
-        "delta_downloads": 5349,
-        "project_count": 10092
+        "total_downloads": 4802159,
+        "delta_downloads": 5301,
+        "project_count": 10098
       }
     ],
     "1.20.2\u0001forge": [
@@ -3095,9 +3696,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 26222352,
-        "delta_downloads": 15640,
-        "project_count": 14503
+        "total_downloads": 26223018,
+        "delta_downloads": 16306,
+        "project_count": 14505
       }
     ],
     "1.19.2\u0001forge": [
@@ -3219,9 +3820,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 1260231,
-        "delta_downloads": 11178,
-        "project_count": 1475
+        "total_downloads": 1260233,
+        "delta_downloads": 11180,
+        "project_count": 1484
       }
     ],
     "26.1.1\u0001fabric": [
@@ -3343,8 +3944,8 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 675182,
-        "delta_downloads": 580,
+        "total_downloads": 675183,
+        "delta_downloads": 581,
         "project_count": 1086
       }
     ],
@@ -4523,7 +5124,7 @@
         "date": "2026-07-19",
         "total_downloads": 165306,
         "delta_downloads": 208,
-        "project_count": 875
+        "project_count": 876
       }
     ],
     "1.17\u0001fabric": [
@@ -4647,7 +5248,7 @@
         "date": "2026-07-19",
         "total_downloads": 666324,
         "delta_downloads": 549,
-        "project_count": 1017
+        "project_count": 1018
       }
     ],
     "1.12.2\u0001forge": [
@@ -4893,9 +5494,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 908368,
-        "delta_downloads": 765,
-        "project_count": 794
+        "total_downloads": 908369,
+        "delta_downloads": 766,
+        "project_count": 796
       }
     ],
     "1.20.1\u0001quilt": [
@@ -5141,9 +5742,9 @@
       },
       {
         "date": "2026-07-19",
-        "total_downloads": 96659,
-        "delta_downloads": 64,
-        "project_count": 155
+        "total_downloads": 99047,
+        "delta_downloads": 2452,
+        "project_count": 157
       }
     ],
     "1.21.11\u0001neoforge": [
