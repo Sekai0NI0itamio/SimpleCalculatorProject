@@ -226,10 +226,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Always commit raw snapshots (.json.gz), analysis, latest_analysis, project_vl_pairs
+          # Always commit raw snapshots (.json.gz), analysis, latest_analysis, project_vl_pairs, all_project_deltas
           git add data/${{ inputs.project_type }}/raw/ \
                  data/${{ inputs.project_type }}/analysis/ \
                  data/${{ inputs.project_type }}/latest_analysis.json \
+                 data/${{ inputs.project_type }}/all_project_deltas.json \
                  data/${{ inputs.project_type }}/project_vl_pairs.json \
                  data/${{ inputs.project_type }}/discovery.json \
                  data/${{ inputs.project_type }}/categories.json \

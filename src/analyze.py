@@ -362,6 +362,157 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
 
 
 # ═══════════════════════════════════════════════════════════════════
+#  TREND HISTORY (7-day time series)
+# ═══════════════════════════════════════════════════════════════════
+
+
+def build_trend_history(project_type):
+    """Build 7-day trend history from raw snapshots.
+
+    Loads all raw snapshots from the last 7 days, keeps only the first and
+    last snapshot per day (boundary snapshots), then computes daily deltas
+    for:
+      - overall totals (downloads, projects)
+      - per-category totals
+      - per-version+loader totals
+
+    Returns:
+        trend_history: list of {date, total_downloads, new_downloads, new_projects}
+        category_trend_history: {category: [{date, total_downloads, new_downloads, growth_pct}]}
+        vl_trend_history: {"gv|loader": [{date, total_downloads, delta_downloads, project_count}]}
+    """
+    raw_dir = get_raw_dir(project_type)
+    snapshot_files = list_snapshot_files(raw_dir)
+    if not snapshot_files:
+        return [], {}, {}
+
+    # Parse timestamps from filenames and filter to last 7 days
+    now = datetime.now(BEIJING_TZ)
+    cutoff = now - timedelta(days=7)
+    dated_files = []
+    for f in snapshot_files:
+        fname = f.split("/")[-1]
+        ts_str = fname.replace(".json.gz", "").replace(".json", "")
+        st = parse_snapshot_timestamp({"timestamp": ts_str})
+        if st and st >= cutoff:
+            dated_files.append((st, f))
+
+    if not dated_files:
+        return [], {}, {}
+
+    dated_files.sort(key=lambda x: x[0])
+
+    # Group by date string (YYYY-MM-DD), keep first and last per day
+    day_groups = {}
+    for st, f in dated_files:
+        date_str = st.strftime("%Y-%m-%d")
+        day_groups.setdefault(date_str, []).append(f)
+
+    boundary_files = []
+    for date_str in sorted(day_groups.keys()):
+        files = day_groups[date_str]
+        boundary_files.append(files[0])   # first snapshot of day
+        if len(files) > 1:
+            boundary_files.append(files[-1])  # last snapshot of day
+
+    # Deduplicate consecutive same-file entries
+    deduped = []
+    for f in boundary_files:
+        if not deduped or deduped[-1] != f:
+            deduped.append(f)
+    boundary_files = deduped
+
+    # Load boundary snapshots
+    boundary_snapshots = []
+    for f in boundary_files:
+        data = load_json(f)
+        if data:
+            boundary_snapshots.append(data)
+
+    if len(boundary_snapshots) < 2:
+        return [], {}, {}
+
+    # ── Overall trend ───────────────────────────────────────────────
+    trend_history = []
+    prev_total_downloads = None
+    prev_project_count = None
+    for snap in boundary_snapshots:
+        total_downloads = snap.get("total_downloads", 0)
+        project_count = snap.get("project_count", len(snap.get("projects", [])))
+        date = snap.get("date", "")
+        new_downloads = max(0, total_downloads - (prev_total_downloads or 0))
+        new_projects = max(0, project_count - (prev_project_count or 0))
+        trend_history.append({
+            "date": date,
+            "timestamp": snap.get("timestamp", ""),
+            "total_downloads": total_downloads,
+            "new_downloads": new_downloads,
+            "new_projects": new_projects,
+            "analysis_type": "daily",
+        })
+        prev_total_downloads = total_downloads
+        prev_project_count = project_count
+
+    # ── Category trend ──────────────────────────────────────────────
+    category_trend_history = {}
+    for snap in boundary_snapshots:
+        date = snap.get("date", "")
+        projects = snap.get("projects", [])
+        cat_totals = {}
+        for p in projects:
+            for cat in p.get("categories", []):
+                cat_totals[cat] = cat_totals.get(cat, 0) + (p.get("downloads", 0) or 0)
+
+        for cat, total in cat_totals.items():
+            if cat not in category_trend_history:
+                category_trend_history[cat] = []
+            prev_total = category_trend_history[cat][-1]["total_downloads"] if category_trend_history[cat] else 0
+            new_dl = max(0, total - prev_total)
+            growth_pct = round((new_dl / prev_total * 100) if prev_total > 0 else 0.0, 2)
+            category_trend_history[cat].append({
+                "date": date,
+                "total_downloads": total,
+                "new_downloads": new_dl,
+                "growth_pct": growth_pct,
+            })
+
+    # ── Version+Loader trend ────────────────────────────────────────
+    vl_trend_history = {}
+    for snap in boundary_snapshots:
+        date = snap.get("date", "")
+        versions = snap.get("versions", [])
+        vl_totals = {}
+        for v in versions:
+            loaders = v.get("loaders", []) or []
+            game_versions = v.get("game_versions", []) or []
+            dl = v.get("downloads", 0) or 0
+            for loader in loaders:
+                for gv in game_versions:
+                    norm_gv = (gv or "").strip()
+                    norm_loader = (loader or "").strip().lower()
+                    key = f"{norm_gv}\u0001{norm_loader}"
+                    if key not in vl_totals:
+                        vl_totals[key] = {"total_downloads": 0, "project_count": 0}
+                    vl_totals[key]["total_downloads"] += dl
+                    vl_totals[key]["project_count"] += 1
+
+        for key, totals in vl_totals.items():
+            if key not in vl_trend_history:
+                vl_trend_history[key] = []
+            prev = vl_trend_history[key][-1] if vl_trend_history[key] else None
+            prev_total = prev["total_downloads"] if prev else 0
+            new_dl = max(0, totals["total_downloads"] - prev_total)
+            vl_trend_history[key].append({
+                "date": date,
+                "total_downloads": totals["total_downloads"],
+                "delta_downloads": new_dl,
+                "project_count": totals["project_count"],
+            })
+
+    return trend_history, category_trend_history, vl_trend_history
+
+
+# ═══════════════════════════════════════════════════════════════════
 #  MAIN
 # ═══════════════════════════════════════════════════════════════════
 
@@ -424,6 +575,15 @@ def main():
     trending_total = sum(len(v) for v in cat_trending.values())
     print(f"  Category trending: {len(cat_trending)} categories, {trending_total} trending projects")
 
+    # ── Build trend history ────────────────────────────────────────
+    trend_history, category_trend_history, vl_trend_history = build_trend_history(project_type)
+    if trend_history:
+        print(f"  Trend history: {len(trend_history)} data points, "
+              f"{len(category_trend_history)} categories, {len(vl_trend_history)} VL pairs")
+        analysis_data["trend_history"] = trend_history
+        analysis_data["category_trend_history"] = category_trend_history
+        analysis_data["vl_trend_history"] = vl_trend_history
+
     # ── Save ──────────────────────────────────────────────────────
     timestamp = get_timestamp()
 
@@ -433,6 +593,15 @@ def main():
     vl_pairs_path = f"{type_dir}/project_vl_pairs.json"
     save_json(vl_pairs_path, project_vl_pairs)
     print(f"Saved project_vl_pairs to {vl_pairs_path} ({len(project_vl_pairs)} projects)")
+
+    # Extract all_project_deltas and save as a separate file.
+    # The frontend loads the condensed latest_analysis.json first (fast,
+    # ~300 KB instead of ~10 MB), then lazy-loads all_project_deltas on
+    # demand when the user searches or scrolls past the top 50 projects.
+    all_project_deltas = analysis_data.pop("all_project_deltas", [])
+    deltas_path = f"{type_dir}/all_project_deltas.json"
+    save_json(deltas_path, all_project_deltas)
+    print(f"Saved all_project_deltas to {deltas_path} ({len(all_project_deltas)} projects)")
 
     analysis = {
         "timestamp": timestamp,

@@ -70,6 +70,9 @@ def combine_analyses(data_dir):
             "top_projects": analysis.get("top_projects", [])[:20],
             "top_version_loaders": analysis.get("top_version_loaders", [])[:200],
             "all_project_deltas": analysis.get("all_project_deltas", [])[:500],
+            "trend_history": analysis.get("trend_history", []),
+            "category_trend_history": analysis.get("category_trend_history", {}),
+            "vl_trend_history": analysis.get("vl_trend_history", {}),
         }
 
         # Collect top projects with type prefix

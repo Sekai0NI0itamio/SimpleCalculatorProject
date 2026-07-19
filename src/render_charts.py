@@ -533,6 +533,98 @@ def render_hourly_heatmap(analysis, charts_dir):
     save_chart(fig, f"{charts_dir}/hourly_heatmap.png")
 
 
+def render_growth_trend(analysis, charts_dir):
+    """8. growth_trend.png — 7-day daily increases for totals, top categories, and top VL pairs."""
+    trend_history = analysis.get("trend_history", [])
+    category_trend_history = analysis.get("category_trend_history", {})
+    vl_trend_history = analysis.get("vl_trend_history", {})
+
+    if not trend_history or len(trend_history) < 2:
+        fig, ax = plt.subplots(figsize=FIG_SIZE, dpi=DPI)
+        fig.patch.set_facecolor(BG_COLOR)
+        ax.set_facecolor(BG_COLOR)
+        ax.text(0.5, 0.5, "Collecting data — need at least 2 daily snapshots",
+                ha="center", va="center", color=TEXT_COLOR, fontsize=14, transform=ax.transAxes)
+        ax.set_xticks([])
+        ax.set_yticks([])
+        save_chart(fig, f"{charts_dir}/growth_trend.png")
+        return
+
+    dates = [t.get("date", "") for t in trend_history]
+    n_points = len(dates)
+
+    # Select top 5 categories and top 5 VL pairs by total new_downloads across the window
+    top_cats = sorted(
+        category_trend_history.items(),
+        key=lambda x: sum(e.get("new_downloads", 0) for e in x[1]),
+        reverse=True,
+    )[:5]
+
+    top_vls = sorted(
+        vl_trend_history.items(),
+        key=lambda x: sum(e.get("delta_downloads", 0) for e in x[1]),
+        reverse=True,
+    )[:5]
+
+    fig, axes = plt.subplots(3, 1, figsize=(12, 10), dpi=DPI, sharex=True)
+    fig.patch.set_facecolor(BG_COLOR)
+    for ax in axes:
+        ax.set_facecolor(BG_COLOR)
+        ax.grid(True, color=GRID_COLOR, linestyle="-", linewidth=0.5, alpha=0.5)
+        ax.tick_params(colors=TEXT_COLOR)
+        for spine in ax.spines.values():
+            spine.set_color(GRID_COLOR)
+        ax.xaxis.label.set_color(TEXT_COLOR)
+        ax.yaxis.label.set_color(TEXT_COLOR)
+        ax.title.set_color(TEXT_COLOR)
+        ax.yaxis.set_major_formatter(FuncFormatter(number_formatter))
+
+    # ── Top: total daily increase ───────────────────────────────────
+    ax = axes[0]
+    ax.set_title("Total Daily Downloads Increase (7-day)", fontsize=12)
+    ax.set_ylabel("Downloads gained")
+    new_dls = [t.get("new_downloads", 0) for t in trend_history]
+    ax.fill_between(range(n_points), new_dls, alpha=0.15, color=BAR_COLORS[0])
+    ax.plot(range(n_points), new_dls, marker="o", color=BAR_COLORS[0], linewidth=2, markersize=5)
+    ax.set_xticks(range(n_points))
+    ax.set_xticklabels(dates, rotation=45, ha="right", fontsize=9)
+
+    # ── Middle: top categories ──────────────────────────────────────
+    ax = axes[1]
+    ax.set_title("Top Categories — Daily Increase", fontsize=12)
+    ax.set_ylabel("Downloads gained")
+    for i, (cat, entries) in enumerate(top_cats):
+        color = bar_color(i)
+        vals = [e.get("new_downloads", 0) for e in entries]
+        # Pad with NaN if this category has fewer data points
+        padded = vals + [None] * (n_points - len(vals))
+        ax.plot(range(n_points), padded, marker="o", color=color, linewidth=1.5, label=cat, markersize=4)
+    ax.set_xticks(range(n_points))
+    ax.set_xticklabels(dates, rotation=45, ha="right", fontsize=9)
+    ax.legend(facecolor=BG_COLOR, edgecolor=GRID_COLOR, labelcolor=TEXT_COLOR, fontsize=8)
+
+    # ── Bottom: top VL pairs ────────────────────────────────────────
+    ax = axes[2]
+    ax.set_title("Top Version+Loader — Daily Increase", fontsize=12)
+    ax.set_ylabel("Downloads gained")
+    ax.set_xlabel("Date")
+    for i, (vl_key, entries) in enumerate(top_vls):
+        color = bar_color(i)
+        gv, loader = vl_key.split("\u0001") if "\u0001" in vl_key else (vl_key, "")
+        label = f"{gv} + {loader}" if loader else gv
+        vals = [e.get("delta_downloads", 0) for e in entries]
+        padded = vals + [None] * (n_points - len(vals))
+        ax.plot(range(n_points), padded, marker="o", color=color, linewidth=1.5, label=label, markersize=4)
+    ax.set_xticks(range(n_points))
+    ax.set_xticklabels(dates, rotation=45, ha="right", fontsize=9)
+    ax.legend(facecolor=BG_COLOR, edgecolor=GRID_COLOR, labelcolor=TEXT_COLOR, fontsize=8)
+
+    fig.tight_layout()
+    fig.savefig(f"{charts_dir}/growth_trend.png", facecolor=BG_COLOR, dpi=DPI)
+    plt.close(fig)
+    print(f"  Saved {charts_dir}/growth_trend.png")
+
+
 # ═══════════════════════════════════════════════════════════════════
 #  MAIN
 # ═══════════════════════════════════════════════════════════════════
@@ -575,6 +667,7 @@ def main():
         render_concentration(analysis, charts_dir)
         render_top_projects(analysis, charts_dir)
         render_recommendations(analysis, charts_dir)
+        render_growth_trend(analysis, charts_dir)
     else:
         render_velocity(analysis, charts_dir)
         render_prediction(analysis, project_type, charts_dir)
