@@ -1,42 +1,123 @@
 {
-  "timestamp": "2026-07-15T09-21-55",
-  "date": "2026-07-15",
+  "timestamp": "2026-07-21T19-37-31",
+  "date": "2026-07-21",
   "project_type": "datapack",
   "analysis_type": "sub",
-  "snapshots_analyzed": 4,
-  "last_snapshot_time": "2026-07-15T09-21-54",
-  "hours_until_main": 22,
+  "snapshots_analyzed": 19,
+  "last_snapshot_time": "2026-07-21T19-35-28",
+  "hours_until_main": 12,
   "velocity": {
-    "velocity_per_hour": 0.0,
-    "velocity_2h": 0,
-    "velocity_24h": 3319,
-    "avg_velocity_24h": 138.29
+    "velocity_per_hour": 57.94,
+    "velocity_2h": 52,
+    "velocity_24h": 2031555,
+    "avg_velocity_24h": 84648.12
   },
   "acceleration": {
-    "acceleration": 0.0,
-    "acceleration_pct": 0.0
+    "acceleration": 10.0,
+    "acceleration_pct": 20.87
   },
   "predictions": {
-    "predicted_daily_total": 621997321,
-    "predicted_daily_growth": 6361,
-    "predicted_daily_growth_pct": 0.0,
-    "confidence": "medium"
+    "predicted_daily_total": 634117983,
+    "predicted_daily_growth": 5225604,
+    "predicted_daily_growth_pct": 0.83,
+    "confidence": "high"
   },
-  "top_movers_2h": [],
+  "top_movers_2h": [
+    {
+      "project_id": "BpcmlKS9",
+      "title": "Minecraft But Backwards",
+      "slug": "minecraft-backwards",
+      "previous_downloads": 1707,
+      "current_downloads": 1742,
+      "delta_2h": 35,
+      "velocity": 39.0
+    },
+    {
+      "project_id": "aRErXHku",
+      "title": "Fullbright Datapack",
+      "slug": "fullbright-trigger",
+      "previous_downloads": 7,
+      "current_downloads": 18,
+      "delta_2h": 11,
+      "velocity": 12.26
+    },
+    {
+      "project_id": "ChkHwAdr",
+      "title": "Jetpack Boots",
+      "slug": "jetpack-boots",
+      "previous_downloads": 23,
+      "current_downloads": 29,
+      "delta_2h": 6,
+      "velocity": 6.69
+    }
+  ],
   "velocity_by_category": [],
-  "anomalies": [],
+  "anomalies": [
+    {
+      "project_id": "aRErXHku",
+      "title": "Fullbright Datapack",
+      "slug": "fullbright-trigger",
+      "current_velocity": 12.26,
+      "avg_velocity": 0.14,
+      "anomaly_factor": 90.67
+    },
+    {
+      "project_id": "BpcmlKS9",
+      "title": "Minecraft But Backwards",
+      "slug": "minecraft-backwards",
+      "current_velocity": 39.0,
+      "avg_velocity": 2.34,
+      "anomaly_factor": 16.63
+    },
+    {
+      "project_id": "ChkHwAdr",
+      "title": "Jetpack Boots",
+      "slug": "jetpack-boots",
+      "current_velocity": 6.69,
+      "avg_velocity": 1.29,
+      "anomaly_factor": 5.2
+    }
+  ],
   "hourly_pattern": [
     {
-      "hour_label": "08-08",
-      "downloads_gained": 3319
+      "hour_label": "19-22",
+      "downloads_gained": -2202
     },
     {
-      "hour_label": "08-08",
-      "downloads_gained": 0
+      "hour_label": "22-00",
+      "downloads_gained": 64
     },
     {
-      "hour_label": "08-09",
-      "downloads_gained": 0
+      "hour_label": "00-02",
+      "downloads_gained": 204
+    },
+    {
+      "hour_label": "02-05",
+      "downloads_gained": 146
+    },
+    {
+      "hour_label": "05-07",
+      "downloads_gained": 2029833
+    },
+    {
+      "hour_label": "07-10",
+      "downloads_gained": 3207
+    },
+    {
+      "hour_label": "10-14",
+      "downloads_gained": 5
+    },
+    {
+      "hour_label": "14-18",
+      "downloads_gained": 226
+    },
+    {
+      "hour_label": "18-18",
+      "downloads_gained": 20
+    },
+    {
+      "hour_label": "18-19",
+      "downloads_gained": 52
     }
   ]
 }
