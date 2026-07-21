@@ -220,6 +220,19 @@ jobs:
       - name: Analyze (${{ inputs.analysis_mode }})
         run: python src/analyze.py --project-type ${{ inputs.project_type }} --mode ${{ inputs.analysis_mode }}
 
+      # Predictive analysis (velocity, acceleration, predictions, anomalies)
+      # Runs AFTER analyze.py so it can use the latest snapshot.
+      # Skip on first run (needs ≥4 snapshots for velocity/acceleration).
+      - name: Predictive analysis
+        continue-on-error: true
+        run: python src/predictive_analyze.py --project-type ${{ inputs.project_type }}
+
+      # Render PNG charts (trend, categories, loaders, velocity, prediction, etc.)
+      # Depends on latest_analysis.json + latest_sub_analysis.json being present.
+      - name: Render charts (${{ inputs.analysis_mode }})
+        continue-on-error: true
+        run: python src/render_charts.py --project-type ${{ inputs.project_type }} --mode ${{ inputs.analysis_mode }}
+
       # Commit data files to git
       - name: Commit and push
         run: |

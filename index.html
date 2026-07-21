@@ -151,6 +151,46 @@
     height: 100%; background: var(--accent); width: 0%;
     transition: width 0.3s ease;
   }
+
+  /* Quality / confidence badges */
+  .quality-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;
+  }
+  .quality-badge.high { background: rgba(63,185,80,0.15); color: var(--green); }
+  .quality-badge.medium { background: rgba(210,153,34,0.15); color: var(--orange); }
+  .quality-badge.low { background: rgba(248,81,73,0.15); color: var(--red); }
+  .quality-badge.extended { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .quality-badge.normal { background: rgba(63,185,80,0.15); color: var(--green); }
+
+  /* Momentum score pill */
+  .momentum {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums;
+  }
+  .momentum.positive { background: rgba(63,185,80,0.12); color: var(--green); }
+  .momentum.negative { background: rgba(248,81,73,0.12); color: var(--red); }
+  .momentum.neutral { background: rgba(139,148,158,0.12); color: var(--text-muted); }
+
+  /* Chart gallery */
+  .chart-gallery {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px; margin-top: 12px;
+  }
+  .chart-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden; transition: border-color 0.15s;
+  }
+  .chart-card:hover { border-color: var(--text-muted); }
+  .chart-card img { width: 100%; display: block; }
+  .chart-card .chart-title {
+    padding: 8px 12px; font-size: 12px; color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Declining projects section */
+  .declining-section { margin-top: 24px; }
+  .declining-section .section-title { color: var(--red); }
 </style>
 </head>
 <body>
@@ -227,6 +267,21 @@ function loaderTag(loader) {
   const colors = {fabric:'green',forge:'orange',neoforge:'purple',quilt:'blue',iris:'blue',minecraft:'blue',optifine:'orange',paper:'blue',spigot:'orange',bukkit:'green',folia:'purple'};
   const cls = colors[loader?.toLowerCase()] || 'blue';
   return `<span class="tag ${cls}">${escHtml(loader||'—')}</span>`;
+}
+function momentumBadge(score) {
+  if (score == null || isNaN(score)) return '<span class="momentum neutral">—</span>';
+  const cls = score > 0.5 ? 'positive' : (score < -0.5 ? 'negative' : 'neutral');
+  return `<span class="momentum ${cls}">${score > 0 ? '+' : ''}${score.toFixed(2)}</span>`;
+}
+function qualityBadge(info) {
+  const dq = info.data_quality || {};
+  const quality = info.analysis_quality || dq.quality || 'normal';
+  const confidence = dq.confidence || 'medium';
+  const cls = quality === 'extended' ? 'extended' : confidence;
+  const label = quality === 'extended' ? `EXTENDED · ${confidence}` : confidence.toUpperCase();
+  const snaps = dq.snapshot_count != null ? ` · ${dq.snapshot_count} snaps` : '';
+  const actual = dq.actual_hours != null ? ` · ${dq.actual_hours}h` : '';
+  return `<span class="quality-badge ${cls}" title="Quality: ${quality}, Confidence: ${confidence}${snaps}${actual}">${label}${snaps}</span>`;
 }
 
 // ── Streaming loader ──────────────────────────────────────────────
@@ -436,6 +491,9 @@ function renderActiveTab() {
     ${renderPerTypeTopProjects(info)}
     ${renderPerTypeCategories(info)}
     ${renderPerTypeVLPairs(info)}
+    ${renderPerTypeDeclining(info)}
+    ${renderPerTypePredictive(info)}
+    ${renderPerTypeCharts(info)}
   `;
 }
 
@@ -444,16 +502,18 @@ function renderGeneralTopProjects() {
   const all = (COMBINED || {}).top_projects || [];
   return `
     <div class="section-title">Top Growing Projects — What to Build Next</div>
-    <div class="section-subtitle">Ranked by download increase across all project types</div>
+    <div class="section-subtitle">Ranked by download increase across all project types. Momentum = log(delta)·0.4 + growth%·0.3 + log(rate)·0.3</div>
     ${all.length ? `
     <table>
-      <thead><tr><th>#</th><th>Project</th><th>Type</th><th class="num">Increase</th><th class="num">Total</th></tr></thead>
+      <thead><tr><th>#</th><th>Project</th><th>Type</th><th class="num">Increase</th><th class="num">/hour</th><th class="num">Momentum</th><th class="num">Total</th></tr></thead>
       <tbody>
         ${all.map((p,i) => `<tr>
           <td>${i+1}</td>
           <td><strong>${escHtml(p.title||'')}</strong></td>
           <td><span class="tag blue">${p.project_type||'mod'}</span></td>
           <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
+          <td class="num">${fmt(p.downloads_per_hour||0)}</td>
+          <td class="num">${momentumBadge(p.momentum_score)}</td>
           <td class="num">${fmt(p.current_downloads)}</td>
         </tr>`).join('')}
       </tbody>
@@ -504,12 +564,23 @@ function renderGeneralVLPairs() {
 // ── Per-Type ─────────────────────────────────────────────────────
 function renderPerTypeSummary(info) {
   const s = info.summary || {};
+  const growing = (info.top_projects||[]).length;
+  const declining = (info.declining_projects||[]).length;
+  const dph = info.downloads_per_hour || s.downloads_per_hour || 0;
   return `
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+      ${qualityBadge(info)}
+      <span style="font-size:12px;color:var(--text-muted)">Baseline: ${escHtml(info.baseline_date||'—')} → ${escHtml(info.date||'—')}</span>
+      ${info.actual_hours_between && info.actual_hours_between !== info.hours_between
+        ? `<span class="quality-badge extended" title="Actual hours vs requested">ACTUAL ${info.actual_hours_between}h (req ${info.hours_between}h)</span>` : ''}
+    </div>
     <div class="pt-summary">
       <div class="pt-stat"><div class="pt-label">Projects</div><div class="pt-value">${fmt(s.total_projects||0)}</div></div>
-      <div class="pt-stat"><div class="pt-label">Versions</div><div class="pt-value">${fmt(s.total_versions||0)}</div></div>
       <div class="pt-stat"><div class="pt-label">Downloads</div><div class="pt-value">${fmt(s.total_downloads||0)}</div></div>
       <div class="pt-stat"><div class="pt-label">New Downloads</div><div class="pt-value positive">${fmtDelta(s.new_downloads_since_baseline||0)}</div></div>
+      <div class="pt-stat"><div class="pt-label">Per Hour</div><div class="pt-value">${fmt(dph)}</div></div>
+      <div class="pt-stat"><div class="pt-label">Growing</div><div class="pt-value positive">${fmt(growing)}</div></div>
+      <div class="pt-stat"><div class="pt-label">Declining</div><div class="pt-value negative">${fmt(declining)}</div></div>
     </div>`;
 }
 
@@ -519,12 +590,14 @@ function renderPerTypeTopProjects(info) {
     <div class="section-title" style="font-size:14px;margin-bottom:10px;">Projects by Increase</div>
     ${all.length ? `
     <table>
-      <thead><tr><th>#</th><th>Project</th><th class="num">Increase</th><th class="num">Total</th></tr></thead>
+      <thead><tr><th>#</th><th>Project</th><th class="num">Increase</th><th class="num">/hour</th><th class="num">Momentum</th><th class="num">Total</th></tr></thead>
       <tbody>
         ${all.map((p,i) => `<tr>
           <td>${i+1}</td>
           <td><strong>${escHtml(p.title||'')}</strong></td>
           <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
+          <td class="num">${fmt(p.downloads_per_hour||0)}</td>
+          <td class="num">${momentumBadge(p.momentum_score)}</td>
           <td class="num">${fmt(p.current_downloads)}</td>
         </tr>`).join('')}
       </tbody>
@@ -537,12 +610,13 @@ function renderPerTypeCategories(info) {
   return `
     <div class="section-title" style="font-size:14px;margin-top:20px;margin-bottom:10px;">Categories by Increase</div>
     <table>
-      <thead><tr><th>#</th><th>Category</th><th class="num">Projects</th><th class="num">New</th><th class="num">Growth</th></tr></thead>
+      <thead><tr><th>#</th><th>Category</th><th class="num">Projects</th><th class="num">New</th><th class="num">/hour</th><th class="num">Growth</th></tr></thead>
       <tbody>
         ${cats.map((c,i) => `<tr>
           <td>${i+1}</td><td><strong>${escHtml(c.category)}</strong></td>
           <td class="num">${fmt(c.projects)}</td>
           <td class="num positive">${fmtDelta(c.new_downloads)}</td>
+          <td class="num">${fmt(c.downloads_per_hour||0)}</td>
           <td class="num">${fmtPct(c.growth_pct||0)}</td>
         </tr>`).join('')}
       </tbody>
@@ -555,18 +629,84 @@ function renderPerTypeVLPairs(info) {
   return `
     <div class="section-title" style="font-size:14px;margin-top:20px;margin-bottom:10px;">Version+Loader by Increase</div>
     <table>
-      <thead><tr><th>#</th><th>Game Version</th><th>Loader</th><th class="num">Delta</th><th class="num">Projects</th><th>Top Project</th></tr></thead>
+      <thead><tr><th>#</th><th>Game Version</th><th>Loader</th><th class="num">Delta</th><th class="num">/hour</th><th class="num">Projects</th><th>Top Project</th></tr></thead>
       <tbody>
         ${vls.map((vl,i) => `<tr>
           <td>${i+1}</td>
           <td><span class="mono" style="font-weight:600">${escHtml(vl.game_version||'—')}</span></td>
           <td>${loaderTag(vl.loader||'')}</td>
           <td class="num positive" style="font-weight:600">${fmtDelta(vl.delta_downloads)}</td>
+          <td class="num">${fmt(vl.downloads_per_hour||0)}</td>
           <td class="num">${fmt(vl.project_count||0)}</td>
           <td>${escHtml(vl.top_project_title||'—')}</td>
         </tr>`).join('')}
       </tbody>
     </table>`;
+}
+
+// ── Declining Projects (Enhancement C) ───────────────────────────
+function renderPerTypeDeclining(info) {
+  const decl = info.declining_projects || [];
+  if (!decl.length) return '';
+  return `
+    <div class="declining-section">
+      <div class="section-title" style="font-size:14px;">Declining Projects — Losing Downloads</div>
+      <div class="section-subtitle">Projects where downloads decreased since baseline (deleted, hidden, or replaced)</div>
+      <table>
+        <thead><tr><th>#</th><th>Project</th><th class="num">Lost</th><th class="num">/hour</th><th class="num">Momentum</th><th class="num">Current</th></tr></thead>
+        <tbody>
+          ${decl.map((p,i) => `<tr>
+            <td>${i+1}</td>
+            <td><strong>${escHtml(p.title||'')}</strong></td>
+            <td class="num negative">${fmtDelta(p.delta_downloads)}</td>
+            <td class="num">${fmt(p.downloads_per_hour||0)}</td>
+            <td class="num">${momentumBadge(p.momentum_score)}</td>
+            <td class="num">${fmt(p.current_downloads)}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+// ── Charts Gallery (Enhancement A) ──────────────────────────────
+function renderPerTypeCharts(info) {
+  const charts = info.charts || [];
+  if (!charts.length) return '';
+  return `
+    <div class="section" style="margin-top:24px">
+      <div class="section-title">Charts</div>
+      <div class="section-subtitle">Visual analysis rendered from the data</div>
+      <div class="chart-gallery">
+        ${charts.map(c => `
+          <div class="chart-card">
+            <img src="${escHtml(c.path)}${CACHE_BUST()}" alt="${escHtml(c.name)}" loading="lazy"
+                 onerror="this.parentElement.style.display='none'">
+            <div class="chart-title">${escHtml(c.name)}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+}
+
+// ── Predictive Analysis (Enhancement A) ─────────────────────────
+function renderPerTypePredictive(info) {
+  const pred = info.predictive;
+  if (!pred) return '';
+  const velocity = pred.velocity || {};
+  const accel = pred.acceleration || {};
+  const predictions = pred.predictions || {};
+  const anomalies = pred.anomalies || [];
+  return `
+    <div class="section" style="margin-top:24px">
+      <div class="section-title">Predictive Analysis</div>
+      <div class="section-subtitle">Velocity, acceleration, and trend predictions from historical data</div>
+      <div class="pt-summary">
+        <div class="pt-stat"><div class="pt-label">Velocity (per hour)</div><div class="pt-value">${fmt(velocity.current||0)}</div></div>
+        <div class="pt-stat"><div class="pt-label">Acceleration</div><div class="pt-value">${fmt(accel.current||0)}</div></div>
+        <div class="pt-stat"><div class="pt-label">Predicted 24h</div><div class="pt-value">${fmt(predictions.next_24h||0)}</div></div>
+        <div class="pt-stat"><div class="pt-label">Anomalies</div><div class="pt-value">${fmt(anomalies.length)}</div></div>
+      </div>
+    </div>`;
 }
 
 // ── History Page (lazy-loaded) ──────────────────────────────────

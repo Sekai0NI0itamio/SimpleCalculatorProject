@@ -18,6 +18,7 @@ Outputs:
 """
 import argparse
 import json
+import math
 import sys
 from datetime import datetime, timedelta, timezone
 
@@ -110,9 +111,49 @@ def load_filter_sets(project_type):
 # ═══════════════════════════════════════════════════════════════════
 
 
+def compute_momentum_score(delta_downloads, growth_pct, downloads_per_hour, baseline_downloads):
+    """Composite momentum score (Enhancement E).
+
+    Combines three signals into a single score:
+      - log-scaled absolute delta (handles huge range, 1 to 10M+)
+      - growth rate percentage (rewards proportional growth)
+      - velocity = downloads/hour (rewards high download rate)
+
+    Weighting:
+      40% log-scaled delta  — rewards big absolute gains
+      30% growth_pct       — rewards proportional growth (small projects can score high)
+      30% log-scaled rate  — rewards high download velocity
+
+    All three components are log-scaled (log1p) so the score stays in a
+    reasonable range and isn't dominated by one outlier project.
+    """
+    if baseline_downloads <= 0:
+        growth_pct = 0.0
+    if downloads_per_hour < 0:
+        downloads_per_hour = 0.0
+    if delta_downloads < 0:
+        # Declining projects get negative momentum proportional to loss
+        return round(-math.log1p(abs(delta_downloads)) * 0.4, 2)
+
+    log_delta = math.log1p(max(0, delta_downloads))
+    log_rate = math.log1p(max(0, downloads_per_hour))
+    # Clamp growth_pct to [0, 100] for scoring (above 100% is great but shouldn't dominate)
+    clamped_growth = min(max(growth_pct, 0.0), 100.0)
+
+    score = (log_delta * 0.4) + (clamped_growth * 0.3) + (log_rate * 0.3)
+    return round(score, 2)
+
+
 def build_project_analysis(current_snapshot, baseline_snapshot,
-                           project_type, loader_names, loader_set, content_cat_names):
-    """Build simple delta analysis. Returns a dict with the essential sections."""
+                           project_type, loader_names, loader_set, content_cat_names,
+                           actual_hours_between):
+    """Build delta analysis. Returns a dict with the essential sections.
+
+    Enhancements:
+      C: Tracks negative deltas (declining_projects)
+      D: Rate normalization (downloads_per_hour on every delta)
+      E: Momentum score on top/growing projects
+    """
     current_projects = current_snapshot.get("projects", [])
     current_total_downloads = current_snapshot.get("total_downloads", 0)
     baseline_date = baseline_snapshot.get("date", "")
@@ -121,17 +162,27 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
     baseline_map = {p["project_id"]: p.get("downloads", 0) for p in baseline_snapshot.get("projects", [])}
     current_map = {p["project_id"]: p.get("downloads", 0) for p in current_projects}
 
+    # Avoid divide-by-zero — enforce a minimum 1h span for rate normalization
+    hours = max(actual_hours_between, 1.0)
+
     # ── Version data ──────────────────────────────────────────────
     current_versions = current_snapshot.get("versions", [])
     baseline_versions = baseline_snapshot.get("versions", [])
     baseline_version_map = {v.get("version_id"): v.get("downloads", 0) for v in baseline_versions if v.get("version_id")}
 
-    # ── Summary ───────────────────────────────────────────────────
+    # ── Summary (includes net change and declining totals, Enhancement C) ──
     new_downloads = 0
+    lost_downloads = 0
+    growing_count = 0
+    declining_count = 0
     for pid, cur_dl in current_map.items():
         delta = cur_dl - baseline_map.get(pid, 0)
         if delta > 0:
             new_downloads += delta
+            growing_count += 1
+        elif delta < 0:
+            lost_downloads += abs(delta)
+            declining_count += 1
 
     summary = {
         "total_projects": current_snapshot.get("project_count", len(current_projects)),
@@ -141,6 +192,11 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         "current_date": current_date,
         "new_projects_since_baseline": sum(1 for pid in current_map if pid not in baseline_map),
         "new_downloads_since_baseline": new_downloads,
+        "lost_downloads_since_baseline": lost_downloads,
+        "net_download_change": new_downloads - lost_downloads,
+        "growing_projects": growing_count,
+        "declining_projects": declining_count,
+        "downloads_per_hour": round(new_downloads / hours, 2),
     }
 
     # ── Category rankings ─────────────────────────────────────────
@@ -160,15 +216,12 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
             "projects": len(projs),
             "total_downloads": current_total,
             "new_downloads": new_dl,
+            "downloads_per_hour": round(new_dl / hours, 2),
             "growth_pct": round((new_dl / baseline_total * 100) if baseline_total > 0 else 0.0, 2),
         })
     category_rankings.sort(key=lambda x: x["new_downloads"], reverse=True)
 
     # ── Category trending projects ─────────────────────────────────
-    # For each content category, collect the top 50 projects ranked by their
-    # download increase (delta) over the captured time frame. This answers
-    # "which mods in this category are currently being downloaded the most?"
-    # and provides investment/trending suggestions per category.
     TOP_TRENDING_PER_CAT = 50
     category_trending = {}
     for cat, projs in cat_projects.items():
@@ -179,6 +232,8 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
             base_dl = baseline_map.get(pid, 0)
             delta = cur_dl - base_dl
             if delta > 0:
+                rate = delta / hours
+                growth_pct = round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2)
                 trending.append({
                     "project_id": pid,
                     "title": p.get("title", ""),
@@ -186,7 +241,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                     "categories": p.get("categories", []),
                     "current_downloads": cur_dl,
                     "delta_downloads": delta,
-                    "growth_pct": round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2),
+                    "downloads_per_hour": round(rate, 2),
+                    "growth_pct": growth_pct,
+                    "momentum_score": compute_momentum_score(delta, growth_pct, rate, base_dl),
                 })
         trending.sort(key=lambda x: x["delta_downloads"], reverse=True)
         category_trending[cat] = trending[:TOP_TRENDING_PER_CAT]
@@ -205,23 +262,28 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
 
     loader_rankings = []
     for loader, stat in loader_stats.items():
+        new_dl = stat["new_downloads"]
         loader_rankings.append({
             "loader": loader,
             "projects": stat["projects"],
             "total_downloads": stat["total_downloads"],
-            "new_downloads": stat["new_downloads"],
+            "new_downloads": new_dl,
+            "downloads_per_hour": round(new_dl / hours, 2),
         })
     loader_rankings.sort(key=lambda x: x["new_downloads"], reverse=True)
 
-    # ── Top projects (top 50 by delta, with full details) ─────────
+    # ── Top projects (top 50 by delta, with full details, Enhancement D + E) ──
     project_title_map = {p["project_id"]: p.get("title", "") for p in current_projects}
     top_projects = []
+    declining_projects = []  # Enhancement C: track negative deltas
     for p in current_projects:
         pid = p["project_id"]
         cur_dl = p.get("downloads", 0)
         base_dl = baseline_map.get(pid, 0)
         delta = cur_dl - base_dl
         if delta > 0:
+            rate = delta / hours
+            growth_pct = round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2)
             top_projects.append({
                 "project_id": pid,
                 "title": p.get("title", ""),
@@ -230,15 +292,32 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                 "current_downloads": cur_dl,
                 "baseline_downloads": base_dl,
                 "delta_downloads": delta,
-                "growth_pct": round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2),
+                "downloads_per_hour": round(rate, 2),
+                "growth_pct": growth_pct,
+                "momentum_score": compute_momentum_score(delta, growth_pct, rate, base_dl),
+            })
+        elif delta < 0:
+            # Enhancement C: capture declining projects
+            rate = delta / hours
+            growth_pct = round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2)
+            declining_projects.append({
+                "project_id": pid,
+                "title": p.get("title", ""),
+                "slug": p.get("slug", ""),
+                "categories": p.get("categories", []),
+                "current_downloads": cur_dl,
+                "baseline_downloads": base_dl,
+                "delta_downloads": delta,
+                "downloads_per_hour": round(rate, 2),
+                "growth_pct": growth_pct,
+                "momentum_score": compute_momentum_score(delta, growth_pct, rate, base_dl),
             })
     top_projects.sort(key=lambda x: x["delta_downloads"], reverse=True)
     top_projects = top_projects[:50]
+    declining_projects.sort(key=lambda x: x["delta_downloads"])  # most negative first
+    declining_projects = declining_projects[:50]
 
     # ── Top version+loader growth (aggregated by game_version+loader pair) ──
-    # Normalize game_version (strip whitespace) and loader (lowercase) so that
-    # variations like "26.2 " vs "26.2" or "Fabric" vs "fabric" aggregate into
-    # the same bucket instead of producing duplicate-looking rows.
     def _norm_gv(gv):
         return (gv or "").strip()
 
@@ -268,6 +347,7 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                         "game_version": norm_gv,
                         "loader": norm_loader,
                         "delta_downloads": 0,
+                        "downloads_per_hour": 0.0,
                         "project_count": 0,
                         "top_project_id": pid,
                         "top_project_title": project_title_map.get(pid, pid),
@@ -280,13 +360,13 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                     stat["top_project_delta"] = delta
                     stat["top_project_id"] = pid
                     stat["top_project_title"] = project_title_map.get(pid, pid)
+    # Compute per-hour rate for each VL pair
+    for stat in vl_pair_stats.values():
+        stat["downloads_per_hour"] = round(stat["delta_downloads"] / hours, 2)
 
     top_version_loaders = sorted(vl_pair_stats.values(), key=lambda x: x["delta_downloads"], reverse=True)[:200]
 
     # ── Per-project version+loader pairs (for project detail panel) ──
-    # Aggregated by (norm_gv, norm_loader) per project so each project has at
-    # most one entry per unique VL combo (no duplicates even if a project has
-    # multiple version files targeting the same game_version+loader).
     project_vl_pairs = {}
     for v in current_versions:
         vid = v.get("version_id")
@@ -318,26 +398,25 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                     }
                 proj_map[key]["delta_downloads"] += delta
 
-    # Convert per-project maps to sorted lists
     project_vl_pairs_list = {}
     for pid, proj_map in project_vl_pairs.items():
         sorted_list = sorted(proj_map.values(), key=lambda x: x["delta_downloads"], reverse=True)
         project_vl_pairs_list[pid] = sorted_list
     project_vl_pairs = project_vl_pairs_list
 
-    # ── All project deltas (for the full scrollable list) ──────────
-    # Embed each project's top-N VL pairs directly so the app can render the
-    # project detail popup without fetching the large project_vl_pairs.json
-    # file (which is 2-63MB per type). Top 10 is enough for the popup.
+    # ── All project deltas (Enhancement C: include ALL projects, not just growing) ──
     TOP_VL_PER_PROJECT = 10
     all_project_deltas = []
     for p in current_projects:
         pid = p["project_id"]
         cur_dl = p.get("downloads", 0)
         delta = cur_dl - baseline_map.get(pid, 0)
-        if delta <= 0:
+        if delta == 0:
             continue
+        base_dl = baseline_map.get(pid, 0)
         proj_vls = project_vl_pairs.get(pid, [])[:TOP_VL_PER_PROJECT]
+        rate = delta / hours
+        growth_pct = round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2)
         all_project_deltas.append({
             "project_id": pid,
             "title": p.get("title", ""),
@@ -345,6 +424,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
             "categories": p.get("categories", []),
             "current_downloads": cur_dl,
             "delta_downloads": delta,
+            "downloads_per_hour": round(rate, 2),
+            "growth_pct": growth_pct,
+            "momentum_score": compute_momentum_score(delta, growth_pct, rate, base_dl),
             "top_vl_pairs": proj_vls,
         })
     all_project_deltas.sort(key=lambda x: x["delta_downloads"], reverse=True)
@@ -355,6 +437,7 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         "category_trending": category_trending,
         "loader_rankings": loader_rankings,
         "top_projects": top_projects,
+        "declining_projects": declining_projects,
         "top_version_loaders": top_version_loaders,
         "all_project_deltas": all_project_deltas,
         "project_vl_pairs": project_vl_pairs,
@@ -547,6 +630,7 @@ def main():
 
     # ── Find baseline snapshot ────────────────────────────────────
     baseline_snapshot = find_baseline_snapshot(snapshots, current_snapshot, hours_back)
+    baseline_found_in_window = baseline_snapshot is not None
     if not baseline_snapshot:
         baseline_snapshot = snapshots[0]
         print(f"  No {hours_back}h baseline found — using oldest snapshot ({baseline_snapshot.get('date', '?')}) as fallback")
@@ -555,6 +639,30 @@ def main():
         diff_hours = abs((current_ts - baseline_ts).total_seconds() / 3600) if current_ts and baseline_ts else hours_back
         print(f"  Baseline snapshot: {baseline_snapshot.get('date', '?')} ({baseline_ts}, ~{diff_hours:.1f}h ago)")
 
+    # ── Compute actual time span & data quality (Enhancement B + F) ─
+    baseline_ts = parse_snapshot_timestamp(baseline_snapshot)
+    if current_ts and baseline_ts:
+        actual_hours_between = abs((current_ts - baseline_ts).total_seconds() / 3600)
+    else:
+        actual_hours_between = float(hours_back)
+
+    # Quality: "normal" if actual ≈ requested (within 50% tolerance), else "extended"
+    tolerance = hours_back * 0.5
+    if baseline_found_in_window and abs(actual_hours_between - hours_back) <= tolerance:
+        analysis_quality = "normal"
+    else:
+        analysis_quality = "extended"
+
+    # Confidence based on snapshot count and quality
+    if len(snapshots) >= 6 and analysis_quality == "normal":
+        confidence = "high"
+    elif len(snapshots) >= 3:
+        confidence = "medium"
+    else:
+        confidence = "low"
+
+    print(f"  Actual time span: {actual_hours_between:.1f}h (requested {hours_back}h, quality={analysis_quality}, confidence={confidence})")
+
     # ── Load filter sets ──────────────────────────────────────────
     loader_names, loader_set, content_cat_names = load_filter_sets(project_type)
     print(f"  Loaders: {len(loader_names)}, content categories: {len(content_cat_names)}")
@@ -562,14 +670,20 @@ def main():
     # ── Build analysis ────────────────────────────────────────────
     analysis_data = build_project_analysis(
         current_snapshot, baseline_snapshot,
-        project_type, loader_names, loader_set, content_cat_names
+        project_type, loader_names, loader_set, content_cat_names,
+        actual_hours_between
     )
 
     print(f"  Summary: {analysis_data['summary']['total_projects']:,} projects, "
           f"{analysis_data['summary']['total_versions']:,} versions, "
           f"{analysis_data['summary']['total_downloads']:,} downloads")
     print(f"  New downloads: {analysis_data['summary']['new_downloads_since_baseline']:+,}")
-    print(f"  Projects with delta > 0: {len(analysis_data['all_project_deltas']):,}")
+    print(f"  Lost downloads: {analysis_data['summary']['lost_downloads_since_baseline']:-,}")
+    print(f"  Net change: {analysis_data['summary']['net_download_change']:+,} "
+          f"({analysis_data['summary']['downloads_per_hour']:,.0f}/h)")
+    print(f"  Growing: {analysis_data['summary']['growing_projects']:,} | "
+          f"Declining: {analysis_data['summary']['declining_projects']:,}")
+    print(f"  Projects with delta != 0: {len(analysis_data['all_project_deltas']):,}")
     print(f"  VL pairs: {len(analysis_data['top_version_loaders'])}")
     cat_trending = analysis_data.get("category_trending", {})
     trending_total = sum(len(v) for v in cat_trending.values())
@@ -610,6 +724,16 @@ def main():
         "analysis_type": mode,
         "baseline_date": baseline_snapshot.get("date", ""),
         "hours_between": hours_back,
+        "actual_hours_between": round(actual_hours_between, 2),
+        "analysis_quality": analysis_quality,
+        "data_quality": {
+            "snapshot_count": len(snapshots),
+            "requested_hours": hours_back,
+            "actual_hours": round(actual_hours_between, 2),
+            "baseline_found_in_window": baseline_found_in_window,
+            "quality": analysis_quality,
+            "confidence": confidence,
+        },
         **analysis_data,
     }
 

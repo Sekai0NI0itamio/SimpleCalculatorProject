@@ -8,6 +8,7 @@ single JSON report served to the website at reports/latest_analysis.json.
 
 import json
 import os
+import shutil
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
@@ -59,20 +60,30 @@ def combine_analyses(data_dir):
             report["project_types"][pt] = {"note": "no_analysis"}
             continue
 
+        # Load predictive analysis if available (velocity, predictions, anomalies)
+        sub_analysis_path = Path(data_dir) / pt / "latest_sub_analysis.json"
+        sub_analysis = load_json(str(sub_analysis_path)) if sub_analysis_path.exists() else None
+
         # Store the analysis data
         report["project_types"][pt] = {
             "date": analysis.get("date", ""),
             "analysis_type": analysis.get("analysis_type", "hourly"),
+            "analysis_quality": analysis.get("analysis_quality", "normal"),
+            "actual_hours_between": analysis.get("actual_hours_between", 0),
+            "data_quality": analysis.get("data_quality", {}),
             "summary": analysis.get("summary", {}),
             "category_rankings": analysis.get("category_rankings", [])[:10],
             "category_trending": analysis.get("category_trending", {}),
             "loader_rankings": analysis.get("loader_rankings", [])[:10],
             "top_projects": analysis.get("top_projects", [])[:20],
+            "declining_projects": analysis.get("declining_projects", [])[:20],
             "top_version_loaders": analysis.get("top_version_loaders", [])[:200],
             "all_project_deltas": analysis.get("all_project_deltas", [])[:500],
             "trend_history": analysis.get("trend_history", []),
             "category_trend_history": analysis.get("category_trend_history", {}),
             "vl_trend_history": analysis.get("vl_trend_history", {}),
+            # Predictive analysis (may be None if not enough snapshots)
+            "predictive": sub_analysis if sub_analysis else None,
         }
 
         # Collect top projects with type prefix
@@ -350,18 +361,21 @@ def _parse_ts(ts_str):
         return None
 
 
-def write_streaming_chunks(report, reports_dir):
+def write_streaming_chunks(report, reports_dir, data_dir="."):
     """Write per-type JSON chunks + a small summary file for streaming frontends.
 
     Layout:
       reports/summary.json          — small, totals + project_types index (no project lists)
       reports/type/{pt}.json        — per-type data (top projects, categories, VL pairs, trending)
-      reports/combined.json         — combined top projects / VL / categories (loaded last)
-      reports/run_history.json      — run history (loaded on demand by History page)
+      reports/combined.json         — combined top projects / VL / categories
+      reports/run_history.json      — run history (loaded on demand)
+      reports/charts/{pt}/*.png     — rendered chart images (lazy-loaded by frontend)
     """
     reports_dir = Path(reports_dir)
     type_dir = reports_dir / "type"
+    charts_dir = reports_dir / "charts"
     ensure_dir(str(type_dir))
+    ensure_dir(str(charts_dir))
 
     # 1. Summary — tiny file, fetched first by frontend
     summary = {
@@ -373,12 +387,21 @@ def write_streaming_chunks(report, reports_dir):
         if not isinstance(info, dict):
             continue
         s = info.get("summary", {})
+        dq = info.get("data_quality", {})
         summary["project_types"][pt] = {
             "total_projects": s.get("total_projects", 0),
             "total_versions": s.get("total_versions", 0),
             "total_downloads": s.get("total_downloads", 0),
             "new_downloads_since_baseline": s.get("new_downloads_since_baseline", 0),
+            "lost_downloads_since_baseline": s.get("lost_downloads_since_baseline", 0),
+            "net_download_change": s.get("net_download_change", 0),
+            "downloads_per_hour": s.get("downloads_per_hour", 0),
+            "growing_projects": s.get("growing_projects", 0),
+            "declining_projects": s.get("declining_projects", 0),
             "analysis_type": info.get("analysis_type", "hourly"),
+            "analysis_quality": info.get("analysis_quality", "normal"),
+            "actual_hours_between": info.get("actual_hours_between", 0),
+            "confidence": dq.get("confidence", "low"),
             "date": info.get("date", ""),
         }
     save_json(str(reports_dir / "summary.json"), summary)
@@ -387,17 +410,44 @@ def write_streaming_chunks(report, reports_dir):
     for pt, info in report.get("project_types", {}).items():
         if not isinstance(info, dict):
             continue
+
+        # Copy charts from data/{pt}/charts/ to reports/charts/{pt}/
+        # Build a chart list (path + display name) so the frontend can render a gallery.
+        src_charts = Path(data_dir) / pt / "charts"
+        chart_list = []
+        if src_charts.exists():
+            dst_charts = charts_dir / pt
+            ensure_dir(str(dst_charts))
+            for png in src_charts.glob("*.png"):
+                shutil.copy2(str(png), str(dst_charts / png.name))
+                name = png.stem.replace("_", " ").title()
+                chart_list.append({
+                    "path": f"reports/charts/{pt}/{png.name}",
+                    "name": name,
+                })
+
         save_json(str(type_dir / f"{pt}.json"), {
             "project_type": pt,
+            "timestamp": info.get("timestamp", ""),
             "date": info.get("date", ""),
+            "baseline_date": info.get("baseline_date", ""),
+            "hours_between": info.get("hours_between", 0),
             "analysis_type": info.get("analysis_type", "hourly"),
+            "analysis_quality": info.get("analysis_quality", "normal"),
+            "actual_hours_between": info.get("actual_hours_between", 0),
+            "data_quality": info.get("data_quality", {}),
+            "downloads_per_hour": info.get("downloads_per_hour",
+                                           info.get("summary", {}).get("downloads_per_hour", 0)),
             "summary": info.get("summary", {}),
             "category_rankings": info.get("category_rankings", [])[:10],
             "category_trending": info.get("category_trending", {}),
             "loader_rankings": info.get("loader_rankings", [])[:10],
             "top_projects": info.get("top_projects", [])[:20],
+            "declining_projects": info.get("declining_projects", [])[:20],
             "top_version_loaders": info.get("top_version_loaders", [])[:200],
             "all_project_deltas": info.get("all_project_deltas", [])[:500],
+            "predictive": info.get("predictive"),
+            "charts": chart_list,
         })
 
     # 3. Combined rankings — fetched after summary, rendered for General tab
@@ -406,8 +456,12 @@ def write_streaming_chunks(report, reports_dir):
     # 4. Run history — fetched only when user opens the History page
     save_json(str(reports_dir / "run_history.json"), report.get("run_history", []))
 
-    print(f"  Streaming chunks: summary.json ({len(str(summary))} chars), "
-          f"{len(report.get('project_types', {}))} type files, combined.json, run_history.json")
+    # Count charts copied
+    chart_count = sum(1 for _ in charts_dir.rglob("*.png"))
+
+    print(f"  Streaming chunks: summary.json, "
+          f"{len(report.get('project_types', {}))} type files, combined.json, run_history.json, "
+          f"{chart_count} charts")
 
 
 def main():
@@ -419,8 +473,8 @@ def main():
     output_path = reports_dir / "latest_analysis.json"
     save_json(str(output_path), report)
 
-    # Also write streaming chunks (per-type + summary + combined + run_history)
-    write_streaming_chunks(report, reports_dir)
+    # Also write streaming chunks (per-type + summary + combined + run_history + charts)
+    write_streaming_chunks(report, reports_dir, data_dir)
 
     print(f"Report generated at {output_path}")
     print(f"  Total projects: {report['totals']['projects']:,}")
