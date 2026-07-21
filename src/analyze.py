@@ -54,37 +54,58 @@ def parse_snapshot_timestamp(snapshot):
             return None
 
 
-def load_all_snapshots(project_type):
-    """Load all raw snapshots sorted by timestamp."""
+def parse_filename_timestamp(filename):
+    """Parse a timestamp from a snapshot filename (e.g. '2026-07-15T09-48-28.json.gz').
+    This avoids loading the file just to read its timestamp field."""
+    import os
+    basename = os.path.basename(filename)
+    # Remove .json.gz or .json extension
+    for ext in (".json.gz", ".json"):
+        if basename.endswith(ext):
+            basename = basename[:-len(ext)]
+            break
+    if "T" in basename:
+        date_part, time_part = basename.split("T", 1)
+        time_part = time_part.replace("-", ":")
+        basename = f"{date_part}T{time_part}"
+    try:
+        return datetime.fromisoformat(basename).replace(tzinfo=BEIJING_TZ)
+    except (ValueError, TypeError):
+        return None
+
+
+def list_snapshot_files_with_ts(project_type):
+    """List all snapshot files with their parsed timestamps (from filenames).
+    Returns list of (filepath, datetime) sorted by timestamp.
+    Does NOT load file contents — much faster than load_all_snapshots()."""
     raw_dir = get_raw_dir(project_type)
     snapshot_files = list_snapshot_files(raw_dir)
-    snapshots = []
+    result = []
     for f in snapshot_files:
-        data = load_json(f)
-        if data:
-            snapshots.append(data)
-    return snapshots
+        ts = parse_filename_timestamp(f)
+        if ts:
+            result.append((f, ts))
+    result.sort(key=lambda x: x[1])
+    return result
 
 
-def find_baseline_snapshot(snapshots, current_snapshot, hours_back):
-    """Find the snapshot closest to `hours_back` hours before the current snapshot."""
-    current_ts = parse_snapshot_timestamp(current_snapshot)
+def find_baseline_file(snapshot_files_ts, current_ts, hours_back):
+    """Find the baseline snapshot file closest to `hours_back` before current.
+    Works with filenames/timestamps only — no file loading needed.
+    Returns (filepath, datetime) or None."""
     if not current_ts:
         return None
     target = current_ts - timedelta(hours=hours_back)
     window = timedelta(hours=hours_back * 0.5)
     best = None
     best_diff = None
-    for snap in snapshots:
-        st = parse_snapshot_timestamp(snap)
-        if not st:
+    for filepath, ts in snapshot_files_ts:
+        if ts >= current_ts:
             continue
-        if st >= current_ts:
-            continue
-        diff = abs((st - target).total_seconds())
+        diff = abs((ts - target).total_seconds())
         if best_diff is None or diff < best_diff:
             if diff <= window.total_seconds():
-                best = snap
+                best = (filepath, ts)
                 best_diff = diff
     return best
 
@@ -616,31 +637,45 @@ def main():
 
     print(f"=== Analyze ({project_type}) — {mode} ===")
 
-    # ── Load raw snapshot history ─────────────────────────────────
-    snapshots = load_all_snapshots(project_type)
-    if len(snapshots) < 2:
-        print(f"Need at least 2 snapshots for analysis (have {len(snapshots)}). Skipping.")
+    # ── List snapshot files with timestamps (no file loading) ────
+    # OPTIMIZATION: Parse timestamps from filenames instead of loading all
+    # snapshots into memory. Loading 26-52 snapshots (~400MB+) was causing
+    # the Analyze step to be cancelled on GitHub Actions runners.
+    snapshot_files_ts = list_snapshot_files_with_ts(project_type)
+    if len(snapshot_files_ts) < 2:
+        print(f"Need at least 2 snapshots for analysis (have {len(snapshot_files_ts)}). Skipping.")
         return 0
 
-    current_snapshot = snapshots[-1]
-    current_date = current_snapshot.get("date", "")
-    current_ts = parse_snapshot_timestamp(current_snapshot)
-    print(f"  Current snapshot: {current_date} ({current_ts})")
-    print(f"  Total snapshots: {len(snapshots)}")
+    current_filepath, current_ts = snapshot_files_ts[-1]
+    print(f"  Total snapshots: {len(snapshot_files_ts)}")
 
-    # ── Find baseline snapshot ────────────────────────────────────
-    baseline_snapshot = find_baseline_snapshot(snapshots, current_snapshot, hours_back)
-    baseline_found_in_window = baseline_snapshot is not None
-    if not baseline_snapshot:
-        baseline_snapshot = snapshots[0]
-        print(f"  No {hours_back}h baseline found — using oldest snapshot ({baseline_snapshot.get('date', '?')}) as fallback")
+    # ── Find baseline file (from filenames only — no loading) ────
+    baseline_result = find_baseline_file(snapshot_files_ts, current_ts, hours_back)
+    baseline_found_in_window = baseline_result is not None
+    if not baseline_result:
+        baseline_filepath, baseline_ts = snapshot_files_ts[0]
+        print(f"  No {hours_back}h baseline found — using oldest snapshot ({baseline_ts}) as fallback")
     else:
-        baseline_ts = parse_snapshot_timestamp(baseline_snapshot)
-        diff_hours = abs((current_ts - baseline_ts).total_seconds() / 3600) if current_ts and baseline_ts else hours_back
-        print(f"  Baseline snapshot: {baseline_snapshot.get('date', '?')} ({baseline_ts}, ~{diff_hours:.1f}h ago)")
+        baseline_filepath, baseline_ts = baseline_result
+        diff_hours = abs((current_ts - baseline_ts).total_seconds() / 3600)
+        print(f"  Baseline snapshot: {baseline_ts} (~{diff_hours:.1f}h ago)")
+
+    # ── Load ONLY the 2 needed snapshots (current + baseline) ────
+    print(f"  Loading current snapshot: {current_filepath}")
+    current_snapshot = load_json(current_filepath)
+    if not current_snapshot:
+        print(f"  ERROR: Failed to load current snapshot from {current_filepath}")
+        return 1
+    current_date = current_snapshot.get("date", "")
+    print(f"  Current snapshot: {current_date} ({current_ts})")
+
+    print(f"  Loading baseline snapshot: {baseline_filepath}")
+    baseline_snapshot = load_json(baseline_filepath)
+    if not baseline_snapshot:
+        print(f"  ERROR: Failed to load baseline snapshot from {baseline_filepath}")
+        return 1
 
     # ── Compute actual time span & data quality (Enhancement B + F) ─
-    baseline_ts = parse_snapshot_timestamp(baseline_snapshot)
     if current_ts and baseline_ts:
         actual_hours_between = abs((current_ts - baseline_ts).total_seconds() / 3600)
     else:
@@ -654,9 +689,10 @@ def main():
         analysis_quality = "extended"
 
     # Confidence based on snapshot count and quality
-    if len(snapshots) >= 6 and analysis_quality == "normal":
+    snapshot_count = len(snapshot_files_ts)
+    if snapshot_count >= 6 and analysis_quality == "normal":
         confidence = "high"
-    elif len(snapshots) >= 3:
+    elif snapshot_count >= 3:
         confidence = "medium"
     else:
         confidence = "low"
@@ -727,7 +763,7 @@ def main():
         "actual_hours_between": round(actual_hours_between, 2),
         "analysis_quality": analysis_quality,
         "data_quality": {
-            "snapshot_count": len(snapshots),
+            "snapshot_count": snapshot_count,
             "requested_hours": hours_back,
             "actual_hours": round(actual_hours_between, 2),
             "baseline_found_in_window": baseline_found_in_window,
