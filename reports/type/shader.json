@@ -4,18 +4,278 @@
   "date": "2026-07-21",
   "baseline_date": "",
   "hours_between": 0,
-  "analysis_type": "sub",
+  "analysis_type": "hourly",
   "analysis_quality": "normal",
-  "actual_hours_between": 0,
-  "data_quality": {},
-  "downloads_per_hour": 0,
-  "summary": {},
-  "category_rankings": [],
-  "category_trending": {},
+  "actual_hours_between": 1.16,
+  "data_quality": {
+    "snapshot_count": 55,
+    "requested_hours": 2,
+    "actual_hours": 1.16,
+    "baseline_found_in_window": true,
+    "quality": "normal",
+    "confidence": "high",
+    "stale": false,
+    "snapshot_age_hours": 0.58,
+    "baseline_source_count": 1
+  },
+  "downloads_per_hour": 79.29,
+  "summary": {
+    "total_projects": 648,
+    "total_versions": 3142,
+    "total_downloads": 280360102,
+    "baseline_date": "2026-07-21",
+    "current_date": "2026-07-21",
+    "new_projects_since_baseline": 0,
+    "new_downloads_since_baseline": 92,
+    "lost_downloads_since_baseline": 0,
+    "net_download_change": 92,
+    "growing_projects": 2,
+    "declining_projects": 0,
+    "downloads_per_hour": 79.29
+  },
+  "category_rankings": [
+    {
+      "category": "vanilla-like",
+      "projects": 367,
+      "total_downloads": 104155040,
+      "new_downloads": 68,
+      "downloads_per_hour": 58.61,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "semi-realistic",
+      "projects": 168,
+      "total_downloads": 118701756,
+      "new_downloads": 68,
+      "downloads_per_hour": 58.61,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "realistic",
+      "projects": 100,
+      "total_downloads": 13634830,
+      "new_downloads": 68,
+      "downloads_per_hour": 58.61,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "fantasy",
+      "projects": 146,
+      "total_downloads": 185706053,
+      "new_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "cursed",
+      "projects": 147,
+      "total_downloads": 4463839,
+      "new_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "cartoon",
+      "projects": 97,
+      "total_downloads": 144655042,
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    }
+  ],
   "loader_rankings": [],
-  "top_projects": [],
+  "top_projects": [
+    {
+      "project_id": "buFZXJqT",
+      "title": "Potato+",
+      "slug": "potatoshaders",
+      "categories": [
+        "atmosphere",
+        "colored-lighting",
+        "iris",
+        "low",
+        "optifine",
+        "potato",
+        "realistic",
+        "semi-realistic",
+        "shadows",
+        "vanilla-like"
+      ],
+      "current_downloads": 93,
+      "baseline_downloads": 25,
+      "delta_downloads": 68,
+      "downloads_per_hour": 58.61,
+      "growth_pct": 272.0,
+      "momentum_score": 13.17,
+      "is_anomaly": true,
+      "anomaly_factor": 161.0
+    },
+    {
+      "project_id": "fkH4TBvh",
+      "title": "RetroPixel",
+      "slug": "retroshader",
+      "categories": [
+        "atmosphere",
+        "cursed",
+        "fantasy",
+        "iris",
+        "optifine",
+        "path-tracing",
+        "potato"
+      ],
+      "current_downloads": 42,
+      "baseline_downloads": 18,
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "growth_pct": 133.33,
+      "momentum_score": 12.88,
+      "is_anomaly": true,
+      "anomaly_factor": 78.92
+    }
+  ],
   "declining_projects": [],
-  "top_version_loaders": [],
+  "top_version_loaders": [
+    {
+      "game_version": "1.21.11",
+      "loader": "iris",
+      "delta_downloads": 92,
+      "downloads_per_hour": 79.29,
+      "project_count": 2,
+      "top_project_id": "buFZXJqT",
+      "top_project_title": "Potato+",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "optifine",
+      "delta_downloads": 92,
+      "downloads_per_hour": 79.29,
+      "project_count": 2,
+      "top_project_id": "buFZXJqT",
+      "top_project_title": "Potato+",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "iris",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "iris",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.1",
+      "loader": "iris",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "iris",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "iris",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.2",
+      "loader": "iris",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "optifine",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "optifine",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.1",
+      "loader": "optifine",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "optifine",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "optifine",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    },
+    {
+      "game_version": "26.2",
+      "loader": "optifine",
+      "delta_downloads": 24,
+      "downloads_per_hour": 20.68,
+      "project_count": 1,
+      "top_project_id": "fkH4TBvh",
+      "top_project_title": "RetroPixel",
+      "top_project_delta": 24
+    }
+  ],
   "all_project_deltas": [],
   "project_velocity_history": {
     "buFZXJqT": {
@@ -3367,6 +3627,120 @@
       ]
     }
   },
+  "trend_history": [
+    {
+      "date": "2026-07-15",
+      "timestamp": "2026-07-15T09-47-14",
+      "total_downloads": 275319102,
+      "new_downloads": 275319102,
+      "new_projects": 626,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-15",
+      "timestamp": "2026-07-15T12-11-25",
+      "total_downloads": 275394306,
+      "new_downloads": 75204,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-16",
+      "timestamp": "2026-07-16T06-58-20",
+      "total_downloads": 276081131,
+      "new_downloads": 686825,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-16",
+      "timestamp": "2026-07-16T23-47-31",
+      "total_downloads": 276659078,
+      "new_downloads": 577947,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-17",
+      "timestamp": "2026-07-17T01-23-14",
+      "total_downloads": 276730215,
+      "new_downloads": 71137,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-17",
+      "timestamp": "2026-07-17T23-16-14",
+      "total_downloads": 277503965,
+      "new_downloads": 773750,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-18",
+      "timestamp": "2026-07-18T01-40-35",
+      "total_downloads": 277546941,
+      "new_downloads": 42976,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-18",
+      "timestamp": "2026-07-18T22-57-56",
+      "total_downloads": 278281262,
+      "new_downloads": 734321,
+      "new_projects": 9,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-19",
+      "timestamp": "2026-07-19T01-08-54",
+      "total_downloads": 278359601,
+      "new_downloads": 78339,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-19",
+      "timestamp": "2026-07-19T23-06-26",
+      "total_downloads": 278520501,
+      "new_downloads": 160900,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-20",
+      "timestamp": "2026-07-20T01-08-51",
+      "total_downloads": 278520501,
+      "new_downloads": 0,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-20",
+      "timestamp": "2026-07-20T22-14-58",
+      "total_downloads": 279476178,
+      "new_downloads": 955677,
+      "new_projects": 15,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-21",
+      "timestamp": "2026-07-21T00-13-04",
+      "total_downloads": 279476239,
+      "new_downloads": 61,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    },
+    {
+      "date": "2026-07-21",
+      "timestamp": "2026-07-21T19-26-00",
+      "total_downloads": 280360102,
+      "new_downloads": 883863,
+      "new_projects": 0,
+      "analysis_type": "daily"
+    }
+  ],
   "predictive": {
     "timestamp": "2026-07-21T20-01-02",
     "date": "2026-07-21",

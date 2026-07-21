@@ -19,7 +19,12 @@ PROJECT_TYPES = ["mod", "modpack", "resourcepack", "shader", "datapack", "plugin
 
 
 def load_latest_analysis(data_dir, project_type):
-    """Load the latest analysis for a project type."""
+    """Load the latest analysis for a project type.
+
+    Skips sub-analysis files (analysis_type='sub') which are predictive runs
+    that don't contain top_projects, categories, or other regular analysis fields.
+    Sub-analyses are loaded separately via load_sub_analysis().
+    """
     analysis_dir = Path(data_dir) / project_type / "analysis"
     if not analysis_dir.exists():
         return None
@@ -27,8 +32,12 @@ def load_latest_analysis(data_dir, project_type):
     files = sorted(analysis_dir.glob("*.json"), reverse=True)
     for f in files:
         data = load_json(str(f))
-        if data:
-            return data
+        if not data:
+            continue
+        # Skip predictive sub-analyses — they're loaded separately
+        if data.get("analysis_type") == "sub":
+            continue
+        return data
     return None
 
 
@@ -474,7 +483,9 @@ def write_streaming_chunks(report, reports_dir, data_dir="."):
                                            info.get("summary", {}).get("downloads_per_hour", 0)),
             "summary": info.get("summary", {}),
             "category_rankings": info.get("category_rankings", [])[:10],
-            "category_trending": info.get("category_trending", {}),
+            # NOTE: category_trending is large (~300 KB for mod) and not used by the
+            # per-type frontend view — only the combined General tab uses it.
+            # Kept out of streaming chunks to keep mod.json under 1 MB.
             "loader_rankings": info.get("loader_rankings", [])[:10],
             "top_projects": info.get("top_projects", [])[:20],
             "declining_projects": info.get("declining_projects", [])[:20],
@@ -482,6 +493,11 @@ def write_streaming_chunks(report, reports_dir, data_dir="."):
             "all_project_deltas": info.get("all_project_deltas", [])[:500],
             # Enhancement #2: per-project velocity history (compact time-series)
             "project_velocity_history": info.get("project_velocity_history", {}),
+            # Trend history (7-day time series of totals — used for the trend graph)
+            "trend_history": info.get("trend_history", []),
+            # NOTE: category_trend_history and vl_trend_history are NOT streamed
+            # here because they can be huge (vl_trend_history for mod is 9 MB).
+            # They're only used for the combined cross-type views, not per-type.
             "predictive": info.get("predictive"),
             "charts": chart_list,
         })
