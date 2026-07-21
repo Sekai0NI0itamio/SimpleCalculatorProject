@@ -1,10 +1,10 @@
 {
   "project_type": "plugin",
   "timestamp": "",
-  "date": "",
+  "date": "2026-07-21",
   "baseline_date": "",
   "hours_between": 0,
-  "analysis_type": "hourly",
+  "analysis_type": "sub",
   "analysis_quality": "normal",
   "actual_hours_between": 0,
   "data_quality": {},
@@ -17,6 +17,38 @@
   "declining_projects": [],
   "top_version_loaders": [],
   "all_project_deltas": [],
-  "predictive": null,
+  "project_velocity_history": {},
+  "predictive": {
+    "timestamp": "2026-07-21T19-46-43",
+    "date": "2026-07-21",
+    "project_type": "plugin",
+    "analysis_type": "sub",
+    "snapshots_analyzed": 1,
+    "last_snapshot_time": "2026-07-21T19-33-04",
+    "hours_until_main": 12,
+    "velocity": {
+      "velocity_per_hour": 0.0,
+      "velocity_2h": 0,
+      "velocity_24h": 0,
+      "avg_velocity_24h": 0.0
+    },
+    "acceleration": {
+      "acceleration": 0.0,
+      "acceleration_pct": 0.0
+    },
+    "predictions": {
+      "predicted_daily_total": 277130601,
+      "predicted_daily_growth": 0,
+      "predicted_daily_growth_pct": 0.0,
+      "predicted_daily_growth_weighted": 0,
+      "predicted_daily_growth_pct_weighted": 0.0,
+      "confidence": "low",
+      "confidence_weight": 0.4
+    },
+    "top_movers_2h": [],
+    "velocity_by_category": [],
+    "anomalies": [],
+    "hourly_pattern": []
+  },
   "charts": []
 }

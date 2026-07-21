@@ -110,6 +110,133 @@ def find_baseline_file(snapshot_files_ts, current_ts, hours_back):
     return best
 
 
+def find_baseline_files_window(snapshot_files_ts, current_ts, hours_back, max_files=3):
+    """Enhancement #1: Rolling-window baseline.
+    Find up to `max_files` baseline snapshots closest to `hours_back` before current,
+    all within the tolerance window. Used to compute a median baseline that
+    smooths single-snapshot anomalies (e.g., a project briefly delisted).
+
+    Returns list of (filepath, datetime, diff_seconds) sorted by diff (closest first).
+    Works with filenames/timestamps only — no file loading needed.
+    """
+    if not current_ts:
+        return []
+    target = current_ts - timedelta(hours=hours_back)
+    window = timedelta(hours=hours_back * 0.5)
+    candidates = []
+    for filepath, ts in snapshot_files_ts:
+        if ts >= current_ts:
+            continue
+        diff = abs((ts - target).total_seconds())
+        if diff <= window.total_seconds():
+            candidates.append((filepath, ts, diff))
+    candidates.sort(key=lambda x: x[2])  # closest first
+    return candidates[:max_files]
+
+
+def build_rolling_baseline(baseline_files, primary_baseline_snapshot):
+    """Enhancement #1: Build a synthetic baseline snapshot using median downloads.
+
+    Takes a list of (filepath, datetime) baseline files plus the primary baseline
+    snapshot (already loaded) and returns a synthetic baseline dict where
+    `projects` and `versions` have median downloads per project/version_id.
+
+    If only one baseline file is available, returns the primary baseline unchanged.
+
+    `primary_baseline_snapshot` is used as the source of metadata fields
+    (date, total_downloads, etc.) so downstream code keeps working.
+    """
+    if len(baseline_files) <= 1:
+        return primary_baseline_snapshot
+
+    # Load all baseline snapshots (skip the primary, which is already loaded)
+    primary_path = baseline_files[0][0]
+    all_snapshots = [primary_baseline_snapshot]
+    for filepath, _ts in baseline_files[1:]:
+        if filepath == primary_path:
+            continue
+        data = load_json(filepath)
+        if data:
+            all_snapshots.append(data)
+
+    if len(all_snapshots) < 2:
+        return primary_baseline_snapshot
+
+    def _median(values):
+        """Median of a list of numbers, ignoring None/missing. Returns 0 if empty."""
+        clean = [v for v in values if v is not None]
+        if not clean:
+            return 0
+        clean.sort()
+        n = len(clean)
+        if n % 2 == 1:
+            return clean[n // 2]
+        return (clean[n // 2 - 1] + clean[n // 2]) / 2
+
+    # Build median project downloads
+    project_dls_per_snap = {}  # pid -> [downloads in snap1, snap2, ...]
+    for snap in all_snapshots:
+        for p in snap.get("projects", []):
+            pid = p.get("project_id")
+            if not pid:
+                continue
+            project_dls_per_snap.setdefault(pid, []).append(p.get("downloads", 0))
+
+    median_projects = []
+    for pid, dls in project_dls_per_snap.items():
+        median_dls = _median(dls)
+        # Use the latest snapshot's metadata for the project (title, slug, categories)
+        # to keep the median value but the freshest descriptor
+        latest_proj = None
+        for snap in reversed(all_snapshots):
+            for p in snap.get("projects", []):
+                if p.get("project_id") == pid:
+                    latest_proj = p
+                    break
+            if latest_proj:
+                break
+        if latest_proj:
+            proj_copy = dict(latest_proj)
+            proj_copy["downloads"] = median_dls
+            median_projects.append(proj_copy)
+        else:
+            median_projects.append({"project_id": pid, "downloads": median_dls})
+
+    # Build median version downloads
+    version_dls_per_snap = {}  # vid -> [downloads in snap1, snap2, ...]
+    for snap in all_snapshots:
+        for v in snap.get("versions", []):
+            vid = v.get("version_id")
+            if not vid:
+                continue
+            version_dls_per_snap.setdefault(vid, []).append(v.get("downloads", 0))
+
+    median_versions = []
+    for vid, dls in version_dls_per_snap.items():
+        median_dls = _median(dls)
+        latest_ver = None
+        for snap in reversed(all_snapshots):
+            for v in snap.get("versions", []):
+                if v.get("version_id") == vid:
+                    latest_ver = v
+                    break
+            if latest_ver:
+                break
+        if latest_ver:
+            ver_copy = dict(latest_ver)
+            ver_copy["downloads"] = median_dls
+            median_versions.append(ver_copy)
+        else:
+            median_versions.append({"version_id": vid, "downloads": median_dls})
+
+    # Build synthetic baseline using primary's metadata + median values
+    synthetic = dict(primary_baseline_snapshot)
+    synthetic["projects"] = median_projects
+    synthetic["versions"] = median_versions
+    synthetic["baseline_source_count"] = len(all_snapshots)
+    return synthetic
+
+
 def load_filter_sets(project_type):
     """Load loader names and content category names for filtering."""
     type_dir = get_project_type_dir(project_type)
@@ -165,16 +292,60 @@ def compute_momentum_score(delta_downloads, growth_pct, downloads_per_hour, base
     return round(score, 2)
 
 
+def anomaly_momentum_penalty(anomaly_factor):
+    """Enhancement #3: Anomaly-aware momentum.
+
+    Returns a multiplier (0.4 to 1.0) to penalize momentum_score for projects
+    flagged as anomalies by predictive_analyze.py. The anomaly_factor is the
+    ratio of current_velocity / historical_avg_velocity.
+
+    Reasoning: an anomaly often means the velocity spike is a data glitch or
+    one-off event, not sustained growth. We don't want a glitchy project to
+    rank above steady growers.
+
+    - factor <= 3.0: no penalty (not really anomalous, just a slight bump)
+    - factor 3.0-5.0: 20% penalty (0.8x)
+    - factor 5.0-10.0: up to 50% penalty (0.6-0.5x)
+    - factor >= 10.0: 60% penalty (0.4x, capped)
+    """
+    if anomaly_factor is None or anomaly_factor <= 3.0:
+        return 1.0
+    # Linear penalty above 3.0, capped at 0.4
+    # factor=3.0 → 1.0, factor=5.0 → 0.8, factor=8.0 → 0.5, factor=10+ → 0.4
+    penalty = (anomaly_factor - 3.0) * 0.1
+    return max(0.4, 1.0 - penalty)
+
+
+def load_anomaly_factors(project_type):
+    """Enhancement #3: Load anomaly factors from the previous predictive run.
+
+    Returns dict: {project_id: anomaly_factor} loaded from
+    data/{project_type}/latest_sub_analysis.json. Returns {} if file
+    is missing or has no anomalies.
+    """
+    type_dir = get_project_type_dir(project_type)
+    sub_path = f"{type_dir}/latest_sub_analysis.json"
+    sub_data = load_json(sub_path)
+    if not sub_data:
+        return {}
+    anomalies = sub_data.get("anomalies", []) or []
+    return {a.get("project_id"): a.get("anomaly_factor", 0.0) for a in anomalies if a.get("project_id")}
+
+
 def build_project_analysis(current_snapshot, baseline_snapshot,
                            project_type, loader_names, loader_set, content_cat_names,
-                           actual_hours_between):
+                           actual_hours_between, anomaly_factors=None):
     """Build delta analysis. Returns a dict with the essential sections.
 
     Enhancements:
       C: Tracks negative deltas (declining_projects)
       D: Rate normalization (downloads_per_hour on every delta)
       E: Momentum score on top/growing projects
+      #3: Anomaly-aware momentum — penalizes projects flagged as anomalies
+          by predictive_analyze.py (anomaly_factor > 3.0 reduces score).
     """
+    if anomaly_factors is None:
+        anomaly_factors = {}
     current_projects = current_snapshot.get("projects", [])
     current_total_downloads = current_snapshot.get("total_downloads", 0)
     baseline_date = baseline_snapshot.get("date", "")
@@ -255,6 +426,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
             if delta > 0:
                 rate = delta / hours
                 growth_pct = round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2)
+                raw_score = compute_momentum_score(delta, growth_pct, rate, base_dl)
+                af = anomaly_factors.get(pid)
+                is_anom = af is not None and af > 3.0
                 trending.append({
                     "project_id": pid,
                     "title": p.get("title", ""),
@@ -264,7 +438,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                     "delta_downloads": delta,
                     "downloads_per_hour": round(rate, 2),
                     "growth_pct": growth_pct,
-                    "momentum_score": compute_momentum_score(delta, growth_pct, rate, base_dl),
+                    "momentum_score": round(raw_score * anomaly_momentum_penalty(af), 2),
+                    "is_anomaly": is_anom,
+                    "anomaly_factor": round(af, 2) if af is not None else None,
                 })
         trending.sort(key=lambda x: x["delta_downloads"], reverse=True)
         category_trending[cat] = trending[:TOP_TRENDING_PER_CAT]
@@ -305,6 +481,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         if delta > 0:
             rate = delta / hours
             growth_pct = round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2)
+            raw_score = compute_momentum_score(delta, growth_pct, rate, base_dl)
+            af = anomaly_factors.get(pid)
+            is_anom = af is not None and af > 3.0
             top_projects.append({
                 "project_id": pid,
                 "title": p.get("title", ""),
@@ -315,7 +494,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
                 "delta_downloads": delta,
                 "downloads_per_hour": round(rate, 2),
                 "growth_pct": growth_pct,
-                "momentum_score": compute_momentum_score(delta, growth_pct, rate, base_dl),
+                "momentum_score": round(raw_score * anomaly_momentum_penalty(af), 2),
+                "is_anomaly": is_anom,
+                "anomaly_factor": round(af, 2) if af is not None else None,
             })
         elif delta < 0:
             # Enhancement C: capture declining projects
@@ -438,6 +619,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
         proj_vls = project_vl_pairs.get(pid, [])[:TOP_VL_PER_PROJECT]
         rate = delta / hours
         growth_pct = round((delta / base_dl * 100) if base_dl > 0 else 0.0, 2)
+        raw_score = compute_momentum_score(delta, growth_pct, rate, base_dl)
+        af = anomaly_factors.get(pid)
+        is_anom = af is not None and af > 3.0
         all_project_deltas.append({
             "project_id": pid,
             "title": p.get("title", ""),
@@ -447,7 +631,9 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
             "delta_downloads": delta,
             "downloads_per_hour": round(rate, 2),
             "growth_pct": growth_pct,
-            "momentum_score": compute_momentum_score(delta, growth_pct, rate, base_dl),
+            "momentum_score": round(raw_score * anomaly_momentum_penalty(af), 2),
+            "is_anomaly": is_anom,
+            "anomaly_factor": round(af, 2) if af is not None else None,
             "top_vl_pairs": proj_vls,
         })
     all_project_deltas.sort(key=lambda x: x["delta_downloads"], reverse=True)
@@ -468,6 +654,113 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
 # ═══════════════════════════════════════════════════════════════════
 #  TREND HISTORY (7-day time series)
 # ═══════════════════════════════════════════════════════════════════
+
+
+def build_project_velocity_history(project_type, max_files=20, top_n=50):
+    """Enhancement #2: Per-project velocity history.
+
+    Loads the last `max_files` analysis files for this project type and
+    extracts per-project {downloads, downloads_per_hour, momentum_score}
+    time-series for the top `top_n` projects (by latest momentum_score).
+
+    Returns dict: {project_id: [{timestamp, downloads, downloads_per_hour, momentum_score}, ...]}
+
+    This is a compact file (~150 KB per type) so the frontend can render
+    sparklines per top project without loading all raw snapshots.
+    """
+    import os
+    analysis_dir = get_analysis_dir(project_type)
+    if not os.path.exists(analysis_dir):
+        return {}
+
+    # List analysis files (excluding sub-analyses which have "sub" in their type)
+    files = sorted([f for f in os.listdir(analysis_dir) if f.endswith(".json")])
+    if len(files) < 2:
+        return {}
+
+    # Take the last max_files
+    recent_files = files[-max_files:]
+    print(f"  Loading {len(recent_files)} analysis files for velocity history...")
+
+    # Per-project series
+    project_series = {}  # pid -> list of {timestamp, downloads, downloads_per_hour, momentum_score, title, slug}
+
+    for fname in recent_files:
+        fpath = os.path.join(analysis_dir, fname)
+        try:
+            data = load_json(fpath)
+        except Exception:
+            continue
+        if not data:
+            continue
+        # Skip sub-analyses (predictive)
+        if data.get("analysis_type") == "sub":
+            continue
+
+        ts = data.get("timestamp", "")
+        # Collect top projects from this analysis
+        top_projects = data.get("top_projects", []) or []
+        for p in top_projects:
+            pid = p.get("project_id")
+            if not pid:
+                continue
+            project_series.setdefault(pid, [])
+            project_series[pid].append({
+                "timestamp": ts,
+                "downloads": p.get("current_downloads", 0),
+                "downloads_per_hour": p.get("downloads_per_hour", 0),
+                "momentum_score": p.get("momentum_score", 0),
+                "title": p.get("title", ""),
+                "slug": p.get("slug", ""),
+            })
+        # Also include declining projects (negative momentum)
+        declining = data.get("declining_projects", []) or []
+        for p in declining:
+            pid = p.get("project_id")
+            if not pid:
+                continue
+            project_series.setdefault(pid, [])
+            project_series[pid].append({
+                "timestamp": ts,
+                "downloads": p.get("current_downloads", 0),
+                "downloads_per_hour": p.get("downloads_per_hour", 0),
+                "momentum_score": p.get("momentum_score", 0),
+                "title": p.get("title", ""),
+                "slug": p.get("slug", ""),
+            })
+
+    # Filter to top_n projects by their latest momentum_score
+    if not project_series:
+        return {}
+
+    # Get the latest entry's momentum_score for each project
+    latest_scores = {}
+    for pid, series in project_series.items():
+        if series:
+            latest_scores[pid] = series[-1].get("momentum_score", 0)
+    top_pids = sorted(latest_scores.keys(), key=lambda pid: latest_scores[pid], reverse=True)[:top_n]
+
+    result = {}
+    for pid in top_pids:
+        # Sort by timestamp and keep only the data points (drop title/slug from each entry to save space)
+        series = sorted(project_series[pid], key=lambda x: x["timestamp"])
+        # Compact form: just keep title/slug once at the top level
+        title = series[-1].get("title", "") if series else ""
+        slug = series[-1].get("slug", "") if series else ""
+        result[pid] = {
+            "title": title,
+            "slug": slug,
+            "history": [
+                {
+                    "timestamp": e["timestamp"],
+                    "downloads": e["downloads"],
+                    "downloads_per_hour": e["downloads_per_hour"],
+                    "momentum_score": e["momentum_score"],
+                }
+                for e in series
+            ],
+        }
+    return result
 
 
 def build_trend_history(project_type):
@@ -649,18 +942,22 @@ def main():
     current_filepath, current_ts = snapshot_files_ts[-1]
     print(f"  Total snapshots: {len(snapshot_files_ts)}")
 
-    # ── Find baseline file (from filenames only — no loading) ────
-    baseline_result = find_baseline_file(snapshot_files_ts, current_ts, hours_back)
-    baseline_found_in_window = baseline_result is not None
-    if not baseline_result:
+    # ── Find baseline files (from filenames only — no loading) ───
+    # Enhancement #1: Rolling-window baseline — find up to 3 closest snapshots
+    # within tolerance, then take the median per project to smooth anomalies.
+    baseline_candidates = find_baseline_files_window(snapshot_files_ts, current_ts, hours_back, max_files=3)
+    baseline_found_in_window = len(baseline_candidates) > 0
+    if not baseline_candidates:
         baseline_filepath, baseline_ts = snapshot_files_ts[0]
+        baseline_candidates = [(baseline_filepath, baseline_ts, 0)]
         print(f"  No {hours_back}h baseline found — using oldest snapshot ({baseline_ts}) as fallback")
     else:
-        baseline_filepath, baseline_ts = baseline_result
+        baseline_filepath, baseline_ts = baseline_candidates[0][0], baseline_candidates[0][1]
         diff_hours = abs((current_ts - baseline_ts).total_seconds() / 3600)
         print(f"  Baseline snapshot: {baseline_ts} (~{diff_hours:.1f}h ago)")
+        print(f"  Rolling-window: {len(baseline_candidates)} baseline candidates within tolerance")
 
-    # ── Load ONLY the 2 needed snapshots (current + baseline) ────
+    # ── Load ONLY the needed snapshots (current + baseline files) ─
     print(f"  Loading current snapshot: {current_filepath}")
     current_snapshot = load_json(current_filepath)
     if not current_snapshot:
@@ -669,11 +966,17 @@ def main():
     current_date = current_snapshot.get("date", "")
     print(f"  Current snapshot: {current_date} ({current_ts})")
 
-    print(f"  Loading baseline snapshot: {baseline_filepath}")
-    baseline_snapshot = load_json(baseline_filepath)
-    if not baseline_snapshot:
+    print(f"  Loading primary baseline snapshot: {baseline_filepath}")
+    primary_baseline_snapshot = load_json(baseline_filepath)
+    if not primary_baseline_snapshot:
         print(f"  ERROR: Failed to load baseline snapshot from {baseline_filepath}")
         return 1
+
+    # Enhancement #1: Build rolling baseline (median of up to 3 snapshots)
+    baseline_snapshot = build_rolling_baseline(baseline_candidates, primary_baseline_snapshot)
+    if baseline_snapshot is not primary_baseline_snapshot:
+        print(f"  Built rolling baseline from {baseline_snapshot.get('baseline_source_count', 1)} snapshots (median)")
+    baseline_source_count = baseline_snapshot.get("baseline_source_count", 1)
 
     # ── Compute actual time span & data quality (Enhancement B + F) ─
     if current_ts and baseline_ts:
@@ -688,6 +991,15 @@ def main():
     else:
         analysis_quality = "extended"
 
+    # Enhancement #6: Stale-snapshot detection
+    # If the latest snapshot is more than 3h old, the workflow was delayed —
+    # mark quality as "stale" so the frontend can show a warning banner.
+    stale = False
+    snapshot_age_hours = (datetime.now(BEIJING_TZ) - current_ts).total_seconds() / 3600
+    if snapshot_age_hours > 3.0:
+        stale = True
+        analysis_quality = "stale"
+
     # Confidence based on snapshot count and quality
     snapshot_count = len(snapshot_files_ts)
     if snapshot_count >= 6 and analysis_quality == "normal":
@@ -698,16 +1010,23 @@ def main():
         confidence = "low"
 
     print(f"  Actual time span: {actual_hours_between:.1f}h (requested {hours_back}h, quality={analysis_quality}, confidence={confidence})")
+    if stale:
+        print(f"  WARNING: latest snapshot is {snapshot_age_hours:.1f}h old — marked as STALE")
 
     # ── Load filter sets ──────────────────────────────────────────
     loader_names, loader_set, content_cat_names = load_filter_sets(project_type)
     print(f"  Loaders: {len(loader_names)}, content categories: {len(content_cat_names)}")
 
+    # Enhancement #3: Load anomaly factors from previous predictive run
+    anomaly_factors = load_anomaly_factors(project_type)
+    if anomaly_factors:
+        print(f"  Anomaly factors loaded: {len(anomaly_factors)} projects flagged")
+
     # ── Build analysis ────────────────────────────────────────────
     analysis_data = build_project_analysis(
         current_snapshot, baseline_snapshot,
         project_type, loader_names, loader_set, content_cat_names,
-        actual_hours_between
+        actual_hours_between, anomaly_factors=anomaly_factors,
     )
 
     print(f"  Summary: {analysis_data['summary']['total_projects']:,} projects, "
@@ -734,12 +1053,21 @@ def main():
         analysis_data["category_trend_history"] = category_trend_history
         analysis_data["vl_trend_history"] = vl_trend_history
 
+    # ── Enhancement #2: Per-project velocity history ────────────────
+    # Compact per-project time-series (last 20 analyses × top 50 projects)
+    # so the frontend can render sparklines without loading raw snapshots.
+    type_dir = get_project_type_dir(project_type)
+    project_velocity_history = build_project_velocity_history(project_type, max_files=20, top_n=50)
+    if project_velocity_history:
+        vh_path = f"{type_dir}/project_velocity_history.json"
+        save_json(vh_path, project_velocity_history)
+        print(f"Saved project_velocity_history to {vh_path} ({len(project_velocity_history)} projects)")
+
     # ── Save ──────────────────────────────────────────────────────
     timestamp = get_timestamp()
 
     # Extract project_vl_pairs and save as a separate file
     project_vl_pairs = analysis_data.pop("project_vl_pairs", {})
-    type_dir = get_project_type_dir(project_type)
     vl_pairs_path = f"{type_dir}/project_vl_pairs.json"
     save_json(vl_pairs_path, project_vl_pairs)
     print(f"Saved project_vl_pairs to {vl_pairs_path} ({len(project_vl_pairs)} projects)")
@@ -769,6 +1097,9 @@ def main():
             "baseline_found_in_window": baseline_found_in_window,
             "quality": analysis_quality,
             "confidence": confidence,
+            "stale": stale,
+            "snapshot_age_hours": round(snapshot_age_hours, 2),
+            "baseline_source_count": baseline_source_count,
         },
         **analysis_data,
     }

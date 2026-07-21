@@ -6,2241 +6,4272 @@
   "hours_between": 0,
   "analysis_type": "hourly",
   "analysis_quality": "normal",
-  "actual_hours_between": 0,
-  "data_quality": {},
-  "downloads_per_hour": 0,
+  "actual_hours_between": 1.31,
+  "data_quality": {
+    "snapshot_count": 55,
+    "requested_hours": 2,
+    "actual_hours": 1.31,
+    "baseline_found_in_window": true,
+    "quality": "normal",
+    "confidence": "high",
+    "stale": false,
+    "snapshot_age_hours": 0.42,
+    "baseline_source_count": 1
+  },
+  "downloads_per_hour": 54.76,
   "summary": {
     "total_projects": 10000,
     "total_versions": 83711,
-    "total_downloads": 633102154,
-    "baseline_date": "2026-07-15",
+    "total_downloads": 633102206,
+    "baseline_date": "2026-07-21",
     "current_date": "2026-07-21",
-    "new_projects_since_baseline": 61,
-    "new_downloads_since_baseline": 11806792
+    "new_projects_since_baseline": 0,
+    "new_downloads_since_baseline": 72,
+    "lost_downloads_since_baseline": 0,
+    "net_download_change": 72,
+    "growing_projects": 5,
+    "declining_projects": 0,
+    "downloads_per_hour": 54.76
   },
   "category_rankings": [],
   "category_trending": {},
   "loader_rankings": [],
   "top_projects": [
     {
-      "project_id": "OhduvhIc",
-      "title": "VeinMiner",
-      "slug": "veinminer",
+      "project_id": "BpcmlKS9",
+      "title": "Minecraft But Backwards",
+      "slug": "minecraft-backwards",
       "categories": [
-        "bukkit",
+        "adventure",
         "cursed",
         "datapack",
-        "equipment",
-        "fabric",
-        "folia",
-        "forge",
-        "game-mechanics",
-        "neoforge",
-        "paper",
-        "purpur",
-        "quilt",
-        "spigot",
-        "technology",
-        "utility"
-      ],
-      "current_downloads": 63916225,
-      "baseline_downloads": 62180276,
-      "delta_downloads": 1735949,
-      "growth_pct": 2.79
-    },
-    {
-      "project_id": "8oi3bsk5",
-      "title": "Terralith",
-      "slug": "terralith",
-      "categories": [
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 19907271,
-      "baseline_downloads": 19567272,
-      "delta_downloads": 339999,
-      "growth_pct": 1.74
-    },
-    {
-      "project_id": "h2jngREY",
-      "title": "Trek",
-      "slug": "trek",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 8525365,
-      "baseline_downloads": 8196477,
-      "delta_downloads": 328888,
-      "growth_pct": 4.01
-    },
-    {
-      "project_id": "DjLobEOy",
-      "title": "Towns and Towers",
-      "slug": "towns-and-towers",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 15161842,
-      "baseline_downloads": 14921526,
-      "delta_downloads": 240316,
-      "growth_pct": 1.61
-    },
-    {
-      "project_id": "tpehi7ww",
-      "title": "Dungeons and Taverns",
-      "slug": "dungeons-and-taverns",
-      "categories": [
-        "adventure",
-        "datapack",
-        "equipment",
         "fabric",
         "forge",
         "game-mechanics",
-        "mobs",
-        "neoforge",
-        "worldgen"
-      ],
-      "current_downloads": 19010353,
-      "baseline_downloads": 18795037,
-      "delta_downloads": 215316,
-      "growth_pct": 1.15
-    },
-    {
-      "project_id": "W2pr9jyL",
-      "title": "Cobblemon additions",
-      "slug": "cobblemon-additions",
-      "categories": [
-        "adventure",
-        "datapack",
-        "decoration",
-        "economy",
-        "fabric",
-        "worldgen"
-      ],
-      "current_downloads": 7583337,
-      "baseline_downloads": 7387354,
-      "delta_downloads": 195983,
-      "growth_pct": 2.65
-    },
-    {
-      "project_id": "2V1Y86sc",
-      "title": "Navas ZA Megas",
-      "slug": "navas-zamega",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
         "neoforge"
       ],
-      "current_downloads": 6885320,
-      "baseline_downloads": 6689574,
-      "delta_downloads": 195746,
-      "growth_pct": 2.93
+      "current_downloads": 1742,
+      "baseline_downloads": 1707,
+      "delta_downloads": 35,
+      "downloads_per_hour": 26.62,
+      "growth_pct": 2.05,
+      "momentum_score": 1.22,
+      "is_anomaly": true,
+      "anomaly_factor": 16.63
     },
     {
-      "project_id": "aKCwCJlY",
-      "title": "Structory",
-      "slug": "structory",
+      "project_id": "YOtjK9XQ",
+      "title": "Skinful (hide / change your armor!)",
+      "slug": "skinful",
       "categories": [
-        "adventure",
         "datapack",
         "decoration",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 6749549,
-      "baseline_downloads": 6555636,
-      "delta_downloads": 193913,
-      "growth_pct": 2.96
-    },
-    {
-      "project_id": "lWDHr9jE",
-      "title": "Tectonic",
-      "slug": "tectonic",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 14620486,
-      "baseline_downloads": 14446082,
-      "delta_downloads": 174404,
-      "growth_pct": 1.21
-    },
-    {
-      "project_id": "4sP0LXxp",
-      "title": "VeinMiner Enchantment",
-      "slug": "veinminer-enchantment",
-      "categories": [
-        "datapack",
         "equipment",
-        "fabric",
-        "folia",
         "game-mechanics",
-        "neoforge",
-        "paper",
-        "purpur",
-        "quilt",
+        "social",
         "utility"
       ],
-      "current_downloads": 15411823,
-      "baseline_downloads": 15257796,
-      "delta_downloads": 154027,
-      "growth_pct": 1.01
+      "current_downloads": 3367,
+      "baseline_downloads": 3354,
+      "delta_downloads": 13,
+      "downloads_per_hour": 9.89,
+      "growth_pct": 0.39,
+      "momentum_score": 1.89,
+      "is_anomaly": false,
+      "anomaly_factor": null
     },
     {
-      "project_id": "j3FONRYr",
-      "title": "Structory: Towers",
-      "slug": "structory-towers",
+      "project_id": "aRErXHku",
+      "title": "Fullbright Datapack",
+      "slug": "fullbright-trigger",
       "categories": [
-        "adventure",
         "datapack",
-        "decoration",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 7224850,
-      "baseline_downloads": 7074817,
-      "delta_downloads": 150033,
-      "growth_pct": 2.12
-    },
-    {
-      "project_id": "odZZdRCE",
-      "title": "AllTheMons x Mega Showdown",
-      "slug": "allthemons-x-mega-showdown-legacy",
-      "categories": [
-        "adventure",
-        "datapack",
-        "minecraft",
-        "mobs",
         "utility"
       ],
-      "current_downloads": 3555063,
-      "baseline_downloads": 3411352,
-      "delta_downloads": 143711,
-      "growth_pct": 4.21
+      "current_downloads": 18,
+      "baseline_downloads": 7,
+      "delta_downloads": 11,
+      "downloads_per_hour": 8.37,
+      "growth_pct": 157.14,
+      "momentum_score": 12.67,
+      "is_anomaly": true,
+      "anomaly_factor": 90.67
     },
     {
-      "project_id": "hl5OLM95",
-      "title": "Geophilic",
-      "slug": "geophilic",
+      "project_id": "ChkHwAdr",
+      "title": "Jetpack Boots",
+      "slug": "jetpack-boots",
       "categories": [
-        "adventure",
         "datapack",
         "fabric",
         "forge",
+        "game-mechanics",
+        "magic",
         "neoforge",
         "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 9035765,
-      "baseline_downloads": 8899649,
-      "delta_downloads": 136116,
-      "growth_pct": 1.53
-    },
-    {
-      "project_id": "jbbBrQVa",
-      "title": "MissingMons [cobblemon]",
-      "slug": "missingmons-cobblemon",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "mobs",
-        "neoforge",
-        "quilt"
-      ],
-      "current_downloads": 4745083,
-      "baseline_downloads": 4612196,
-      "delta_downloads": 132887,
-      "growth_pct": 2.88
-    },
-    {
-      "project_id": "lIDAJAby",
-      "title": "CobbleMotion v1.5.1",
-      "slug": "cobblemotion",
-      "categories": [
-        "audio",
-        "datapack",
-        "decoration",
-        "entities",
-        "minecraft",
-        "models"
-      ],
-      "current_downloads": 4114333,
-      "baseline_downloads": 3985511,
-      "delta_downloads": 128822,
-      "growth_pct": 3.23
-    },
-    {
-      "project_id": "HSfsxuTo",
-      "title": "Explorify",
-      "slug": "explorify",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 7909357,
-      "baseline_downloads": 7781299,
-      "delta_downloads": 128058,
-      "growth_pct": 1.65
-    },
-    {
-      "project_id": "GFYCh249",
-      "title": "Pokemans Pack [Cobblemon]",
-      "slug": "cobblemon-pokemans",
-      "categories": [
-        "adventure",
-        "datapack",
-        "game-mechanics",
-        "minecraft",
-        "mobs"
-      ],
-      "current_downloads": 4094605,
-      "baseline_downloads": 3967275,
-      "delta_downloads": 127330,
-      "growth_pct": 3.21
-    },
-    {
-      "project_id": "ouf6KDf2",
-      "title": "LackingMons (Discountiniued)",
-      "slug": "lackingmons",
-      "categories": [
-        "adventure",
-        "datapack",
-        "game-mechanics",
-        "mobs"
-      ],
-      "current_downloads": 3525627,
-      "baseline_downloads": 3399979,
-      "delta_downloads": 125648,
-      "growth_pct": 3.7
-    },
-    {
-      "project_id": "lYp6oiT3",
-      "title": "Hydro Reanimodel Pack [Cobblemon]",
-      "slug": "hydro-reanimodel-pack",
-      "categories": [
-        "adventure",
-        "datapack",
-        "mobs"
-      ],
-      "current_downloads": 3678381,
-      "baseline_downloads": 3555606,
-      "delta_downloads": 122775,
-      "growth_pct": 3.45
-    },
-    {
-      "project_id": "TiFXQSAQ",
-      "title": "MysticMons",
-      "slug": "mysticmons",
-      "categories": [
-        "datapack",
-        "game-mechanics",
-        "mobs",
+        "transportation",
         "utility"
       ],
-      "current_downloads": 4681807,
-      "baseline_downloads": 4562463,
-      "delta_downloads": 119344,
-      "growth_pct": 2.62
+      "current_downloads": 29,
+      "baseline_downloads": 19,
+      "delta_downloads": 10,
+      "downloads_per_hour": 7.61,
+      "growth_pct": 52.63,
+      "momentum_score": 13.56,
+      "is_anomaly": true,
+      "anomaly_factor": 5.2
+    },
+    {
+      "project_id": "RimELHmX",
+      "title": "[NRGD]NRG Core datapack",
+      "slug": "nrgd",
+      "categories": [
+        "datapack",
+        "game-mechanics",
+        "management",
+        "minigame",
+        "utility"
+      ],
+      "current_downloads": 1734,
+      "baseline_downloads": 1731,
+      "delta_downloads": 3,
+      "downloads_per_hour": 2.28,
+      "growth_pct": 0.17,
+      "momentum_score": 0.96,
+      "is_anomaly": false,
+      "anomaly_factor": null
     }
   ],
   "declining_projects": [],
   "top_version_loaders": [
     {
-      "game_version": "1.20.1",
-      "loader": "forge",
-      "delta_downloads": 3283675,
-      "project_count": 3588,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "fabric",
-      "delta_downloads": 3131454,
-      "project_count": 3592,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.20",
-      "loader": "forge",
-      "delta_downloads": 2872115,
-      "project_count": 2735,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.20",
-      "loader": "fabric",
-      "delta_downloads": 2837268,
-      "project_count": 2889,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "fabric",
-      "delta_downloads": 2566818,
-      "project_count": 4511,
-      "top_project_id": "2V1Y86sc",
-      "top_project_title": "Navas ZA Megas",
-      "top_project_delta": 123529
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "fabric",
-      "delta_downloads": 2550925,
-      "project_count": 2734,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "forge",
-      "delta_downloads": 2499580,
-      "project_count": 2592,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "quilt",
-      "delta_downloads": 2400263,
-      "project_count": 3023,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20",
-      "loader": "quilt",
-      "delta_downloads": 2289476,
-      "project_count": 2624,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "neoforge",
-      "delta_downloads": 2266456,
-      "project_count": 4212,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 167772
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "datapack",
-      "delta_downloads": 2258579,
-      "project_count": 7633,
-      "top_project_id": "odZZdRCE",
-      "top_project_title": "AllTheMons x Mega Showdown",
-      "top_project_delta": 128659
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "fabric",
-      "delta_downloads": 2251550,
-      "project_count": 2676,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "forge",
-      "delta_downloads": 2218447,
-      "project_count": 2546,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "fabric",
-      "delta_downloads": 2110743,
-      "project_count": 2580,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "forge",
-      "delta_downloads": 2078666,
-      "project_count": 2464,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "quilt",
-      "delta_downloads": 2020591,
-      "project_count": 2491,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "datapack",
-      "delta_downloads": 1954853,
-      "project_count": 6039,
-      "top_project_id": "ouf6KDf2",
-      "top_project_title": "LackingMons (Discountiniued)",
-      "top_project_delta": 125638
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "neoforge",
-      "delta_downloads": 1943757,
-      "project_count": 2152,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "quilt",
-      "delta_downloads": 1885169,
-      "project_count": 2387,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "fabric",
-      "delta_downloads": 1869933,
-      "project_count": 3967,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 369814
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "quilt",
-      "delta_downloads": 1857596,
-      "project_count": 2446,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "neoforge",
-      "delta_downloads": 1820914,
-      "project_count": 1755,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.21",
-      "loader": "fabric",
-      "delta_downloads": 1820731,
-      "project_count": 4300,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "fabric",
-      "delta_downloads": 1803646,
-      "project_count": 2207,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "neoforge",
-      "delta_downloads": 1802362,
-      "project_count": 1756,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "fabric",
-      "delta_downloads": 1800806,
-      "project_count": 2175,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "neoforge",
-      "delta_downloads": 1791773,
-      "project_count": 1801,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20",
-      "loader": "neoforge",
-      "delta_downloads": 1784608,
-      "project_count": 1792,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "forge",
-      "delta_downloads": 1772375,
-      "project_count": 2128,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "forge",
-      "delta_downloads": 1769392,
-      "project_count": 2099,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.21",
-      "loader": "neoforge",
-      "delta_downloads": 1723243,
-      "project_count": 3627,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "forge",
-      "delta_downloads": 1713457,
-      "project_count": 3992,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "neoforge",
-      "delta_downloads": 1711027,
-      "project_count": 1716,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "neoforge",
-      "delta_downloads": 1710813,
-      "project_count": 1705,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "quilt",
-      "delta_downloads": 1667335,
-      "project_count": 3878,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 90429
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "fabric",
-      "delta_downloads": 1654638,
-      "project_count": 3489,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "fabric",
-      "delta_downloads": 1653408,
-      "project_count": 3371,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21",
-      "loader": "forge",
-      "delta_downloads": 1648458,
-      "project_count": 4070,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "fabric",
-      "delta_downloads": 1621333,
-      "project_count": 3858,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "quilt",
-      "delta_downloads": 1605900,
-      "project_count": 3680,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 369814
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "quilt",
-      "delta_downloads": 1585647,
-      "project_count": 2057,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "quilt",
-      "delta_downloads": 1583490,
-      "project_count": 2025,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "fabric",
-      "delta_downloads": 1545109,
-      "project_count": 3971,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21",
-      "loader": "quilt",
-      "delta_downloads": 1523945,
-      "project_count": 3963,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "neoforge",
-      "delta_downloads": 1512116,
-      "project_count": 3279,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "neoforge",
-      "delta_downloads": 1511192,
-      "project_count": 3189,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "fabric",
-      "delta_downloads": 1486480,
-      "project_count": 4029,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "fabric",
-      "delta_downloads": 1484886,
-      "project_count": 3964,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "neoforge",
-      "delta_downloads": 1481938,
-      "project_count": 3624,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "fabric",
-      "delta_downloads": 1479945,
-      "project_count": 3904,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "fabric",
-      "delta_downloads": 1473523,
-      "project_count": 4037,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "forge",
-      "delta_downloads": 1456920,
-      "project_count": 3299,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "forge",
-      "delta_downloads": 1456052,
-      "project_count": 3203,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "fabric",
-      "delta_downloads": 1455614,
-      "project_count": 4063,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 66130
-    },
-    {
-      "game_version": "26.1",
-      "loader": "fabric",
-      "delta_downloads": 1443211,
-      "project_count": 2613,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 264439
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "forge",
-      "delta_downloads": 1422642,
-      "project_count": 3618,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "quilt",
-      "delta_downloads": 1379059,
-      "project_count": 3263,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "quilt",
-      "delta_downloads": 1378866,
-      "project_count": 3166,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "quilt",
-      "delta_downloads": 1358042,
-      "project_count": 3592,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "fabric",
-      "delta_downloads": 1355215,
-      "project_count": 2328,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 264439
-    },
-    {
       "game_version": "26.2",
       "loader": "fabric",
-      "delta_downloads": 1349019,
-      "project_count": 1588,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 447963
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "fabric",
-      "delta_downloads": 1348363,
-      "project_count": 2259,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 264439
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "neoforge",
-      "delta_downloads": 1330155,
-      "project_count": 3744,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "neoforge",
-      "delta_downloads": 1327339,
-      "project_count": 3831,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "neoforge",
-      "delta_downloads": 1325236,
-      "project_count": 3777,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "neoforge",
-      "delta_downloads": 1318869,
-      "project_count": 3710,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "quilt",
-      "delta_downloads": 1318181,
-      "project_count": 3708,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "neoforge",
-      "delta_downloads": 1317306,
-      "project_count": 3772,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "neoforge",
-      "delta_downloads": 1288506,
-      "project_count": 3864,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "neoforge",
-      "delta_downloads": 1278161,
-      "project_count": 3882,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "26.1",
-      "loader": "quilt",
-      "delta_downloads": 1264591,
-      "project_count": 2422,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 264439
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "forge",
-      "delta_downloads": 1261690,
-      "project_count": 3716,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "quilt",
-      "delta_downloads": 1260544,
-      "project_count": 3804,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "quilt",
-      "delta_downloads": 1258399,
-      "project_count": 3749,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "quilt",
-      "delta_downloads": 1252094,
-      "project_count": 3666,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "forge",
-      "delta_downloads": 1235929,
-      "project_count": 3794,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "forge",
-      "delta_downloads": 1233861,
-      "project_count": 3746,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "forge",
-      "delta_downloads": 1229548,
-      "project_count": 3668,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "quilt",
-      "delta_downloads": 1218335,
-      "project_count": 3789,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "quilt",
-      "delta_downloads": 1198613,
-      "project_count": 3794,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "fabric",
-      "delta_downloads": 1196486,
-      "project_count": 1744,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "forge",
-      "delta_downloads": 1195205,
-      "project_count": 3806,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "forge",
-      "delta_downloads": 1185348,
-      "project_count": 1671,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "forge",
-      "delta_downloads": 1185069,
-      "project_count": 3822,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "26.2",
-      "loader": "quilt",
-      "delta_downloads": 1180637,
-      "project_count": 1451,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 447963
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "quilt",
-      "delta_downloads": 1179314,
-      "project_count": 2178,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 264439
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "quilt",
-      "delta_downloads": 1172080,
-      "project_count": 2103,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 264439
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "fabric",
-      "delta_downloads": 1169597,
-      "project_count": 1725,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "forge",
-      "delta_downloads": 1166100,
-      "project_count": 3708,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 61260
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "forge",
-      "delta_downloads": 1160542,
-      "project_count": 1648,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 163158
-    },
-    {
-      "game_version": "26.1",
-      "loader": "neoforge",
-      "delta_downloads": 1087261,
-      "project_count": 2477,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 74537
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "fabric",
-      "delta_downloads": 1013490,
-      "project_count": 1789,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "neoforge",
-      "delta_downloads": 1001775,
-      "project_count": 2252,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 74537
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "neoforge",
-      "delta_downloads": 994612,
-      "project_count": 2184,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 74537
-    },
-    {
-      "game_version": "1.19",
-      "loader": "fabric",
-      "delta_downloads": 992144,
-      "project_count": 1718,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "fabric",
-      "delta_downloads": 992103,
-      "project_count": 1713,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "forge",
-      "delta_downloads": 986873,
-      "project_count": 1725,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19",
-      "loader": "forge",
-      "delta_downloads": 969189,
-      "project_count": 1635,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "forge",
-      "delta_downloads": 967501,
-      "project_count": 1632,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "quilt",
-      "delta_downloads": 956864,
-      "project_count": 1632,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "quilt",
-      "delta_downloads": 951840,
-      "project_count": 1637,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "quilt",
-      "delta_downloads": 949181,
-      "project_count": 1604,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19",
-      "loader": "quilt",
-      "delta_downloads": 934753,
-      "project_count": 1588,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "quilt",
-      "delta_downloads": 934733,
-      "project_count": 1590,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "26.1",
-      "loader": "forge",
-      "delta_downloads": 909010,
-      "project_count": 2429,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 52501
-    },
-    {
-      "game_version": "26.2",
-      "loader": "neoforge",
-      "delta_downloads": 849556,
-      "project_count": 1521,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 74537
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "forge",
-      "delta_downloads": 823837,
-      "project_count": 2219,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 47321
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "forge",
-      "delta_downloads": 822655,
-      "project_count": 2146,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 47321
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "neoforge",
-      "delta_downloads": 810897,
-      "project_count": 1078,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "neoforge",
-      "delta_downloads": 775436,
-      "project_count": 1025,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "neoforge",
-      "delta_downloads": 772109,
-      "project_count": 1011,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "neoforge",
-      "delta_downloads": 759381,
-      "project_count": 988,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
-    },
-    {
-      "game_version": "1.19",
-      "loader": "neoforge",
-      "delta_downloads": 759373,
-      "project_count": 988,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 141049
+      "delta_downloads": 41,
+      "downloads_per_hour": 31.19,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
       "game_version": "26.2",
       "loader": "forge",
-      "delta_downloads": 654066,
-      "project_count": 1470,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 47321
+      "delta_downloads": 41,
+      "downloads_per_hour": 31.19,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.21",
-      "loader": "datapack",
-      "delta_downloads": 534836,
-      "project_count": 6488,
-      "top_project_id": "jbbBrQVa",
-      "top_project_title": "MissingMons [cobblemon]",
-      "top_project_delta": 123136
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "fabric",
-      "delta_downloads": 448731,
-      "project_count": 1279,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "quilt",
-      "delta_downloads": 443349,
-      "project_count": 1214,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "fabric",
-      "delta_downloads": 422085,
-      "project_count": 1091,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18",
-      "loader": "fabric",
-      "delta_downloads": 421765,
-      "project_count": 1090,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "quilt",
-      "delta_downloads": 421572,
-      "project_count": 1060,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18",
-      "loader": "quilt",
-      "delta_downloads": 421241,
-      "project_count": 1059,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "datapack",
-      "delta_downloads": 410998,
-      "project_count": 3921,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
-    },
-    {
-      "game_version": "1.20",
-      "loader": "datapack",
-      "delta_downloads": 397617,
-      "project_count": 4273,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "forge",
-      "delta_downloads": 392881,
-      "project_count": 1270,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "minecraft",
-      "delta_downloads": 372682,
-      "project_count": 258,
-      "top_project_id": "odZZdRCE",
-      "top_project_title": "AllTheMons x Mega Showdown",
-      "top_project_delta": 128659
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "fabric",
-      "delta_downloads": 364675,
-      "project_count": 991,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.17",
-      "loader": "fabric",
-      "delta_downloads": 364638,
-      "project_count": 984,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "quilt",
-      "delta_downloads": 364291,
-      "project_count": 965,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.17",
-      "loader": "quilt",
-      "delta_downloads": 364259,
-      "project_count": 959,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "forge",
-      "delta_downloads": 346955,
-      "project_count": 1050,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18",
-      "loader": "forge",
-      "delta_downloads": 346530,
-      "project_count": 1046,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
-    },
-    {
-      "game_version": "1.18.2",
+      "game_version": "26.2",
       "loader": "neoforge",
-      "delta_downloads": 321605,
-      "project_count": 841,
-      "top_project_id": "sk4iFZGy",
-      "top_project_title": "Remove Stardust Labs Intro Message",
-      "top_project_delta": 39291
+      "delta_downloads": 41,
+      "downloads_per_hour": 31.19,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.18.1",
-      "loader": "neoforge",
-      "delta_downloads": 305659,
-      "project_count": 752,
-      "top_project_id": "sk4iFZGy",
-      "top_project_title": "Remove Stardust Labs Intro Message",
-      "top_project_delta": 39291
+      "game_version": "26.1",
+      "loader": "fabric",
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.18",
-      "loader": "neoforge",
-      "delta_downloads": 305287,
-      "project_count": 750,
-      "top_project_id": "sk4iFZGy",
-      "top_project_title": "Remove Stardust Labs Intro Message",
-      "top_project_delta": 39291
+      "game_version": "26.1.1",
+      "loader": "fabric",
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.21.4",
-      "loader": "datapack",
-      "delta_downloads": 304194,
-      "project_count": 5774,
-      "top_project_id": "8oi3bsk5",
-      "top_project_title": "Terralith",
-      "top_project_delta": 122470
+      "game_version": "26.1.2",
+      "loader": "fabric",
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.21.3",
-      "loader": "datapack",
-      "delta_downloads": 301844,
-      "project_count": 5155,
-      "top_project_id": "8oi3bsk5",
-      "top_project_title": "Terralith",
-      "top_project_delta": 122470
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "datapack",
-      "delta_downloads": 300287,
-      "project_count": 4945,
-      "top_project_id": "8oi3bsk5",
-      "top_project_title": "Terralith",
-      "top_project_delta": 122470
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "datapack",
-      "delta_downloads": 297288,
-      "project_count": 2838,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
-    },
-    {
-      "game_version": "1.17.1",
+      "game_version": "26.1",
       "loader": "forge",
-      "delta_downloads": 294353,
-      "project_count": 953,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.17",
+      "game_version": "26.1.1",
       "loader": "forge",
-      "delta_downloads": 294153,
-      "project_count": 943,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 51353
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.18.2",
-      "loader": "datapack",
-      "delta_downloads": 278445,
-      "project_count": 1814,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
+      "game_version": "26.1.2",
+      "loader": "forge",
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.17.1",
+      "game_version": "26.1",
       "loader": "neoforge",
-      "delta_downloads": 254945,
-      "project_count": 686,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.17",
+      "game_version": "26.1.1",
       "loader": "neoforge",
-      "delta_downloads": 254837,
-      "project_count": 684,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
     },
     {
-      "game_version": "1.20.2",
+      "game_version": "26.1.2",
+      "loader": "neoforge",
+      "delta_downloads": 39,
+      "downloads_per_hour": 29.66,
+      "project_count": 2,
+      "top_project_id": "BpcmlKS9",
+      "top_project_title": "Minecraft But Backwards",
+      "top_project_delta": 35
+    },
+    {
+      "game_version": "26.2",
       "loader": "datapack",
-      "delta_downloads": 242538,
-      "project_count": 3967,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
+      "delta_downloads": 24,
+      "downloads_per_hour": 18.25,
+      "project_count": 2,
+      "top_project_id": "YOtjK9XQ",
+      "top_project_title": "Skinful (hide / change your armor!)",
+      "top_project_delta": 13
     },
     {
-      "game_version": "1.20.5",
+      "game_version": "1.21.9",
       "loader": "datapack",
-      "delta_downloads": 215025,
-      "project_count": 3218,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
+      "delta_downloads": 13,
+      "downloads_per_hour": 9.89,
+      "project_count": 1,
+      "top_project_id": "YOtjK9XQ",
+      "top_project_title": "Skinful (hide / change your armor!)",
+      "top_project_delta": 13
     },
     {
-      "game_version": "1.20.6",
+      "game_version": "1.21.10",
       "loader": "datapack",
-      "delta_downloads": 214910,
-      "project_count": 3218,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "datapack",
-      "delta_downloads": 196821,
-      "project_count": 1275,
-      "top_project_id": "dlx4kLtI",
-      "top_project_title": "Supplementaries Compat",
-      "top_project_delta": 50884
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "datapack",
-      "delta_downloads": 190451,
-      "project_count": 5908,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
-    },
-    {
-      "game_version": "1.21-pre4",
-      "loader": "fabric",
-      "delta_downloads": 182010,
-      "project_count": 196,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre3",
-      "loader": "fabric",
-      "delta_downloads": 182004,
-      "project_count": 196,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre2",
-      "loader": "fabric",
-      "delta_downloads": 181988,
-      "project_count": 195,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-rc1",
-      "loader": "fabric",
-      "delta_downloads": 181986,
-      "project_count": 194,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre1",
-      "loader": "fabric",
-      "delta_downloads": 181983,
-      "project_count": 191,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "delta_downloads": 13,
+      "downloads_per_hour": 9.89,
+      "project_count": 1,
+      "top_project_id": "YOtjK9XQ",
+      "top_project_title": "Skinful (hide / change your armor!)",
+      "top_project_delta": 13
     },
     {
       "game_version": "1.21.11",
       "loader": "datapack",
-      "delta_downloads": 178454,
-      "project_count": 5303,
-      "top_project_id": "uXeEiQk1",
-      "top_project_title": "Tool Trims",
-      "top_project_delta": 6129
-    },
-    {
-      "game_version": "1.21.2-pre1",
-      "loader": "fabric",
-      "delta_downloads": 178027,
-      "project_count": 248,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21.2-pre2",
-      "loader": "fabric",
-      "delta_downloads": 178027,
-      "project_count": 248,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21.2-pre1",
-      "loader": "quilt",
-      "delta_downloads": 177803,
-      "project_count": 247,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21.2-pre2",
-      "loader": "quilt",
-      "delta_downloads": 177803,
-      "project_count": 247,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre4",
-      "loader": "quilt",
-      "delta_downloads": 172967,
-      "project_count": 190,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre3",
-      "loader": "quilt",
-      "delta_downloads": 172961,
-      "project_count": 190,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre2",
-      "loader": "quilt",
-      "delta_downloads": 172945,
-      "project_count": 189,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-rc1",
-      "loader": "quilt",
-      "delta_downloads": 172943,
-      "project_count": 188,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre1",
-      "loader": "quilt",
-      "delta_downloads": 172940,
-      "project_count": 185,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre3",
-      "loader": "neoforge",
-      "delta_downloads": 172848,
-      "project_count": 184,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre4",
-      "loader": "neoforge",
-      "delta_downloads": 172848,
-      "project_count": 184,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-rc1",
-      "loader": "neoforge",
-      "delta_downloads": 172848,
-      "project_count": 184,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre2",
-      "loader": "neoforge",
-      "delta_downloads": 172827,
-      "project_count": 180,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21-pre1",
-      "loader": "neoforge",
-      "delta_downloads": 172826,
-      "project_count": 179,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "datapack",
-      "delta_downloads": 172591,
-      "project_count": 3623,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 55046
+      "delta_downloads": 13,
+      "downloads_per_hour": 9.89,
+      "project_count": 1,
+      "top_project_id": "YOtjK9XQ",
+      "top_project_title": "Skinful (hide / change your armor!)",
+      "top_project_delta": 13
     },
     {
       "game_version": "26.1",
       "loader": "datapack",
-      "delta_downloads": 171395,
-      "project_count": 3345,
-      "top_project_id": "WYMK8lIp",
-      "top_project_title": "All Mob Heads",
-      "top_project_delta": 21162
-    },
-    {
-      "game_version": "24w21a",
-      "loader": "fabric",
-      "delta_downloads": 171133,
-      "project_count": 177,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w21b",
-      "loader": "fabric",
-      "delta_downloads": 171124,
-      "project_count": 176,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21.2-pre1",
-      "loader": "neoforge",
-      "delta_downloads": 170188,
-      "project_count": 240,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "1.21.2-pre2",
-      "loader": "neoforge",
-      "delta_downloads": 170188,
-      "project_count": 240,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w20a",
-      "loader": "fabric",
-      "delta_downloads": 169714,
-      "project_count": 169,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w33a",
-      "loader": "fabric",
-      "delta_downloads": 169357,
-      "project_count": 242,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w34a",
-      "loader": "fabric",
-      "delta_downloads": 169333,
-      "project_count": 241,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w35a",
-      "loader": "fabric",
-      "delta_downloads": 169284,
-      "project_count": 239,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w33a",
-      "loader": "quilt",
-      "delta_downloads": 169133,
-      "project_count": 241,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w34a",
-      "loader": "quilt",
-      "delta_downloads": 169109,
-      "project_count": 240,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w35a",
-      "loader": "quilt",
-      "delta_downloads": 169060,
-      "project_count": 238,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w40a",
-      "loader": "fabric",
-      "delta_downloads": 167565,
-      "project_count": 242,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w40a",
-      "loader": "quilt",
-      "delta_downloads": 167341,
-      "project_count": 241,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "delta_downloads": 13,
+      "downloads_per_hour": 9.89,
+      "project_count": 1,
+      "top_project_id": "YOtjK9XQ",
+      "top_project_title": "Skinful (hide / change your armor!)",
+      "top_project_delta": 13
     },
     {
       "game_version": "26.1.1",
       "loader": "datapack",
-      "delta_downloads": 166619,
-      "project_count": 2823,
-      "top_project_id": "WYMK8lIp",
-      "top_project_title": "All Mob Heads",
-      "top_project_delta": 21162
-    },
-    {
-      "game_version": "24w19a",
-      "loader": "fabric",
-      "delta_downloads": 166542,
-      "project_count": 168,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w19b",
-      "loader": "fabric",
-      "delta_downloads": 166542,
-      "project_count": 168,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w18a",
-      "loader": "fabric",
-      "delta_downloads": 166516,
-      "project_count": 165,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w39a",
-      "loader": "fabric",
-      "delta_downloads": 166461,
-      "project_count": 237,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w37a",
-      "loader": "fabric",
-      "delta_downloads": 166459,
-      "project_count": 236,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w36a",
-      "loader": "fabric",
-      "delta_downloads": 166455,
-      "project_count": 237,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w38a",
-      "loader": "fabric",
-      "delta_downloads": 166453,
-      "project_count": 235,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w39a",
-      "loader": "quilt",
-      "delta_downloads": 166237,
-      "project_count": 236,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w37a",
-      "loader": "quilt",
-      "delta_downloads": 166235,
-      "project_count": 235,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w36a",
-      "loader": "quilt",
-      "delta_downloads": 166231,
-      "project_count": 236,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
-    },
-    {
-      "game_version": "24w38a",
-      "loader": "quilt",
-      "delta_downloads": 166229,
-      "project_count": 234,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "delta_downloads": 13,
+      "downloads_per_hour": 9.89,
+      "project_count": 1,
+      "top_project_id": "YOtjK9XQ",
+      "top_project_title": "Skinful (hide / change your armor!)",
+      "top_project_delta": 13
     },
     {
       "game_version": "26.1.2",
       "loader": "datapack",
-      "delta_downloads": 165961,
-      "project_count": 2752,
-      "top_project_id": "WYMK8lIp",
-      "top_project_title": "All Mob Heads",
-      "top_project_delta": 21162
+      "delta_downloads": 13,
+      "downloads_per_hour": 9.89,
+      "project_count": 1,
+      "top_project_id": "YOtjK9XQ",
+      "top_project_title": "Skinful (hide / change your armor!)",
+      "top_project_delta": 13
     },
     {
-      "game_version": "24w45a",
-      "loader": "fabric",
-      "delta_downloads": 164212,
-      "project_count": 257,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "game_version": "26.2",
+      "loader": "quilt",
+      "delta_downloads": 6,
+      "downloads_per_hour": 4.56,
+      "project_count": 1,
+      "top_project_id": "ChkHwAdr",
+      "top_project_title": "Jetpack Boots",
+      "top_project_delta": 6
     },
     {
-      "game_version": "24w46a",
-      "loader": "fabric",
-      "delta_downloads": 164210,
-      "project_count": 255,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "game_version": "26.1",
+      "loader": "quilt",
+      "delta_downloads": 4,
+      "downloads_per_hour": 3.04,
+      "project_count": 1,
+      "top_project_id": "ChkHwAdr",
+      "top_project_title": "Jetpack Boots",
+      "top_project_delta": 4
     },
     {
-      "game_version": "24w44a",
-      "loader": "fabric",
-      "delta_downloads": 164205,
-      "project_count": 257,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "game_version": "26.1.1",
+      "loader": "quilt",
+      "delta_downloads": 4,
+      "downloads_per_hour": 3.04,
+      "project_count": 1,
+      "top_project_id": "ChkHwAdr",
+      "top_project_title": "Jetpack Boots",
+      "top_project_delta": 4
     },
     {
-      "game_version": "1.20.5-rc1",
-      "loader": "fabric",
-      "delta_downloads": 164026,
-      "project_count": 159,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 36552
+      "game_version": "26.1.2",
+      "loader": "quilt",
+      "delta_downloads": 4,
+      "downloads_per_hour": 3.04,
+      "project_count": 1,
+      "top_project_id": "ChkHwAdr",
+      "top_project_title": "Jetpack Boots",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20",
+      "loader": "datapack",
+      "delta_downloads": 3,
+      "downloads_per_hour": 2.28,
+      "project_count": 1,
+      "top_project_id": "RimELHmX",
+      "top_project_title": "[NRGD]NRG Core datapack",
+      "top_project_delta": 3
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "datapack",
+      "delta_downloads": 3,
+      "downloads_per_hour": 2.28,
+      "project_count": 1,
+      "top_project_id": "RimELHmX",
+      "top_project_title": "[NRGD]NRG Core datapack",
+      "top_project_delta": 3
     }
   ],
   "all_project_deltas": [],
+  "project_velocity_history": {
+    "aRErXHku": {
+      "title": "Fullbright Datapack",
+      "slug": "fullbright-trigger",
+      "history": [
+        {
+          "timestamp": "2026-07-21T19-36-39",
+          "downloads": 18,
+          "downloads_per_hour": 8.37,
+          "momentum_score": 31.67
+        }
+      ]
+    },
+    "dlx4kLtI": {
+      "title": "Supplementaries Compat",
+      "slug": "supplementaries-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 136032,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 136032,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 136032,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 136032,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 136032,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 145382,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 145382,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 145382,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 145382,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 145382,
+          "downloads_per_hour": 332.78,
+          "momentum_score": 22.23
+        }
+      ]
+    },
+    "ChkHwAdr": {
+      "title": "Jetpack Boots",
+      "slug": "jetpack-boots",
+      "history": [
+        {
+          "timestamp": "2026-07-21T19-36-39",
+          "downloads": 29,
+          "downloads_per_hour": 7.61,
+          "momentum_score": 17.39
+        }
+      ]
+    },
+    "oRZbVZzh": {
+      "title": "Farmer's Delight Cutting Compat",
+      "slug": "farmers-delight-cutting-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 322403,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 322403,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 322403,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 322403,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 322403,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 322403,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 332435,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 332435,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 332435,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 332435,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 332435,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 332435,
+          "downloads_per_hour": 360.0,
+          "momentum_score": 12.09
+        }
+      ]
+    },
+    "OhduvhIc": {
+      "title": "VeinMiner",
+      "slug": "veinminer",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 63617681,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 63617681,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 63617681,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 63617681,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 63617681,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 63617681,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 63916225,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 63916225,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 63916225,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 63916225,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 63916225,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 63916225,
+          "downloads_per_hour": 11353.18,
+          "momentum_score": 9.39
+        }
+      ]
+    },
+    "h2jngREY": {
+      "title": "Trek",
+      "slug": "trek",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 8461023,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 8461023,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 8461023,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 8461023,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 8461023,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 8461023,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 8525365,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 8525365,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 8525365,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 8525365,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 8525365,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 8525365,
+          "downloads_per_hour": 2150.94,
+          "momentum_score": 8.59
+        }
+      ]
+    },
+    "odZZdRCE": {
+      "title": "AllTheMons x Mega Showdown",
+      "slug": "allthemons-x-mega-showdown-legacy",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3533983,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3533983,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3533983,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3533983,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3533983,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3533983,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3555063,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3555063,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3555063,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3555063,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3555063,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3555063,
+          "downloads_per_hour": 939.88,
+          "momentum_score": 8.07
+        }
+      ]
+    },
+    "8oi3bsk5": {
+      "title": "Terralith",
+      "slug": "terralith",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 19851969,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 19851969,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 19851969,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 19851969,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 19851969,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 19851969,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 19907271,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 19907271,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 19907271,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 19907271,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 19907271,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 19907271,
+          "downloads_per_hour": 2223.61,
+          "momentum_score": 7.93
+        }
+      ]
+    },
+    "aKCwCJlY": {
+      "title": "Structory",
+      "slug": "structory",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 6714059,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 6714059,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 6714059,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 6714059,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 6714059,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 6714059,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 6749549,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 6749549,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 6749549,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 6749549,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 6749549,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 6749549,
+          "downloads_per_hour": 1268.2,
+          "momentum_score": 7.9
+        }
+      ]
+    },
+    "2V1Y86sc": {
+      "title": "Navas ZA Megas",
+      "slug": "navas-zamega",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 6855458,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 6855458,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 6855458,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 6855458,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 6855458,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 6855458,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 6885320,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 6885320,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 6885320,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 6885320,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 6885320,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 6885320,
+          "downloads_per_hour": 1280.19,
+          "momentum_score": 7.9
+        }
+      ]
+    },
+    "W2pr9jyL": {
+      "title": "Cobblemon additions",
+      "slug": "cobblemon-additions",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 7552806,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 7552806,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 7552806,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 7552806,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 7552806,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 7552806,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 7583337,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 7583337,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 7583337,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 7583337,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 7583337,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 7583337,
+          "downloads_per_hour": 1281.74,
+          "momentum_score": 7.82
+        }
+      ]
+    },
+    "ouf6KDf2": {
+      "title": "LackingMons (Discountiniued)",
+      "slug": "lackingmons",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3507359,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3507359,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3507359,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3507359,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3507359,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3507359,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3525627,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3525627,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3525627,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3525627,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3525627,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3525627,
+          "downloads_per_hour": 821.74,
+          "momentum_score": 7.82
+        }
+      ]
+    },
+    "ubCG349l": {
+      "title": "MundialMons ReaniPack [CobbleMon]",
+      "slug": "mundialmons",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3197550,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3197550,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3197550,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3197550,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3197550,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3197550,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3214523,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3214523,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3214523,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3214523,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3214523,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3214523,
+          "downloads_per_hour": 770.01,
+          "momentum_score": 7.8
+        }
+      ]
+    },
+    "lYp6oiT3": {
+      "title": "Hydro Reanimodel Pack [Cobblemon]",
+      "slug": "hydro-reanimodel-pack",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3660519,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3660519,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3660519,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3660519,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3660519,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3660519,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3678381,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3678381,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3678381,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3678381,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3678381,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3678381,
+          "downloads_per_hour": 802.95,
+          "momentum_score": 7.73
+        }
+      ]
+    },
+    "lIDAJAby": {
+      "title": "CobbleMotion v1.5.1",
+      "slug": "cobblemotion",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 4095457,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 4095457,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 4095457,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 4095457,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 4095457,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 4095457,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 4114333,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 4114333,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 4114333,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 4114333,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 4114333,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 4114333,
+          "downloads_per_hour": 842.5,
+          "momentum_score": 7.7
+        }
+      ]
+    },
+    "GFYCh249": {
+      "title": "Pokemans Pack [Cobblemon]",
+      "slug": "cobblemon-pokemans",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 4076108,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 4076108,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 4076108,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 4076108,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 4076108,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 4076108,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 4094605,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 4094605,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 4094605,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 4094605,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 4094605,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 4094605,
+          "downloads_per_hour": 832.74,
+          "momentum_score": 7.68
+        }
+      ]
+    },
+    "b8PVSzJC": {
+      "title": "TDmon",
+      "slug": "tdmon",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3377664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3377664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3377664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3377664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3377664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3377664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3393918,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3393918,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3393918,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3393918,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3393918,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3393918,
+          "downloads_per_hour": 745.28,
+          "momentum_score": 7.68
+        }
+      ]
+    },
+    "DjLobEOy": {
+      "title": "Towns and Towers",
+      "slug": "towns-and-towers",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 15118478,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 15118478,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 15118478,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 15118478,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 15118478,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 15118478,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 15161842,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 15161842,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 15161842,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 15161842,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 15161842,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 15161842,
+          "downloads_per_hour": 1571.68,
+          "momentum_score": 7.65
+        }
+      ]
+    },
+    "2k9EDPO1": {
+      "title": "CavsCobbleMons",
+      "slug": "cavscobblemons",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3495068,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3495068,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3495068,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3495068,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3495068,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3495068,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3511188,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3511188,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3511188,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3511188,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3511188,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3511188,
+          "downloads_per_hour": 740.7,
+          "momentum_score": 7.64
+        }
+      ]
+    },
+    "B12Teeqk": {
+      "title": "Planeta Cobblemon Pokémon Pack",
+      "slug": "planeta-cobblemon-pokemon-pack",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3454042,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3454042,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3454042,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3454042,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3454042,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3454042,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3469960,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3469960,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3469960,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3469960,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3469960,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3469960,
+          "downloads_per_hour": 734.84,
+          "momentum_score": 7.64
+        }
+      ]
+    },
+    "Gdq5F7ud": {
+      "title": "GlitchDex - Cobblemon",
+      "slug": "glitchdex-cobblemon",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3429343,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3429343,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3429343,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3429343,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3429343,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3429343,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3445202,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3445202,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3445202,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3445202,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3445202,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3445202,
+          "downloads_per_hour": 729.97,
+          "momentum_score": 7.63
+        }
+      ]
+    },
+    "jbbBrQVa": {
+      "title": "MissingMons [cobblemon]",
+      "slug": "missingmons-cobblemon",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 4726123,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 4726123,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 4726123,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 4726123,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 4726123,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 4726123,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 4745083,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 4745083,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 4745083,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 4745083,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 4745083,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 4745083,
+          "downloads_per_hour": 869.09,
+          "momentum_score": 7.61
+        }
+      ]
+    },
+    "uVBAvWbW": {
+      "title": "PokeCenter PCs (Cobblemon Addon)",
+      "slug": "pokecenter-pc-cobblemon",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3654906,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3654906,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3654906,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3654906,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3654906,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3654906,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3671104,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3671104,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3671104,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3671104,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3671104,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3671104,
+          "downloads_per_hour": 745.62,
+          "momentum_score": 7.61
+        }
+      ]
+    },
+    "j3FONRYr": {
+      "title": "Structory: Towers",
+      "slug": "structory-towers",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 7197896,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 7197896,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 7197896,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 7197896,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 7197896,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 7197896,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 7224850,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 7224850,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 7224850,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 7224850,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 7224850,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 7224850,
+          "downloads_per_hour": 981.22,
+          "momentum_score": 7.47
+        }
+      ]
+    },
+    "TiFXQSAQ": {
+      "title": "MysticMons",
+      "slug": "mysticmons",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 4664578,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 4664578,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 4664578,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 4664578,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 4664578,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 4664578,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 4681807,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 4681807,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 4681807,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 4681807,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 4681807,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 4681807,
+          "downloads_per_hour": 780.52,
+          "momentum_score": 7.46
+        }
+      ]
+    },
+    "tpehi7ww": {
+      "title": "Dungeons and Taverns",
+      "slug": "dungeons-and-taverns",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 18970672,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 18970672,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 18970672,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 18970672,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 18970672,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 18970672,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 19010353,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 19010353,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 19010353,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 19010353,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 19010353,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 19010353,
+          "downloads_per_hour": 1408.18,
+          "momentum_score": 7.43
+        }
+      ]
+    },
+    "HdIQwHGq": {
+      "title": "Lost Cities Modern Tweaks",
+      "slug": "lost-cities-modern-tweaks",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2295971,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2295971,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2295971,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2295971,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2295971,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2295971,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2309441,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2309441,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2309441,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2309441,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2309441,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2309441,
+          "downloads_per_hour": 509.16,
+          "momentum_score": 7.42
+        }
+      ]
+    },
+    "lWDHr9jE": {
+      "title": "Tectonic",
+      "slug": "tectonic",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 14589573,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 14589573,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 14589573,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 14589573,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 14589573,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 14589573,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 14620486,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 14620486,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 14620486,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 14620486,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 14620486,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 14620486,
+          "downloads_per_hour": 1140.61,
+          "momentum_score": 7.3
+        }
+      ]
+    },
+    "hl5OLM95": {
+      "title": "Geophilic",
+      "slug": "geophilic",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 9010617,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 9010617,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 9010617,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 9010617,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 9010617,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 9010617,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 9035765,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 9035765,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 9035765,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 9035765,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 9035765,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 9035765,
+          "downloads_per_hour": 890.2,
+          "momentum_score": 7.23
+        }
+      ]
+    },
+    "HSfsxuTo": {
+      "title": "Explorify",
+      "slug": "explorify",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 7885779,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 7885779,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 7885779,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 7885779,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 7885779,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 7885779,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 7909357,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 7909357,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 7909357,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 7909357,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 7909357,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 7909357,
+          "downloads_per_hour": 837.5,
+          "momentum_score": 7.22
+        }
+      ]
+    },
+    "4sP0LXxp": {
+      "title": "VeinMiner Enchantment",
+      "slug": "veinminer-enchantment",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 15385755,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 15385755,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 15385755,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 15385755,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 15385755,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 15385755,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 15411823,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 15411823,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 15411823,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 15411823,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 15411823,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 15411823,
+          "downloads_per_hour": 1007.34,
+          "momentum_score": 7.16
+        }
+      ]
+    },
+    "8Lw09aLb": {
+      "title": "Luki's Grand Capitals",
+      "slug": "lukis-grand-capitals",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 4321740,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 4321740,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 4321740,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 4321740,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 4321740,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 4321740,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 4338635,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 4338635,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 4338635,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 4338635,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 4338635,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 4338635,
+          "downloads_per_hour": 563.84,
+          "momentum_score": 7.06
+        }
+      ]
+    },
+    "ZVzW5oNS": {
+      "title": "Incendium Legacy",
+      "slug": "incendium",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 8733944,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 8733944,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 8733944,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 8733944,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 8733944,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 8733944,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 8754310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 8754310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 8754310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 8754310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 8754310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 8754310,
+          "downloads_per_hour": 754.72,
+          "momentum_score": 7.05
+        }
+      ]
+    },
+    "p1WH6sHr": {
+      "title": "From The Fog",
+      "slug": "from-the-fog",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 4819980,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 4819980,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 4819980,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 4819980,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 4819980,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 4819980,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 4835281,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 4835281,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 4835281,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 4835281,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 4835281,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 4835281,
+          "downloads_per_hour": 579.6,
+          "momentum_score": 7.03
+        }
+      ]
+    },
+    "XCIMrYn0": {
+      "title": "Hearths",
+      "slug": "hearths",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 5398701,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 5398701,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 5398701,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 5398701,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 5398701,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 5398701,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 5414949,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 5414949,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 5414949,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 5414949,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 5414949,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 5414949,
+          "downloads_per_hour": 575.18,
+          "momentum_score": 6.96
+        }
+      ]
+    },
+    "boFjx9eY": {
+      "title": "Stony Cliffs Are Cool",
+      "slug": "stony-cliffs-are-cool",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3297246,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3297246,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3297246,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3297246,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3297246,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3297246,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3310010,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3310010,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3310010,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3310010,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3310010,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3310010,
+          "downloads_per_hour": 456.61,
+          "momentum_score": 6.94
+        }
+      ]
+    },
+    "7YjclEGc": {
+      "title": "Dynamic Lights",
+      "slug": "dynamic-lights",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 6616771,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 6616771,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 6616771,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 6616771,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 6616771,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 6616771,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 6632991,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 6632991,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 6632991,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 6632991,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 6632991,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 6632991,
+          "downloads_per_hour": 590.58,
+          "momentum_score": 6.89
+        }
+      ]
+    },
+    "UMmSTwE0": {
+      "title": "Blossom Blade",
+      "slug": "blossom-blade",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 4493346,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 4493346,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 4493346,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 4493346,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 4493346,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 4493346,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 4506801,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 4506801,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 4506801,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 4506801,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 4506801,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 4506801,
+          "downloads_per_hour": 490.54,
+          "momentum_score": 6.86
+        }
+      ]
+    },
+    "iunZDj0l": {
+      "title": "CTOV - Beautify Compat",
+      "slug": "ctov-beautify-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2365853,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2365853,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2365853,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2365853,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2365853,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2365853,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2377058,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2377058,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2377058,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2377058,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2377058,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2377058,
+          "downloads_per_hour": 362.33,
+          "momentum_score": 6.85
+        }
+      ]
+    },
+    "MCnBYP0b": {
+      "title": "True Ending - Ender Dragon Overhaul",
+      "slug": "true-ending",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 5335666,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 5335666,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 5335666,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 5335666,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 5335666,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 5335666,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 5350178,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 5350178,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 5350178,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 5350178,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 5350178,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 5350178,
+          "downloads_per_hour": 520.14,
+          "momentum_score": 6.84
+        }
+      ]
+    },
+    "P5wB88AS": {
+      "title": "Repurposed Structures - Farmer's Delight Compat",
+      "slug": "repurposed-structures-farmers-delight-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3084717,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3084717,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3084717,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3084717,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3084717,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3084717,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3095561,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3095561,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3095561,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3095561,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3095561,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3095561,
+          "downloads_per_hour": 392.93,
+          "momentum_score": 6.79
+        }
+      ]
+    },
+    "DNuNq5bb": {
+      "title": "Dungeons and Taverns Ancient City Overhaul",
+      "slug": "dungeons-and-taverns-ancient-city-overhaul",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3594746,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3594746,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3594746,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3594746,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3594746,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3594746,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3607200,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3607200,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3607200,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3607200,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3607200,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3607200,
+          "downloads_per_hour": 418.2,
+          "momentum_score": 6.78
+        }
+      ]
+    },
+    "uJ0YMl4f": {
+      "title": "Repurposed Structures - Better Strongholds Compat",
+      "slug": "repurposed-structures-better-strongholds-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2651387,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2651387,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2651387,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2651387,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2651387,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2651387,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2661351,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2661351,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2661351,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2661351,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2661351,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2661351,
+          "downloads_per_hour": 361.23,
+          "momentum_score": 6.77
+        }
+      ]
+    },
+    "kawJN2LZ": {
+      "title": "CTOV - Friends and Foes Compat",
+      "slug": "ctov-friends-and-foes-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2656020,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2656020,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2656020,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2656020,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2656020,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2656020,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2667125,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2667125,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2667125,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2667125,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2667125,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2667125,
+          "downloads_per_hour": 358.63,
+          "momentum_score": 6.76
+        }
+      ]
+    },
+    "a5ESRz6Q": {
+      "title": "Repurposed Structures - VillagerPlus Compat",
+      "slug": "repurposed-structures-villagerplus-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2572611,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2572611,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2572611,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2572611,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2572611,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2572611,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2582322,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2582322,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2582322,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2582322,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2582322,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2582322,
+          "downloads_per_hour": 352.51,
+          "momentum_score": 6.76
+        }
+      ]
+    },
+    "8Xv7wkWd": {
+      "title": "Repurposed Structures - Bygone Nether Compat",
+      "slug": "repurposed-structures-bygone-nether-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2531532,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2531532,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2531532,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2531532,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2531532,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2531532,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2541177,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2541177,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2541177,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2541177,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2541177,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2541177,
+          "downloads_per_hour": 349.35,
+          "momentum_score": 6.76
+        }
+      ]
+    },
+    "qUbxpIPN": {
+      "title": "Repurposed Structures - Better Dungeons Compat",
+      "slug": "repurposed-structures-better-dungeons-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2557241,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2557241,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2557241,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2557241,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2557241,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2557241,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2566886,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2566886,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2566886,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2566886,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2566886,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2566886,
+          "downloads_per_hour": 350.27,
+          "momentum_score": 6.75
+        }
+      ]
+    },
+    "CUfOpYVR": {
+      "title": "Repurposed Structures - Bountiful Compat",
+      "slug": "repurposed-structures-bountiful-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2503966,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2503966,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2503966,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2503966,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2503966,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2503966,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2513520,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2513520,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2513520,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2513520,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2513520,
+          "downloads_per_hour": 346.67,
+          "momentum_score": 6.75
+        }
+      ]
+    },
+    "UYd23ZmY": {
+      "title": "Repurposed Structures - Friends and Foes Compat",
+      "slug": "repurposed-structures-friends-and-foes-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 2742687,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 2742687,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 2742687,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 2742687,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 2742687,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 2742687,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 2752442,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 2752442,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 2752442,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 2752442,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 2752442,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 2752442,
+          "downloads_per_hour": 354.58,
+          "momentum_score": 6.73
+        }
+      ]
+    },
+    "ePaZVJM4": {
+      "title": "Repurposed Structures - Better Witch Huts Compat",
+      "slug": "repurposed-structures-better-witch-huts-compat",
+      "history": [
+        {
+          "timestamp": "2026-07-20T07-04-48",
+          "downloads": 3038786,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T10-56-06",
+          "downloads": 3038786,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T15-04-34",
+          "downloads": 3038786,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T19-06-34",
+          "downloads": 3038786,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-16-29",
+          "downloads": 3038786,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-26-06",
+          "downloads": 3038786,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-15-17",
+          "downloads": 3048601,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-43-35",
+          "downloads": 3048601,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-42-51",
+          "downloads": 3048601,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-17-40",
+          "downloads": 3048601,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-42-50",
+          "downloads": 3048601,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T19-58-06",
+          "downloads": 3048601,
+          "downloads_per_hour": 356.1,
+          "momentum_score": 6.67
+        }
+      ]
+    }
+  },
   "predictive": {
-    "timestamp": "2026-07-15T09-21-55",
-    "date": "2026-07-15",
+    "timestamp": "2026-07-21T19-37-31",
+    "date": "2026-07-21",
     "project_type": "datapack",
     "analysis_type": "sub",
-    "snapshots_analyzed": 4,
-    "last_snapshot_time": "2026-07-15T09-21-54",
-    "hours_until_main": 22,
+    "snapshots_analyzed": 19,
+    "last_snapshot_time": "2026-07-21T19-35-28",
+    "hours_until_main": 12,
     "velocity": {
-      "velocity_per_hour": 0.0,
-      "velocity_2h": 0,
-      "velocity_24h": 3319,
-      "avg_velocity_24h": 138.29
+      "velocity_per_hour": 57.94,
+      "velocity_2h": 52,
+      "velocity_24h": 2031555,
+      "avg_velocity_24h": 84648.12
     },
     "acceleration": {
-      "acceleration": 0.0,
-      "acceleration_pct": 0.0
+      "acceleration": 10.0,
+      "acceleration_pct": 20.87
     },
     "predictions": {
-      "predicted_daily_total": 621997321,
-      "predicted_daily_growth": 6361,
-      "predicted_daily_growth_pct": 0.0,
-      "confidence": "medium"
+      "predicted_daily_total": 634117983,
+      "predicted_daily_growth": 5225604,
+      "predicted_daily_growth_pct": 0.83,
+      "confidence": "high"
     },
-    "top_movers_2h": [],
+    "top_movers_2h": [
+      {
+        "project_id": "BpcmlKS9",
+        "title": "Minecraft But Backwards",
+        "slug": "minecraft-backwards",
+        "previous_downloads": 1707,
+        "current_downloads": 1742,
+        "delta_2h": 35,
+        "velocity": 39.0
+      },
+      {
+        "project_id": "aRErXHku",
+        "title": "Fullbright Datapack",
+        "slug": "fullbright-trigger",
+        "previous_downloads": 7,
+        "current_downloads": 18,
+        "delta_2h": 11,
+        "velocity": 12.26
+      },
+      {
+        "project_id": "ChkHwAdr",
+        "title": "Jetpack Boots",
+        "slug": "jetpack-boots",
+        "previous_downloads": 23,
+        "current_downloads": 29,
+        "delta_2h": 6,
+        "velocity": 6.69
+      }
+    ],
     "velocity_by_category": [],
-    "anomalies": [],
+    "anomalies": [
+      {
+        "project_id": "aRErXHku",
+        "title": "Fullbright Datapack",
+        "slug": "fullbright-trigger",
+        "current_velocity": 12.26,
+        "avg_velocity": 0.14,
+        "anomaly_factor": 90.67
+      },
+      {
+        "project_id": "BpcmlKS9",
+        "title": "Minecraft But Backwards",
+        "slug": "minecraft-backwards",
+        "current_velocity": 39.0,
+        "avg_velocity": 2.34,
+        "anomaly_factor": 16.63
+      },
+      {
+        "project_id": "ChkHwAdr",
+        "title": "Jetpack Boots",
+        "slug": "jetpack-boots",
+        "current_velocity": 6.69,
+        "avg_velocity": 1.29,
+        "anomaly_factor": 5.2
+      }
+    ],
     "hourly_pattern": [
       {
-        "hour_label": "08-08",
-        "downloads_gained": 3319
+        "hour_label": "19-22",
+        "downloads_gained": -2202
       },
       {
-        "hour_label": "08-08",
-        "downloads_gained": 0
+        "hour_label": "22-00",
+        "downloads_gained": 64
       },
       {
-        "hour_label": "08-09",
-        "downloads_gained": 0
+        "hour_label": "00-02",
+        "downloads_gained": 204
+      },
+      {
+        "hour_label": "02-05",
+        "downloads_gained": 146
+      },
+      {
+        "hour_label": "05-07",
+        "downloads_gained": 2029833
+      },
+      {
+        "hour_label": "07-10",
+        "downloads_gained": 3207
+      },
+      {
+        "hour_label": "10-14",
+        "downloads_gained": 5
+      },
+      {
+        "hour_label": "14-18",
+        "downloads_gained": 226
+      },
+      {
+        "hour_label": "18-18",
+        "downloads_gained": 20
+      },
+      {
+        "hour_label": "18-19",
+        "downloads_gained": 52
       }
     ]
   },
   "charts": [
-    {
-      "path": "reports/charts/datapack/concentration.png",
-      "name": "Concentration"
-    },
-    {
-      "path": "reports/charts/datapack/velocity.png",
-      "name": "Velocity"
-    },
-    {
-      "path": "reports/charts/datapack/hourly_heatmap.png",
-      "name": "Hourly Heatmap"
-    },
-    {
-      "path": "reports/charts/datapack/top_movers_2h.png",
-      "name": "Top Movers 2H"
-    },
     {
       "path": "reports/charts/datapack/velocity_by_category.png",
       "name": "Velocity By Category"
@@ -2248,6 +4279,18 @@
     {
       "path": "reports/charts/datapack/prediction.png",
       "name": "Prediction"
+    },
+    {
+      "path": "reports/charts/datapack/velocity.png",
+      "name": "Velocity"
+    },
+    {
+      "path": "reports/charts/datapack/concentration.png",
+      "name": "Concentration"
+    },
+    {
+      "path": "reports/charts/datapack/hourly_heatmap.png",
+      "name": "Hourly Heatmap"
     },
     {
       "path": "reports/charts/datapack/trend.png",
@@ -2258,20 +4301,24 @@
       "name": "Top Projects"
     },
     {
-      "path": "reports/charts/datapack/recommendations.png",
-      "name": "Recommendations"
-    },
-    {
       "path": "reports/charts/datapack/loaders.png",
       "name": "Loaders"
+    },
+    {
+      "path": "reports/charts/datapack/distribution.png",
+      "name": "Distribution"
     },
     {
       "path": "reports/charts/datapack/categories.png",
       "name": "Categories"
     },
     {
-      "path": "reports/charts/datapack/distribution.png",
-      "name": "Distribution"
+      "path": "reports/charts/datapack/recommendations.png",
+      "name": "Recommendations"
+    },
+    {
+      "path": "reports/charts/datapack/top_movers_2h.png",
+      "name": "Top Movers 2H"
     }
   ]
 }

@@ -44,6 +44,7 @@ def combine_analyses(data_dir):
             "category_rankings": [],
             "category_trending": {},
             "loader_rankings": [],
+            "cross_type_top20": [],  # Enhancement #4: cross-type ranking by momentum
         },
     }
 
@@ -53,6 +54,8 @@ def combine_analyses(data_dir):
     all_loader_rankings = {}
     # Combined category trending: category -> list of trending projects (with type)
     all_category_trending = {}
+    # Enhancement #4: cross-type ranking by momentum_score
+    cross_type_candidates = []
 
     for pt in PROJECT_TYPES:
         analysis = load_latest_analysis(data_dir, pt)
@@ -63,6 +66,10 @@ def combine_analyses(data_dir):
         # Load predictive analysis if available (velocity, predictions, anomalies)
         sub_analysis_path = Path(data_dir) / pt / "latest_sub_analysis.json"
         sub_analysis = load_json(str(sub_analysis_path)) if sub_analysis_path.exists() else None
+
+        # Enhancement #2: Load per-project velocity history
+        velocity_history_path = Path(data_dir) / pt / "project_velocity_history.json"
+        velocity_history = load_json(str(velocity_history_path)) if velocity_history_path.exists() else {}
 
         # Store the analysis data
         report["project_types"][pt] = {
@@ -82,6 +89,8 @@ def combine_analyses(data_dir):
             "trend_history": analysis.get("trend_history", []),
             "category_trend_history": analysis.get("category_trend_history", {}),
             "vl_trend_history": analysis.get("vl_trend_history", {}),
+            # Enhancement #2: per-project velocity history (compact, ~150 KB per type)
+            "project_velocity_history": velocity_history if velocity_history else {},
             # Predictive analysis (may be None if not enough snapshots)
             "predictive": sub_analysis if sub_analysis else None,
         }
@@ -89,6 +98,21 @@ def combine_analyses(data_dir):
         # Collect top projects with type prefix
         for p in analysis.get("top_projects", []):
             all_top_projects.append({**p, "project_type": pt})
+            # Enhancement #4: collect candidates for cross-type ranking
+            cross_type_candidates.append({
+                "project_id": p.get("project_id", ""),
+                "title": p.get("title", ""),
+                "slug": p.get("slug", ""),
+                "project_type": pt,
+                "categories": p.get("categories", []),
+                "current_downloads": p.get("current_downloads", 0),
+                "delta_downloads": p.get("delta_downloads", 0),
+                "downloads_per_hour": p.get("downloads_per_hour", 0),
+                "growth_pct": p.get("growth_pct", 0),
+                "momentum_score": p.get("momentum_score", 0),
+                "is_anomaly": p.get("is_anomaly", False),
+                "anomaly_factor": p.get("anomaly_factor"),
+            })
 
         # Aggregate VL pairs by (game_version, loader) across ALL project types
         for vl in analysis.get("top_version_loaders", []):
@@ -164,6 +188,12 @@ def combine_analyses(data_dir):
     # Sort and assign
     all_top_projects.sort(key=lambda x: x.get("delta_downloads", 0), reverse=True)
     report["combined"]["top_projects"] = all_top_projects[:50]
+
+    # Enhancement #4: Cross-type top 20 ranking by momentum_score
+    # This lets users compare a fast-growing shader against a fast-growing mod
+    # using a normalized score (momentum_score is log-scaled and capped).
+    cross_type_candidates.sort(key=lambda x: x.get("momentum_score", 0), reverse=True)
+    report["combined"]["cross_type_top20"] = cross_type_candidates[:20]
 
     report["combined"]["top_version_loaders"] = sorted(
         all_top_vl.values(),
@@ -386,6 +416,7 @@ def write_streaming_chunks(report, reports_dir, data_dir="."):
     for pt, info in report.get("project_types", {}).items():
         if not isinstance(info, dict):
             continue
+
         s = info.get("summary", {})
         dq = info.get("data_quality", {})
         summary["project_types"][pt] = {
@@ -402,6 +433,9 @@ def write_streaming_chunks(report, reports_dir, data_dir="."):
             "analysis_quality": info.get("analysis_quality", "normal"),
             "actual_hours_between": info.get("actual_hours_between", 0),
             "confidence": dq.get("confidence", "low"),
+            "stale": dq.get("stale", False),
+            "snapshot_age_hours": dq.get("snapshot_age_hours", 0),
+            "baseline_source_count": dq.get("baseline_source_count", 1),
             "date": info.get("date", ""),
         }
     save_json(str(reports_dir / "summary.json"), summary)
@@ -446,6 +480,8 @@ def write_streaming_chunks(report, reports_dir, data_dir="."):
             "declining_projects": info.get("declining_projects", [])[:20],
             "top_version_loaders": info.get("top_version_loaders", [])[:200],
             "all_project_deltas": info.get("all_project_deltas", [])[:500],
+            # Enhancement #2: per-project velocity history (compact time-series)
+            "project_velocity_history": info.get("project_velocity_history", {}),
             "predictive": info.get("predictive"),
             "charts": chart_list,
         })
@@ -481,6 +517,7 @@ def main():
     print(f"  Total downloads: {report['totals']['downloads']:,}")
     print(f"  Combined top projects: {len(report['combined']['top_projects'])}")
     print(f"  Combined top VL pairs: {len(report['combined']['top_version_loaders'])}")
+    print(f"  Cross-type top 20 (momentum): {len(report['combined'].get('cross_type_top20', []))}")
     print(f"  Combined categories: {len(report['combined']['category_rankings'])}")
     cat_trending = report["combined"].get("category_trending", {})
     trending_total = sum(len(v) for v in cat_trending.values())

@@ -191,6 +191,48 @@
   /* Declining projects section */
   .declining-section { margin-top: 24px; }
   .declining-section .section-title { color: var(--red); }
+
+  /* Enhancement #3: anomaly marker */
+  .anomaly-mark {
+    color: var(--orange); font-size: 10px;
+    cursor: help; vertical-align: super;
+  }
+
+  /* Enhancement #5: weighted prediction display */
+  .weighted-pred {
+    color: var(--text-muted); font-size: 11px; margin-left: 6px;
+  }
+
+  /* Enhancement #6: stale snapshot banner */
+  .stale-banner {
+    background: rgba(248,81,73,0.1); border: 1px solid var(--red);
+    border-radius: 6px; padding: 8px 12px; margin-bottom: 12px;
+    color: var(--red); font-size: 13px;
+  }
+
+  /* Enhancement #4: cross-type top 20 section */
+  .cross-type-section { margin-top: 24px; }
+  .cross-type-section .section-title {
+    color: var(--purple); display: flex; align-items: center; gap: 8px;
+  }
+  .type-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    background: rgba(188,140,255,0.15); color: var(--purple);
+  }
+  .type-tag.mod { background: rgba(63,185,80,0.15); color: var(--green); }
+  .type-tag.modpack { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .type-tag.resourcepack { background: rgba(210,153,34,0.15); color: var(--orange); }
+  .type-tag.shader { background: rgba(66,165,245,0.15); color: var(--blue); }
+  .type-tag.datapack { background: rgba(244,143,177,0.15); color: var(--red); }
+  .type-tag.plugin { background: rgba(129,199,132,0.15); color: var(--green); }
+
+  /* Enhancement #2: velocity sparkline */
+  .sparkline {
+    display: inline-block; vertical-align: middle;
+    width: 60px; height: 18px;
+  }
+  .velocity-history-cell { text-align: center; }
 </style>
 </head>
 <body>
@@ -268,20 +310,30 @@ function loaderTag(loader) {
   const cls = colors[loader?.toLowerCase()] || 'blue';
   return `<span class="tag ${cls}">${escHtml(loader||'—')}</span>`;
 }
-function momentumBadge(score) {
+function momentumBadge(score, isAnomaly, anomalyFactor) {
   if (score == null || isNaN(score)) return '<span class="momentum neutral">—</span>';
   const cls = score > 0.5 ? 'positive' : (score < -0.5 ? 'negative' : 'neutral');
-  return `<span class="momentum ${cls}">${score > 0 ? '+' : ''}${score.toFixed(2)}</span>`;
+  const anomalyMark = isAnomaly ? ` <span class="anomaly-mark" title="Velocity anomaly (factor=${anomalyFactor})">⚠</span>` : '';
+  return `<span class="momentum ${cls}">${score > 0 ? '+' : ''}${score.toFixed(2)}</span>${anomalyMark}`;
 }
 function qualityBadge(info) {
   const dq = info.data_quality || {};
   const quality = info.analysis_quality || dq.quality || 'normal';
   const confidence = dq.confidence || 'medium';
-  const cls = quality === 'extended' ? 'extended' : confidence;
-  const label = quality === 'extended' ? `EXTENDED · ${confidence}` : confidence.toUpperCase();
+  let cls = confidence;
+  let label = confidence.toUpperCase();
+  if (quality === 'stale') {
+    cls = 'low';
+    label = `STALE · ${confidence}`;
+  } else if (quality === 'extended') {
+    cls = 'extended';
+    label = `EXTENDED · ${confidence}`;
+  }
   const snaps = dq.snapshot_count != null ? ` · ${dq.snapshot_count} snaps` : '';
   const actual = dq.actual_hours != null ? ` · ${dq.actual_hours}h` : '';
-  return `<span class="quality-badge ${cls}" title="Quality: ${quality}, Confidence: ${confidence}${snaps}${actual}">${label}${snaps}</span>`;
+  const sources = dq.baseline_source_count > 1 ? ` · ${dq.baseline_source_count}src` : '';
+  const age = dq.snapshot_age_hours != null ? ` · age ${dq.snapshot_age_hours}h` : '';
+  return `<span class="quality-badge ${cls}" title="Quality: ${quality}, Confidence: ${confidence}${snaps}${actual}${sources}${age}">${label}${snaps}${sources}</span>`;
 }
 
 // ── Streaming loader ──────────────────────────────────────────────
@@ -469,6 +521,7 @@ function renderActiveTab() {
   if (pt === 'general') {
     if (!COMBINED) { container.innerHTML = renderPlaceholder(); return; }
     container.innerHTML = `
+      ${renderGeneralCrossType()}
       ${renderGeneralTopProjects()}
       ${renderGeneralCategories()}
       ${renderGeneralVLPairs()}
@@ -487,6 +540,7 @@ function renderActiveTab() {
     return;
   }
   container.innerHTML = `
+    ${renderStaleBanner(info)}
     ${renderPerTypeSummary(info)}
     ${renderPerTypeTopProjects(info)}
     ${renderPerTypeCategories(info)}
@@ -494,6 +548,40 @@ function renderActiveTab() {
     ${renderPerTypeDeclining(info)}
     ${renderPerTypePredictive(info)}
     ${renderPerTypeCharts(info)}
+  `;
+}
+
+// Enhancement #6: stale snapshot warning banner
+function renderStaleBanner(info) {
+  const dq = info.data_quality || {};
+  if (!dq.stale) return '';
+  const age = dq.snapshot_age_hours || 0;
+  return `<div class="stale-banner">⚠ Latest snapshot is ${age.toFixed(1)}h old — workflow may be delayed. Numbers shown are from the most recent successful run.</div>`;
+}
+
+// Enhancement #4: cross-type top 20 by momentum
+function renderGeneralCrossType() {
+  const cross = (COMBINED || {}).cross_type_top20 || [];
+  if (!cross.length) return '';
+  return `
+    <div class="cross-type-section">
+      <div class="section-title">Cross-Type Top 20 — Universal Momentum Ranking</div>
+      <div class="section-subtitle">Projects ranked by normalized momentum score (log-scaled). Compare growing shaders vs mods vs datapacks on the same scale.</div>
+      <table>
+        <thead><tr><th>#</th><th>Project</th><th>Type</th><th class="num">Increase</th><th class="num">/hour</th><th class="num">Growth%</th><th class="num">Momentum</th></tr></thead>
+        <tbody>
+          ${cross.map((p,i) => `<tr>
+            <td>${i+1}</td>
+            <td><strong>${escHtml(p.title||'')}</strong></td>
+            <td><span class="type-tag ${p.project_type||'mod'}">${p.project_type||'mod'}</span></td>
+            <td class="num">${(p.delta_downloads||0).toLocaleString()}</td>
+            <td class="num">${(p.downloads_per_hour||0).toLocaleString()}</td>
+            <td class="num">${(p.growth_pct||0).toFixed(2)}%</td>
+            <td class="num">${momentumBadge(p.momentum_score, p.is_anomaly, p.anomaly_factor)}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
   `;
 }
 
@@ -513,7 +601,7 @@ function renderGeneralTopProjects() {
           <td><span class="tag blue">${p.project_type||'mod'}</span></td>
           <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
           <td class="num">${fmt(p.downloads_per_hour||0)}</td>
-          <td class="num">${momentumBadge(p.momentum_score)}</td>
+          <td class="num">${momentumBadge(p.momentum_score, p.is_anomaly, p.anomaly_factor)}</td>
           <td class="num">${fmt(p.current_downloads)}</td>
         </tr>`).join('')}
       </tbody>
@@ -586,22 +674,44 @@ function renderPerTypeSummary(info) {
 
 function renderPerTypeTopProjects(info) {
   const all = info.all_project_deltas || info.top_projects || [];
+  const vh = info.project_velocity_history || {};
   return `
     <div class="section-title" style="font-size:14px;margin-bottom:10px;">Projects by Increase</div>
     ${all.length ? `
     <table>
-      <thead><tr><th>#</th><th>Project</th><th class="num">Increase</th><th class="num">/hour</th><th class="num">Momentum</th><th class="num">Total</th></tr></thead>
+      <thead><tr><th>#</th><th>Project</th><th class="num">Increase</th><th class="num">/hour</th><th class="num">Momentum</th><th class="num">Trend</th><th class="num">Total</th></tr></thead>
       <tbody>
         ${all.map((p,i) => `<tr>
           <td>${i+1}</td>
           <td><strong>${escHtml(p.title||'')}</strong></td>
           <td class="num positive">${fmtDelta(p.delta_downloads)}</td>
           <td class="num">${fmt(p.downloads_per_hour||0)}</td>
-          <td class="num">${momentumBadge(p.momentum_score)}</td>
+          <td class="num">${momentumBadge(p.momentum_score, p.is_anomaly, p.anomaly_factor)}</td>
+          <td class="velocity-history-cell">${renderSparkline(vh[p.project_id])}</td>
           <td class="num">${fmt(p.current_downloads)}</td>
         </tr>`).join('')}
       </tbody>
     </table>` : '<div class="empty">No data yet</div>'}`;
+}
+
+// Enhancement #2: SVG sparkline for velocity history
+function renderSparkline(vhEntry) {
+  if (!vhEntry || !vhEntry.history || vhEntry.history.length < 2) return '<span class="momentum neutral">—</span>';
+  const history = vhEntry.history;
+  const scores = history.map(h => h.momentum_score || 0);
+  const min = Math.min(...scores);
+  const max = Math.max(...scores);
+  const range = max - min || 1;
+  const W = 60, H = 18, PAD = 2;
+  const points = scores.map((s, i) => {
+    const x = PAD + (i / (scores.length - 1)) * (W - 2 * PAD);
+    const y = H - PAD - ((s - min) / range) * (H - 2 * PAD);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const lastScore = scores[scores.length - 1];
+  const cls = lastScore > 0.5 ? 'positive' : (lastScore < -0.5 ? 'negative' : 'neutral');
+  const color = cls === 'positive' ? '#3fb950' : (cls === 'negative' ? '#f85149' : '#8b949e');
+  return `<svg class="sparkline" viewBox="0 0 ${W} ${H}" title="${history.length} data points, latest=${lastScore.toFixed(2)}"><polyline points="${points}" fill="none" stroke="${color}" stroke-width="1.2"/></svg>`;
 }
 
 function renderPerTypeCategories(info) {
@@ -660,7 +770,7 @@ function renderPerTypeDeclining(info) {
             <td><strong>${escHtml(p.title||'')}</strong></td>
             <td class="num negative">${fmtDelta(p.delta_downloads)}</td>
             <td class="num">${fmt(p.downloads_per_hour||0)}</td>
-            <td class="num">${momentumBadge(p.momentum_score)}</td>
+            <td class="num">${momentumBadge(p.momentum_score, p.is_anomaly, p.anomaly_factor)}</td>
             <td class="num">${fmt(p.current_downloads)}</td>
           </tr>`).join('')}
         </tbody>
@@ -696,14 +806,23 @@ function renderPerTypePredictive(info) {
   const accel = pred.acceleration || {};
   const predictions = pred.predictions || {};
   const anomalies = pred.anomalies || [];
+  // Enhancement #5: confidence-weighted predictions
+  const rawGrowth = predictions.predicted_daily_growth || 0;
+  const weightedGrowth = predictions.predicted_daily_growth_weighted != null
+    ? predictions.predicted_daily_growth_weighted : rawGrowth;
+  const confWeight = predictions.confidence_weight != null ? predictions.confidence_weight : 1.0;
+  const confLabel = predictions.confidence || 'medium';
+  const weightedDisplay = confWeight < 1.0
+    ? `<span class="weighted-pred" title="Confidence-weighted (weight=${confWeight}) for ${confLabel} confidence">→ ${fmt(weightedGrowth)} weighted</span>`
+    : '';
   return `
     <div class="section" style="margin-top:24px">
       <div class="section-title">Predictive Analysis</div>
       <div class="section-subtitle">Velocity, acceleration, and trend predictions from historical data</div>
       <div class="pt-summary">
-        <div class="pt-stat"><div class="pt-label">Velocity (per hour)</div><div class="pt-value">${fmt(velocity.current||0)}</div></div>
-        <div class="pt-stat"><div class="pt-label">Acceleration</div><div class="pt-value">${fmt(accel.current||0)}</div></div>
-        <div class="pt-stat"><div class="pt-label">Predicted 24h</div><div class="pt-value">${fmt(predictions.next_24h||0)}</div></div>
+        <div class="pt-stat"><div class="pt-label">Velocity (per hour)</div><div class="pt-value">${fmt(velocity.velocity_per_hour||0)}</div></div>
+        <div class="pt-stat"><div class="pt-label">Acceleration</div><div class="pt-value">${fmt(accel.acceleration||0)}</div></div>
+        <div class="pt-stat"><div class="pt-label">Predicted daily growth</div><div class="pt-value">${fmt(rawGrowth)} ${weightedDisplay}</div></div>
         <div class="pt-stat"><div class="pt-label">Anomalies</div><div class="pt-value">${fmt(anomalies.length)}</div></div>
       </div>
     </div>`;

@@ -194,13 +194,25 @@ def main():
         confidence = "medium"
     else:
         confidence = "low"
+    # Enhancement #5: Confidence-weighted predictions
+    # Multiplier so low-confidence predictions display conservatively in the frontend.
+    confidence_weights = {"high": 1.0, "medium": 0.7, "low": 0.4}
+    confidence_weight = confidence_weights.get(confidence, 0.4)
+    predicted_daily_growth_weighted = int(predicted_daily_growth * confidence_weight)
+    predicted_daily_growth_pct_weighted = round(
+        (predicted_daily_growth_weighted / baseline_total * 100) if baseline_total > 0 else 0.0, 2
+    )
     predictions = {
         "predicted_daily_total": int(predicted_daily_total),
         "predicted_daily_growth": int(predicted_daily_growth),
         "predicted_daily_growth_pct": round(predicted_daily_growth_pct, 2),
+        "predicted_daily_growth_weighted": predicted_daily_growth_weighted,
+        "predicted_daily_growth_pct_weighted": predicted_daily_growth_pct_weighted,
         "confidence": confidence,
+        "confidence_weight": confidence_weight,
     }
-    print(f"  Predicted daily total: {predicted_daily_total:,.0f} (confidence: {confidence})")
+    print(f"  Predicted daily total: {predicted_daily_total:,.0f} (confidence: {confidence}, weight: {confidence_weight})")
+    print(f"  Weighted growth: {predicted_daily_growth_weighted:,} (raw: {int(predicted_daily_growth):,})")
 
     # ── Top movers (last 2h) ─────────────────────────────────────
     top_movers_2h = []
