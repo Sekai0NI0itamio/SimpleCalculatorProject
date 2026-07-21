@@ -652,6 +652,332 @@ def build_project_analysis(current_snapshot, baseline_snapshot,
 
 
 # ═══════════════════════════════════════════════════════════════════
+#  SIMPLE ANALYSIS — diff vs immediately previous snapshot
+#  This is the analysis the Tauri app displays. It intentionally avoids
+#  all the complex layers (rolling baseline, anomaly factors, momentum
+#  scores, predictive analysis). Just:
+#    delta = current_snapshot - previous_snapshot
+#  saved to data/{project_type}/latest_simple_analysis.json
+# ═══════════════════════════════════════════════════════════════════
+
+
+def build_simple_analysis(current_snapshot, previous_snapshot,
+                           project_type, loader_names, loader_set, content_cat_names,
+                           actual_hours_between):
+    """Build a SIMPLE delta analysis: diff vs the immediately previous snapshot.
+
+    Returns a dict with the same overall shape as build_project_analysis but
+    WITHOUT momentum_score, is_anomaly, anomaly_factor, downloads_per_hour, or
+    rolling-baseline smoothing. Just the raw delta between two consecutive
+    snapshots.
+
+    The Tauri app reads this file (latest_simple_analysis.json) instead of
+    latest_analysis.json so the app always shows the simple "increase vs last
+    run" view the user wants, while the complex analysis still runs in
+    parallel for the GitHub Pages site.
+    """
+    current_projects = current_snapshot.get("projects", [])
+    current_total_downloads = current_snapshot.get("total_downloads", 0)
+    previous_date = previous_snapshot.get("date", "")
+    current_date = current_snapshot.get("date", "")
+
+    previous_map = {p["project_id"]: p.get("downloads", 0) for p in previous_snapshot.get("projects", [])}
+    current_map = {p["project_id"]: p.get("downloads", 0) for p in current_projects}
+
+    hours = max(actual_hours_between, 1.0)
+
+    # ── Version data ──────────────────────────────────────────────
+    current_versions = current_snapshot.get("versions", [])
+    previous_versions = previous_snapshot.get("versions", [])
+    previous_version_map = {v.get("version_id"): v.get("downloads", 0) for v in previous_versions if v.get("version_id")}
+
+    # ── Summary ───────────────────────────────────────────────────
+    new_downloads = 0
+    lost_downloads = 0
+    growing_count = 0
+    declining_count = 0
+    for pid, cur_dl in current_map.items():
+        delta = cur_dl - previous_map.get(pid, 0)
+        if delta > 0:
+            new_downloads += delta
+            growing_count += 1
+        elif delta < 0:
+            lost_downloads += abs(delta)
+            declining_count += 1
+
+    summary = {
+        "total_projects": current_snapshot.get("project_count", len(current_projects)),
+        "total_versions": len(current_versions),
+        "total_downloads": current_total_downloads,
+        "baseline_date": previous_date,
+        "current_date": current_date,
+        "new_projects_since_baseline": sum(1 for pid in current_map if pid not in previous_map),
+        "new_downloads_since_baseline": new_downloads,
+        "lost_downloads_since_baseline": lost_downloads,
+        "net_download_change": new_downloads - lost_downloads,
+        "growing_projects": growing_count,
+        "declining_projects": declining_count,
+        "downloads_per_hour": round(new_downloads / hours, 2),
+    }
+
+    # ── Category rankings ─────────────────────────────────────────
+    cat_projects = {}
+    for p in current_projects:
+        for cat in p.get("categories", []):
+            if cat in content_cat_names:
+                cat_projects.setdefault(cat, []).append(p)
+
+    category_rankings = []
+    for cat, projs in cat_projects.items():
+        current_total = sum(p.get("downloads", 0) for p in projs)
+        previous_total = sum(previous_map.get(p["project_id"], 0) for p in projs)
+        new_dl = current_total - previous_total
+        category_rankings.append({
+            "category": cat,
+            "projects": len(projs),
+            "total_downloads": current_total,
+            "new_downloads": new_dl,
+            "downloads_per_hour": round(new_dl / hours, 2),
+            "growth_pct": round((new_dl / previous_total * 100) if previous_total > 0 else 0.0, 2),
+        })
+    category_rankings.sort(key=lambda x: x["new_downloads"], reverse=True)
+
+    # ── Loader rankings ────────────────────────────────────────────
+    loader_stats = {}
+    for p in current_projects:
+        for loader in p.get("loaders", []):
+            if loader not in loader_set:
+                continue
+            if loader not in loader_stats:
+                loader_stats[loader] = {"projects": 0, "total_downloads": 0, "new_downloads": 0}
+            loader_stats[loader]["projects"] += 1
+            loader_stats[loader]["total_downloads"] += p.get("downloads", 0)
+            loader_stats[loader]["new_downloads"] += p.get("downloads", 0) - previous_map.get(p["project_id"], 0)
+
+    loader_rankings = []
+    for loader, stat in loader_stats.items():
+        new_dl = stat["new_downloads"]
+        loader_rankings.append({
+            "loader": loader,
+            "projects": stat["projects"],
+            "total_downloads": stat["total_downloads"],
+            "new_downloads": new_dl,
+            "downloads_per_hour": round(new_dl / hours, 2),
+        })
+    loader_rankings.sort(key=lambda x: x["new_downloads"], reverse=True)
+
+    # ── Top projects (top 50 by positive delta) + declining (top 50 by negative delta) ──
+    project_title_map = {p["project_id"]: p.get("title", "") for p in current_projects}
+    top_projects = []
+    declining_projects = []
+    for p in current_projects:
+        pid = p["project_id"]
+        cur_dl = p.get("downloads", 0)
+        prev_dl = previous_map.get(pid, 0)
+        delta = cur_dl - prev_dl
+        if delta > 0:
+            top_projects.append({
+                "project_id": pid,
+                "title": p.get("title", ""),
+                "slug": p.get("slug", ""),
+                "categories": p.get("categories", []),
+                "current_downloads": cur_dl,
+                "baseline_downloads": prev_dl,
+                "delta_downloads": delta,
+                "downloads_per_hour": round(delta / hours, 2),
+                "growth_pct": round((delta / prev_dl * 100) if prev_dl > 0 else 0.0, 2),
+            })
+        elif delta < 0:
+            declining_projects.append({
+                "project_id": pid,
+                "title": p.get("title", ""),
+                "slug": p.get("slug", ""),
+                "categories": p.get("categories", []),
+                "current_downloads": cur_dl,
+                "baseline_downloads": prev_dl,
+                "delta_downloads": delta,
+                "downloads_per_hour": round(delta / hours, 2),
+                "growth_pct": round((delta / prev_dl * 100) if prev_dl > 0 else 0.0, 2),
+            })
+    top_projects.sort(key=lambda x: x["delta_downloads"], reverse=True)
+    top_projects = top_projects[:50]
+    declining_projects.sort(key=lambda x: x["delta_downloads"])
+    declining_projects = declining_projects[:50]
+
+    # ── Top version+loader growth (aggregated by game_version+loader pair) ──
+    def _norm_gv(gv):
+        return (gv or "").strip()
+
+    def _norm_loader(loader):
+        return (loader or "").strip().lower()
+
+    vl_pair_stats = {}
+    for v in current_versions:
+        vid = v.get("version_id")
+        if not vid:
+            continue
+        current_dl = v.get("downloads", 0) or 0
+        previous_dl = previous_version_map.get(vid, 0)
+        delta = current_dl - previous_dl
+        if delta <= 0:
+            continue
+        pid = v.get("project_id", "")
+        loaders = v.get("loaders", []) or []
+        game_versions = v.get("game_versions", []) or []
+        for loader in loaders:
+            for gv in game_versions:
+                norm_gv = _norm_gv(gv)
+                norm_loader = _norm_loader(loader)
+                key = (norm_gv, norm_loader)
+                if key not in vl_pair_stats:
+                    vl_pair_stats[key] = {
+                        "game_version": norm_gv,
+                        "loader": norm_loader,
+                        "delta_downloads": 0,
+                        "downloads_per_hour": 0.0,
+                        "project_count": 0,
+                        "top_project_id": pid,
+                        "top_project_title": project_title_map.get(pid, pid),
+                        "top_project_delta": 0,
+                    }
+                stat = vl_pair_stats[key]
+                stat["delta_downloads"] += delta
+                stat["project_count"] += 1
+                if delta > stat["top_project_delta"]:
+                    stat["top_project_delta"] = delta
+                    stat["top_project_id"] = pid
+                    stat["top_project_title"] = project_title_map.get(pid, pid)
+    for stat in vl_pair_stats.values():
+        stat["downloads_per_hour"] = round(stat["delta_downloads"] / hours, 2)
+
+    top_version_loaders = sorted(vl_pair_stats.values(), key=lambda x: x["delta_downloads"], reverse=True)[:200]
+
+    # ── Per-project version+loader pairs (for project detail panel) ──
+    project_vl_pairs = {}
+    for v in current_versions:
+        vid = v.get("version_id")
+        if not vid:
+            continue
+        current_dl = v.get("downloads", 0) or 0
+        previous_dl = previous_version_map.get(vid, 0)
+        delta = current_dl - previous_dl
+        if delta <= 0:
+            continue
+        pid = v.get("project_id", "")
+        if not pid:
+            continue
+        loaders = v.get("loaders", []) or []
+        game_versions = v.get("game_versions", []) or []
+        if pid not in project_vl_pairs:
+            project_vl_pairs[pid] = {}
+        proj_map = project_vl_pairs[pid]
+        for loader in loaders:
+            for gv in game_versions:
+                norm_gv = _norm_gv(gv)
+                norm_loader = _norm_loader(loader)
+                key = (norm_gv, norm_loader)
+                if key not in proj_map:
+                    proj_map[key] = {
+                        "game_version": norm_gv,
+                        "loader": norm_loader,
+                        "delta_downloads": 0,
+                    }
+                proj_map[key]["delta_downloads"] += delta
+
+    project_vl_pairs_list = {}
+    for pid, proj_map in project_vl_pairs.items():
+        sorted_list = sorted(proj_map.values(), key=lambda x: x["delta_downloads"], reverse=True)
+        project_vl_pairs_list[pid] = sorted_list
+    project_vl_pairs = project_vl_pairs_list
+
+    # ── All project deltas (any project with delta != 0) ──
+    TOP_VL_PER_PROJECT = 10
+    all_project_deltas = []
+    for p in current_projects:
+        pid = p["project_id"]
+        cur_dl = p.get("downloads", 0)
+        delta = cur_dl - previous_map.get(pid, 0)
+        if delta == 0:
+            continue
+        prev_dl = previous_map.get(pid, 0)
+        proj_vls = project_vl_pairs.get(pid, [])[:TOP_VL_PER_PROJECT]
+        rate = delta / hours
+        growth_pct = round((delta / prev_dl * 100) if prev_dl > 0 else 0.0, 2)
+        all_project_deltas.append({
+            "project_id": pid,
+            "title": p.get("title", ""),
+            "slug": p.get("slug", ""),
+            "categories": p.get("categories", []),
+            "current_downloads": cur_dl,
+            "baseline_downloads": prev_dl,
+            "delta_downloads": delta,
+            "downloads_per_hour": round(rate, 2),
+            "growth_pct": growth_pct,
+            "top_vl_pairs": proj_vls,
+        })
+    all_project_deltas.sort(key=lambda x: x["delta_downloads"], reverse=True)
+
+    return {
+        "summary": summary,
+        "category_rankings": category_rankings,
+        "loader_rankings": loader_rankings,
+        "top_projects": top_projects,
+        "declining_projects": declining_projects,
+        "top_version_loaders": top_version_loaders,
+        "all_project_deltas": all_project_deltas,
+        "project_vl_pairs": project_vl_pairs,
+    }
+
+
+def build_simple_trend_history(project_type, max_entries=30):
+    """Build a time-series of simple deltas from previous simple analysis files.
+
+    Reads the timestamped simple analysis files in data/{pt}/analysis/
+    (filename: simple_<timestamp>.json) and extracts the per-run delta +
+    total downloads. The resulting list is the graph the Tauri app renders
+    to show "increase over time".
+
+    Each entry: {date, timestamp, total_downloads, new_downloads, net_change, growing, declining}
+    """
+    import os
+    analysis_dir = get_analysis_dir(project_type)
+    if not os.path.exists(analysis_dir):
+        return []
+
+    # Find all simple analysis files (named simple_*.json)
+    simple_files = sorted([
+        os.path.join(analysis_dir, f)
+        for f in os.listdir(analysis_dir)
+        if f.startswith("simple_") and f.endswith(".json")
+    ])
+    if not simple_files:
+        return []
+
+    # Take only the most recent max_entries
+    simple_files = simple_files[-max_entries:]
+
+    trend = []
+    for fpath in simple_files:
+        data = load_json(fpath)
+        if not data:
+            continue
+        summary = data.get("summary", {})
+        trend.append({
+            "date": data.get("date", ""),
+            "timestamp": data.get("timestamp", ""),
+            "total_downloads": summary.get("total_downloads", 0),
+            "new_downloads": summary.get("new_downloads_since_baseline", 0),
+            "lost_downloads": summary.get("lost_downloads_since_baseline", 0),
+            "net_change": summary.get("net_download_change", 0),
+            "growing_projects": summary.get("growing_projects", 0),
+            "declining_projects": summary.get("declining_projects", 0),
+            "baseline_date": data.get("baseline_date", ""),
+            "hours_between": data.get("actual_hours_between", 0),
+        })
+    return trend
+
+
+# ═══════════════════════════════════════════════════════════════════
 #  TREND HISTORY (7-day time series)
 # ═══════════════════════════════════════════════════════════════════
 
@@ -914,18 +1240,303 @@ def build_trend_history(project_type):
 # ═══════════════════════════════════════════════════════════════════
 
 
+def run_simple_analysis(project_type):
+    """Run the simple analysis: diff current snapshot vs immediately previous snapshot.
+
+    Saves results to:
+      - data/{project_type}/latest_simple_analysis.json
+      - data/{project_type}/analysis/simple_{timestamp}.json
+      - data/{project_type}/simple_trend_history.json
+
+    The Tauri app fetches latest_simple_analysis.json for its display.
+    """
+    print(f"=== Analyze ({project_type}) — SIMPLE ===")
+
+    # ── List snapshot files ───────────────────────────────────────
+    snapshot_files_ts = list_snapshot_files_with_ts(project_type)
+    if len(snapshot_files_ts) < 2:
+        print(f"  Need at least 2 snapshots for simple analysis (have {len(snapshot_files_ts)}). Skipping.")
+        return 0
+
+    # Current = latest snapshot, previous = immediately previous snapshot
+    current_filepath, current_ts = snapshot_files_ts[-1]
+    previous_filepath, previous_ts = snapshot_files_ts[-2]
+    actual_hours_between = abs((current_ts - previous_ts).total_seconds() / 3600)
+    print(f"  Total snapshots: {len(snapshot_files_ts)}")
+    print(f"  Current:  {current_ts}")
+    print(f"  Previous: {previous_ts}  ({actual_hours_between:.1f}h ago)")
+
+    # ── Load snapshots ────────────────────────────────────────────
+    current_snapshot = load_json(current_filepath)
+    if not current_snapshot:
+        print(f"  ERROR: Failed to load current snapshot from {current_filepath}")
+        return 1
+    previous_snapshot = load_json(previous_filepath)
+    if not previous_snapshot:
+        print(f"  ERROR: Failed to load previous snapshot from {previous_filepath}")
+        return 1
+
+    current_date = current_snapshot.get("date", "")
+    previous_date = previous_snapshot.get("date", "")
+    print(f"  Current date:  {current_date}")
+    print(f"  Previous date: {previous_date}")
+
+    # ── Load filter sets ──────────────────────────────────────────
+    loader_names, loader_set, content_cat_names = load_filter_sets(project_type)
+
+    # ── Build simple analysis ─────────────────────────────────────
+    analysis_data = build_simple_analysis(
+        current_snapshot, previous_snapshot,
+        project_type, loader_names, loader_set, content_cat_names,
+        actual_hours_between,
+    )
+
+    summary = analysis_data["summary"]
+    print(f"  Summary: {summary['total_projects']:,} projects, "
+          f"{summary['total_versions']:,} versions, "
+          f"{summary['total_downloads']:,} downloads")
+    print(f"  New downloads (vs previous run): {summary['new_downloads_since_baseline']:+,}")
+    print(f"  Lost downloads: {summary['lost_downloads_since_baseline']:-,}")
+    print(f"  Net change: {summary['net_download_change']:+,} "
+          f"({summary['downloads_per_hour']:,.0f}/h)")
+    print(f"  Growing: {summary['growing_projects']:,} | "
+          f"Declining: {summary['declining_projects']:,}")
+    print(f"  Top projects: {len(analysis_data['top_projects'])}")
+    print(f"  Declining projects: {len(analysis_data['declining_projects'])}")
+    print(f"  VL pairs: {len(analysis_data['top_version_loaders'])}")
+
+    # ── Build trend history from previous simple analyses ─────────
+    trend_history = build_simple_trend_history(project_type, max_entries=30)
+    if trend_history:
+        print(f"  Simple trend history: {len(trend_history)} data points")
+
+    # ── Save ──────────────────────────────────────────────────────
+    timestamp = get_timestamp()
+    type_dir = get_project_type_dir(project_type)
+    analysis_dir = get_analysis_dir(project_type)
+    ensure_dir(analysis_dir)
+
+    # Extract project_vl_pairs and all_project_deltas to separate files
+    # (same pattern as the complex analysis — keeps latest_simple_analysis.json small)
+    project_vl_pairs = analysis_data.pop("project_vl_pairs", {})
+    vl_pairs_path = f"{type_dir}/simple_project_vl_pairs.json"
+    save_json(vl_pairs_path, project_vl_pairs)
+    print(f"Saved simple_project_vl_pairs to {vl_pairs_path} ({len(project_vl_pairs)} projects)")
+
+    all_project_deltas = analysis_data.pop("all_project_deltas", [])
+    deltas_path = f"{type_dir}/simple_all_project_deltas.json"
+    save_json(deltas_path, all_project_deltas)
+    print(f"Saved simple_all_project_deltas to {deltas_path} ({len(all_project_deltas)} projects)")
+
+    simple_analysis = {
+        "timestamp": timestamp,
+        "date": current_date,
+        "project_type": project_type,
+        "analysis_type": "simple",
+        "baseline_date": previous_date,
+        "hours_between": round(actual_hours_between, 2),
+        "actual_hours_between": round(actual_hours_between, 2),
+        "trend_history": trend_history,
+        **analysis_data,
+    }
+
+    # Save timestamped copy (used to build future trend history)
+    timestamped_path = f"{analysis_dir}/simple_{timestamp}.json"
+    save_json(timestamped_path, simple_analysis)
+    print(f"Saved timestamped simple analysis to {timestamped_path}")
+
+    # Save latest_simple_analysis.json (used by the Tauri app)
+    latest_path = f"{type_dir}/latest_simple_analysis.json"
+    save_json(latest_path, simple_analysis)
+    print(f"Saved latest_simple_analysis to {latest_path}")
+
+    # Save simple_trend_history.json (separate file for the graph)
+    trend_path = f"{type_dir}/simple_trend_history.json"
+    save_json(trend_path, trend_history)
+    print(f"Saved simple_trend_history to {trend_path} ({len(trend_history)} entries)")
+
+    print(f"=== Analyze ({project_type}) SIMPLE complete ===")
+    return 0
+
+
+def backfill_simple_analysis(project_type, force=False):
+    """Backfill simple analysis for ALL historical snapshot pairs.
+
+    Iterates over every consecutive pair of snapshots and generates a
+    timestamped simple analysis file (analysis/simple_{ts}.json) for each.
+    Also rebuilds simple_trend_history.json from all generated files, and
+    writes latest_simple_analysis.json + simple_all_project_deltas.json +
+    simple_project_vl_pairs.json from the LATEST pair.
+
+    This is a one-off operation to populate simple analysis data from
+    existing snapshots when the simple analysis has never run before
+    (or to regenerate it after a code change).
+
+    Args:
+      project_type: One of mod/modpack/resourcepack/shader/datapack/plugin.
+      force: When True, regenerate simple_*.json files even if they already
+        exist. When False (default), skip pairs that already have a
+        simple_{ts}.json file (idempotent backfill).
+    """
+    import os
+
+    print(f"=== Backfill simple analysis ({project_type}) ===")
+    print(f"  force={force}")
+
+    # ── List snapshot files with timestamps ───────────────────────
+    snapshot_files_ts = list_snapshot_files_with_ts(project_type)
+    if len(snapshot_files_ts) < 2:
+        print(f"  Need at least 2 snapshots for backfill (have {len(snapshot_files_ts)}). Skipping.")
+        return 0
+
+    print(f"  Total snapshots: {len(snapshot_files_ts)}")
+    print(f"  Pairs to process: {len(snapshot_files_ts) - 1}")
+
+    # ── Load filter sets once (shared across all pairs) ──────────
+    loader_names, loader_set, content_cat_names = load_filter_sets(project_type)
+
+    type_dir = get_project_type_dir(project_type)
+    analysis_dir = get_analysis_dir(project_type)
+    ensure_dir(analysis_dir)
+
+    # ── Process each consecutive pair ─────────────────────────────
+    processed = 0
+    skipped = 0
+    failed = 0
+    latest_analysis_data = None
+    latest_timestamp = None
+
+    for i in range(len(snapshot_files_ts) - 1):
+        current_filepath, current_ts = snapshot_files_ts[i + 1]
+        previous_filepath, previous_ts = snapshot_files_ts[i]
+        actual_hours_between = abs((current_ts - previous_ts).total_seconds() / 3600)
+
+        # Use the current snapshot's timestamp for the filename (same format
+        # as get_timestamp: YYYY-MM-DDTHH-MM-SS) so files sort chronologically.
+        snap_timestamp = current_ts.strftime("%Y-%m-%dT%H-%M-%S")
+        timestamped_path = f"{analysis_dir}/simple_{snap_timestamp}.json"
+
+        # Idempotent: skip if file already exists (unless --force)
+        if not force and os.path.exists(timestamped_path):
+            skipped += 1
+            # Still need to load it for the latest check below
+            if i == len(snapshot_files_ts) - 2:
+                latest_analysis_data = load_json(timestamped_path)
+                latest_timestamp = snap_timestamp
+            continue
+
+        # Load snapshots
+        current_snapshot = load_json(current_filepath)
+        if not current_snapshot:
+            print(f"  [{i+1}/{len(snapshot_files_ts)-1}] SKIP (failed to load current): {current_filepath}")
+            failed += 1
+            continue
+        previous_snapshot = load_json(previous_filepath)
+        if not previous_snapshot:
+            print(f"  [{i+1}/{len(snapshot_files_ts)-1}] SKIP (failed to load previous): {previous_filepath}")
+            failed += 1
+            continue
+
+        current_date = current_snapshot.get("date", "")
+        previous_date = previous_snapshot.get("date", "")
+
+        # Build simple analysis
+        analysis_data = build_simple_analysis(
+            current_snapshot, previous_snapshot,
+            project_type, loader_names, loader_set, content_cat_names,
+            actual_hours_between,
+        )
+
+        # Extract large fields to separate files ONLY for the latest pair
+        # (older pairs just keep the analysis in the timestamped file)
+        is_latest_pair = (i == len(snapshot_files_ts) - 2)
+        if is_latest_pair:
+            # Pop these before saving the timestamped file (keeps file small)
+            project_vl_pairs = analysis_data.pop("project_vl_pairs", {})
+            all_project_deltas = analysis_data.pop("all_project_deltas", [])
+        else:
+            # For historical pairs, also pop them to keep files small
+            analysis_data.pop("project_vl_pairs", {})
+            analysis_data.pop("all_project_deltas", [])
+
+        simple_analysis = {
+            "timestamp": snap_timestamp,
+            "date": current_date,
+            "project_type": project_type,
+            "analysis_type": "simple",
+            "baseline_date": previous_date,
+            "hours_between": round(actual_hours_between, 2),
+            "actual_hours_between": round(actual_hours_between, 2),
+            **analysis_data,
+        }
+
+        save_json(timestamped_path, simple_analysis)
+        processed += 1
+
+        summary = analysis_data.get("summary", {})
+        if i % 10 == 0 or is_latest_pair:
+            print(f"  [{i+1}/{len(snapshot_files_ts)-1}] {snap_timestamp} "
+                  f"({current_date}): net {summary.get('net_download_change', 0):+,} "
+                  f"({summary.get('downloads_per_hour', 0):,.0f}/h)")
+
+        if is_latest_pair:
+            latest_analysis_data = simple_analysis
+            latest_timestamp = snap_timestamp
+            # Save the latest-pair separate files
+            vl_pairs_path = f"{type_dir}/simple_project_vl_pairs.json"
+            save_json(vl_pairs_path, project_vl_pairs)
+            deltas_path = f"{type_dir}/simple_all_project_deltas.json"
+            save_json(deltas_path, all_project_deltas)
+
+    print(f"\n  Processed: {processed} | Skipped (existing): {skipped} | Failed: {failed}")
+
+    # ── Build + save trend history from all simple_*.json files ───
+    trend_history = build_simple_trend_history(project_type, max_entries=100)
+    trend_path = f"{type_dir}/simple_trend_history.json"
+    save_json(trend_path, trend_history)
+    print(f"  Saved simple_trend_history.json ({len(trend_history)} entries)")
+
+    # ── Save latest_simple_analysis.json (from the latest pair + trend_history) ──
+    if latest_analysis_data is not None:
+        # Embed trend_history so the Tauri app gets it in a single fetch
+        # (mirrors run_simple_analysis() behavior)
+        latest_analysis_data["trend_history"] = trend_history
+        latest_path = f"{type_dir}/latest_simple_analysis.json"
+        save_json(latest_path, latest_analysis_data)
+        print(f"  Saved latest_simple_analysis.json ({latest_timestamp})")
+
+    print(f"=== Backfill ({project_type}) complete ===")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="Analyze market data for a project type")
     parser.add_argument("--project-type", required=True,
                         choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
                         help="Project type to analyze")
     parser.add_argument("--mode", required=True,
-                        choices=["daily", "hourly"],
-                        help="Analysis mode: daily (24h) or hourly (2h)")
+                        choices=["daily", "hourly", "simple", "backfill-simple"],
+                        help="Analysis mode: daily (24h), hourly (2h), simple (vs previous snapshot), "
+                             "or backfill-simple (regenerate simple analysis for all historical snapshots)")
+    parser.add_argument("--force", action="store_true",
+                        help="When used with backfill-simple, regenerate all simple_*.json files "
+                             "even if they already exist")
     args = parser.parse_args()
 
     project_type = args.project_type
     mode = args.mode
+
+    # ── BACKFILL-SIMPLE MODE: regenerate simple analysis for all pairs ─
+    if mode == "backfill-simple":
+        return backfill_simple_analysis(project_type, force=args.force)
+
+    # ── SIMPLE MODE: diff vs immediately previous snapshot ────────
+    # No rolling baseline, no anomaly factors, no momentum score.
+    # Output goes to latest_simple_analysis.json (separate file) so the
+    # Tauri app can fetch it without conflicting with the complex analysis.
+    if mode == "simple":
+        return run_simple_analysis(project_type)
+
     hours_back = 24 if mode == "daily" else 2
 
     print(f"=== Analyze ({project_type}) — {mode} ===")

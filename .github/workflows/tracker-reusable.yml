@@ -220,6 +220,14 @@ jobs:
       - name: Analyze (${{ inputs.analysis_mode }})
         run: python src/analyze.py --project-type ${{ inputs.project_type }} --mode ${{ inputs.analysis_mode }}
 
+      # Simple analysis (diff vs immediately previous snapshot)
+      # Produces latest_simple_analysis.json + simple_trend_history.json
+      # for the Tauri desktop app. Runs alongside the complex analysis.
+      # Needs ≥2 snapshots; skip on first run.
+      - name: Simple analysis
+        continue-on-error: true
+        run: python src/analyze.py --project-type ${{ inputs.project_type }} --mode simple
+
       # Predictive analysis (velocity, acceleration, predictions, anomalies)
       # Runs AFTER analyze.py so it can use the latest snapshot.
       # Skip on first run (needs ≥4 snapshots for velocity/acceleration).

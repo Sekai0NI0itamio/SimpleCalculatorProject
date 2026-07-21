@@ -1,0 +1,66 @@
+name: Backfill Simple Analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate all simple_*.json files even if they already exist"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  PYTHONPATH: src
+
+jobs:
+  # ──────────────────────────────────────────────────────────────
+  # Backfill simple analysis for ALL historical snapshot pairs.
+  # Runs once per project type (6 in parallel) and produces:
+  #   - data/{type}/analysis/simple_{ts}.json (one per snapshot pair)
+  #   - data/{type}/latest_simple_analysis.json (latest pair, for the Tauri app)
+  #   - data/{type}/simple_all_project_deltas.json (latest pair)
+  #   - data/{type}/simple_project_vl_pairs.json (latest pair)
+  #   - data/{type}/simple_trend_history.json (rebuilt from all simple_*.json)
+  #
+  # This is idempotent by default (skips pairs that already have a
+  # simple_{ts}.json file). Use the `force` input to regenerate all files.
+  # ──────────────────────────────────────────────────────────────
+  backfill:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project_type: ["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements.txt
+
+      # Run the backfill. --force is passed only when the dispatch input is true.
+      - name: Backfill simple analysis (${{ matrix.project_type }})
+        run: python src/analyze.py --project-type ${{ matrix.project_type }} --mode backfill-simple ${{ inputs.force && '--force' || '' }}
+
+      # Commit the generated files. .gitignore already excludes chunks/,
+      # version_chunks/, etc. — so only the analysis files are staged.
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data/${{ matrix.project_type }}/ || true
+
+          COMMIT_MSG="backfill: simple analysis ${{ matrix.project_type }} $(date -u +%Y-%m-%dT%H:%M)"
+          git commit -m "$COMMIT_MSG" || echo "No changes to commit"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main || true
+            git push origin main && break
+            echo "Push failed, retrying in 10s..."
+            sleep 10
+          done
