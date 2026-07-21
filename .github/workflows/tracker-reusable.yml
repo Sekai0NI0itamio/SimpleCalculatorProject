@@ -226,16 +226,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Always commit raw snapshots (.json.gz), analysis, latest_analysis, project_vl_pairs, all_project_deltas
-          git add data/${{ inputs.project_type }}/raw/ \
-                 data/${{ inputs.project_type }}/analysis/ \
-                 data/${{ inputs.project_type }}/latest_analysis.json \
-                 data/${{ inputs.project_type }}/all_project_deltas.json \
-                 data/${{ inputs.project_type }}/project_vl_pairs.json \
-                 data/${{ inputs.project_type }}/discovery.json \
-                 data/${{ inputs.project_type }}/categories.json \
-                 data/${{ inputs.project_type }}/loaders.json \
-                 2>/dev/null || true
+          # Add the entire project directory; .gitignore already excludes
+          # chunks/, version_chunks/, version_results/, version_split.json,
+          # versions_merged.json(.gz), *.db* — so only data files are staged.
+          # Using the directory avoids "pathspec did not match" failures when
+          # analyze.py skips (first run, needs 2 snapshots) and analysis/
+          # latest_analysis.json don't exist yet.
+          git add data/${{ inputs.project_type }}/ || true
 
           COMMIT_MSG="tracker: ${{ inputs.project_type }} ${{ inputs.analysis_mode }} snapshot $(date -u +%Y-%m-%dT%H:%M)"
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
