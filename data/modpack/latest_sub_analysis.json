@@ -1,99 +1,269 @@
 {
-  "timestamp": "2026-07-15T09-22-08",
-  "date": "2026-07-15",
+  "timestamp": "2026-07-21T19-35-45",
+  "date": "2026-07-21",
   "project_type": "modpack",
   "analysis_type": "sub",
-  "snapshots_analyzed": 3,
-  "last_snapshot_time": "2026-07-15T09-22-07",
-  "hours_until_main": 22,
+  "snapshots_analyzed": 19,
+  "last_snapshot_time": "2026-07-21T19-33-02",
+  "hours_until_main": 12,
   "velocity": {
-    "velocity_per_hour": 0.0,
-    "velocity_2h": 0,
-    "velocity_24h": 0,
-    "avg_velocity_24h": 0.0
+    "velocity_per_hour": 4171.5,
+    "velocity_2h": 3562,
+    "velocity_24h": 533570,
+    "avg_velocity_24h": 22232.08
   },
   "acceleration": {
-    "acceleration": 0.0,
-    "acceleration_pct": 0.0
+    "acceleration": 1317.23,
+    "acceleration_pct": 46.15
   },
   "predictions": {
-    "predicted_daily_total": 143973660,
-    "predicted_daily_growth": 0,
-    "predicted_daily_growth_pct": 0.0,
-    "confidence": "medium"
+    "predicted_daily_total": 143152497,
+    "predicted_daily_growth": 1337559,
+    "predicted_daily_growth_pct": 0.94,
+    "confidence": "high"
   },
-  "top_movers_2h": [],
+  "top_movers_2h": [
+    {
+      "project_id": "C9FChyZ3",
+      "title": "Cobblemon Delta",
+      "slug": "cobblemondelta",
+      "previous_downloads": 1342718,
+      "current_downloads": 1346245,
+      "delta_2h": 3527,
+      "velocity": 4130.51
+    },
+    {
+      "project_id": "VG2aS4BI",
+      "title": "Create Aeronautics Expanded | Core",
+      "slug": "create-aeronautics-expanded",
+      "previous_downloads": 1324,
+      "current_downloads": 1363,
+      "delta_2h": 39,
+      "velocity": 45.67
+    },
+    {
+      "project_id": "vQxpLcIv",
+      "title": "Absolute Realism",
+      "slug": "absolute_realism",
+      "previous_downloads": 2179,
+      "current_downloads": 2192,
+      "delta_2h": 13,
+      "velocity": 15.22
+    },
+    {
+      "project_id": "yqCdQBqJ",
+      "title": "TKS SMP",
+      "slug": "tks-smp",
+      "previous_downloads": 259,
+      "current_downloads": 264,
+      "delta_2h": 5,
+      "velocity": 5.86
+    },
+    {
+      "project_id": "cxix1wzh",
+      "title": "NWB Vanilla",
+      "slug": "nwb",
+      "previous_downloads": 394,
+      "current_downloads": 397,
+      "delta_2h": 3,
+      "velocity": 3.51
+    },
+    {
+      "project_id": "fkTvgaaP",
+      "title": "Recreative Reborn",
+      "slug": "recreative-reborn",
+      "previous_downloads": 113,
+      "current_downloads": 115,
+      "delta_2h": 2,
+      "velocity": 2.34
+    },
+    {
+      "project_id": "rwMSmJvI",
+      "title": "Creator Optimized",
+      "slug": "creator-optimized",
+      "previous_downloads": 9,
+      "current_downloads": 11,
+      "delta_2h": 2,
+      "velocity": 2.34
+    },
+    {
+      "project_id": "4XvKl44S",
+      "title": "Create Intense",
+      "slug": "create-intense-modpack",
+      "previous_downloads": 11,
+      "current_downloads": 12,
+      "delta_2h": 1,
+      "velocity": 1.17
+    }
+  ],
   "velocity_by_category": [
     {
       "category": "optimization",
-      "total_velocity": 0.0,
-      "projects_tracked": 10524,
-      "avg_velocity": 0.0
-    },
-    {
-      "category": "multiplayer",
-      "total_velocity": 0.0,
-      "projects_tracked": 11234,
-      "avg_velocity": 0.0
+      "total_velocity": 4203.12,
+      "projects_tracked": 10542,
+      "avg_velocity": 0.4
     },
     {
       "category": "lightweight",
-      "total_velocity": 0.0,
-      "projects_tracked": 7273,
-      "avg_velocity": 0.0
+      "total_velocity": 4179.7,
+      "projects_tracked": 7275,
+      "avg_velocity": 0.57
     },
     {
       "category": "adventure",
-      "total_velocity": 0.0,
-      "projects_tracked": 10096,
+      "total_velocity": 4165.65,
+      "projects_tracked": 10104,
+      "avg_velocity": 0.41
+    },
+    {
+      "category": "quests",
+      "total_velocity": 4132.86,
+      "projects_tracked": 1298,
+      "avg_velocity": 3.18
+    },
+    {
+      "category": "multiplayer",
+      "total_velocity": 4108.26,
+      "projects_tracked": 11259,
+      "avg_velocity": 0.36
+    },
+    {
+      "category": "technology",
+      "total_velocity": 31.62,
+      "projects_tracked": 4985,
+      "avg_velocity": 0.01
+    },
+    {
+      "category": "magic",
+      "total_velocity": 16.4,
+      "projects_tracked": 2631,
+      "avg_velocity": 0.01
+    },
+    {
+      "category": "kitchen-sink",
+      "total_velocity": 3.51,
+      "projects_tracked": 2128,
       "avg_velocity": 0.0
     },
     {
       "category": "challenging",
       "total_velocity": 0.0,
-      "projects_tracked": 3420,
-      "avg_velocity": 0.0
-    },
-    {
-      "category": "kitchen-sink",
-      "total_velocity": 0.0,
-      "projects_tracked": 2122,
+      "projects_tracked": 3430,
       "avg_velocity": 0.0
     },
     {
       "category": "combat",
-      "total_velocity": 0.0,
-      "projects_tracked": 5067,
-      "avg_velocity": 0.0
-    },
-    {
-      "category": "quests",
-      "total_velocity": 0.0,
-      "projects_tracked": 1296,
-      "avg_velocity": 0.0
-    },
-    {
-      "category": "magic",
-      "total_velocity": 0.0,
-      "projects_tracked": 2628,
-      "avg_velocity": 0.0
-    },
-    {
-      "category": "technology",
-      "total_velocity": 0.0,
-      "projects_tracked": 4974,
-      "avg_velocity": 0.0
+      "total_velocity": -19.91,
+      "projects_tracked": 5082,
+      "avg_velocity": -0.0
     }
   ],
-  "anomalies": [],
-  "hourly_pattern": [
+  "anomalies": [
     {
-      "hour_label": "08-08",
-      "downloads_gained": 0
+      "project_id": "fkTvgaaP",
+      "title": "Recreative Reborn",
+      "slug": "recreative-reborn",
+      "current_velocity": 2.34,
+      "avg_velocity": 0.03,
+      "anomaly_factor": 81.68
     },
     {
-      "hour_label": "08-09",
-      "downloads_gained": 0
+      "project_id": "yqCdQBqJ",
+      "title": "TKS SMP",
+      "slug": "tks-smp",
+      "current_velocity": 5.86,
+      "avg_velocity": 0.13,
+      "anomaly_factor": 45.53
+    },
+    {
+      "project_id": "vQxpLcIv",
+      "title": "Absolute Realism",
+      "slug": "absolute_realism",
+      "current_velocity": 15.22,
+      "avg_velocity": 0.44,
+      "anomaly_factor": 34.94
+    },
+    {
+      "project_id": "cxix1wzh",
+      "title": "NWB Vanilla",
+      "slug": "nwb",
+      "current_velocity": 3.51,
+      "avg_velocity": 0.12,
+      "anomaly_factor": 29.25
+    },
+    {
+      "project_id": "VG2aS4BI",
+      "title": "Create Aeronautics Expanded | Core",
+      "slug": "create-aeronautics-expanded",
+      "current_velocity": 45.67,
+      "avg_velocity": 2.18,
+      "anomaly_factor": 20.92
+    },
+    {
+      "project_id": "C9FChyZ3",
+      "title": "Cobblemon Delta",
+      "slug": "cobblemondelta",
+      "current_velocity": 4130.51,
+      "avg_velocity": 214.57,
+      "anomaly_factor": 19.25
+    },
+    {
+      "project_id": "rwMSmJvI",
+      "title": "Creator Optimized",
+      "slug": "creator-optimized",
+      "current_velocity": 2.34,
+      "avg_velocity": 0.14,
+      "anomaly_factor": 16.54
+    },
+    {
+      "project_id": "4XvKl44S",
+      "title": "Create Intense",
+      "slug": "create-intense-modpack",
+      "current_velocity": 1.17,
+      "avg_velocity": 0.16,
+      "anomaly_factor": 7.43
+    }
+  ],
+  "hourly_pattern": [
+    {
+      "hour_label": "19-22",
+      "downloads_gained": 3988
+    },
+    {
+      "hour_label": "22-00",
+      "downloads_gained": 1275
+    },
+    {
+      "hour_label": "00-02",
+      "downloads_gained": 6563
+    },
+    {
+      "hour_label": "02-05",
+      "downloads_gained": 3380
+    },
+    {
+      "hour_label": "05-07",
+      "downloads_gained": 480178
+    },
+    {
+      "hour_label": "07-10",
+      "downloads_gained": 26933
+    },
+    {
+      "hour_label": "10-14",
+      "downloads_gained": 2136
+    },
+    {
+      "hour_label": "14-18",
+      "downloads_gained": 4357
+    },
+    {
+      "hour_label": "18-18",
+      "downloads_gained": 1198
+    },
+    {
+      "hour_label": "18-19",
+      "downloads_gained": 3562
     }
   ]
 }
