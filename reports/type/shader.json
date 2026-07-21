@@ -6,30 +6,46 @@
   "hours_between": 0,
   "analysis_type": "simple",
   "analysis_quality": "normal",
-  "actual_hours_between": 2.15,
+  "actual_hours_between": 1.64,
   "data_quality": {},
-  "downloads_per_hour": 20.47,
+  "downloads_per_hour": 54.81,
   "summary": {
     "total_projects": 652,
     "total_versions": 3151,
-    "total_downloads": 280360461,
+    "total_downloads": 280360551,
     "baseline_date": "2026-07-22",
     "current_date": "2026-07-22",
     "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 44,
+    "new_downloads_since_baseline": 90,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 44,
-    "growing_projects": 5,
+    "net_download_change": 90,
+    "growing_projects": 2,
     "declining_projects": 0,
-    "downloads_per_hour": 20.47
+    "downloads_per_hour": 54.81
   },
   "category_rankings": [
     {
       "category": "vanilla-like",
       "projects": 369,
-      "total_downloads": 104155173,
-      "new_downloads": 30,
-      "downloads_per_hour": 13.96,
+      "total_downloads": 104155241,
+      "new_downloads": 68,
+      "downloads_per_hour": 41.41,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "semi-realistic",
+      "projects": 169,
+      "total_downloads": 118697159,
+      "new_downloads": 22,
+      "downloads_per_hour": 13.4,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "realistic",
+      "projects": 102,
+      "total_downloads": 13639748,
+      "new_downloads": 22,
+      "downloads_per_hour": 13.4,
       "growth_pct": 0.0
     },
     {
@@ -49,22 +65,6 @@
       "growth_pct": 0.0
     },
     {
-      "category": "semi-realistic",
-      "projects": 169,
-      "total_downloads": 118697137,
-      "new_downloads": 0,
-      "downloads_per_hour": 0.0,
-      "growth_pct": 0.0
-    },
-    {
-      "category": "realistic",
-      "projects": 102,
-      "total_downloads": 13639726,
-      "new_downloads": 0,
-      "downloads_per_hour": 0.0,
-      "growth_pct": 0.0
-    },
-    {
       "category": "cursed",
       "projects": 147,
       "total_downloads": 4463897,
@@ -76,657 +76,829 @@
   "loader_rankings": [],
   "top_projects": [
     {
-      "project_id": "kewvpRhY",
-      "title": "Sobel Pack",
-      "slug": "sobel-pack",
+      "project_id": "70gOBuNk",
+      "title": "WEM - White Entities Mask",
+      "slug": "wem-white-entities-mask",
       "categories": [
-        "iris",
-        "low",
-        "optifine"
-      ],
-      "current_downloads": 27,
-      "baseline_downloads": 13,
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "growth_pct": 107.69
-    },
-    {
-      "project_id": "wntcSD6O",
-      "title": "LitePerf-Shaders",
-      "slug": "liteperf-shaders",
-      "categories": [
-        "atmosphere",
+        "high",
         "iris",
         "low",
         "medium",
-        "potato",
-        "vanilla-like"
-      ],
-      "current_downloads": 30,
-      "baseline_downloads": 17,
-      "delta_downloads": 13,
-      "downloads_per_hour": 6.05,
-      "growth_pct": 76.47
-    },
-    {
-      "project_id": "P5FXqXwP",
-      "title": "Lixexis Shader",
-      "slug": "livexisshader",
-      "categories": [
-        "atmosphere",
-        "colored-lighting",
-        "iris",
-        "low",
         "optifine",
         "potato",
+        "screenshot",
         "vanilla-like"
       ],
-      "current_downloads": 14,
-      "baseline_downloads": 6,
-      "delta_downloads": 8,
-      "downloads_per_hour": 3.72,
-      "growth_pct": 133.33
+      "current_downloads": 32842,
+      "baseline_downloads": 32774,
+      "delta_downloads": 68,
+      "downloads_per_hour": 41.41,
+      "growth_pct": 0.21
     },
     {
-      "project_id": "VCfprxC0",
-      "title": "RenderKit Utilities",
-      "slug": "renderkit-utilities",
+      "project_id": "lcdZ7DO8",
+      "title": "Kinescope Shaders",
+      "slug": "kinescope-shaders",
       "categories": [
         "atmosphere",
-        "colored-lighting",
-        "iris",
-        "optifine",
-        "potato",
-        "shadows",
-        "vanilla-like"
-      ],
-      "current_downloads": 15,
-      "baseline_downloads": 8,
-      "delta_downloads": 7,
-      "downloads_per_hour": 3.26,
-      "growth_pct": 87.5
-    },
-    {
-      "project_id": "C7dXsXA0",
-      "title": "Kreuss shader",
-      "slug": "kreuss-shader",
-      "categories": [
         "bloom",
+        "foliage",
         "iris",
-        "low",
+        "medium",
         "optifine",
-        "potato",
-        "shadows",
-        "vanilla-like"
+        "realistic",
+        "screenshot",
+        "semi-realistic",
+        "shadows"
       ],
-      "current_downloads": 20,
-      "baseline_downloads": 18,
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.93,
-      "growth_pct": 11.11
+      "current_downloads": 25,
+      "baseline_downloads": 3,
+      "delta_downloads": 22,
+      "downloads_per_hour": 13.4,
+      "growth_pct": 733.33
     }
   ],
   "declining_projects": [],
   "top_version_loaders": [
     {
-      "game_version": "26.2",
+      "game_version": "1.16",
       "loader": "iris",
-      "delta_downloads": 35,
-      "downloads_per_hour": 16.28,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21",
-      "loader": "optifine",
-      "delta_downloads": 30,
-      "downloads_per_hour": 13.96,
-      "project_count": 4,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21",
+      "game_version": "1.16.1",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.1",
+      "game_version": "1.16.3",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.2",
+      "game_version": "1.16.4",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.3",
+      "game_version": "1.16.5",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.4",
+      "game_version": "1.17",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.5",
+      "game_version": "1.17.1",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.6",
+      "game_version": "1.18",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.7",
+      "game_version": "1.18.1",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.8",
+      "game_version": "1.18.2",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.9",
+      "game_version": "1.19",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.10",
+      "game_version": "1.19.1",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.11",
+      "game_version": "1.19.2",
       "loader": "iris",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.1",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "game_version": "1.19.3",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.2",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "game_version": "1.19.4",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
-      "game_version": "1.21.3",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "optifine",
-      "delta_downloads": 29,
-      "downloads_per_hour": 13.49,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "game_version": "1.20",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
       "game_version": "1.20.1",
       "loader": "iris",
-      "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 3,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "iris",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.16",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.16.1",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.16.3",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.16.4",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.16.5",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.17",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.17.1",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.18",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.18.1",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.19",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "optifine",
+      "delta_downloads": 90,
+      "downloads_per_hour": 54.81,
+      "project_count": 2,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.16.2",
+      "loader": "iris",
+      "delta_downloads": 68,
+      "downloads_per_hour": 41.41,
+      "project_count": 1,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
+    },
+    {
+      "game_version": "1.16.2",
+      "loader": "optifine",
+      "delta_downloads": 68,
+      "downloads_per_hour": 41.41,
+      "project_count": 1,
+      "top_project_id": "70gOBuNk",
+      "top_project_title": "WEM - White Entities Mask",
+      "top_project_delta": 68
     },
     {
       "game_version": "26.1",
       "loader": "iris",
       "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "downloads_per_hour": 13.4,
+      "project_count": 1,
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
     },
     {
       "game_version": "26.1.1",
       "loader": "iris",
       "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "downloads_per_hour": 13.4,
+      "project_count": 1,
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
     },
     {
       "game_version": "26.1.2",
       "loader": "iris",
       "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "downloads_per_hour": 13.4,
+      "project_count": 1,
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
+    },
+    {
+      "game_version": "26.2",
+      "loader": "iris",
+      "delta_downloads": 22,
+      "downloads_per_hour": 13.4,
+      "project_count": 1,
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
     },
     {
       "game_version": "26.1",
       "loader": "optifine",
       "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "downloads_per_hour": 13.4,
+      "project_count": 1,
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
     },
     {
       "game_version": "26.1.1",
       "loader": "optifine",
       "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "downloads_per_hour": 13.4,
+      "project_count": 1,
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
     },
     {
       "game_version": "26.1.2",
       "loader": "optifine",
       "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "downloads_per_hour": 13.4,
+      "project_count": 1,
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
     },
     {
       "game_version": "26.2",
       "loader": "optifine",
       "delta_downloads": 22,
-      "downloads_per_hour": 10.24,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "iris",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "iris",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "iris",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "iris",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "iris",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "optifine",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "optifine",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "optifine",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "optifine",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "optifine",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "optifine",
-      "delta_downloads": 21,
-      "downloads_per_hour": 9.77,
-      "project_count": 2,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19",
-      "loader": "iris",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
+      "downloads_per_hour": 13.4,
       "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "iris",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "iris",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "iris",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "iris",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20",
-      "loader": "iris",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19",
-      "loader": "optifine",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "optifine",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "optifine",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "optifine",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "optifine",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20",
-      "loader": "optifine",
-      "delta_downloads": 14,
-      "downloads_per_hour": 6.51,
-      "project_count": 1,
-      "top_project_id": "kewvpRhY",
-      "top_project_title": "Sobel Pack",
-      "top_project_delta": 14
+      "top_project_id": "lcdZ7DO8",
+      "top_project_title": "Kinescope Shaders",
+      "top_project_delta": 22
     }
   ],
   "all_project_deltas": [],
@@ -735,12 +907,6 @@
       "title": "Potato+",
       "slug": "potatoshaders",
       "history": [
-        {
-          "timestamp": "2026-07-21T19-26-04",
-          "downloads": 93,
-          "downloads_per_hour": 58.61,
-          "momentum_score": 32.92
-        },
         {
           "timestamp": "2026-07-21T19-46-24",
           "downloads": 93,
@@ -772,12 +938,6 @@
       "slug": "retroshader",
       "history": [
         {
-          "timestamp": "2026-07-21T19-26-04",
-          "downloads": 42,
-          "downloads_per_hour": 20.68,
-          "momentum_score": 32.21
-        },
-        {
           "timestamp": "2026-07-21T19-46-24",
           "downloads": 42,
           "downloads_per_hour": 20.68,
@@ -803,22 +963,82 @@
         }
       ]
     },
+    "jgYsD3FV": {
+      "title": "Unbound Visual +",
+      "slug": "unbound-visual-+",
+      "history": [
+        {
+          "timestamp": "2026-07-21T22-04-39",
+          "downloads": 3852,
+          "downloads_per_hour": 38.96,
+          "momentum_score": 3.79
+        },
+        {
+          "timestamp": "2026-07-21T22-04-40",
+          "downloads": 3852,
+          "downloads_per_hour": 38.96,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "pWeVnXDz": {
+      "title": "Light-Shadow",
+      "slug": "light-shadow",
+      "history": [
+        {
+          "timestamp": "2026-07-21T22-04-39",
+          "downloads": 1493,
+          "downloads_per_hour": 13.24,
+          "momentum_score": 2.95
+        },
+        {
+          "timestamp": "2026-07-21T22-04-40",
+          "downloads": 1493,
+          "downloads_per_hour": 13.24,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "pS7MkCz8": {
+      "title": "Plasma Shaders",
+      "slug": "plasma-shaders",
+      "history": [
+        {
+          "timestamp": "2026-07-21T22-04-39",
+          "downloads": 10,
+          "downloads_per_hour": 3.03,
+          "momentum_score": 31.3
+        },
+        {
+          "timestamp": "2026-07-21T22-04-40",
+          "downloads": 10,
+          "downloads_per_hour": 3.03,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "3JNGTF4t": {
+      "title": "AquaVision-Dynamic Transparent Water",
+      "slug": "aqua-vision",
+      "history": [
+        {
+          "timestamp": "2026-07-21T22-04-39",
+          "downloads": 2492,
+          "downloads_per_hour": 1.51,
+          "momentum_score": 0.97
+        },
+        {
+          "timestamp": "2026-07-21T22-04-40",
+          "downloads": 2492,
+          "downloads_per_hour": 1.51,
+          "momentum_score": 0
+        }
+      ]
+    },
     "HVnmMxH1": {
       "title": "Complementary Shaders - Reimagined",
       "slug": "complementary-reimagined",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 57387017,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 57387017,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 57387017,
@@ -838,18 +1058,6 @@
       "slug": "complementary-unbound",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 37207622,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 37207622,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 37207622,
           "downloads_per_hour": 22780176.73,
@@ -863,52 +1071,10 @@
         }
       ]
     },
-    "lLqFfGNs": {
-      "title": "Photon Shaders",
-      "slug": "photon-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 22228145,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 22228145,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 22228145,
-          "downloads_per_hour": 13609068.37,
-          "momentum_score": 11.69
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 22228145,
-          "downloads_per_hour": 13609068.37,
-          "momentum_score": 0
-        }
-      ]
-    },
     "Q1vvjJYV": {
       "title": "BSL Shaders",
       "slug": "bsl-shaders",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 25728729,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 25728729,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 25728729,
@@ -923,22 +1089,28 @@
         }
       ]
     },
+    "lLqFfGNs": {
+      "title": "Photon Shaders",
+      "slug": "photon-shader",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 22228145,
+          "downloads_per_hour": 13609068.37,
+          "momentum_score": 11.69
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 22228145,
+          "downloads_per_hour": 13609068.37,
+          "momentum_score": 0
+        }
+      ]
+    },
     "EpQFjzrQ": {
       "title": "Solas Shader",
       "slug": "solas-shader",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 14267078,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 14267078,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 14267078,
@@ -958,18 +1130,6 @@
       "slug": "bliss-shader",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 12094197,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 12094197,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 12094197,
           "downloads_per_hour": 7404610.41,
@@ -983,52 +1143,10 @@
         }
       ]
     },
-    "izsIPI7a": {
-      "title": "MakeUp - Ultra Fast",
-      "slug": "makeup-ultra-fast-shaders",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 10651884,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 10651884,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 10651884,
-          "downloads_per_hour": 6521561.63,
-          "momentum_score": 11.18
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 10651884,
-          "downloads_per_hour": 6521561.63,
-          "momentum_score": 0
-        }
-      ]
-    },
     "kmwfVOoi": {
       "title": "Rethinking Voxels",
       "slug": "rethinking-voxels",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 11343567,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 11343567,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 11343567,
@@ -1043,62 +1161,20 @@
         }
       ]
     },
-    "BUxf36AP": {
-      "title": "Mellow",
-      "slug": "mellow",
+    "izsIPI7a": {
+      "title": "MakeUp - Ultra Fast",
+      "slug": "makeup-ultra-fast-shaders",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 4792789,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 4792789,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 4792789,
-          "downloads_per_hour": 2934360.61,
-          "momentum_score": 10.62
+          "downloads": 10651884,
+          "downloads_per_hour": 6521561.63,
+          "momentum_score": 11.18
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 4792789,
-          "downloads_per_hour": 2934360.61,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "EQWX2WiO": {
-      "title": "Insanity Shader",
-      "slug": "insanity-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 6234825,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 6234825,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 6234825,
-          "downloads_per_hour": 3817239.8,
-          "momentum_score": 10.8
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 6234825,
-          "downloads_per_hour": 3817239.8,
+          "downloads": 10651884,
+          "downloads_per_hour": 6521561.63,
           "momentum_score": 0
         }
       ]
@@ -1107,18 +1183,6 @@
       "title": "Super Duper Vanilla",
       "slug": "super-duper-vanilla",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 7030430,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 7030430,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 7030430,
@@ -1133,32 +1197,38 @@
         }
       ]
     },
-    "UaS8ROxa": {
-      "title": "Miniature Shader",
-      "slug": "miniature-shader",
+    "EQWX2WiO": {
+      "title": "Insanity Shader",
+      "slug": "insanity-shader",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 3752647,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 3752647,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 3752647,
-          "downloads_per_hour": 2297538.98,
-          "momentum_score": 10.45
+          "downloads": 6234825,
+          "downloads_per_hour": 3817239.8,
+          "momentum_score": 10.8
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 3752647,
-          "downloads_per_hour": 2297538.98,
+          "downloads": 6234825,
+          "downloads_per_hour": 3817239.8,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "BUxf36AP": {
+      "title": "Mellow",
+      "slug": "mellow",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 4792789,
+          "downloads_per_hour": 2934360.61,
+          "momentum_score": 10.62
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 4792789,
+          "downloads_per_hour": 2934360.61,
           "momentum_score": 0
         }
       ]
@@ -1167,18 +1237,6 @@
       "title": "AstraLex Shaders",
       "slug": "astralex",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 4024791,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 4024791,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 4024791,
@@ -1193,172 +1251,10 @@
         }
       ]
     },
-    "DoODk4HD": {
-      "title": "I Like Vanilla",
-      "slug": "i-like-vanilla",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1508877,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1508877,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1508877,
-          "downloads_per_hour": 923802.24,
-          "momentum_score": 9.81
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1508877,
-          "downloads_per_hour": 923802.24,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "WX4iF5Cj": {
-      "title": "Potato Shaders",
-      "slug": "potato-shaders",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 2413603,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 2413603,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 2413603,
-          "downloads_per_hour": 1477716.12,
-          "momentum_score": 10.14
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 2413603,
-          "downloads_per_hour": 1477716.12,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "l6Uqs2fS": {
-      "title": "Visual Vibrance",
-      "slug": "visual-vibrance",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1800307,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1800307,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1800307,
-          "downloads_per_hour": 1102228.78,
-          "momentum_score": 9.94
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1800307,
-          "downloads_per_hour": 1102228.78,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "6uJCfiCH": {
-      "title": "Spooklementary",
-      "slug": "spooklementary",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 2529121,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 2529121,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 2529121,
-          "downloads_per_hour": 1548441.43,
-          "momentum_score": 10.17
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 2529121,
-          "downloads_per_hour": 1548441.43,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "Y8161YLz": {
-      "title": "Kappa Shader",
-      "slug": "kappa-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 2705164,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 2705164,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 2705164,
-          "downloads_per_hour": 1656222.86,
-          "momentum_score": 10.22
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 2705164,
-          "downloads_per_hour": 1656222.86,
-          "momentum_score": 0
-        }
-      ]
-    },
     "xEItlMn3": {
       "title": "Nostalgia Shader",
       "slug": "nostalgia-shader",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 3755576,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 3755576,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 3755576,
@@ -1373,350 +1269,20 @@
         }
       ]
     },
-    "l6di6hYz": {
-      "title": "Fantasy Shaders Reimagined",
-      "slug": "fantasy-shaders",
+    "UaS8ROxa": {
+      "title": "Miniature Shader",
+      "slug": "miniature-shader",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 829383,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 829383,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 829383,
-          "downloads_per_hour": 507785.51,
-          "momentum_score": 9.39
+          "downloads": 3752647,
+          "downloads_per_hour": 2297538.98,
+          "momentum_score": 10.45
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 829383,
-          "downloads_per_hour": 507785.51,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "EPsIYDj1": {
-      "title": "Vanilla Plus Shader",
-      "slug": "vanilla-plus-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1713508,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1713508,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1713508,
-          "downloads_per_hour": 1049086.53,
-          "momentum_score": 9.9
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1713508,
-          "downloads_per_hour": 1049086.53,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "iHC8BZn4": {
-      "title": "Hysteria Shaders",
-      "slug": "hysteria-shaders",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 2942814,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 2942814,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 2942814,
-          "downloads_per_hour": 1801722.86,
-          "momentum_score": 10.28
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 2942814,
-          "downloads_per_hour": 1801722.86,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "LTvf5Tji": {
-      "title": "E-LITE shaders (MakeUp edit)",
-      "slug": "lite-shaders",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1047310,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1047310,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1047310,
-          "downloads_per_hour": 641210.2,
-          "momentum_score": 9.56
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1047310,
-          "downloads_per_hour": 641210.2,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "sclYVqbt": {
-      "title": "Noble Shaders",
-      "slug": "noble",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1884206,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1884206,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1884206,
-          "downloads_per_hour": 1153595.51,
-          "momentum_score": 9.97
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1884206,
-          "downloads_per_hour": 1153595.51,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "Q1ICdkzj": {
-      "title": "Fantasy Shaders Unbound",
-      "slug": "fantasy-shader-unbound",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 683903,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 683903,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 683903,
-          "downloads_per_hour": 418716.12,
-          "momentum_score": 9.26
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 683903,
-          "downloads_per_hour": 418716.12,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "pgzM6RBY": {
-      "title": "BSL Shaders - Classic",
-      "slug": "bsl-shaders-classic",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1877854,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1877854,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1877854,
-          "downloads_per_hour": 1149706.53,
-          "momentum_score": 9.96
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1877854,
-          "downloads_per_hour": 1149706.53,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "z8EjLYqN": {
-      "title": "Sildur's Vibrant Shaders",
-      "slug": "sildurs-vibrant-shaders",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 213142,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 213142,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "BS9T99lD": {
-      "title": "Shrimple",
-      "slug": "shrimple",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1903038,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1903038,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1903038,
-          "downloads_per_hour": 1165125.31,
-          "momentum_score": 9.97
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1903038,
-          "downloads_per_hour": 1165125.31,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "Q6RQF9Oa": {
-      "title": "Bloop Shaders",
-      "slug": "bloop-shaders",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1580597,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1580597,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1580597,
-          "downloads_per_hour": 967712.45,
-          "momentum_score": 9.84
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1580597,
-          "downloads_per_hour": 967712.45,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "by2i3tnt": {
-      "title": "Body Camera",
-      "slug": "body-camera-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1165361,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1165361,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1165361,
-          "downloads_per_hour": 713486.33,
-          "momentum_score": 9.63
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1165361,
-          "downloads_per_hour": 713486.33,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "yY9oI7oz": {
-      "title": "Arc",
-      "slug": "arc-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 731469,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 731469,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-22T01-30-33",
-          "downloads": 731469,
-          "downloads_per_hour": 447838.16,
-          "momentum_score": 9.3
-        },
-        {
-          "timestamp": "2026-07-22T01-30-34",
-          "downloads": 731469,
-          "downloads_per_hour": 447838.16,
+          "downloads": 3752647,
+          "downloads_per_hour": 2297538.98,
           "momentum_score": 0
         }
       ]
@@ -1725,18 +1291,6 @@
       "title": "VanillAA",
       "slug": "vanillaa",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 3265627,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 3265627,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 3265627,
@@ -1751,32 +1305,146 @@
         }
       ]
     },
-    "BrRak9pu": {
-      "title": "RenderPearl",
-      "slug": "renderpearl",
+    "iHC8BZn4": {
+      "title": "Hysteria Shaders",
+      "slug": "hysteria-shaders",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1179412,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1179412,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 1179412,
-          "downloads_per_hour": 722088.98,
-          "momentum_score": 9.64
+          "downloads": 2942814,
+          "downloads_per_hour": 1801722.86,
+          "momentum_score": 10.28
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 1179412,
-          "downloads_per_hour": 722088.98,
+          "downloads": 2942814,
+          "downloads_per_hour": 1801722.86,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "Y8161YLz": {
+      "title": "Kappa Shader",
+      "slug": "kappa-shader",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 2705164,
+          "downloads_per_hour": 1656222.86,
+          "momentum_score": 10.22
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 2705164,
+          "downloads_per_hour": 1656222.86,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "6uJCfiCH": {
+      "title": "Spooklementary",
+      "slug": "spooklementary",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 2529121,
+          "downloads_per_hour": 1548441.43,
+          "momentum_score": 10.17
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 2529121,
+          "downloads_per_hour": 1548441.43,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "WX4iF5Cj": {
+      "title": "Potato Shaders",
+      "slug": "potato-shaders",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 2413603,
+          "downloads_per_hour": 1477716.12,
+          "momentum_score": 10.14
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 2413603,
+          "downloads_per_hour": 1477716.12,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "BS9T99lD": {
+      "title": "Shrimple",
+      "slug": "shrimple",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1903038,
+          "downloads_per_hour": 1165125.31,
+          "momentum_score": 9.97
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1903038,
+          "downloads_per_hour": 1165125.31,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "sclYVqbt": {
+      "title": "Noble Shaders",
+      "slug": "noble",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1884206,
+          "downloads_per_hour": 1153595.51,
+          "momentum_score": 9.97
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1884206,
+          "downloads_per_hour": 1153595.51,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "pgzM6RBY": {
+      "title": "BSL Shaders - Classic",
+      "slug": "bsl-shaders-classic",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1877854,
+          "downloads_per_hour": 1149706.53,
+          "momentum_score": 9.96
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1877854,
+          "downloads_per_hour": 1149706.53,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "l6Uqs2fS": {
+      "title": "Visual Vibrance",
+      "slug": "visual-vibrance",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1800307,
+          "downloads_per_hour": 1102228.78,
+          "momentum_score": 9.94
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1800307,
+          "downloads_per_hour": 1102228.78,
           "momentum_score": 0
         }
       ]
@@ -1785,18 +1453,6 @@
       "title": "FastPBR",
       "slug": "fastpbr",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1735387,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1735387,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 1735387,
@@ -1811,128 +1467,146 @@
         }
       ]
     },
-    "sAZ9WsJP": {
-      "title": "Cursed Fog",
-      "slug": "cursed-fog",
+    "EPsIYDj1": {
+      "title": "Vanilla Plus Shader",
+      "slug": "vanilla-plus-shader",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 510589,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 510589,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 510589,
-          "downloads_per_hour": 312605.51,
-          "momentum_score": 9.05
+          "downloads": 1713508,
+          "downloads_per_hour": 1049086.53,
+          "momentum_score": 9.9
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 510589,
-          "downloads_per_hour": 312605.51,
+          "downloads": 1713508,
+          "downloads_per_hour": 1049086.53,
           "momentum_score": 0
         }
       ]
     },
-    "rinvvngy": {
-      "title": "Clarity",
-      "slug": "clarityshader",
+    "Q6RQF9Oa": {
+      "title": "Bloop Shaders",
+      "slug": "bloop-shaders",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 710722,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 710722,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 710722,
-          "downloads_per_hour": 435135.92,
-          "momentum_score": 9.28
+          "downloads": 1580597,
+          "downloads_per_hour": 967712.45,
+          "momentum_score": 9.84
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 710722,
-          "downloads_per_hour": 435135.92,
+          "downloads": 1580597,
+          "downloads_per_hour": 967712.45,
           "momentum_score": 0
         }
       ]
     },
-    "McUqXQ0J": {
-      "title": "Just Colored Lighting",
-      "slug": "just-colored-lighting",
+    "DoODk4HD": {
+      "title": "I Like Vanilla",
+      "slug": "i-like-vanilla",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 487765,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 487765,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 487765,
-          "downloads_per_hour": 298631.63,
-          "momentum_score": 9.02
+          "downloads": 1508877,
+          "downloads_per_hour": 923802.24,
+          "momentum_score": 9.81
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 487765,
-          "downloads_per_hour": 298631.63,
+          "downloads": 1508877,
+          "downloads_per_hour": 923802.24,
           "momentum_score": 0
         }
       ]
     },
-    "2euhaJq5": {
-      "title": "TrueLight FX Lite",
-      "slug": "truelight-fx-lite",
+    "BrRak9pu": {
+      "title": "RenderPearl",
+      "slug": "renderpearl",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 55602,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1179412,
+          "downloads_per_hour": 722088.98,
+          "momentum_score": 9.64
         },
         {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 55602,
-          "downloads_per_hour": 0,
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1179412,
+          "downloads_per_hour": 722088.98,
           "momentum_score": 0
         }
       ]
     },
-    "2vBMeaEW": {
-      "title": "DERCODE",
-      "slug": "dercode",
+    "by2i3tnt": {
+      "title": "Body Camera",
+      "slug": "body-camera-shader",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 78750,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1165361,
+          "downloads_per_hour": 713486.33,
+          "momentum_score": 9.63
         },
         {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 78750,
-          "downloads_per_hour": 0,
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1165361,
+          "downloads_per_hour": 713486.33,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "DiGQENDV": {
+      "title": "Lux V1",
+      "slug": "lux-v1",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1142211,
+          "downloads_per_hour": 699312.86,
+          "momentum_score": 9.62
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1142211,
+          "downloads_per_hour": 699312.86,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "LTvf5Tji": {
+      "title": "E-LITE shaders (MakeUp edit)",
+      "slug": "lite-shaders",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 1047310,
+          "downloads_per_hour": 641210.2,
+          "momentum_score": 9.56
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 1047310,
+          "downloads_per_hour": 641210.2,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "l6di6hYz": {
+      "title": "Fantasy Shaders Reimagined",
+      "slug": "fantasy-shaders",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 829383,
+          "downloads_per_hour": 507785.51,
+          "momentum_score": 9.39
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 829383,
+          "downloads_per_hour": 507785.51,
           "momentum_score": 0
         }
       ]
@@ -1941,18 +1615,6 @@
       "title": "RedHat Shaders",
       "slug": "redhat-shaders",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 820453,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 820453,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 820453,
@@ -1967,104 +1629,74 @@
         }
       ]
     },
-    "MVFwE4xD": {
-      "title": "Blocky Shader",
-      "slug": "blocky-shader",
+    "hgAKxFQg": {
+      "title": "Aurora's Shaders",
+      "slug": "auroras-shaders",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 66074,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 66074,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "Gdq9dXUk": {
-      "title": "ReShaded",
-      "slug": "re-shaded",
-      "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 460528,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 460528,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 460528,
-          "downloads_per_hour": 281955.92,
-          "momentum_score": 8.98
+          "downloads": 758776,
+          "downloads_per_hour": 464556.73,
+          "momentum_score": 9.33
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 460528,
-          "downloads_per_hour": 281955.92,
+          "downloads": 758776,
+          "downloads_per_hour": 464556.73,
           "momentum_score": 0
         }
       ]
     },
-    "UuwCHIS3": {
-      "title": "LIGHT Shaders",
-      "slug": "light-shaders",
+    "yY9oI7oz": {
+      "title": "Arc",
+      "slug": "arc-shader",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 388405,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 731469,
+          "downloads_per_hour": 447838.16,
+          "momentum_score": 9.3
         },
         {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 388405,
-          "downloads_per_hour": 0,
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 731469,
+          "downloads_per_hour": 447838.16,
           "momentum_score": 0
         }
       ]
     },
-    "s8ZCVd1a": {
-      "title": "Eclipse",
-      "slug": "eclipseshaders",
+    "D5k8BTVz": {
+      "title": "Pixel Perfect",
+      "slug": "pixel-perfect-shaders",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 306410,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 725564,
+          "downloads_per_hour": 444222.86,
+          "momentum_score": 9.3
         },
         {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 306410,
-          "downloads_per_hour": 0,
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 725564,
+          "downloads_per_hour": 444222.86,
           "momentum_score": 0
         }
       ]
     },
-    "bvDpxd8c": {
-      "title": "Alpha Piscium",
-      "slug": "alpha-piscium",
+    "rinvvngy": {
+      "title": "Clarity",
+      "slug": "clarityshader",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 192215,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 710722,
+          "downloads_per_hour": 435135.92,
+          "momentum_score": 9.28
         },
         {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 192215,
-          "downloads_per_hour": 0,
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 710722,
+          "downloads_per_hour": 435135.92,
           "momentum_score": 0
         }
       ]
@@ -2073,18 +1705,6 @@
       "title": "Pegasus Shaders",
       "slug": "pegasus",
       "history": [
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 697240,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 697240,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-22T01-30-33",
           "downloads": 697240,
@@ -2099,50 +1719,110 @@
         }
       ]
     },
-    "2jvH1Rcl": {
-      "title": "Sildur's Enhanced Default Shaders",
-      "slug": "sildurs-enhanced-default-shaders",
+    "71EyVfCn": {
+      "title": "Voyager shader 2.0",
+      "slug": "voyager-shader-2.0",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 76782,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 690355,
+          "downloads_per_hour": 422666.33,
+          "momentum_score": 9.26
         },
         {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 76782,
-          "downloads_per_hour": 0,
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 690355,
+          "downloads_per_hour": 422666.33,
           "momentum_score": 0
         }
       ]
     },
-    "XaonJnsc": {
-      "title": "CTR VCR",
-      "slug": "ctrvcr",
+    "Q1ICdkzj": {
+      "title": "Fantasy Shaders Unbound",
+      "slug": "fantasy-shader-unbound",
       "history": [
         {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 500834,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 500834,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-22T01-30-33",
-          "downloads": 500834,
-          "downloads_per_hour": 306633.06,
-          "momentum_score": 9.04
+          "downloads": 683903,
+          "downloads_per_hour": 418716.12,
+          "momentum_score": 9.26
         },
         {
           "timestamp": "2026-07-22T01-30-34",
-          "downloads": 500834,
-          "downloads_per_hour": 306633.06,
+          "downloads": 683903,
+          "downloads_per_hour": 418716.12,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "6NnvPzWJ": {
+      "title": "Builder's QOL Shaders",
+      "slug": "builders-qol-shaders",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 648768,
+          "downloads_per_hour": 397204.9,
+          "momentum_score": 9.22
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 648768,
+          "downloads_per_hour": 397204.9,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "UDDa70lE": {
+      "title": "UShader",
+      "slug": "ushader",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 595388,
+          "downloads_per_hour": 364523.27,
+          "momentum_score": 9.16
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 595388,
+          "downloads_per_hour": 364523.27,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "chKtnjkM": {
+      "title": "BVS - Best Vanilla Shader",
+      "slug": "bvs",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 568302,
+          "downloads_per_hour": 347940.0,
+          "momentum_score": 9.13
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 568302,
+          "downloads_per_hour": 347940.0,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "VP9picRm": {
+      "title": "Ebin Resurrected",
+      "slug": "ebin-resurrected",
+      "history": [
+        {
+          "timestamp": "2026-07-22T01-30-33",
+          "downloads": 559676,
+          "downloads_per_hour": 342658.78,
+          "momentum_score": 9.12
+        },
+        {
+          "timestamp": "2026-07-22T01-30-34",
+          "downloads": 559676,
+          "downloads_per_hour": 342658.78,
           "momentum_score": 0
         }
       ]
@@ -2184,88 +1864,85 @@
       "declining_projects": 0,
       "baseline_date": "2026-07-21",
       "hours_between": 1.63
+    },
+    {
+      "date": "2026-07-22",
+      "timestamp": "2026-07-22T03-39-31",
+      "total_downloads": 280360461,
+      "new_downloads": 44,
+      "lost_downloads": 0,
+      "net_change": 44,
+      "growing_projects": 5,
+      "declining_projects": 0,
+      "baseline_date": "2026-07-22",
+      "hours_between": 2.15
     }
   ],
   "predictive": {
-    "timestamp": "2026-07-22T03-39-33",
+    "timestamp": "2026-07-22T05-18-04",
     "date": "2026-07-22",
     "project_type": "shader",
     "analysis_type": "sub",
     "snapshots_analyzed": 19,
-    "last_snapshot_time": "2026-07-22T03-39-29",
-    "hours_until_main": 4,
+    "last_snapshot_time": "2026-07-22T05-18-00",
+    "hours_until_main": 2,
     "velocity": {
-      "velocity_per_hour": 20.47,
-      "velocity_2h": 44,
-      "velocity_24h": 884030,
-      "avg_velocity_24h": 36834.58
+      "velocity_per_hour": 54.81,
+      "velocity_2h": 90,
+      "velocity_24h": 884120,
+      "avg_velocity_24h": 36838.33
     },
     "acceleration": {
-      "acceleration": -171649214.43,
-      "acceleration_pct": -100.0
+      "acceleration": 34.34,
+      "acceleration_pct": 167.77
     },
     "predictions": {
-      "predicted_daily_total": 280507799,
-      "predicted_daily_growth": 1987298,
-      "predicted_daily_growth_pct": 0.71,
-      "predicted_daily_growth_weighted": 1987298,
-      "predicted_daily_growth_pct_weighted": 0.71,
+      "predicted_daily_total": 280434227,
+      "predicted_daily_growth": 963458,
+      "predicted_daily_growth_pct": 0.34,
+      "predicted_daily_growth_weighted": 963458,
+      "predicted_daily_growth_pct_weighted": 0.34,
       "confidence": "high",
       "confidence_weight": 1.0
     },
     "top_movers_2h": [
       {
-        "project_id": "kewvpRhY",
-        "title": "Sobel Pack",
-        "slug": "sobel-pack",
-        "previous_downloads": 13,
-        "current_downloads": 27,
-        "delta_2h": 14,
-        "velocity": 6.51
+        "project_id": "70gOBuNk",
+        "title": "WEM - White Entities Mask",
+        "slug": "wem-white-entities-mask",
+        "previous_downloads": 32774,
+        "current_downloads": 32842,
+        "delta_2h": 68,
+        "velocity": 41.41
       },
       {
-        "project_id": "wntcSD6O",
-        "title": "LitePerf-Shaders",
-        "slug": "liteperf-shaders",
-        "previous_downloads": 17,
-        "current_downloads": 30,
-        "delta_2h": 13,
-        "velocity": 6.05
-      },
-      {
-        "project_id": "P5FXqXwP",
-        "title": "Lixexis Shader",
-        "slug": "livexisshader",
-        "previous_downloads": 6,
-        "current_downloads": 14,
-        "delta_2h": 8,
-        "velocity": 3.72
-      },
-      {
-        "project_id": "VCfprxC0",
-        "title": "RenderKit Utilities",
-        "slug": "renderkit-utilities",
-        "previous_downloads": 8,
-        "current_downloads": 15,
-        "delta_2h": 7,
-        "velocity": 3.26
-      },
-      {
-        "project_id": "C7dXsXA0",
-        "title": "Kreuss shader",
-        "slug": "kreuss-shader",
-        "previous_downloads": 18,
-        "current_downloads": 20,
-        "delta_2h": 2,
-        "velocity": 0.93
+        "project_id": "lcdZ7DO8",
+        "title": "Kinescope Shaders",
+        "slug": "kinescope-shaders",
+        "previous_downloads": 3,
+        "current_downloads": 25,
+        "delta_2h": 22,
+        "velocity": 13.4
       }
     ],
     "velocity_by_category": [
       {
         "category": "vanilla-like",
-        "total_velocity": 13.96,
+        "total_velocity": 41.41,
         "projects_tracked": 369,
-        "avg_velocity": 0.04
+        "avg_velocity": 0.11
+      },
+      {
+        "category": "semi-realistic",
+        "total_velocity": 13.4,
+        "projects_tracked": 169,
+        "avg_velocity": 0.08
+      },
+      {
+        "category": "realistic",
+        "total_velocity": 13.4,
+        "projects_tracked": 102,
+        "avg_velocity": 0.13
       },
       {
         "category": "fantasy",
@@ -2280,18 +1957,6 @@
         "avg_velocity": 0.0
       },
       {
-        "category": "semi-realistic",
-        "total_velocity": 0.0,
-        "projects_tracked": 169,
-        "avg_velocity": 0.0
-      },
-      {
-        "category": "realistic",
-        "total_velocity": 0.0,
-        "projects_tracked": 102,
-        "avg_velocity": 0.0
-      },
-      {
         "category": "cursed",
         "total_velocity": 0.0,
         "projects_tracked": 147,
@@ -2300,36 +1965,12 @@
     ],
     "anomalies": [
       {
-        "project_id": "P5FXqXwP",
-        "title": "Lixexis Shader",
-        "slug": "livexisshader",
-        "current_velocity": 3.72,
-        "avg_velocity": 0.07,
-        "anomaly_factor": 51.75
-      },
-      {
-        "project_id": "wntcSD6O",
-        "title": "LitePerf-Shaders",
-        "slug": "liteperf-shaders",
-        "current_velocity": 6.05,
-        "avg_velocity": 0.41,
-        "anomaly_factor": 14.84
-      },
-      {
-        "project_id": "kewvpRhY",
-        "title": "Sobel Pack",
-        "slug": "sobel-pack",
-        "current_velocity": 6.51,
-        "avg_velocity": 0.5,
-        "anomaly_factor": 13.02
-      },
-      {
-        "project_id": "VCfprxC0",
-        "title": "RenderKit Utilities",
-        "slug": "renderkit-utilities",
-        "current_velocity": 3.26,
-        "avg_velocity": 0.27,
-        "anomaly_factor": 12.09
+        "project_id": "70gOBuNk",
+        "title": "WEM - White Entities Mask",
+        "slug": "wem-white-entities-mask",
+        "current_velocity": 41.41,
+        "avg_velocity": 11.03,
+        "anomaly_factor": 3.76
       }
     ],
     "hourly_pattern": [
@@ -2376,6 +2017,10 @@
       {
         "hour_label": "01-03",
         "downloads_gained": 44
+      },
+      {
+        "hour_label": "03-05",
+        "downloads_gained": 90
       }
     ]
   },
