@@ -1,7 +1,14 @@
 {
   "project_type": "mod",
+  "timestamp": "",
   "date": "2026-07-18",
+  "baseline_date": "",
+  "hours_between": 0,
   "analysis_type": "hourly",
+  "analysis_quality": "normal",
+  "actual_hours_between": 0,
+  "data_quality": {},
+  "downloads_per_hour": 0,
   "summary": {
     "total_projects": 45625,
     "total_versions": 622289,
@@ -16192,6 +16199,7 @@
       "growth_pct": 0.04
     }
   ],
+  "declining_projects": [],
   "top_version_loaders": [
     {
       "game_version": "1.20.1",
@@ -45846,6 +45854,209 @@
           "delta_downloads": 1646
         }
       ]
+    }
+  ],
+  "predictive": {
+    "timestamp": "2026-07-15T09-22-16",
+    "date": "2026-07-15",
+    "project_type": "mod",
+    "analysis_type": "sub",
+    "snapshots_analyzed": 3,
+    "last_snapshot_time": "2026-07-15T09-22-13",
+    "hours_until_main": 22,
+    "velocity": {
+      "velocity_per_hour": 0.0,
+      "velocity_2h": 0,
+      "velocity_24h": 0,
+      "avg_velocity_24h": 0.0
+    },
+    "acceleration": {
+      "acceleration": 0.0,
+      "acceleration_pct": 0.0
+    },
+    "predictions": {
+      "predicted_daily_total": 9944731160,
+      "predicted_daily_growth": 0,
+      "predicted_daily_growth_pct": 0.0,
+      "confidence": "medium"
+    },
+    "top_movers_2h": [],
+    "velocity_by_category": [
+      {
+        "category": "optimization",
+        "total_velocity": 0.0,
+        "projects_tracked": 3323,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "utility",
+        "total_velocity": 0.0,
+        "projects_tracked": 20259,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "cursed",
+        "total_velocity": 0.0,
+        "projects_tracked": 6832,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "equipment",
+        "total_velocity": 0.0,
+        "projects_tracked": 10868,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "technology",
+        "total_velocity": 0.0,
+        "projects_tracked": 7425,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "game-mechanics",
+        "total_velocity": 0.0,
+        "projects_tracked": 18645,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "magic",
+        "total_velocity": 0.0,
+        "projects_tracked": 6472,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "library",
+        "total_velocity": 0.0,
+        "projects_tracked": 3262,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "worldgen",
+        "total_velocity": 0.0,
+        "projects_tracked": 7716,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "social",
+        "total_velocity": 0.0,
+        "projects_tracked": 4613,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "decoration",
+        "total_velocity": 0.0,
+        "projects_tracked": 6955,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "adventure",
+        "total_velocity": 0.0,
+        "projects_tracked": 13499,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "mobs",
+        "total_velocity": 0.0,
+        "projects_tracked": 9983,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "food",
+        "total_velocity": 0.0,
+        "projects_tracked": 5670,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "storage",
+        "total_velocity": 0.0,
+        "projects_tracked": 3586,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "transportation",
+        "total_velocity": 0.0,
+        "projects_tracked": 3413,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "minigame",
+        "total_velocity": 0.0,
+        "projects_tracked": 1839,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "management",
+        "total_velocity": 0.0,
+        "projects_tracked": 6833,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "economy",
+        "total_velocity": 0.0,
+        "projects_tracked": 1843,
+        "avg_velocity": 0.0
+      }
+    ],
+    "anomalies": [],
+    "hourly_pattern": [
+      {
+        "hour_label": "08-08",
+        "downloads_gained": 0
+      },
+      {
+        "hour_label": "08-09",
+        "downloads_gained": 0
+      }
+    ]
+  },
+  "charts": [
+    {
+      "path": "reports/charts/mod/concentration.png",
+      "name": "Concentration"
+    },
+    {
+      "path": "reports/charts/mod/velocity.png",
+      "name": "Velocity"
+    },
+    {
+      "path": "reports/charts/mod/hourly_heatmap.png",
+      "name": "Hourly Heatmap"
+    },
+    {
+      "path": "reports/charts/mod/top_movers_2h.png",
+      "name": "Top Movers 2H"
+    },
+    {
+      "path": "reports/charts/mod/velocity_by_category.png",
+      "name": "Velocity By Category"
+    },
+    {
+      "path": "reports/charts/mod/prediction.png",
+      "name": "Prediction"
+    },
+    {
+      "path": "reports/charts/mod/trend.png",
+      "name": "Trend"
+    },
+    {
+      "path": "reports/charts/mod/top_projects.png",
+      "name": "Top Projects"
+    },
+    {
+      "path": "reports/charts/mod/recommendations.png",
+      "name": "Recommendations"
+    },
+    {
+      "path": "reports/charts/mod/loaders.png",
+      "name": "Loaders"
+    },
+    {
+      "path": "reports/charts/mod/categories.png",
+      "name": "Categories"
+    },
+    {
+      "path": "reports/charts/mod/distribution.png",
+      "name": "Distribution"
     }
   ]
 }
