@@ -634,7 +634,7 @@ def main():
     parser = argparse.ArgumentParser(description="Render PNG charts from analysis data")
     parser.add_argument(
         "--project-type", required=True,
-        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
         help="Project type to render charts for",
     )
     parser.add_argument(

@@ -520,7 +520,7 @@ def build_trend_history(project_type):
 def main():
     parser = argparse.ArgumentParser(description="Analyze market data for a project type")
     parser.add_argument("--project-type", required=True,
-                        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+                        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
                         help="Project type to analyze")
     parser.add_argument("--mode", required=True,
                         choices=["daily", "hourly"],

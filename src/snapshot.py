@@ -83,7 +83,7 @@ def main():
     parser = argparse.ArgumentParser(description="Take a daily snapshot for a project type")
     parser.add_argument(
         "--project-type", required=True,
-        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
         help="Project type to snapshot"
     )
     args = parser.parse_args()

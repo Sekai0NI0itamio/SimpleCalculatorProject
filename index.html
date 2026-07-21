@@ -68,6 +68,10 @@
   .pt-tab:hover { color: var(--text); border-color: var(--text-muted); }
   .pt-tab.active { color: #fff; background: var(--accent); border-color: var(--accent); }
   .pt-tab .pt-count { font-size: 10px; opacity: 0.7; margin-left: 4px; }
+  .pt-tab .pt-status { font-size: 9px; margin-left: 6px; }
+  .pt-tab .pt-status.loading { color: var(--orange); }
+  .pt-tab .pt-status.ready { color: var(--green); }
+  .pt-tab .pt-status.error { color: var(--red); }
   .pt-content { display: none; }
   .pt-content.active { display: block; }
 
@@ -114,6 +118,39 @@
   }
   .countdown-card .cd-label { font-size: 10px; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; }
   .countdown-card .cd-value { font-size: 22px; font-weight: 700; color: var(--orange); font-family: 'SF Mono', 'Consolas', monospace; }
+
+  /* Streaming / loading states */
+  .streaming-banner {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.3);
+    border-radius: 8px; padding: 10px 16px; margin-bottom: 16px;
+    font-size: 12px; color: var(--accent);
+  }
+  .streaming-banner.done {
+    background: rgba(63,185,80,0.08); border-color: rgba(63,185,80,0.3); color: var(--green);
+  }
+  .streaming-banner .spinner {
+    width: 12px; height: 12px; border: 2px solid currentColor; border-top-color: transparent;
+    border-radius: 50%; animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .streaming-banner.done .spinner { display: none; }
+
+  .placeholder-shimmer {
+    background: linear-gradient(90deg, var(--card) 25%, rgba(48,54,61,0.5) 50%, var(--card) 75%);
+    background-size: 200% 100%; animation: shimmer 1.5s infinite;
+    border-radius: 8px; min-height: 60px; margin-bottom: 8px;
+  }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+  .progress-bar {
+    width: 100%; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .progress-bar .progress-fill {
+    height: 100%; background: var(--accent); width: 0%;
+    transition: width 0.3s ease;
+  }
 </style>
 </head>
 <body>
@@ -121,8 +158,8 @@
   <div class="nav-inner">
     <div class="logo">Modrinth <span>Analytics</span></div>
     <div class="nav-links">
-      <button class="nav-link active" onclick="switchPage('home')">Home</button>
-      <button class="nav-link" onclick="switchPage('history')">History of Runs</button>
+      <button class="nav-link active" onclick="switchPage('home', event)">Home</button>
+      <button class="nav-link" onclick="switchPage('history', event)">History of Runs</button>
     </div>
     <div class="nav-stats" id="navStats"></div>
   </div>
@@ -136,6 +173,9 @@
       <div class="subtitle">Simple rankings — what's growing fastest across Modrinth</div>
     </div>
 
+    <div id="streamingBanner"></div>
+    <div class="progress-bar" id="progressBar" style="display:none;"><div class="progress-fill" id="progressFill"></div></div>
+
     <div class="summary-stats" id="summaryStats"></div>
 
     <div class="summary-stats" id="countdownRow" style="grid-template-columns: repeat(4, 1fr);"></div>
@@ -143,7 +183,7 @@
     <!-- Project Type Tabs -->
     <div class="section">
       <div class="section-title">Market Breakdown</div>
-      <div class="section-subtitle">General = full overview. Click a type for its own rankings.</div>
+      <div class="section-subtitle">General = full overview. Click a type for its own rankings. Tabs load in parallel as data streams in.</div>
       <div class="pt-tabs" id="ptTabs"></div>
       <div id="ptContents"></div>
     </div>
@@ -160,10 +200,19 @@
 </div>
 
 <script>
-const PROJECT_TYPES = ["mod","modpack","resourcepack","shader","datapack","world"];
-const PT_LABELS = {mod:"Mods",modpack:"Modpacks",resourcepack:"Resource Packs",shader:"Shaders",datapack:"Data Packs",world:"Worlds"};
-let DATA = null;
+const PROJECT_TYPES = ["mod","modpack","resourcepack","shader","datapack","plugin"];
+const PT_LABELS = {mod:"Mods",modpack:"Modpacks",resourcepack:"Resource Packs",shader:"Shaders",datapack:"Data Packs",plugin:"Plugins"};
+const CACHE_BUST = () => '?' + Date.now();
 
+// Streaming state
+let SUMMARY = null;           // small summary data (totals + per-type summary)
+let COMBINED = null;          // combined rankings (top projects, VL, categories)
+let TYPE_DATA = {};           // per-type detailed data: { mod: {...}, modpack: {...}, ... }
+let TYPE_LOAD_STATE = {};    // per-type load state: 'pending' | 'loading' | 'ready' | 'error'
+let HISTORY_DATA = null;     // run history (loaded on demand)
+let ACTIVE_PT = 'general';   // active project type tab
+
+// ── Formatters ──────────────────────────────────────────────────
 function fmt(n) {
   if (n == null || isNaN(n)) return '—';
   if (n >= 1e9) return (n/1e9).toFixed(1)+'B';
@@ -175,40 +224,124 @@ function fmtDelta(n) { return (n>=0?'+':'')+fmt(Math.abs(n)).replace(/\.0$/,'');
 function fmtPct(n) { return (n>=0?'+':'')+n.toFixed(2)+'%'; }
 function escHtml(s) { return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function loaderTag(loader) {
-  const colors = {fabric:'green',forge:'orange',neoforge:'purple',quilt:'blue',iris:'blue',minecraft:'blue',optifine:'orange'};
+  const colors = {fabric:'green',forge:'orange',neoforge:'purple',quilt:'blue',iris:'blue',minecraft:'blue',optifine:'orange',paper:'blue',spigot:'orange',bukkit:'green',folia:'purple'};
   const cls = colors[loader?.toLowerCase()] || 'blue';
   return `<span class="tag ${cls}">${escHtml(loader||'—')}</span>`;
 }
 
-async function loadData() {
+// ── Streaming loader ──────────────────────────────────────────────
+// Phase 1: fetch summary (small, instant render of totals + tab header)
+// Phase 2: fetch combined + all per-type files in parallel; render as each arrives
+
+async function loadStreaming() {
+  setStreamingBanner('loading', 'Fetching summary…');
+  setProgress(5);
+
+  // Phase 1: summary
   try {
-    const res = await fetch('reports/latest_analysis.json?_=' + Date.now());
-    if (!res.ok) return;
-    DATA = await res.json();
-    render();
-  } catch (e) { console.error('Failed to load:', e); }
+    const res = await fetch('reports/summary.json' + CACHE_BUST());
+    if (!res.ok) throw new Error(`summary.json ${res.status}`);
+    SUMMARY = await res.json();
+    setProgress(15);
+    renderSummary();
+    renderCountdown();
+    renderProjectTypeTabs();
+    setStreamingBanner('loading', `Summary ready. Streaming ${PROJECT_TYPES.length} project types + combined rankings…`);
+  } catch (e) {
+    console.error('Summary load failed:', e);
+    setStreamingBanner('error', `Failed to load summary: ${e.message}`);
+    return;
+  }
+
+  // Phase 2: kick off parallel fetches for combined + each per-type file
+  const fetches = [
+    fetch('reports/combined.json' + CACHE_BUST()).then(r => r.ok ? r.json() : Promise.reject(new Error(`combined.json ${r.status}`))),
+    ...PROJECT_TYPES.map(pt =>
+      fetch(`reports/type/${pt}.json` + CACHE_BUST())
+        .then(r => r.ok ? r.json() : Promise.reject(new Error(`type/${pt}.json ${r.status}`)))
+        .then(data => ({ pt, data }))
+    )
+  ];
+
+  let completed = 0;
+  const total = fetches.length;
+  const bump = () => {
+    completed++;
+    setProgress(15 + Math.floor((completed / total) * 85));
+  };
+
+  // Render each per-type as it arrives (updates tab status + renders if active)
+  await Promise.allSettled(fetches.map(async (p, idx) => {
+    try {
+      const result = await p;
+      bump();
+      if (idx === 0) {
+        // Combined rankings
+        COMBINED = result;
+        TYPE_LOAD_STATE['general'] = 'ready';
+        updateTabStatus('general', 'ready');
+        if (ACTIVE_PT === 'general') renderActiveTab();
+      } else {
+        const { pt, data } = result;
+        TYPE_DATA[pt] = data;
+        TYPE_LOAD_STATE[pt] = 'ready';
+        updateTabStatus(pt, 'ready');
+        if (ACTIVE_PT === pt) renderActiveTab();
+      }
+    } catch (e) {
+      bump();
+      const pt = idx === 0 ? 'general' : PROJECT_TYPES[idx - 1];
+      TYPE_LOAD_STATE[pt] = 'error';
+      updateTabStatus(pt, 'error');
+      console.error(`Failed to load ${pt}:`, e.message);
+    }
+  }));
+
+  setStreamingBanner('done', `All data loaded — ${completed}/${total} chunks received`);
+  setTimeout(() => setStreamingBanner('hidden', ''), 4000);
 }
 
-function switchPage(page) {
+function setStreamingBanner(state, msg) {
+  const el = document.getElementById('streamingBanner');
+  if (state === 'hidden') { el.innerHTML = ''; return; }
+  const cls = state === 'done' ? 'done' : (state === 'error' ? 'done' : '');
+  el.innerHTML = `<div class="streaming-banner ${cls}"><div class="spinner"></div><span>${escHtml(msg)}</span></div>`;
+}
+
+function setProgress(pct) {
+  const bar = document.getElementById('progressBar');
+  const fill = document.getElementById('progressFill');
+  if (pct >= 100) { bar.style.display = 'none'; return; }
+  bar.style.display = 'block';
+  fill.style.width = pct + '%';
+}
+
+function updateTabStatus(pt, state) {
+  const tab = document.querySelector(`.pt-tab[data-pt="${pt}"]`);
+  if (!tab) return;
+  const statusEl = tab.querySelector('.pt-status');
+  if (!statusEl) return;
+  const label = state === 'loading' ? '⏳' : state === 'ready' ? '✓' : state === 'error' ? '✗' : '';
+  const cls = state === 'loading' ? 'loading' : state === 'ready' ? 'ready' : state === 'error' ? 'error' : '';
+  statusEl.className = `pt-status ${cls}`;
+  statusEl.textContent = label;
+}
+
+// ── Page navigation ──────────────────────────────────────────────
+function switchPage(page, event) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-  event.target.classList.add('active');
+  if (event && event.target) event.target.classList.add('active');
   if (page === 'history') renderHistory();
 }
 
-function render() {
-  if (!DATA) return;
-  const totals = DATA.totals || {};
-  document.getElementById('navStats').innerHTML = `Projects: ${fmt(totals.projects||0)} · Downloads: ${fmt(totals.downloads||0)}`;
-  renderSummary();
-  renderCountdown();
-  renderProjectTypeTabs();
-}
-
+// ── Render functions ─────────────────────────────────────────────
 function renderSummary() {
-  const t = DATA.totals || {};
-  const ts = DATA.generated_at || '';
+  if (!SUMMARY) return;
+  const t = SUMMARY.totals || {};
+  document.getElementById('navStats').innerHTML = `Projects: ${fmt(t.projects||0)} · Downloads: ${fmt(t.downloads||0)}`;
+  const ts = SUMMARY.generated_at || '';
   document.getElementById('summaryStats').innerHTML = `
     <div class="summary-stat"><div class="ss-label">Total Projects</div><div class="ss-value">${fmt(t.projects||0)}</div></div>
     <div class="summary-stat"><div class="ss-label">Total Downloads</div><div class="ss-value">${fmt(t.downloads||0)}</div></div>
@@ -236,47 +369,79 @@ function renderCountdown() {
 }
 
 function renderProjectTypeTabs() {
-  const pts = DATA.project_types || {};
-  const totals = DATA.totals || {};
-  const generalTab = `<div class="pt-tab active" data-pt="general">General<span class="pt-count">(${fmt(totals.projects||0)})</span></div>`;
+  const pts = SUMMARY.project_types || {};
+  const totals = SUMMARY.totals || {};
+  const generalTab = `<div class="pt-tab active" data-pt="general" onclick="selectPt('general')">General<span class="pt-count">(${fmt(totals.projects||0)})</span><span class="pt-status loading">⏳</span></div>`;
   const typeTabs = PROJECT_TYPES.map(pt => {
     const info = pts[pt] || {};
-    const s = info.summary || {};
-    return `<div class="pt-tab" data-pt="${pt}">${PT_LABELS[pt]}<span class="pt-count">(${fmt(s.total_projects||0)})</span></div>`;
+    const count = info.total_projects || 0;
+    const exists = pts[pt] && typeof pts[pt] === 'object';
+    const statusCls = exists ? 'loading' : 'error';
+    const statusIcon = exists ? '⏳' : '✗';
+    return `<div class="pt-tab" data-pt="${pt}" onclick="selectPt('${pt}')">${PT_LABELS[pt]}<span class="pt-count">(${fmt(count)})</span><span class="pt-status ${statusCls}">${statusIcon}</span></div>`;
   }).join('');
   document.getElementById('ptTabs').innerHTML = generalTab + typeTabs;
 
-  const generalContent = `<div class="pt-content active" data-pt="general">
-    ${renderGeneralTopProjects()}
-    ${renderGeneralCategories()}
-    ${renderGeneralVLPairs()}
-  </div>`;
-  const typeContents = PROJECT_TYPES.map(pt => {
-    const info = pts[pt] || {};
-    return `<div class="pt-content" data-pt="${pt}">
-      ${renderPerTypeSummary(info)}
-      ${renderPerTypeTopProjects(info)}
-      ${renderPerTypeCategories(info)}
-      ${renderPerTypeVLPairs(info)}
-    </div>`;
-  }).join('');
+  // Pre-create content containers with loading placeholders
+  const generalContent = `<div class="pt-content active" data-pt="general">${renderPlaceholder()}</div>`;
+  const typeContents = PROJECT_TYPES.map(pt =>
+    `<div class="pt-content" data-pt="${pt}">${renderPlaceholder()}</div>`
+  ).join('');
   document.getElementById('ptContents').innerHTML = generalContent + typeContents;
+}
 
-  document.querySelectorAll('.pt-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const pt = tab.dataset.pt;
-      document.querySelectorAll('.pt-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      document.querySelectorAll('.pt-content').forEach(c => c.classList.remove('active'));
-      document.querySelector(`.pt-content[data-pt="${pt}"]`).classList.add('active');
-    });
-  });
+function renderPlaceholder() {
+  return `
+    <div class="placeholder-shimmer" style="height:60px"></div>
+    <div class="placeholder-shimmer" style="height:300px"></div>
+  `;
+}
+
+function selectPt(pt) {
+  ACTIVE_PT = pt;
+  document.querySelectorAll('.pt-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.pt-tab[data-pt="${pt}"]`)?.classList.add('active');
+  document.querySelectorAll('.pt-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.pt-content[data-pt="${pt}"]`)?.classList.add('active');
+  renderActiveTab();
+}
+
+function renderActiveTab() {
+  const pt = ACTIVE_PT;
+  const container = document.querySelector(`.pt-content[data-pt="${pt}"]`);
+  if (!container) return;
+
+  if (pt === 'general') {
+    if (!COMBINED) { container.innerHTML = renderPlaceholder(); return; }
+    container.innerHTML = `
+      ${renderGeneralTopProjects()}
+      ${renderGeneralCategories()}
+      ${renderGeneralVLPairs()}
+    `;
+    return;
+  }
+
+  const info = TYPE_DATA[pt];
+  if (!info) {
+    const state = TYPE_LOAD_STATE[pt];
+    if (state === 'error') {
+      container.innerHTML = `<div class="empty">Failed to load ${PT_LABELS[pt]} data. Will retry on next refresh.</div>`;
+    } else {
+      container.innerHTML = renderPlaceholder();
+    }
+    return;
+  }
+  container.innerHTML = `
+    ${renderPerTypeSummary(info)}
+    ${renderPerTypeTopProjects(info)}
+    ${renderPerTypeCategories(info)}
+    ${renderPerTypeVLPairs(info)}
+  `;
 }
 
 // ── General Tab ──────────────────────────────────────────────────
-
 function renderGeneralTopProjects() {
-  const all = (DATA.combined || {}).top_projects || [];
+  const all = (COMBINED || {}).top_projects || [];
   return `
     <div class="section-title">Top Growing Projects — What to Build Next</div>
     <div class="section-subtitle">Ranked by download increase across all project types</div>
@@ -296,7 +461,7 @@ function renderGeneralTopProjects() {
 }
 
 function renderGeneralCategories() {
-  const cats = (DATA.combined || {}).category_rankings || [];
+  const cats = (COMBINED || {}).category_rankings || [];
   return `
     <div class="section-title" style="margin-top:32px;">Categories with Most Increase — Where to Focus</div>
     <div class="section-subtitle">Categories ranked by total download growth across all types</div>
@@ -316,7 +481,7 @@ function renderGeneralCategories() {
 }
 
 function renderGeneralVLPairs() {
-  const topVL = (DATA.combined || {}).top_version_loaders || [];
+  const topVL = (COMBINED||{}).top_version_loaders || [];
   return `
     <div class="section-title" style="margin-top:32px;">All Version+Loader Combinations Ranked</div>
     <div class="section-subtitle">Highest download growth by version-loader pair across all types</div>
@@ -337,7 +502,6 @@ function renderGeneralVLPairs() {
 }
 
 // ── Per-Type ─────────────────────────────────────────────────────
-
 function renderPerTypeSummary(info) {
   const s = info.summary || {};
   return `
@@ -405,11 +569,25 @@ function renderPerTypeVLPairs(info) {
     </table>`;
 }
 
-// ── History Page ──────────────────────────────────────────────────
+// ── History Page (lazy-loaded) ──────────────────────────────────
+async function renderHistory() {
+  const container = document.getElementById('runHistory');
+  if (HISTORY_DATA) {
+    renderHistoryTable(HISTORY_DATA);
+    return;
+  }
+  container.innerHTML = '<div class="empty">Loading run history…</div>';
+  try {
+    const res = await fetch('reports/run_history.json' + CACHE_BUST());
+    if (!res.ok) throw new Error(`run_history.json ${res.status}`);
+    HISTORY_DATA = await res.json();
+    renderHistoryTable(HISTORY_DATA);
+  } catch (e) {
+    container.innerHTML = `<div class="empty">Failed to load run history: ${escHtml(e.message)}</div>`;
+  }
+}
 
-function renderHistory() {
-  if (!DATA) return;
-  const runs = DATA.run_history || [];
+function renderHistoryTable(runs) {
   document.getElementById('runHistory').innerHTML = runs.length ? `
     <table>
       <thead><tr><th>Start</th><th>End</th><th>Duration</th><th>Type</th><th class="num">Projects</th><th class="num">Downloads</th><th class="num">New</th><th>Types</th></tr></thead>
@@ -433,10 +611,53 @@ function renderHistory() {
 }
 
 // ── Init ─────────────────────────────────────────────────────────
-
-loadData();
+loadStreaming();
 setInterval(renderCountdown, 1000);
-setInterval(loadData, 120000);
+setInterval(() => {
+  // Re-fetch summary every 2 min (lightweight). Full re-stream only if totals changed.
+  fetch('reports/summary.json' + CACHE_BUST())
+    .then(r => r.ok ? r.json() : null)
+    .then(s => {
+      if (!s) return;
+      if (!SUMMARY || s.generated_at !== SUMMARY.generated_at) {
+        SUMMARY = s;
+        renderSummary();
+        renderProjectTypeTabs();
+        // Re-stream the per-type + combined data
+        TYPE_DATA = {}; COMBINED = null; TYPE_LOAD_STATE = {};
+        loadStreamingPostSummary();
+      }
+    })
+    .catch(() => {});
+}, 120000);
+
+async function loadStreamingPostSummary() {
+  // Re-fetch combined + per-type in parallel
+  const fetches = [
+    fetch('reports/combined.json' + CACHE_BUST()).then(r => r.ok ? r.json() : null),
+    ...PROJECT_TYPES.map(pt =>
+      fetch(`reports/type/${pt}.json` + CACHE_BUST())
+        .then(r => r.ok ? r.json() : null)
+        .then(data => ({ pt, data }))
+    )
+  ];
+  const results = await Promise.allSettled(fetches);
+  if (results[0].status === 'fulfilled' && results[0].value) {
+    COMBINED = results[0].value;
+    TYPE_LOAD_STATE['general'] = 'ready';
+    updateTabStatus('general', 'ready');
+    if (ACTIVE_PT === 'general') renderActiveTab();
+  }
+  for (let i = 1; i < results.length; i++) {
+    if (results[i].status === 'fulfilled' && results[i].value && results[i].value.data) {
+      const { pt, data } = results[i].value;
+      TYPE_DATA[pt] = data;
+      TYPE_LOAD_STATE[pt] = 'ready';
+      updateTabStatus(pt, 'ready');
+      if (ACTIVE_PT === pt) renderActiveTab();
+    }
+  }
+}
 </script>
 </body>
 </html>

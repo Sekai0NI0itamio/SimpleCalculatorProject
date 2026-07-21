@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 
 from utils import load_json, save_json, ensure_dir
 
-PROJECT_TYPES = ["mod", "modpack", "resourcepack", "shader", "datapack", "world"]
+PROJECT_TYPES = ["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"]
 
 
 def load_latest_analysis(data_dir, project_type):
@@ -350,6 +350,66 @@ def _parse_ts(ts_str):
         return None
 
 
+def write_streaming_chunks(report, reports_dir):
+    """Write per-type JSON chunks + a small summary file for streaming frontends.
+
+    Layout:
+      reports/summary.json          — small, totals + project_types index (no project lists)
+      reports/type/{pt}.json        — per-type data (top projects, categories, VL pairs, trending)
+      reports/combined.json         — combined top projects / VL / categories (loaded last)
+      reports/run_history.json      — run history (loaded on demand by History page)
+    """
+    reports_dir = Path(reports_dir)
+    type_dir = reports_dir / "type"
+    ensure_dir(str(type_dir))
+
+    # 1. Summary — tiny file, fetched first by frontend
+    summary = {
+        "generated_at": report.get("generated_at"),
+        "totals": report.get("totals", {}),
+        "project_types": {},
+    }
+    for pt, info in report.get("project_types", {}).items():
+        if not isinstance(info, dict):
+            continue
+        s = info.get("summary", {})
+        summary["project_types"][pt] = {
+            "total_projects": s.get("total_projects", 0),
+            "total_versions": s.get("total_versions", 0),
+            "total_downloads": s.get("total_downloads", 0),
+            "new_downloads_since_baseline": s.get("new_downloads_since_baseline", 0),
+            "analysis_type": info.get("analysis_type", "hourly"),
+            "date": info.get("date", ""),
+        }
+    save_json(str(reports_dir / "summary.json"), summary)
+
+    # 2. Per-type chunks — fetched in parallel by frontend, rendered as they arrive
+    for pt, info in report.get("project_types", {}).items():
+        if not isinstance(info, dict):
+            continue
+        save_json(str(type_dir / f"{pt}.json"), {
+            "project_type": pt,
+            "date": info.get("date", ""),
+            "analysis_type": info.get("analysis_type", "hourly"),
+            "summary": info.get("summary", {}),
+            "category_rankings": info.get("category_rankings", [])[:10],
+            "category_trending": info.get("category_trending", {}),
+            "loader_rankings": info.get("loader_rankings", [])[:10],
+            "top_projects": info.get("top_projects", [])[:20],
+            "top_version_loaders": info.get("top_version_loaders", [])[:200],
+            "all_project_deltas": info.get("all_project_deltas", [])[:500],
+        })
+
+    # 3. Combined rankings — fetched after summary, rendered for General tab
+    save_json(str(reports_dir / "combined.json"), report.get("combined", {}))
+
+    # 4. Run history — fetched only when user opens the History page
+    save_json(str(reports_dir / "run_history.json"), report.get("run_history", []))
+
+    print(f"  Streaming chunks: summary.json ({len(str(summary))} chars), "
+          f"{len(report.get('project_types', {}))} type files, combined.json, run_history.json")
+
+
 def main():
     data_dir = os.environ.get("DATA_DIR", "data")
     report = combine_analyses(data_dir)
@@ -358,6 +418,9 @@ def main():
     ensure_dir(str(reports_dir))
     output_path = reports_dir / "latest_analysis.json"
     save_json(str(output_path), report)
+
+    # Also write streaming chunks (per-type + summary + combined + run_history)
+    write_streaming_chunks(report, reports_dir)
 
     print(f"Report generated at {output_path}")
     print(f"  Total projects: {report['totals']['projects']:,}")

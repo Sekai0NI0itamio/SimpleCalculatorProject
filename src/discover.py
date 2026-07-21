@@ -2,7 +2,7 @@
 """
 Phase 1: Discover
 - Query total project count for a SINGLE project type (mod, modpack,
-  resourcepack, shader, datapack, world)
+  resourcepack, shader, datapack, plugin)
 - Fetch all categories and all loaders from the Modrinth tag API
 - For each (project_type, category) pair, count projects
 - Create partition plan (subdividing by loader if > MAX_OFFSET)
@@ -224,7 +224,7 @@ def main():
     parser = argparse.ArgumentParser(description="Discover projects for a single project type")
     parser.add_argument(
         "--project-type", required=True,
-        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
         help="Project type to discover"
     )
     args = parser.parse_args()
@@ -272,7 +272,7 @@ def main():
     if cat_counts:
         partitions = create_partition_plan(session, project_type, cat_counts)
     else:
-        # No categories for this project type (e.g. datapack, world).
+        # No categories for this project type (e.g. datapack, plugin).
         # Create a single partition that fetches ALL projects of this type.
         print(f"  No categories for {project_type} — creating single bulk partition")
         pages = math.ceil(total_hits / PAGE_SIZE) if total_hits > 0 else 1

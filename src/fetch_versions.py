@@ -238,7 +238,7 @@ def main():
     parser = argparse.ArgumentParser(description="Fetch versions (parallel mode)")
     parser.add_argument(
         "--project-type", required=True,
-        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
         help="Project type"
     )
     group = parser.add_mutually_exclusive_group(required=True)

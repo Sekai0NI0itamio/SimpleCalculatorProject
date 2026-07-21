@@ -80,7 +80,7 @@ def main():
     parser = argparse.ArgumentParser(description="Fetch projects for a partition chunk")
     parser.add_argument(
         "--project-type", required=True,
-        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
         help="Project type to fetch"
     )
     parser.add_argument("--chunk", type=int, required=True, help="Partition index to fetch")

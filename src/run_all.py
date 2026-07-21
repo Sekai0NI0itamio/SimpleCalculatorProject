@@ -34,7 +34,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run the full tracker pipeline for one project type")
     parser.add_argument(
         "--project-type", required=True,
-        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "world"],
+        choices=["mod", "modpack", "resourcepack", "shader", "datapack", "plugin"],
         help="Project type to process"
     )
     parser.add_argument("--version-chunks", type=int, default=10, help="Number of version chunks")

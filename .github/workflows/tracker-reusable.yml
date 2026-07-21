@@ -126,8 +126,8 @@ jobs:
           import json
           d = json.load(open('data/${{ inputs.project_type }}/version_split.json'))
           n = d['num_chunks']
-          # If no chunks, output a single dummy chunk so the matrix isn't empty
-          print(json.dumps(list(range(n)) if n > 0 else [0]))
+          # Empty matrix when n=0 — fetch-versions job is skipped, finalize still runs
+          print(json.dumps(list(range(n))))
           " > /tmp/vmatrix.txt
           echo "version_chunk_list=$(cat /tmp/vmatrix.txt)" >> $GITHUB_OUTPUT
       - name: Upload version chunks
@@ -141,7 +141,7 @@ jobs:
   # ──────────────────────────────────────────────────────────────
   fetch-versions:
     needs: split-versions
-    if: ${{ always() && needs.split-versions.result == 'success' }}
+    if: ${{ always() && needs.split-versions.result == 'success' && needs.split-versions.outputs.version_chunk_list != '[]' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
