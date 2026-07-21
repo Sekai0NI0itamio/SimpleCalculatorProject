@@ -1,118 +1,34 @@
 {
-  "timestamp": "2026-07-21T22-01-57",
+  "timestamp": "2026-07-21T23-49-59",
   "date": "2026-07-21",
   "project_type": "datapack",
   "analysis_type": "sub",
   "snapshots_analyzed": 19,
-  "last_snapshot_time": "2026-07-21T22-00-38",
-  "hours_until_main": 9,
+  "last_snapshot_time": "2026-07-21T23-48-41",
+  "hours_until_main": 8,
   "velocity": {
-    "velocity_per_hour": 232.28,
-    "velocity_2h": 562,
-    "velocity_24h": 2032117,
-    "avg_velocity_24h": 84671.54
+    "velocity_per_hour": -351561000.28,
+    "velocity_2h": -633102768,
+    "velocity_24h": -631068449,
+    "avg_velocity_24h": -26294518.71
   },
   "acceleration": {
-    "acceleration": 174.35,
-    "acceleration_pct": 300.91
+    "acceleration": -351561232.56,
+    "acceleration_pct": -151349265.3
   },
   "predictions": {
-    "predicted_daily_total": 633864811,
-    "predicted_daily_growth": 4972400,
-    "predicted_daily_growth_pct": 0.79,
-    "predicted_daily_growth_weighted": 4972400,
-    "predicted_daily_growth_pct_weighted": 0.79,
+    "predicted_daily_total": -210356149,
+    "predicted_daily_growth": -839248235,
+    "predicted_daily_growth_pct": -133.45,
+    "predicted_daily_growth_weighted": -839248235,
+    "predicted_daily_growth_pct_weighted": -133.45,
     "confidence": "high",
     "confidence_weight": 1.0
   },
-  "top_movers_2h": [
-    {
-      "project_id": "1NnAVIR5",
-      "title": "JJThunder To The Max",
-      "slug": "jjthunder-to-the-max",
-      "previous_downloads": 375931,
-      "current_downloads": 376346,
-      "delta_2h": 415,
-      "velocity": 171.53
-    },
-    {
-      "project_id": "yGZJfKGI",
-      "title": "Incendium Better Combat Addon",
-      "slug": "ibca",
-      "previous_downloads": 2276,
-      "current_downloads": 2362,
-      "delta_2h": 86,
-      "velocity": 35.55
-    },
-    {
-      "project_id": "WpCJKqzS",
-      "title": "Stellarity Better Combat Addon",
-      "slug": "stellarity-better-combat-addon",
-      "previous_downloads": 3518,
-      "current_downloads": 3563,
-      "delta_2h": 45,
-      "velocity": 18.6
-    },
-    {
-      "project_id": "KGTxW9EY",
-      "title": "HigherEnchants",
-      "slug": "higherenchants",
-      "previous_downloads": 3982,
-      "current_downloads": 3995,
-      "delta_2h": 13,
-      "velocity": 5.37
-    },
-    {
-      "project_id": "BT1t1ayp",
-      "title": "LIMBO - Cosmic Horror Dimension",
-      "slug": "limbo-26.2-a-cosmic-horror-dimension",
-      "previous_downloads": 177,
-      "current_downloads": 179,
-      "delta_2h": 2,
-      "velocity": 0.83
-    },
-    {
-      "project_id": "MPjoCFSK",
-      "title": "Powers (Super powers)",
-      "slug": "powers-(super-powers)-v2.03",
-      "previous_downloads": 4385,
-      "current_downloads": 4386,
-      "delta_2h": 1,
-      "velocity": 0.41
-    }
-  ],
+  "top_movers_2h": [],
   "velocity_by_category": [],
-  "anomalies": [
-    {
-      "project_id": "yGZJfKGI",
-      "title": "Incendium Better Combat Addon",
-      "slug": "ibca",
-      "current_velocity": 35.55,
-      "avg_velocity": 3.43,
-      "anomaly_factor": 10.37
-    },
-    {
-      "project_id": "KGTxW9EY",
-      "title": "HigherEnchants",
-      "slug": "higherenchants",
-      "current_velocity": 5.37,
-      "avg_velocity": 0.9,
-      "anomaly_factor": 5.98
-    },
-    {
-      "project_id": "1NnAVIR5",
-      "title": "JJThunder To The Max",
-      "slug": "jjthunder-to-the-max",
-      "current_velocity": 171.53,
-      "avg_velocity": 35.43,
-      "anomaly_factor": 4.84
-    }
-  ],
+  "anomalies": [],
   "hourly_pattern": [
-    {
-      "hour_label": "19-22",
-      "downloads_gained": -2202
-    },
     {
       "hour_label": "22-00",
       "downloads_gained": 64
@@ -152,6 +68,10 @@
     {
       "hour_label": "19-22",
       "downloads_gained": 562
+    },
+    {
+      "hour_label": "22-23",
+      "downloads_gained": -633102768
     }
   ]
 }
