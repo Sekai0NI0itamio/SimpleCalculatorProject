@@ -4,410 +4,1413 @@
   "date": "2026-07-21",
   "baseline_date": "",
   "hours_between": 0,
-  "analysis_type": "hourly",
+  "analysis_type": "simple",
   "analysis_quality": "normal",
-  "actual_hours_between": 1.31,
-  "data_quality": {
-    "snapshot_count": 55,
-    "requested_hours": 2,
-    "actual_hours": 1.31,
-    "baseline_found_in_window": true,
-    "quality": "normal",
-    "confidence": "high",
-    "stale": false,
-    "snapshot_age_hours": 0.42,
-    "baseline_source_count": 1
-  },
-  "downloads_per_hour": 54.76,
+  "actual_hours_between": 2.42,
+  "data_quality": {},
+  "downloads_per_hour": 232.28,
   "summary": {
     "total_projects": 10000,
-    "total_versions": 83711,
-    "total_downloads": 633102206,
+    "total_versions": 83717,
+    "total_downloads": 633102768,
     "baseline_date": "2026-07-21",
     "current_date": "2026-07-21",
     "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 72,
+    "new_downloads_since_baseline": 562,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 72,
-    "growing_projects": 5,
+    "net_download_change": 562,
+    "growing_projects": 6,
     "declining_projects": 0,
-    "downloads_per_hour": 54.76
+    "downloads_per_hour": 232.28
   },
   "category_rankings": [],
   "loader_rankings": [],
   "top_projects": [
     {
-      "project_id": "BpcmlKS9",
-      "title": "Minecraft But Backwards",
-      "slug": "minecraft-backwards",
+      "project_id": "1NnAVIR5",
+      "title": "JJThunder To The Max",
+      "slug": "jjthunder-to-the-max",
       "categories": [
-        "adventure",
-        "cursed",
+        "datapack",
+        "worldgen"
+      ],
+      "current_downloads": 376346,
+      "baseline_downloads": 375931,
+      "delta_downloads": 415,
+      "downloads_per_hour": 171.53,
+      "growth_pct": 0.11
+    },
+    {
+      "project_id": "yGZJfKGI",
+      "title": "Incendium Better Combat Addon",
+      "slug": "ibca",
+      "categories": [
         "datapack",
         "fabric",
         "forge",
         "game-mechanics",
-        "neoforge"
+        "neoforge",
+        "quilt"
       ],
-      "current_downloads": 1742,
-      "baseline_downloads": 1707,
-      "delta_downloads": 35,
-      "downloads_per_hour": 26.62,
-      "growth_pct": 2.05,
-      "momentum_score": 1.22,
-      "is_anomaly": true,
-      "anomaly_factor": 16.63
+      "current_downloads": 2362,
+      "baseline_downloads": 2276,
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "growth_pct": 3.78
     },
     {
-      "project_id": "YOtjK9XQ",
-      "title": "Skinful (hide / change your armor!)",
-      "slug": "skinful",
-      "categories": [
-        "datapack",
-        "decoration",
-        "equipment",
-        "game-mechanics",
-        "social",
-        "utility"
-      ],
-      "current_downloads": 3367,
-      "baseline_downloads": 3354,
-      "delta_downloads": 13,
-      "downloads_per_hour": 9.89,
-      "growth_pct": 0.39,
-      "momentum_score": 1.89,
-      "is_anomaly": false,
-      "anomaly_factor": null
-    },
-    {
-      "project_id": "aRErXHku",
-      "title": "Fullbright Datapack",
-      "slug": "fullbright-trigger",
-      "categories": [
-        "datapack",
-        "utility"
-      ],
-      "current_downloads": 18,
-      "baseline_downloads": 7,
-      "delta_downloads": 11,
-      "downloads_per_hour": 8.37,
-      "growth_pct": 157.14,
-      "momentum_score": 12.67,
-      "is_anomaly": true,
-      "anomaly_factor": 90.67
-    },
-    {
-      "project_id": "ChkHwAdr",
-      "title": "Jetpack Boots",
-      "slug": "jetpack-boots",
+      "project_id": "WpCJKqzS",
+      "title": "Stellarity Better Combat Addon",
+      "slug": "stellarity-better-combat-addon",
       "categories": [
         "datapack",
         "fabric",
+        "forge",
+        "game-mechanics",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 3563,
+      "baseline_downloads": 3518,
+      "delta_downloads": 45,
+      "downloads_per_hour": 18.6,
+      "growth_pct": 1.28
+    },
+    {
+      "project_id": "KGTxW9EY",
+      "title": "HigherEnchants",
+      "slug": "higherenchants",
+      "categories": [
+        "adventure",
+        "datapack",
+        "equipment",
+        "game-mechanics",
+        "magic"
+      ],
+      "current_downloads": 3995,
+      "baseline_downloads": 3982,
+      "delta_downloads": 13,
+      "downloads_per_hour": 5.37,
+      "growth_pct": 0.33
+    },
+    {
+      "project_id": "BT1t1ayp",
+      "title": "LIMBO - Cosmic Horror Dimension",
+      "slug": "limbo-26.2-a-cosmic-horror-dimension",
+      "categories": [
+        "adventure",
+        "datapack",
+        "equipment",
+        "magic",
+        "storage",
+        "transportation",
+        "utility",
+        "worldgen"
+      ],
+      "current_downloads": 179,
+      "baseline_downloads": 177,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.83,
+      "growth_pct": 1.13
+    },
+    {
+      "project_id": "MPjoCFSK",
+      "title": "Powers (Super powers)",
+      "slug": "powers-(super-powers)-v2.03",
+      "categories": [
+        "adventure",
+        "datapack",
+        "equipment",
+        "fabric",
+        "food",
         "forge",
         "game-mechanics",
         "magic",
         "neoforge",
-        "quilt",
-        "transportation",
-        "utility"
+        "quilt"
       ],
-      "current_downloads": 29,
-      "baseline_downloads": 19,
-      "delta_downloads": 10,
-      "downloads_per_hour": 7.61,
-      "growth_pct": 52.63,
-      "momentum_score": 13.56,
-      "is_anomaly": true,
-      "anomaly_factor": 5.2
-    },
-    {
-      "project_id": "RimELHmX",
-      "title": "[NRGD]NRG Core datapack",
-      "slug": "nrgd",
-      "categories": [
-        "datapack",
-        "game-mechanics",
-        "management",
-        "minigame",
-        "utility"
-      ],
-      "current_downloads": 1734,
-      "baseline_downloads": 1731,
-      "delta_downloads": 3,
-      "downloads_per_hour": 2.28,
-      "growth_pct": 0.17,
-      "momentum_score": 0.96,
-      "is_anomaly": false,
-      "anomaly_factor": null
+      "current_downloads": 4386,
+      "baseline_downloads": 4385,
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.41,
+      "growth_pct": 0.02
     }
   ],
   "declining_projects": [],
   "top_version_loaders": [
     {
       "game_version": "26.2",
-      "loader": "fabric",
-      "delta_downloads": 41,
-      "downloads_per_hour": 31.19,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.2",
-      "loader": "forge",
-      "delta_downloads": 41,
-      "downloads_per_hour": 31.19,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.2",
-      "loader": "neoforge",
-      "delta_downloads": 41,
-      "downloads_per_hour": 31.19,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1",
-      "loader": "fabric",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "fabric",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "fabric",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1",
-      "loader": "forge",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "forge",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "forge",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1",
-      "loader": "neoforge",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "neoforge",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "neoforge",
-      "delta_downloads": 39,
-      "downloads_per_hour": 29.66,
-      "project_count": 2,
-      "top_project_id": "BpcmlKS9",
-      "top_project_title": "Minecraft But Backwards",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "26.2",
       "loader": "datapack",
-      "delta_downloads": 24,
-      "downloads_per_hour": 18.25,
+      "delta_downloads": 254,
+      "downloads_per_hour": 104.98,
+      "project_count": 4,
+      "top_project_id": "1NnAVIR5",
+      "top_project_title": "JJThunder To The Max",
+      "top_project_delta": 240
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "fabric",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "fabric",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "fabric",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "forge",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "forge",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "forge",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "neoforge",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "neoforge",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "neoforge",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "quilt",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "quilt",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "quilt",
+      "delta_downloads": 130,
+      "downloads_per_hour": 53.73,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
       "project_count": 2,
-      "top_project_id": "YOtjK9XQ",
-      "top_project_title": "Skinful (hide / change your armor!)",
-      "top_project_delta": 13
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
       "game_version": "1.21.9",
-      "loader": "datapack",
-      "delta_downloads": 13,
-      "downloads_per_hour": 9.89,
-      "project_count": 1,
-      "top_project_id": "YOtjK9XQ",
-      "top_project_title": "Skinful (hide / change your armor!)",
-      "top_project_delta": 13
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
       "game_version": "1.21.10",
-      "loader": "datapack",
-      "delta_downloads": 13,
-      "downloads_per_hour": 9.89,
-      "project_count": 1,
-      "top_project_id": "YOtjK9XQ",
-      "top_project_title": "Skinful (hide / change your armor!)",
-      "top_project_delta": 13
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1",
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.2",
+      "loader": "fabric",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.2",
+      "loader": "forge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.2",
+      "loader": "neoforge",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.2",
+      "loader": "quilt",
+      "delta_downloads": 129,
+      "downloads_per_hour": 53.32,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
       "game_version": "1.21.11",
       "loader": "datapack",
-      "delta_downloads": 13,
-      "downloads_per_hour": 9.89,
-      "project_count": 1,
-      "top_project_id": "YOtjK9XQ",
-      "top_project_title": "Skinful (hide / change your armor!)",
-      "top_project_delta": 13
+      "delta_downloads": 115,
+      "downloads_per_hour": 47.53,
+      "project_count": 3,
+      "top_project_id": "1NnAVIR5",
+      "top_project_title": "JJThunder To The Max",
+      "top_project_delta": 110
     },
     {
-      "game_version": "26.1",
-      "loader": "datapack",
-      "delta_downloads": 13,
-      "downloads_per_hour": 9.89,
-      "project_count": 1,
-      "top_project_id": "YOtjK9XQ",
-      "top_project_title": "Skinful (hide / change your armor!)",
-      "top_project_delta": 13
+      "game_version": "1.21.4",
+      "loader": "fabric",
+      "delta_downloads": 87,
+      "downloads_per_hour": 35.96,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
-      "game_version": "26.1.1",
-      "loader": "datapack",
-      "delta_downloads": 13,
-      "downloads_per_hour": 9.89,
-      "project_count": 1,
-      "top_project_id": "YOtjK9XQ",
-      "top_project_title": "Skinful (hide / change your armor!)",
-      "top_project_delta": 13
+      "game_version": "1.21.4",
+      "loader": "forge",
+      "delta_downloads": 87,
+      "downloads_per_hour": 35.96,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
-      "game_version": "26.1.2",
-      "loader": "datapack",
-      "delta_downloads": 13,
-      "downloads_per_hour": 9.89,
-      "project_count": 1,
-      "top_project_id": "YOtjK9XQ",
-      "top_project_title": "Skinful (hide / change your armor!)",
-      "top_project_delta": 13
+      "game_version": "1.21.4",
+      "loader": "neoforge",
+      "delta_downloads": 87,
+      "downloads_per_hour": 35.96,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
-      "game_version": "26.2",
+      "game_version": "1.21.4",
       "loader": "quilt",
-      "delta_downloads": 6,
-      "downloads_per_hour": 4.56,
-      "project_count": 1,
-      "top_project_id": "ChkHwAdr",
-      "top_project_title": "Jetpack Boots",
-      "top_project_delta": 6
+      "delta_downloads": 87,
+      "downloads_per_hour": 35.96,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
-      "game_version": "26.1",
-      "loader": "quilt",
-      "delta_downloads": 4,
-      "downloads_per_hour": 3.04,
+      "game_version": "1.18.2",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
       "project_count": 1,
-      "top_project_id": "ChkHwAdr",
-      "top_project_title": "Jetpack Boots",
-      "top_project_delta": 4
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
-      "game_version": "26.1.1",
-      "loader": "quilt",
-      "delta_downloads": 4,
-      "downloads_per_hour": 3.04,
+      "game_version": "1.19",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
       "project_count": 1,
-      "top_project_id": "ChkHwAdr",
-      "top_project_title": "Jetpack Boots",
-      "top_project_delta": 4
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
-      "game_version": "26.1.2",
-      "loader": "quilt",
-      "delta_downloads": 4,
-      "downloads_per_hour": 3.04,
+      "game_version": "1.19.1",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
       "project_count": 1,
-      "top_project_id": "ChkHwAdr",
-      "top_project_title": "Jetpack Boots",
-      "top_project_delta": 4
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
       "game_version": "1.20",
-      "loader": "datapack",
-      "delta_downloads": 3,
-      "downloads_per_hour": 2.28,
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
       "project_count": 1,
-      "top_project_id": "RimELHmX",
-      "top_project_title": "[NRGD]NRG Core datapack",
-      "top_project_delta": 3
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
     },
     {
       "game_version": "1.20.1",
-      "loader": "datapack",
-      "delta_downloads": 3,
-      "downloads_per_hour": 2.28,
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
       "project_count": 1,
-      "top_project_id": "RimELHmX",
-      "top_project_title": "[NRGD]NRG Core datapack",
-      "top_project_delta": 3
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "fabric",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "forge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "neoforge",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "quilt",
+      "delta_downloads": 86,
+      "downloads_per_hour": 35.55,
+      "project_count": 1,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 86
+    },
+    {
+      "game_version": "26.1",
+      "loader": "datapack",
+      "delta_downloads": 70,
+      "downloads_per_hour": 28.93,
+      "project_count": 3,
+      "top_project_id": "1NnAVIR5",
+      "top_project_title": "JJThunder To The Max",
+      "top_project_delta": 65
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "datapack",
+      "delta_downloads": 70,
+      "downloads_per_hour": 28.93,
+      "project_count": 3,
+      "top_project_id": "1NnAVIR5",
+      "top_project_title": "JJThunder To The Max",
+      "top_project_delta": 65
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "datapack",
+      "delta_downloads": 70,
+      "downloads_per_hour": 28.93,
+      "project_count": 3,
+      "top_project_id": "1NnAVIR5",
+      "top_project_title": "JJThunder To The Max",
+      "top_project_delta": 65
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "datapack",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.83,
+      "project_count": 1,
+      "top_project_id": "WpCJKqzS",
+      "top_project_title": "Stellarity Better Combat Addon",
+      "top_project_delta": 2
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "datapack",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.83,
+      "project_count": 1,
+      "top_project_id": "WpCJKqzS",
+      "top_project_title": "Stellarity Better Combat Addon",
+      "top_project_delta": 2
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "datapack",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.83,
+      "project_count": 1,
+      "top_project_id": "WpCJKqzS",
+      "top_project_title": "Stellarity Better Combat Addon",
+      "top_project_delta": 2
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "datapack",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.83,
+      "project_count": 1,
+      "top_project_id": "WpCJKqzS",
+      "top_project_title": "Stellarity Better Combat Addon",
+      "top_project_delta": 2
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "datapack",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.83,
+      "project_count": 1,
+      "top_project_id": "WpCJKqzS",
+      "top_project_title": "Stellarity Better Combat Addon",
+      "top_project_delta": 2
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "datapack",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.83,
+      "project_count": 1,
+      "top_project_id": "WpCJKqzS",
+      "top_project_title": "Stellarity Better Combat Addon",
+      "top_project_delta": 2
     }
   ],
   "all_project_deltas": [],
   "project_velocity_history": {
-    "aRErXHku": {
-      "title": "Fullbright Datapack",
-      "slug": "fullbright-trigger",
-      "history": [
-        {
-          "timestamp": "2026-07-21T19-36-39",
-          "downloads": 18,
-          "downloads_per_hour": 8.37,
-          "momentum_score": 31.67
-        }
-      ]
-    },
     "dlx4kLtI": {
       "title": "Supplementaries Compat",
       "slug": "supplementaries-compat",
@@ -483,6 +1486,30 @@
           "downloads": 29,
           "downloads_per_hour": 7.61,
           "momentum_score": 17.39
+        },
+        {
+          "timestamp": "2026-07-21T20-01-01",
+          "downloads": 29,
+          "downloads_per_hour": 7.61,
+          "momentum_score": 13.56
+        }
+      ]
+    },
+    "aRErXHku": {
+      "title": "Fullbright Datapack",
+      "slug": "fullbright-trigger",
+      "history": [
+        {
+          "timestamp": "2026-07-21T19-36-39",
+          "downloads": 18,
+          "downloads_per_hour": 8.37,
+          "momentum_score": 31.67
+        },
+        {
+          "timestamp": "2026-07-21T20-01-01",
+          "downloads": 18,
+          "downloads_per_hour": 8.37,
+          "momentum_score": 12.67
         }
       ]
     },
@@ -4147,198 +5174,115 @@
       ]
     }
   },
-  "trend_history": [
-    {
-      "date": "2026-07-15",
-      "timestamp": "2026-07-15T09-47-22",
-      "total_downloads": 621307864,
-      "new_downloads": 621307864,
-      "new_projects": 10000,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-15",
-      "timestamp": "2026-07-15T12-16-52",
-      "total_downloads": 621485244,
-      "new_downloads": 177380,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-16",
-      "timestamp": "2026-07-16T07-01-49",
-      "total_downloads": 623036888,
-      "new_downloads": 1551644,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-16",
-      "timestamp": "2026-07-16T23-47-34",
-      "total_downloads": 624479969,
-      "new_downloads": 1443081,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-17",
-      "timestamp": "2026-07-17T01-23-21",
-      "total_downloads": 624627574,
-      "new_downloads": 147605,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-17",
-      "timestamp": "2026-07-17T23-27-16",
-      "total_downloads": 626445270,
-      "new_downloads": 1817696,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-18",
-      "timestamp": "2026-07-18T01-40-50",
-      "total_downloads": 626578808,
-      "new_downloads": 133538,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-18",
-      "timestamp": "2026-07-18T23-18-36",
-      "total_downloads": 628292364,
-      "new_downloads": 1713556,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-19",
-      "timestamp": "2026-07-19T01-19-45",
-      "total_downloads": 628452552,
-      "new_downloads": 160188,
-      "new_projects": 8,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-19",
-      "timestamp": "2026-07-19T23-05-17",
-      "total_downloads": 628892411,
-      "new_downloads": 439859,
-      "new_projects": 2,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-20",
-      "timestamp": "2026-07-20T01-09-04",
-      "total_downloads": 628892086,
-      "new_downloads": 0,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-20",
-      "timestamp": "2026-07-20T22-15-26",
-      "total_downloads": 631068449,
-      "new_downloads": 2176363,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-21",
-      "timestamp": "2026-07-21T00-13-07",
-      "total_downloads": 631068513,
-      "new_downloads": 64,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-21",
-      "timestamp": "2026-07-21T19-35-28",
-      "total_downloads": 633102206,
-      "new_downloads": 2033693,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    }
-  ],
+  "trend_history": [],
   "predictive": {
-    "timestamp": "2026-07-21T19-37-31",
+    "timestamp": "2026-07-21T22-01-57",
     "date": "2026-07-21",
     "project_type": "datapack",
     "analysis_type": "sub",
     "snapshots_analyzed": 19,
-    "last_snapshot_time": "2026-07-21T19-35-28",
-    "hours_until_main": 12,
+    "last_snapshot_time": "2026-07-21T22-00-38",
+    "hours_until_main": 9,
     "velocity": {
-      "velocity_per_hour": 57.94,
-      "velocity_2h": 52,
-      "velocity_24h": 2031555,
-      "avg_velocity_24h": 84648.12
+      "velocity_per_hour": 232.28,
+      "velocity_2h": 562,
+      "velocity_24h": 2032117,
+      "avg_velocity_24h": 84671.54
     },
     "acceleration": {
-      "acceleration": 10.0,
-      "acceleration_pct": 20.87
+      "acceleration": 174.35,
+      "acceleration_pct": 300.91
     },
     "predictions": {
-      "predicted_daily_total": 634117983,
-      "predicted_daily_growth": 5225604,
-      "predicted_daily_growth_pct": 0.83,
-      "confidence": "high"
+      "predicted_daily_total": 633864811,
+      "predicted_daily_growth": 4972400,
+      "predicted_daily_growth_pct": 0.79,
+      "predicted_daily_growth_weighted": 4972400,
+      "predicted_daily_growth_pct_weighted": 0.79,
+      "confidence": "high",
+      "confidence_weight": 1.0
     },
     "top_movers_2h": [
       {
-        "project_id": "BpcmlKS9",
-        "title": "Minecraft But Backwards",
-        "slug": "minecraft-backwards",
-        "previous_downloads": 1707,
-        "current_downloads": 1742,
-        "delta_2h": 35,
-        "velocity": 39.0
+        "project_id": "1NnAVIR5",
+        "title": "JJThunder To The Max",
+        "slug": "jjthunder-to-the-max",
+        "previous_downloads": 375931,
+        "current_downloads": 376346,
+        "delta_2h": 415,
+        "velocity": 171.53
       },
       {
-        "project_id": "aRErXHku",
-        "title": "Fullbright Datapack",
-        "slug": "fullbright-trigger",
-        "previous_downloads": 7,
-        "current_downloads": 18,
-        "delta_2h": 11,
-        "velocity": 12.26
+        "project_id": "yGZJfKGI",
+        "title": "Incendium Better Combat Addon",
+        "slug": "ibca",
+        "previous_downloads": 2276,
+        "current_downloads": 2362,
+        "delta_2h": 86,
+        "velocity": 35.55
       },
       {
-        "project_id": "ChkHwAdr",
-        "title": "Jetpack Boots",
-        "slug": "jetpack-boots",
-        "previous_downloads": 23,
-        "current_downloads": 29,
-        "delta_2h": 6,
-        "velocity": 6.69
+        "project_id": "WpCJKqzS",
+        "title": "Stellarity Better Combat Addon",
+        "slug": "stellarity-better-combat-addon",
+        "previous_downloads": 3518,
+        "current_downloads": 3563,
+        "delta_2h": 45,
+        "velocity": 18.6
+      },
+      {
+        "project_id": "KGTxW9EY",
+        "title": "HigherEnchants",
+        "slug": "higherenchants",
+        "previous_downloads": 3982,
+        "current_downloads": 3995,
+        "delta_2h": 13,
+        "velocity": 5.37
+      },
+      {
+        "project_id": "BT1t1ayp",
+        "title": "LIMBO - Cosmic Horror Dimension",
+        "slug": "limbo-26.2-a-cosmic-horror-dimension",
+        "previous_downloads": 177,
+        "current_downloads": 179,
+        "delta_2h": 2,
+        "velocity": 0.83
+      },
+      {
+        "project_id": "MPjoCFSK",
+        "title": "Powers (Super powers)",
+        "slug": "powers-(super-powers)-v2.03",
+        "previous_downloads": 4385,
+        "current_downloads": 4386,
+        "delta_2h": 1,
+        "velocity": 0.41
       }
     ],
     "velocity_by_category": [],
     "anomalies": [
       {
-        "project_id": "aRErXHku",
-        "title": "Fullbright Datapack",
-        "slug": "fullbright-trigger",
-        "current_velocity": 12.26,
-        "avg_velocity": 0.14,
-        "anomaly_factor": 90.67
+        "project_id": "yGZJfKGI",
+        "title": "Incendium Better Combat Addon",
+        "slug": "ibca",
+        "current_velocity": 35.55,
+        "avg_velocity": 3.43,
+        "anomaly_factor": 10.37
       },
       {
-        "project_id": "BpcmlKS9",
-        "title": "Minecraft But Backwards",
-        "slug": "minecraft-backwards",
-        "current_velocity": 39.0,
-        "avg_velocity": 2.34,
-        "anomaly_factor": 16.63
+        "project_id": "KGTxW9EY",
+        "title": "HigherEnchants",
+        "slug": "higherenchants",
+        "current_velocity": 5.37,
+        "avg_velocity": 0.9,
+        "anomaly_factor": 5.98
       },
       {
-        "project_id": "ChkHwAdr",
-        "title": "Jetpack Boots",
-        "slug": "jetpack-boots",
-        "current_velocity": 6.69,
-        "avg_velocity": 1.29,
-        "anomaly_factor": 5.2
+        "project_id": "1NnAVIR5",
+        "title": "JJThunder To The Max",
+        "slug": "jjthunder-to-the-max",
+        "current_velocity": 171.53,
+        "avg_velocity": 35.43,
+        "anomaly_factor": 4.84
       }
     ],
     "hourly_pattern": [
@@ -4381,6 +5325,10 @@
       {
         "hour_label": "18-19",
         "downloads_gained": 52
+      },
+      {
+        "hour_label": "19-22",
+        "downloads_gained": 562
       }
     ]
   },

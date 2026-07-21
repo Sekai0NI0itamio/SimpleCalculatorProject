@@ -4,74 +4,48 @@
   "date": "2026-07-21",
   "baseline_date": "",
   "hours_between": 0,
-  "analysis_type": "hourly",
+  "analysis_type": "simple",
   "analysis_quality": "normal",
-  "actual_hours_between": 1.16,
-  "data_quality": {
-    "snapshot_count": 55,
-    "requested_hours": 2,
-    "actual_hours": 1.16,
-    "baseline_found_in_window": true,
-    "quality": "normal",
-    "confidence": "high",
-    "stale": false,
-    "snapshot_age_hours": 0.58,
-    "baseline_source_count": 1
-  },
-  "downloads_per_hour": 79.29,
+  "actual_hours_between": 2.64,
+  "data_quality": {},
+  "downloads_per_hour": 56.74,
   "summary": {
     "total_projects": 648,
-    "total_versions": 3142,
-    "total_downloads": 280360102,
+    "total_versions": 3143,
+    "total_downloads": 280360252,
     "baseline_date": "2026-07-21",
     "current_date": "2026-07-21",
     "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 92,
+    "new_downloads_since_baseline": 150,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 92,
-    "growing_projects": 2,
+    "net_download_change": 150,
+    "growing_projects": 4,
     "declining_projects": 0,
-    "downloads_per_hour": 79.29
+    "downloads_per_hour": 56.74
   },
   "category_rankings": [
     {
-      "category": "vanilla-like",
-      "projects": 367,
-      "total_downloads": 104155040,
-      "new_downloads": 68,
-      "downloads_per_hour": 58.61,
-      "growth_pct": 0.0
-    },
-    {
       "category": "semi-realistic",
       "projects": 168,
-      "total_downloads": 118701756,
-      "new_downloads": 68,
-      "downloads_per_hour": 58.61,
-      "growth_pct": 0.0
-    },
-    {
-      "category": "realistic",
-      "projects": 100,
-      "total_downloads": 13634830,
-      "new_downloads": 68,
-      "downloads_per_hour": 58.61,
+      "total_downloads": 118701863,
+      "new_downloads": 107,
+      "downloads_per_hour": 40.47,
       "growth_pct": 0.0
     },
     {
       "category": "fantasy",
       "projects": 146,
-      "total_downloads": 185706053,
-      "new_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "total_downloads": 185706156,
+      "new_downloads": 103,
+      "downloads_per_hour": 38.96,
       "growth_pct": 0.0
     },
     {
-      "category": "cursed",
-      "projects": 147,
-      "total_downloads": 4463839,
-      "new_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "category": "vanilla-like",
+      "projects": 367,
+      "total_downloads": 104155083,
+      "new_downloads": 43,
+      "downloads_per_hour": 16.27,
       "growth_pct": 0.0
     },
     {
@@ -81,199 +55,434 @@
       "new_downloads": 0,
       "downloads_per_hour": 0.0,
       "growth_pct": 0.0
+    },
+    {
+      "category": "realistic",
+      "projects": 100,
+      "total_downloads": 13634830,
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "cursed",
+      "projects": 147,
+      "total_downloads": 4463839,
+      "new_downloads": 0,
+      "downloads_per_hour": 0.0,
+      "growth_pct": 0.0
     }
   ],
   "loader_rankings": [],
   "top_projects": [
     {
-      "project_id": "buFZXJqT",
-      "title": "Potato+",
-      "slug": "potatoshaders",
+      "project_id": "jgYsD3FV",
+      "title": "Unbound Visual +",
+      "slug": "unbound-visual-+",
       "categories": [
         "atmosphere",
-        "colored-lighting",
+        "fantasy",
+        "high",
         "iris",
-        "low",
-        "optifine",
-        "potato",
-        "realistic",
-        "semi-realistic",
+        "medium",
+        "path-tracing",
+        "pbr",
+        "reflections",
+        "semi-realistic"
+      ],
+      "current_downloads": 3852,
+      "baseline_downloads": 3749,
+      "delta_downloads": 103,
+      "downloads_per_hour": 38.96,
+      "growth_pct": 2.75
+    },
+    {
+      "project_id": "pWeVnXDz",
+      "title": "Light-Shadow",
+      "slug": "light-shadow",
+      "categories": [
+        "colored-lighting",
+        "high",
+        "iris",
+        "path-tracing",
+        "pbr",
+        "reflections",
         "shadows",
         "vanilla-like"
       ],
-      "current_downloads": 93,
-      "baseline_downloads": 25,
-      "delta_downloads": 68,
-      "downloads_per_hour": 58.61,
-      "growth_pct": 272.0,
-      "momentum_score": 13.17,
-      "is_anomaly": true,
-      "anomaly_factor": 161.0
+      "current_downloads": 1493,
+      "baseline_downloads": 1458,
+      "delta_downloads": 35,
+      "downloads_per_hour": 13.24,
+      "growth_pct": 2.4
     },
     {
-      "project_id": "fkH4TBvh",
-      "title": "RetroPixel",
-      "slug": "retroshader",
+      "project_id": "pS7MkCz8",
+      "title": "Plasma Shaders",
+      "slug": "plasma-shaders",
       "categories": [
         "atmosphere",
-        "cursed",
-        "fantasy",
+        "foliage",
+        "iris",
+        "medium",
+        "pbr",
+        "vanilla-like"
+      ],
+      "current_downloads": 10,
+      "baseline_downloads": 2,
+      "delta_downloads": 8,
+      "downloads_per_hour": 3.03,
+      "growth_pct": 400.0
+    },
+    {
+      "project_id": "3JNGTF4t",
+      "title": "AquaVision-Dynamic Transparent Water",
+      "slug": "aqua-vision",
+      "categories": [
         "iris",
         "optifine",
-        "path-tracing",
-        "potato"
+        "potato",
+        "semi-realistic",
+        "vanilla"
       ],
-      "current_downloads": 42,
-      "baseline_downloads": 18,
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
-      "growth_pct": 133.33,
-      "momentum_score": 12.88,
-      "is_anomaly": true,
-      "anomaly_factor": 78.92
+      "current_downloads": 2492,
+      "baseline_downloads": 2488,
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "growth_pct": 0.16
     }
   ],
   "declining_projects": [],
   "top_version_loaders": [
     {
-      "game_version": "1.21.11",
+      "game_version": "26.2",
       "loader": "iris",
-      "delta_downloads": 92,
-      "downloads_per_hour": 79.29,
+      "delta_downloads": 138,
+      "downloads_per_hour": 52.2,
       "project_count": 2,
-      "top_project_id": "buFZXJqT",
-      "top_project_title": "Potato+",
-      "top_project_delta": 68
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "optifine",
-      "delta_downloads": 92,
-      "downloads_per_hour": 79.29,
-      "project_count": 2,
-      "top_project_id": "buFZXJqT",
-      "top_project_title": "Potato+",
-      "top_project_delta": 68
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 103
     },
     {
       "game_version": "1.21.9",
       "loader": "iris",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "delta_downloads": 103,
+      "downloads_per_hour": 38.96,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 103
     },
     {
       "game_version": "1.21.10",
       "loader": "iris",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "delta_downloads": 103,
+      "downloads_per_hour": 38.96,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 103
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "iris",
+      "delta_downloads": 103,
+      "downloads_per_hour": 38.96,
+      "project_count": 1,
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 103
     },
     {
       "game_version": "26.1",
       "loader": "iris",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "delta_downloads": 103,
+      "downloads_per_hour": 38.96,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 103
     },
     {
       "game_version": "26.1.1",
       "loader": "iris",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "delta_downloads": 103,
+      "downloads_per_hour": 38.96,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 103
     },
     {
       "game_version": "26.1.2",
       "loader": "iris",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "delta_downloads": 103,
+      "downloads_per_hour": 38.96,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 103
     },
     {
-      "game_version": "26.2",
+      "game_version": "1.20.6",
       "loader": "iris",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
-      "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "delta_downloads": 12,
+      "downloads_per_hour": 4.54,
+      "project_count": 2,
+      "top_project_id": "pS7MkCz8",
+      "top_project_title": "Plasma Shaders",
+      "top_project_delta": 8
     },
     {
-      "game_version": "1.21.9",
-      "loader": "optifine",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "game_version": "1.19",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
     },
     {
-      "game_version": "1.21.10",
-      "loader": "optifine",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "game_version": "1.19.1",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
     },
     {
-      "game_version": "26.1",
-      "loader": "optifine",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "game_version": "1.19.2",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
     },
     {
-      "game_version": "26.1.1",
-      "loader": "optifine",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "game_version": "1.19.3",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
     },
     {
-      "game_version": "26.1.2",
-      "loader": "optifine",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "game_version": "1.19.4",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
     },
     {
-      "game_version": "26.2",
-      "loader": "optifine",
-      "delta_downloads": 24,
-      "downloads_per_hour": 20.68,
+      "game_version": "1.20",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
       "project_count": 1,
-      "top_project_id": "fkH4TBvh",
-      "top_project_title": "RetroPixel",
-      "top_project_delta": 24
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.21",
+      "loader": "iris",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.19",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
+    },
+    {
+      "game_version": "1.21",
+      "loader": "optifine",
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.51,
+      "project_count": 1,
+      "top_project_id": "3JNGTF4t",
+      "top_project_title": "AquaVision-Dynamic Transparent Water",
+      "top_project_delta": 4
     }
   ],
   "all_project_deltas": [],
@@ -302,6 +511,12 @@
         },
         {
           "timestamp": "2026-07-21T19-57-53",
+          "downloads": 93,
+          "downloads_per_hour": 58.61,
+          "momentum_score": 13.17
+        },
+        {
+          "timestamp": "2026-07-21T20-00-51",
           "downloads": 93,
           "downloads_per_hour": 58.61,
           "momentum_score": 13.17
@@ -335,6 +550,12 @@
           "downloads": 42,
           "downloads_per_hour": 20.68,
           "momentum_score": 12.88
+        },
+        {
+          "timestamp": "2026-07-21T20-00-51",
+          "downloads": 42,
+          "downloads_per_hour": 20.68,
+          "momentum_score": 12.88
         }
       ]
     },
@@ -342,18 +563,6 @@
       "title": "Complementary Shaders - Reimagined",
       "slug": "complementary-reimagined",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 57227566,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 57227566,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 57227566,
@@ -415,18 +624,6 @@
       "slug": "complementary-unbound",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 37098377,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 37098377,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 37098377,
           "downloads_per_hour": 0,
@@ -486,18 +683,6 @@
       "title": "Photon Shaders",
       "slug": "photon-shader",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 22153906,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 22153906,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 22153906,
@@ -559,18 +744,6 @@
       "slug": "bsl-shaders",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 25669804,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 25669804,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 25669804,
           "downloads_per_hour": 0,
@@ -631,18 +804,6 @@
       "slug": "solas-shader",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 14217616,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 14217616,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 14217616,
           "downloads_per_hour": 0,
@@ -693,78 +854,6 @@
         {
           "timestamp": "2026-07-21T18-41-32",
           "downloads": 14267078,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "ZvMtQlho": {
-      "title": "Bliss Shaders",
-      "slug": "bliss-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 12054602,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 12054602,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 12054602,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 12054602,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 12054602,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 12054602,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 12094197,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 12094197,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 12094197,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 12094197,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 12094197,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -775,18 +864,6 @@
       "slug": "makeup-ultra-fast-shaders",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 10614048,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 10614048,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 10614048,
           "downloads_per_hour": 0,
@@ -842,22 +919,70 @@
         }
       ]
     },
+    "ZvMtQlho": {
+      "title": "Bliss Shaders",
+      "slug": "bliss-shader",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 12054602,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 12054602,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 12054602,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 12054602,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 12094197,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 12094197,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 12094197,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 12094197,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 12094197,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
     "kmwfVOoi": {
       "title": "Rethinking Voxels",
       "slug": "rethinking-voxels",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 11313435,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 11313435,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 11313435,
@@ -919,18 +1044,6 @@
       "slug": "mellow",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 4762661,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 4762661,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 4762661,
           "downloads_per_hour": 0,
@@ -990,18 +1103,6 @@
       "title": "Insanity Shader",
       "slug": "insanity-shader",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 6212614,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 6212614,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 6212614,
@@ -1063,18 +1164,6 @@
       "slug": "super-duper-vanilla",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 7015299,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 7015299,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 7015299,
           "downloads_per_hour": 0,
@@ -1125,78 +1214,6 @@
         {
           "timestamp": "2026-07-21T18-41-32",
           "downloads": 7030430,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "DoODk4HD": {
-      "title": "I Like Vanilla",
-      "slug": "i-like-vanilla",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1494664,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1494664,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 1494664,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 1494664,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 1494664,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 1494664,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 1508877,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 1508877,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 1508877,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1508877,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1508877,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -1206,18 +1223,6 @@
       "title": "Miniature Shader",
       "slug": "miniature-shader",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 3737565,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 3737565,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 3737565,
@@ -1279,18 +1284,6 @@
       "slug": "astralex",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 4010347,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 4010347,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 4010347,
           "downloads_per_hour": 0,
@@ -1346,22 +1339,70 @@
         }
       ]
     },
+    "DoODk4HD": {
+      "title": "I Like Vanilla",
+      "slug": "i-like-vanilla",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 1494664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 1494664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 1494664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 1494664,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 1508877,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 1508877,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 1508877,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 1508877,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 1508877,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
     "WX4iF5Cj": {
       "title": "Potato Shaders",
       "slug": "potato-shaders",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 2404697,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 2404697,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 2404697,
@@ -1423,18 +1464,6 @@
       "slug": "visual-vibrance",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1790611,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1790611,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1790611,
           "downloads_per_hour": 0,
@@ -1485,78 +1514,6 @@
         {
           "timestamp": "2026-07-21T18-41-32",
           "downloads": 1800307,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "xEItlMn3": {
-      "title": "Nostalgia Shader",
-      "slug": "nostalgia-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 3746033,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 3746033,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 3746033,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 3746033,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 3746033,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 3746033,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 3755576,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 3755576,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 3755576,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 3755576,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 3755576,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -1566,18 +1523,6 @@
       "title": "Kappa Shader",
       "slug": "kappa-shader",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 2697898,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 2697898,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 2697898,
@@ -1639,18 +1584,6 @@
       "slug": "spooklementary",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 2520183,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 2520183,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 2520183,
           "downloads_per_hour": 0,
@@ -1706,22 +1639,70 @@
         }
       ]
     },
+    "xEItlMn3": {
+      "title": "Nostalgia Shader",
+      "slug": "nostalgia-shader",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 3746033,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 3746033,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 3746033,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 3746033,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 3755576,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 3755576,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 3755576,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 3755576,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 3755576,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
     "l6di6hYz": {
       "title": "Fantasy Shaders Reimagined",
       "slug": "fantasy-shaders",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 821453,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 821453,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 821453,
@@ -1783,18 +1764,6 @@
       "slug": "vanilla-plus-shader",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1706722,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1706722,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1706722,
           "downloads_per_hour": 0,
@@ -1845,78 +1814,6 @@
         {
           "timestamp": "2026-07-21T18-41-32",
           "downloads": 1713508,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "LTvf5Tji": {
-      "title": "E-LITE shaders (MakeUp edit)",
-      "slug": "lite-shaders",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1040338,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1040338,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 1040338,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 1040338,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 1040338,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 1040338,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 1047310,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 1047310,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 1047310,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1047310,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1047310,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -1927,18 +1824,6 @@
       "slug": "hysteria-shaders",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 2935982,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 2935982,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 2935982,
           "downloads_per_hour": 0,
@@ -1994,73 +1879,121 @@
         }
       ]
     },
-    "Q1ICdkzj": {
-      "title": "Fantasy Shaders Unbound",
-      "slug": "fantasy-shader-unbound",
+    "sclYVqbt": {
+      "title": "Noble Shaders",
+      "slug": "noble",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 677788,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 677788,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
-          "downloads": 677788,
+          "downloads": 1877672,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-20T18-59-00",
-          "downloads": 677788,
+          "downloads": 1877672,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-20T22-15-03",
-          "downloads": 677788,
+          "downloads": 1877672,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T05-25-36",
-          "downloads": 677788,
+          "downloads": 1877672,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T07-08-49",
-          "downloads": 683903,
+          "downloads": 1884206,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T10-36-16",
-          "downloads": 683903,
+          "downloads": 1884206,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T14-41-14",
-          "downloads": 683903,
+          "downloads": 1884206,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T18-16-27",
-          "downloads": 683903,
+          "downloads": 1884206,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T18-41-32",
-          "downloads": 683903,
+          "downloads": 1884206,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "LTvf5Tji": {
+      "title": "E-LITE shaders (MakeUp edit)",
+      "slug": "lite-shaders",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 1040338,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 1040338,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 1040338,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 1040338,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 1047310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 1047310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 1047310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 1047310,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 1047310,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -2071,18 +2004,6 @@
       "slug": "bsl-shaders-classic",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1872256,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1872256,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1872256,
           "downloads_per_hour": 0,
@@ -2138,22 +2059,70 @@
         }
       ]
     },
+    "Q1ICdkzj": {
+      "title": "Fantasy Shaders Unbound",
+      "slug": "fantasy-shader-unbound",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 677788,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 677788,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 677788,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 677788,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 683903,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 683903,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 683903,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 683903,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 683903,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
     "z8EjLYqN": {
       "title": "Sildur's Vibrant Shaders",
       "slug": "sildurs-vibrant-shaders",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 208800,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 208800,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 208800,
@@ -2215,18 +2184,6 @@
       "slug": "shrimple",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1898654,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1898654,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1898654,
           "downloads_per_hour": 0,
@@ -2287,18 +2244,6 @@
       "slug": "bloop-shaders",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1576637,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1576637,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1576637,
           "downloads_per_hour": 0,
@@ -2349,78 +2294,6 @@
         {
           "timestamp": "2026-07-21T18-41-32",
           "downloads": 1580597,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "yY9oI7oz": {
-      "title": "Arc",
-      "slug": "arc-shader",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 727931,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 727931,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 727931,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 727931,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 727931,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 727931,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 731469,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 731469,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 731469,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 731469,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 731469,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -2431,18 +2304,6 @@
       "slug": "body-camera-shader",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1161699,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1161699,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1161699,
           "downloads_per_hour": 0,
@@ -2498,22 +2359,70 @@
         }
       ]
     },
+    "yY9oI7oz": {
+      "title": "Arc",
+      "slug": "arc-shader",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 727931,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 727931,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 727931,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 727931,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 731469,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 731469,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 731469,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 731469,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 731469,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
     "W3QK7DQz": {
       "title": "VanillAA",
       "slug": "vanillaa",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 3262153,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 3262153,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 3262153,
@@ -2575,18 +2484,6 @@
       "slug": "renderpearl",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1176472,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1176472,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1176472,
           "downloads_per_hour": 0,
@@ -2646,18 +2543,6 @@
       "title": "FastPBR",
       "slug": "fastpbr",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1732864,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1732864,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 1732864,
@@ -2719,18 +2604,6 @@
       "slug": "cursed-fog",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 508199,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 508199,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 508199,
           "downloads_per_hour": 0,
@@ -2781,150 +2654,6 @@
         {
           "timestamp": "2026-07-21T18-41-32",
           "downloads": 510589,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "sclYVqbt": {
-      "title": "Noble Shaders",
-      "slug": "noble",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 1872693,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 1877672,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 1877672,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 1877672,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 1877672,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 1877672,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 1884206,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 1884206,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 1884206,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 1884206,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 1884206,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "McUqXQ0J": {
-      "title": "Just Colored Lighting",
-      "slug": "just-colored-lighting",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 485543,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 485543,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 485543,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 485543,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 485543,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 485543,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 487765,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 487765,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 487765,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 487765,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 487765,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -2935,18 +2664,6 @@
       "slug": "clarityshader",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 708237,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 708237,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 708237,
           "downloads_per_hour": 0,
@@ -3002,235 +2719,61 @@
         }
       ]
     },
-    "ZvitaqQh": {
-      "title": "RedHat Shaders",
-      "slug": "redhat-shaders",
+    "McUqXQ0J": {
+      "title": "Just Colored Lighting",
+      "slug": "just-colored-lighting",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 818256,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 818256,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
-          "downloads": 818256,
+          "downloads": 485543,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-20T18-59-00",
-          "downloads": 818256,
+          "downloads": 485543,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-20T22-15-03",
-          "downloads": 818256,
+          "downloads": 485543,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T05-25-36",
-          "downloads": 818256,
+          "downloads": 485543,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T07-08-49",
-          "downloads": 820453,
+          "downloads": 487765,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T10-36-16",
-          "downloads": 820453,
+          "downloads": 487765,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T14-41-14",
-          "downloads": 820453,
+          "downloads": 487765,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T18-16-27",
-          "downloads": 820453,
+          "downloads": 487765,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T18-41-32",
-          "downloads": 820453,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "Gdq9dXUk": {
-      "title": "ReShaded",
-      "slug": "re-shaded",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 458511,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 458511,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 458511,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 458511,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 458511,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 458511,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 460528,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 460528,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 460528,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 460528,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 460528,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "9gxVXUDr": {
-      "title": "Lumina Shader - Event Horizon",
-      "slug": "lumina-shader-event-horizon",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 56847,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 58946,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "2vBMeaEW": {
-      "title": "DERCODE",
-      "slug": "dercode",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 76767,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 76767,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T14-59-21",
-          "downloads": 76767,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T18-59-00",
-          "downloads": 76767,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T22-15-03",
-          "downloads": 76767,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T05-25-36",
-          "downloads": 76767,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 78750,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T10-36-16",
-          "downloads": 78750,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T14-41-14",
-          "downloads": 78750,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-16-27",
-          "downloads": 78750,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T18-41-32",
-          "downloads": 78750,
+          "downloads": 487765,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -3241,18 +2784,6 @@
       "slug": "truelight-fx-lite",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 53529,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 53529,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 53529,
           "downloads_per_hour": 0,
@@ -3308,109 +2839,121 @@
         }
       ]
     },
-    "4kHmJd4i": {
-      "title": "DrDestens Minecraft Shaders",
-      "slug": "drdestens-shaders",
+    "2vBMeaEW": {
+      "title": "DERCODE",
+      "slug": "dercode",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 287276,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 289404,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "iZBu2k8u": {
-      "title": "ARTShade",
-      "slug": "artshade",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 29096,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-21T07-08-49",
-          "downloads": 31258,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        }
-      ]
-    },
-    "s8ZCVd1a": {
-      "title": "Eclipse",
-      "slug": "eclipseshaders",
-      "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 304634,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 304634,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
-          "downloads": 304634,
+          "downloads": 76767,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-20T18-59-00",
-          "downloads": 304634,
+          "downloads": 76767,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-20T22-15-03",
-          "downloads": 304634,
+          "downloads": 76767,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T05-25-36",
-          "downloads": 304634,
+          "downloads": 76767,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T07-08-49",
-          "downloads": 306410,
+          "downloads": 78750,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T10-36-16",
-          "downloads": 306410,
+          "downloads": 78750,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T14-41-14",
-          "downloads": 306410,
+          "downloads": 78750,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T18-16-27",
-          "downloads": 306410,
+          "downloads": 78750,
           "downloads_per_hour": 0,
           "momentum_score": 0
         },
         {
           "timestamp": "2026-07-21T18-41-32",
-          "downloads": 306410,
+          "downloads": 78750,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "ZvitaqQh": {
+      "title": "RedHat Shaders",
+      "slug": "redhat-shaders",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 818256,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 818256,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 818256,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 818256,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 820453,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 820453,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 820453,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 820453,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 820453,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -3421,18 +2964,6 @@
       "slug": "blocky-shader",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 64161,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 64161,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 64161,
           "downloads_per_hour": 0,
@@ -3483,6 +3014,66 @@
         {
           "timestamp": "2026-07-21T18-41-32",
           "downloads": 66074,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "Gdq9dXUk": {
+      "title": "ReShaded",
+      "slug": "re-shaded",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 458511,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 458511,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 458511,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 458511,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 460528,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 460528,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 460528,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 460528,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 460528,
           "downloads_per_hour": 0,
           "momentum_score": 0
         }
@@ -3493,18 +3084,6 @@
       "slug": "light-shaders",
       "history": [
         {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 386643,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 386643,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 386643,
           "downloads_per_hour": 0,
@@ -3560,22 +3139,70 @@
         }
       ]
     },
+    "s8ZCVd1a": {
+      "title": "Eclipse",
+      "slug": "eclipseshaders",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 304634,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 304634,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 304634,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 304634,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 306410,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 306410,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 306410,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 306410,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 306410,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
     "2jvH1Rcl": {
       "title": "Sildur's Enhanced Default Shaders",
       "slug": "sildurs-enhanced-default-shaders",
       "history": [
-        {
-          "timestamp": "2026-07-20T07-04-47",
-          "downloads": 75174,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
-        {
-          "timestamp": "2026-07-20T10-49-10",
-          "downloads": 75174,
-          "downloads_per_hour": 0,
-          "momentum_score": 0
-        },
         {
           "timestamp": "2026-07-20T14-59-21",
           "downloads": 75174,
@@ -3625,223 +3252,318 @@
           "momentum_score": 0
         }
       ]
+    },
+    "bvDpxd8c": {
+      "title": "Alpha Piscium",
+      "slug": "alpha-piscium",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 190472,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 190472,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 190472,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 190472,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 192215,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 192215,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 192215,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 192215,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 192215,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "1BZ68dI8": {
+      "title": "Pegasus Shaders",
+      "slug": "pegasus",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 695499,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 695499,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 695499,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 695499,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T07-08-49",
+          "downloads": 697240,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 697240,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 697240,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 697240,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 697240,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
+    },
+    "XaonJnsc": {
+      "title": "CTR VCR",
+      "slug": "ctrvcr",
+      "history": [
+        {
+          "timestamp": "2026-07-20T14-59-21",
+          "downloads": 499175,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T18-59-00",
+          "downloads": 499175,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-20T22-15-03",
+          "downloads": 499175,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T05-25-36",
+          "downloads": 499175,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T10-36-16",
+          "downloads": 500834,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T14-41-14",
+          "downloads": 500834,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-16-27",
+          "downloads": 500834,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        },
+        {
+          "timestamp": "2026-07-21T18-41-32",
+          "downloads": 500834,
+          "downloads_per_hour": 0,
+          "momentum_score": 0
+        }
+      ]
     }
   },
-  "trend_history": [
-    {
-      "date": "2026-07-15",
-      "timestamp": "2026-07-15T09-47-14",
-      "total_downloads": 275319102,
-      "new_downloads": 275319102,
-      "new_projects": 626,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-15",
-      "timestamp": "2026-07-15T12-11-25",
-      "total_downloads": 275394306,
-      "new_downloads": 75204,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-16",
-      "timestamp": "2026-07-16T06-58-20",
-      "total_downloads": 276081131,
-      "new_downloads": 686825,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-16",
-      "timestamp": "2026-07-16T23-47-31",
-      "total_downloads": 276659078,
-      "new_downloads": 577947,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-17",
-      "timestamp": "2026-07-17T01-23-14",
-      "total_downloads": 276730215,
-      "new_downloads": 71137,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-17",
-      "timestamp": "2026-07-17T23-16-14",
-      "total_downloads": 277503965,
-      "new_downloads": 773750,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-18",
-      "timestamp": "2026-07-18T01-40-35",
-      "total_downloads": 277546941,
-      "new_downloads": 42976,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-18",
-      "timestamp": "2026-07-18T22-57-56",
-      "total_downloads": 278281262,
-      "new_downloads": 734321,
-      "new_projects": 9,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-19",
-      "timestamp": "2026-07-19T01-08-54",
-      "total_downloads": 278359601,
-      "new_downloads": 78339,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-19",
-      "timestamp": "2026-07-19T23-06-26",
-      "total_downloads": 278520501,
-      "new_downloads": 160900,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-20",
-      "timestamp": "2026-07-20T01-08-51",
-      "total_downloads": 278520501,
-      "new_downloads": 0,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-20",
-      "timestamp": "2026-07-20T22-14-58",
-      "total_downloads": 279476178,
-      "new_downloads": 955677,
-      "new_projects": 15,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-21",
-      "timestamp": "2026-07-21T00-13-04",
-      "total_downloads": 279476239,
-      "new_downloads": 61,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    },
-    {
-      "date": "2026-07-21",
-      "timestamp": "2026-07-21T19-26-00",
-      "total_downloads": 280360102,
-      "new_downloads": 883863,
-      "new_projects": 0,
-      "analysis_type": "daily"
-    }
-  ],
+  "trend_history": [],
   "predictive": {
-    "timestamp": "2026-07-21T20-01-02",
+    "timestamp": "2026-07-21T22-04-42",
     "date": "2026-07-21",
     "project_type": "shader",
     "analysis_type": "sub",
     "snapshots_analyzed": 19,
-    "last_snapshot_time": "2026-07-21T19-26-00",
-    "hours_until_main": 12,
+    "last_snapshot_time": "2026-07-21T22-04-37",
+    "hours_until_main": 9,
     "velocity": {
-      "velocity_per_hour": 123.95,
-      "velocity_2h": 92,
-      "velocity_24h": 883927,
-      "avg_velocity_24h": 36830.29
+      "velocity_per_hour": 56.74,
+      "velocity_2h": 150,
+      "velocity_24h": 884077,
+      "avg_velocity_24h": 36836.54
     },
     "acceleration": {
-      "acceleration": 123.95,
-      "acceleration_pct": 0.0
+      "acceleration": -67.21,
+      "acceleration_pct": -54.22
     },
     "predictions": {
-      "predicted_daily_total": 280802065,
-      "predicted_daily_growth": 2281564,
-      "predicted_daily_growth_pct": 0.82,
-      "predicted_daily_growth_weighted": 2281564,
-      "predicted_daily_growth_pct_weighted": 0.82,
+      "predicted_daily_total": 280691780,
+      "predicted_daily_growth": 2171279,
+      "predicted_daily_growth_pct": 0.78,
+      "predicted_daily_growth_weighted": 2171279,
+      "predicted_daily_growth_pct_weighted": 0.78,
       "confidence": "high",
       "confidence_weight": 1.0
     },
     "top_movers_2h": [
       {
-        "project_id": "buFZXJqT",
-        "title": "Potato+",
-        "slug": "potatoshaders",
-        "previous_downloads": 25,
-        "current_downloads": 93,
-        "delta_2h": 68,
-        "velocity": 91.62
+        "project_id": "jgYsD3FV",
+        "title": "Unbound Visual +",
+        "slug": "unbound-visual-+",
+        "previous_downloads": 3749,
+        "current_downloads": 3852,
+        "delta_2h": 103,
+        "velocity": 38.96
       },
       {
-        "project_id": "fkH4TBvh",
-        "title": "RetroPixel",
-        "slug": "retroshader",
-        "previous_downloads": 18,
-        "current_downloads": 42,
-        "delta_2h": 24,
-        "velocity": 32.34
+        "project_id": "pWeVnXDz",
+        "title": "Light-Shadow",
+        "slug": "light-shadow",
+        "previous_downloads": 1458,
+        "current_downloads": 1493,
+        "delta_2h": 35,
+        "velocity": 13.24
+      },
+      {
+        "project_id": "pS7MkCz8",
+        "title": "Plasma Shaders",
+        "slug": "plasma-shaders",
+        "previous_downloads": 2,
+        "current_downloads": 10,
+        "delta_2h": 8,
+        "velocity": 3.03
+      },
+      {
+        "project_id": "3JNGTF4t",
+        "title": "AquaVision-Dynamic Transparent Water",
+        "slug": "aqua-vision",
+        "previous_downloads": 2488,
+        "current_downloads": 2492,
+        "delta_2h": 4,
+        "velocity": 1.51
       }
     ],
     "velocity_by_category": [
       {
-        "category": "vanilla-like",
-        "total_velocity": 91.62,
-        "projects_tracked": 367,
-        "avg_velocity": 0.25
-      },
-      {
         "category": "semi-realistic",
-        "total_velocity": 91.62,
+        "total_velocity": 40.47,
         "projects_tracked": 168,
-        "avg_velocity": 0.55
-      },
-      {
-        "category": "realistic",
-        "total_velocity": 91.62,
-        "projects_tracked": 100,
-        "avg_velocity": 0.92
+        "avg_velocity": 0.24
       },
       {
         "category": "fantasy",
-        "total_velocity": 32.34,
+        "total_velocity": 38.96,
         "projects_tracked": 146,
-        "avg_velocity": 0.22
+        "avg_velocity": 0.27
       },
       {
-        "category": "cursed",
-        "total_velocity": 32.34,
-        "projects_tracked": 147,
-        "avg_velocity": 0.22
+        "category": "vanilla-like",
+        "total_velocity": 16.27,
+        "projects_tracked": 367,
+        "avg_velocity": 0.04
       },
       {
         "category": "cartoon",
         "total_velocity": 0.0,
         "projects_tracked": 97,
         "avg_velocity": 0.0
+      },
+      {
+        "category": "realistic",
+        "total_velocity": 0.0,
+        "projects_tracked": 100,
+        "avg_velocity": 0.0
+      },
+      {
+        "category": "cursed",
+        "total_velocity": 0.0,
+        "projects_tracked": 147,
+        "avg_velocity": 0.0
       }
     ],
     "anomalies": [
       {
-        "project_id": "buFZXJqT",
-        "title": "Potato+",
-        "slug": "potatoshaders",
-        "current_velocity": 91.62,
-        "avg_velocity": 0.57,
-        "anomaly_factor": 161.0
+        "project_id": "pS7MkCz8",
+        "title": "Plasma Shaders",
+        "slug": "plasma-shaders",
+        "current_velocity": 3.03,
+        "avg_velocity": 0.05,
+        "anomaly_factor": 59.32
       },
       {
-        "project_id": "fkH4TBvh",
-        "title": "RetroPixel",
-        "slug": "retroshader",
-        "current_velocity": 32.34,
-        "avg_velocity": 0.41,
-        "anomaly_factor": 78.92
+        "project_id": "pWeVnXDz",
+        "title": "Light-Shadow",
+        "slug": "light-shadow",
+        "current_velocity": 13.24,
+        "avg_velocity": 1.2,
+        "anomaly_factor": 11.0
+      },
+      {
+        "project_id": "jgYsD3FV",
+        "title": "Unbound Visual +",
+        "slug": "unbound-visual-+",
+        "current_velocity": 38.96,
+        "avg_velocity": 4.69,
+        "anomaly_factor": 8.3
+      },
+      {
+        "project_id": "3JNGTF4t",
+        "title": "AquaVision-Dynamic Transparent Water",
+        "slug": "aqua-vision",
+        "current_velocity": 1.51,
+        "avg_velocity": 0.39,
+        "anomaly_factor": 3.83
       }
     ],
     "hourly_pattern": [
@@ -3884,6 +3606,10 @@
       {
         "hour_label": "18-19",
         "downloads_gained": 92
+      },
+      {
+        "hour_label": "19-22",
+        "downloads_gained": 150
       }
     ]
   },
