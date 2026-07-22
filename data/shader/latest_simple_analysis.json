@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-22T18-42-18",
+  "timestamp": "2026-07-22T22-05-20",
   "date": "2026-07-22",
   "project_type": "shader",
   "analysis_type": "simple",
   "baseline_date": "2026-07-22",
-  "hours_between": 3.98,
-  "actual_hours_between": 3.98,
+  "hours_between": 3.38,
+  "actual_hours_between": 3.38,
   "trend_history": [
     {
       "date": "2026-07-21",
@@ -102,53 +102,73 @@
       "declining_projects": 0,
       "baseline_date": "2026-07-22",
       "hours_between": 4.09
+    },
+    {
+      "date": "2026-07-22",
+      "timestamp": "2026-07-22T18-42-18",
+      "total_downloads": 281214924,
+      "new_downloads": 657,
+      "lost_downloads": 0,
+      "net_change": 657,
+      "growing_projects": 8,
+      "declining_projects": 0,
+      "baseline_date": "2026-07-22",
+      "hours_between": 3.98
     }
   ],
   "summary": {
     "total_projects": 657,
-    "total_versions": 3162,
-    "total_downloads": 281214924,
+    "total_versions": 3164,
+    "total_downloads": 281215233,
     "baseline_date": "2026-07-22",
     "current_date": "2026-07-22",
     "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 657,
+    "new_downloads_since_baseline": 309,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 657,
-    "growing_projects": 8,
+    "net_download_change": 309,
+    "growing_projects": 9,
     "declining_projects": 0,
-    "downloads_per_hour": 165.2
+    "downloads_per_hour": 91.31
   },
   "category_rankings": [
     {
-      "category": "realistic",
-      "projects": 103,
-      "total_downloads": 13692407,
-      "new_downloads": 395,
-      "downloads_per_hour": 99.32,
-      "growth_pct": 0.0
-    },
-    {
-      "category": "fantasy",
-      "projects": 150,
-      "total_downloads": 186289169,
-      "new_downloads": 203,
-      "downloads_per_hour": 51.04,
-      "growth_pct": 0.0
-    },
-    {
       "category": "semi-realistic",
       "projects": 171,
-      "total_downloads": 119090481,
-      "new_downloads": 129,
-      "downloads_per_hour": 32.44,
+      "total_downloads": 119090667,
+      "new_downloads": 186,
+      "downloads_per_hour": 54.96,
       "growth_pct": 0.0
     },
     {
       "category": "vanilla-like",
       "projects": 372,
-      "total_downloads": 104456725,
-      "new_downloads": 71,
-      "downloads_per_hour": 17.85,
+      "total_downloads": 104456863,
+      "new_downloads": 138,
+      "downloads_per_hour": 40.78,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "fantasy",
+      "projects": 150,
+      "total_downloads": 186289302,
+      "new_downloads": 133,
+      "downloads_per_hour": 39.3,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "realistic",
+      "projects": 103,
+      "total_downloads": 13692497,
+      "new_downloads": 90,
+      "downloads_per_hour": 26.59,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "cursed",
+      "projects": 147,
+      "total_downloads": 4478610,
+      "new_downloads": 23,
+      "downloads_per_hour": 6.8,
       "growth_pct": 0.0
     },
     {
@@ -158,131 +178,10 @@
       "new_downloads": 0,
       "downloads_per_hour": 0.0,
       "growth_pct": 0.0
-    },
-    {
-      "category": "cursed",
-      "projects": 147,
-      "total_downloads": 4478587,
-      "new_downloads": 0,
-      "downloads_per_hour": 0.0,
-      "growth_pct": 0.0
     }
   ],
   "loader_rankings": [],
   "top_projects": [
-    {
-      "project_id": "TUoQmbZR",
-      "title": "Better Voxels",
-      "slug": "bettervoxels",
-      "categories": [
-        "colored-lighting",
-        "high",
-        "iris",
-        "path-tracing",
-        "pbr",
-        "realistic",
-        "reflections",
-        "screenshot",
-        "shadows"
-      ],
-      "current_downloads": 5381,
-      "baseline_downloads": 5032,
-      "delta_downloads": 349,
-      "downloads_per_hour": 87.76,
-      "growth_pct": 6.94
-    },
-    {
-      "project_id": "TKpehqLE",
-      "title": "Dreamers Shaders",
-      "slug": "dreamers-shaders",
-      "categories": [
-        "atmosphere",
-        "fantasy",
-        "iris",
-        "medium",
-        "optifine",
-        "shadows"
-      ],
-      "current_downloads": 123,
-      "baseline_downloads": 0,
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "growth_pct": 0.0
-    },
-    {
-      "project_id": "U3xqeQYU",
-      "title": "UpaamaShaders",
-      "slug": "upaamashaders",
-      "categories": [
-        "atmosphere",
-        "colored-lighting",
-        "fantasy",
-        "iris",
-        "medium",
-        "reflections",
-        "semi-realistic",
-        "shadows",
-        "vanilla-like"
-      ],
-      "current_downloads": 157,
-      "baseline_downloads": 86,
-      "delta_downloads": 71,
-      "downloads_per_hour": 17.85,
-      "growth_pct": 82.56
-    },
-    {
-      "project_id": "LVvPobw5",
-      "title": "NaturalVision Shaders",
-      "slug": "naturalvision",
-      "categories": [
-        "atmosphere",
-        "bloom",
-        "foliage",
-        "iris",
-        "optifine",
-        "potato",
-        "realistic",
-        "reflections",
-        "semi-realistic",
-        "shadows"
-      ],
-      "current_downloads": 260,
-      "baseline_downloads": 214,
-      "delta_downloads": 46,
-      "downloads_per_hour": 11.57,
-      "growth_pct": 21.5
-    },
-    {
-      "project_id": "CEkE0ksb",
-      "title": "NOISE Shaders",
-      "slug": "noise-shaders",
-      "categories": [
-        "atmosphere",
-        "iris",
-        "medium",
-        "optifine"
-      ],
-      "current_downloads": 305,
-      "baseline_downloads": 264,
-      "delta_downloads": 41,
-      "downloads_per_hour": 10.31,
-      "growth_pct": 15.53
-    },
-    {
-      "project_id": "Gu3XSEzJ",
-      "title": "ToasterFX",
-      "slug": "toasterfx",
-      "categories": [
-        "iris",
-        "optifine",
-        "potato"
-      ],
-      "current_downloads": 40,
-      "baseline_downloads": 25,
-      "delta_downloads": 15,
-      "downloads_per_hour": 3.77,
-      "growth_pct": 60.0
-    },
     {
       "project_id": "jgYsD3FV",
       "title": "Unbound Visual +",
@@ -298,1531 +197,764 @@
         "reflections",
         "semi-realistic"
       ],
-      "current_downloads": 3897,
-      "baseline_downloads": 3888,
-      "delta_downloads": 9,
-      "downloads_per_hour": 2.26,
-      "growth_pct": 0.23
+      "current_downloads": 3993,
+      "baseline_downloads": 3897,
+      "delta_downloads": 96,
+      "downloads_per_hour": 28.37,
+      "growth_pct": 2.46
     },
     {
-      "project_id": "bdquHLN2",
-      "title": "NotShaders",
-      "slug": "notshaders",
+      "project_id": "buFZXJqT",
+      "title": "Potato+",
+      "slug": "potatoshaders",
       "categories": [
+        "atmosphere",
+        "colored-lighting",
+        "iris",
+        "low",
+        "optifine",
+        "potato",
+        "realistic",
+        "semi-realistic",
+        "shadows",
+        "vanilla-like"
+      ],
+      "current_downloads": 183,
+      "baseline_downloads": 93,
+      "delta_downloads": 90,
+      "downloads_per_hour": 26.59,
+      "growth_pct": 96.77
+    },
+    {
+      "project_id": "XOQB4IrP",
+      "title": "Adistira shader",
+      "slug": "adistira",
+      "categories": [
+        "atmosphere",
         "high",
         "iris",
-        "medium",
         "optifine",
-        "semi-realistic"
+        "shadows"
       ],
-      "current_downloads": 3,
+      "current_downloads": 377,
+      "baseline_downloads": 325,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "growth_pct": 16.0
+    },
+    {
+      "project_id": "fkH4TBvh",
+      "title": "RetroPixel",
+      "slug": "retroshader",
+      "categories": [
+        "atmosphere",
+        "cursed",
+        "fantasy",
+        "iris",
+        "optifine",
+        "path-tracing",
+        "potato"
+      ],
+      "current_downloads": 65,
+      "baseline_downloads": 42,
+      "delta_downloads": 23,
+      "downloads_per_hour": 6.8,
+      "growth_pct": 54.76
+    },
+    {
+      "project_id": "YXKKUdVa",
+      "title": "Ember Shaders",
+      "slug": "ember-shaders",
+      "categories": [
+        "atmosphere",
+        "bloom",
+        "fantasy",
+        "iris",
+        "low",
+        "optifine",
+        "potato",
+        "reflections",
+        "vanilla-like"
+      ],
+      "current_downloads": 14,
       "baseline_downloads": 0,
-      "delta_downloads": 3,
-      "downloads_per_hour": 0.75,
+      "delta_downloads": 14,
+      "downloads_per_hour": 4.14,
       "growth_pct": 0.0
+    },
+    {
+      "project_id": "pWeVnXDz",
+      "title": "Light-Shadow",
+      "slug": "light-shadow",
+      "categories": [
+        "colored-lighting",
+        "high",
+        "iris",
+        "path-tracing",
+        "pbr",
+        "reflections",
+        "shadows",
+        "vanilla-like"
+      ],
+      "current_downloads": 1511,
+      "baseline_downloads": 1499,
+      "delta_downloads": 12,
+      "downloads_per_hour": 3.55,
+      "growth_pct": 0.8
+    },
+    {
+      "project_id": "JrocOsNB",
+      "title": "Cloud Shaders",
+      "slug": "cloud-shaders",
+      "categories": [
+        "iris",
+        "low",
+        "optifine",
+        "potato",
+        "vanilla-like"
+      ],
+      "current_downloads": 11,
+      "baseline_downloads": 1,
+      "delta_downloads": 10,
+      "downloads_per_hour": 2.95,
+      "growth_pct": 1000.0
+    },
+    {
+      "project_id": "uKUzCNsg",
+      "title": "SMAA-MC",
+      "slug": "smaa-mc",
+      "categories": [
+        "iris",
+        "minecraft",
+        "potato",
+        "vanilla-like"
+      ],
+      "current_downloads": 27030,
+      "baseline_downloads": 27023,
+      "delta_downloads": 7,
+      "downloads_per_hour": 2.07,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "pS7MkCz8",
+      "title": "Plasma Shaders",
+      "slug": "plasma-shaders",
+      "categories": [
+        "atmosphere",
+        "foliage",
+        "iris",
+        "medium",
+        "pbr",
+        "vanilla-like"
+      ],
+      "current_downloads": 15,
+      "baseline_downloads": 10,
+      "delta_downloads": 5,
+      "downloads_per_hour": 1.48,
+      "growth_pct": 50.0
     }
   ],
   "declining_projects": [],
   "top_version_loaders": [
     {
-      "game_version": "1.21.5",
-      "loader": "iris",
-      "delta_downloads": 645,
-      "downloads_per_hour": 162.18,
-      "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "26.2",
-      "loader": "iris",
-      "delta_downloads": 642,
-      "downloads_per_hour": 161.43,
-      "project_count": 7,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "iris",
-      "delta_downloads": 639,
-      "downloads_per_hour": 160.68,
-      "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "iris",
-      "delta_downloads": 639,
-      "downloads_per_hour": 160.68,
-      "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "iris",
-      "delta_downloads": 639,
-      "downloads_per_hour": 160.68,
-      "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
       "game_version": "1.21.11",
       "loader": "iris",
-      "delta_downloads": 639,
-      "downloads_per_hour": 160.68,
+      "delta_downloads": 285,
+      "downloads_per_hour": 84.22,
       "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "26.1",
-      "loader": "iris",
-      "delta_downloads": 639,
-      "downloads_per_hour": 160.68,
-      "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "iris",
-      "delta_downloads": 639,
-      "downloads_per_hour": 160.68,
-      "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "iris",
-      "delta_downloads": 639,
-      "downloads_per_hour": 160.68,
-      "project_count": 6,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.20",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "iris",
-      "delta_downloads": 630,
-      "downloads_per_hour": 158.41,
-      "project_count": 5,
-      "top_project_id": "TUoQmbZR",
-      "top_project_title": "Better Voxels",
-      "top_project_delta": 349
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "optifine",
-      "delta_downloads": 225,
-      "downloads_per_hour": 56.58,
-      "project_count": 4,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "26.2",
-      "loader": "optifine",
-      "delta_downloads": 213,
-      "downloads_per_hour": 53.56,
-      "project_count": 4,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.20",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 96
     },
     {
       "game_version": "1.21.11",
       "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
+      "delta_downloads": 189,
+      "downloads_per_hour": 55.85,
+      "project_count": 5,
+      "top_project_id": "buFZXJqT",
+      "top_project_title": "Potato+",
+      "top_project_delta": 90
+    },
+    {
+      "game_version": "26.2",
+      "loader": "iris",
+      "delta_downloads": 183,
+      "downloads_per_hour": 54.08,
+      "project_count": 4,
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 96
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "iris",
+      "delta_downloads": 171,
+      "downloads_per_hour": 50.53,
       "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 96
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "iris",
+      "delta_downloads": 171,
+      "downloads_per_hour": 50.53,
+      "project_count": 3,
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 96
+    },
+    {
+      "game_version": "26.1",
+      "loader": "iris",
+      "delta_downloads": 171,
+      "downloads_per_hour": 50.53,
+      "project_count": 3,
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 96
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "iris",
+      "delta_downloads": 171,
+      "downloads_per_hour": 50.53,
+      "project_count": 3,
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 96
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "iris",
+      "delta_downloads": 171,
+      "downloads_per_hour": 50.53,
+      "project_count": 3,
+      "top_project_id": "jgYsD3FV",
+      "top_project_title": "Unbound Visual +",
+      "top_project_delta": 96
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "optifine",
+      "delta_downloads": 75,
+      "downloads_per_hour": 22.16,
+      "project_count": 2,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "optifine",
+      "delta_downloads": 75,
+      "downloads_per_hour": 22.16,
+      "project_count": 2,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "26.1",
       "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 75,
+      "downloads_per_hour": 22.16,
+      "project_count": 2,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "26.1.1",
       "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 75,
+      "downloads_per_hour": 22.16,
+      "project_count": 2,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "26.1.2",
       "loader": "optifine",
-      "delta_downloads": 210,
-      "downloads_per_hour": 52.8,
-      "project_count": 3,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 75,
+      "downloads_per_hour": 22.16,
+      "project_count": 2,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
+      "game_version": "26.2",
+      "loader": "optifine",
+      "delta_downloads": 75,
+      "downloads_per_hour": 22.16,
       "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.1",
+      "game_version": "1.20.6",
       "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
+      "delta_downloads": 57,
+      "downloads_per_hour": 16.84,
       "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.2",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.3",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.4",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.5",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.6",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.7",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.8",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.8.9",
-      "loader": "iris",
-      "delta_downloads": 194,
-      "downloads_per_hour": 48.78,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.17",
-      "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.18",
-      "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.18.2",
       "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19",
       "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.1",
       "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.2",
       "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.3",
       "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.4",
       "loader": "iris",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.17",
-      "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "game_version": "1.20",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.17.1",
-      "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "game_version": "1.20.1",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.18",
-      "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "game_version": "1.20.2",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.18.1",
-      "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "game_version": "1.20.3",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "iris",
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.18.2",
       "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19",
       "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.1",
       "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.2",
       "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.3",
       "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
+      "project_count": 1,
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
       "game_version": "1.19.4",
       "loader": "optifine",
-      "delta_downloads": 164,
-      "downloads_per_hour": 41.24,
-      "project_count": 2,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.7.10",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.9",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.9.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.9.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.9.3",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.9.4",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.10",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.10.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.10.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.11",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.11.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.11.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.12",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.12.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.12.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.13",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.13.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.13.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.3",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.4",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.15",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.15.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.15.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.1",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.2",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.3",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.4",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "iris",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.7.10",
+      "game_version": "1.20",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8",
+      "game_version": "1.20.1",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.1",
+      "game_version": "1.20.2",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.2",
+      "game_version": "1.20.3",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.3",
+      "game_version": "1.20.4",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.4",
+      "game_version": "1.20.5",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.5",
+      "game_version": "1.20.6",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.6",
+      "game_version": "1.21",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.7",
+      "game_version": "1.21.1",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.8",
+      "game_version": "1.21.2",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.8.9",
+      "game_version": "1.21.3",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.9",
+      "game_version": "1.21.4",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.9.1",
+      "game_version": "1.21.5",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.9.2",
+      "game_version": "1.21.6",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.9.3",
+      "game_version": "1.21.7",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.9.4",
+      "game_version": "1.21.8",
       "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "delta_downloads": 52,
+      "downloads_per_hour": 15.37,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "XOQB4IrP",
+      "top_project_title": "Adistira shader",
+      "top_project_delta": 52
     },
     {
-      "game_version": "1.10",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "game_version": "26.3-snapshot-3",
+      "loader": "minecraft",
+      "delta_downloads": 7,
+      "downloads_per_hour": 2.07,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "uKUzCNsg",
+      "top_project_title": "SMAA-MC",
+      "top_project_delta": 7
     },
     {
-      "game_version": "1.10.1",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
+      "game_version": "26.3-snapshot-4",
+      "loader": "minecraft",
+      "delta_downloads": 7,
+      "downloads_per_hour": 2.07,
       "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.10.2",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.11",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.11.1",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.11.2",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.12",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.12.1",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.12.2",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.13",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.13.1",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.13.2",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.1",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.2",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.3",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.14.4",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.15",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.15.1",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.15.2",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.1",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.2",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.3",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.4",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "optifine",
-      "delta_downloads": 123,
-      "downloads_per_hour": 30.93,
-      "project_count": 1,
-      "top_project_id": "TKpehqLE",
-      "top_project_title": "Dreamers Shaders",
-      "top_project_delta": 123
+      "top_project_id": "uKUzCNsg",
+      "top_project_title": "SMAA-MC",
+      "top_project_delta": 7
     }
   ]
 }
