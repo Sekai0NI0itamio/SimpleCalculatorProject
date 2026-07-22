@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-22T10-48-17",
+  "timestamp": "2026-07-22T14-44-08",
   "date": "2026-07-22",
   "project_type": "modpack",
   "analysis_type": "simple",
   "baseline_date": "2026-07-22",
-  "hours_between": 3.56,
-  "actual_hours_between": 3.56,
+  "hours_between": 3.93,
+  "actual_hours_between": 3.93,
   "trend_history": [
     {
       "date": "2026-07-21",
@@ -78,299 +78,436 @@
       "declining_projects": 0,
       "baseline_date": "2026-07-22",
       "hours_between": 1.8
+    },
+    {
+      "date": "2026-07-22",
+      "timestamp": "2026-07-22T10-48-17",
+      "total_downloads": 143392863,
+      "new_downloads": 43202,
+      "lost_downloads": 0,
+      "net_change": 43202,
+      "growing_projects": 7342,
+      "declining_projects": 0,
+      "baseline_date": "2026-07-22",
+      "hours_between": 3.56
     }
   ],
   "summary": {
-    "total_projects": 16687,
-    "total_versions": 155362,
-    "total_downloads": 143392863,
+    "total_projects": 16686,
+    "total_versions": 155467,
+    "total_downloads": 143394491,
     "baseline_date": "2026-07-22",
     "current_date": "2026-07-22",
-    "new_projects_since_baseline": 26,
-    "new_downloads_since_baseline": 43202,
+    "new_projects_since_baseline": 0,
+    "new_downloads_since_baseline": 1628,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 43202,
-    "growing_projects": 7342,
+    "net_download_change": 1628,
+    "growing_projects": 36,
     "declining_projects": 0,
-    "downloads_per_hour": 12149.61
+    "downloads_per_hour": 414.25
   },
   "category_rankings": [
     {
       "category": "multiplayer",
       "projects": 11282,
-      "total_downloads": 115787521,
-      "new_downloads": 29048,
-      "downloads_per_hour": 8169.11,
-      "growth_pct": 0.03
+      "total_downloads": 115789084,
+      "new_downloads": 1563,
+      "downloads_per_hour": 397.71,
+      "growth_pct": 0.0
     },
     {
       "category": "optimization",
       "projects": 10567,
-      "total_downloads": 92375797,
-      "new_downloads": 27886,
-      "downloads_per_hour": 7842.32,
-      "growth_pct": 0.03
+      "total_downloads": 92377211,
+      "new_downloads": 1414,
+      "downloads_per_hour": 359.8,
+      "growth_pct": 0.0
     },
     {
-      "category": "adventure",
-      "projects": 10123,
-      "total_downloads": 78296668,
-      "new_downloads": 23969,
-      "downloads_per_hour": 6740.75,
-      "growth_pct": 0.03
-    },
-    {
-      "category": "lightweight",
-      "projects": 7296,
-      "total_downloads": 79914959,
-      "new_downloads": 17805,
-      "downloads_per_hour": 5007.27,
-      "growth_pct": 0.02
+      "category": "technology",
+      "projects": 4995,
+      "total_downloads": 19869841,
+      "new_downloads": 914,
+      "downloads_per_hour": 232.57,
+      "growth_pct": 0.0
     },
     {
       "category": "combat",
       "projects": 5091,
-      "total_downloads": 56944110,
-      "new_downloads": 14154,
-      "downloads_per_hour": 3980.5,
-      "growth_pct": 0.02
+      "total_downloads": 56944979,
+      "new_downloads": 869,
+      "downloads_per_hour": 221.12,
+      "growth_pct": 0.0
     },
     {
-      "category": "technology",
-      "projects": 4996,
-      "total_downloads": 19868927,
-      "new_downloads": 11543,
-      "downloads_per_hour": 3246.22,
-      "growth_pct": 0.06
+      "category": "lightweight",
+      "projects": 7296,
+      "total_downloads": 79915797,
+      "new_downloads": 838,
+      "downloads_per_hour": 213.23,
+      "growth_pct": 0.0
     },
     {
       "category": "challenging",
       "projects": 3441,
-      "total_downloads": 45821191,
-      "new_downloads": 10371,
-      "downloads_per_hour": 2916.62,
-      "growth_pct": 0.02
-    },
-    {
-      "category": "magic",
-      "projects": 2637,
-      "total_downloads": 12856444,
-      "new_downloads": 5568,
-      "downloads_per_hour": 1565.88,
-      "growth_pct": 0.04
-    },
-    {
-      "category": "kitchen-sink",
-      "projects": 2134,
-      "total_downloads": 12594642,
-      "new_downloads": 4440,
-      "downloads_per_hour": 1248.65,
-      "growth_pct": 0.04
+      "total_downloads": 45822009,
+      "new_downloads": 818,
+      "downloads_per_hour": 208.14,
+      "growth_pct": 0.0
     },
     {
       "category": "quests",
-      "projects": 1302,
-      "total_downloads": 16007996,
-      "new_downloads": 2991,
-      "downloads_per_hour": 841.15,
-      "growth_pct": 0.02
+      "projects": 1301,
+      "total_downloads": 16008775,
+      "new_downloads": 779,
+      "downloads_per_hour": 198.22,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "adventure",
+      "projects": 10122,
+      "total_downloads": 78297397,
+      "new_downloads": 729,
+      "downloads_per_hour": 185.5,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "magic",
+      "projects": 2636,
+      "total_downloads": 12856514,
+      "new_downloads": 70,
+      "downloads_per_hour": 17.81,
+      "growth_pct": 0.0
+    },
+    {
+      "category": "kitchen-sink",
+      "projects": 2133,
+      "total_downloads": 12594671,
+      "new_downloads": 29,
+      "downloads_per_hour": 7.38,
+      "growth_pct": 0.0
     }
   ],
   "loader_rankings": [],
   "top_projects": [
     {
-      "project_id": "hRud1elC",
-      "title": "The Broken Game",
-      "slug": "the-broken-gamee",
+      "project_id": "1Fv3GHYS",
+      "title": "红石生电优化【Redstone Survival Optimization】",
+      "slug": "rso",
       "categories": [
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 1113671,
+      "baseline_downloads": 1113101,
+      "delta_downloads": 570,
+      "downloads_per_hour": 145.04,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "zHP6LZ7W",
+      "title": "Unstable SMP Simulator",
+      "slug": "theunstablesmpsimulator",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "fabric",
+        "multiplayer",
+        "optimization",
+        "quests",
+        "technology"
+      ],
+      "current_downloads": 21812,
+      "baseline_downloads": 21268,
+      "delta_downloads": 544,
+      "downloads_per_hour": 138.42,
+      "growth_pct": 2.56
+    },
+    {
+      "project_id": "jSVtuptz",
+      "title": "Escape From Tarkraft",
+      "slug": "escape-from-tarkraft",
+      "categories": [
+        "challenging",
+        "combat",
+        "fabric",
+        "multiplayer",
+        "quests",
+        "technology"
+      ],
+      "current_downloads": 43667,
+      "baseline_downloads": 43506,
+      "delta_downloads": 161,
+      "downloads_per_hour": 40.97,
+      "growth_pct": 0.37
+    },
+    {
+      "project_id": "KhP3rX0G",
+      "title": "Soulbond Cobblemon Modpack",
+      "slug": "soulbond",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "neoforge",
+        "optimization",
+        "quests",
+        "technology"
+      ],
+      "current_downloads": 8215,
+      "baseline_downloads": 8149,
+      "delta_downloads": 66,
+      "downloads_per_hour": 16.79,
+      "growth_pct": 0.81
+    },
+    {
+      "project_id": "8OejNW7c",
+      "title": "AsguhoClient",
+      "slug": "asguhoclient",
+      "categories": [
+        "fabric",
+        "lightweight",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 71724,
+      "baseline_downloads": 71676,
+      "delta_downloads": 48,
+      "downloads_per_hour": 12.21,
+      "growth_pct": 0.07
+    },
+    {
+      "project_id": "WhCmeZLu",
+      "title": "Vanilla Reimagined",
+      "slug": "vred",
+      "categories": [
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization",
+        "quilt"
+      ],
+      "current_downloads": 34424,
+      "baseline_downloads": 34383,
+      "delta_downloads": 41,
+      "downloads_per_hour": 10.43,
+      "growth_pct": 0.12
+    },
+    {
+      "project_id": "BFJYazwY",
+      "title": "EZ FPS And The Features For Pojav/Mojo/Zalith",
+      "slug": "ezfpspojav",
+      "categories": [
+        "adventure",
+        "combat",
+        "fabric",
+        "lightweight",
+        "magic",
+        "multiplayer",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 32536,
+      "baseline_downloads": 32499,
+      "delta_downloads": 37,
+      "downloads_per_hour": 9.41,
+      "growth_pct": 0.11
+    },
+    {
+      "project_id": "K4FKX2tR",
+      "title": "Sodium Vanilla",
+      "slug": "sodium-vanilla",
+      "categories": [
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 14097,
+      "baseline_downloads": 14060,
+      "delta_downloads": 37,
+      "downloads_per_hour": 9.41,
+      "growth_pct": 0.26
+    },
+    {
+      "project_id": "caPCwdJO",
+      "title": "Yet Another Horror Pack",
+      "slug": "yahp",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "kitchen-sink",
+        "magic",
+        "multiplayer",
+        "neoforge",
+        "technology"
+      ],
+      "current_downloads": 282,
+      "baseline_downloads": 266,
+      "delta_downloads": 16,
+      "downloads_per_hour": 4.07,
+      "growth_pct": 6.02
+    },
+    {
+      "project_id": "qAiCl7In",
+      "title": "Wildera SMP",
+      "slug": "wildera-smp",
+      "categories": [
+        "adventure",
+        "fabric",
+        "multiplayer"
+      ],
+      "current_downloads": 730,
+      "baseline_downloads": 721,
+      "delta_downloads": 9,
+      "downloads_per_hour": 2.29,
+      "growth_pct": 1.25
+    },
+    {
+      "project_id": "5JRPZGh6",
+      "title": "OptimizationHyperN(OPHN)",
+      "slug": "optimizationhypern",
+      "categories": [
+        "fabric",
+        "forge",
+        "lightweight",
+        "multiplayer",
         "neoforge",
         "optimization"
       ],
-      "current_downloads": 2170,
-      "baseline_downloads": 0,
-      "delta_downloads": 2170,
-      "downloads_per_hour": 610.26,
-      "growth_pct": 0.0
+      "current_downloads": 28961,
+      "baseline_downloads": 28952,
+      "delta_downloads": 9,
+      "downloads_per_hour": 2.29,
+      "growth_pct": 0.03
     },
     {
-      "project_id": "mvnoIGxi",
-      "title": "One block horror",
-      "slug": "one-block-horror-dweller",
+      "project_id": "lF6XcleQ",
+      "title": "KRILLKRAFT",
+      "slug": "krillkraft",
       "categories": [
         "adventure",
         "challenging",
         "combat",
         "forge",
+        "magic",
         "multiplayer"
       ],
-      "current_downloads": 345003,
-      "baseline_downloads": 342859,
-      "delta_downloads": 2144,
-      "downloads_per_hour": 602.95,
-      "growth_pct": 0.63
+      "current_downloads": 1364,
+      "baseline_downloads": 1356,
+      "delta_downloads": 8,
+      "downloads_per_hour": 2.04,
+      "growth_pct": 0.59
     },
     {
-      "project_id": "g9E7wZrA",
-      "title": "Better Than Clouds",
-      "slug": "better-than-clouds",
+      "project_id": "Zh5H5mg2",
+      "title": "Furrest Modpack",
+      "slug": "furrest",
       "categories": [
         "adventure",
-        "fabric",
-        "optimization"
-      ],
-      "current_downloads": 1433,
-      "baseline_downloads": 0,
-      "delta_downloads": 1433,
-      "downloads_per_hour": 403.0,
-      "growth_pct": 0.0
-    },
-    {
-      "project_id": "Mo0nlQxI",
-      "title": "SVC for Lunar Client",
-      "slug": "svc-for-lunar-client",
-      "categories": [
         "fabric",
         "lightweight",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 644232,
-      "baseline_downloads": 643028,
-      "delta_downloads": 1204,
-      "downloads_per_hour": 338.6,
-      "growth_pct": 0.19
-    },
-    {
-      "project_id": "PFCRIDsw",
-      "title": "LyreSMP Cobblemon Pack",
-      "slug": "lyre-cobblemon-pack",
-      "categories": [
-        "adventure",
-        "fabric",
         "multiplayer"
       ],
-      "current_downloads": 345,
-      "baseline_downloads": 0,
-      "delta_downloads": 345,
-      "downloads_per_hour": 97.02,
-      "growth_pct": 0.0
+      "current_downloads": 95,
+      "baseline_downloads": 88,
+      "delta_downloads": 7,
+      "downloads_per_hour": 1.78,
+      "growth_pct": 7.95
     },
     {
-      "project_id": "49PGeVge",
-      "title": "TRACING LIGHT · DARK TIDE",
-      "slug": "nrg",
+      "project_id": "bEFyz3ji",
+      "title": "Dungeon Train Pack: A Lore-Rich Roguelite RPG Adventure",
+      "slug": "dungeon-train-pack-a-lore-rich-roguelite-adventure",
       "categories": [
+        "adventure",
         "challenging",
         "combat",
-        "forge",
-        "lightweight",
+        "kitchen-sink",
         "multiplayer",
+        "neoforge",
+        "quests",
         "technology"
       ],
-      "current_downloads": 51154,
-      "baseline_downloads": 50882,
-      "delta_downloads": 272,
-      "downloads_per_hour": 76.49,
-      "growth_pct": 0.53
+      "current_downloads": 1210,
+      "baseline_downloads": 1203,
+      "delta_downloads": 7,
+      "downloads_per_hour": 1.78,
+      "growth_pct": 0.58
     },
     {
-      "project_id": "EN5xNG14",
-      "title": "Counter Strike 2",
-      "slug": "counter-strike-two",
+      "project_id": "s2xtCGFE",
+      "title": "PowerX",
+      "slug": "powerx",
       "categories": [
         "adventure",
+        "challenging",
         "combat",
-        "forge",
-        "multiplayer",
-        "neoforge"
+        "magic",
+        "neoforge",
+        "optimization",
+        "technology"
       ],
-      "current_downloads": 25827,
-      "baseline_downloads": 25641,
-      "delta_downloads": 186,
-      "downloads_per_hour": 52.31,
+      "current_downloads": 10,
+      "baseline_downloads": 4,
+      "delta_downloads": 6,
+      "downloads_per_hour": 1.53,
+      "growth_pct": 150.0
+    },
+    {
+      "project_id": "EUf8lb0a",
+      "title": "EZ FPS And The Features",
+      "slug": "ezfps",
+      "categories": [
+        "combat",
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 3651,
+      "baseline_downloads": 3645,
+      "delta_downloads": 6,
+      "downloads_per_hour": 1.53,
+      "growth_pct": 0.16
+    },
+    {
+      "project_id": "jlG3nc5n",
+      "title": "Refined Vanilla",
+      "slug": "refined_vanilla",
+      "categories": [
+        "fabric",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 833,
+      "baseline_downloads": 827,
+      "delta_downloads": 6,
+      "downloads_per_hour": 1.53,
       "growth_pct": 0.73
     },
     {
-      "project_id": "WOXnIjeY",
-      "title": "HCN 生电包",
-      "slug": "hcn",
+      "project_id": "OJ8R9AA4",
+      "title": "Survival w/ Friends Modpack",
+      "slug": "survival-w-friends-modpack",
       "categories": [
         "fabric",
-        "lightweight",
         "multiplayer",
         "optimization",
         "technology"
       ],
-      "current_downloads": 16179,
-      "baseline_downloads": 16037,
-      "delta_downloads": 142,
-      "downloads_per_hour": 39.93,
-      "growth_pct": 0.89
-    },
-    {
-      "project_id": "LGbHKPYm",
-      "title": "VR Light Vanilla",
-      "slug": "vr-light-vanilla",
-      "categories": [
-        "fabric",
-        "lightweight",
-        "multiplayer",
-        "optimization",
-        "technology"
-      ],
-      "current_downloads": 118,
-      "baseline_downloads": 0,
-      "delta_downloads": 118,
-      "downloads_per_hour": 33.18,
-      "growth_pct": 0.0
-    },
-    {
-      "project_id": "fgDe5pB3",
-      "title": "Spirity Optimized",
-      "slug": "spirity-optimized",
-      "categories": [
-        "combat",
-        "fabric",
-        "lightweight",
-        "optimization"
-      ],
-      "current_downloads": 10906,
-      "baseline_downloads": 10790,
-      "delta_downloads": 116,
-      "downloads_per_hour": 32.62,
-      "growth_pct": 1.08
-    },
-    {
-      "project_id": "jNvWpBPH",
-      "title": "Annoying Villagers Full Dependencies Pack",
-      "slug": "annoying-villagers-full-dependencies-pack",
-      "categories": [
-        "challenging",
-        "combat",
-        "forge",
-        "multiplayer"
-      ],
-      "current_downloads": 3739,
-      "baseline_downloads": 3628,
-      "delta_downloads": 111,
-      "downloads_per_hour": 31.22,
-      "growth_pct": 3.06
-    },
-    {
-      "project_id": "HieACtrd",
-      "title": "新岛铁道",
-      "slug": "niijima-railways",
-      "categories": [
-        "adventure",
-        "forge",
-        "multiplayer",
-        "technology"
-      ],
-      "current_downloads": 10365,
-      "baseline_downloads": 10265,
-      "delta_downloads": 100,
-      "downloads_per_hour": 28.12,
-      "growth_pct": 0.97
+      "current_downloads": 47,
+      "baseline_downloads": 41,
+      "delta_downloads": 6,
+      "downloads_per_hour": 1.53,
+      "growth_pct": 14.63
     },
     {
       "project_id": "g9O0WaGR",
@@ -385,2002 +522,561 @@
         "optimization",
         "quilt"
       ],
-      "current_downloads": 539071,
-      "baseline_downloads": 538971,
-      "delta_downloads": 100,
-      "downloads_per_hour": 28.12,
-      "growth_pct": 0.02
-    },
-    {
-      "project_id": "sUOam6sY",
-      "title": "Doomsday catastrophe - 末日灾变",
-      "slug": "doomsday-catastrophe",
-      "categories": [
-        "adventure",
-        "challenging",
-        "combat",
-        "forge",
-        "magic",
-        "multiplayer",
-        "technology"
-      ],
-      "current_downloads": 26293,
-      "baseline_downloads": 26199,
-      "delta_downloads": 94,
-      "downloads_per_hour": 26.44,
-      "growth_pct": 0.36
-    },
-    {
-      "project_id": "k7rYWV2B",
-      "title": "Batoon's Modpacks: PVP Utility's",
-      "slug": "batoons-modpacks-pvp-utilitys",
-      "categories": [
-        "combat",
-        "fabric",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 7197,
-      "baseline_downloads": 7108,
-      "delta_downloads": 89,
-      "downloads_per_hour": 25.03,
-      "growth_pct": 1.25
-    },
-    {
-      "project_id": "c7aeVsBE",
-      "title": "⚔️ Chronicles of Valor | Mythic Edition ⚔️",
-      "slug": "-chronicles-of-valor-mythic-edition-",
-      "categories": [
-        "adventure",
-        "challenging",
-        "combat",
-        "fabric",
-        "lightweight",
-        "multiplayer",
-        "quests"
-      ],
-      "current_downloads": 726,
-      "baseline_downloads": 639,
-      "delta_downloads": 87,
-      "downloads_per_hour": 24.47,
-      "growth_pct": 13.62
-    },
-    {
-      "project_id": "MGgeHcob",
-      "title": "Better MTR",
-      "slug": "bmtr",
-      "categories": [
-        "fabric",
-        "lightweight",
-        "optimization",
-        "technology"
-      ],
-      "current_downloads": 8547,
-      "baseline_downloads": 8468,
-      "delta_downloads": 79,
-      "downloads_per_hour": 22.22,
-      "growth_pct": 0.93
-    },
-    {
-      "project_id": "BaiNKGEn",
-      "title": "MTR Railway Network Access",
-      "slug": "railway-network-access",
-      "categories": [
-        "fabric",
-        "forge",
-        "lightweight",
-        "multiplayer",
-        "optimization",
-        "technology"
-      ],
-      "current_downloads": 1417,
-      "baseline_downloads": 1339,
-      "delta_downloads": 78,
-      "downloads_per_hour": 21.94,
-      "growth_pct": 5.83
-    },
-    {
-      "project_id": "dRBcJBqN",
-      "title": "CPVP Essentials",
-      "slug": "cpvp-essentials",
-      "categories": [
-        "combat",
-        "fabric",
-        "lightweight",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 2410,
-      "baseline_downloads": 2333,
-      "delta_downloads": 77,
-      "downloads_per_hour": 21.65,
-      "growth_pct": 3.3
-    },
-    {
-      "project_id": "TnUnrLK3",
-      "title": "EMC Essentials",
-      "slug": "emc-essentials",
-      "categories": [
-        "forge",
-        "lightweight",
-        "magic",
-        "optimization"
-      ],
-      "current_downloads": 19775,
-      "baseline_downloads": 19704,
-      "delta_downloads": 71,
-      "downloads_per_hour": 19.97,
-      "growth_pct": 0.36
-    },
-    {
-      "project_id": "f63ynpri",
-      "title": "Simply Legacy",
-      "slug": "simply-legacy",
-      "categories": [
-        "fabric",
-        "kitchen-sink",
-        "multiplayer",
-        "neoforge",
-        "optimization"
-      ],
-      "current_downloads": 18657,
-      "baseline_downloads": 18587,
-      "delta_downloads": 70,
-      "downloads_per_hour": 19.69,
-      "growth_pct": 0.38
-    },
-    {
-      "project_id": "cnGp88ef",
-      "title": "Zombie Apocalypse: Optimized",
-      "slug": "zombie-apocalypse-optimized",
-      "categories": [
-        "adventure",
-        "challenging",
-        "combat",
-        "fabric",
-        "lightweight",
-        "multiplayer"
-      ],
-      "current_downloads": 8623,
-      "baseline_downloads": 8560,
-      "delta_downloads": 63,
-      "downloads_per_hour": 17.72,
-      "growth_pct": 0.74
-    },
-    {
-      "project_id": "Vv0iJDvu",
-      "title": "[MUC] MTR Urban Construction",
-      "slug": "mtr-urban-construction",
-      "categories": [
-        "fabric",
-        "forge",
-        "multiplayer",
-        "technology"
-      ],
-      "current_downloads": 17437,
-      "baseline_downloads": 17377,
-      "delta_downloads": 60,
-      "downloads_per_hour": 16.87,
-      "growth_pct": 0.35
-    },
-    {
-      "project_id": "t0mtiuRo",
-      "title": "红石生电极速版【Redstone speed version】",
-      "slug": "rsv",
-      "categories": [
-        "fabric",
-        "lightweight",
-        "optimization"
-      ],
-      "current_downloads": 26681,
-      "baseline_downloads": 26622,
-      "delta_downloads": 59,
-      "downloads_per_hour": 16.59,
-      "growth_pct": 0.22
-    },
-    {
-      "project_id": "3n9XwW98",
-      "title": "Player2 AI NPC Pack",
-      "slug": "player2-ai-npc-pack",
-      "categories": [
-        "fabric",
-        "forge",
-        "lightweight",
-        "neoforge"
-      ],
-      "current_downloads": 4524,
-      "baseline_downloads": 4468,
-      "delta_downloads": 56,
-      "downloads_per_hour": 15.75,
-      "growth_pct": 1.25
-    },
-    {
-      "project_id": "Dt8IK81z",
-      "title": "Fps Optimized",
-      "slug": "tige-boost",
-      "categories": [
-        "combat",
-        "fabric",
-        "lightweight",
-        "optimization"
-      ],
-      "current_downloads": 8881,
-      "baseline_downloads": 8826,
-      "delta_downloads": 55,
-      "downloads_per_hour": 15.47,
-      "growth_pct": 0.62
-    },
-    {
-      "project_id": "MqP9FkC4",
-      "title": "云游轻量生存整合包【YunGames Lite Survival Optimization】",
-      "slug": "yungames",
-      "categories": [
-        "fabric",
-        "lightweight",
-        "multiplayer",
-        "optimization",
-        "technology"
-      ],
-      "current_downloads": 4862,
-      "baseline_downloads": 4808,
-      "delta_downloads": 54,
-      "downloads_per_hour": 15.19,
-      "growth_pct": 1.12
-    },
-    {
-      "project_id": "scrPiYVb",
-      "title": "Nature's Journey: Beyond the Horizon",
-      "slug": "natures-journey-beyond-the-horizon",
-      "categories": [
-        "adventure",
-        "challenging",
-        "combat",
-        "forge",
-        "kitchen-sink",
-        "multiplayer",
-        "technology"
-      ],
-      "current_downloads": 23051,
-      "baseline_downloads": 22998,
-      "delta_downloads": 53,
-      "downloads_per_hour": 14.91,
-      "growth_pct": 0.23
-    },
-    {
-      "project_id": "jLkRB0On",
-      "title": "Ad Astra Remastered",
-      "slug": "ad-astra-remastered",
-      "categories": [
-        "adventure",
-        "challenging",
-        "forge",
-        "optimization",
-        "technology"
-      ],
-      "current_downloads": 13324,
-      "baseline_downloads": 13271,
-      "delta_downloads": 53,
-      "downloads_per_hour": 14.91,
-      "growth_pct": 0.4
-    },
-    {
-      "project_id": "mYhZl7Mw",
-      "title": "POKEMON Re-Mega",
-      "slug": "pokemon-re-mega",
-      "categories": [
-        "adventure",
-        "challenging",
-        "fabric",
-        "forge",
-        "multiplayer",
-        "quests"
-      ],
-      "current_downloads": 28537,
-      "baseline_downloads": 28487,
-      "delta_downloads": 50,
-      "downloads_per_hour": 14.06,
-      "growth_pct": 0.18
-    },
-    {
-      "project_id": "fpiRMGEd",
-      "title": "All you need: Mace PVP",
-      "slug": "all-you-need-mace-pvp",
-      "categories": [
-        "challenging",
-        "combat",
-        "fabric",
-        "lightweight",
-        "optimization"
-      ],
-      "current_downloads": 4405,
-      "baseline_downloads": 4355,
-      "delta_downloads": 50,
-      "downloads_per_hour": 14.06,
-      "growth_pct": 1.15
-    },
-    {
-      "project_id": "NvjVThBG",
-      "title": "Jurassic World Reborn",
-      "slug": "jurassic-world-reborn",
-      "categories": [
-        "adventure",
-        "challenging",
-        "multiplayer",
-        "neoforge"
-      ],
-      "current_downloads": 8887,
-      "baseline_downloads": 8838,
-      "delta_downloads": 49,
-      "downloads_per_hour": 13.78,
-      "growth_pct": 0.55
-    },
-    {
-      "project_id": "o5Wo4nbH",
-      "title": "NSCOP生电优化整合包",
-      "slug": "nscopcp",
-      "categories": [
-        "fabric",
-        "lightweight",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 3501,
-      "baseline_downloads": 3454,
-      "delta_downloads": 47,
-      "downloads_per_hour": 13.22,
-      "growth_pct": 1.36
-    },
-    {
-      "project_id": "T7S1Adma",
-      "title": "Project Storm Chaser",
-      "slug": "project-storm-chaser",
-      "categories": [
-        "adventure",
-        "challenging",
-        "neoforge",
-        "technology"
-      ],
-      "current_downloads": 7061,
-      "baseline_downloads": 7015,
-      "delta_downloads": 46,
-      "downloads_per_hour": 12.94,
-      "growth_pct": 0.66
-    },
-    {
-      "project_id": "pQIyR551",
-      "title": "XPlus PerioTable Modpack (NeoForge)",
-      "slug": "xplus-periotable-modpack-neoforge",
-      "categories": [
-        "adventure",
-        "lightweight",
-        "multiplayer",
-        "neoforge",
-        "optimization"
-      ],
-      "current_downloads": 17743,
-      "baseline_downloads": 17698,
-      "delta_downloads": 45,
-      "downloads_per_hour": 12.66,
-      "growth_pct": 0.25
-    },
-    {
-      "project_id": "Dr6pSOVs",
-      "title": "Life Steal SMP",
-      "slug": "life-steal-smp",
-      "categories": [
-        "challenging",
-        "combat",
-        "fabric",
-        "multiplayer"
-      ],
-      "current_downloads": 16835,
-      "baseline_downloads": 16790,
-      "delta_downloads": 45,
-      "downloads_per_hour": 12.66,
-      "growth_pct": 0.27
-    },
-    {
-      "project_id": "NV839VaN",
-      "title": "FPS + PVP BOOST",
-      "slug": "fps-+-pvp-boost",
-      "categories": [
-        "combat",
-        "fabric",
-        "lightweight",
-        "optimization"
-      ],
-      "current_downloads": 1422,
-      "baseline_downloads": 1377,
-      "delta_downloads": 45,
-      "downloads_per_hour": 12.66,
-      "growth_pct": 3.27
-    },
-    {
-      "project_id": "43KNUSAw",
-      "title": "New_Path Optimization",
-      "slug": "turbo_vulkan",
-      "categories": [
-        "fabric",
-        "lightweight",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 4189,
-      "baseline_downloads": 4144,
-      "delta_downloads": 45,
-      "downloads_per_hour": 12.66,
-      "growth_pct": 1.09
-    },
-    {
-      "project_id": "tSIZRqEe",
-      "title": "Tacz Enhance",
-      "slug": "tacz_enhance",
-      "categories": [
-        "adventure",
-        "combat",
-        "fabric",
-        "forge",
-        "lightweight",
-        "multiplayer",
-        "neoforge",
-        "optimization"
-      ],
-      "current_downloads": 4013,
-      "baseline_downloads": 3970,
-      "delta_downloads": 43,
-      "downloads_per_hour": 12.09,
-      "growth_pct": 1.08
-    },
-    {
-      "project_id": "hIP06Xei",
-      "title": "Build Iberia Essentials",
-      "slug": "bte-iberia-essentials",
-      "categories": [
-        "fabric",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 43,
-      "baseline_downloads": 0,
-      "delta_downloads": 43,
-      "downloads_per_hour": 12.09,
+      "current_downloads": 539076,
+      "baseline_downloads": 539071,
+      "delta_downloads": 5,
+      "downloads_per_hour": 1.27,
       "growth_pct": 0.0
     },
     {
-      "project_id": "oCfwAXFU",
-      "title": "Mine Create",
-      "slug": "mine-create",
+      "project_id": "pBFoZh84",
+      "title": "Everything Voxy",
+      "slug": "everything-voxy",
       "categories": [
+        "adventure",
+        "fabric",
+        "lightweight",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 104697,
+      "baseline_downloads": 104693,
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.02,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "vqFB8BvE",
+      "title": "Squibbin Hangout",
+      "slug": "squibbinsquadsmp",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "fabric",
+        "forge",
+        "multiplayer",
+        "neoforge",
+        "optimization"
+      ],
+      "current_downloads": 4520,
+      "baseline_downloads": 4516,
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.02,
+      "growth_pct": 0.09
+    },
+    {
+      "project_id": "8LIOgSPi",
+      "title": "Roziaria",
+      "slug": "roziaria",
+      "categories": [
+        "adventure",
+        "combat",
+        "forge",
+        "lightweight",
+        "multiplayer",
+        "neoforge",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 819,
+      "baseline_downloads": 816,
+      "delta_downloads": 3,
+      "downloads_per_hour": 0.76,
+      "growth_pct": 0.37
+    },
+    {
+      "project_id": "DhVbCgtP",
+      "title": "Create++",
+      "slug": "create-plus-x2",
+      "categories": [
+        "adventure",
+        "combat",
+        "multiplayer",
+        "neoforge",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 144,
+      "baseline_downloads": 141,
+      "delta_downloads": 3,
+      "downloads_per_hour": 0.76,
+      "growth_pct": 2.13
+    },
+    {
+      "project_id": "PbhGa8Fz",
+      "title": "Perpetual Motion",
+      "slug": "perpetual-motion",
+      "categories": [
+        "adventure",
+        "multiplayer",
+        "neoforge",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 50,
+      "baseline_downloads": 47,
+      "delta_downloads": 3,
+      "downloads_per_hour": 0.76,
+      "growth_pct": 6.38
+    },
+    {
+      "project_id": "SdG70IRc",
+      "title": "Faithfully optimized",
+      "slug": "faithfullyoptimized",
+      "categories": [
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 284,
+      "baseline_downloads": 281,
+      "delta_downloads": 3,
+      "downloads_per_hour": 0.76,
+      "growth_pct": 1.07
+    },
+    {
+      "project_id": "lHnj1bpx",
+      "title": "HighBarBlue's Vanilla+ Modpack",
+      "slug": "highbarblues-vanilla+-modpack",
+      "categories": [
+        "fabric",
+        "lightweight",
+        "optimization"
+      ],
+      "current_downloads": 69,
+      "baseline_downloads": 66,
+      "delta_downloads": 3,
+      "downloads_per_hour": 0.76,
+      "growth_pct": 4.55
+    },
+    {
+      "project_id": "SU0WjsoL",
+      "title": "Unstable SMP Recreation",
+      "slug": "unstable-smp-recreation",
+      "categories": [
+        "adventure",
+        "combat",
+        "fabric",
+        "multiplayer"
+      ],
+      "current_downloads": 7719,
+      "baseline_downloads": 7717,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "mNOn8Ew3",
+      "title": "{M.V.O.} Modern Vanilla+ Overhaul",
+      "slug": "mvo",
+      "categories": [
+        "adventure",
+        "challenging",
+        "fabric",
+        "lightweight",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 161,
+      "baseline_downloads": 159,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "growth_pct": 1.26
+    },
+    {
+      "project_id": "D1UbF9D0",
+      "title": "Trademarked",
+      "slug": "trademarked",
+      "categories": [
+        "adventure",
+        "combat",
+        "forge",
+        "multiplayer",
+        "neoforge",
+        "technology"
+      ],
+      "current_downloads": 225,
+      "baseline_downloads": 223,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "growth_pct": 0.9
+    },
+    {
+      "project_id": "mpLk1xW3",
+      "title": "DarkMetaKnight's Adventure Pack",
+      "slug": "darkmetaknights-adventure-pack",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "magic",
+        "neoforge",
+        "technology"
+      ],
+      "current_downloads": 125,
+      "baseline_downloads": 123,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "growth_pct": 1.63
+    },
+    {
+      "project_id": "iS3gjzbj",
+      "title": "The Intergalactic Squirrels",
+      "slug": "igsq",
+      "categories": [
+        "fabric",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 770,
+      "baseline_downloads": 768,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "growth_pct": 0.26
+    },
+    {
+      "project_id": "3MbM1bU5",
+      "title": "THE Server Season 5 - Companion Modpack",
+      "slug": "capital-the-server-season-3",
+      "categories": [
+        "fabric",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 671,
+      "baseline_downloads": 669,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "growth_pct": 0.3
+    },
+    {
+      "project_id": "vxzV0Ze9",
+      "title": "Dutch Pet Shelter",
+      "slug": "dutch-pet-shelter",
+      "categories": [
+        "adventure",
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization",
+        "technology"
+      ],
+      "current_downloads": 402,
+      "baseline_downloads": 401,
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "growth_pct": 0.25
+    },
+    {
+      "project_id": "2eDu3kOh",
+      "title": "The Core Modpack",
+      "slug": "thecoremodpack",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "fabric",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 368,
+      "baseline_downloads": 367,
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "growth_pct": 0.27
+    },
+    {
+      "project_id": "sLvfAfO9",
+      "title": "ftehe's Vanilla+",
+      "slug": "ftehes-vanillaplus",
+      "categories": [
+        "adventure",
+        "fabric",
+        "lightweight",
+        "multiplayer",
+        "optimization"
+      ],
+      "current_downloads": 53,
+      "baseline_downloads": 52,
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "growth_pct": 1.92
+    },
+    {
+      "project_id": "8l6DbUeF",
+      "title": "Embervale SMP",
+      "slug": "embervale-smp",
+      "categories": [
+        "adventure",
+        "challenging",
+        "combat",
+        "fabric",
         "kitchen-sink",
-        "lightweight",
-        "neoforge",
-        "technology"
-      ],
-      "current_downloads": 1728,
-      "baseline_downloads": 1688,
-      "delta_downloads": 40,
-      "downloads_per_hour": 11.25,
-      "growth_pct": 2.37
-    },
-    {
-      "project_id": "AS3pJ2oq",
-      "title": "All The Trains MTR",
-      "slug": "all-the-trains-mtr",
-      "categories": [
-        "fabric",
+        "magic",
         "multiplayer",
-        "technology"
+        "optimization",
+        "quests"
       ],
-      "current_downloads": 6283,
-      "baseline_downloads": 6246,
-      "delta_downloads": 37,
-      "downloads_per_hour": 10.41,
-      "growth_pct": 0.59
-    },
-    {
-      "project_id": "WIIu1a83",
-      "title": "Lucky Pillar",
-      "slug": "lucky-pillar",
-      "categories": [
-        "adventure",
-        "challenging",
-        "combat",
-        "fabric",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 11702,
-      "baseline_downloads": 11666,
-      "delta_downloads": 36,
-      "downloads_per_hour": 10.12,
-      "growth_pct": 0.31
-    },
-    {
-      "project_id": "Uludimqd",
-      "title": "Big Globe Optimized [FORGE/NEOFORGE]",
-      "slug": "big-globe-optimized-forge",
-      "categories": [
-        "adventure",
-        "forge",
-        "lightweight",
-        "neoforge",
-        "optimization"
-      ],
-      "current_downloads": 3829,
-      "baseline_downloads": 3793,
-      "delta_downloads": 36,
-      "downloads_per_hour": 10.12,
-      "growth_pct": 0.95
-    },
-    {
-      "project_id": "ZUc2QvPO",
-      "title": "Colisão Cobblemon",
-      "slug": "colisao-cobblemon",
-      "categories": [
-        "adventure",
-        "challenging",
-        "fabric",
-        "multiplayer"
-      ],
-      "current_downloads": 3570,
-      "baseline_downloads": 3534,
-      "delta_downloads": 36,
-      "downloads_per_hour": 10.12,
-      "growth_pct": 1.02
-    },
-    {
-      "project_id": "3arcllaW",
-      "title": "Utopia SMP",
-      "slug": "utopia-smp",
-      "categories": [
-        "fabric",
-        "lightweight",
-        "multiplayer",
-        "optimization"
-      ],
-      "current_downloads": 6214,
-      "baseline_downloads": 6178,
-      "delta_downloads": 36,
-      "downloads_per_hour": 10.12,
-      "growth_pct": 0.58
-    },
-    {
-      "project_id": "1pLr0Ghx",
-      "title": "CreepyCraft",
-      "slug": "creepycraftmodpack",
-      "categories": [
-        "adventure",
-        "challenging",
-        "combat",
-        "forge",
-        "multiplayer"
-      ],
-      "current_downloads": 2257,
-      "baseline_downloads": 2222,
-      "delta_downloads": 35,
-      "downloads_per_hour": 9.84,
-      "growth_pct": 1.58
-    },
-    {
-      "project_id": "w4unz3sW",
-      "title": "Planes Trains and Cobblemon",
-      "slug": "planes-trains-cobblemon",
-      "categories": [
-        "adventure",
-        "combat",
-        "forge",
-        "multiplayer",
-        "technology"
-      ],
-      "current_downloads": 2088,
-      "baseline_downloads": 2053,
-      "delta_downloads": 35,
-      "downloads_per_hour": 9.84,
-      "growth_pct": 1.7
-    },
-    {
-      "project_id": "b2GlhLey",
-      "title": "GenZ's Modpack",
-      "slug": "genzs-modpack",
-      "categories": [
-        "adventure",
-        "fabric",
-        "optimization"
-      ],
-      "current_downloads": 1245,
-      "baseline_downloads": 1210,
-      "delta_downloads": 35,
-      "downloads_per_hour": 9.84,
-      "growth_pct": 2.89
-    },
-    {
-      "project_id": "bt3m6h7H",
-      "title": "Sonic The Hedgehog Craft",
-      "slug": "sonicthehedgehog",
-      "categories": [
-        "adventure",
-        "combat",
-        "forge",
-        "neoforge",
-        "technology"
-      ],
-      "current_downloads": 7963,
-      "baseline_downloads": 7930,
-      "delta_downloads": 33,
-      "downloads_per_hour": 9.28,
-      "growth_pct": 0.42
+      "current_downloads": 55,
+      "baseline_downloads": 54,
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "growth_pct": 1.85
     }
   ],
   "declining_projects": [],
   "top_version_loaders": [
     {
-      "game_version": "1.20.1",
-      "loader": "fabric",
-      "delta_downloads": 5929,
-      "downloads_per_hour": 1667.4,
-      "project_count": 2079,
-      "top_project_id": "MGgeHcob",
-      "top_project_title": "Better MTR",
-      "top_project_delta": 74
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "forge",
-      "delta_downloads": 5755,
-      "downloads_per_hour": 1618.47,
-      "project_count": 1463,
-      "top_project_id": "49PGeVge",
-      "top_project_title": "TRACING LIGHT · DARK TIDE",
-      "top_project_delta": 261
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "neoforge",
-      "delta_downloads": 5073,
-      "downloads_per_hour": 1426.67,
-      "project_count": 980,
-      "top_project_id": "hRud1elC",
-      "top_project_title": "The Broken Game",
-      "top_project_delta": 731
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "fabric",
-      "delta_downloads": 4457,
-      "downloads_per_hour": 1253.43,
-      "project_count": 1265,
-      "top_project_id": "WOXnIjeY",
-      "top_project_title": "HCN 生电包",
-      "top_project_delta": 87
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "fabric",
-      "delta_downloads": 3302,
-      "downloads_per_hour": 928.61,
-      "project_count": 957,
-      "top_project_id": "c7aeVsBE",
-      "top_project_title": "⚔️ Chronicles of Valor | Mythic Edition ⚔️",
-      "top_project_delta": 87
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "forge",
-      "delta_downloads": 2683,
-      "downloads_per_hour": 754.53,
-      "project_count": 152,
-      "top_project_id": "mvnoIGxi",
-      "top_project_title": "One block horror",
-      "top_project_delta": 2144
-    },
-    {
-      "game_version": "1.21",
-      "loader": "fabric",
-      "delta_downloads": 2215,
-      "downloads_per_hour": 622.92,
-      "project_count": 502,
-      "top_project_id": "g9E7wZrA",
-      "top_project_title": "Better Than Clouds",
-      "top_project_delta": 512
-    },
-    {
       "game_version": "26.2",
       "loader": "fabric",
-      "delta_downloads": 2094,
-      "downloads_per_hour": 588.89,
-      "project_count": 290,
-      "top_project_id": "Mo0nlQxI",
-      "top_project_title": "SVC for Lunar Client",
-      "top_project_delta": 1204
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "fabric",
-      "delta_downloads": 1464,
-      "downloads_per_hour": 411.72,
-      "project_count": 544,
-      "top_project_id": "6PoGlsys",
-      "top_project_title": "GD656极致生电整合包",
-      "top_project_delta": 26
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "fabric",
-      "delta_downloads": 1403,
-      "downloads_per_hour": 394.56,
-      "project_count": 400,
-      "top_project_id": "f63ynpri",
-      "top_project_title": "Simply Legacy",
-      "top_project_delta": 70
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "fabric",
-      "delta_downloads": 1047,
-      "downloads_per_hour": 294.45,
-      "project_count": 390,
-      "top_project_id": "MSDCA73O",
-      "top_project_title": "简单优化整合包 for Bilicraft",
-      "top_project_delta": 29
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "fabric",
-      "delta_downloads": 808,
-      "downloads_per_hour": 227.23,
-      "project_count": 360,
-      "top_project_id": "Iwb2VGI2",
-      "top_project_title": "visual plus+",
-      "top_project_delta": 13
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "fabric",
-      "delta_downloads": 796,
-      "downloads_per_hour": 223.86,
-      "project_count": 356,
-      "top_project_id": "itHp362x",
-      "top_project_title": "Photonics Visualized",
-      "top_project_delta": 19
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "fabric",
-      "delta_downloads": 696,
-      "downloads_per_hour": 195.73,
-      "project_count": 230,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "fabric",
-      "delta_downloads": 674,
-      "downloads_per_hour": 189.55,
-      "project_count": 310,
-      "top_project_id": "wPLyxNy6",
-      "top_project_title": "Ultimate Realism",
-      "top_project_delta": 14
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "neoforge",
-      "delta_downloads": 508,
-      "downloads_per_hour": 142.86,
-      "project_count": 134,
-      "top_project_id": "EN5xNG14",
-      "top_project_title": "Counter Strike 2",
-      "top_project_delta": 186
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "quilt",
-      "delta_downloads": 440,
-      "downloads_per_hour": 123.74,
-      "project_count": 166,
-      "top_project_id": "AeV5kYCJ",
-      "top_project_title": "SIMPCRAFT",
-      "top_project_delta": 28
-    },
-    {
-      "game_version": "1.12.2",
-      "loader": "forge",
-      "delta_downloads": 385,
-      "downloads_per_hour": 108.27,
-      "project_count": 81,
-      "top_project_id": "wD9r2e1k",
-      "top_project_title": "MrCrayfish Legacy Pack",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "fabric",
-      "delta_downloads": 301,
-      "downloads_per_hour": 84.65,
-      "project_count": 123,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "fabric",
-      "delta_downloads": 260,
-      "downloads_per_hour": 73.12,
-      "project_count": 102,
-      "top_project_id": "fgDe5pB3",
-      "top_project_title": "Spirity Optimized",
-      "top_project_delta": 27
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "fabric",
-      "delta_downloads": 220,
-      "downloads_per_hour": 61.87,
-      "project_count": 92,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "forge",
-      "delta_downloads": 219,
-      "downloads_per_hour": 61.59,
-      "project_count": 58,
-      "top_project_id": "dbn3fbm2",
-      "top_project_title": "Light in the Sky",
-      "top_project_delta": 20
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "quilt",
-      "delta_downloads": 209,
-      "downloads_per_hour": 58.78,
-      "project_count": 81,
-      "top_project_id": "WZwys3LN",
-      "top_project_title": "Create Lite",
-      "top_project_delta": 11
-    },
-    {
-      "game_version": "26.1",
-      "loader": "fabric",
-      "delta_downloads": 200,
-      "downloads_per_hour": 56.25,
-      "project_count": 72,
-      "top_project_id": "b2GlhLey",
-      "top_project_title": "GenZ's Modpack",
-      "top_project_delta": 35
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "fabric",
-      "delta_downloads": 198,
-      "downloads_per_hour": 55.68,
-      "project_count": 45,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "forge",
-      "delta_downloads": 183,
-      "downloads_per_hour": 51.46,
-      "project_count": 54,
-      "top_project_id": "7eVeVIBh",
-      "top_project_title": "Horse Upgrades",
-      "top_project_delta": 18
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "fabric",
-      "delta_downloads": 163,
-      "downloads_per_hour": 45.84,
-      "project_count": 65,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "fabric",
-      "delta_downloads": 156,
-      "downloads_per_hour": 43.87,
-      "project_count": 77,
-      "top_project_id": "EMpbplLB",
-      "top_project_title": "Alex's Amazing PVP Pack",
-      "top_project_delta": 16
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "fabric",
-      "delta_downloads": 149,
-      "downloads_per_hour": 41.9,
-      "project_count": 62,
-      "top_project_id": "N3ZIGqFw",
-      "top_project_title": "Natural Disasters",
-      "top_project_delta": 32
-    },
-    {
-      "game_version": "1.8.9",
-      "loader": "forge",
-      "delta_downloads": 128,
-      "downloads_per_hour": 36.0,
-      "project_count": 25,
-      "top_project_id": "mkRFQcYx",
-      "top_project_title": "Bedwars Optimised",
-      "top_project_delta": 23
-    },
-    {
-      "game_version": "1.20",
-      "loader": "fabric",
-      "delta_downloads": 118,
-      "downloads_per_hour": 33.18,
-      "project_count": 40,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "fabric",
-      "delta_downloads": 117,
-      "downloads_per_hour": 32.9,
-      "project_count": 71,
-      "top_project_id": "sr0NwKN6",
-      "top_project_title": "OptiNa Reborn",
-      "top_project_delta": 6
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "fabric",
-      "delta_downloads": 97,
-      "downloads_per_hour": 27.28,
-      "project_count": 33,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "fabric",
-      "delta_downloads": 95,
-      "downloads_per_hour": 26.72,
-      "project_count": 21,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "fabric",
-      "delta_downloads": 70,
-      "downloads_per_hour": 19.69,
-      "project_count": 30,
-      "top_project_id": "T9qXXtgJ",
-      "top_project_title": "the ultimate fps engine",
-      "top_project_delta": 8
-    },
-    {
-      "game_version": "1.19",
-      "loader": "fabric",
-      "delta_downloads": 69,
-      "downloads_per_hour": 19.4,
-      "project_count": 22,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "neoforge",
-      "delta_downloads": 60,
-      "downloads_per_hour": 16.87,
-      "project_count": 12,
-      "top_project_id": "pIHsq4oL",
-      "top_project_title": "ChillCraft - CC1",
-      "top_project_delta": 20
-    },
-    {
-      "game_version": "1.7.10",
-      "loader": "forge",
-      "delta_downloads": 55,
-      "downloads_per_hour": 15.47,
-      "project_count": 13,
-      "top_project_id": "5D63OquS",
-      "top_project_title": "Antique Optimizations",
-      "top_project_delta": 10
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "quilt",
-      "delta_downloads": 52,
-      "downloads_per_hour": 14.62,
-      "project_count": 19,
-      "top_project_id": "VDV0y4tK",
-      "top_project_title": "ImprovFPS",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "quilt",
-      "delta_downloads": 50,
-      "downloads_per_hour": 14.06,
+      "delta_downloads": 750,
+      "downloads_per_hour": 190.84,
       "project_count": 17,
-      "top_project_id": "ur1twLkR",
-      "top_project_title": "All of Ori-rinth",
-      "top_project_delta": 6
-    },
-    {
-      "game_version": "1.21",
-      "loader": "quilt",
-      "delta_downloads": 48,
-      "downloads_per_hour": 13.5,
-      "project_count": 15,
-      "top_project_id": "llws18dz",
-      "top_project_title": "Deckcraft Server (Controlify)",
-      "top_project_delta": 19
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "fabric",
-      "delta_downloads": 45,
-      "downloads_per_hour": 12.66,
-      "project_count": 12,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
+      "top_project_id": "1Fv3GHYS",
+      "top_project_title": "红石生电优化【Redstone Survival Optimization】",
+      "top_project_delta": 570
     },
     {
       "game_version": "1.21.11",
-      "loader": "neoforge",
-      "delta_downloads": 42,
-      "downloads_per_hour": 11.81,
-      "project_count": 20,
-      "top_project_id": "5rhmeQQq",
-      "top_project_title": "Ultimate Performance",
-      "top_project_delta": 6
-    },
-    {
-      "game_version": "1.19.1",
       "loader": "fabric",
-      "delta_downloads": 41,
-      "downloads_per_hour": 11.53,
-      "project_count": 8,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.21",
-      "loader": "neoforge",
-      "delta_downloads": 40,
-      "downloads_per_hour": 11.25,
-      "project_count": 12,
-      "top_project_id": "qIxLIVn2",
-      "top_project_title": "Explorer's Haven",
-      "top_project_delta": 9
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "fabric",
-      "delta_downloads": 40,
-      "downloads_per_hour": 11.25,
-      "project_count": 9,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.17",
-      "loader": "fabric",
-      "delta_downloads": 39,
-      "downloads_per_hour": 10.97,
-      "project_count": 8,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "forge",
-      "delta_downloads": 36,
-      "downloads_per_hour": 10.12,
-      "project_count": 14,
-      "top_project_id": "LqcpUdKA",
-      "top_project_title": "Neek's Gun Modpack",
-      "top_project_delta": 9
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "quilt",
-      "delta_downloads": 33,
-      "downloads_per_hour": 9.28,
-      "project_count": 15,
-      "top_project_id": "WcvNIZJp",
-      "top_project_title": "activator",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "fabric",
-      "delta_downloads": 32,
-      "downloads_per_hour": 9.0,
-      "project_count": 15,
-      "top_project_id": "Lm6SBUZk",
-      "top_project_title": "Dimensional Drift: Realms Beyond",
-      "top_project_delta": 7
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "fabric",
-      "delta_downloads": 32,
-      "downloads_per_hour": 9.0,
-      "project_count": 6,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.18",
-      "loader": "fabric",
-      "delta_downloads": 31,
-      "downloads_per_hour": 8.72,
-      "project_count": 6,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "fabric",
-      "delta_downloads": 31,
-      "downloads_per_hour": 8.72,
-      "project_count": 6,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "neoforge",
-      "delta_downloads": 28,
-      "downloads_per_hour": 7.87,
-      "project_count": 7,
-      "top_project_id": "pQIyR551",
-      "top_project_title": "XPlus PerioTable Modpack (NeoForge)",
-      "top_project_delta": 12
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "forge",
-      "delta_downloads": 27,
-      "downloads_per_hour": 7.59,
-      "project_count": 6,
-      "top_project_id": "potd00C4",
-      "top_project_title": "Forge Optimized",
-      "top_project_delta": 11
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "neoforge",
-      "delta_downloads": 26,
-      "downloads_per_hour": 7.31,
-      "project_count": 12,
-      "top_project_id": "SpveH2Qd",
-      "top_project_title": "The Charkenverse",
-      "top_project_delta": 6
+      "delta_downloads": 708,
+      "downloads_per_hour": 180.15,
+      "project_count": 4,
+      "top_project_id": "zHP6LZ7W",
+      "top_project_title": "Unstable SMP Simulator",
+      "top_project_delta": 544
     },
     {
       "game_version": "1.21.1",
-      "loader": "quilt",
-      "delta_downloads": 25,
-      "downloads_per_hour": 7.03,
-      "project_count": 12,
-      "top_project_id": "yCeBXtyM",
-      "top_project_title": "Biomes Beyond",
-      "top_project_delta": 5
+      "loader": "neoforge",
+      "delta_downloads": 112,
+      "downloads_per_hour": 28.5,
+      "project_count": 17,
+      "top_project_id": "KhP3rX0G",
+      "top_project_title": "Soulbond Cobblemon Modpack",
+      "top_project_delta": 43
     },
     {
-      "game_version": "1.16.4",
+      "game_version": "26.1.2",
       "loader": "fabric",
-      "delta_downloads": 25,
-      "downloads_per_hour": 7.03,
-      "project_count": 1,
-      "top_project_id": "gavX3h13",
-      "top_project_title": "Better Skins",
-      "top_project_delta": 25
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "quilt",
-      "delta_downloads": 24,
-      "downloads_per_hour": 6.75,
-      "project_count": 13,
-      "top_project_id": "NAgQgs3R",
-      "top_project_title": "BlanketCon '22",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "26.2",
-      "loader": "neoforge",
-      "delta_downloads": 23,
-      "downloads_per_hour": 6.47,
-      "project_count": 7,
-      "top_project_id": "icPmSnHF",
-      "top_project_title": "Flight Client",
-      "top_project_delta": 10
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "quilt",
-      "delta_downloads": 23,
-      "downloads_per_hour": 6.47,
-      "project_count": 9,
-      "top_project_id": "ZQs1g4OA",
-      "top_project_title": "Overly Vulkan",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "neoforge",
-      "delta_downloads": 21,
-      "downloads_per_hour": 5.91,
+      "delta_downloads": 11,
+      "downloads_per_hour": 2.8,
       "project_count": 6,
-      "top_project_id": "9rzEqCNB",
-      "top_project_title": "Ars Arcanum",
-      "top_project_delta": 6
+      "top_project_id": "g9O0WaGR",
+      "top_project_title": "Re-Console",
+      "top_project_delta": 3
     },
     {
-      "game_version": "25w14craftmine",
+      "game_version": "1.21.1",
       "loader": "fabric",
-      "delta_downloads": 21,
-      "downloads_per_hour": 5.91,
-      "project_count": 5,
-      "top_project_id": "LDFN22fP",
-      "top_project_title": "CN_25w14Craftmine++",
-      "top_project_delta": 11
+      "delta_downloads": 10,
+      "downloads_per_hour": 2.54,
+      "project_count": 2,
+      "top_project_id": "qAiCl7In",
+      "top_project_title": "Wildera SMP",
+      "top_project_delta": 9
     },
     {
-      "game_version": "1.21.11",
-      "loader": "quilt",
-      "delta_downloads": 17,
-      "downloads_per_hour": 4.78,
-      "project_count": 5,
-      "top_project_id": "ccRZnT1P",
-      "top_project_title": "Best Survival Pack",
+      "game_version": "1.20.1",
+      "loader": "forge",
+      "delta_downloads": 8,
+      "downloads_per_hour": 2.04,
+      "project_count": 2,
+      "top_project_id": "lF6XcleQ",
+      "top_project_title": "KRILLKRAFT",
       "top_project_delta": 7
     },
     {
-      "game_version": "1.20.2",
-      "loader": "quilt",
-      "delta_downloads": 17,
-      "downloads_per_hour": 4.78,
-      "project_count": 7,
-      "top_project_id": "Uz5GoLxU",
-      "top_project_title": "max-fps",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "b1.7.3",
+      "game_version": "1.14.4",
       "loader": "fabric",
-      "delta_downloads": 15,
-      "downloads_per_hour": 4.22,
+      "delta_downloads": 3,
+      "downloads_per_hour": 0.76,
       "project_count": 3,
-      "top_project_id": "E15oqIRi",
-      "top_project_title": "Beta Adventures",
-      "top_project_delta": 7
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
     },
     {
       "game_version": "1.14",
       "loader": "fabric",
-      "delta_downloads": 15,
-      "downloads_per_hour": 4.22,
-      "project_count": 3,
-      "top_project_id": "2tLIG9M7",
-      "top_project_title": "PAFB Pack",
-      "top_project_delta": 9
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "neoforge",
-      "delta_downloads": 12,
-      "downloads_per_hour": 3.37,
-      "project_count": 4,
-      "top_project_id": "KMtrpYy7",
-      "top_project_title": "HT1: PVP Velocity modpack",
-      "top_project_delta": 6
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "forge",
-      "delta_downloads": 12,
-      "downloads_per_hour": 3.37,
-      "project_count": 5,
-      "top_project_id": "eTLB1o6Q",
-      "top_project_title": "All the MrCrayfish's Mods [FORGE]",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "neoforge",
-      "delta_downloads": 12,
-      "downloads_per_hour": 3.37,
-      "project_count": 4,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20",
-      "loader": "quilt",
-      "delta_downloads": 11,
-      "downloads_per_hour": 3.09,
-      "project_count": 7,
-      "top_project_id": "dTMOjE9d",
-      "top_project_title": "0ptimized Chaos",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "neoforge",
-      "delta_downloads": 11,
-      "downloads_per_hour": 3.09,
-      "project_count": 6,
-      "top_project_id": "xWVZShN9",
-      "top_project_title": "Better MC (Cheese Edition)",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.15.2",
-      "loader": "fabric",
-      "delta_downloads": 10,
-      "downloads_per_hour": 2.81,
-      "project_count": 3,
-      "top_project_id": "y556zacC",
-      "top_project_title": "ModFest 1.15",
-      "top_project_delta": 6
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "forge",
-      "delta_downloads": 9,
-      "downloads_per_hour": 2.53,
-      "project_count": 3,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "forge",
-      "delta_downloads": 9,
-      "downloads_per_hour": 2.53,
-      "project_count": 2,
-      "top_project_id": "T8sdN2SN",
-      "top_project_title": "All The Biomes You'll Go",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "20w14infinite",
-      "loader": "fabric",
-      "delta_downloads": 9,
-      "downloads_per_hour": 2.53,
-      "project_count": 2,
-      "top_project_id": "osvx9UZj",
-      "top_project_title": "Simply Infinite",
-      "top_project_delta": 8
-    },
-    {
-      "game_version": "26.2-snapshot-7",
-      "loader": "fabric",
-      "delta_downloads": 9,
-      "downloads_per_hour": 2.53,
-      "project_count": 1,
-      "top_project_id": "LCHqlxqU",
-      "top_project_title": "Snapshot Pack",
-      "top_project_delta": 9
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "forge",
-      "delta_downloads": 8,
-      "downloads_per_hour": 2.25,
-      "project_count": 3,
-      "top_project_id": "UoIAQWYW",
-      "top_project_title": "Frigid",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "forge",
-      "delta_downloads": 8,
-      "downloads_per_hour": 2.25,
-      "project_count": 3,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.14.4",
-      "loader": "forge",
-      "delta_downloads": 8,
-      "downloads_per_hour": 2.25,
-      "project_count": 3,
-      "top_project_id": "V6067P8x",
-      "top_project_title": "Performance Enhancer Next Plus - PEN+",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "forge",
-      "delta_downloads": 8,
-      "downloads_per_hour": 2.25,
-      "project_count": 1,
-      "top_project_id": "TnzA0ij4",
-      "top_project_title": "Saro's City Modpack",
-      "top_project_delta": 8
-    },
-    {
-      "game_version": "1.14.4",
-      "loader": "fabric",
-      "delta_downloads": 7,
-      "downloads_per_hour": 1.97,
-      "project_count": 2,
-      "top_project_id": "XiASOuHY",
-      "top_project_title": "Cubed Pack",
-      "top_project_delta": 6
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "quilt",
-      "delta_downloads": 6,
-      "downloads_per_hour": 1.69,
-      "project_count": 2,
-      "top_project_id": "qYUsxvBA",
-      "top_project_title": "Deck Craft (Client Midnight)",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "neoforge",
-      "delta_downloads": 6,
-      "downloads_per_hour": 1.69,
-      "project_count": 3,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "forge",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 2,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "quilt",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 4,
-      "top_project_id": "uT606F9V",
-      "top_project_title": "Server Essentials 🚀",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "forge",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 2,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "24w14potato",
-      "loader": "fabric",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 1,
-      "top_project_id": "OlLcmE5s",
-      "top_project_title": "POTATO UPDATE",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "1.10.2",
-      "loader": "forge",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 1,
-      "top_project_id": "TP2Bu3k4",
-      "top_project_title": "Hardcore Alchemy",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "1.20.5-rc2",
-      "loader": "fabric",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 1,
-      "top_project_id": "uPaQjpyy",
-      "top_project_title": "LavishlyOptimized",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "1.14.2",
-      "loader": "fabric",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 3,
-      "top_project_id": "vIIhHQzF",
-      "top_project_title": "W1 Optimized",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.8.9",
-      "loader": "fabric",
-      "delta_downloads": 5,
-      "downloads_per_hour": 1.41,
-      "project_count": 1,
-      "top_project_id": "18Hch8C1",
-      "top_project_title": "SlimLine",
-      "top_project_delta": 5
-    },
-    {
-      "game_version": "1.19",
-      "loader": "quilt",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 3,
-      "top_project_id": "RV6ymoqW",
-      "top_project_title": "Harms fabulous pack ",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.20",
-      "loader": "forge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "forge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "forge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21",
-      "loader": "forge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "forge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20",
-      "loader": "neoforge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "neoforge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "neoforge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "neoforge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "neoforge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 1,
-      "top_project_id": "FDRrILSb",
-      "top_project_title": "Electric & Mechanic Energy",
-      "top_project_delta": 4
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "neoforge",
-      "delta_downloads": 4,
-      "downloads_per_hour": 1.12,
-      "project_count": 3,
-      "top_project_id": "YqIuiOkv",
-      "top_project_title": "ZenFPS",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "neoforge",
       "delta_downloads": 3,
-      "downloads_per_hour": 0.84,
+      "downloads_per_hour": 0.76,
       "project_count": 3,
-      "top_project_id": "WkfCbNMe",
-      "top_project_title": "FPS Boost:Optimized",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.16.4",
-      "loader": "forge",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 1,
-      "top_project_id": "PVbuz0gb",
-      "top_project_title": "ESSENTIALS FOR JAVA",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.16",
-      "loader": "fabric",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 2,
-      "top_project_id": "PVbuz0gb",
-      "top_project_title": "ESSENTIALS FOR JAVA",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.16.2",
-      "loader": "fabric",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 2,
-      "top_project_id": "PVbuz0gb",
-      "top_project_title": "ESSENTIALS FOR JAVA",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "quilt",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 2,
-      "top_project_id": "PVbuz0gb",
-      "top_project_title": "ESSENTIALS FOR JAVA",
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     },
     {
       "game_version": "1.15.2",
-      "loader": "forge",
+      "loader": "fabric",
       "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 1,
-      "top_project_id": "fnFfTJjx",
-      "top_project_title": "[SAZ]SurvivorsAndZombies",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.12",
-      "loader": "forge",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 1,
-      "top_project_id": "2tLIG9M7",
-      "top_project_title": "PAFB Pack",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "quilt",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 1,
-      "top_project_id": "86TghohL",
-      "top_project_title": "OptiFine for Quilt",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "quilt",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
+      "downloads_per_hour": 0.51,
       "project_count": 2,
-      "top_project_id": "jt7r7kmF",
-      "top_project_title": "Overly Optimized",
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     },
     {
-      "game_version": "26.1.2",
-      "loader": "quilt",
+      "game_version": "1.15.1",
+      "loader": "fabric",
       "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
+      "downloads_per_hour": 0.51,
       "project_count": 2,
-      "top_project_id": "i2Savjxv",
-      "top_project_title": "Ultralight",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "26.1",
-      "loader": "neoforge",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 2,
-      "top_project_id": "WkfCbNMe",
-      "top_project_title": "FPS Boost:Optimized",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "forge",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 1,
-      "top_project_id": "IaAXvH6J",
-      "top_project_title": "OptiBoost",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "26.3-snapshot-4",
-      "loader": "fabric",
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.56,
-      "project_count": 1,
-      "top_project_id": "Gvp9bbxY",
-      "top_project_title": "The Necessary",
-      "top_project_delta": 2
-    },
-    {
-      "game_version": "1.16.2",
-      "loader": "forge",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "PVbuz0gb",
-      "top_project_title": "ESSENTIALS FOR JAVA",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "quilt",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "J7kWBDAn",
-      "top_project_title": "Quietly optimized ",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "neoforge",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "KaHCNZqO",
-      "top_project_title": "Inkopolis",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "25w14craftmine",
-      "loader": "neoforge",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "LDFN22fP",
-      "top_project_title": "CN_25w14Craftmine++",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.21.4-pre3",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "4XKbrjYi",
-      "top_project_title": "How Nice",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "forge",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "JEa64spL",
-      "top_project_title": "Ultimately Optimized+",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "26.2-snapshot-8",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "VzBjgEgi",
-      "top_project_title": "mistview's pvp modpack",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "quilt",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "Jpn0aBDV",
-      "top_project_title": "Performa",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "24w11a",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "uPaQjpyy",
-      "top_project_title": "LavishlyOptimized",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "26.1-snapshot-9",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "LCHqlxqU",
-      "top_project_title": "Snapshot Pack",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "26.1-snapshot-8",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "LCHqlxqU",
-      "top_project_title": "Snapshot Pack",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "26.1-snapshot-3",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "LCHqlxqU",
-      "top_project_title": "Snapshot Pack",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.21.11-pre2",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "LCHqlxqU",
-      "top_project_title": "Snapshot Pack",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.16.1",
-      "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "QVrmKRjO",
-      "top_project_title": "Omega Optimise",
-      "top_project_delta": 1
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "quilt",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "m9VYkb4H",
-      "top_project_title": "BetterVanilla+",
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     },
     {
       "game_version": "1.15",
       "loader": "fabric",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
-      "project_count": 1,
-      "top_project_id": "9rdIDspw",
-      "top_project_title": "Twenty or Less Mods Performance",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "project_count": 2,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     },
     {
-      "game_version": "1.21.7",
-      "loader": "neoforge",
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
+      "game_version": "1.14.3",
+      "loader": "fabric",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "project_count": 2,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.14.2",
+      "loader": "fabric",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
+      "project_count": 2,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.16.4",
+      "loader": "fabric",
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.51,
       "project_count": 1,
-      "top_project_id": "WkfCbNMe",
-      "top_project_title": "FPS Boost:Optimized",
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 2
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "2eDu3kOh",
+      "top_project_title": "The Core Modpack",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "forge",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "5JRPZGh6",
+      "top_project_title": "OptimizationHyperN(OPHN)",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.16.5",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.16.3",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.14.1",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     },
     {
       "game_version": "1.21.3",
-      "loader": "quilt",
+      "loader": "fabric",
       "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
+      "downloads_per_hour": 0.25,
       "project_count": 1,
-      "top_project_id": "nN27RbcL",
-      "top_project_title": "EmberFallPack",
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     },
     {
-      "game_version": "1.21.10",
-      "loader": "quilt",
+      "game_version": "1.21",
+      "loader": "fabric",
       "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
+      "downloads_per_hour": 0.25,
       "project_count": 1,
-      "top_project_id": "LeMEPPUi",
-      "top_project_title": "chimney",
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     },
     {
-      "game_version": "1.21.9",
-      "loader": "quilt",
+      "game_version": "1.20.6",
+      "loader": "fabric",
       "delta_downloads": 1,
-      "downloads_per_hour": 0.28,
+      "downloads_per_hour": 0.25,
       "project_count": 1,
-      "top_project_id": "wbUzJBCG",
-      "top_project_title": "flytomaru optimization",
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
+      "top_project_delta": 1
+    },
+    {
+      "game_version": "1.17",
+      "loader": "fabric",
+      "delta_downloads": 1,
+      "downloads_per_hour": 0.25,
+      "project_count": 1,
+      "top_project_id": "K4FKX2tR",
+      "top_project_title": "Sodium Vanilla",
       "top_project_delta": 1
     }
   ]
