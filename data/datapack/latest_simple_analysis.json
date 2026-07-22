@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-22T18-40-26",
+  "timestamp": "2026-07-22T22-05-30",
   "date": "2026-07-22",
   "project_type": "datapack",
   "analysis_type": "simple",
   "baseline_date": "2026-07-22",
-  "hours_between": 3.94,
-  "actual_hours_between": 3.94,
+  "hours_between": 3.42,
+  "actual_hours_between": 3.42,
   "trend_history": [
     {
       "date": "2026-07-21",
@@ -102,124 +102,173 @@
       "declining_projects": 0,
       "baseline_date": "2026-07-22",
       "hours_between": 3.94
+    },
+    {
+      "date": "2026-07-22",
+      "timestamp": "2026-07-22T18-40-26",
+      "total_downloads": 635165522,
+      "new_downloads": 255,
+      "lost_downloads": 0,
+      "net_change": 255,
+      "growing_projects": 12,
+      "declining_projects": 0,
+      "baseline_date": "2026-07-22",
+      "hours_between": 3.94
     }
   ],
   "summary": {
     "total_projects": 10000,
-    "total_versions": 83779,
-    "total_downloads": 635165522,
+    "total_versions": 83897,
+    "total_downloads": 635166605,
     "baseline_date": "2026-07-22",
     "current_date": "2026-07-22",
-    "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 255,
+    "new_projects_since_baseline": 6,
+    "new_downloads_since_baseline": 1772,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 255,
-    "growing_projects": 12,
+    "net_download_change": 1772,
+    "growing_projects": 25,
     "declining_projects": 0,
-    "downloads_per_hour": 64.72
+    "downloads_per_hour": 518.34
   },
   "category_rankings": [],
   "loader_rankings": [],
   "top_projects": [
     {
-      "project_id": "mA62g3W6",
-      "title": "26.3 Cushions",
-      "slug": "26.3-cushions",
+      "project_id": "7pcyMreE",
+      "title": "Caged Mobs Integration",
+      "slug": "caged-mobs-integration",
       "categories": [
-        "adventure",
         "datapack",
-        "decoration",
-        "fabric",
-        "forge",
-        "game-mechanics",
-        "neoforge",
-        "quilt",
+        "mobs",
+        "technology",
         "utility"
       ],
-      "current_downloads": 1011,
-      "baseline_downloads": 854,
-      "delta_downloads": 157,
-      "downloads_per_hour": 39.84,
-      "growth_pct": 18.38
+      "current_downloads": 585,
+      "baseline_downloads": 0,
+      "delta_downloads": 585,
+      "downloads_per_hour": 171.12,
+      "growth_pct": 0.0
     },
     {
-      "project_id": "fgS196wF",
-      "title": "Ore Plus x4",
-      "slug": "ore_plus_x4",
+      "project_id": "1NnAVIR5",
+      "title": "JJThunder To The Max",
+      "slug": "jjthunder-to-the-max",
+      "categories": [
+        "datapack",
+        "worldgen"
+      ],
+      "current_downloads": 377068,
+      "baseline_downloads": 376661,
+      "delta_downloads": 407,
+      "downloads_per_hour": 119.05,
+      "growth_pct": 0.11
+    },
+    {
+      "project_id": "CmUHCgPo",
+      "title": "Easy Gunpowder",
+      "slug": "fast-gunpowder",
+      "categories": [
+        "datapack",
+        "game-mechanics",
+        "utility"
+      ],
+      "current_downloads": 114,
+      "baseline_downloads": 0,
+      "delta_downloads": 114,
+      "downloads_per_hour": 33.35,
+      "growth_pct": 0.0
+    },
+    {
+      "project_id": "tlsQFDNj",
+      "title": "Singleplayer Library",
+      "slug": "singleplayer-lib",
       "categories": [
         "datapack",
         "fabric",
         "forge",
-        "game-mechanics",
+        "library",
         "neoforge",
-        "optimization",
-        "quilt",
-        "worldgen"
+        "quilt"
       ],
-      "current_downloads": 9747,
-      "baseline_downloads": 9708,
-      "delta_downloads": 39,
-      "downloads_per_hour": 9.9,
-      "growth_pct": 0.4
+      "current_downloads": 113,
+      "baseline_downloads": 0,
+      "delta_downloads": 113,
+      "downloads_per_hour": 33.05,
+      "growth_pct": 0.0
     },
     {
-      "project_id": "rTlkZbw4",
-      "title": "Ore Plus x2",
-      "slug": "ore_plus_x2",
+      "project_id": "2CauBUbO",
+      "title": "Time Lib",
+      "slug": "time-lib",
       "categories": [
         "datapack",
-        "fabric",
-        "forge",
-        "game-mechanics",
-        "neoforge",
-        "optimization",
-        "quilt",
-        "worldgen"
+        "library",
+        "management"
       ],
-      "current_downloads": 4892,
-      "baseline_downloads": 4876,
-      "delta_downloads": 16,
-      "downloads_per_hour": 4.06,
-      "growth_pct": 0.33
+      "current_downloads": 113,
+      "baseline_downloads": 0,
+      "delta_downloads": 113,
+      "downloads_per_hour": 33.05,
+      "growth_pct": 0.0
     },
     {
-      "project_id": "ZlFu8vPJ",
-      "title": "BACAP: Slop Edition",
-      "slug": "bacap-slop-edition",
+      "project_id": "LlkZMAcx",
+      "title": "Craft ALL Eggs And Spawner",
+      "slug": "craft-all-eggs-and-spawner",
       "categories": [
         "adventure",
         "cursed",
         "datapack",
-        "game-mechanics"
-      ],
-      "current_downloads": 421,
-      "baseline_downloads": 410,
-      "delta_downloads": 11,
-      "downloads_per_hour": 2.79,
-      "growth_pct": 2.68
-    },
-    {
-      "project_id": "AhM1EKRY",
-      "title": "Five Duration Swing",
-      "slug": "five-duration-swing",
-      "categories": [
-        "bta-babric",
-        "cursed",
-        "datapack",
-        "fabric",
-        "neoforge",
+        "game-mechanics",
+        "mobs",
         "utility"
       ],
-      "current_downloads": 704,
-      "baseline_downloads": 694,
-      "delta_downloads": 10,
-      "downloads_per_hour": 2.54,
-      "growth_pct": 1.44
+      "current_downloads": 110,
+      "baseline_downloads": 0,
+      "delta_downloads": 110,
+      "downloads_per_hour": 32.18,
+      "growth_pct": 0.0
     },
     {
-      "project_id": "oLwgW6HE",
-      "title": "Enchanted Golden Apple Backwards",
-      "slug": "egabackwards",
+      "project_id": "yGZJfKGI",
+      "title": "Incendium Better Combat Addon",
+      "slug": "ibca",
+      "categories": [
+        "datapack",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 2447,
+      "baseline_downloads": 2365,
+      "delta_downloads": 82,
+      "downloads_per_hour": 23.99,
+      "growth_pct": 3.47
+    },
+    {
+      "project_id": "WpCJKqzS",
+      "title": "Stellarity Better Combat Addon",
+      "slug": "stellarity-better-combat-addon",
+      "categories": [
+        "datapack",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 3610,
+      "baseline_downloads": 3563,
+      "delta_downloads": 47,
+      "downloads_per_hour": 13.75,
+      "growth_pct": 1.32
+    },
+    {
+      "project_id": "MPjoCFSK",
+      "title": "Powers (Super powers)",
+      "slug": "powers-(super-powers)-v2.03",
       "categories": [
         "adventure",
         "datapack",
@@ -227,2124 +276,2330 @@
         "fabric",
         "food",
         "forge",
+        "game-mechanics",
+        "magic",
+        "minecraft",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 4438,
+      "baseline_downloads": 4394,
+      "delta_downloads": 44,
+      "downloads_per_hour": 12.87,
+      "growth_pct": 1.0
+    },
+    {
+      "project_id": "jYMa7nhW",
+      "title": "dataLib",
+      "slug": "datalib",
+      "categories": [
+        "datapack",
+        "fabric",
+        "forge",
+        "library",
         "neoforge",
         "quilt",
+        "technology",
         "utility"
       ],
-      "current_downloads": 13489,
-      "baseline_downloads": 13482,
-      "delta_downloads": 7,
-      "downloads_per_hour": 1.78,
-      "growth_pct": 0.05
+      "current_downloads": 39,
+      "baseline_downloads": 0,
+      "delta_downloads": 39,
+      "downloads_per_hour": 11.41,
+      "growth_pct": 0.0
     },
     {
-      "project_id": "ZBb0ALX2",
-      "title": "Orbital Strike Cannons Datapack",
-      "slug": "orbital-strike-cannons-datapack",
+      "project_id": "BpcmlKS9",
+      "title": "Minecraft But Backwards",
+      "slug": "minecraft-backwards",
       "categories": [
-        "datapack"
+        "adventure",
+        "cursed",
+        "datapack",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "neoforge"
       ],
-      "current_downloads": 2014,
-      "baseline_downloads": 2008,
-      "delta_downloads": 6,
-      "downloads_per_hour": 1.52,
-      "growth_pct": 0.3
+      "current_downloads": 1781,
+      "baseline_downloads": 1757,
+      "delta_downloads": 24,
+      "downloads_per_hour": 7.02,
+      "growth_pct": 1.37
     },
     {
-      "project_id": "5JZ1rVU6",
-      "title": "Unlimited Enchantments",
-      "slug": "unlimited-enchantments",
+      "project_id": "KGTxW9EY",
+      "title": "HigherEnchants",
+      "slug": "higherenchants",
+      "categories": [
+        "adventure",
+        "datapack",
+        "equipment",
+        "game-mechanics",
+        "magic"
+      ],
+      "current_downloads": 4013,
+      "baseline_downloads": 3999,
+      "delta_downloads": 14,
+      "downloads_per_hour": 4.1,
+      "growth_pct": 0.35
+    },
+    {
+      "project_id": "BT1t1ayp",
+      "title": "LIMBO - Cosmic Horror Dimension",
+      "slug": "limbo-26.2-a-cosmic-horror-dimension",
+      "categories": [
+        "adventure",
+        "datapack",
+        "equipment",
+        "magic",
+        "storage",
+        "transportation",
+        "utility",
+        "worldgen"
+      ],
+      "current_downloads": 191,
+      "baseline_downloads": 179,
+      "delta_downloads": 12,
+      "downloads_per_hour": 3.51,
+      "growth_pct": 6.7
+    },
+    {
+      "project_id": "BLG002oq",
+      "title": "Better Craftables",
+      "slug": "better-craftables",
       "categories": [
         "datapack",
         "fabric",
         "forge",
         "game-mechanics",
-        "management",
         "neoforge",
         "quilt",
         "utility"
       ],
-      "current_downloads": 70107,
-      "baseline_downloads": 70104,
-      "delta_downloads": 3,
-      "downloads_per_hour": 0.76,
-      "growth_pct": 0.0
+      "current_downloads": 76444,
+      "baseline_downloads": 76434,
+      "delta_downloads": 10,
+      "downloads_per_hour": 2.93,
+      "growth_pct": 0.01
     },
     {
-      "project_id": "foXnssaG",
-      "title": "Snowy Weather",
-      "slug": "snow-weather",
+      "project_id": "bUmlsA7b",
+      "title": "Better Unpackables",
+      "slug": "better-unpackables",
       "categories": [
-        "adventure",
         "datapack",
-        "decoration",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "neoforge",
+        "quilt",
+        "utility"
+      ],
+      "current_downloads": 10842,
+      "baseline_downloads": 10833,
+      "delta_downloads": 9,
+      "downloads_per_hour": 2.63,
+      "growth_pct": 0.08
+    },
+    {
+      "project_id": "ChkHwAdr",
+      "title": "Jetpack Boots",
+      "slug": "jetpack-boots",
+      "categories": [
+        "datapack",
         "fabric",
         "forge",
         "game-mechanics",
         "magic",
         "neoforge",
         "quilt",
-        "worldgen"
+        "transportation",
+        "utility"
       ],
-      "current_downloads": 39812,
-      "baseline_downloads": 39810,
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.51,
-      "growth_pct": 0.01
+      "current_downloads": 38,
+      "baseline_downloads": 29,
+      "delta_downloads": 9,
+      "downloads_per_hour": 2.63,
+      "growth_pct": 31.03
     },
     {
-      "project_id": "QI0EmgZ1",
-      "title": "Matcha Flavoured",
-      "slug": "matcha-flavoured",
+      "project_id": "aRErXHku",
+      "title": "Fullbright Datapack",
+      "slug": "fullbright-trigger",
       "categories": [
         "datapack",
-        "food",
-        "game-mechanics"
+        "utility"
       ],
-      "current_downloads": 159,
-      "baseline_downloads": 157,
-      "delta_downloads": 2,
-      "downloads_per_hour": 0.51,
-      "growth_pct": 1.27
+      "current_downloads": 27,
+      "baseline_downloads": 18,
+      "delta_downloads": 9,
+      "downloads_per_hour": 2.63,
+      "growth_pct": 50.0
     },
     {
-      "project_id": "2V1Y86sc",
-      "title": "Navas ZA Megas",
-      "slug": "navas-zamega",
+      "project_id": "YOtjK9XQ",
+      "title": "Skinful (hide your armor!)",
+      "slug": "skinful",
       "categories": [
-        "adventure",
+        "datapack",
+        "decoration",
+        "equipment",
+        "game-mechanics",
+        "social",
+        "utility"
+      ],
+      "current_downloads": 3377,
+      "baseline_downloads": 3370,
+      "delta_downloads": 7,
+      "downloads_per_hour": 2.05,
+      "growth_pct": 0.21
+    },
+    {
+      "project_id": "AMZruzFM",
+      "title": "Silly Eatables",
+      "slug": "silly-eatables",
+      "categories": [
+        "cursed",
         "datapack",
         "fabric",
-        "neoforge"
+        "food",
+        "forge",
+        "game-mechanics",
+        "neoforge",
+        "quilt",
+        "utility"
       ],
-      "current_downloads": 6916109,
-      "baseline_downloads": 6916108,
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.25,
-      "growth_pct": 0.0
+      "current_downloads": 7503,
+      "baseline_downloads": 7497,
+      "delta_downloads": 6,
+      "downloads_per_hour": 1.76,
+      "growth_pct": 0.08
     },
     {
-      "project_id": "mkphD2hm",
-      "title": "Heights and Caves",
-      "slug": "heights-and-caves",
+      "project_id": "HH3djKI4",
+      "title": "Origins + Create: Automaton",
+      "slug": "create-automaton",
       "categories": [
-        "adventure",
         "datapack",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "utility"
+      ],
+      "current_downloads": 8694,
+      "baseline_downloads": 8689,
+      "delta_downloads": 5,
+      "downloads_per_hour": 1.46,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "raz4aMjT",
+      "title": "Craftable Chainmail Armor",
+      "slug": "craftable-chainmail-armor-by-sumbaii999",
+      "categories": [
+        "datapack",
+        "equipment",
         "fabric",
         "forge",
         "game-mechanics",
         "neoforge",
         "quilt",
-        "worldgen"
+        "utility"
       ],
-      "current_downloads": 522,
-      "baseline_downloads": 521,
-      "delta_downloads": 1,
-      "downloads_per_hour": 0.25,
-      "growth_pct": 0.19
+      "current_downloads": 30820,
+      "baseline_downloads": 30816,
+      "delta_downloads": 4,
+      "downloads_per_hour": 1.17,
+      "growth_pct": 0.01
+    },
+    {
+      "project_id": "jj9BDMj1",
+      "title": "Craftable Totem of Undying",
+      "slug": "craftable-totem-of-undying-by-sumbaii999",
+      "categories": [
+        "datapack",
+        "equipment",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "magic",
+        "neoforge",
+        "quilt",
+        "utility"
+      ],
+      "current_downloads": 4953,
+      "baseline_downloads": 4950,
+      "delta_downloads": 3,
+      "downloads_per_hour": 0.88,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "HHQtkLjg",
+      "title": "Craftable Name Tag",
+      "slug": "craftable-name-tag-by-sumbaii999",
+      "categories": [
+        "datapack",
+        "equipment",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "neoforge",
+        "quilt",
+        "utility"
+      ],
+      "current_downloads": 29205,
+      "baseline_downloads": 29203,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.59,
+      "growth_pct": 0.01
+    },
+    {
+      "project_id": "kp46XQIc",
+      "title": "Craftable Horse Armor",
+      "slug": "craftable-horse-armor-by-sumbaii999",
+      "categories": [
+        "datapack",
+        "equipment",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "neoforge",
+        "quilt",
+        "transportation",
+        "utility"
+      ],
+      "current_downloads": 6945,
+      "baseline_downloads": 6943,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.59,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "ycBtoWql",
+      "title": "Compact Diamonds",
+      "slug": "compact-diamonds",
+      "categories": [
+        "datapack",
+        "economy",
+        "fabric",
+        "forge",
+        "neoforge",
+        "paper",
+        "purpur",
+        "quilt",
+        "storage",
+        "transportation",
+        "utility"
+      ],
+      "current_downloads": 2421,
+      "baseline_downloads": 2419,
+      "delta_downloads": 2,
+      "downloads_per_hour": 0.59,
+      "growth_pct": 0.08
     }
   ],
   "declining_projects": [],
   "top_version_loaders": [
     {
-      "game_version": "26.2",
-      "loader": "fabric",
-      "delta_downloads": 113,
-      "downloads_per_hour": 28.68,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1",
-      "loader": "fabric",
-      "delta_downloads": 112,
-      "downloads_per_hour": 28.42,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "fabric",
-      "delta_downloads": 112,
-      "downloads_per_hour": 28.42,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "fabric",
-      "delta_downloads": 112,
-      "downloads_per_hour": 28.42,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.2",
-      "loader": "forge",
-      "delta_downloads": 103,
-      "downloads_per_hour": 26.14,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.2",
-      "loader": "neoforge",
-      "delta_downloads": 103,
-      "downloads_per_hour": 26.14,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.2",
-      "loader": "quilt",
-      "delta_downloads": 103,
-      "downloads_per_hour": 26.14,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "fabric",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "fabric",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "fabric",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "fabric",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "fabric",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "fabric",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "fabric",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "forge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "neoforge",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "quilt",
-      "delta_downloads": 102,
-      "downloads_per_hour": 25.89,
-      "project_count": 2,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 93
+      "game_version": "1.20.1",
+      "loader": "datapack",
+      "delta_downloads": 604,
+      "downloads_per_hour": 176.68,
+      "project_count": 5,
+      "top_project_id": "7pcyMreE",
+      "top_project_title": "Caged Mobs Integration",
+      "top_project_delta": 533
     },
     {
       "game_version": "26.2",
       "loader": "datapack",
-      "delta_downloads": 81,
-      "downloads_per_hour": 20.56,
+      "delta_downloads": 353,
+      "downloads_per_hour": 103.26,
+      "project_count": 18,
+      "top_project_id": "1NnAVIR5",
+      "top_project_title": "JJThunder To The Max",
+      "top_project_delta": 242
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "datapack",
+      "delta_downloads": 255,
+      "downloads_per_hour": 74.59,
+      "project_count": 11,
+      "top_project_id": "1NnAVIR5",
+      "top_project_title": "JJThunder To The Max",
+      "top_project_delta": 119
+    },
+    {
+      "game_version": "26.2",
+      "loader": "fabric",
+      "delta_downloads": 255,
+      "downloads_per_hour": 74.59,
+      "project_count": 11,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.2",
+      "loader": "forge",
+      "delta_downloads": 248,
+      "downloads_per_hour": 72.54,
+      "project_count": 10,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.2",
+      "loader": "neoforge",
+      "delta_downloads": 248,
+      "downloads_per_hour": 72.54,
+      "project_count": 10,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1",
+      "loader": "fabric",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "fabric",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "fabric",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1",
+      "loader": "forge",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "forge",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "forge",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1",
+      "loader": "neoforge",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "neoforge",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "neoforge",
+      "delta_downloads": 239,
+      "downloads_per_hour": 69.91,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.2",
+      "loader": "quilt",
+      "delta_downloads": 224,
+      "downloads_per_hour": 65.52,
+      "project_count": 9,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1",
+      "loader": "quilt",
+      "delta_downloads": 215,
+      "downloads_per_hour": 62.89,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "quilt",
+      "delta_downloads": 215,
+      "downloads_per_hour": 62.89,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "quilt",
+      "delta_downloads": 215,
+      "downloads_per_hour": 62.89,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "fabric",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "fabric",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "fabric",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "forge",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "forge",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "forge",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "neoforge",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "neoforge",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "neoforge",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "quilt",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "quilt",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "quilt",
+      "delta_downloads": 214,
+      "downloads_per_hour": 62.6,
+      "project_count": 8,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "fabric",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "fabric",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "fabric",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "forge",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "forge",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "forge",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "neoforge",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "neoforge",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "neoforge",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "quilt",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "quilt",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "quilt",
+      "delta_downloads": 182,
+      "downloads_per_hour": 53.24,
+      "project_count": 5,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "fabric",
+      "delta_downloads": 181,
+      "downloads_per_hour": 52.95,
+      "project_count": 4,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "forge",
+      "delta_downloads": 181,
+      "downloads_per_hour": 52.95,
+      "project_count": 4,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "neoforge",
+      "delta_downloads": 181,
+      "downloads_per_hour": 52.95,
+      "project_count": 4,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "quilt",
+      "delta_downloads": 181,
+      "downloads_per_hour": 52.95,
+      "project_count": 4,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1",
+      "loader": "datapack",
+      "delta_downloads": 175,
+      "downloads_per_hour": 51.19,
+      "project_count": 12,
+      "top_project_id": "CmUHCgPo",
+      "top_project_title": "Easy Gunpowder",
+      "top_project_delta": 63
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "datapack",
+      "delta_downloads": 175,
+      "downloads_per_hour": 51.19,
+      "project_count": 12,
+      "top_project_id": "CmUHCgPo",
+      "top_project_title": "Easy Gunpowder",
+      "top_project_delta": 63
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "datapack",
+      "delta_downloads": 175,
+      "downloads_per_hour": 51.19,
+      "project_count": 12,
+      "top_project_id": "CmUHCgPo",
+      "top_project_title": "Easy Gunpowder",
+      "top_project_delta": 63
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "fabric",
+      "delta_downloads": 142,
+      "downloads_per_hour": 41.54,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "forge",
+      "delta_downloads": 142,
+      "downloads_per_hour": 41.54,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "neoforge",
+      "delta_downloads": 142,
+      "downloads_per_hour": 41.54,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "quilt",
+      "delta_downloads": 142,
+      "downloads_per_hour": 41.54,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21",
+      "loader": "fabric",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "fabric",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "fabric",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "fabric",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21",
+      "loader": "forge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "forge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "forge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "forge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21",
+      "loader": "neoforge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "neoforge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "neoforge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "neoforge",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21",
+      "loader": "quilt",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "quilt",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "quilt",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "quilt",
+      "delta_downloads": 141,
+      "downloads_per_hour": 41.24,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "datapack",
+      "delta_downloads": 133,
+      "downloads_per_hour": 38.9,
+      "project_count": 9,
+      "top_project_id": "2CauBUbO",
+      "top_project_title": "Time Lib",
+      "top_project_delta": 81
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "datapack",
+      "delta_downloads": 133,
+      "downloads_per_hour": 38.9,
+      "project_count": 9,
+      "top_project_id": "2CauBUbO",
+      "top_project_title": "Time Lib",
+      "top_project_delta": 81
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "datapack",
+      "delta_downloads": 133,
+      "downloads_per_hour": 38.9,
       "project_count": 6,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
+      "top_project_id": "2CauBUbO",
+      "top_project_title": "Time Lib",
+      "top_project_delta": 81
     },
     {
       "game_version": "1.21.8",
       "loader": "datapack",
-      "delta_downloads": 68,
-      "downloads_per_hour": 17.26,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "datapack",
-      "delta_downloads": 68,
-      "downloads_per_hour": 17.26,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "datapack",
-      "delta_downloads": 68,
-      "downloads_per_hour": 17.26,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "datapack",
-      "delta_downloads": 68,
-      "downloads_per_hour": 17.26,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
-    },
-    {
-      "game_version": "26.1",
-      "loader": "datapack",
-      "delta_downloads": 68,
-      "downloads_per_hour": 17.26,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "datapack",
-      "delta_downloads": 68,
-      "downloads_per_hour": 17.26,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "datapack",
-      "delta_downloads": 68,
-      "downloads_per_hour": 17.26,
-      "project_count": 4,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "datapack",
-      "delta_downloads": 62,
-      "downloads_per_hour": 15.73,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
+      "delta_downloads": 133,
+      "downloads_per_hour": 38.9,
+      "project_count": 6,
+      "top_project_id": "2CauBUbO",
+      "top_project_title": "Time Lib",
+      "top_project_delta": 81
     },
     {
       "game_version": "1.21.6",
       "loader": "datapack",
-      "delta_downloads": 62,
-      "downloads_per_hour": 15.73,
-      "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
+      "delta_downloads": 110,
+      "downloads_per_hour": 32.18,
+      "project_count": 4,
+      "top_project_id": "2CauBUbO",
+      "top_project_title": "Time Lib",
+      "top_project_delta": 81
     },
     {
-      "game_version": "1.21.7",
+      "game_version": "1.21.5",
       "loader": "datapack",
-      "delta_downloads": 62,
-      "downloads_per_hour": 15.73,
+      "delta_downloads": 107,
+      "downloads_per_hour": 31.3,
       "project_count": 3,
-      "top_project_id": "mA62g3W6",
-      "top_project_title": "26.3 Cushions",
-      "top_project_delta": 52
+      "top_project_id": "2CauBUbO",
+      "top_project_title": "Time Lib",
+      "top_project_delta": 81
     },
     {
       "game_version": "1.20",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "delta_downloads": 105,
+      "downloads_per_hour": 30.71,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.1",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "delta_downloads": 105,
+      "downloads_per_hour": 30.71,
+      "project_count": 3,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w31a",
+      "game_version": "1.18.2",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w32a",
+      "game_version": "1.19",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w33a",
+      "game_version": "1.19.1",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w35a",
+      "game_version": "1.19.2",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "1.20.2-pre1",
+      "game_version": "1.19.3",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "fabric",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.2",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w40a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w41a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w42a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w43a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w43b",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w44a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w45a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w46a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre1",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre2",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre3",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre4",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.3",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.4",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w51a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w51b",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w03a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w03b",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w04a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w05a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w05b",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w06a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w07a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w09a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w10a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w11a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w12a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w13a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w14a",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre1",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre2",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre3",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre4",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc1",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc2",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc3",
-      "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.5",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.6",
       "loader": "fabric",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "forge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19",
+      "loader": "forge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "forge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "forge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "forge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "forge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20",
       "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.1",
       "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w31a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w32a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w33a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w35a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.2-pre1",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.2",
       "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w40a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w41a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w42a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w43a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w43b",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w44a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w45a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w46a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre1",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre2",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre3",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre4",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.3",
       "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.4",
       "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w51a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w51b",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w03a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w03b",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w04a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w05a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w05b",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w06a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w07a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w09a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w10a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w11a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w12a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w13a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w14a",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre1",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre2",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre3",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre4",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc1",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc2",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc3",
-      "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.5",
       "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.6",
       "loader": "forge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "neoforge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19",
+      "loader": "neoforge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "neoforge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "neoforge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "neoforge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "neoforge",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20",
       "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.1",
       "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w31a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w32a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w33a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w35a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.2-pre1",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.2",
       "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w40a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w41a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w42a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w43a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w43b",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w44a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w45a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w46a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre1",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre2",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre3",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.3-pre4",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.3",
       "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.4",
       "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w51a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "23w51b",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w03a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w03b",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w04a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w05a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w05b",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w06a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w07a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w09a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w10a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w11a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w12a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w13a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "24w14a",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre1",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre2",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre3",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-pre4",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc1",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc2",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
-    },
-    {
-      "game_version": "1.20.5-rc3",
-      "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
-      "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.5",
       "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.6",
       "loader": "neoforge",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "quilt",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19",
+      "loader": "quilt",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "quilt",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "quilt",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "quilt",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "quilt",
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
+      "project_count": 2,
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20",
       "loader": "quilt",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
       "game_version": "1.20.1",
       "loader": "quilt",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w31a",
+      "game_version": "1.20.2",
       "loader": "quilt",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w32a",
+      "game_version": "1.20.3",
       "loader": "quilt",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w33a",
+      "game_version": "1.20.4",
       "loader": "quilt",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "23w35a",
+      "game_version": "1.20.5",
       "loader": "quilt",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
     },
     {
-      "game_version": "1.20.2-pre1",
+      "game_version": "1.20.6",
       "loader": "quilt",
-      "delta_downloads": 53,
-      "downloads_per_hour": 13.45,
+      "delta_downloads": 102,
+      "downloads_per_hour": 29.84,
       "project_count": 2,
-      "top_project_id": "fgS196wF",
-      "top_project_title": "Ore Plus x4",
-      "top_project_delta": 38
+      "top_project_id": "yGZJfKGI",
+      "top_project_title": "Incendium Better Combat Addon",
+      "top_project_delta": 82
+    },
+    {
+      "game_version": "26.1-snapshot-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-2",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-3",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-4",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-5",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-6",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-7",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-8",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-9",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-10",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-11",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-pre-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-pre-2",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-pre-3",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-rc-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-rc-2",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-rc-3",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1.1-rc-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26w14a",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1.2-rc-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-2",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-3",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-4",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-5",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-6",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-7",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-8",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-2",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-3",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-4",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-5",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-6",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-rc-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-rc-2",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.3-snapshot-1",
+      "loader": "fabric",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-2",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-3",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-4",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-5",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-6",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-7",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-8",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-9",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-10",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-snapshot-11",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-pre-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-pre-2",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-pre-3",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-rc-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-rc-2",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1-rc-3",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1.1-rc-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26w14a",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.1.2-rc-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-2",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-3",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-4",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-5",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-6",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-7",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-snapshot-8",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-2",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-3",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-4",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-5",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-pre-6",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
+    },
+    {
+      "game_version": "26.2-rc-1",
+      "loader": "forge",
+      "delta_downloads": 61,
+      "downloads_per_hour": 17.84,
+      "project_count": 2,
+      "top_project_id": "tlsQFDNj",
+      "top_project_title": "Singleplayer Library",
+      "top_project_delta": 59
     }
   ]
 }
