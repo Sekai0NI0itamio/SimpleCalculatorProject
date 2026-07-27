@@ -1,735 +1,339 @@
 {
-  "timestamp": "2026-07-28T02-31-36",
+  "timestamp": "2026-07-28T05-01-39",
   "date": "2026-07-28",
   "project_type": "mod",
   "analysis_type": "sub",
   "snapshots_analyzed": 18,
-  "last_snapshot_time": "2026-07-28T02-21-35",
-  "hours_until_main": 5,
+  "last_snapshot_time": "2026-07-28T04-54-19",
+  "hours_until_main": 3,
   "velocity": {
-    "velocity_per_hour": 1804750.84,
-    "velocity_2h": 5898026,
-    "velocity_24h": 35378508,
-    "avg_velocity_24h": 1474104.5
+    "velocity_per_hour": -2179630302.27,
+    "velocity_2h": -5548370025,
+    "velocity_24h": -5515784082,
+    "avg_velocity_24h": -229824336.75
   },
   "acceleration": {
-    "acceleration": -304560.85,
-    "acceleration_pct": -14.44
+    "acceleration": -2181435053.11,
+    "acceleration_pct": -120871.81
   },
   "predictions": {
-    "predicted_daily_total": 10384042673,
-    "predicted_daily_growth": 75324587,
-    "predicted_daily_growth_pct": 0.73,
-    "predicted_daily_growth_weighted": 75324587,
-    "predicted_daily_growth_pct_weighted": 0.73,
+    "predicted_daily_total": 4138829115,
+    "predicted_daily_growth": -6172156859,
+    "predicted_daily_growth_pct": -59.86,
+    "predicted_daily_growth_weighted": -6172156859,
+    "predicted_daily_growth_pct_weighted": -59.86,
     "confidence": "high",
     "confidence_weight": 1.0
   },
   "top_movers_2h": [
     {
-      "project_id": "P7dR8mSH",
-      "title": "Fabric API",
-      "slug": "fabric-api",
-      "previous_downloads": 218923306,
-      "current_downloads": 219073131,
-      "delta_2h": 149825,
-      "velocity": 45845.3
-    },
-    {
       "project_id": "AANobbMI",
       "title": "Sodium",
       "slug": "sodium",
-      "previous_downloads": 195940779,
-      "current_downloads": 196060105,
-      "delta_2h": 119326,
-      "velocity": 36512.84
+      "previous_downloads": 196060105,
+      "current_downloads": 196102028,
+      "delta_2h": 41923,
+      "velocity": 16469.1
     },
     {
       "project_id": "YL57xq9U",
       "title": "Iris Shaders",
       "slug": "iris",
-      "previous_downloads": 152866952,
-      "current_downloads": 152963896,
-      "delta_2h": 96944,
-      "velocity": 29664.12
+      "previous_downloads": 152963896,
+      "current_downloads": 152996589,
+      "delta_2h": 32693,
+      "velocity": 12843.17
     },
     {
       "project_id": "NNAgCjsB",
       "title": "Entity Culling",
       "slug": "entityculling",
-      "previous_downloads": 142664764,
-      "current_downloads": 142757038,
-      "delta_2h": 92274,
-      "velocity": 28235.14
-    },
-    {
-      "project_id": "9s6osm5g",
-      "title": "Cloth Config API",
-      "slug": "cloth-config",
-      "previous_downloads": 147598936,
-      "current_downloads": 147682998,
-      "delta_2h": 84062,
-      "velocity": 25722.33
+      "previous_downloads": 142757038,
+      "current_downloads": 142783850,
+      "delta_2h": 26812,
+      "velocity": 10532.87
     },
     {
       "project_id": "uXXizFIs",
       "title": "FerriteCore",
       "slug": "ferrite-core",
-      "previous_downloads": 133286335,
-      "current_downloads": 133359895,
-      "delta_2h": 73560,
-      "velocity": 22508.8
-    },
-    {
-      "project_id": "1eAoo2KR",
-      "title": "YetAnotherConfigLib (YACL)",
-      "slug": "yacl",
-      "previous_downloads": 106485699,
-      "current_downloads": 106552701,
-      "delta_2h": 67002,
-      "velocity": 20502.1
-    },
-    {
-      "project_id": "Ha28R6CL",
-      "title": "Fabric Language Kotlin",
-      "slug": "fabric-language-kotlin",
-      "previous_downloads": 102052760,
-      "current_downloads": 102118755,
-      "delta_2h": 65995,
-      "velocity": 20193.97
+      "previous_downloads": 133359895,
+      "current_downloads": 133386251,
+      "delta_2h": 26356,
+      "velocity": 10353.73
     },
     {
       "project_id": "gvQqBUqZ",
       "title": "Lithium",
       "slug": "lithium",
-      "previous_downloads": 113013147,
-      "current_downloads": 113075875,
-      "delta_2h": 62728,
-      "velocity": 19194.29
+      "previous_downloads": 113075875,
+      "current_downloads": 113098179,
+      "delta_2h": 22304,
+      "velocity": 8761.94
+    },
+    {
+      "project_id": "1eAoo2KR",
+      "title": "YetAnotherConfigLib (YACL)",
+      "slug": "yacl",
+      "previous_downloads": 106552701,
+      "current_downloads": 106574990,
+      "delta_2h": 22289,
+      "velocity": 8756.05
     },
     {
       "project_id": "5ZwdcRci",
       "title": "ImmediatelyFast",
       "slug": "immediatelyfast",
-      "previous_downloads": 108618498,
-      "current_downloads": 108679824,
-      "delta_2h": 61326,
-      "velocity": 18765.29
-    },
-    {
-      "project_id": "1bokaNcj",
-      "title": "Xaero's Minimap",
-      "slug": "xaeros-minimap",
-      "previous_downloads": 97257862,
-      "current_downloads": 97311335,
-      "delta_2h": 53473,
-      "velocity": 16362.33
-    },
-    {
-      "project_id": "OhduvhIc",
-      "title": "VeinMiner",
-      "slug": "veinminer",
-      "previous_downloads": 65998175,
-      "current_downloads": 66051614,
-      "delta_2h": 53439,
-      "velocity": 16351.93
+      "previous_downloads": 108679824,
+      "current_downloads": 108700780,
+      "delta_2h": 20956,
+      "velocity": 8232.39
     },
     {
       "project_id": "eXts2L7r",
       "title": "Text Placeholder API",
       "slug": "placeholder-api",
-      "previous_downloads": 53223742,
-      "current_downloads": 53270899,
-      "delta_2h": 47157,
-      "velocity": 14429.68
+      "previous_downloads": 53270899,
+      "current_downloads": 53289373,
+      "delta_2h": 18474,
+      "velocity": 7257.35
     },
     {
       "project_id": "PtjYWJkn",
       "title": "Sodium Extra",
       "slug": "sodium-extra",
-      "previous_downloads": 85079376,
-      "current_downloads": 85124976,
-      "delta_2h": 45600,
-      "velocity": 13953.25
-    },
-    {
-      "project_id": "NcUtCpym",
-      "title": "Xaero's World Map",
-      "slug": "xaeros-world-map",
-      "previous_downloads": 85240058,
-      "current_downloads": 85285160,
-      "delta_2h": 45102,
-      "velocity": 13800.87
-    },
-    {
-      "project_id": "lhGA9TYQ",
-      "title": "Architectury API",
-      "slug": "architectury-api",
-      "previous_downloads": 88952977,
-      "current_downloads": 88997514,
-      "delta_2h": 44537,
-      "velocity": 13627.98
-    },
-    {
-      "project_id": "u6dRKJwZ",
-      "title": "Just Enough Items (JEI)",
-      "slug": "jei",
-      "previous_downloads": 65538692,
-      "current_downloads": 65582525,
-      "delta_2h": 43833,
-      "velocity": 13412.56
-    },
-    {
-      "project_id": "4I1XuqiY",
-      "title": "[EMF] Entity Model Features",
-      "slug": "entity-model-features",
-      "previous_downloads": 84531302,
-      "current_downloads": 84574807,
-      "delta_2h": 43505,
-      "velocity": 13312.2
+      "previous_downloads": 85124976,
+      "current_downloads": 85142950,
+      "delta_2h": 17974,
+      "velocity": 7060.93
     },
     {
       "project_id": "EsAfCjCV",
       "title": "AppleSkin",
       "slug": "appleskin",
-      "previous_downloads": 78739261,
-      "current_downloads": 78780502,
-      "delta_2h": 41241,
-      "velocity": 12619.43
+      "previous_downloads": 78780502,
+      "current_downloads": 78794331,
+      "delta_2h": 13829,
+      "velocity": 5432.61
     },
     {
-      "project_id": "8BmcQJ2H",
-      "title": "Geckolib",
-      "slug": "geckolib",
-      "previous_downloads": 60089129,
-      "current_downloads": 60127377,
-      "delta_2h": 38248,
-      "velocity": 11703.6
+      "project_id": "51shyZVL",
+      "title": "More Culling",
+      "slug": "moreculling",
+      "previous_downloads": 57313356,
+      "current_downloads": 57325310,
+      "delta_2h": 11954,
+      "velocity": 4696.03
+    },
+    {
+      "project_id": "LQ3K71Q1",
+      "title": "Dynamic FPS",
+      "slug": "dynamic-fps",
+      "previous_downloads": 58279913,
+      "current_downloads": 58291617,
+      "delta_2h": 11704,
+      "velocity": 4597.82
+    },
+    {
+      "project_id": "k2ZPuTBm",
+      "title": "Essential Mod",
+      "slug": "essential",
+      "previous_downloads": 37856603,
+      "current_downloads": 37866249,
+      "delta_2h": 9646,
+      "velocity": 3789.35
+    },
+    {
+      "project_id": "nmDcB62a",
+      "title": "ModernFix",
+      "slug": "modernfix",
+      "previous_downloads": 69987698,
+      "current_downloads": 69996932,
+      "delta_2h": 9234,
+      "velocity": 3627.5
+    },
+    {
+      "project_id": "qQyHxfxd",
+      "title": "No Chat Reports",
+      "slug": "no-chat-reports",
+      "previous_downloads": 51290619,
+      "current_downloads": 51299715,
+      "delta_2h": 9096,
+      "velocity": 3573.29
+    },
+    {
+      "project_id": "g96Z4WVZ",
+      "title": "BadOptimizations",
+      "slug": "badoptimizations",
+      "previous_downloads": 36003357,
+      "current_downloads": 36011690,
+      "delta_2h": 8333,
+      "velocity": 3273.55
+    },
+    {
+      "project_id": "hYykXjDp",
+      "title": "Fzzy Config",
+      "slug": "fzzy-config",
+      "previous_downloads": 32171006,
+      "current_downloads": 32179165,
+      "delta_2h": 8159,
+      "velocity": 3205.19
+    },
+    {
+      "project_id": "UVtY3ZAC",
+      "title": "Enchantment Descriptions",
+      "slug": "enchantment-descriptions",
+      "previous_downloads": 33361098,
+      "current_downloads": 33369231,
+      "delta_2h": 8133,
+      "velocity": 3194.98
+    },
+    {
+      "project_id": "uLbm7CG6",
+      "title": "Language Reload",
+      "slug": "language-reload",
+      "previous_downloads": 35779351,
+      "current_downloads": 35786395,
+      "delta_2h": 7044,
+      "velocity": 2767.18
+    },
+    {
+      "project_id": "VSNURh3q",
+      "title": "Concurrent Chunk Management Engine (Fabric)",
+      "slug": "c2me-fabric",
+      "previous_downloads": 31943329,
+      "current_downloads": 31949893,
+      "delta_2h": 6564,
+      "velocity": 2578.61
     }
   ],
   "velocity_by_category": [
     {
       "category": "utility",
-      "total_velocity": 812699.16,
-      "projects_tracked": 20553,
-      "avg_velocity": 39.54
-    },
-    {
-      "category": "library",
-      "total_velocity": 544970.23,
-      "projects_tracked": 3300,
-      "avg_velocity": 165.14
+      "total_velocity": 171632.87,
+      "projects_tracked": 583,
+      "avg_velocity": 294.4
     },
     {
       "category": "optimization",
-      "total_velocity": 428496.39,
-      "projects_tracked": 3369,
-      "avg_velocity": 127.19
-    },
-    {
-      "category": "adventure",
-      "total_velocity": 378027.85,
-      "projects_tracked": 13676,
-      "avg_velocity": 27.64
-    },
-    {
-      "category": "decoration",
-      "total_velocity": 322834.48,
-      "projects_tracked": 7055,
-      "avg_velocity": 45.76
-    },
-    {
-      "category": "game-mechanics",
-      "total_velocity": 299644.23,
-      "projects_tracked": 18935,
-      "avg_velocity": 15.82
-    },
-    {
-      "category": "worldgen",
-      "total_velocity": 298239.42,
-      "projects_tracked": 7808,
-      "avg_velocity": 38.2
-    },
-    {
-      "category": "equipment",
-      "total_velocity": 199151.14,
-      "projects_tracked": 10967,
-      "avg_velocity": 18.16
-    },
-    {
-      "category": "mobs",
-      "total_velocity": 198844.23,
-      "projects_tracked": 10083,
-      "avg_velocity": 19.72
+      "total_velocity": 167524.53,
+      "projects_tracked": 149,
+      "avg_velocity": 1124.33
     },
     {
       "category": "management",
-      "total_velocity": 178756.14,
-      "projects_tracked": 6931,
-      "avg_velocity": 25.79
+      "total_velocity": 82393.8,
+      "projects_tracked": 400,
+      "avg_velocity": 205.98
     },
     {
-      "category": "technology",
-      "total_velocity": 139713.66,
-      "projects_tracked": 7562,
-      "avg_velocity": 18.48
+      "category": "worldgen",
+      "total_velocity": 77337.54,
+      "projects_tracked": 260,
+      "avg_velocity": 297.45
+    },
+    {
+      "category": "adventure",
+      "total_velocity": 71176.21,
+      "projects_tracked": 373,
+      "avg_velocity": 190.82
+    },
+    {
+      "category": "decoration",
+      "total_velocity": 67665.78,
+      "projects_tracked": 291,
+      "avg_velocity": 232.53
+    },
+    {
+      "category": "game-mechanics",
+      "total_velocity": 50528.85,
+      "projects_tracked": 408,
+      "avg_velocity": 123.85
+    },
+    {
+      "category": "library",
+      "total_velocity": 43625.45,
+      "projects_tracked": 84,
+      "avg_velocity": 519.35
     },
     {
       "category": "food",
-      "total_velocity": 124037.67,
-      "projects_tracked": 5702,
-      "avg_velocity": 21.75
+      "total_velocity": 40057.66,
+      "projects_tracked": 401,
+      "avg_velocity": 99.89
     },
     {
-      "category": "storage",
-      "total_velocity": 114654.11,
-      "projects_tracked": 3627,
-      "avg_velocity": 31.61
+      "category": "equipment",
+      "total_velocity": 32613.31,
+      "projects_tracked": 246,
+      "avg_velocity": 132.57
     },
     {
-      "category": "social",
-      "total_velocity": 105855.61,
-      "projects_tracked": 4709,
-      "avg_velocity": 22.48
-    },
-    {
-      "category": "transportation",
-      "total_velocity": 99874.99,
-      "projects_tracked": 3501,
-      "avg_velocity": 28.53
-    },
-    {
-      "category": "cursed",
-      "total_velocity": 87831.13,
-      "projects_tracked": 6928,
-      "avg_velocity": 12.68
+      "category": "mobs",
+      "total_velocity": 29589.61,
+      "projects_tracked": 198,
+      "avg_velocity": 149.44
     },
     {
       "category": "magic",
-      "total_velocity": 79237.03,
-      "projects_tracked": 6537,
-      "avg_velocity": 12.12
+      "total_velocity": 28530.12,
+      "projects_tracked": 149,
+      "avg_velocity": 191.48
     },
     {
-      "category": "economy",
-      "total_velocity": 19087.8,
-      "projects_tracked": 1900,
-      "avg_velocity": 10.05
+      "category": "cursed",
+      "total_velocity": 18055.0,
+      "projects_tracked": 63,
+      "avg_velocity": 286.59
+    },
+    {
+      "category": "social",
+      "total_velocity": 14436.14,
+      "projects_tracked": 80,
+      "avg_velocity": 180.45
+    },
+    {
+      "category": "technology",
+      "total_velocity": 10752.47,
+      "projects_tracked": 110,
+      "avg_velocity": 97.75
+    },
+    {
+      "category": "storage",
+      "total_velocity": 9329.2,
+      "projects_tracked": 105,
+      "avg_velocity": 88.85
+    },
+    {
+      "category": "transportation",
+      "total_velocity": 7542.56,
+      "projects_tracked": 53,
+      "avg_velocity": 142.31
     },
     {
       "category": "minigame",
-      "total_velocity": 11672.08,
-      "projects_tracked": 1900,
-      "avg_velocity": 6.14
+      "total_velocity": 4204.98,
+      "projects_tracked": 100,
+      "avg_velocity": 42.05
+    },
+    {
+      "category": "economy",
+      "total_velocity": 2591.18,
+      "projects_tracked": 26,
+      "avg_velocity": 99.66
     }
   ],
   "anomalies": [
     {
-      "project_id": "XlilVGvF",
-      "title": "Nodex",
-      "slug": "nodex",
-      "current_velocity": 7.34,
-      "avg_velocity": 0.04,
-      "anomaly_factor": 180.54
-    },
-    {
-      "project_id": "tdevMzJ4",
-      "title": "Bucket-less",
-      "slug": "bucketless",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.01,
-      "anomaly_factor": 142.9
-    },
-    {
-      "project_id": "yoxf59ZM",
-      "title": "Cobblemon: PvP Enabler",
-      "slug": "cobblemon-pvp-enabler",
-      "current_velocity": 1.53,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 75.23
-    },
-    {
-      "project_id": "69sSGniy",
-      "title": "Dark Orion",
-      "slug": "dark-orion",
-      "current_velocity": 1.22,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 69.76
-    },
-    {
-      "project_id": "rkqhFp1l",
-      "title": "Advanced Happy Ghast",
-      "slug": "advanced-happy-ghast",
-      "current_velocity": 1.22,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 60.18
-    },
-    {
-      "project_id": "XTqixLKU",
-      "title": "Goblins Legacy",
-      "slug": "goblins-legacy",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 59.31
-    },
-    {
-      "project_id": "EZuvIJMn",
-      "title": "Post Production Backported",
-      "slug": "post-production-backported",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.03,
-      "anomaly_factor": 54.7
-    },
-    {
-      "project_id": "ZiA2cHcZ",
-      "title": "The Unrewarding Ore Dweller Mod",
-      "slug": "tuodm",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 49.86
-    },
-    {
-      "project_id": "hyA2PP78",
-      "title": "Bricktopia",
-      "slug": "bricktopia",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 49.86
-    },
-    {
-      "project_id": "oMs10AZs",
-      "title": "CreepyPasta Legends",
-      "slug": "creepypasta-legends",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.04,
-      "anomaly_factor": 45.14
-    },
-    {
-      "project_id": "Q8RqO4OC",
-      "title": "More Minecarts",
-      "slug": "more-minecarts",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.04,
-      "anomaly_factor": 45.14
-    },
-    {
-      "project_id": "86WFcQ4a",
-      "title": "BTA Elevators",
-      "slug": "bta-elevators",
-      "current_velocity": 1.22,
-      "avg_velocity": 0.03,
-      "anomaly_factor": 43.22
-    },
-    {
-      "project_id": "Kw2Q2hxP",
-      "title": "BotanicPledge",
-      "slug": "botanicpledge",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.05,
-      "anomaly_factor": 37.73
-    },
-    {
-      "project_id": "7271ngbu",
-      "title": "ace's goofy enchants",
-      "slug": "age",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 35.76
-    },
-    {
-      "project_id": "MG221nlm",
-      "title": "More Tools++ by Anoosh",
-      "slug": "more-tools++-by-anoosh",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 35.76
-    },
-    {
-      "project_id": "uaW97oAS",
-      "title": "Items 'n Stuff (IS)",
-      "slug": "items-n-stuff",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 34.88
-    },
-    {
-      "project_id": "h0Cgk2MP",
-      "title": "Alternative Earlygame",
-      "slug": "alternative-earlygame",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 34.88
-    },
-    {
-      "project_id": "nXUU8lvG",
-      "title": "Blue's Epic Items",
-      "slug": "blues-epic-items",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 34.88
-    },
-    {
-      "project_id": "zoQTQwCo",
-      "title": "(READ DESC) SonicMechanics: Special Stages",
-      "slug": "sonicmechanics-special-stages",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 34.88
-    },
-    {
-      "project_id": "ndjA7Q88",
-      "title": "PutAnythingYouWantOnYourHead",
-      "slug": "putanythingyouwantonyourhead",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.05,
-      "anomaly_factor": 34.3
-    },
-    {
-      "project_id": "be6NQmwM",
-      "title": "HexMapping",
-      "slug": "hexmapping",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 33.24
-    },
-    {
-      "project_id": "aROnjZAV",
-      "title": "Pull Me Up",
-      "slug": "pull-me-up",
-      "current_velocity": 1.53,
-      "avg_velocity": 0.05,
-      "anomaly_factor": 33.17
-    },
-    {
-      "project_id": "Ga637tr7",
-      "title": "Axe Throw",
-      "slug": "axe_throw",
-      "current_velocity": 3.37,
-      "avg_velocity": 0.1,
-      "anomaly_factor": 33.16
-    },
-    {
-      "project_id": "kF5iiyjo",
-      "title": "Working Elevators",
-      "slug": "working-elevators",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.06,
-      "anomaly_factor": 33.12
-    },
-    {
-      "project_id": "1LXCeBeq",
-      "title": "Nocturnia",
-      "slug": "nocturnia",
-      "current_velocity": 2.75,
-      "avg_velocity": 0.08,
-      "anomaly_factor": 32.85
-    },
-    {
-      "project_id": "9PSkRsWm",
-      "title": "Create: Numismatics Wallets",
-      "slug": "create-numismatics-wallets",
-      "current_velocity": 1.53,
-      "avg_velocity": 0.05,
-      "anomaly_factor": 32.42
-    },
-    {
-      "project_id": "CxhCEnA1",
-      "title": "World Money Mod",
-      "slug": "world-money-mod",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.03,
-      "anomaly_factor": 32.41
-    },
-    {
-      "project_id": "8kktVImD",
-      "title": "LCG's Resident Evil Addon",
-      "slug": "lcgs-resident-evil-addon",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.03,
-      "anomaly_factor": 32.41
-    },
-    {
-      "project_id": "KXzkSPuR",
-      "title": "FairyCraftReborn",
-      "slug": "fairycraftreborn",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.03,
-      "anomaly_factor": 30.19
-    },
-    {
-      "project_id": "aYUGK1CP",
-      "title": "Feur Builder",
-      "slug": "feur-builder",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "7wcHrATs",
-      "title": "Pickpocket",
-      "slug": "ilove_pickpocket",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "Fjs23YlW",
-      "title": "Regenerations?",
-      "slug": "regenerations",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "T4IvRZqT",
-      "title": "Feur Colors",
-      "slug": "feur-colors",
-      "current_velocity": 1.84,
-      "avg_velocity": 0.06,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "ifk0m7Ab",
-      "title": "Realistic gunpowder mining",
-      "slug": "realistic-gunpowder-mining",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "Oh5dnwZB",
-      "title": "StructSaver",
-      "slug": "structsaver",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "xgAoP4Yu",
-      "title": "Brewing Helper",
-      "slug": "brewing-helper",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "e7t2jtqA",
-      "title": "Aspen",
-      "slug": "aspen",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "nQGY18W0",
-      "title": "Wand Variety (Staffs)",
-      "slug": "wand-variety-(staffs)",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "QtRALTjE",
-      "title": "Instant Chunks",
-      "slug": "instantchunks",
-      "current_velocity": 0.61,
-      "avg_velocity": 0.02,
-      "anomaly_factor": 30.09
-    },
-    {
-      "project_id": "bMvu7gFZ",
-      "title": "Coconut Palm",
-      "slug": "coconutpalm",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.03,
-      "anomaly_factor": 29.18
-    },
-    {
-      "project_id": "Q6aEaSFU",
-      "title": "LAir's Structures",
-      "slug": "lairs-structures",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.03,
-      "anomaly_factor": 27.35
-    },
-    {
-      "project_id": "i0GhoR6h",
-      "title": "Better Bunnies",
-      "slug": "better-bunnies",
-      "current_velocity": 1.53,
-      "avg_velocity": 0.06,
-      "anomaly_factor": 26.02
-    },
-    {
-      "project_id": "pPPLJpNs",
-      "title": "Toxicity",
-      "slug": "toxicity-mod",
-      "current_velocity": 3.37,
-      "avg_velocity": 0.14,
-      "anomaly_factor": 24.75
-    },
-    {
-      "project_id": "QvcanQbI",
-      "title": "It Follows",
-      "slug": "it-follows",
-      "current_velocity": 0.92,
-      "avg_velocity": 0.04,
-      "anomaly_factor": 24.23
-    },
-    {
-      "project_id": "49H61Jsd",
-      "title": "THE CHAIN OF LEGEND",
-      "slug": "the-chain-of-legend",
-      "current_velocity": 0.31,
-      "avg_velocity": 0.01,
-      "anomaly_factor": 23.82
-    },
-    {
-      "project_id": "jWlNDW4Q",
-      "title": "Everything Nigerian",
-      "slug": "everything-nigerian",
-      "current_velocity": 0.31,
-      "avg_velocity": 0.01,
-      "anomaly_factor": 23.82
-    },
-    {
-      "project_id": "FjAAVpLn",
-      "title": "Coinify",
-      "slug": "coinify",
-      "current_velocity": 0.31,
-      "avg_velocity": 0.01,
-      "anomaly_factor": 23.82
-    },
-    {
-      "project_id": "AX0l3Jmb",
-      "title": "QuantumTools",
-      "slug": "quantumtools",
-      "current_velocity": 0.31,
-      "avg_velocity": 0.01,
-      "anomaly_factor": 23.82
-    },
-    {
-      "project_id": "1pARmWNq",
-      "title": "theorematurgy",
-      "slug": "theorematurgy",
-      "current_velocity": 0.31,
-      "avg_velocity": 0.01,
-      "anomaly_factor": 23.82
-    },
-    {
-      "project_id": "jJp6hoCn",
-      "title": "Metrica",
-      "slug": "metrica",
-      "current_velocity": 0.31,
-      "avg_velocity": 0.01,
-      "anomaly_factor": 23.82
+      "project_id": "t8iyhYu7",
+      "title": "Resource Backpack's",
+      "slug": "resource-backpacks",
+      "current_velocity": 29.86,
+      "avg_velocity": 9.52,
+      "anomaly_factor": 3.14
     }
   ],
   "hourly_pattern": [
-    {
-      "hour_label": "01-03",
-      "downloads_gained": 2792565
-    },
     {
       "hour_label": "03-05",
       "downloads_gained": 2370530
@@ -757,6 +361,10 @@
     {
       "hour_label": "23-02",
       "downloads_gained": 5898026
+    },
+    {
+      "hour_label": "02-04",
+      "downloads_gained": -5548370025
     }
   ]
 }
