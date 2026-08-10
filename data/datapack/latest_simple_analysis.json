@@ -1,24 +1,12 @@
 {
-  "timestamp": "2026-08-11T02-06-08",
+  "timestamp": "2026-08-11T05-34-08",
   "date": "2026-08-11",
   "project_type": "datapack",
   "analysis_type": "simple",
   "baseline_date": "2026-08-11",
-  "hours_between": 2.06,
-  "actual_hours_between": 2.06,
+  "hours_between": 3.47,
+  "actual_hours_between": 3.47,
   "trend_history": [
-    {
-      "date": "2026-08-08",
-      "timestamp": "2026-08-08T13-40-00",
-      "total_downloads": 672502928,
-      "new_downloads": 146677,
-      "lost_downloads": 111,
-      "net_change": 146566,
-      "growing_projects": 2719,
-      "declining_projects": 1,
-      "baseline_date": "2026-08-08",
-      "hours_between": 1.54
-    },
     {
       "date": "2026-08-08",
       "timestamp": "2026-08-08T15-26-59",
@@ -366,21 +354,33 @@
       "declining_projects": 0,
       "baseline_date": "2026-08-10",
       "hours_between": 2.39
+    },
+    {
+      "date": "2026-08-11",
+      "timestamp": "2026-08-11T02-06-08",
+      "total_downloads": 678636654,
+      "new_downloads": 194044,
+      "lost_downloads": 0,
+      "net_change": 194044,
+      "growing_projects": 3309,
+      "declining_projects": 0,
+      "baseline_date": "2026-08-11",
+      "hours_between": 2.06
     }
   ],
   "summary": {
     "total_projects": 10000,
-    "total_versions": 85427,
-    "total_downloads": 678636654,
+    "total_versions": 85432,
+    "total_downloads": 678865260,
     "baseline_date": "2026-08-11",
     "current_date": "2026-08-11",
     "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 194044,
+    "new_downloads_since_baseline": 228606,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 194044,
-    "growing_projects": 3309,
+    "net_download_change": 228606,
+    "growing_projects": 3656,
     "declining_projects": 0,
-    "downloads_per_hour": 94272.39
+    "downloads_per_hour": 65954.61
   },
   "category_rankings": [],
   "loader_rankings": [],
@@ -406,11 +406,11 @@
         "technology",
         "utility"
       ],
-      "current_downloads": 70627091,
-      "baseline_downloads": 70593652,
-      "delta_downloads": 33439,
-      "downloads_per_hour": 16245.67,
-      "growth_pct": 0.05
+      "current_downloads": 70667269,
+      "baseline_downloads": 70627091,
+      "delta_downloads": 40178,
+      "downloads_per_hour": 11591.67,
+      "growth_pct": 0.06
     },
     {
       "project_id": "8oi3bsk5",
@@ -424,11 +424,11 @@
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 21096304,
-      "baseline_downloads": 21091669,
-      "delta_downloads": 4635,
-      "downloads_per_hour": 2251.82,
-      "growth_pct": 0.02
+      "current_downloads": 21101736,
+      "baseline_downloads": 21096304,
+      "delta_downloads": 5432,
+      "downloads_per_hour": 1567.17,
+      "growth_pct": 0.03
     },
     {
       "project_id": "DjLobEOy",
@@ -443,123 +443,10 @@
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 16087190,
-      "baseline_downloads": 16082967,
-      "delta_downloads": 4223,
-      "downloads_per_hour": 2051.66,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "h2jngREY",
-      "title": "Trek",
-      "slug": "trek",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 9850397,
-      "baseline_downloads": 9846511,
-      "delta_downloads": 3886,
-      "downloads_per_hour": 1887.94,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "tpehi7ww",
-      "title": "Dungeons and Taverns",
-      "slug": "dungeons-and-taverns",
-      "categories": [
-        "adventure",
-        "datapack",
-        "equipment",
-        "fabric",
-        "forge",
-        "game-mechanics",
-        "mobs",
-        "neoforge",
-        "worldgen"
-      ],
-      "current_downloads": 19840513,
-      "baseline_downloads": 19837009,
-      "delta_downloads": 3504,
-      "downloads_per_hour": 1702.35,
-      "growth_pct": 0.02
-    },
-    {
-      "project_id": "2V1Y86sc",
-      "title": "Navas ZA Megas",
-      "slug": "navas-zamega",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "neoforge"
-      ],
-      "current_downloads": 7624734,
-      "baseline_downloads": 7621477,
-      "delta_downloads": 3257,
-      "downloads_per_hour": 1582.35,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "W2pr9jyL",
-      "title": "Cobblemon additions",
-      "slug": "cobblemon-additions",
-      "categories": [
-        "adventure",
-        "datapack",
-        "decoration",
-        "economy",
-        "fabric",
-        "worldgen"
-      ],
-      "current_downloads": 8310534,
-      "baseline_downloads": 8307591,
-      "delta_downloads": 2943,
-      "downloads_per_hour": 1429.8,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "lWDHr9jE",
-      "title": "Tectonic",
-      "slug": "tectonic",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 15258050,
-      "baseline_downloads": 15255494,
-      "delta_downloads": 2556,
-      "downloads_per_hour": 1241.78,
-      "growth_pct": 0.02
-    },
-    {
-      "project_id": "j3FONRYr",
-      "title": "Structory: Towers",
-      "slug": "structory-towers",
-      "categories": [
-        "adventure",
-        "datapack",
-        "decoration",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 7787710,
-      "baseline_downloads": 7785260,
-      "delta_downloads": 2450,
-      "downloads_per_hour": 1190.28,
+      "current_downloads": 16091746,
+      "baseline_downloads": 16087190,
+      "delta_downloads": 4556,
+      "downloads_per_hour": 1314.44,
       "growth_pct": 0.03
     },
     {
@@ -578,10 +465,50 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 15969285,
-      "baseline_downloads": 15966869,
-      "delta_downloads": 2416,
-      "downloads_per_hour": 1173.77,
+      "current_downloads": 15973270,
+      "baseline_downloads": 15969285,
+      "delta_downloads": 3985,
+      "downloads_per_hour": 1149.7,
+      "growth_pct": 0.02
+    },
+    {
+      "project_id": "tpehi7ww",
+      "title": "Dungeons and Taverns",
+      "slug": "dungeons-and-taverns",
+      "categories": [
+        "adventure",
+        "datapack",
+        "equipment",
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "mobs",
+        "neoforge",
+        "worldgen"
+      ],
+      "current_downloads": 19844154,
+      "baseline_downloads": 19840513,
+      "delta_downloads": 3641,
+      "downloads_per_hour": 1050.46,
+      "growth_pct": 0.02
+    },
+    {
+      "project_id": "lWDHr9jE",
+      "title": "Tectonic",
+      "slug": "tectonic",
+      "categories": [
+        "adventure",
+        "datapack",
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt",
+        "worldgen"
+      ],
+      "current_downloads": 15261624,
+      "baseline_downloads": 15258050,
+      "delta_downloads": 3574,
+      "downloads_per_hour": 1031.13,
       "growth_pct": 0.02
     },
     {
@@ -598,10 +525,29 @@
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 7424793,
-      "baseline_downloads": 7422496,
-      "delta_downloads": 2297,
-      "downloads_per_hour": 1115.95,
+      "current_downloads": 7427775,
+      "baseline_downloads": 7424793,
+      "delta_downloads": 2982,
+      "downloads_per_hour": 860.33,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "hl5OLM95",
+      "title": "Geophilic",
+      "slug": "geophilic",
+      "categories": [
+        "adventure",
+        "datapack",
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt",
+        "worldgen"
+      ],
+      "current_downloads": 9555402,
+      "baseline_downloads": 9552434,
+      "delta_downloads": 2968,
+      "downloads_per_hour": 856.29,
       "growth_pct": 0.03
     },
     {
@@ -617,16 +563,50 @@
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 8402865,
-      "baseline_downloads": 8400601,
-      "delta_downloads": 2264,
-      "downloads_per_hour": 1099.92,
+      "current_downloads": 8405701,
+      "baseline_downloads": 8402865,
+      "delta_downloads": 2836,
+      "downloads_per_hour": 818.21,
       "growth_pct": 0.03
     },
     {
-      "project_id": "hl5OLM95",
-      "title": "Geophilic",
-      "slug": "geophilic",
+      "project_id": "2V1Y86sc",
+      "title": "Navas ZA Megas",
+      "slug": "navas-zamega",
+      "categories": [
+        "adventure",
+        "datapack",
+        "fabric",
+        "neoforge"
+      ],
+      "current_downloads": 7627380,
+      "baseline_downloads": 7624734,
+      "delta_downloads": 2646,
+      "downloads_per_hour": 763.39,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "W2pr9jyL",
+      "title": "Cobblemon additions",
+      "slug": "cobblemon-additions",
+      "categories": [
+        "adventure",
+        "datapack",
+        "decoration",
+        "economy",
+        "fabric",
+        "worldgen"
+      ],
+      "current_downloads": 8312988,
+      "baseline_downloads": 8310534,
+      "delta_downloads": 2454,
+      "downloads_per_hour": 708.0,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "h2jngREY",
+      "title": "Trek",
+      "slug": "trek",
       "categories": [
         "adventure",
         "datapack",
@@ -636,10 +616,10 @@
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 9552434,
-      "baseline_downloads": 9550389,
-      "delta_downloads": 2045,
-      "downloads_per_hour": 993.52,
+      "current_downloads": 9852848,
+      "baseline_downloads": 9850397,
+      "delta_downloads": 2451,
+      "downloads_per_hour": 707.13,
       "growth_pct": 0.02
     },
     {
@@ -653,11 +633,31 @@
         "mobs",
         "utility"
       ],
-      "current_downloads": 4013660,
-      "baseline_downloads": 4011933,
-      "delta_downloads": 1727,
-      "downloads_per_hour": 839.03,
-      "growth_pct": 0.04
+      "current_downloads": 4015981,
+      "baseline_downloads": 4013660,
+      "delta_downloads": 2321,
+      "downloads_per_hour": 669.63,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "j3FONRYr",
+      "title": "Structory: Towers",
+      "slug": "structory-towers",
+      "categories": [
+        "adventure",
+        "datapack",
+        "decoration",
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt",
+        "worldgen"
+      ],
+      "current_downloads": 7790028,
+      "baseline_downloads": 7787710,
+      "delta_downloads": 2318,
+      "downloads_per_hour": 668.76,
+      "growth_pct": 0.03
     },
     {
       "project_id": "ZVzW5oNS",
@@ -672,68 +672,11 @@
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 9227407,
-      "baseline_downloads": 9225731,
-      "delta_downloads": 1676,
-      "downloads_per_hour": 814.25,
+      "current_downloads": 9229383,
+      "baseline_downloads": 9227407,
+      "delta_downloads": 1976,
+      "downloads_per_hour": 570.09,
       "growth_pct": 0.02
-    },
-    {
-      "project_id": "8Lw09aLb",
-      "title": "Luki's Grand Capitals",
-      "slug": "lukis-grand-capitals",
-      "categories": [
-        "adventure",
-        "datapack",
-        "decoration",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 4734203,
-      "baseline_downloads": 4732557,
-      "delta_downloads": 1646,
-      "downloads_per_hour": 799.68,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "lIDAJAby",
-      "title": "CobbleMotion v1.5.1",
-      "slug": "cobblemotion",
-      "categories": [
-        "audio",
-        "datapack",
-        "decoration",
-        "entities",
-        "minecraft",
-        "models"
-      ],
-      "current_downloads": 4533267,
-      "baseline_downloads": 4531740,
-      "delta_downloads": 1527,
-      "downloads_per_hour": 741.86,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "jbbBrQVa",
-      "title": "MissingMons [cobblemon]",
-      "slug": "missingmons-cobblemon",
-      "categories": [
-        "adventure",
-        "datapack",
-        "fabric",
-        "forge",
-        "mobs",
-        "neoforge",
-        "quilt"
-      ],
-      "current_downloads": 5158435,
-      "baseline_downloads": 5156949,
-      "delta_downloads": 1486,
-      "downloads_per_hour": 721.94,
-      "growth_pct": 0.03
     },
     {
       "project_id": "7YjclEGc",
@@ -750,26 +693,78 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 6960440,
-      "baseline_downloads": 6958956,
-      "delta_downloads": 1484,
-      "downloads_per_hour": 720.97,
-      "growth_pct": 0.02
+      "current_downloads": 6962314,
+      "baseline_downloads": 6960440,
+      "delta_downloads": 1874,
+      "downloads_per_hour": 540.66,
+      "growth_pct": 0.03
     },
     {
-      "project_id": "ouf6KDf2",
-      "title": "LackingMons (Discountiniued)",
-      "slug": "lackingmons",
+      "project_id": "jbbBrQVa",
+      "title": "MissingMons [cobblemon]",
+      "slug": "missingmons-cobblemon",
       "categories": [
         "adventure",
         "datapack",
+        "fabric",
+        "forge",
+        "mobs",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 5160232,
+      "baseline_downloads": 5158435,
+      "delta_downloads": 1797,
+      "downloads_per_hour": 518.45,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "lIDAJAby",
+      "title": "CobbleMotion v1.5.1",
+      "slug": "cobblemotion",
+      "categories": [
+        "audio",
+        "datapack",
+        "decoration",
+        "entities",
+        "minecraft",
+        "models"
+      ],
+      "current_downloads": 4535023,
+      "baseline_downloads": 4533267,
+      "delta_downloads": 1756,
+      "downloads_per_hour": 506.62,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "TiFXQSAQ",
+      "title": "MysticMons",
+      "slug": "mysticmons",
+      "categories": [
+        "datapack",
         "game-mechanics",
+        "mobs",
+        "utility"
+      ],
+      "current_downloads": 5066596,
+      "baseline_downloads": 5064945,
+      "delta_downloads": 1651,
+      "downloads_per_hour": 476.33,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "lYp6oiT3",
+      "title": "Hydro Reanimodel Pack [Cobblemon]",
+      "slug": "hydro-reanimodel-pack",
+      "categories": [
+        "adventure",
+        "datapack",
         "mobs"
       ],
-      "current_downloads": 3930968,
-      "baseline_downloads": 3929507,
-      "delta_downloads": 1461,
-      "downloads_per_hour": 709.8,
+      "current_downloads": 4075805,
+      "baseline_downloads": 4074157,
+      "delta_downloads": 1648,
+      "downloads_per_hour": 475.46,
       "growth_pct": 0.04
     },
     {
@@ -783,116 +778,27 @@
         "minecraft",
         "mobs"
       ],
-      "current_downloads": 4501581,
-      "baseline_downloads": 4500132,
-      "delta_downloads": 1449,
-      "downloads_per_hour": 703.97,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "yclIRcrN",
-      "title": "Grim kingdoms: Vanilla Edition",
-      "slug": "grim-kingdoms-lost-structures-ruins-vanilla-edition",
-      "categories": [
-        "adventure",
-        "datapack",
-        "decoration",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 647474,
-      "baseline_downloads": 646060,
-      "delta_downloads": 1414,
-      "downloads_per_hour": 686.96,
-      "growth_pct": 0.22
-    },
-    {
-      "project_id": "lYp6oiT3",
-      "title": "Hydro Reanimodel Pack [Cobblemon]",
-      "slug": "hydro-reanimodel-pack",
-      "categories": [
-        "adventure",
-        "datapack",
-        "mobs"
-      ],
-      "current_downloads": 4074157,
-      "baseline_downloads": 4072757,
-      "delta_downloads": 1400,
-      "downloads_per_hour": 680.16,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "MCnBYP0b",
-      "title": "True Ending - Ender Dragon Overhaul",
-      "slug": "true-ending",
-      "categories": [
-        "datapack",
-        "fabric",
-        "forge",
-        "magic",
-        "mobs",
-        "neoforge",
-        "quilt"
-      ],
-      "current_downloads": 5707799,
-      "baseline_downloads": 5706403,
-      "delta_downloads": 1396,
-      "downloads_per_hour": 678.22,
-      "growth_pct": 0.02
-    },
-    {
-      "project_id": "TiFXQSAQ",
-      "title": "MysticMons",
-      "slug": "mysticmons",
-      "categories": [
-        "datapack",
-        "game-mechanics",
-        "mobs",
-        "utility"
-      ],
-      "current_downloads": 5064945,
-      "baseline_downloads": 5063566,
-      "delta_downloads": 1379,
-      "downloads_per_hour": 669.96,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "ubCG349l",
-      "title": "MundialMons ReaniPack [CobbleMon]",
-      "slug": "mundialmons",
-      "categories": [
-        "adventure",
-        "datapack",
-        "minecraft",
-        "mobs"
-      ],
-      "current_downloads": 3588896,
-      "baseline_downloads": 3587542,
-      "delta_downloads": 1354,
-      "downloads_per_hour": 657.81,
+      "current_downloads": 4503228,
+      "baseline_downloads": 4501581,
+      "delta_downloads": 1647,
+      "downloads_per_hour": 475.17,
       "growth_pct": 0.04
     },
     {
-      "project_id": "XCIMrYn0",
-      "title": "Hearths",
-      "slug": "hearths",
+      "project_id": "ouf6KDf2",
+      "title": "LackingMons (Discountiniued)",
+      "slug": "lackingmons",
       "categories": [
         "adventure",
         "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "worldgen"
+        "game-mechanics",
+        "mobs"
       ],
-      "current_downloads": 5734542,
-      "baseline_downloads": 5733220,
-      "delta_downloads": 1322,
-      "downloads_per_hour": 642.27,
-      "growth_pct": 0.02
+      "current_downloads": 3932578,
+      "baseline_downloads": 3930968,
+      "delta_downloads": 1610,
+      "downloads_per_hour": 464.5,
+      "growth_pct": 0.04
     },
     {
       "project_id": "2k9EDPO1",
@@ -902,40 +808,11 @@
         "datapack",
         "mobs"
       ],
-      "current_downloads": 3871124,
-      "baseline_downloads": 3869816,
-      "delta_downloads": 1308,
-      "downloads_per_hour": 635.47,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "B12Teeqk",
-      "title": "Planeta Cobblemon Pokémon Pack",
-      "slug": "planeta-cobblemon-pokemon-pack",
-      "categories": [
-        "adventure",
-        "datapack",
-        "mobs"
-      ],
-      "current_downloads": 3829939,
-      "baseline_downloads": 3828639,
-      "delta_downloads": 1300,
-      "downloads_per_hour": 631.58,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "Gdq5F7ud",
-      "title": "GlitchDex - Cobblemon",
-      "slug": "glitchdex-cobblemon",
-      "categories": [
-        "datapack",
-        "mobs"
-      ],
-      "current_downloads": 3801802,
-      "baseline_downloads": 3800509,
-      "delta_downloads": 1293,
-      "downloads_per_hour": 628.18,
-      "growth_pct": 0.03
+      "current_downloads": 3872732,
+      "baseline_downloads": 3871124,
+      "delta_downloads": 1608,
+      "downloads_per_hour": 463.92,
+      "growth_pct": 0.04
     },
     {
       "project_id": "b8PVSzJC",
@@ -951,11 +828,56 @@
         "neoforge",
         "quilt"
       ],
-      "current_downloads": 3752418,
-      "baseline_downloads": 3751130,
-      "delta_downloads": 1288,
-      "downloads_per_hour": 625.75,
-      "growth_pct": 0.03
+      "current_downloads": 3754022,
+      "baseline_downloads": 3752418,
+      "delta_downloads": 1604,
+      "downloads_per_hour": 462.77,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "B12Teeqk",
+      "title": "Planeta Cobblemon Pokémon Pack",
+      "slug": "planeta-cobblemon-pokemon-pack",
+      "categories": [
+        "adventure",
+        "datapack",
+        "mobs"
+      ],
+      "current_downloads": 3831540,
+      "baseline_downloads": 3829939,
+      "delta_downloads": 1601,
+      "downloads_per_hour": 461.9,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "ubCG349l",
+      "title": "MundialMons ReaniPack [CobbleMon]",
+      "slug": "mundialmons",
+      "categories": [
+        "adventure",
+        "datapack",
+        "minecraft",
+        "mobs"
+      ],
+      "current_downloads": 3590495,
+      "baseline_downloads": 3588896,
+      "delta_downloads": 1599,
+      "downloads_per_hour": 461.32,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "Gdq5F7ud",
+      "title": "GlitchDex - Cobblemon",
+      "slug": "glitchdex-cobblemon",
+      "categories": [
+        "datapack",
+        "mobs"
+      ],
+      "current_downloads": 3803397,
+      "baseline_downloads": 3801802,
+      "delta_downloads": 1595,
+      "downloads_per_hour": 460.17,
+      "growth_pct": 0.04
     },
     {
       "project_id": "uVBAvWbW",
@@ -967,65 +889,157 @@
         "game-mechanics",
         "utility"
       ],
-      "current_downloads": 4029195,
-      "baseline_downloads": 4027910,
-      "delta_downloads": 1285,
-      "downloads_per_hour": 624.29,
-      "growth_pct": 0.03
+      "current_downloads": 4030779,
+      "baseline_downloads": 4029195,
+      "delta_downloads": 1584,
+      "downloads_per_hour": 457.0,
+      "growth_pct": 0.04
     },
     {
-      "project_id": "HdIQwHGq",
-      "title": "Lost Cities Modern Tweaks",
-      "slug": "lost-cities-modern-tweaks",
+      "project_id": "p1WH6sHr",
+      "title": "From The Fog",
+      "slug": "from-the-fog",
       "categories": [
         "adventure",
+        "cursed",
         "datapack",
+        "fabric",
         "forge",
         "neoforge",
         "worldgen"
       ],
-      "current_downloads": 2617915,
-      "baseline_downloads": 2616753,
-      "delta_downloads": 1162,
-      "downloads_per_hour": 564.53,
-      "growth_pct": 0.04
+      "current_downloads": 5139789,
+      "baseline_downloads": 5138206,
+      "delta_downloads": 1583,
+      "downloads_per_hour": 456.71,
+      "growth_pct": 0.03
     },
     {
-      "project_id": "iunZDj0l",
-      "title": "CTOV - Beautify Compat",
-      "slug": "ctov-beautify-compat",
+      "project_id": "zrzYrlm0",
+      "title": "Spawn Animations",
+      "slug": "spawn-animations",
       "categories": [
+        "adventure",
         "datapack",
-        "economy",
         "fabric",
         "forge",
-        "quilt",
-        "worldgen"
-      ],
-      "current_downloads": 2640258,
-      "baseline_downloads": 2639165,
-      "delta_downloads": 1093,
-      "downloads_per_hour": 531.01,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "kawJN2LZ",
-      "title": "CTOV - Friends and Foes Compat",
-      "slug": "ctov-friends-and-foes-compat",
-      "categories": [
-        "datapack",
-        "economy",
-        "fabric",
-        "forge",
+        "game-mechanics",
         "mobs",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 6586992,
+      "baseline_downloads": 6585422,
+      "delta_downloads": 1570,
+      "downloads_per_hour": 452.96,
+      "growth_pct": 0.02
+    },
+    {
+      "project_id": "XCIMrYn0",
+      "title": "Hearths",
+      "slug": "hearths",
+      "categories": [
+        "adventure",
+        "datapack",
+        "fabric",
+        "forge",
+        "neoforge",
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 2924530,
-      "baseline_downloads": 2923456,
-      "delta_downloads": 1074,
-      "downloads_per_hour": 521.78,
-      "growth_pct": 0.04
+      "current_downloads": 5736037,
+      "baseline_downloads": 5734542,
+      "delta_downloads": 1495,
+      "downloads_per_hour": 431.32,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "boFjx9eY",
+      "title": "Stony Cliffs Are Cool",
+      "slug": "stony-cliffs-are-cool",
+      "categories": [
+        "datapack",
+        "fabric",
+        "forge",
+        "neoforge",
+        "worldgen"
+      ],
+      "current_downloads": 3553235,
+      "baseline_downloads": 3552005,
+      "delta_downloads": 1230,
+      "downloads_per_hour": 354.86,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "DNuNq5bb",
+      "title": "Dungeons and Taverns Ancient City Overhaul",
+      "slug": "dungeons-and-taverns-ancient-city-overhaul",
+      "categories": [
+        "adventure",
+        "datapack",
+        "fabric",
+        "forge",
+        "neoforge",
+        "worldgen"
+      ],
+      "current_downloads": 3856491,
+      "baseline_downloads": 3855275,
+      "delta_downloads": 1216,
+      "downloads_per_hour": 350.83,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "LPjGiSO4",
+      "title": "Nullscape",
+      "slug": "nullscape",
+      "categories": [
+        "datapack",
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt",
+        "worldgen"
+      ],
+      "current_downloads": 5355579,
+      "baseline_downloads": 5354549,
+      "delta_downloads": 1030,
+      "downloads_per_hour": 297.16,
+      "growth_pct": 0.02
+    },
+    {
+      "project_id": "P5wB88AS",
+      "title": "Repurposed Structures - Farmer's Delight Compat",
+      "slug": "repurposed-structures-farmers-delight-compat",
+      "categories": [
+        "datapack",
+        "fabric",
+        "neoforge",
+        "worldgen"
+      ],
+      "current_downloads": 3303228,
+      "baseline_downloads": 3302201,
+      "delta_downloads": 1027,
+      "downloads_per_hour": 296.3,
+      "growth_pct": 0.03
+    },
+    {
+      "project_id": "MCnBYP0b",
+      "title": "True Ending - Ender Dragon Overhaul",
+      "slug": "true-ending",
+      "categories": [
+        "datapack",
+        "fabric",
+        "forge",
+        "magic",
+        "mobs",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 5708809,
+      "baseline_downloads": 5707799,
+      "delta_downloads": 1010,
+      "downloads_per_hour": 291.39,
+      "growth_pct": 0.02
     },
     {
       "project_id": "UMmSTwE0",
@@ -1042,253 +1056,220 @@
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 4769010,
-      "baseline_downloads": 4767976,
-      "delta_downloads": 1034,
-      "downloads_per_hour": 502.35,
+      "current_downloads": 4769983,
+      "baseline_downloads": 4769010,
+      "delta_downloads": 973,
+      "downloads_per_hour": 280.72,
       "growth_pct": 0.02
     },
     {
-      "project_id": "DNuNq5bb",
-      "title": "Dungeons and Taverns Ancient City Overhaul",
-      "slug": "dungeons-and-taverns-ancient-city-overhaul",
+      "project_id": "8Lw09aLb",
+      "title": "Luki's Grand Capitals",
+      "slug": "lukis-grand-capitals",
       "categories": [
         "adventure",
         "datapack",
+        "decoration",
         "fabric",
         "forge",
         "neoforge",
-        "worldgen"
-      ],
-      "current_downloads": 3855275,
-      "baseline_downloads": 3854280,
-      "delta_downloads": 995,
-      "downloads_per_hour": 483.4,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "p1WH6sHr",
-      "title": "From The Fog",
-      "slug": "from-the-fog",
-      "categories": [
-        "adventure",
-        "cursed",
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "worldgen"
-      ],
-      "current_downloads": 5138206,
-      "baseline_downloads": 5137226,
-      "delta_downloads": 980,
-      "downloads_per_hour": 476.11,
-      "growth_pct": 0.02
-    },
-    {
-      "project_id": "6PJbKvJH",
-      "title": "CTOV - Chef's delight Compat",
-      "slug": "ctov-chefs-delight-compat",
-      "categories": [
-        "datapack",
-        "fabric",
-        "food",
-        "forge",
-        "game-mechanics",
         "quilt",
         "worldgen"
       ],
-      "current_downloads": 2137523,
-      "baseline_downloads": 2136554,
-      "delta_downloads": 969,
-      "downloads_per_hour": 470.77,
-      "growth_pct": 0.05
+      "current_downloads": 4735165,
+      "baseline_downloads": 4734203,
+      "delta_downloads": 962,
+      "downloads_per_hour": 277.54,
+      "growth_pct": 0.02
     },
     {
-      "project_id": "boFjx9eY",
-      "title": "Stony Cliffs Are Cool",
-      "slug": "stony-cliffs-are-cool",
+      "project_id": "QI0EmgZ1",
+      "title": "Matcha Flavoured",
+      "slug": "matcha-flavoured",
+      "categories": [
+        "datapack",
+        "food",
+        "game-mechanics"
+      ],
+      "current_downloads": 232966,
+      "baseline_downloads": 232045,
+      "delta_downloads": 921,
+      "downloads_per_hour": 265.72,
+      "growth_pct": 0.4
+    },
+    {
+      "project_id": "oRZbVZzh",
+      "title": "Farmer's Delight Cutting Compat",
+      "slug": "farmers-delight-cutting-compat",
+      "categories": [
+        "datapack",
+        "optimization",
+        "utility"
+      ],
+      "current_downloads": 520518,
+      "baseline_downloads": 519626,
+      "delta_downloads": 892,
+      "downloads_per_hour": 257.35,
+      "growth_pct": 0.17
+    },
+    {
+      "project_id": "UYd23ZmY",
+      "title": "Repurposed Structures - Friends and Foes Compat",
+      "slug": "repurposed-structures-friends-and-foes-compat",
       "categories": [
         "datapack",
         "fabric",
-        "forge",
         "neoforge",
         "worldgen"
       ],
-      "current_downloads": 3552005,
-      "baseline_downloads": 3551066,
-      "delta_downloads": 939,
-      "downloads_per_hour": 456.19,
+      "current_downloads": 2937190,
+      "baseline_downloads": 2936318,
+      "delta_downloads": 872,
+      "downloads_per_hour": 251.58,
       "growth_pct": 0.03
     },
     {
-      "project_id": "p7P0HjJw",
-      "title": "CTOV - Savage and Ravage Compat",
-      "slug": "ctov-savage-and-ravage-compat",
+      "project_id": "HdIQwHGq",
+      "title": "Lost Cities Modern Tweaks",
+      "slug": "lost-cities-modern-tweaks",
       "categories": [
         "adventure",
         "datapack",
         "forge",
-        "game-mechanics",
+        "neoforge",
         "worldgen"
       ],
-      "current_downloads": 1528946,
-      "baseline_downloads": 1528035,
-      "delta_downloads": 911,
-      "downloads_per_hour": 442.59,
-      "growth_pct": 0.06
+      "current_downloads": 2618787,
+      "baseline_downloads": 2617915,
+      "delta_downloads": 872,
+      "downloads_per_hour": 251.58,
+      "growth_pct": 0.03
     },
     {
-      "project_id": "zrzYrlm0",
-      "title": "Spawn Animations",
-      "slug": "spawn-animations",
+      "project_id": "7geFttOM",
+      "title": "Simply Swords - All the Festering Strike",
+      "slug": "simply-swords-all-the-festering-strike",
       "categories": [
-        "adventure",
         "datapack",
-        "fabric",
-        "forge",
         "game-mechanics",
-        "mobs",
-        "neoforge",
-        "quilt"
+        "magic",
+        "utility"
       ],
-      "current_downloads": 6585422,
-      "baseline_downloads": 6584512,
-      "delta_downloads": 910,
-      "downloads_per_hour": 442.11,
-      "growth_pct": 0.01
+      "current_downloads": 553475,
+      "baseline_downloads": 552609,
+      "delta_downloads": 866,
+      "downloads_per_hour": 249.85,
+      "growth_pct": 0.16
     },
     {
-      "project_id": "FTbFC6tW",
-      "title": "CobbleTowns: Continued [Cobblemon 1.6.1]",
-      "slug": "cobbletowns-continued",
+      "project_id": "rwGfM44i",
+      "title": "Simply Swords - All the Death Strike",
+      "slug": "simply-swords-all-the-death-strike",
+      "categories": [
+        "datapack",
+        "game-mechanics",
+        "magic",
+        "utility"
+      ],
+      "current_downloads": 552003,
+      "baseline_downloads": 551140,
+      "delta_downloads": 863,
+      "downloads_per_hour": 248.98,
+      "growth_pct": 0.16
+    },
+    {
+      "project_id": "nqelNCPM",
+      "title": "MCDA - Lightning Unlimited",
+      "slug": "mcda-lightning-unlimited",
+      "categories": [
+        "datapack",
+        "game-mechanics",
+        "magic",
+        "utility"
+      ],
+      "current_downloads": 300050,
+      "baseline_downloads": 299189,
+      "delta_downloads": 861,
+      "downloads_per_hour": 248.41,
+      "growth_pct": 0.29
+    },
+    {
+      "project_id": "cAsbyZ0Z",
+      "title": "Loot Tweaks For Artifacts - Utility Datapack for Prominence II",
+      "slug": "loot-tweaks-for-artifacts-utility-datapack",
+      "categories": [
+        "datapack",
+        "game-mechanics",
+        "utility"
+      ],
+      "current_downloads": 678973,
+      "baseline_downloads": 678114,
+      "delta_downloads": 859,
+      "downloads_per_hour": 247.83,
+      "growth_pct": 0.13
+    },
+    {
+      "project_id": "EtJPWDwR",
+      "title": "Marium's Soulslike Weaponry - All the Smites",
+      "slug": "mariums-soulslike-weaponry-all-the-smites",
+      "categories": [
+        "datapack",
+        "game-mechanics",
+        "magic",
+        "utility"
+      ],
+      "current_downloads": 548264,
+      "baseline_downloads": 547415,
+      "delta_downloads": 849,
+      "downloads_per_hour": 244.94,
+      "growth_pct": 0.16
+    },
+    {
+      "project_id": "CwsqDMpa",
+      "title": "Alm's Oil Additions and Compat",
+      "slug": "alms-oil-additions-and-compat",
       "categories": [
         "datapack"
       ],
-      "current_downloads": 2954428,
-      "baseline_downloads": 2953573,
-      "delta_downloads": 855,
-      "downloads_per_hour": 415.38,
-      "growth_pct": 0.03
+      "current_downloads": 260508,
+      "baseline_downloads": 259668,
+      "delta_downloads": 840,
+      "downloads_per_hour": 242.35,
+      "growth_pct": 0.32
     },
     {
-      "project_id": "wdHQKBmL",
-      "title": "CTOV - Incubation Compat",
-      "slug": "ctov-incubation-compat",
+      "project_id": "xQChK6dl",
+      "title": "Spellblades n Such Unlimited - Temp fix for Prominence II",
+      "slug": "spellblades-n-such-unlimited-temp-fix",
       "categories": [
         "datapack",
-        "decoration",
-        "economy",
-        "forge",
-        "mobs",
-        "worldgen"
-      ],
-      "current_downloads": 1550271,
-      "baseline_downloads": 1549426,
-      "delta_downloads": 845,
-      "downloads_per_hour": 410.53,
-      "growth_pct": 0.05
-    },
-    {
-      "project_id": "P5wB88AS",
-      "title": "Repurposed Structures - Farmer's Delight Compat",
-      "slug": "repurposed-structures-farmers-delight-compat",
-      "categories": [
-        "datapack",
-        "fabric",
-        "neoforge",
-        "worldgen"
-      ],
-      "current_downloads": 3302201,
-      "baseline_downloads": 3301371,
-      "delta_downloads": 830,
-      "downloads_per_hour": 403.24,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "eRX1rJbZ",
-      "title": "Anytag",
-      "slug": "anytag",
-      "categories": [
-        "datapack",
-        "decoration",
-        "fabric",
-        "forge",
-        "quilt",
-        "social",
+        "game-mechanics",
+        "magic",
         "utility"
       ],
-      "current_downloads": 2217462,
-      "baseline_downloads": 2216643,
-      "delta_downloads": 819,
-      "downloads_per_hour": 397.89,
-      "growth_pct": 0.04
+      "current_downloads": 555612,
+      "baseline_downloads": 554776,
+      "delta_downloads": 836,
+      "downloads_per_hour": 241.19,
+      "growth_pct": 0.15
     },
     {
-      "project_id": "sk4iFZGy",
-      "title": "Remove Stardust Labs Intro Message",
-      "slug": "remove-terralith-intro-message",
-      "categories": [
-        "datapack",
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "utility"
-      ],
-      "current_downloads": 3636063,
-      "baseline_downloads": 3635254,
-      "delta_downloads": 809,
-      "downloads_per_hour": 393.04,
-      "growth_pct": 0.02
-    },
-    {
-      "project_id": "F4TxEYXe",
-      "title": "Winterglide's Extra Animations [Cobblemon]",
-      "slug": "winterglides-extra-animations-cobblemon",
-      "categories": [
-        "datapack",
-        "minecraft"
-      ],
-      "current_downloads": 674864,
-      "baseline_downloads": 674067,
-      "delta_downloads": 797,
-      "downloads_per_hour": 387.21,
-      "growth_pct": 0.12
-    },
-    {
-      "project_id": "kXl4B00S",
-      "title": "More Radical Trainers: SV",
-      "slug": "more-radical-trainers",
-      "categories": [
-        "datapack",
-        "fabric",
-        "neoforge"
-      ],
-      "current_downloads": 2416666,
-      "baseline_downloads": 2415875,
-      "delta_downloads": 791,
-      "downloads_per_hour": 384.29,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "469QXqgC",
-      "title": "Cobblemon cafe",
-      "slug": "cobble-caf-forms",
+      "project_id": "rYocd2LE",
+      "title": "Dungeons and Taverns Stronghold Overhaul",
+      "slug": "dungeons-and-taverns-stronghold-overhaul",
       "categories": [
         "adventure",
         "datapack",
-        "decoration",
         "fabric",
-        "game-mechanics",
-        "mobs",
-        "neoforge"
+        "forge",
+        "neoforge",
+        "worldgen"
       ],
-      "current_downloads": 3738322,
-      "baseline_downloads": 3737536,
-      "delta_downloads": 786,
-      "downloads_per_hour": 381.86,
-      "growth_pct": 0.02
+      "current_downloads": 2712659,
+      "baseline_downloads": 2711827,
+      "delta_downloads": 832,
+      "downloads_per_hour": 240.04,
+      "growth_pct": 0.03
     }
   ],
   "declining_projects": [],
@@ -1296,2002 +1277,2002 @@
     {
       "game_version": "1.20.1",
       "loader": "forge",
-      "delta_downloads": 52008,
-      "downloads_per_hour": 25267.04,
-      "project_count": 1251,
+      "delta_downloads": 52788,
+      "downloads_per_hour": 15229.75,
+      "project_count": 1429,
       "top_project_id": "DjLobEOy",
       "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
+      "top_project_delta": 2723
     },
     {
       "game_version": "1.20.1",
       "loader": "fabric",
-      "delta_downloads": 49935,
-      "downloads_per_hour": 24259.92,
-      "project_count": 1275,
+      "delta_downloads": 52262,
+      "downloads_per_hour": 15077.99,
+      "project_count": 1486,
       "top_project_id": "DjLobEOy",
       "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "1.20",
-      "loader": "forge",
-      "delta_downloads": 45735,
-      "downloads_per_hour": 22219.43,
-      "project_count": 961,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "1.20",
-      "loader": "fabric",
-      "delta_downloads": 45213,
-      "downloads_per_hour": 21965.83,
-      "project_count": 1007,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
+      "top_project_delta": 2723
     },
     {
       "game_version": "1.21.1",
       "loader": "fabric",
-      "delta_downloads": 41993,
-      "downloads_per_hour": 20401.46,
-      "project_count": 1586,
+      "delta_downloads": 48489,
+      "downloads_per_hour": 13989.45,
+      "project_count": 1832,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 1769
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "fabric",
-      "delta_downloads": 40359,
-      "downloads_per_hour": 19607.61,
-      "project_count": 940,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "forge",
-      "delta_downloads": 39324,
-      "downloads_per_hour": 19104.78,
-      "project_count": 910,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
+      "top_project_delta": 2227
     },
     {
       "game_version": "1.21.1",
       "loader": "neoforge",
-      "delta_downloads": 38546,
-      "downloads_per_hour": 18726.8,
-      "project_count": 1509,
+      "delta_downloads": 47121,
+      "downloads_per_hour": 13594.77,
+      "project_count": 1702,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 3813
+      "top_project_delta": 4730
     },
     {
-      "game_version": "1.20.1",
-      "loader": "quilt",
-      "delta_downloads": 37878,
-      "downloads_per_hour": 18402.27,
-      "project_count": 1078,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "game_version": "1.20",
+      "loader": "fabric",
+      "delta_downloads": 46681,
+      "downloads_per_hour": 13467.83,
+      "project_count": 1170,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
     },
     {
       "game_version": "1.20.1",
       "loader": "datapack",
-      "delta_downloads": 36311,
-      "downloads_per_hour": 17640.97,
-      "project_count": 754,
+      "delta_downloads": 46174,
+      "downloads_per_hour": 13321.56,
+      "project_count": 763,
       "top_project_id": "ouf6KDf2",
       "top_project_title": "LackingMons (Discountiniued)",
-      "top_project_delta": 1461
+      "top_project_delta": 1610
     },
     {
       "game_version": "1.20",
-      "loader": "quilt",
-      "delta_downloads": 35901,
-      "downloads_per_hour": 17441.78,
-      "project_count": 902,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "fabric",
-      "delta_downloads": 35716,
-      "downloads_per_hour": 17351.9,
-      "project_count": 877,
+      "loader": "forge",
+      "delta_downloads": 45533,
+      "downloads_per_hour": 13136.62,
+      "project_count": 1103,
       "top_project_id": "DjLobEOy",
       "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "forge",
-      "delta_downloads": 35231,
-      "downloads_per_hour": 17116.28,
-      "project_count": 847,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "fabric",
-      "delta_downloads": 33241,
-      "downloads_per_hour": 16149.47,
-      "project_count": 865,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "forge",
-      "delta_downloads": 32749,
-      "downloads_per_hour": 15910.45,
-      "project_count": 834,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "datapack",
-      "delta_downloads": 31423,
-      "downloads_per_hour": 15266.23,
-      "project_count": 962,
-      "top_project_id": "odZZdRCE",
-      "top_project_title": "AllTheMons x Mega Showdown",
-      "top_project_delta": 1467
+      "top_project_delta": 2723
     },
     {
       "game_version": "1.20.2",
-      "loader": "quilt",
-      "delta_downloads": 31325,
-      "downloads_per_hour": 15218.62,
-      "project_count": 853,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "loader": "fabric",
+      "delta_downloads": 43210,
+      "downloads_per_hour": 12466.42,
+      "project_count": 1095,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "forge",
+      "delta_downloads": 41571,
+      "downloads_per_hour": 11993.56,
+      "project_count": 1040,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
+    },
+    {
+      "game_version": "26.2",
+      "loader": "fabric",
+      "delta_downloads": 41311,
+      "downloads_per_hour": 11918.54,
+      "project_count": 1077,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 13959
     },
     {
       "game_version": "1.21.11",
       "loader": "fabric",
-      "delta_downloads": 31128,
-      "downloads_per_hour": 15122.91,
-      "project_count": 1336,
+      "delta_downloads": 39733,
+      "downloads_per_hour": 11463.28,
+      "project_count": 1556,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 6612
+      "top_project_delta": 7738
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "quilt",
+      "delta_downloads": 38569,
+      "downloads_per_hour": 11127.46,
+      "project_count": 1241,
+      "top_project_id": "aKCwCJlY",
+      "top_project_title": "Structory",
+      "top_project_delta": 1321
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "fabric",
+      "delta_downloads": 38103,
+      "downloads_per_hour": 10993.01,
+      "project_count": 1017,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "forge",
+      "delta_downloads": 37037,
+      "downloads_per_hour": 10685.46,
+      "project_count": 968,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "datapack",
+      "delta_downloads": 37005,
+      "downloads_per_hour": 10676.23,
+      "project_count": 1129,
+      "top_project_id": "lIDAJAby",
+      "top_project_title": "CobbleMotion v1.5.1",
+      "top_project_delta": 1668
+    },
+    {
+      "game_version": "1.20",
+      "loader": "quilt",
+      "delta_downloads": 36221,
+      "downloads_per_hour": 10450.04,
+      "project_count": 1041,
+      "top_project_id": "aKCwCJlY",
+      "top_project_title": "Structory",
+      "top_project_delta": 1321
+    },
+    {
+      "game_version": "1.21",
+      "loader": "fabric",
+      "delta_downloads": 35916,
+      "downloads_per_hour": 10362.05,
+      "project_count": 1597,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "26.2",
+      "loader": "quilt",
+      "delta_downloads": 35494,
+      "downloads_per_hour": 10240.29,
+      "project_count": 955,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 13959
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "fabric",
+      "delta_downloads": 35375,
+      "downloads_per_hour": 10205.96,
+      "project_count": 998,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21",
+      "loader": "neoforge",
+      "delta_downloads": 34679,
+      "downloads_per_hour": 10005.16,
+      "project_count": 1409,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "forge",
+      "delta_downloads": 34430,
+      "downloads_per_hour": 9933.32,
+      "project_count": 1573,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "forge",
+      "delta_downloads": 34317,
+      "downloads_per_hour": 9900.72,
+      "project_count": 951,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "quilt",
+      "delta_downloads": 34133,
+      "downloads_per_hour": 9847.64,
+      "project_count": 1403,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 7738
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "quilt",
+      "delta_downloads": 33570,
+      "downloads_per_hour": 9685.21,
+      "project_count": 1531,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 2227
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "quilt",
+      "delta_downloads": 33294,
+      "downloads_per_hour": 9605.58,
+      "project_count": 988,
+      "top_project_id": "aKCwCJlY",
+      "top_project_title": "Structory",
+      "top_project_delta": 1321
     },
     {
       "game_version": "1.20.1",
       "loader": "neoforge",
-      "delta_downloads": 30815,
-      "downloads_per_hour": 14970.85,
-      "project_count": 786,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "delta_downloads": 33131,
+      "downloads_per_hour": 9558.55,
+      "project_count": 893,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21",
-      "loader": "fabric",
-      "delta_downloads": 29615,
-      "downloads_per_hour": 14387.85,
-      "project_count": 1393,
+      "loader": "forge",
+      "delta_downloads": 32552,
+      "downloads_per_hour": 9391.51,
+      "project_count": 1481,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
-      "game_version": "26.2",
+      "game_version": "1.21.3",
       "loader": "fabric",
-      "delta_downloads": 29568,
-      "downloads_per_hour": 14365.02,
-      "project_count": 971,
+      "delta_downloads": 31883,
+      "downloads_per_hour": 9198.49,
+      "project_count": 1196,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "fabric",
+      "delta_downloads": 31834,
+      "downloads_per_hour": 9184.36,
+      "project_count": 1176,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "26.1",
+      "loader": "fabric",
+      "delta_downloads": 31348,
+      "downloads_per_hour": 9044.14,
+      "project_count": 1182,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 11396
+      "top_project_delta": 4181
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "fabric",
+      "delta_downloads": 31245,
+      "downloads_per_hour": 9014.43,
+      "project_count": 1204,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.20.3",
       "loader": "quilt",
-      "delta_downloads": 29349,
-      "downloads_per_hour": 14258.62,
-      "project_count": 798,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "delta_downloads": 30835,
+      "downloads_per_hour": 8896.14,
+      "project_count": 917,
+      "top_project_id": "aKCwCJlY",
+      "top_project_title": "Structory",
+      "top_project_delta": 1321
     },
     {
       "game_version": "1.20.4",
       "loader": "quilt",
-      "delta_downloads": 28914,
-      "downloads_per_hour": 14047.29,
-      "project_count": 803,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "delta_downloads": 30687,
+      "downloads_per_hour": 8853.44,
+      "project_count": 922,
+      "top_project_id": "aKCwCJlY",
+      "top_project_title": "Structory",
+      "top_project_delta": 1321
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "fabric",
+      "delta_downloads": 30594,
+      "downloads_per_hour": 8826.61,
+      "project_count": 1112,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 4181
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "fabric",
+      "delta_downloads": 30515,
+      "downloads_per_hour": 8803.81,
+      "project_count": 1098,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 4181
     },
     {
       "game_version": "1.20.2",
       "loader": "neoforge",
-      "delta_downloads": 28634,
-      "downloads_per_hour": 13911.26,
-      "project_count": 643,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "neoforge",
-      "delta_downloads": 28301,
-      "downloads_per_hour": 13749.47,
-      "project_count": 633,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.20",
-      "loader": "neoforge",
-      "delta_downloads": 28252,
-      "downloads_per_hour": 13725.67,
-      "project_count": 651,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "forge",
-      "delta_downloads": 28184,
-      "downloads_per_hour": 13692.63,
-      "project_count": 1365,
+      "delta_downloads": 30322,
+      "downloads_per_hour": 8748.13,
+      "project_count": 722,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "fabric",
+      "delta_downloads": 30238,
+      "downloads_per_hour": 8723.9,
+      "project_count": 1236,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "fabric",
+      "delta_downloads": 30104,
+      "downloads_per_hour": 8685.24,
+      "project_count": 812,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "fabric",
+      "delta_downloads": 30049,
+      "downloads_per_hour": 8669.37,
+      "project_count": 802,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.20.4",
       "loader": "neoforge",
-      "delta_downloads": 28106,
-      "downloads_per_hour": 13654.74,
-      "project_count": 645,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.21",
-      "loader": "neoforge",
-      "delta_downloads": 27849,
-      "downloads_per_hour": 13529.88,
-      "project_count": 1250,
+      "delta_downloads": 29993,
+      "downloads_per_hour": 8653.21,
+      "project_count": 723,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "fabric",
-      "delta_downloads": 27324,
-      "downloads_per_hour": 13274.82,
-      "project_count": 716,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "fabric",
-      "delta_downloads": 27295,
-      "downloads_per_hour": 13260.73,
-      "project_count": 708,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21.3",
-      "loader": "fabric",
-      "delta_downloads": 27158,
-      "downloads_per_hour": 13194.17,
-      "project_count": 1054,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
+      "loader": "neoforge",
+      "delta_downloads": 29990,
+      "downloads_per_hour": 8652.35,
+      "project_count": 1122,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21.2",
+      "loader": "neoforge",
+      "delta_downloads": 29952,
+      "downloads_per_hour": 8641.38,
+      "project_count": 1106,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "neoforge",
+      "delta_downloads": 29924,
+      "downloads_per_hour": 8633.31,
+      "project_count": 709,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.9",
       "loader": "fabric",
-      "delta_downloads": 27137,
-      "downloads_per_hour": 13183.97,
-      "project_count": 1043,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
+      "delta_downloads": 29921,
+      "downloads_per_hour": 8632.44,
+      "project_count": 1386,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.20",
+      "loader": "neoforge",
+      "delta_downloads": 29736,
+      "downloads_per_hour": 8579.07,
+      "project_count": 743,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21",
-      "loader": "forge",
-      "delta_downloads": 27111,
-      "downloads_per_hour": 13171.34,
-      "project_count": 1290,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "loader": "quilt",
+      "delta_downloads": 29637,
+      "downloads_per_hour": 8550.5,
+      "project_count": 1447,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
-      "game_version": "1.21.1",
-      "loader": "quilt",
-      "delta_downloads": 26964,
-      "downloads_per_hour": 13099.92,
-      "project_count": 1333,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 1769
+      "game_version": "1.21.10",
+      "loader": "fabric",
+      "delta_downloads": 29576,
+      "downloads_per_hour": 8532.91,
+      "project_count": 1402,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "fabric",
+      "delta_downloads": 29565,
+      "downloads_per_hour": 8529.73,
+      "project_count": 1288,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "fabric",
+      "delta_downloads": 29558,
+      "downloads_per_hour": 8527.71,
+      "project_count": 1286,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "fabric",
+      "delta_downloads": 29462,
+      "downloads_per_hour": 8500.02,
+      "project_count": 1289,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "neoforge",
+      "delta_downloads": 29454,
+      "downloads_per_hour": 8497.71,
+      "project_count": 1135,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.20.5",
       "loader": "forge",
-      "delta_downloads": 26795,
-      "downloads_per_hour": 13017.81,
-      "project_count": 693,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "delta_downloads": 29047,
+      "downloads_per_hour": 8380.29,
+      "project_count": 780,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.20.6",
       "loader": "forge",
-      "delta_downloads": 26766,
-      "downloads_per_hour": 13003.72,
+      "delta_downloads": 28988,
+      "downloads_per_hour": 8363.26,
+      "project_count": 768,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "forge",
+      "delta_downloads": 28704,
+      "downloads_per_hour": 8281.33,
+      "project_count": 1116,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "neoforge",
+      "delta_downloads": 28686,
+      "downloads_per_hour": 8276.13,
+      "project_count": 1454,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "forge",
+      "delta_downloads": 28668,
+      "downloads_per_hour": 8270.94,
+      "project_count": 1101,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "neoforge",
+      "delta_downloads": 28394,
+      "downloads_per_hour": 8191.89,
       "project_count": 685,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "fabric",
-      "delta_downloads": 26487,
-      "downloads_per_hour": 12868.18,
-      "project_count": 1059,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "quilt",
-      "delta_downloads": 26245,
-      "downloads_per_hour": 12750.61,
-      "project_count": 1190,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 6612
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "fabric",
-      "delta_downloads": 25474,
-      "downloads_per_hour": 12376.03,
-      "project_count": 1088,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "neoforge",
-      "delta_downloads": 25469,
-      "downloads_per_hour": 12373.6,
-      "project_count": 615,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "26.2",
-      "loader": "quilt",
-      "delta_downloads": 25466,
-      "downloads_per_hour": 12372.15,
-      "project_count": 845,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 11396
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.20.6",
       "loader": "neoforge",
-      "delta_downloads": 25465,
-      "downloads_per_hour": 12371.66,
-      "project_count": 611,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "neoforge",
-      "delta_downloads": 24808,
-      "downloads_per_hour": 12052.47,
-      "project_count": 1013,
+      "delta_downloads": 28386,
+      "downloads_per_hour": 8189.58,
+      "project_count": 679,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
-      "game_version": "1.21.2",
-      "loader": "neoforge",
-      "delta_downloads": 24786,
-      "downloads_per_hour": 12041.78,
-      "project_count": 1001,
+      "game_version": "1.21.4",
+      "loader": "forge",
+      "delta_downloads": 28086,
+      "downloads_per_hour": 8103.03,
+      "project_count": 1122,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21",
-      "loader": "quilt",
-      "delta_downloads": 24495,
-      "downloads_per_hour": 11900.4,
-      "project_count": 1264,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21.6",
-      "loader": "fabric",
-      "delta_downloads": 24475,
-      "downloads_per_hour": 11890.69,
-      "project_count": 1126,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
+      "loader": "neoforge",
+      "delta_downloads": 27268,
+      "downloads_per_hour": 7867.03,
+      "project_count": 1219,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21.7",
-      "loader": "fabric",
-      "delta_downloads": 24452,
-      "downloads_per_hour": 11879.51,
-      "project_count": 1125,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "fabric",
-      "delta_downloads": 24355,
-      "downloads_per_hour": 11832.39,
-      "project_count": 1123,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
-    },
-    {
-      "game_version": "1.21.4",
       "loader": "neoforge",
-      "delta_downloads": 24160,
-      "downloads_per_hour": 11737.65,
-      "project_count": 1008,
+      "delta_downloads": 27251,
+      "downloads_per_hour": 7862.13,
+      "project_count": 1216,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "fabric",
-      "delta_downloads": 24005,
-      "downloads_per_hour": 11662.35,
-      "project_count": 1198,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "forge",
-      "delta_downloads": 23799,
-      "downloads_per_hour": 11562.27,
-      "project_count": 996,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "forge",
-      "delta_downloads": 23785,
-      "downloads_per_hour": 11555.47,
-      "project_count": 986,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "fabric",
-      "delta_downloads": 23718,
-      "downloads_per_hour": 11522.91,
-      "project_count": 1205,
-      "top_project_id": "W2pr9jyL",
-      "top_project_title": "Cobblemon additions",
-      "top_project_delta": 1376
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "quilt",
-      "delta_downloads": 23503,
-      "downloads_per_hour": 11418.46,
-      "project_count": 658,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "quilt",
-      "delta_downloads": 23480,
-      "downloads_per_hour": 11407.29,
-      "project_count": 651,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "forge",
-      "delta_downloads": 23117,
-      "downloads_per_hour": 11230.93,
-      "project_count": 990,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
       "game_version": "26.1",
-      "loader": "fabric",
-      "delta_downloads": 22563,
-      "downloads_per_hour": 10961.78,
-      "project_count": 1028,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 3524
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "neoforge",
-      "delta_downloads": 21933,
-      "downloads_per_hour": 10655.71,
-      "project_count": 1031,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.3",
       "loader": "quilt",
-      "delta_downloads": 21861,
-      "downloads_per_hour": 10620.73,
-      "project_count": 983,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "quilt",
-      "delta_downloads": 21850,
-      "downloads_per_hour": 10615.38,
-      "project_count": 976,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "neoforge",
-      "delta_downloads": 21687,
-      "downloads_per_hour": 10536.19,
-      "project_count": 1074,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "neoforge",
-      "delta_downloads": 21654,
-      "downloads_per_hour": 10520.16,
-      "project_count": 1069,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "neoforge",
-      "delta_downloads": 21577,
-      "downloads_per_hour": 10482.75,
-      "project_count": 1245,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "quilt",
-      "delta_downloads": 21553,
-      "downloads_per_hour": 10471.09,
-      "project_count": 979,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "neoforge",
-      "delta_downloads": 21539,
-      "downloads_per_hour": 10464.29,
+      "delta_downloads": 27221,
+      "downloads_per_hour": 7853.47,
       "project_count": 1063,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 4181
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "neoforge",
+      "delta_downloads": 27110,
+      "downloads_per_hour": 7821.45,
+      "project_count": 1216,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "neoforge",
+      "delta_downloads": 26995,
+      "downloads_per_hour": 7788.27,
+      "project_count": 1160,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "quilt",
+      "delta_downloads": 26953,
+      "downloads_per_hour": 7776.15,
+      "project_count": 1108,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "quilt",
+      "delta_downloads": 26926,
+      "downloads_per_hour": 7768.36,
+      "project_count": 1094,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "neoforge",
+      "delta_downloads": 26830,
+      "downloads_per_hour": 7740.66,
+      "project_count": 1300,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "neoforge",
+      "delta_downloads": 26699,
+      "downloads_per_hour": 7702.87,
+      "project_count": 1312,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "quilt",
+      "delta_downloads": 26602,
+      "downloads_per_hour": 7674.88,
+      "project_count": 1115,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
       "game_version": "26.1.1",
-      "loader": "fabric",
-      "delta_downloads": 21531,
-      "downloads_per_hour": 10460.4,
-      "project_count": 967,
+      "loader": "quilt",
+      "delta_downloads": 26580,
+      "downloads_per_hour": 7668.54,
+      "project_count": 1026,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 3524
+      "top_project_delta": 4181
     },
     {
       "game_version": "26.1.2",
-      "loader": "fabric",
-      "delta_downloads": 21469,
-      "downloads_per_hour": 10430.28,
-      "project_count": 966,
+      "loader": "quilt",
+      "delta_downloads": 26489,
+      "downloads_per_hour": 7642.28,
+      "project_count": 1006,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 3524
+      "top_project_delta": 4181
     },
     {
       "game_version": "1.21.5",
       "loader": "quilt",
-      "delta_downloads": 20970,
-      "downloads_per_hour": 10187.85,
-      "project_count": 1004,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
+      "delta_downloads": 26114,
+      "downloads_per_hour": 7534.09,
+      "project_count": 1143,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
-      "game_version": "1.21.9",
-      "loader": "neoforge",
-      "delta_downloads": 20915,
-      "downloads_per_hour": 10161.13,
-      "project_count": 1121,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "game_version": "1.20.5",
+      "loader": "quilt",
+      "delta_downloads": 25661,
+      "downloads_per_hour": 7403.4,
+      "project_count": 752,
+      "top_project_id": "aKCwCJlY",
+      "top_project_title": "Structory",
+      "top_project_delta": 1321
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "quilt",
+      "delta_downloads": 25612,
+      "downloads_per_hour": 7389.26,
+      "project_count": 742,
+      "top_project_id": "aKCwCJlY",
+      "top_project_title": "Structory",
+      "top_project_delta": 1321
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "quilt",
+      "delta_downloads": 25464,
+      "downloads_per_hour": 7346.56,
+      "project_count": 1203,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
       "game_version": "1.21.5",
       "loader": "forge",
-      "delta_downloads": 20781,
-      "downloads_per_hour": 10096.03,
-      "project_count": 1001,
+      "delta_downloads": 25450,
+      "downloads_per_hour": 7342.52,
+      "project_count": 1139,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "neoforge",
-      "delta_downloads": 20767,
-      "downloads_per_hour": 10089.23,
-      "project_count": 1124,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "forge",
-      "delta_downloads": 20181,
-      "downloads_per_hour": 9804.53,
-      "project_count": 1037,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "forge",
-      "delta_downloads": 20149,
-      "downloads_per_hour": 9788.99,
-      "project_count": 1033,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "forge",
-      "delta_downloads": 20068,
-      "downloads_per_hour": 9749.64,
-      "project_count": 1030,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "quilt",
-      "delta_downloads": 19987,
-      "downloads_per_hour": 9710.28,
-      "project_count": 1047,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21.7",
       "loader": "quilt",
-      "delta_downloads": 19954,
-      "downloads_per_hour": 9694.25,
-      "project_count": 1042,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "quilt",
-      "delta_downloads": 19841,
-      "downloads_per_hour": 9639.35,
-      "project_count": 1035,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
+      "delta_downloads": 25440,
+      "downloads_per_hour": 7339.64,
+      "project_count": 1199,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
       "game_version": "26.1",
+      "loader": "neoforge",
+      "delta_downloads": 25344,
+      "downloads_per_hour": 7311.94,
+      "project_count": 1107,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 2132
+    },
+    {
+      "game_version": "1.21.8",
       "loader": "quilt",
-      "delta_downloads": 19740,
-      "downloads_per_hour": 9590.28,
-      "project_count": 911,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 3524
+      "delta_downloads": 25309,
+      "downloads_per_hour": 7301.84,
+      "project_count": 1198,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
       "game_version": "1.21.9",
       "loader": "quilt",
-      "delta_downloads": 19465,
-      "downloads_per_hour": 9456.68,
-      "project_count": 1082,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
+      "delta_downloads": 25305,
+      "downloads_per_hour": 7300.69,
+      "project_count": 1267,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
-      "game_version": "1.21.9",
+      "game_version": "1.21.6",
       "loader": "forge",
-      "delta_downloads": 19434,
-      "downloads_per_hour": 9441.62,
-      "project_count": 1089,
+      "delta_downloads": 25206,
+      "downloads_per_hour": 7272.13,
+      "project_count": 1189,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
-      "game_version": "1.21.10",
+      "game_version": "1.21.7",
       "loader": "forge",
-      "delta_downloads": 19281,
-      "downloads_per_hour": 9367.29,
-      "project_count": 1091,
+      "delta_downloads": 25188,
+      "downloads_per_hour": 7266.93,
+      "project_count": 1186,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
-      "game_version": "1.21.10",
-      "loader": "quilt",
-      "delta_downloads": 19152,
-      "downloads_per_hour": 9304.62,
-      "project_count": 1084,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 1268
+      "game_version": "1.21.8",
+      "loader": "forge",
+      "delta_downloads": 25087,
+      "downloads_per_hour": 7237.79,
+      "project_count": 1188,
+      "top_project_id": "HSfsxuTo",
+      "top_project_title": "Explorify",
+      "top_project_delta": 1430
     },
     {
       "game_version": "1.21.11",
       "loader": "forge",
-      "delta_downloads": 19010,
-      "downloads_per_hour": 9235.63,
-      "project_count": 1201,
+      "delta_downloads": 25052,
+      "downloads_per_hour": 7227.7,
+      "project_count": 1417,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
-      "game_version": "26.1.1",
+      "game_version": "1.21.10",
       "loader": "quilt",
-      "delta_downloads": 18767,
-      "downloads_per_hour": 9117.57,
-      "project_count": 884,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 3524
+      "delta_downloads": 24936,
+      "downloads_per_hour": 7194.23,
+      "project_count": 1276,
+      "top_project_id": "hl5OLM95",
+      "top_project_title": "Geophilic",
+      "top_project_delta": 1218
     },
     {
-      "game_version": "26.1.2",
-      "loader": "quilt",
-      "delta_downloads": 18700,
-      "downloads_per_hour": 9085.02,
-      "project_count": 878,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 3524
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "fabric",
-      "delta_downloads": 18626,
-      "downloads_per_hour": 9049.07,
-      "project_count": 556,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "1.19.4",
+      "game_version": "1.21.9",
       "loader": "forge",
-      "delta_downloads": 18339,
-      "downloads_per_hour": 8909.64,
-      "project_count": 529,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "26.1",
-      "loader": "neoforge",
-      "delta_downloads": 18179,
-      "downloads_per_hour": 8831.9,
-      "project_count": 959,
+      "delta_downloads": 24760,
+      "downloads_per_hour": 7143.45,
+      "project_count": 1272,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "fabric",
-      "delta_downloads": 18135,
-      "downloads_per_hour": 8810.53,
-      "project_count": 551,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "forge",
-      "delta_downloads": 17890,
-      "downloads_per_hour": 8691.5,
-      "project_count": 529,
-      "top_project_id": "DjLobEOy",
-      "top_project_title": "Towns and Towers",
-      "top_project_delta": 2844
+      "top_project_delta": 1430
     },
     {
       "game_version": "26.1.1",
       "loader": "neoforge",
-      "delta_downloads": 17202,
-      "downloads_per_hour": 8357.25,
-      "project_count": 928,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "delta_downloads": 24701,
+      "downloads_per_hour": 7126.43,
+      "project_count": 1069,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 2132
     },
     {
       "game_version": "26.1.2",
       "loader": "neoforge",
-      "delta_downloads": 17135,
-      "downloads_per_hour": 8324.7,
-      "project_count": 922,
+      "delta_downloads": 24611,
+      "downloads_per_hour": 7100.46,
+      "project_count": 1050,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 2132
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "forge",
+      "delta_downloads": 24565,
+      "downloads_per_hour": 7087.19,
+      "project_count": 1286,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
       "game_version": "26.2",
       "loader": "neoforge",
-      "delta_downloads": 16518,
-      "downloads_per_hour": 8024.94,
-      "project_count": 907,
-      "top_project_id": "HSfsxuTo",
-      "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "fabric",
-      "delta_downloads": 15385,
-      "downloads_per_hour": 7474.49,
-      "project_count": 565,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "delta_downloads": 24484,
+      "downloads_per_hour": 7063.82,
+      "project_count": 1009,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 2132
     },
     {
       "game_version": "26.1",
       "loader": "forge",
-      "delta_downloads": 15174,
-      "downloads_per_hour": 7371.98,
-      "project_count": 921,
+      "delta_downloads": 20639,
+      "downloads_per_hour": 5954.51,
+      "project_count": 1083,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "fabric",
-      "delta_downloads": 14999,
-      "downloads_per_hour": 7286.96,
-      "project_count": 534,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19",
-      "loader": "fabric",
-      "delta_downloads": 14992,
-      "downloads_per_hour": 7283.56,
-      "project_count": 533,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "forge",
-      "delta_downloads": 14766,
-      "downloads_per_hour": 7173.77,
-      "project_count": 542,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "quilt",
-      "delta_downloads": 14456,
-      "downloads_per_hour": 7023.16,
-      "project_count": 515,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19",
-      "loader": "forge",
-      "delta_downloads": 14415,
-      "downloads_per_hour": 7003.24,
-      "project_count": 508,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "forge",
-      "delta_downloads": 14401,
-      "downloads_per_hour": 6996.44,
-      "project_count": 508,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "quilt",
-      "delta_downloads": 14356,
-      "downloads_per_hour": 6974.57,
-      "project_count": 520,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "quilt",
-      "delta_downloads": 14333,
-      "downloads_per_hour": 6963.4,
-      "project_count": 513,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "top_project_delta": 1430
     },
     {
       "game_version": "26.1.2",
       "loader": "forge",
-      "delta_downloads": 14211,
-      "downloads_per_hour": 6904.13,
-      "project_count": 891,
+      "delta_downloads": 20005,
+      "downloads_per_hour": 5771.6,
+      "project_count": 1029,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
       "game_version": "26.1.1",
       "loader": "forge",
-      "delta_downloads": 14202,
-      "downloads_per_hour": 6899.76,
-      "project_count": 895,
+      "delta_downloads": 20002,
+      "downloads_per_hour": 5770.73,
+      "project_count": 1048,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
     },
     {
-      "game_version": "1.19.1",
-      "loader": "quilt",
-      "delta_downloads": 14039,
-      "downloads_per_hour": 6820.57,
-      "project_count": 498,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
-    },
-    {
-      "game_version": "1.19",
-      "loader": "quilt",
-      "delta_downloads": 14031,
-      "downloads_per_hour": 6816.68,
-      "project_count": 496,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "game_version": "1.19.4",
+      "loader": "fabric",
+      "delta_downloads": 19646,
+      "downloads_per_hour": 5668.02,
+      "project_count": 649,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
     },
     {
       "game_version": "26.2",
       "loader": "forge",
-      "delta_downloads": 12970,
-      "downloads_per_hour": 6301.21,
-      "project_count": 858,
+      "delta_downloads": 19082,
+      "downloads_per_hour": 5505.31,
+      "project_count": 977,
       "top_project_id": "HSfsxuTo",
       "top_project_title": "Explorify",
-      "top_project_delta": 1290
+      "top_project_delta": 1430
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "forge",
+      "delta_downloads": 19018,
+      "downloads_per_hour": 5486.84,
+      "project_count": 615,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "fabric",
+      "delta_downloads": 18907,
+      "downloads_per_hour": 5454.82,
+      "project_count": 639,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "forge",
+      "delta_downloads": 18333,
+      "downloads_per_hour": 5289.21,
+      "project_count": 608,
+      "top_project_id": "DjLobEOy",
+      "top_project_title": "Towns and Towers",
+      "top_project_delta": 2723
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "fabric",
+      "delta_downloads": 16361,
+      "downloads_per_hour": 4720.28,
+      "project_count": 653,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "fabric",
+      "delta_downloads": 15947,
+      "downloads_per_hour": 4600.83,
+      "project_count": 621,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19",
+      "loader": "fabric",
+      "delta_downloads": 15946,
+      "downloads_per_hour": 4600.54,
+      "project_count": 621,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "forge",
+      "delta_downloads": 15595,
+      "downloads_per_hour": 4499.28,
+      "project_count": 624,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19",
+      "loader": "forge",
+      "delta_downloads": 15249,
+      "downloads_per_hour": 4399.46,
+      "project_count": 588,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "forge",
+      "delta_downloads": 15227,
+      "downloads_per_hour": 4393.11,
+      "project_count": 587,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "quilt",
+      "delta_downloads": 15096,
+      "downloads_per_hour": 4355.31,
+      "project_count": 603,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "quilt",
+      "delta_downloads": 14945,
+      "downloads_per_hour": 4311.75,
+      "project_count": 602,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "quilt",
+      "delta_downloads": 14861,
+      "downloads_per_hour": 4287.51,
+      "project_count": 594,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "quilt",
+      "delta_downloads": 14644,
+      "downloads_per_hour": 4224.91,
+      "project_count": 578,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.19",
+      "loader": "quilt",
+      "delta_downloads": 14643,
+      "downloads_per_hour": 4224.62,
+      "project_count": 578,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
     },
     {
       "game_version": "1.19.4",
       "loader": "neoforge",
-      "delta_downloads": 12573,
-      "downloads_per_hour": 6108.34,
-      "project_count": 371,
+      "delta_downloads": 12729,
+      "downloads_per_hour": 3672.42,
+      "project_count": 424,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "top_project_delta": 919
     },
     {
       "game_version": "1.19.2",
       "loader": "neoforge",
-      "delta_downloads": 11891,
-      "downloads_per_hour": 5777.0,
-      "project_count": 357,
+      "delta_downloads": 11818,
+      "downloads_per_hour": 3409.58,
+      "project_count": 407,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "top_project_delta": 919
     },
     {
       "game_version": "1.19.3",
       "loader": "neoforge",
-      "delta_downloads": 11829,
-      "downloads_per_hour": 5746.88,
-      "project_count": 349,
+      "delta_downloads": 11729,
+      "downloads_per_hour": 3383.91,
+      "project_count": 398,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "top_project_delta": 919
     },
     {
       "game_version": "1.19.1",
       "loader": "neoforge",
-      "delta_downloads": 11568,
-      "downloads_per_hour": 5620.08,
-      "project_count": 334,
+      "delta_downloads": 11501,
+      "downloads_per_hour": 3318.13,
+      "project_count": 383,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "top_project_delta": 919
     },
     {
       "game_version": "1.19",
       "loader": "neoforge",
-      "delta_downloads": 11560,
-      "downloads_per_hour": 5616.19,
-      "project_count": 332,
+      "delta_downloads": 11500,
+      "downloads_per_hour": 3317.84,
+      "project_count": 383,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 1647
+      "top_project_delta": 919
     },
     {
       "game_version": "1.20",
       "loader": "datapack",
-      "delta_downloads": 7923,
-      "downloads_per_hour": 3849.23,
-      "project_count": 443,
+      "delta_downloads": 9988,
+      "downloads_per_hour": 2881.62,
+      "project_count": 497,
       "top_project_id": "oRZbVZzh",
       "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 712
+      "top_project_delta": 892
     },
     {
       "game_version": "1.18.2",
       "loader": "fabric",
-      "delta_downloads": 7196,
-      "downloads_per_hour": 3496.03,
+      "delta_downloads": 9413,
+      "downloads_per_hour": 2715.72,
+      "project_count": 447,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "quilt",
+      "delta_downloads": 9275,
+      "downloads_per_hour": 2675.91,
+      "project_count": 430,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.18.1",
+      "loader": "fabric",
+      "delta_downloads": 8892,
+      "downloads_per_hour": 2565.41,
+      "project_count": 384,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.18.1",
+      "loader": "quilt",
+      "delta_downloads": 8879,
+      "downloads_per_hour": 2561.66,
+      "project_count": 377,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.18",
+      "loader": "fabric",
+      "delta_downloads": 8864,
+      "downloads_per_hour": 2557.33,
       "project_count": 383,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.18",
+      "loader": "quilt",
+      "delta_downloads": 8851,
+      "downloads_per_hour": 2553.58,
+      "project_count": 376,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
     },
     {
       "game_version": "1.18.2",
-      "loader": "quilt",
-      "delta_downloads": 7114,
-      "downloads_per_hour": 3456.19,
-      "project_count": 370,
+      "loader": "forge",
+      "delta_downloads": 8236,
+      "downloads_per_hour": 2376.15,
+      "project_count": 432,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1099
     },
     {
-      "game_version": "1.18.1",
+      "game_version": "1.17",
       "loader": "fabric",
-      "delta_downloads": 6873,
-      "downloads_per_hour": 3339.11,
-      "project_count": 335,
+      "delta_downloads": 8086,
+      "downloads_per_hour": 2332.87,
+      "project_count": 347,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1099
     },
     {
-      "game_version": "1.18.1",
-      "loader": "quilt",
-      "delta_downloads": 6869,
-      "downloads_per_hour": 3337.17,
-      "project_count": 331,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
-    },
-    {
-      "game_version": "1.18",
+      "game_version": "1.17.1",
       "loader": "fabric",
-      "delta_downloads": 6860,
-      "downloads_per_hour": 3332.79,
-      "project_count": 334,
+      "delta_downloads": 8086,
+      "downloads_per_hour": 2332.87,
+      "project_count": 347,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1099
     },
     {
-      "game_version": "1.18",
+      "game_version": "1.17",
       "loader": "quilt",
-      "delta_downloads": 6856,
-      "downloads_per_hour": 3330.85,
-      "project_count": 330,
+      "delta_downloads": 8073,
+      "downloads_per_hour": 2329.12,
+      "project_count": 339,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.17.1",
+      "loader": "quilt",
+      "delta_downloads": 8073,
+      "downloads_per_hour": 2329.12,
+      "project_count": 339,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
     },
     {
       "game_version": "1.21",
       "loader": "datapack",
-      "delta_downloads": 6716,
-      "downloads_per_hour": 3262.83,
-      "project_count": 622,
+      "delta_downloads": 7875,
+      "downloads_per_hour": 2272.0,
+      "project_count": 740,
       "top_project_id": "8oi3bsk5",
       "top_project_title": "Terralith",
-      "top_project_delta": 1421
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "forge",
-      "delta_downloads": 6195,
-      "downloads_per_hour": 3009.72,
-      "project_count": 370,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
-    },
-    {
-      "game_version": "1.17",
-      "loader": "fabric",
-      "delta_downloads": 5952,
-      "downloads_per_hour": 2891.66,
-      "project_count": 300,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "fabric",
-      "delta_downloads": 5952,
-      "downloads_per_hour": 2891.66,
-      "project_count": 300,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
-    },
-    {
-      "game_version": "1.17",
-      "loader": "quilt",
-      "delta_downloads": 5948,
-      "downloads_per_hour": 2889.72,
-      "project_count": 296,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "quilt",
-      "delta_downloads": 5948,
-      "downloads_per_hour": 2889.72,
-      "project_count": 296,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1634
     },
     {
       "game_version": "1.18.1",
       "loader": "forge",
-      "delta_downloads": 5655,
-      "downloads_per_hour": 2747.37,
-      "project_count": 314,
+      "delta_downloads": 7291,
+      "downloads_per_hour": 2103.51,
+      "project_count": 359,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1099
     },
     {
       "game_version": "1.18",
       "loader": "forge",
-      "delta_downloads": 5642,
-      "downloads_per_hour": 2741.05,
-      "project_count": 313,
+      "delta_downloads": 7262,
+      "downloads_per_hour": 2095.14,
+      "project_count": 357,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 880
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "neoforge",
+      "delta_downloads": 6718,
+      "downloads_per_hour": 1938.2,
+      "project_count": 322,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.17.1",
+      "loader": "forge",
+      "delta_downloads": 6508,
+      "downloads_per_hour": 1877.61,
+      "project_count": 322,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.17",
+      "loader": "forge",
+      "delta_downloads": 6504,
+      "downloads_per_hour": 1876.45,
+      "project_count": 320,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 1099
+    },
+    {
+      "game_version": "1.18.1",
+      "loader": "neoforge",
+      "delta_downloads": 6366,
+      "downloads_per_hour": 1836.64,
+      "project_count": 278,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.18",
+      "loader": "neoforge",
+      "delta_downloads": 6338,
+      "downloads_per_hour": 1828.56,
+      "project_count": 277,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     },
     {
       "game_version": "1.20.4",
       "loader": "datapack",
-      "delta_downloads": 5341,
-      "downloads_per_hour": 2594.82,
-      "project_count": 354,
-      "top_project_id": "uJ0YMl4f",
-      "top_project_title": "Repurposed Structures - Better Strongholds Compat",
-      "top_project_delta": 725
+      "delta_downloads": 5758,
+      "downloads_per_hour": 1661.23,
+      "project_count": 421,
+      "top_project_id": "oRZbVZzh",
+      "top_project_title": "Farmer's Delight Cutting Compat",
+      "top_project_delta": 892
     },
     {
-      "game_version": "1.18.2",
+      "game_version": "1.17.1",
       "loader": "neoforge",
-      "delta_downloads": 5230,
-      "downloads_per_hour": 2540.89,
-      "project_count": 274,
-      "top_project_id": "sk4iFZGy",
-      "top_project_title": "Remove Stardust Labs Intro Message",
-      "top_project_delta": 643
+      "delta_downloads": 5625,
+      "downloads_per_hour": 1622.86,
+      "project_count": 255,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     },
     {
-      "game_version": "1.18.1",
+      "game_version": "1.17",
       "loader": "neoforge",
-      "delta_downloads": 5051,
-      "downloads_per_hour": 2453.93,
-      "project_count": 245,
-      "top_project_id": "sk4iFZGy",
-      "top_project_title": "Remove Stardust Labs Intro Message",
-      "top_project_delta": 643
-    },
-    {
-      "game_version": "1.18",
-      "loader": "neoforge",
-      "delta_downloads": 5038,
-      "downloads_per_hour": 2447.61,
-      "project_count": 244,
-      "top_project_id": "sk4iFZGy",
-      "top_project_title": "Remove Stardust Labs Intro Message",
-      "top_project_delta": 643
+      "delta_downloads": 5622,
+      "downloads_per_hour": 1621.99,
+      "project_count": 254,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21.1",
       "loader": "minecraft",
-      "delta_downloads": 4993,
-      "downloads_per_hour": 2425.75,
-      "project_count": 77,
-      "top_project_id": "odZZdRCE",
-      "top_project_title": "AllTheMons x Mega Showdown",
-      "top_project_delta": 1467
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "forge",
-      "delta_downloads": 4776,
-      "downloads_per_hour": 2320.32,
-      "project_count": 279,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
-    },
-    {
-      "game_version": "1.17",
-      "loader": "forge",
-      "delta_downloads": 4775,
-      "downloads_per_hour": 2319.84,
-      "project_count": 278,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 880
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "neoforge",
-      "delta_downloads": 4206,
-      "downloads_per_hour": 2043.4,
-      "project_count": 222,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.17",
-      "loader": "neoforge",
-      "delta_downloads": 4205,
-      "downloads_per_hour": 2042.91,
-      "project_count": 221,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "datapack",
-      "delta_downloads": 3849,
-      "downloads_per_hour": 1869.96,
-      "project_count": 256,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 712
+      "delta_downloads": 5312,
+      "downloads_per_hour": 1532.55,
+      "project_count": 86,
+      "top_project_id": "lIDAJAby",
+      "top_project_title": "CobbleMotion v1.5.1",
+      "top_project_delta": 1668
     },
     {
       "game_version": "1.21.4",
       "loader": "datapack",
-      "delta_downloads": 3745,
-      "downloads_per_hour": 1819.43,
-      "project_count": 477,
+      "delta_downloads": 4677,
+      "downloads_per_hour": 1349.35,
+      "project_count": 543,
       "top_project_id": "8oi3bsk5",
       "top_project_title": "Terralith",
-      "top_project_delta": 1421
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "datapack",
-      "delta_downloads": 3740,
-      "downloads_per_hour": 1817.0,
-      "project_count": 451,
-      "top_project_id": "8oi3bsk5",
-      "top_project_title": "Terralith",
-      "top_project_delta": 1421
+      "top_project_delta": 1634
     },
     {
       "game_version": "1.21.2",
       "loader": "datapack",
-      "delta_downloads": 3732,
-      "downloads_per_hour": 1813.12,
-      "project_count": 444,
+      "delta_downloads": 4658,
+      "downloads_per_hour": 1343.87,
+      "project_count": 511,
       "top_project_id": "8oi3bsk5",
       "top_project_title": "Terralith",
-      "top_project_delta": 1421
+      "top_project_delta": 1634
     },
     {
-      "game_version": "1.18.2",
+      "game_version": "1.21.3",
       "loader": "datapack",
-      "delta_downloads": 3650,
-      "downloads_per_hour": 1773.28,
-      "project_count": 167,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 712
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "datapack",
-      "delta_downloads": 3207,
-      "downloads_per_hour": 1558.06,
-      "project_count": 371,
-      "top_project_id": "oRZbVZzh",
-      "top_project_title": "Farmer's Delight Cutting Compat",
-      "top_project_delta": 712
-    },
-    {
-      "game_version": "1.21-pre1",
-      "loader": "fabric",
-      "delta_downloads": 3096,
-      "downloads_per_hour": 1504.13,
-      "project_count": 106,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre2",
-      "loader": "fabric",
-      "delta_downloads": 3096,
-      "downloads_per_hour": 1504.13,
-      "project_count": 106,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre3",
-      "loader": "fabric",
-      "delta_downloads": 3096,
-      "downloads_per_hour": 1504.13,
-      "project_count": 106,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre4",
-      "loader": "fabric",
-      "delta_downloads": 3096,
-      "downloads_per_hour": 1504.13,
-      "project_count": 106,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-rc1",
-      "loader": "fabric",
-      "delta_downloads": 3096,
-      "downloads_per_hour": 1504.13,
-      "project_count": 106,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "delta_downloads": 4654,
+      "downloads_per_hour": 1342.72,
+      "project_count": 518,
+      "top_project_id": "8oi3bsk5",
+      "top_project_title": "Terralith",
+      "top_project_delta": 1634
     },
     {
       "game_version": "26.2",
       "loader": "datapack",
-      "delta_downloads": 3090,
-      "downloads_per_hour": 1501.21,
-      "project_count": 622,
+      "delta_downloads": 4551,
+      "downloads_per_hour": 1313.0,
+      "project_count": 685,
       "top_project_id": "QI0EmgZ1",
       "top_project_title": "Matcha Flavoured",
-      "top_project_delta": 372
+      "top_project_delta": 872
+    },
+    {
+      "game_version": "1.21-pre3",
+      "loader": "fabric",
+      "delta_downloads": 4428,
+      "downloads_per_hour": 1277.51,
+      "project_count": 116,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-pre4",
+      "loader": "fabric",
+      "delta_downloads": 4428,
+      "downloads_per_hour": 1277.51,
+      "project_count": 116,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-rc1",
+      "loader": "fabric",
+      "delta_downloads": 4428,
+      "downloads_per_hour": 1277.51,
+      "project_count": 116,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-pre1",
+      "loader": "fabric",
+      "delta_downloads": 4427,
+      "downloads_per_hour": 1277.22,
+      "project_count": 115,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-pre2",
+      "loader": "fabric",
+      "delta_downloads": 4427,
+      "downloads_per_hour": 1277.22,
+      "project_count": 115,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21.2-pre1",
       "loader": "fabric",
-      "delta_downloads": 3063,
-      "downloads_per_hour": 1488.1,
-      "project_count": 132,
+      "delta_downloads": 4391,
+      "downloads_per_hour": 1266.84,
+      "project_count": 142,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21.2-pre2",
       "loader": "fabric",
-      "delta_downloads": 3063,
-      "downloads_per_hour": 1488.1,
-      "project_count": 132,
+      "delta_downloads": 4391,
+      "downloads_per_hour": 1266.84,
+      "project_count": 142,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21.2-pre1",
       "loader": "quilt",
-      "delta_downloads": 3063,
-      "downloads_per_hour": 1488.1,
-      "project_count": 132,
+      "delta_downloads": 4388,
+      "downloads_per_hour": 1265.97,
+      "project_count": 141,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21.2-pre2",
       "loader": "quilt",
-      "delta_downloads": 3063,
-      "downloads_per_hour": 1488.1,
-      "project_count": 132,
+      "delta_downloads": 4388,
+      "downloads_per_hour": 1265.97,
+      "project_count": 141,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
-      "game_version": "1.21-pre1",
-      "loader": "neoforge",
-      "delta_downloads": 2977,
-      "downloads_per_hour": 1446.32,
-      "project_count": 101,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre2",
-      "loader": "neoforge",
-      "delta_downloads": 2977,
-      "downloads_per_hour": 1446.32,
-      "project_count": 101,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre3",
-      "loader": "neoforge",
-      "delta_downloads": 2977,
-      "downloads_per_hour": 1446.32,
-      "project_count": 101,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre4",
-      "loader": "neoforge",
-      "delta_downloads": 2977,
-      "downloads_per_hour": 1446.32,
-      "project_count": 101,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-rc1",
-      "loader": "neoforge",
-      "delta_downloads": 2977,
-      "downloads_per_hour": 1446.32,
-      "project_count": 101,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre1",
-      "loader": "quilt",
-      "delta_downloads": 2969,
-      "downloads_per_hour": 1442.43,
-      "project_count": 101,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "1.21-pre2",
-      "loader": "quilt",
-      "delta_downloads": 2969,
-      "downloads_per_hour": 1442.43,
-      "project_count": 101,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "game_version": "1.19.2",
+      "loader": "datapack",
+      "delta_downloads": 4347,
+      "downloads_per_hour": 1254.14,
+      "project_count": 263,
+      "top_project_id": "oRZbVZzh",
+      "top_project_title": "Farmer's Delight Cutting Compat",
+      "top_project_delta": 892
     },
     {
       "game_version": "1.21-pre3",
       "loader": "quilt",
-      "delta_downloads": 2969,
-      "downloads_per_hour": 1442.43,
-      "project_count": 101,
+      "delta_downloads": 4234,
+      "downloads_per_hour": 1221.54,
+      "project_count": 110,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21-pre4",
       "loader": "quilt",
-      "delta_downloads": 2969,
-      "downloads_per_hour": 1442.43,
-      "project_count": 101,
+      "delta_downloads": 4234,
+      "downloads_per_hour": 1221.54,
+      "project_count": 110,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21-rc1",
       "loader": "quilt",
-      "delta_downloads": 2969,
-      "downloads_per_hour": 1442.43,
-      "project_count": 101,
+      "delta_downloads": 4234,
+      "downloads_per_hour": 1221.54,
+      "project_count": 110,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
-      "game_version": "1.20.6",
-      "loader": "datapack",
-      "delta_downloads": 2966,
-      "downloads_per_hour": 1440.97,
-      "project_count": 316,
-      "top_project_id": "F4TxEYXe",
-      "top_project_title": "Winterglide's Extra Animations [Cobblemon]",
-      "top_project_delta": 797
+      "game_version": "1.21-pre1",
+      "loader": "quilt",
+      "delta_downloads": 4233,
+      "downloads_per_hour": 1221.25,
+      "project_count": 109,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     },
     {
-      "game_version": "1.20.5",
-      "loader": "datapack",
-      "delta_downloads": 2965,
-      "downloads_per_hour": 1440.49,
-      "project_count": 315,
-      "top_project_id": "F4TxEYXe",
-      "top_project_title": "Winterglide's Extra Animations [Cobblemon]",
-      "top_project_delta": 797
+      "game_version": "1.21-pre2",
+      "loader": "quilt",
+      "delta_downloads": 4233,
+      "downloads_per_hour": 1221.25,
+      "project_count": 109,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     },
     {
       "game_version": "24w21a",
       "loader": "fabric",
-      "delta_downloads": 2960,
-      "downloads_per_hour": 1438.06,
-      "project_count": 97,
+      "delta_downloads": 4232,
+      "downloads_per_hour": 1220.96,
+      "project_count": 104,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w21b",
       "loader": "fabric",
-      "delta_downloads": 2960,
-      "downloads_per_hour": 1438.06,
-      "project_count": 97,
+      "delta_downloads": 4232,
+      "downloads_per_hour": 1220.96,
+      "project_count": 104,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w33a",
+      "loader": "fabric",
+      "delta_downloads": 4232,
+      "downloads_per_hour": 1220.96,
+      "project_count": 134,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w34a",
+      "loader": "fabric",
+      "delta_downloads": 4231,
+      "downloads_per_hour": 1220.68,
+      "project_count": 133,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w35a",
+      "loader": "fabric",
+      "delta_downloads": 4231,
+      "downloads_per_hour": 1220.68,
+      "project_count": 133,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w33a",
+      "loader": "quilt",
+      "delta_downloads": 4229,
+      "downloads_per_hour": 1220.1,
+      "project_count": 133,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w34a",
+      "loader": "quilt",
+      "delta_downloads": 4228,
+      "downloads_per_hour": 1219.81,
+      "project_count": 132,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w35a",
+      "loader": "quilt",
+      "delta_downloads": 4228,
+      "downloads_per_hour": 1219.81,
+      "project_count": 132,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-pre3",
+      "loader": "neoforge",
+      "delta_downloads": 4226,
+      "downloads_per_hour": 1219.23,
+      "project_count": 111,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-pre4",
+      "loader": "neoforge",
+      "delta_downloads": 4226,
+      "downloads_per_hour": 1219.23,
+      "project_count": 111,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-rc1",
+      "loader": "neoforge",
+      "delta_downloads": 4226,
+      "downloads_per_hour": 1219.23,
+      "project_count": 111,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-pre1",
+      "loader": "neoforge",
+      "delta_downloads": 4225,
+      "downloads_per_hour": 1218.95,
+      "project_count": 110,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.21-pre2",
+      "loader": "neoforge",
+      "delta_downloads": 4225,
+      "downloads_per_hour": 1218.95,
+      "project_count": 110,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21.2-pre1",
       "loader": "neoforge",
-      "delta_downloads": 2955,
-      "downloads_per_hour": 1435.63,
-      "project_count": 126,
+      "delta_downloads": 4217,
+      "downloads_per_hour": 1216.64,
+      "project_count": 136,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "1.21.2-pre2",
       "loader": "neoforge",
-      "delta_downloads": 2955,
-      "downloads_per_hour": 1435.63,
-      "project_count": 126,
+      "delta_downloads": 4217,
+      "downloads_per_hour": 1216.64,
+      "project_count": 136,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
-      "game_version": "24w33a",
+      "game_version": "24w40a",
       "loader": "fabric",
-      "delta_downloads": 2948,
-      "downloads_per_hour": 1432.23,
-      "project_count": 124,
+      "delta_downloads": 4211,
+      "downloads_per_hour": 1214.91,
+      "project_count": 136,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
-      "game_version": "24w33a",
+      "game_version": "24w40a",
       "loader": "quilt",
-      "delta_downloads": 2948,
-      "downloads_per_hour": 1432.23,
-      "project_count": 124,
+      "delta_downloads": 4208,
+      "downloads_per_hour": 1214.04,
+      "project_count": 135,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w34a",
-      "loader": "fabric",
-      "delta_downloads": 2947,
-      "downloads_per_hour": 1431.74,
-      "project_count": 123,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w35a",
-      "loader": "fabric",
-      "delta_downloads": 2947,
-      "downloads_per_hour": 1431.74,
-      "project_count": 123,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w34a",
-      "loader": "quilt",
-      "delta_downloads": 2947,
-      "downloads_per_hour": 1431.74,
-      "project_count": 123,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w35a",
-      "loader": "quilt",
-      "delta_downloads": 2947,
-      "downloads_per_hour": 1431.74,
-      "project_count": 123,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w20a",
       "loader": "fabric",
-      "delta_downloads": 2939,
-      "downloads_per_hour": 1427.85,
-      "project_count": 94,
+      "delta_downloads": 4199,
+      "downloads_per_hour": 1211.44,
+      "project_count": 101,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w40a",
-      "loader": "fabric",
-      "delta_downloads": 2931,
-      "downloads_per_hour": 1423.97,
-      "project_count": 126,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w40a",
-      "loader": "quilt",
-      "delta_downloads": 2931,
-      "downloads_per_hour": 1423.97,
-      "project_count": 126,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w36a",
-      "loader": "fabric",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w37a",
       "loader": "fabric",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
+      "delta_downloads": 4174,
+      "downloads_per_hour": 1204.23,
+      "project_count": 132,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w38a",
       "loader": "fabric",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
+      "delta_downloads": 4174,
+      "downloads_per_hour": 1204.23,
+      "project_count": 132,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w39a",
       "loader": "fabric",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
+      "delta_downloads": 4174,
+      "downloads_per_hour": 1204.23,
+      "project_count": 132,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w36a",
-      "loader": "quilt",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
+      "loader": "fabric",
+      "delta_downloads": 4173,
+      "downloads_per_hour": 1203.94,
+      "project_count": 131,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w37a",
       "loader": "quilt",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
+      "delta_downloads": 4171,
+      "downloads_per_hour": 1203.37,
+      "project_count": 131,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w38a",
       "loader": "quilt",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
+      "delta_downloads": 4171,
+      "downloads_per_hour": 1203.37,
+      "project_count": 131,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w39a",
       "loader": "quilt",
-      "delta_downloads": 2911,
-      "downloads_per_hour": 1414.25,
-      "project_count": 121,
+      "delta_downloads": 4171,
+      "downloads_per_hour": 1203.37,
+      "project_count": 131,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w36a",
+      "loader": "quilt",
+      "delta_downloads": 4170,
+      "downloads_per_hour": 1203.08,
+      "project_count": 130,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "datapack",
+      "delta_downloads": 4138,
+      "downloads_per_hour": 1193.85,
+      "project_count": 168,
+      "top_project_id": "oRZbVZzh",
+      "top_project_title": "Farmer's Delight Cutting Compat",
+      "top_project_delta": 892
     },
     {
       "game_version": "24w19a",
       "loader": "fabric",
-      "delta_downloads": 2901,
-      "downloads_per_hour": 1409.39,
-      "project_count": 92,
+      "delta_downloads": 4137,
+      "downloads_per_hour": 1193.56,
+      "project_count": 99,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w19b",
       "loader": "fabric",
-      "delta_downloads": 2901,
-      "downloads_per_hour": 1409.39,
-      "project_count": 92,
+      "delta_downloads": 4137,
+      "downloads_per_hour": 1193.56,
+      "project_count": 99,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w18a",
       "loader": "fabric",
-      "delta_downloads": 2900,
-      "downloads_per_hour": 1408.91,
-      "project_count": 91,
+      "delta_downloads": 4136,
+      "downloads_per_hour": 1193.27,
+      "project_count": 98,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w44a",
       "loader": "fabric",
-      "delta_downloads": 2890,
-      "downloads_per_hour": 1404.05,
-      "project_count": 127,
+      "delta_downloads": 4132,
+      "downloads_per_hour": 1192.11,
+      "project_count": 140,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w45a",
       "loader": "fabric",
-      "delta_downloads": 2890,
-      "downloads_per_hour": 1404.05,
-      "project_count": 127,
+      "delta_downloads": 4132,
+      "downloads_per_hour": 1192.11,
+      "project_count": 140,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w46a",
       "loader": "fabric",
-      "delta_downloads": 2890,
-      "downloads_per_hour": 1404.05,
-      "project_count": 127,
+      "delta_downloads": 4132,
+      "downloads_per_hour": 1192.11,
+      "project_count": 140,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w44a",
       "loader": "quilt",
-      "delta_downloads": 2890,
-      "downloads_per_hour": 1404.05,
-      "project_count": 127,
+      "delta_downloads": 4129,
+      "downloads_per_hour": 1191.25,
+      "project_count": 139,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w45a",
       "loader": "quilt",
-      "delta_downloads": 2890,
-      "downloads_per_hour": 1404.05,
-      "project_count": 127,
+      "delta_downloads": 4129,
+      "downloads_per_hour": 1191.25,
+      "project_count": 139,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w46a",
       "loader": "quilt",
-      "delta_downloads": 2890,
-      "downloads_per_hour": 1404.05,
-      "project_count": 127,
+      "delta_downloads": 4129,
+      "downloads_per_hour": 1191.25,
+      "project_count": 139,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w21a",
-      "loader": "neoforge",
-      "delta_downloads": 2841,
-      "downloads_per_hour": 1380.24,
-      "project_count": 92,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
-    },
-    {
-      "game_version": "24w21b",
-      "loader": "neoforge",
-      "delta_downloads": 2841,
-      "downloads_per_hour": 1380.24,
-      "project_count": 92,
-      "top_project_id": "7YjclEGc",
-      "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w33a",
       "loader": "neoforge",
-      "delta_downloads": 2840,
-      "downloads_per_hour": 1379.76,
-      "project_count": 118,
+      "delta_downloads": 4058,
+      "downloads_per_hour": 1170.76,
+      "project_count": 128,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
     },
     {
       "game_version": "24w34a",
       "loader": "neoforge",
-      "delta_downloads": 2839,
-      "downloads_per_hour": 1379.27,
-      "project_count": 117,
+      "delta_downloads": 4057,
+      "downloads_per_hour": 1170.48,
+      "project_count": 127,
       "top_project_id": "7YjclEGc",
       "top_project_title": "Dynamic Lights",
-      "top_project_delta": 623
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w35a",
+      "loader": "neoforge",
+      "delta_downloads": 4057,
+      "downloads_per_hour": 1170.48,
+      "project_count": 127,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w21a",
+      "loader": "quilt",
+      "delta_downloads": 4038,
+      "downloads_per_hour": 1164.99,
+      "project_count": 98,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w21b",
+      "loader": "quilt",
+      "delta_downloads": 4038,
+      "downloads_per_hour": 1164.99,
+      "project_count": 98,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w40a",
+      "loader": "neoforge",
+      "delta_downloads": 4037,
+      "downloads_per_hour": 1164.71,
+      "project_count": 130,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
+    },
+    {
+      "game_version": "24w20a",
+      "loader": "quilt",
+      "delta_downloads": 4036,
+      "downloads_per_hour": 1164.42,
+      "project_count": 96,
+      "top_project_id": "7YjclEGc",
+      "top_project_title": "Dynamic Lights",
+      "top_project_delta": 817
     }
   ]
 }
