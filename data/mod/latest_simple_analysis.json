@@ -1,24 +1,12 @@
 {
-  "timestamp": "2026-08-14T22-13-36",
-  "date": "2026-08-14",
+  "timestamp": "2026-08-15T01-55-49",
+  "date": "2026-08-15",
   "project_type": "mod",
   "analysis_type": "simple",
   "baseline_date": "2026-08-14",
-  "hours_between": 4.01,
-  "actual_hours_between": 4.01,
+  "hours_between": 3.7,
+  "actual_hours_between": 3.7,
   "trend_history": [
-    {
-      "date": "2026-08-11",
-      "timestamp": "2026-08-11T17-55-14",
-      "total_downloads": 10893777625,
-      "new_downloads": 3004561,
-      "lost_downloads": 0,
-      "net_change": 3004561,
-      "growing_projects": 15747,
-      "declining_projects": 0,
-      "baseline_date": "2026-08-11",
-      "hours_between": 1.91
-    },
     {
       "date": "2026-08-11",
       "timestamp": "2026-08-11T19-50-24",
@@ -366,174 +354,186 @@
       "declining_projects": 0,
       "baseline_date": "2026-08-14",
       "hours_between": 1.96
+    },
+    {
+      "date": "2026-08-14",
+      "timestamp": "2026-08-14T22-13-36",
+      "total_downloads": 11001864951,
+      "new_downloads": 7387572,
+      "lost_downloads": 751083,
+      "net_change": 6636489,
+      "growing_projects": 21037,
+      "declining_projects": 4,
+      "baseline_date": "2026-08-14",
+      "hours_between": 4.01
     }
   ],
   "summary": {
-    "total_projects": 45896,
-    "total_versions": 656452,
-    "total_downloads": 11001864951,
+    "total_projects": 45898,
+    "total_versions": 656721,
+    "total_downloads": 11008060773,
     "baseline_date": "2026-08-14",
-    "current_date": "2026-08-14",
-    "new_projects_since_baseline": 6,
-    "new_downloads_since_baseline": 7387572,
-    "lost_downloads_since_baseline": 751083,
-    "net_download_change": 6636489,
-    "growing_projects": 21037,
-    "declining_projects": 4,
-    "downloads_per_hour": 1843308.79
+    "current_date": "2026-08-15",
+    "new_projects_since_baseline": 14,
+    "new_downloads_since_baseline": 6200679,
+    "lost_downloads_since_baseline": 116,
+    "net_download_change": 6200563,
+    "growing_projects": 20379,
+    "declining_projects": 2,
+    "downloads_per_hour": 1674727.62
   },
   "category_rankings": [
     {
       "category": "utility",
-      "projects": 20640,
-      "total_downloads": 4917705250,
-      "new_downloads": 3275267,
-      "downloads_per_hour": 817227.7,
-      "growth_pct": 0.07
+      "projects": 20638,
+      "total_downloads": 4920549630,
+      "new_downloads": 2845226,
+      "downloads_per_hour": 768460.77,
+      "growth_pct": 0.06
     },
     {
       "category": "library",
       "projects": 3300,
-      "total_downloads": 3319149768,
-      "new_downloads": 2248709,
-      "downloads_per_hour": 561086.25,
-      "growth_pct": 0.07
+      "total_downloads": 3320967405,
+      "new_downloads": 1818446,
+      "downloads_per_hour": 491140.04,
+      "growth_pct": 0.05
     },
     {
       "category": "optimization",
       "projects": 3401,
-      "total_downloads": 2482976983,
-      "new_downloads": 1734960,
-      "downloads_per_hour": 432898.25,
-      "growth_pct": 0.07
-    },
-    {
-      "category": "decoration",
-      "projects": 7084,
-      "total_downloads": 1946776076,
-      "new_downloads": 1356988,
-      "downloads_per_hour": 338588.63,
-      "growth_pct": 0.07
-    },
-    {
-      "category": "game-mechanics",
-      "projects": 19008,
-      "total_downloads": 1737254583,
-      "new_downloads": 1189019,
-      "downloads_per_hour": 296677.88,
-      "growth_pct": 0.07
-    },
-    {
-      "category": "equipment",
-      "projects": 10952,
-      "total_downloads": 1207330940,
-      "new_downloads": 846673,
-      "downloads_per_hour": 211257.47,
-      "growth_pct": 0.07
+      "total_downloads": 2484398157,
+      "new_downloads": 1421215,
+      "downloads_per_hour": 383852.8,
+      "growth_pct": 0.06
     },
     {
       "category": "adventure",
       "projects": 13692,
-      "total_downloads": 2453415975,
-      "new_downloads": 805927,
-      "downloads_per_hour": 201090.74,
-      "growth_pct": 0.03
+      "total_downloads": 2454754167,
+      "new_downloads": 1342271,
+      "downloads_per_hour": 362530.99,
+      "growth_pct": 0.05
+    },
+    {
+      "category": "decoration",
+      "projects": 7082,
+      "total_downloads": 1947910078,
+      "new_downloads": 1135428,
+      "downloads_per_hour": 306665.23,
+      "growth_pct": 0.06
+    },
+    {
+      "category": "game-mechanics",
+      "projects": 19012,
+      "total_downloads": 1738319360,
+      "new_downloads": 1065317,
+      "downloads_per_hour": 287729.1,
+      "growth_pct": 0.06
+    },
+    {
+      "category": "worldgen",
+      "projects": 7821,
+      "total_downloads": 1902175046,
+      "new_downloads": 997084,
+      "downloads_per_hour": 269300.2,
+      "growth_pct": 0.05
+    },
+    {
+      "category": "equipment",
+      "projects": 10952,
+      "total_downloads": 1208058476,
+      "new_downloads": 727937,
+      "downloads_per_hour": 196606.89,
+      "growth_pct": 0.06
+    },
+    {
+      "category": "mobs",
+      "projects": 10099,
+      "total_downloads": 1235791081,
+      "new_downloads": 725510,
+      "downloads_per_hour": 195951.38,
+      "growth_pct": 0.06
     },
     {
       "category": "management",
       "projects": 6936,
-      "total_downloads": 986446114,
-      "new_downloads": 704369,
-      "downloads_per_hour": 175750.51,
+      "total_downloads": 987049376,
+      "new_downloads": 603971,
+      "downloads_per_hour": 163125.19,
+      "growth_pct": 0.06
+    },
+    {
+      "category": "technology",
+      "projects": 7574,
+      "total_downloads": 720990437,
+      "new_downloads": 514771,
+      "downloads_per_hour": 139033.36,
       "growth_pct": 0.07
     },
     {
       "category": "food",
       "projects": 5704,
-      "total_downloads": 770511319,
-      "new_downloads": 568748,
-      "downloads_per_hour": 141911.06,
-      "growth_pct": 0.07
-    },
-    {
-      "category": "technology",
-      "projects": 7575,
-      "total_downloads": 720476214,
-      "new_downloads": 560390,
-      "downloads_per_hour": 139825.62,
-      "growth_pct": 0.08
-    },
-    {
-      "category": "storage",
-      "projects": 3648,
-      "total_downloads": 719220221,
-      "new_downloads": 493004,
-      "downloads_per_hour": 123011.81,
-      "growth_pct": 0.07
+      "total_downloads": 770967591,
+      "new_downloads": 459274,
+      "downloads_per_hour": 124044.29,
+      "growth_pct": 0.06
     },
     {
       "category": "social",
-      "projects": 4726,
-      "total_downloads": 697430956,
-      "new_downloads": 453593,
-      "downloads_per_hour": 113178.18,
-      "growth_pct": 0.07
+      "projects": 4725,
+      "total_downloads": 697851717,
+      "new_downloads": 421570,
+      "downloads_per_hour": 113860.9,
+      "growth_pct": 0.06
     },
     {
-      "category": "worldgen",
-      "projects": 7822,
-      "total_downloads": 1901181232,
-      "new_downloads": 447148,
-      "downloads_per_hour": 111570.06,
-      "growth_pct": 0.02
+      "category": "storage",
+      "projects": 3645,
+      "total_downloads": 719629137,
+      "new_downloads": 409100,
+      "downloads_per_hour": 110492.91,
+      "growth_pct": 0.06
     },
     {
       "category": "transportation",
-      "projects": 3528,
-      "total_downloads": 633565618,
-      "new_downloads": 398537,
-      "downloads_per_hour": 99440.89,
+      "projects": 3529,
+      "total_downloads": 633933040,
+      "new_downloads": 367422,
+      "downloads_per_hour": 99236.19,
+      "growth_pct": 0.06
+    },
+    {
+      "category": "cursed",
+      "projects": 6921,
+      "total_downloads": 499633952,
+      "new_downloads": 318249,
+      "downloads_per_hour": 85955.17,
       "growth_pct": 0.06
     },
     {
       "category": "magic",
-      "projects": 6547,
-      "total_downloads": 517910775,
-      "new_downloads": 347012,
-      "downloads_per_hour": 86584.64,
-      "growth_pct": 0.07
-    },
-    {
-      "category": "mobs",
-      "projects": 10101,
-      "total_downloads": 1235068573,
-      "new_downloads": 86472,
-      "downloads_per_hour": 21576.05,
-      "growth_pct": 0.01
+      "projects": 6548,
+      "total_downloads": 519597210,
+      "new_downloads": 305812,
+      "downloads_per_hour": 82596.08,
+      "growth_pct": 0.06
     },
     {
       "category": "economy",
       "projects": 1900,
-      "total_downloads": 116511628,
-      "new_downloads": 83577,
-      "downloads_per_hour": 20853.7,
+      "total_downloads": 117970046,
+      "new_downloads": 77649,
+      "downloads_per_hour": 20972.05,
       "growth_pct": 0.07
     },
     {
       "category": "minigame",
       "projects": 1901,
-      "total_downloads": 69303694,
-      "new_downloads": 62150,
-      "downloads_per_hour": 15507.35,
-      "growth_pct": 0.09
-    },
-    {
-      "category": "cursed",
-      "projects": 6920,
-      "total_downloads": 499315703,
-      "new_downloads": -408773,
-      "downloads_per_hour": -101994.93,
-      "growth_pct": -0.08
+      "total_downloads": 69354117,
+      "new_downloads": 50512,
+      "downloads_per_hour": 13642.67,
+      "growth_pct": 0.07
     }
   ],
   "loader_rankings": [],
@@ -546,11 +546,11 @@
         "fabric",
         "library"
       ],
-      "current_downloads": 234318582,
-      "baseline_downloads": 234132493,
-      "delta_downloads": 186089,
-      "downloads_per_hour": 46431.97,
-      "growth_pct": 0.08
+      "current_downloads": 234482334,
+      "baseline_downloads": 234318582,
+      "delta_downloads": 163752,
+      "downloads_per_hour": 44227.41,
+      "growth_pct": 0.07
     },
     {
       "project_id": "AANobbMI",
@@ -562,28 +562,11 @@
         "optimization",
         "quilt"
       ],
-      "current_downloads": 208436756,
-      "baseline_downloads": 208268299,
-      "delta_downloads": 168457,
-      "downloads_per_hour": 42032.52,
-      "growth_pct": 0.08
-    },
-    {
-      "project_id": "YL57xq9U",
-      "title": "Iris Shaders",
-      "slug": "iris",
-      "categories": [
-        "decoration",
-        "fabric",
-        "neoforge",
-        "optimization",
-        "quilt"
-      ],
-      "current_downloads": 162614974,
-      "baseline_downloads": 162482287,
-      "delta_downloads": 132687,
-      "downloads_per_hour": 33107.37,
-      "growth_pct": 0.08
+      "current_downloads": 208561229,
+      "baseline_downloads": 208436756,
+      "delta_downloads": 124473,
+      "downloads_per_hour": 33618.64,
+      "growth_pct": 0.06
     },
     {
       "project_id": "NNAgCjsB",
@@ -597,11 +580,28 @@
         "optimization",
         "quilt"
       ],
-      "current_downloads": 152326488,
-      "baseline_downloads": 152196306,
-      "delta_downloads": 130182,
-      "downloads_per_hour": 32482.34,
-      "growth_pct": 0.09
+      "current_downloads": 152425990,
+      "baseline_downloads": 152326488,
+      "delta_downloads": 99502,
+      "downloads_per_hour": 26874.27,
+      "growth_pct": 0.07
+    },
+    {
+      "project_id": "YL57xq9U",
+      "title": "Iris Shaders",
+      "slug": "iris",
+      "categories": [
+        "decoration",
+        "fabric",
+        "neoforge",
+        "optimization",
+        "quilt"
+      ],
+      "current_downloads": 162713701,
+      "baseline_downloads": 162614974,
+      "delta_downloads": 98727,
+      "downloads_per_hour": 26664.96,
+      "growth_pct": 0.06
     },
     {
       "project_id": "9s6osm5g",
@@ -613,11 +613,11 @@
         "library",
         "neoforge"
       ],
-      "current_downloads": 155950632,
-      "baseline_downloads": 155839828,
-      "delta_downloads": 110804,
-      "downloads_per_hour": 27647.24,
-      "growth_pct": 0.07
+      "current_downloads": 156032101,
+      "baseline_downloads": 155950632,
+      "delta_downloads": 81469,
+      "downloads_per_hour": 22003.78,
+      "growth_pct": 0.05
     },
     {
       "project_id": "uXXizFIs",
@@ -631,77 +631,11 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 140287755,
-      "baseline_downloads": 140195765,
-      "delta_downloads": 91990,
-      "downloads_per_hour": 22952.87,
-      "growth_pct": 0.07
-    },
-    {
-      "project_id": "Ha28R6CL",
-      "title": "Fabric Language Kotlin",
-      "slug": "fabric-language-kotlin",
-      "categories": [
-        "fabric",
-        "library"
-      ],
-      "current_downloads": 108591225,
-      "baseline_downloads": 108506558,
-      "delta_downloads": 84667,
-      "downloads_per_hour": 21125.67,
-      "growth_pct": 0.08
-    },
-    {
-      "project_id": "1eAoo2KR",
-      "title": "YetAnotherConfigLib (YACL)",
-      "slug": "yacl",
-      "categories": [
-        "fabric",
-        "forge",
-        "library",
-        "management",
-        "neoforge",
-        "quilt",
-        "utility"
-      ],
-      "current_downloads": 112945611,
-      "baseline_downloads": 112863361,
-      "delta_downloads": 82250,
-      "downloads_per_hour": 20522.59,
-      "growth_pct": 0.07
-    },
-    {
-      "project_id": "gvQqBUqZ",
-      "title": "Lithium",
-      "slug": "lithium",
-      "categories": [
-        "fabric",
-        "neoforge",
-        "optimization",
-        "quilt"
-      ],
-      "current_downloads": 119041567,
-      "baseline_downloads": 118969305,
-      "delta_downloads": 72262,
-      "downloads_per_hour": 18030.44,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "5ZwdcRci",
-      "title": "ImmediatelyFast",
-      "slug": "immediatelyfast",
-      "categories": [
-        "fabric",
-        "forge",
-        "neoforge",
-        "optimization",
-        "quilt"
-      ],
-      "current_downloads": 114482001,
-      "baseline_downloads": 114412459,
-      "delta_downloads": 69542,
-      "downloads_per_hour": 17351.76,
-      "growth_pct": 0.06
+      "current_downloads": 140358419,
+      "baseline_downloads": 140287755,
+      "delta_downloads": 70664,
+      "downloads_per_hour": 19085.48,
+      "growth_pct": 0.05
     },
     {
       "project_id": "OhduvhIc",
@@ -724,11 +658,77 @@
         "technology",
         "utility"
       ],
-      "current_downloads": 71898098,
-      "baseline_downloads": 71830311,
-      "delta_downloads": 67787,
-      "downloads_per_hour": 16913.86,
+      "current_downloads": 71960548,
+      "baseline_downloads": 71898098,
+      "delta_downloads": 62450,
+      "downloads_per_hour": 16866.98,
       "growth_pct": 0.09
+    },
+    {
+      "project_id": "1eAoo2KR",
+      "title": "YetAnotherConfigLib (YACL)",
+      "slug": "yacl",
+      "categories": [
+        "fabric",
+        "forge",
+        "library",
+        "management",
+        "neoforge",
+        "quilt",
+        "utility"
+      ],
+      "current_downloads": 113007262,
+      "baseline_downloads": 112945611,
+      "delta_downloads": 61651,
+      "downloads_per_hour": 16651.18,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "Ha28R6CL",
+      "title": "Fabric Language Kotlin",
+      "slug": "fabric-language-kotlin",
+      "categories": [
+        "fabric",
+        "library"
+      ],
+      "current_downloads": 108649881,
+      "baseline_downloads": 108591225,
+      "delta_downloads": 58656,
+      "downloads_per_hour": 15842.27,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "5ZwdcRci",
+      "title": "ImmediatelyFast",
+      "slug": "immediatelyfast",
+      "categories": [
+        "fabric",
+        "forge",
+        "neoforge",
+        "optimization",
+        "quilt"
+      ],
+      "current_downloads": 114540038,
+      "baseline_downloads": 114482001,
+      "delta_downloads": 58037,
+      "downloads_per_hour": 15675.08,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "gvQqBUqZ",
+      "title": "Lithium",
+      "slug": "lithium",
+      "categories": [
+        "fabric",
+        "neoforge",
+        "optimization",
+        "quilt"
+      ],
+      "current_downloads": 119099231,
+      "baseline_downloads": 119041567,
+      "delta_downloads": 57664,
+      "downloads_per_hour": 15574.34,
+      "growth_pct": 0.05
     },
     {
       "project_id": "1bokaNcj",
@@ -743,94 +743,29 @@
         "transportation",
         "utility"
       ],
-      "current_downloads": 102430301,
-      "baseline_downloads": 102370254,
-      "delta_downloads": 60047,
-      "downloads_per_hour": 14982.62,
-      "growth_pct": 0.06
+      "current_downloads": 102486160,
+      "baseline_downloads": 102430301,
+      "delta_downloads": 55859,
+      "downloads_per_hour": 15086.83,
+      "growth_pct": 0.05
     },
     {
-      "project_id": "EsAfCjCV",
-      "title": "AppleSkin",
-      "slug": "appleskin",
+      "project_id": "PtjYWJkn",
+      "title": "Sodium Extra",
+      "slug": "sodium-extra",
       "categories": [
+        "cursed",
         "fabric",
-        "food",
-        "forge",
         "neoforge",
+        "optimization",
         "quilt",
         "utility"
       ],
-      "current_downloads": 82800261,
-      "baseline_downloads": 82742489,
-      "delta_downloads": 57772,
-      "downloads_per_hour": 14414.97,
-      "growth_pct": 0.07
-    },
-    {
-      "project_id": "eXts2L7r",
-      "title": "Text Placeholder API",
-      "slug": "placeholder-api",
-      "categories": [
-        "fabric",
-        "library",
-        "management",
-        "quilt"
-      ],
-      "current_downloads": 57521061,
-      "baseline_downloads": 57465007,
-      "delta_downloads": 56054,
-      "downloads_per_hour": 13986.3,
-      "growth_pct": 0.1
-    },
-    {
-      "project_id": "ordsPcFz",
-      "title": "Kotlin for Forge",
-      "slug": "kotlin-for-forge",
-      "categories": [
-        "forge",
-        "library",
-        "neoforge"
-      ],
-      "current_downloads": 44811242,
-      "baseline_downloads": 44756417,
-      "delta_downloads": 54825,
-      "downloads_per_hour": 13679.65,
-      "growth_pct": 0.12
-    },
-    {
-      "project_id": "lhGA9TYQ",
-      "title": "Architectury API",
-      "slug": "architectury-api",
-      "categories": [
-        "fabric",
-        "forge",
-        "library",
-        "neoforge",
-        "quilt"
-      ],
-      "current_downloads": 93184465,
-      "baseline_downloads": 93129668,
-      "delta_downloads": 54797,
-      "downloads_per_hour": 13672.66,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "u6dRKJwZ",
-      "title": "Just Enough Items (JEI)",
-      "slug": "jei",
-      "categories": [
-        "fabric",
-        "forge",
-        "library",
-        "neoforge",
-        "utility"
-      ],
-      "current_downloads": 70067347,
-      "baseline_downloads": 70012938,
-      "delta_downloads": 54409,
-      "downloads_per_hour": 13575.85,
-      "growth_pct": 0.08
+      "current_downloads": 89593393,
+      "baseline_downloads": 89544980,
+      "delta_downloads": 48413,
+      "downloads_per_hour": 13075.76,
+      "growth_pct": 0.05
     },
     {
       "project_id": "NcUtCpym",
@@ -845,28 +780,10 @@
         "transportation",
         "utility"
       ],
-      "current_downloads": 89634212,
-      "baseline_downloads": 89584333,
-      "delta_downloads": 49879,
-      "downloads_per_hour": 12445.55,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "PtjYWJkn",
-      "title": "Sodium Extra",
-      "slug": "sodium-extra",
-      "categories": [
-        "cursed",
-        "fabric",
-        "neoforge",
-        "optimization",
-        "quilt",
-        "utility"
-      ],
-      "current_downloads": 89544980,
-      "baseline_downloads": 89496956,
-      "delta_downloads": 48024,
-      "downloads_per_hour": 11982.7,
+      "current_downloads": 89682081,
+      "baseline_downloads": 89634212,
+      "delta_downloads": 47869,
+      "downloads_per_hour": 12928.83,
       "growth_pct": 0.05
     },
     {
@@ -882,30 +799,79 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 88912052,
-      "baseline_downloads": 88864837,
-      "delta_downloads": 47215,
-      "downloads_per_hour": 11780.84,
+      "current_downloads": 88958525,
+      "baseline_downloads": 88912052,
+      "delta_downloads": 46473,
+      "downloads_per_hour": 12551.79,
       "growth_pct": 0.05
     },
     {
-      "project_id": "8BmcQJ2H",
-      "title": "Geckolib",
-      "slug": "geckolib",
+      "project_id": "u6dRKJwZ",
+      "title": "Just Enough Items (JEI)",
+      "slug": "jei",
       "categories": [
         "fabric",
         "forge",
-        "game-mechanics",
         "library",
+        "neoforge",
+        "utility"
+      ],
+      "current_downloads": 70112387,
+      "baseline_downloads": 70067347,
+      "delta_downloads": 45040,
+      "downloads_per_hour": 12164.75,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "eXts2L7r",
+      "title": "Text Placeholder API",
+      "slug": "placeholder-api",
+      "categories": [
+        "fabric",
+        "library",
+        "management",
+        "quilt"
+      ],
+      "current_downloads": 57565925,
+      "baseline_downloads": 57521061,
+      "delta_downloads": 44864,
+      "downloads_per_hour": 12117.22,
+      "growth_pct": 0.08
+    },
+    {
+      "project_id": "lhGA9TYQ",
+      "title": "Architectury API",
+      "slug": "architectury-api",
+      "categories": [
+        "fabric",
+        "forge",
+        "library",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 93226743,
+      "baseline_downloads": 93184465,
+      "delta_downloads": 42278,
+      "downloads_per_hour": 11418.77,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "EsAfCjCV",
+      "title": "AppleSkin",
+      "slug": "appleskin",
+      "categories": [
+        "fabric",
+        "food",
+        "forge",
         "neoforge",
         "quilt",
         "utility"
       ],
-      "current_downloads": 63735298,
-      "baseline_downloads": 63690016,
-      "delta_downloads": 45282,
-      "downloads_per_hour": 11298.53,
-      "growth_pct": 0.07
+      "current_downloads": 82842283,
+      "baseline_downloads": 82800261,
+      "delta_downloads": 42022,
+      "downloads_per_hour": 11349.63,
+      "growth_pct": 0.05
     },
     {
       "project_id": "9eGKb6K1",
@@ -928,11 +894,45 @@
         "velocity",
         "waterfall"
       ],
-      "current_downloads": 63541192,
-      "baseline_downloads": 63499966,
-      "delta_downloads": 41226,
-      "downloads_per_hour": 10286.5,
+      "current_downloads": 63580861,
+      "baseline_downloads": 63541192,
+      "delta_downloads": 39669,
+      "downloads_per_hour": 10714.11,
       "growth_pct": 0.06
+    },
+    {
+      "project_id": "8BmcQJ2H",
+      "title": "Geckolib",
+      "slug": "geckolib",
+      "categories": [
+        "fabric",
+        "forge",
+        "game-mechanics",
+        "library",
+        "neoforge",
+        "quilt",
+        "utility"
+      ],
+      "current_downloads": 63774128,
+      "baseline_downloads": 63735298,
+      "delta_downloads": 38830,
+      "downloads_per_hour": 10487.51,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "ordsPcFz",
+      "title": "Kotlin for Forge",
+      "slug": "kotlin-for-forge",
+      "categories": [
+        "forge",
+        "library",
+        "neoforge"
+      ],
+      "current_downloads": 44845787,
+      "baseline_downloads": 44811242,
+      "delta_downloads": 34545,
+      "downloads_per_hour": 9330.18,
+      "growth_pct": 0.08
     },
     {
       "project_id": "nmDcB62a",
@@ -945,79 +945,11 @@
         "optimization",
         "utility"
       ],
-      "current_downloads": 73129938,
-      "baseline_downloads": 73092448,
-      "delta_downloads": 37490,
-      "downloads_per_hour": 9354.31,
+      "current_downloads": 73162887,
+      "baseline_downloads": 73129938,
+      "delta_downloads": 32949,
+      "downloads_per_hour": 8899.12,
       "growth_pct": 0.05
-    },
-    {
-      "project_id": "QAGBst4M",
-      "title": "Puzzles Lib",
-      "slug": "puzzles-lib",
-      "categories": [
-        "fabric",
-        "forge",
-        "library",
-        "neoforge"
-      ],
-      "current_downloads": 57102660,
-      "baseline_downloads": 57066329,
-      "delta_downloads": 36331,
-      "downloads_per_hour": 9065.12,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "51shyZVL",
-      "title": "More Culling",
-      "slug": "moreculling",
-      "categories": [
-        "fabric",
-        "library",
-        "neoforge",
-        "optimization",
-        "quilt",
-        "utility"
-      ],
-      "current_downloads": 60479682,
-      "baseline_downloads": 60443448,
-      "delta_downloads": 36234,
-      "downloads_per_hour": 9040.92,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "aC3cM3Vq",
-      "title": "Mouse Tweaks",
-      "slug": "mouse-tweaks",
-      "categories": [
-        "fabric",
-        "forge",
-        "modloader",
-        "neoforge",
-        "storage",
-        "utility"
-      ],
-      "current_downloads": 53542183,
-      "baseline_downloads": 53506136,
-      "delta_downloads": 36047,
-      "downloads_per_hour": 8994.26,
-      "growth_pct": 0.07
-    },
-    {
-      "project_id": "ohNO6lps",
-      "title": "Forge Config API Port",
-      "slug": "forge-config-api-port",
-      "categories": [
-        "fabric",
-        "forge",
-        "library",
-        "neoforge"
-      ],
-      "current_downloads": 60267473,
-      "baseline_downloads": 60231876,
-      "delta_downloads": 35597,
-      "downloads_per_hour": 8881.98,
-      "growth_pct": 0.06
     },
     {
       "project_id": "nvQzSEkH",
@@ -1031,27 +963,29 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 63010626,
-      "baseline_downloads": 62975040,
-      "delta_downloads": 35586,
-      "downloads_per_hour": 8879.23,
-      "growth_pct": 0.06
+      "current_downloads": 63041549,
+      "baseline_downloads": 63010626,
+      "delta_downloads": 30923,
+      "downloads_per_hour": 8351.92,
+      "growth_pct": 0.05
     },
     {
-      "project_id": "J81TRJWm",
-      "title": "Konkrete",
-      "slug": "konkrete",
+      "project_id": "51shyZVL",
+      "title": "More Culling",
+      "slug": "moreculling",
       "categories": [
         "fabric",
-        "forge",
         "library",
-        "neoforge"
+        "neoforge",
+        "optimization",
+        "quilt",
+        "utility"
       ],
-      "current_downloads": 56812880,
-      "baseline_downloads": 56779126,
-      "delta_downloads": 33754,
-      "downloads_per_hour": 8422.12,
-      "growth_pct": 0.06
+      "current_downloads": 60509937,
+      "baseline_downloads": 60479682,
+      "delta_downloads": 30255,
+      "downloads_per_hour": 8171.51,
+      "growth_pct": 0.05
     },
     {
       "project_id": "LQ3K71Q1",
@@ -1066,11 +1000,27 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 61164767,
-      "baseline_downloads": 61131054,
-      "delta_downloads": 33713,
-      "downloads_per_hour": 8411.89,
-      "growth_pct": 0.06
+      "current_downloads": 61194255,
+      "baseline_downloads": 61164767,
+      "delta_downloads": 29488,
+      "downloads_per_hour": 7964.35,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "ohNO6lps",
+      "title": "Forge Config API Port",
+      "slug": "forge-config-api-port",
+      "categories": [
+        "fabric",
+        "forge",
+        "library",
+        "neoforge"
+      ],
+      "current_downloads": 60296529,
+      "baseline_downloads": 60267473,
+      "delta_downloads": 29056,
+      "downloads_per_hour": 7847.67,
+      "growth_pct": 0.05
     },
     {
       "project_id": "MBAkmtvl",
@@ -1082,45 +1032,45 @@
         "library",
         "neoforge"
       ],
-      "current_downloads": 54917549,
-      "baseline_downloads": 54884594,
-      "delta_downloads": 32955,
-      "downloads_per_hour": 8222.76,
-      "growth_pct": 0.06
+      "current_downloads": 54946152,
+      "baseline_downloads": 54917549,
+      "delta_downloads": 28603,
+      "downloads_per_hour": 7725.32,
+      "growth_pct": 0.05
     },
     {
-      "project_id": "HXF82T3G",
-      "title": "Biomes O' Plenty",
-      "slug": "biomes-o-plenty",
-      "categories": [
-        "adventure",
-        "decoration",
-        "fabric",
-        "forge",
-        "neoforge",
-        "worldgen"
-      ],
-      "current_downloads": 32002202,
-      "baseline_downloads": 31969470,
-      "delta_downloads": 32732,
-      "downloads_per_hour": 8167.12,
-      "growth_pct": 0.1
-    },
-    {
-      "project_id": "OsZiaDHq",
-      "title": "CreativeCore",
-      "slug": "creativecore",
+      "project_id": "QAGBst4M",
+      "title": "Puzzles Lib",
+      "slug": "puzzles-lib",
       "categories": [
         "fabric",
         "forge",
         "library",
         "neoforge"
       ],
-      "current_downloads": 47338316,
-      "baseline_downloads": 47307740,
-      "delta_downloads": 30576,
-      "downloads_per_hour": 7629.17,
-      "growth_pct": 0.06
+      "current_downloads": 57129878,
+      "baseline_downloads": 57102660,
+      "delta_downloads": 27218,
+      "downloads_per_hour": 7351.25,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "aC3cM3Vq",
+      "title": "Mouse Tweaks",
+      "slug": "mouse-tweaks",
+      "categories": [
+        "fabric",
+        "forge",
+        "modloader",
+        "neoforge",
+        "storage",
+        "utility"
+      ],
+      "current_downloads": 53569382,
+      "baseline_downloads": 53542183,
+      "delta_downloads": 27199,
+      "downloads_per_hour": 7346.12,
+      "growth_pct": 0.05
     },
     {
       "project_id": "hYykXjDp",
@@ -1136,76 +1086,43 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 34720667,
-      "baseline_downloads": 34690200,
-      "delta_downloads": 30467,
-      "downloads_per_hour": 7601.97,
-      "growth_pct": 0.09
+      "current_downloads": 34746968,
+      "baseline_downloads": 34720667,
+      "delta_downloads": 26301,
+      "downloads_per_hour": 7103.58,
+      "growth_pct": 0.08
     },
     {
-      "project_id": "Aqlf1Shp",
-      "title": "Forgified Fabric API",
-      "slug": "forgified-fabric-api",
+      "project_id": "J81TRJWm",
+      "title": "Konkrete",
+      "slug": "konkrete",
       "categories": [
+        "fabric",
         "forge",
         "library",
         "neoforge"
       ],
-      "current_downloads": 25426998,
-      "baseline_downloads": 25396695,
-      "delta_downloads": 30303,
-      "downloads_per_hour": 7561.05,
-      "growth_pct": 0.12
+      "current_downloads": 56838949,
+      "baseline_downloads": 56812880,
+      "delta_downloads": 26069,
+      "downloads_per_hour": 7040.92,
+      "growth_pct": 0.05
     },
     {
-      "project_id": "GchcoXML",
-      "title": "Oculus",
-      "slug": "oculus",
-      "categories": [
-        "decoration",
-        "forge",
-        "neoforge",
-        "optimization"
-      ],
-      "current_downloads": 33080672,
-      "baseline_downloads": 33050380,
-      "delta_downloads": 30292,
-      "downloads_per_hour": 7558.3,
-      "growth_pct": 0.09
-    },
-    {
-      "project_id": "g96Z4WVZ",
-      "title": "BadOptimizations",
-      "slug": "badoptimizations",
+      "project_id": "OsZiaDHq",
+      "title": "CreativeCore",
+      "slug": "creativecore",
       "categories": [
         "fabric",
         "forge",
-        "neoforge",
-        "optimization"
+        "library",
+        "neoforge"
       ],
-      "current_downloads": 38464088,
-      "baseline_downloads": 38434557,
-      "delta_downloads": 29531,
-      "downloads_per_hour": 7368.42,
-      "growth_pct": 0.08
-    },
-    {
-      "project_id": "O7RBXm3n",
-      "title": "Inventory Profiles Next",
-      "slug": "inventory-profiles-next",
-      "categories": [
-        "fabric",
-        "forge",
-        "neoforge",
-        "quilt",
-        "storage",
-        "utility"
-      ],
-      "current_downloads": 36320863,
-      "baseline_downloads": 36291344,
-      "delta_downloads": 29519,
-      "downloads_per_hour": 7365.43,
-      "growth_pct": 0.08
+      "current_downloads": 47364332,
+      "baseline_downloads": 47338316,
+      "delta_downloads": 26016,
+      "downloads_per_hour": 7026.6,
+      "growth_pct": 0.05
     },
     {
       "project_id": "e0M1UDsY",
@@ -1218,27 +1135,11 @@
         "neoforge",
         "quilt"
       ],
-      "current_downloads": 60722540,
-      "baseline_downloads": 60693064,
-      "delta_downloads": 29476,
-      "downloads_per_hour": 7354.7,
-      "growth_pct": 0.05
-    },
-    {
-      "project_id": "CVT4pFB2",
-      "title": "Melody",
-      "slug": "melody",
-      "categories": [
-        "fabric",
-        "forge",
-        "library",
-        "neoforge"
-      ],
-      "current_downloads": 45782898,
-      "baseline_downloads": 45755905,
-      "delta_downloads": 26993,
-      "downloads_per_hour": 6735.15,
-      "growth_pct": 0.06
+      "current_downloads": 60748365,
+      "baseline_downloads": 60722540,
+      "delta_downloads": 25825,
+      "downloads_per_hour": 6975.02,
+      "growth_pct": 0.04
     },
     {
       "project_id": "qQyHxfxd",
@@ -1253,27 +1154,11 @@
         "social",
         "utility"
       ],
-      "current_downloads": 53777249,
-      "baseline_downloads": 53750297,
-      "delta_downloads": 26952,
-      "downloads_per_hour": 6724.92,
+      "current_downloads": 53803030,
+      "baseline_downloads": 53777249,
+      "delta_downloads": 25781,
+      "downloads_per_hour": 6963.13,
       "growth_pct": 0.05
-    },
-    {
-      "project_id": "sk9rgfiA",
-      "title": "Embeddium",
-      "slug": "embeddium",
-      "categories": [
-        "fabric",
-        "forge",
-        "neoforge",
-        "optimization"
-      ],
-      "current_downloads": 32054152,
-      "baseline_downloads": 32027591,
-      "delta_downloads": 26561,
-      "downloads_per_hour": 6627.36,
-      "growth_pct": 0.08
     },
     {
       "project_id": "Wb5oqrBJ",
@@ -1286,41 +1171,27 @@
         "neoforge",
         "social"
       ],
-      "current_downloads": 45389805,
-      "baseline_downloads": 45363845,
-      "delta_downloads": 25960,
-      "downloads_per_hour": 6477.41,
-      "growth_pct": 0.06
+      "current_downloads": 45414155,
+      "baseline_downloads": 45389805,
+      "delta_downloads": 24350,
+      "downloads_per_hour": 6576.64,
+      "growth_pct": 0.05
     },
     {
-      "project_id": "ccKDOlHs",
-      "title": "oωo (owo-lib)",
-      "slug": "owo-lib",
+      "project_id": "g96Z4WVZ",
+      "title": "BadOptimizations",
+      "slug": "badoptimizations",
       "categories": [
         "fabric",
-        "library",
+        "forge",
         "neoforge",
-        "quilt"
-      ],
-      "current_downloads": 44308195,
-      "baseline_downloads": 44283445,
-      "delta_downloads": 24750,
-      "downloads_per_hour": 6175.49,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "VSNURh3q",
-      "title": "Concurrent Chunk Management Engine (Fabric)",
-      "slug": "c2me-fabric",
-      "categories": [
-        "fabric",
         "optimization"
       ],
-      "current_downloads": 33904529,
-      "baseline_downloads": 33880000,
-      "delta_downloads": 24529,
-      "downloads_per_hour": 6120.35,
-      "growth_pct": 0.07
+      "current_downloads": 38487911,
+      "baseline_downloads": 38464088,
+      "delta_downloads": 23823,
+      "downloads_per_hour": 6434.3,
+      "growth_pct": 0.06
     },
     {
       "project_id": "k2ZPuTBm",
@@ -1334,30 +1205,194 @@
         "social",
         "utility"
       ],
-      "current_downloads": 40125334,
-      "baseline_downloads": 40101383,
-      "delta_downloads": 23951,
-      "downloads_per_hour": 5976.13,
+      "current_downloads": 40148249,
+      "baseline_downloads": 40125334,
+      "delta_downloads": 22915,
+      "downloads_per_hour": 6189.06,
       "growth_pct": 0.06
     },
     {
-      "project_id": "GcWjdA9I",
-      "title": "MaLiLib",
-      "slug": "malilib",
+      "project_id": "HXF82T3G",
+      "title": "Biomes O' Plenty",
+      "slug": "biomes-o-plenty",
+      "categories": [
+        "adventure",
+        "decoration",
+        "fabric",
+        "forge",
+        "neoforge",
+        "worldgen"
+      ],
+      "current_downloads": 32024350,
+      "baseline_downloads": 32002202,
+      "delta_downloads": 22148,
+      "downloads_per_hour": 5981.9,
+      "growth_pct": 0.07
+    },
+    {
+      "project_id": "VSNURh3q",
+      "title": "Concurrent Chunk Management Engine (Fabric)",
+      "slug": "c2me-fabric",
+      "categories": [
+        "fabric",
+        "optimization"
+      ],
+      "current_downloads": 33926646,
+      "baseline_downloads": 33904529,
+      "delta_downloads": 22117,
+      "downloads_per_hour": 5973.53,
+      "growth_pct": 0.07
+    },
+    {
+      "project_id": "O7RBXm3n",
+      "title": "Inventory Profiles Next",
+      "slug": "inventory-profiles-next",
+      "categories": [
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt",
+        "storage",
+        "utility"
+      ],
+      "current_downloads": 36342716,
+      "baseline_downloads": 36320863,
+      "delta_downloads": 21853,
+      "downloads_per_hour": 5902.23,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "Aqlf1Shp",
+      "title": "Forgified Fabric API",
+      "slug": "forgified-fabric-api",
+      "categories": [
+        "forge",
+        "library",
+        "neoforge"
+      ],
+      "current_downloads": 25447471,
+      "baseline_downloads": 25426998,
+      "delta_downloads": 20473,
+      "downloads_per_hour": 5529.51,
+      "growth_pct": 0.08
+    },
+    {
+      "project_id": "CVT4pFB2",
+      "title": "Melody",
+      "slug": "melody",
       "categories": [
         "fabric",
         "forge",
         "library",
-        "liteloader",
-        "ornithe",
-        "rift",
+        "neoforge"
+      ],
+      "current_downloads": 45802360,
+      "baseline_downloads": 45782898,
+      "delta_downloads": 19462,
+      "downloads_per_hour": 5256.45,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "uy4Cnpcm",
+      "title": "Bookshelf",
+      "slug": "bookshelf-lib",
+      "categories": [
+        "fabric",
+        "forge",
+        "library",
+        "neoforge",
+        "quilt",
         "utility"
       ],
-      "current_downloads": 31693633,
-      "baseline_downloads": 31669964,
-      "delta_downloads": 23669,
-      "downloads_per_hour": 5905.77,
-      "growth_pct": 0.07
+      "current_downloads": 42892687,
+      "baseline_downloads": 42873321,
+      "delta_downloads": 19366,
+      "downloads_per_hour": 5230.52,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "2M01OLQq",
+      "title": "Shulker Box Tooltip",
+      "slug": "shulkerboxtooltip",
+      "categories": [
+        "fabric",
+        "forge",
+        "neoforge",
+        "storage",
+        "utility"
+      ],
+      "current_downloads": 34399342,
+      "baseline_downloads": 34380222,
+      "delta_downloads": 19120,
+      "downloads_per_hour": 5164.08,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "4H6sumDB",
+      "title": "Euphoria Patches",
+      "slug": "euphoria-patches",
+      "categories": [
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt",
+        "technology",
+        "utility"
+      ],
+      "current_downloads": 24739664,
+      "baseline_downloads": 24720548,
+      "delta_downloads": 19116,
+      "downloads_per_hour": 5163.0,
+      "growth_pct": 0.08
+    },
+    {
+      "project_id": "ccKDOlHs",
+      "title": "oωo (owo-lib)",
+      "slug": "owo-lib",
+      "categories": [
+        "fabric",
+        "library",
+        "neoforge",
+        "quilt"
+      ],
+      "current_downloads": 44327218,
+      "baseline_downloads": 44308195,
+      "delta_downloads": 19023,
+      "downloads_per_hour": 5137.88,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "fuuu3xnx",
+      "title": "Searchables",
+      "slug": "searchables",
+      "categories": [
+        "fabric",
+        "forge",
+        "library",
+        "neoforge",
+        "utility"
+      ],
+      "current_downloads": 35629150,
+      "baseline_downloads": 35610276,
+      "delta_downloads": 18874,
+      "downloads_per_hour": 5097.64,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "GchcoXML",
+      "title": "Oculus",
+      "slug": "oculus",
+      "categories": [
+        "decoration",
+        "forge",
+        "neoforge",
+        "optimization"
+      ],
+      "current_downloads": 33099505,
+      "baseline_downloads": 33080672,
+      "delta_downloads": 18833,
+      "downloads_per_hour": 5086.56,
+      "growth_pct": 0.06
     },
     {
       "project_id": "twkfQtEc",
@@ -1369,2114 +1404,2048 @@
         "library",
         "neoforge"
       ],
-      "current_downloads": 37490533,
-      "baseline_downloads": 37467004,
-      "delta_downloads": 23529,
-      "downloads_per_hour": 5870.83,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "u58R1TMW",
-      "title": "Sinytra Connector",
-      "slug": "connector",
-      "categories": [
-        "cursed",
-        "forge",
-        "library",
-        "magic",
-        "neoforge",
-        "utility"
-      ],
-      "current_downloads": 22533058,
-      "baseline_downloads": 22509605,
-      "delta_downloads": 23453,
-      "downloads_per_hour": 5851.87,
-      "growth_pct": 0.1
-    },
-    {
-      "project_id": "fQEb0iXm",
-      "title": "Krypton",
-      "slug": "krypton",
-      "categories": [
-        "fabric",
-        "optimization",
-        "utility"
-      ],
-      "current_downloads": 38949747,
-      "baseline_downloads": 38927079,
-      "delta_downloads": 22668,
-      "downloads_per_hour": 5656.0,
-      "growth_pct": 0.06
+      "current_downloads": 37509124,
+      "baseline_downloads": 37490533,
+      "delta_downloads": 18591,
+      "downloads_per_hour": 5021.2,
+      "growth_pct": 0.05
     }
   ],
   "declining_projects": [
     {
-      "project_id": "IXZPFrP2",
-      "title": "wonderland.jar",
-      "slug": "wonderland-jar",
-      "categories": [
-        "adventure",
-        "cursed",
-        "forge",
-        "mobs",
-        "worldgen"
-      ],
-      "current_downloads": 1938,
-      "baseline_downloads": 752909,
-      "delta_downloads": -750971,
-      "downloads_per_hour": -187378.4,
-      "growth_pct": -99.74
-    },
-    {
-      "project_id": "i1qCgAFw",
-      "title": "No Chat Autofocus When Sleeping",
-      "slug": "nochatautofocus",
+      "project_id": "Sm49Ap6h",
+      "title": "KissMe!",
+      "slug": "kissme",
       "categories": [
         "fabric",
         "game-mechanics",
-        "management",
         "neoforge",
+        "social",
         "utility"
       ],
-      "current_downloads": 54,
-      "baseline_downloads": 117,
-      "delta_downloads": -63,
-      "downloads_per_hour": -15.72,
-      "growth_pct": -53.85
+      "current_downloads": 28,
+      "baseline_downloads": 92,
+      "delta_downloads": -64,
+      "downloads_per_hour": -17.29,
+      "growth_pct": -69.57
     },
     {
-      "project_id": "ou65sqcG",
-      "title": "-Empty Hand-",
-      "slug": "-empty-hand-",
+      "project_id": "2hhxCwai",
+      "title": "LT-Rynek",
+      "slug": "lt-rynek",
       "categories": [
-        "adventure",
+        "economy",
         "fabric",
-        "management"
+        "game-mechanics",
+        "utility"
       ],
-      "current_downloads": 5,
-      "baseline_downloads": 53,
-      "delta_downloads": -48,
-      "downloads_per_hour": -11.98,
-      "growth_pct": -90.57
-    },
-    {
-      "project_id": "2ozgLjHn",
-      "title": "MindOfTheColony",
-      "slug": "mindofthecolony",
-      "categories": [
-        "adventure",
-        "forge",
-        "library",
-        "neoforge",
-        "social"
-      ],
-      "current_downloads": 809,
-      "baseline_downloads": 810,
-      "delta_downloads": -1,
-      "downloads_per_hour": -0.25,
-      "growth_pct": -0.12
+      "current_downloads": 61202,
+      "baseline_downloads": 61254,
+      "delta_downloads": -52,
+      "downloads_per_hour": -14.04,
+      "growth_pct": -0.08
     }
   ],
   "top_version_loaders": [
     {
       "game_version": "1.20.1",
       "loader": "forge",
-      "delta_downloads": 2473609,
-      "downloads_per_hour": 617202.13,
-      "project_count": 16760,
+      "delta_downloads": 1941992,
+      "downloads_per_hour": 524508.31,
+      "project_count": 16373,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.20.1",
       "loader": "fabric",
-      "delta_downloads": 1522836,
-      "downloads_per_hour": 379970.17,
-      "project_count": 10723,
+      "delta_downloads": 1269898,
+      "downloads_per_hour": 342983.93,
+      "project_count": 10659,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.21.1",
       "loader": "fabric",
-      "delta_downloads": 1110837,
-      "downloads_per_hour": 277170.31,
-      "project_count": 10078,
+      "delta_downloads": 960399,
+      "downloads_per_hour": 259392.03,
+      "project_count": 10133,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.21.1",
       "loader": "neoforge",
-      "delta_downloads": 835641,
-      "downloads_per_hour": 208504.82,
-      "project_count": 12747,
+      "delta_downloads": 764300,
+      "downloads_per_hour": 206428.09,
+      "project_count": 12827,
       "top_project_id": "oWaK0Q19",
       "top_project_title": "Create Aeronautics",
-      "top_project_delta": 11420
+      "top_project_delta": 9874
     },
     {
       "game_version": "26.2",
       "loader": "fabric",
-      "delta_downloads": 820969,
-      "downloads_per_hour": 204843.94,
-      "project_count": 4680,
+      "delta_downloads": 711194,
+      "downloads_per_hour": 192084.81,
+      "project_count": 4508,
       "top_project_id": "P7dR8mSH",
       "top_project_title": "Fabric API",
-      "top_project_delta": 46875
+      "top_project_delta": 33661
+    },
+    {
+      "game_version": "1.20",
+      "loader": "fabric",
+      "delta_downloads": 644882,
+      "downloads_per_hour": 174174.75,
+      "project_count": 4535,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.20.1",
       "loader": "neoforge",
-      "delta_downloads": 789399,
-      "downloads_per_hour": 196966.76,
-      "project_count": 4971,
+      "delta_downloads": 612675,
+      "downloads_per_hour": 165476.03,
+      "project_count": 4789,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
-    },
-    {
-      "game_version": "1.20",
-      "loader": "fabric",
-      "delta_downloads": 787048,
-      "downloads_per_hour": 196380.15,
-      "project_count": 4496,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.20",
-      "loader": "forge",
-      "delta_downloads": 756363,
-      "downloads_per_hour": 188723.79,
-      "project_count": 3393,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.21.11",
       "loader": "fabric",
-      "delta_downloads": 699516,
-      "downloads_per_hour": 174539.62,
-      "project_count": 6990,
+      "delta_downloads": 609769,
+      "downloads_per_hour": 164691.15,
+      "project_count": 6787,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20",
+      "loader": "forge",
+      "delta_downloads": 586806,
+      "downloads_per_hour": 158489.13,
+      "project_count": 3355,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.21",
       "loader": "fabric",
-      "delta_downloads": 629094,
-      "downloads_per_hour": 156968.28,
-      "project_count": 6359,
+      "delta_downloads": 545246,
+      "downloads_per_hour": 147264.28,
+      "project_count": 6422,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.20.1",
       "loader": "quilt",
-      "delta_downloads": 524256,
-      "downloads_per_hour": 130809.65,
-      "project_count": 3904,
-      "top_project_id": "YL57xq9U",
-      "top_project_title": "Iris Shaders",
-      "top_project_delta": 10662
+      "delta_downloads": 433919,
+      "downloads_per_hour": 117196.22,
+      "project_count": 3839,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "26.1.2",
       "loader": "fabric",
-      "delta_downloads": 420921,
-      "downloads_per_hour": 105026.03,
-      "project_count": 4535,
+      "delta_downloads": 372690,
+      "downloads_per_hour": 100659.01,
+      "project_count": 4412,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "fabric",
-      "delta_downloads": 416123,
-      "downloads_per_hour": 103828.86,
-      "project_count": 2968,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "26.1",
       "loader": "fabric",
-      "delta_downloads": 386737,
-      "downloads_per_hour": 96496.62,
-      "project_count": 3804,
+      "delta_downloads": 339030,
+      "downloads_per_hour": 91567.86,
+      "project_count": 3733,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
-      "game_version": "1.20.4",
+      "game_version": "1.20.2",
       "loader": "fabric",
-      "delta_downloads": 379472,
-      "downloads_per_hour": 94683.89,
-      "project_count": 3399,
+      "delta_downloads": 336502,
+      "downloads_per_hour": 90885.08,
+      "project_count": 2937,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "26.1.1",
       "loader": "fabric",
-      "delta_downloads": 379253,
-      "downloads_per_hour": 94629.25,
-      "project_count": 3728,
+      "delta_downloads": 334246,
+      "downloads_per_hour": 90275.76,
+      "project_count": 3625,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "fabric",
+      "delta_downloads": 309843,
+      "downloads_per_hour": 83684.81,
+      "project_count": 3383,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.20.3",
       "loader": "fabric",
-      "delta_downloads": 361424,
-      "downloads_per_hour": 90180.65,
-      "project_count": 2679,
+      "delta_downloads": 294785,
+      "downloads_per_hour": 79617.83,
+      "project_count": 2673,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.20",
-      "loader": "quilt",
-      "delta_downloads": 323564,
-      "downloads_per_hour": 80734.02,
-      "project_count": 2305,
-      "top_project_id": "ccKDOlHs",
-      "top_project_title": "oωo (owo-lib)",
-      "top_project_delta": 9972
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.21.4",
       "loader": "fabric",
-      "delta_downloads": 319424,
-      "downloads_per_hour": 79701.03,
-      "project_count": 4229,
+      "delta_downloads": 281432,
+      "downloads_per_hour": 76011.34,
+      "project_count": 4162,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "forge",
-      "delta_downloads": 308104,
-      "downloads_per_hour": 76876.52,
-      "project_count": 2248,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.21",
       "loader": "neoforge",
-      "delta_downloads": 307939,
-      "downloads_per_hour": 76835.35,
-      "project_count": 4080,
+      "delta_downloads": 272956,
+      "downloads_per_hour": 73722.08,
+      "project_count": 4087,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.21.1",
       "loader": "quilt",
-      "delta_downloads": 306005,
-      "downloads_per_hour": 76352.79,
-      "project_count": 3226,
+      "delta_downloads": 271141,
+      "downloads_per_hour": 73231.87,
+      "project_count": 3258,
       "top_project_id": "YL57xq9U",
       "top_project_title": "Iris Shaders",
-      "top_project_delta": 10756
+      "top_project_delta": 6974
     },
     {
-      "game_version": "1.20.4",
+      "game_version": "1.20",
+      "loader": "quilt",
+      "delta_downloads": 267239,
+      "downloads_per_hour": 72177.99,
+      "project_count": 2301,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.20.2",
       "loader": "forge",
-      "delta_downloads": 286100,
-      "downloads_per_hour": 71386.19,
-      "project_count": 2089,
+      "delta_downloads": 244364,
+      "downloads_per_hour": 65999.73,
+      "project_count": 2200,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.21.10",
       "loader": "fabric",
-      "delta_downloads": 284555,
-      "downloads_per_hour": 71000.69,
-      "project_count": 3958,
+      "delta_downloads": 243168,
+      "downloads_per_hour": 65676.7,
+      "project_count": 3871,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "fabric",
-      "delta_downloads": 279402,
-      "downloads_per_hour": 69714.94,
-      "project_count": 2915,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "forge",
-      "delta_downloads": 276061,
-      "downloads_per_hour": 68881.31,
-      "project_count": 1927,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.21.3",
       "loader": "fabric",
-      "delta_downloads": 272119,
-      "downloads_per_hour": 67897.73,
-      "project_count": 3038,
+      "delta_downloads": 239927,
+      "downloads_per_hour": 64801.35,
+      "project_count": 3043,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "fabric",
+      "delta_downloads": 231052,
+      "downloads_per_hour": 62404.32,
+      "project_count": 2871,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "forge",
+      "delta_downloads": 225790,
+      "downloads_per_hour": 60983.12,
+      "project_count": 2044,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.20.6",
       "loader": "fabric",
-      "delta_downloads": 271756,
-      "downloads_per_hour": 67807.15,
-      "project_count": 2084,
+      "delta_downloads": 222940,
+      "downloads_per_hour": 60213.37,
+      "project_count": 2102,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
-      "game_version": "1.20",
-      "loader": "neoforge",
-      "delta_downloads": 268418,
-      "downloads_per_hour": 66974.27,
-      "project_count": 1449,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "fabric",
-      "delta_downloads": 267890,
-      "downloads_per_hour": 66842.53,
-      "project_count": 1911,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "fabric",
-      "delta_downloads": 255923,
-      "downloads_per_hour": 63856.58,
-      "project_count": 3867,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "game_version": "1.21",
+      "loader": "quilt",
+      "delta_downloads": 222033,
+      "downloads_per_hour": 59968.4,
+      "project_count": 2792,
+      "top_project_id": "YL57xq9U",
+      "top_project_title": "Iris Shaders",
+      "top_project_delta": 6974
     },
     {
       "game_version": "1.21.5",
       "loader": "fabric",
-      "delta_downloads": 252786,
-      "downloads_per_hour": 63073.86,
-      "project_count": 3482,
+      "delta_downloads": 221010,
+      "downloads_per_hour": 59692.1,
+      "project_count": 3449,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "fabric",
+      "delta_downloads": 219995,
+      "downloads_per_hour": 59417.96,
+      "project_count": 1951,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "fabric",
+      "delta_downloads": 219784,
+      "downloads_per_hour": 59360.97,
+      "project_count": 3729,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "forge",
+      "delta_downloads": 217443,
+      "downloads_per_hour": 58728.7,
+      "project_count": 1880,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.21.9",
       "loader": "fabric",
-      "delta_downloads": 252077,
-      "downloads_per_hour": 62896.95,
-      "project_count": 3348,
+      "delta_downloads": 216219,
+      "downloads_per_hour": 58398.11,
+      "project_count": 3271,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.21",
-      "loader": "quilt",
-      "delta_downloads": 251203,
-      "downloads_per_hour": 62678.87,
-      "project_count": 2755,
-      "top_project_id": "YL57xq9U",
-      "top_project_title": "Iris Shaders",
-      "top_project_delta": 10756
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "fabric",
-      "delta_downloads": 246278,
-      "downloads_per_hour": 61450.01,
-      "project_count": 3310,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "fabric",
-      "delta_downloads": 245457,
-      "downloads_per_hour": 61245.16,
-      "project_count": 3358,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "26.2",
       "loader": "quilt",
-      "delta_downloads": 231341,
-      "downloads_per_hour": 57723.01,
-      "project_count": 1516,
+      "delta_downloads": 210885,
+      "downloads_per_hour": 56957.46,
+      "project_count": 1483,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 23148
+      "top_project_delta": 20233
     },
     {
-      "game_version": "1.19.2",
+      "game_version": "1.21.6",
       "loader": "fabric",
-      "delta_downloads": 221940,
-      "downloads_per_hour": 55377.32,
-      "project_count": 2848,
+      "delta_downloads": 210302,
+      "downloads_per_hour": 56800.0,
+      "project_count": 3225,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "fabric",
+      "delta_downloads": 209859,
+      "downloads_per_hour": 56680.35,
+      "project_count": 3256,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20",
+      "loader": "neoforge",
+      "delta_downloads": 207496,
+      "downloads_per_hour": 56042.13,
+      "project_count": 1410,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.21.11",
       "loader": "quilt",
-      "delta_downloads": 219046,
-      "downloads_per_hour": 54655.23,
-      "project_count": 2308,
+      "delta_downloads": 197649,
+      "downloads_per_hour": 53382.58,
+      "project_count": 2201,
       "top_project_id": "eXts2L7r",
       "top_project_title": "Text Placeholder API",
-      "top_project_delta": 18507
+      "top_project_delta": 14543
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "fabric",
+      "delta_downloads": 186276,
+      "downloads_per_hour": 50310.87,
+      "project_count": 2853,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.19.4",
       "loader": "fabric",
-      "delta_downloads": 217368,
-      "downloads_per_hour": 54236.54,
-      "project_count": 1706,
+      "delta_downloads": 175392,
+      "downloads_per_hour": 47371.24,
+      "project_count": 1728,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "quilt",
+      "delta_downloads": 165682,
+      "downloads_per_hour": 44748.68,
+      "project_count": 1515,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.19.3",
       "loader": "fabric",
-      "delta_downloads": 203000,
-      "downloads_per_hour": 50651.51,
-      "project_count": 1435,
+      "delta_downloads": 158827,
+      "downloads_per_hour": 42897.23,
+      "project_count": 1395,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.19.1",
       "loader": "fabric",
-      "delta_downloads": 198213,
-      "downloads_per_hour": 49457.08,
-      "project_count": 1684,
+      "delta_downloads": 154803,
+      "downloads_per_hour": 41810.4,
+      "project_count": 1701,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.19",
       "loader": "fabric",
-      "delta_downloads": 195664,
-      "downloads_per_hour": 48821.07,
-      "project_count": 1656,
+      "delta_downloads": 152666,
+      "downloads_per_hour": 41233.22,
+      "project_count": 1663,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "quilt",
-      "delta_downloads": 194266,
-      "downloads_per_hour": 48472.25,
-      "project_count": 1540,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.20.4",
       "loader": "quilt",
-      "delta_downloads": 163954,
-      "downloads_per_hour": 40908.95,
-      "project_count": 1599,
+      "delta_downloads": 140594,
+      "downloads_per_hour": 37972.72,
+      "project_count": 1575,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.20.3",
       "loader": "quilt",
-      "delta_downloads": 163480,
-      "downloads_per_hour": 40790.68,
-      "project_count": 1421,
+      "delta_downloads": 140188,
+      "downloads_per_hour": 37863.07,
+      "project_count": 1406,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.18.2",
       "loader": "fabric",
-      "delta_downloads": 162813,
-      "downloads_per_hour": 40624.26,
-      "project_count": 1450,
+      "delta_downloads": 130136,
+      "downloads_per_hour": 35148.14,
+      "project_count": 1558,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "neoforge",
-      "delta_downloads": 153073,
-      "downloads_per_hour": 38193.98,
-      "project_count": 993,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "fabric",
-      "delta_downloads": 149716,
-      "downloads_per_hour": 37356.36,
-      "project_count": 873,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.19.2",
       "loader": "forge",
-      "delta_downloads": 149157,
-      "downloads_per_hour": 37216.88,
-      "project_count": 2925,
+      "delta_downloads": 123651,
+      "downloads_per_hour": 33396.62,
+      "project_count": 2781,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.18",
-      "loader": "fabric",
-      "delta_downloads": 148555,
-      "downloads_per_hour": 37066.68,
-      "project_count": 847,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.20.6",
       "loader": "forge",
-      "delta_downloads": 148519,
-      "downloads_per_hour": 37057.69,
-      "project_count": 1500,
+      "delta_downloads": 123628,
+      "downloads_per_hour": 33390.41,
+      "project_count": 1460,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "neoforge",
+      "delta_downloads": 120448,
+      "downloads_per_hour": 32531.53,
+      "project_count": 969,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.20.4",
       "loader": "neoforge",
-      "delta_downloads": 148410,
-      "downloads_per_hour": 37030.5,
-      "project_count": 1083,
+      "delta_downloads": 116647,
+      "downloads_per_hour": 31504.93,
+      "project_count": 1086,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.20.3",
       "loader": "neoforge",
-      "delta_downloads": 147707,
-      "downloads_per_hour": 36855.09,
-      "project_count": 903,
+      "delta_downloads": 116037,
+      "downloads_per_hour": 31340.18,
+      "project_count": 876,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 16160
     },
     {
-      "game_version": "1.17.1",
+      "game_version": "1.18.1",
       "loader": "fabric",
-      "delta_downloads": 136387,
-      "downloads_per_hour": 34030.58,
-      "project_count": 755,
+      "delta_downloads": 114758,
+      "downloads_per_hour": 30994.73,
+      "project_count": 921,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
-      "game_version": "1.19.4",
-      "loader": "forge",
-      "delta_downloads": 133542,
-      "downloads_per_hour": 33320.71,
-      "project_count": 1235,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "game_version": "1.18",
+      "loader": "fabric",
+      "delta_downloads": 113638,
+      "downloads_per_hour": 30692.23,
+      "project_count": 889,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "quilt",
+      "delta_downloads": 113584,
+      "downloads_per_hour": 30677.65,
+      "project_count": 1766,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.20.5",
       "loader": "forge",
-      "delta_downloads": 132487,
-      "downloads_per_hour": 33057.47,
-      "project_count": 1445,
+      "delta_downloads": 113430,
+      "downloads_per_hour": 30636.06,
+      "project_count": 1401,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.17",
-      "loader": "fabric",
-      "delta_downloads": 129937,
-      "downloads_per_hour": 32421.21,
-      "project_count": 653,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "forge",
-      "delta_downloads": 129415,
-      "downloads_per_hour": 32290.96,
-      "project_count": 1029,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "fabric",
-      "delta_downloads": 127439,
-      "downloads_per_hour": 31797.92,
-      "project_count": 871,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "quilt",
-      "delta_downloads": 127015,
-      "downloads_per_hour": 31692.13,
-      "project_count": 1780,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "neoforge",
-      "delta_downloads": 124034,
-      "downloads_per_hour": 30948.32,
-      "project_count": 1852,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.21.10",
       "loader": "quilt",
-      "delta_downloads": 123906,
-      "downloads_per_hour": 30916.38,
-      "project_count": 1745,
+      "delta_downloads": 111581,
+      "downloads_per_hour": 30136.66,
+      "project_count": 1671,
       "top_project_id": "eXts2L7r",
       "top_project_title": "Text Placeholder API",
-      "top_project_delta": 18507
+      "top_project_delta": 14543
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "quilt",
+      "delta_downloads": 108914,
+      "downloads_per_hour": 29416.34,
+      "project_count": 1506,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 6782
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "neoforge",
+      "delta_downloads": 108486,
+      "downloads_per_hour": 29300.74,
+      "project_count": 1828,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 5914
+    },
+    {
+      "game_version": "26.1",
+      "loader": "quilt",
+      "delta_downloads": 107634,
+      "downloads_per_hour": 29070.63,
+      "project_count": 1440,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 6782
     },
     {
       "game_version": "1.21.4",
       "loader": "neoforge",
-      "delta_downloads": 122808,
-      "downloads_per_hour": 30642.42,
-      "project_count": 2168,
+      "delta_downloads": 106388,
+      "downloads_per_hour": 28734.1,
+      "project_count": 2144,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.20.6",
       "loader": "quilt",
-      "delta_downloads": 119604,
-      "downloads_per_hour": 29842.97,
-      "project_count": 1079,
+      "delta_downloads": 106033,
+      "downloads_per_hour": 28638.22,
+      "project_count": 1071,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "forge",
-      "delta_downloads": 119558,
-      "downloads_per_hour": 29831.49,
-      "project_count": 2241,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.21.2",
       "loader": "quilt",
-      "delta_downloads": 118643,
-      "downloads_per_hour": 29603.19,
-      "project_count": 1445,
+      "delta_downloads": 105377,
+      "downloads_per_hour": 28461.04,
+      "project_count": 1421,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "quilt",
+      "delta_downloads": 104355,
+      "downloads_per_hour": 28185.01,
+      "project_count": 1380,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 6782
     },
     {
       "game_version": "1.21.3",
       "loader": "neoforge",
-      "delta_downloads": 118554,
-      "downloads_per_hour": 29580.98,
-      "project_count": 1887,
+      "delta_downloads": 103985,
+      "downloads_per_hour": 28085.08,
+      "project_count": 1879,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 5914
+    },
+    {
+      "game_version": "1.17.1",
+      "loader": "fabric",
+      "delta_downloads": 103936,
+      "downloads_per_hour": 28071.84,
+      "project_count": 969,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "quilt",
+      "delta_downloads": 103908,
+      "downloads_per_hour": 28064.28,
+      "project_count": 1483,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "quilt",
+      "delta_downloads": 103647,
+      "downloads_per_hour": 27993.79,
+      "project_count": 1038,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "forge",
+      "delta_downloads": 102899,
+      "downloads_per_hour": 27791.76,
+      "project_count": 1164,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "forge",
+      "delta_downloads": 101808,
+      "downloads_per_hour": 27497.1,
+      "project_count": 2187,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 5914
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "forge",
+      "delta_downloads": 99141,
+      "downloads_per_hour": 26776.77,
+      "project_count": 962,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "quilt",
+      "delta_downloads": 98762,
+      "downloads_per_hour": 26674.41,
+      "project_count": 1585,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "quilt",
+      "delta_downloads": 98406,
+      "downloads_per_hour": 26578.26,
+      "project_count": 1634,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.17",
+      "loader": "fabric",
+      "delta_downloads": 98278,
+      "downloads_per_hour": 26543.69,
+      "project_count": 750,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "neoforge",
+      "delta_downloads": 96415,
+      "downloads_per_hour": 26040.51,
+      "project_count": 964,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.21",
+      "loader": "forge",
+      "delta_downloads": 95920,
+      "downloads_per_hour": 25906.82,
+      "project_count": 1881,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 5914
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "quilt",
+      "delta_downloads": 95861,
+      "downloads_per_hour": 25890.88,
+      "project_count": 1563,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.16.5",
+      "loader": "fabric",
+      "delta_downloads": 95649,
+      "downloads_per_hour": 25833.63,
+      "project_count": 845,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "quilt",
+      "delta_downloads": 95608,
+      "downloads_per_hour": 25822.55,
+      "project_count": 1558,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "quilt",
+      "delta_downloads": 95580,
+      "downloads_per_hour": 25814.99,
+      "project_count": 1565,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "neoforge",
+      "delta_downloads": 92282,
+      "downloads_per_hour": 24924.24,
+      "project_count": 1827,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.16.4",
       "loader": "fabric",
-      "delta_downloads": 117537,
-      "downloads_per_hour": 29327.22,
-      "project_count": 585,
+      "delta_downloads": 87891,
+      "downloads_per_hour": 23738.28,
+      "project_count": 573,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.16.3",
       "loader": "fabric",
-      "delta_downloads": 116901,
-      "downloads_per_hour": 29168.53,
-      "project_count": 533,
+      "delta_downloads": 87336,
+      "downloads_per_hour": 23588.39,
+      "project_count": 526,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.16.1",
       "loader": "fabric",
-      "delta_downloads": 116822,
-      "downloads_per_hour": 29148.82,
-      "project_count": 500,
+      "delta_downloads": 86996,
+      "downloads_per_hour": 23496.56,
+      "project_count": 497,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "quilt",
-      "delta_downloads": 116571,
-      "downloads_per_hour": 29086.19,
-      "project_count": 1554,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 7107
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "quilt",
-      "delta_downloads": 116499,
-      "downloads_per_hour": 29068.23,
-      "project_count": 1038,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "quilt",
-      "delta_downloads": 116212,
-      "downloads_per_hour": 28996.62,
-      "project_count": 1478,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.16.2",
       "loader": "fabric",
-      "delta_downloads": 116107,
-      "downloads_per_hour": 28970.42,
-      "project_count": 522,
+      "delta_downloads": 86819,
+      "downloads_per_hour": 23448.75,
+      "project_count": 519,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
-      "game_version": "26.1",
+      "game_version": "1.19.2",
       "loader": "quilt",
-      "delta_downloads": 115926,
-      "downloads_per_hour": 28925.26,
-      "project_count": 1477,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 7107
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "neoforge",
-      "delta_downloads": 115100,
-      "downloads_per_hour": 28719.16,
-      "project_count": 977,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "delta_downloads": 85421,
+      "downloads_per_hour": 23071.17,
+      "project_count": 1446,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.15.2",
       "loader": "fabric",
-      "delta_downloads": 113876,
-      "downloads_per_hour": 28413.75,
-      "project_count": 381,
+      "delta_downloads": 84744,
+      "downloads_per_hour": 22888.32,
+      "project_count": 364,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.16",
       "loader": "fabric",
-      "delta_downloads": 113648,
-      "downloads_per_hour": 28356.86,
-      "project_count": 467,
+      "delta_downloads": 84577,
+      "downloads_per_hour": 22843.21,
+      "project_count": 457,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.14.4",
       "loader": "fabric",
-      "delta_downloads": 113406,
-      "downloads_per_hour": 28296.48,
-      "project_count": 344,
+      "delta_downloads": 84426,
+      "downloads_per_hour": 22802.43,
+      "project_count": 336,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
-      "game_version": "1.21",
-      "loader": "forge",
-      "delta_downloads": 112565,
-      "downloads_per_hour": 28086.64,
-      "project_count": 1939,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
-    },
-    {
-      "game_version": "26.1.1",
+      "game_version": "1.19.4",
       "loader": "quilt",
-      "delta_downloads": 111901,
-      "downloads_per_hour": 27920.96,
-      "project_count": 1433,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 7107
+      "delta_downloads": 82902,
+      "downloads_per_hour": 22390.82,
+      "project_count": 1028,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.15",
       "loader": "fabric",
-      "delta_downloads": 111565,
-      "downloads_per_hour": 27837.12,
-      "project_count": 347,
+      "delta_downloads": 82808,
+      "downloads_per_hour": 22365.43,
+      "project_count": 334,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.15.1",
       "loader": "fabric",
-      "delta_downloads": 111560,
-      "downloads_per_hour": 27835.87,
-      "project_count": 348,
+      "delta_downloads": 82803,
+      "downloads_per_hour": 22364.08,
+      "project_count": 333,
       "top_project_id": "Ha28R6CL",
       "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.14",
-      "loader": "fabric",
-      "delta_downloads": 110780,
-      "downloads_per_hour": 27641.25,
-      "project_count": 287,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.14.2",
-      "loader": "fabric",
-      "delta_downloads": 110756,
-      "downloads_per_hour": 27635.26,
-      "project_count": 287,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.14.1",
-      "loader": "fabric",
-      "delta_downloads": 110744,
-      "downloads_per_hour": 27632.27,
-      "project_count": 285,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.14.3",
-      "loader": "fabric",
-      "delta_downloads": 110739,
-      "downloads_per_hour": 27631.02,
-      "project_count": 288,
-      "top_project_id": "Ha28R6CL",
-      "top_project_title": "Fabric Language Kotlin",
-      "top_project_delta": 44143
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "quilt",
-      "delta_downloads": 108810,
-      "downloads_per_hour": 27149.71,
-      "project_count": 1589,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "quilt",
-      "delta_downloads": 107048,
-      "downloads_per_hour": 26710.06,
-      "project_count": 1712,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "neoforge",
-      "delta_downloads": 105246,
-      "downloads_per_hour": 26260.44,
-      "project_count": 1830,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "quilt",
-      "delta_downloads": 104508,
-      "downloads_per_hour": 26076.3,
-      "project_count": 1625,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "quilt",
-      "delta_downloads": 104081,
-      "downloads_per_hour": 25969.75,
-      "project_count": 1632,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "quilt",
-      "delta_downloads": 103714,
-      "downloads_per_hour": 25878.18,
-      "project_count": 1640,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "quilt",
-      "delta_downloads": 100519,
-      "downloads_per_hour": 25080.98,
-      "project_count": 1413,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "quilt",
-      "delta_downloads": 98078,
-      "downloads_per_hour": 24471.92,
-      "project_count": 1015,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "forge",
-      "delta_downloads": 96836,
-      "downloads_per_hour": 24162.02,
-      "project_count": 1259,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "forge",
-      "delta_downloads": 96086,
-      "downloads_per_hour": 23974.88,
-      "project_count": 1224,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "forge",
-      "delta_downloads": 95591,
-      "downloads_per_hour": 23851.37,
-      "project_count": 1335,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.20.5",
       "loader": "neoforge",
-      "delta_downloads": 95394,
-      "downloads_per_hour": 23802.22,
-      "project_count": 876,
+      "delta_downloads": 82529,
+      "downloads_per_hour": 22290.07,
+      "project_count": 853,
       "top_project_id": "h2jngREY",
       "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "top_project_delta": 7648
     },
     {
-      "game_version": "1.19.1",
-      "loader": "forge",
-      "delta_downloads": 92761,
-      "downloads_per_hour": 23145.25,
-      "project_count": 1141,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "game_version": "1.14",
+      "loader": "fabric",
+      "delta_downloads": 82228,
+      "downloads_per_hour": 22208.78,
+      "project_count": 282,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.14.2",
+      "loader": "fabric",
+      "delta_downloads": 82210,
+      "downloads_per_hour": 22203.92,
+      "project_count": 282,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.14.1",
+      "loader": "fabric",
+      "delta_downloads": 82201,
+      "downloads_per_hour": 22201.49,
+      "project_count": 280,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
+    },
+    {
+      "game_version": "1.14.3",
+      "loader": "fabric",
+      "delta_downloads": 82197,
+      "downloads_per_hour": 22200.41,
+      "project_count": 283,
+      "top_project_id": "Ha28R6CL",
+      "top_project_title": "Fabric Language Kotlin",
+      "top_project_delta": 33475
     },
     {
       "game_version": "1.21.8",
       "loader": "neoforge",
-      "delta_downloads": 92280,
-      "downloads_per_hour": 23025.23,
-      "project_count": 1910,
+      "delta_downloads": 81358,
+      "downloads_per_hour": 21973.8,
+      "project_count": 1853,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 5914
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "forge",
+      "delta_downloads": 81331,
+      "downloads_per_hour": 21966.51,
+      "project_count": 1220,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 5914
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "forge",
+      "delta_downloads": 80861,
+      "downloads_per_hour": 21839.57,
+      "project_count": 1172,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 5914
     },
     {
       "game_version": "26.2",
       "loader": "neoforge",
-      "delta_downloads": 91385,
-      "downloads_per_hour": 22801.91,
-      "project_count": 1977,
-      "top_project_id": "ETlrkaYF",
-      "top_project_title": "Cubes Without Borders",
-      "top_project_delta": 6212
+      "delta_downloads": 80586,
+      "downloads_per_hour": 21765.29,
+      "project_count": 1944,
+      "top_project_id": "ZP7xHXtw",
+      "top_project_title": "Remove Reloading Screen",
+      "top_project_delta": 5014
     },
     {
-      "game_version": "1.19.1",
-      "loader": "quilt",
-      "delta_downloads": 91297,
-      "downloads_per_hour": 22779.96,
-      "project_count": 998,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "game_version": "1.21.4",
+      "loader": "forge",
+      "delta_downloads": 80488,
+      "downloads_per_hour": 21738.83,
+      "project_count": 1305,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.21.6",
       "loader": "neoforge",
-      "delta_downloads": 91094,
-      "downloads_per_hour": 22729.3,
-      "project_count": 1722,
+      "delta_downloads": 80432,
+      "downloads_per_hour": 21723.7,
+      "project_count": 1695,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.21.7",
       "loader": "neoforge",
-      "delta_downloads": 90408,
-      "downloads_per_hour": 22558.14,
-      "project_count": 1723,
+      "delta_downloads": 79992,
+      "downloads_per_hour": 21604.86,
+      "project_count": 1698,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "quilt",
-      "delta_downloads": 90268,
-      "downloads_per_hour": 22523.2,
-      "project_count": 874,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.19",
-      "loader": "forge",
-      "delta_downloads": 90057,
-      "downloads_per_hour": 22470.56,
-      "project_count": 1065,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.19",
-      "loader": "quilt",
-      "delta_downloads": 89418,
-      "downloads_per_hour": 22311.12,
-      "project_count": 954,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "neoforge",
-      "delta_downloads": 88958,
-      "downloads_per_hour": 22196.34,
-      "project_count": 568,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.21.11",
       "loader": "neoforge",
-      "delta_downloads": 87304,
-      "downloads_per_hour": 21783.64,
-      "project_count": 2424,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 4028
+      "delta_downloads": 77901,
+      "downloads_per_hour": 21040.11,
+      "project_count": 2336,
+      "top_project_id": "2ecVyZ49",
+      "top_project_title": "Ksyxis",
+      "top_project_delta": 3203
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "quilt",
+      "delta_downloads": 77336,
+      "downloads_per_hour": 20887.51,
+      "project_count": 1019,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "forge",
+      "delta_downloads": 76854,
+      "downloads_per_hour": 20757.33,
+      "project_count": 1114,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.19.3",
-      "loader": "neoforge",
-      "delta_downloads": 86018,
-      "downloads_per_hour": 21462.77,
-      "project_count": 494,
-      "top_project_id": "ordsPcFz",
-      "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 28964
+      "loader": "quilt",
+      "delta_downloads": 76813,
+      "downloads_per_hour": 20746.25,
+      "project_count": 876,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.19",
+      "loader": "quilt",
+      "delta_downloads": 75743,
+      "downloads_per_hour": 20457.26,
+      "project_count": 970,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "forge",
+      "delta_downloads": 75421,
+      "downloads_per_hour": 20370.29,
+      "project_count": 1811,
+      "top_project_id": "5CTSrY8X",
+      "top_project_title": "GPUBooster",
+      "top_project_delta": 3664
+    },
+    {
+      "game_version": "1.19",
+      "loader": "forge",
+      "delta_downloads": 74541,
+      "downloads_per_hour": 20132.61,
+      "project_count": 1034,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.21.5",
       "loader": "forge",
-      "delta_downloads": 84153,
-      "downloads_per_hour": 20997.42,
+      "delta_downloads": 70655,
+      "downloads_per_hour": 19083.05,
       "project_count": 1247,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "forge",
-      "delta_downloads": 80360,
-      "downloads_per_hour": 20051.01,
-      "project_count": 1724,
-      "top_project_id": "c7m1mi73",
-      "top_project_title": "Packet Fixer",
-      "top_project_delta": 5572
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.21.10",
       "loader": "neoforge",
-      "delta_downloads": 75730,
-      "downloads_per_hour": 18895.76,
-      "project_count": 1859,
+      "delta_downloads": 68027,
+      "downloads_per_hour": 18373.26,
+      "project_count": 1808,
       "top_project_id": "c7m1mi73",
       "top_project_title": "Packet Fixer",
-      "top_project_delta": 4480
+      "top_project_delta": 3711
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "neoforge",
+      "delta_downloads": 66404,
+      "downloads_per_hour": 17934.91,
+      "project_count": 553,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
     },
     {
       "game_version": "1.21.9",
       "loader": "neoforge",
-      "delta_downloads": 73135,
-      "downloads_per_hour": 18248.27,
-      "project_count": 1711,
+      "delta_downloads": 66212,
+      "downloads_per_hour": 17883.05,
+      "project_count": 1675,
       "top_project_id": "c7m1mi73",
       "top_project_title": "Packet Fixer",
-      "top_project_delta": 4480
+      "top_project_delta": 3711
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "neoforge",
+      "delta_downloads": 63927,
+      "downloads_per_hour": 17265.9,
+      "project_count": 478,
+      "top_project_id": "ordsPcFz",
+      "top_project_title": "Kotlin for Forge",
+      "top_project_delta": 16160
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "neoforge",
+      "delta_downloads": 62406,
+      "downloads_per_hour": 16855.1,
+      "project_count": 2024,
+      "top_project_id": "2ecVyZ49",
+      "top_project_title": "Ksyxis",
+      "top_project_delta": 3203
     },
     {
       "game_version": "1.21.8",
       "loader": "forge",
-      "delta_downloads": 70366,
-      "downloads_per_hour": 17557.36,
-      "project_count": 1249,
+      "delta_downloads": 60355,
+      "downloads_per_hour": 16301.15,
+      "project_count": 1236,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.21.6",
       "loader": "forge",
-      "delta_downloads": 69955,
-      "downloads_per_hour": 17454.81,
-      "project_count": 1223,
+      "delta_downloads": 59876,
+      "downloads_per_hour": 16171.78,
+      "project_count": 1213,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
+      "top_project_delta": 5914
     },
     {
       "game_version": "1.21.7",
       "loader": "forge",
-      "delta_downloads": 69275,
-      "downloads_per_hour": 17285.14,
-      "project_count": 1216,
+      "delta_downloads": 59461,
+      "downloads_per_hour": 16059.69,
+      "project_count": 1200,
       "top_project_id": "ordsPcFz",
       "top_project_title": "Kotlin for Forge",
-      "top_project_delta": 10077
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "neoforge",
-      "delta_downloads": 67358,
-      "downloads_per_hour": 16806.82,
-      "project_count": 2048,
-      "top_project_id": "2ecVyZ49",
-      "top_project_title": "Ksyxis",
-      "top_project_delta": 3651
+      "top_project_delta": 5914
     },
     {
       "game_version": "26.1",
       "loader": "neoforge",
-      "delta_downloads": 62919,
-      "downloads_per_hour": 15699.22,
-      "project_count": 1681,
+      "delta_downloads": 57813,
+      "downloads_per_hour": 15614.58,
+      "project_count": 1633,
       "top_project_id": "2ecVyZ49",
       "top_project_title": "Ksyxis",
-      "top_project_delta": 3651
+      "top_project_delta": 3203
     },
     {
       "game_version": "1.21.11",
       "loader": "forge",
-      "delta_downloads": 62399,
-      "downloads_per_hour": 15569.48,
-      "project_count": 1676,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 4028
+      "delta_downloads": 56063,
+      "downloads_per_hour": 15141.93,
+      "project_count": 1589,
+      "top_project_id": "2ecVyZ49",
+      "top_project_title": "Ksyxis",
+      "top_project_delta": 3203
     },
     {
       "game_version": "26.1.1",
       "loader": "neoforge",
-      "delta_downloads": 59146,
-      "downloads_per_hour": 14757.8,
-      "project_count": 1646,
+      "delta_downloads": 54902,
+      "downloads_per_hour": 14828.36,
+      "project_count": 1581,
       "top_project_id": "2ecVyZ49",
       "top_project_title": "Ksyxis",
-      "top_project_delta": 3651
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "quilt",
-      "delta_downloads": 58412,
-      "downloads_per_hour": 14574.66,
-      "project_count": 782,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "neoforge",
-      "delta_downloads": 58297,
-      "downloads_per_hour": 14545.97,
-      "project_count": 625,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "top_project_delta": 3203
     },
     {
       "game_version": "1.21.10",
       "loader": "forge",
-      "delta_downloads": 57573,
-      "downloads_per_hour": 14365.32,
-      "project_count": 1359,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 4028
+      "delta_downloads": 51868,
+      "downloads_per_hour": 14008.91,
+      "project_count": 1318,
+      "top_project_id": "2ecVyZ49",
+      "top_project_title": "Ksyxis",
+      "top_project_delta": 3203
     },
     {
       "game_version": "1.21.9",
       "loader": "forge",
-      "delta_downloads": 57034,
-      "downloads_per_hour": 14230.83,
-      "project_count": 1276,
-      "top_project_id": "8Lw09aLb",
-      "top_project_title": "Luki's Grand Capitals",
-      "top_project_delta": 4028
+      "delta_downloads": 51543,
+      "downloads_per_hour": 13921.13,
+      "project_count": 1241,
+      "top_project_id": "2ecVyZ49",
+      "top_project_title": "Ksyxis",
+      "top_project_delta": 3203
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "quilt",
+      "delta_downloads": 50044,
+      "downloads_per_hour": 13516.27,
+      "project_count": 814,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "neoforge",
+      "delta_downloads": 49123,
+      "downloads_per_hour": 13267.52,
+      "project_count": 604,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "26.2",
       "loader": "forge",
-      "delta_downloads": 53067,
-      "downloads_per_hour": 13241.0,
-      "project_count": 1190,
+      "delta_downloads": 46541,
+      "downloads_per_hour": 12570.16,
+      "project_count": 1155,
       "top_project_id": "ETlrkaYF",
       "top_project_title": "Cubes Without Borders",
-      "top_project_delta": 6212
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "quilt",
-      "delta_downloads": 52245,
-      "downloads_per_hour": 13035.9,
-      "project_count": 530,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.18",
-      "loader": "quilt",
-      "delta_downloads": 52200,
-      "downloads_per_hour": 13024.67,
-      "project_count": 525,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 4933
     },
     {
       "game_version": "26.1.2",
       "loader": "forge",
-      "delta_downloads": 50285,
-      "downloads_per_hour": 12546.85,
-      "project_count": 1200,
+      "delta_downloads": 45682,
+      "downloads_per_hour": 12338.15,
+      "project_count": 1145,
       "top_project_id": "2ecVyZ49",
       "top_project_title": "Ksyxis",
-      "top_project_delta": 3651
+      "top_project_delta": 3203
     },
     {
-      "game_version": "1.19.1",
-      "loader": "neoforge",
-      "delta_downloads": 50083,
-      "downloads_per_hour": 12496.45,
-      "project_count": 454,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "game_version": "1.18.1",
+      "loader": "quilt",
+      "delta_downloads": 44759,
+      "downloads_per_hour": 12088.86,
+      "project_count": 551,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
     },
     {
-      "game_version": "1.19",
-      "loader": "neoforge",
-      "delta_downloads": 49592,
-      "downloads_per_hour": 12373.94,
-      "project_count": 449,
-      "top_project_id": "h2jngREY",
-      "top_project_title": "Trek",
-      "top_project_delta": 8498
+      "game_version": "1.18",
+      "loader": "quilt",
+      "delta_downloads": 44709,
+      "downloads_per_hour": 12075.35,
+      "project_count": 543,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
     },
     {
       "game_version": "26.1",
       "loader": "forge",
-      "delta_downloads": 48923,
-      "downloads_per_hour": 12207.01,
-      "project_count": 1123,
+      "delta_downloads": 44174,
+      "downloads_per_hour": 11930.86,
+      "project_count": 1079,
       "top_project_id": "2ecVyZ49",
       "top_project_title": "Ksyxis",
-      "top_project_delta": 3651
+      "top_project_delta": 3203
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "neoforge",
+      "delta_downloads": 42241,
+      "downloads_per_hour": 11408.78,
+      "project_count": 443,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
+    },
+    {
+      "game_version": "1.19",
+      "loader": "neoforge",
+      "delta_downloads": 41725,
+      "downloads_per_hour": 11269.41,
+      "project_count": 437,
+      "top_project_id": "h2jngREY",
+      "top_project_title": "Trek",
+      "top_project_delta": 7648
     },
     {
       "game_version": "1.18.1",
       "loader": "forge",
-      "delta_downloads": 48675,
-      "downloads_per_hour": 12145.13,
-      "project_count": 581,
-      "top_project_id": "c7m1mi73",
-      "top_project_title": "Packet Fixer",
-      "top_project_delta": 5572
-    },
-    {
-      "game_version": "1.18",
-      "loader": "forge",
-      "delta_downloads": 47069,
-      "downloads_per_hour": 11744.41,
-      "project_count": 551,
-      "top_project_id": "c7m1mi73",
-      "top_project_title": "Packet Fixer",
-      "top_project_delta": 5572
+      "delta_downloads": 41377,
+      "downloads_per_hour": 11175.42,
+      "project_count": 589,
+      "top_project_id": "5CTSrY8X",
+      "top_project_title": "GPUBooster",
+      "top_project_delta": 3664
     },
     {
       "game_version": "26.1.1",
       "loader": "forge",
-      "delta_downloads": 45081,
-      "downloads_per_hour": 11248.38,
-      "project_count": 1095,
+      "delta_downloads": 41049,
+      "downloads_per_hour": 11086.83,
+      "project_count": 1042,
       "top_project_id": "2ecVyZ49",
       "top_project_title": "Ksyxis",
-      "top_project_delta": 3651
+      "top_project_delta": 3203
+    },
+    {
+      "game_version": "1.18",
+      "loader": "forge",
+      "delta_downloads": 39761,
+      "downloads_per_hour": 10738.96,
+      "project_count": 554,
+      "top_project_id": "5CTSrY8X",
+      "top_project_title": "GPUBooster",
+      "top_project_delta": 3664
     },
     {
       "game_version": "1.17.1",
       "loader": "quilt",
-      "delta_downloads": 39363,
-      "downloads_per_hour": 9821.65,
-      "project_count": 442,
+      "delta_downloads": 34369,
+      "downloads_per_hour": 9282.65,
+      "project_count": 479,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.17",
       "loader": "quilt",
-      "delta_downloads": 37014,
-      "downloads_per_hour": 9235.54,
-      "project_count": 419,
+      "delta_downloads": 32400,
+      "downloads_per_hour": 8750.84,
+      "project_count": 439,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.16.5",
       "loader": "forge",
-      "delta_downloads": 35811,
-      "downloads_per_hour": 8935.38,
-      "project_count": 1210,
+      "delta_downloads": 28555,
+      "downloads_per_hour": 7712.36,
+      "project_count": 1140,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
+      "top_project_delta": 3423
     },
     {
       "game_version": "26.2-pre-1",
       "loader": "fabric",
-      "delta_downloads": 31209,
-      "downloads_per_hour": 7787.11,
-      "project_count": 129,
+      "delta_downloads": 27559,
+      "downloads_per_hour": 7443.35,
+      "project_count": 127,
       "top_project_id": "eXts2L7r",
       "top_project_title": "Text Placeholder API",
-      "top_project_delta": 18492
+      "top_project_delta": 14689
     },
     {
       "game_version": "1.17.1",
       "loader": "forge",
-      "delta_downloads": 30410,
-      "downloads_per_hour": 7587.75,
-      "project_count": 417,
+      "delta_downloads": 26028,
+      "downloads_per_hour": 7029.84,
+      "project_count": 449,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
-    },
-    {
-      "game_version": "1.12.2",
-      "loader": "forge",
-      "delta_downloads": 29707,
-      "downloads_per_hour": 7412.34,
-      "project_count": 1139,
-      "top_project_id": "2ecVyZ49",
-      "top_project_title": "Ksyxis",
-      "top_project_delta": 3651
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "neoforge",
-      "delta_downloads": 29566,
-      "downloads_per_hour": 7377.16,
-      "project_count": 441,
-      "top_project_id": "c7m1mi73",
-      "top_project_title": "Packet Fixer",
-      "top_project_delta": 5572
+      "top_project_delta": 3423
     },
     {
       "game_version": "1.16.5",
       "loader": "quilt",
-      "delta_downloads": 28857,
-      "downloads_per_hour": 7200.25,
-      "project_count": 408,
+      "delta_downloads": 25633,
+      "downloads_per_hour": 6923.16,
+      "project_count": 397,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "neoforge",
+      "delta_downloads": 25109,
+      "downloads_per_hour": 6781.63,
+      "project_count": 432,
+      "top_project_id": "c7m1mi73",
+      "top_project_title": "Packet Fixer",
+      "top_project_delta": 3631
     },
     {
       "game_version": "1.17",
       "loader": "forge",
-      "delta_downloads": 28051,
-      "downloads_per_hour": 6999.14,
-      "project_count": 347,
+      "delta_downloads": 24119,
+      "downloads_per_hour": 6514.25,
+      "project_count": 362,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
+      "top_project_delta": 3423
+    },
+    {
+      "game_version": "1.12.2",
+      "loader": "forge",
+      "delta_downloads": 21741,
+      "downloads_per_hour": 5871.98,
+      "project_count": 1099,
+      "top_project_id": "2ecVyZ49",
+      "top_project_title": "Ksyxis",
+      "top_project_delta": 3203
     },
     {
       "game_version": "1.16.4",
       "loader": "quilt",
-      "delta_downloads": 23406,
-      "downloads_per_hour": 5840.14,
-      "project_count": 337,
+      "delta_downloads": 21362,
+      "downloads_per_hour": 5769.62,
+      "project_count": 330,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.15.2",
       "loader": "quilt",
-      "delta_downloads": 23376,
-      "downloads_per_hour": 5832.66,
-      "project_count": 246,
+      "delta_downloads": 21232,
+      "downloads_per_hour": 5734.5,
+      "project_count": 242,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.16.3",
       "loader": "quilt",
-      "delta_downloads": 23234,
-      "downloads_per_hour": 5797.23,
-      "project_count": 320,
+      "delta_downloads": 21209,
+      "downloads_per_hour": 5728.29,
+      "project_count": 316,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.16.2",
       "loader": "quilt",
-      "delta_downloads": 23228,
-      "downloads_per_hour": 5795.73,
-      "project_count": 319,
+      "delta_downloads": 21194,
+      "downloads_per_hour": 5724.24,
+      "project_count": 315,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.14.4",
       "loader": "quilt",
-      "delta_downloads": 23070,
-      "downloads_per_hour": 5756.31,
+      "delta_downloads": 21002,
+      "downloads_per_hour": 5672.38,
       "project_count": 220,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.16.1",
       "loader": "quilt",
-      "delta_downloads": 22329,
-      "downloads_per_hour": 5571.42,
-      "project_count": 303,
+      "delta_downloads": 20356,
+      "downloads_per_hour": 5497.91,
+      "project_count": 299,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.16",
       "loader": "quilt",
-      "delta_downloads": 22313,
-      "downloads_per_hour": 5567.42,
-      "project_count": 298,
+      "delta_downloads": 20346,
+      "downloads_per_hour": 5495.21,
+      "project_count": 293,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "neoforge",
-      "delta_downloads": 22091,
-      "downloads_per_hour": 5512.03,
-      "project_count": 288,
-      "top_project_id": "c7m1mi73",
-      "top_project_title": "Packet Fixer",
-      "top_project_delta": 5572
-    },
-    {
-      "game_version": "1.16.4",
-      "loader": "forge",
-      "delta_downloads": 21303,
-      "downloads_per_hour": 5315.41,
-      "project_count": 438,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
-    },
-    {
-      "game_version": "1.18",
-      "loader": "neoforge",
-      "delta_downloads": 21240,
-      "downloads_per_hour": 5299.7,
-      "project_count": 286,
-      "top_project_id": "c7m1mi73",
-      "top_project_title": "Packet Fixer",
-      "top_project_delta": 5572
-    },
-    {
-      "game_version": "1.15.1",
-      "loader": "quilt",
-      "delta_downloads": 21077,
-      "downloads_per_hour": 5259.02,
-      "project_count": 223,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.15",
       "loader": "quilt",
-      "delta_downloads": 21076,
-      "downloads_per_hour": 5258.77,
-      "project_count": 222,
+      "delta_downloads": 19312,
+      "downloads_per_hour": 5215.94,
+      "project_count": 218,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.15.1",
+      "loader": "quilt",
+      "delta_downloads": 19312,
+      "downloads_per_hour": 5215.94,
+      "project_count": 218,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.14.3",
       "loader": "quilt",
-      "delta_downloads": 20499,
-      "downloads_per_hour": 5114.8,
-      "project_count": 184,
+      "delta_downloads": 18855,
+      "downloads_per_hour": 5092.51,
+      "project_count": 185,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.14",
       "loader": "quilt",
-      "delta_downloads": 20481,
-      "downloads_per_hour": 5110.31,
-      "project_count": 178,
+      "delta_downloads": 18847,
+      "downloads_per_hour": 5090.34,
+      "project_count": 182,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.14.1",
       "loader": "quilt",
-      "delta_downloads": 20477,
-      "downloads_per_hour": 5109.32,
-      "project_count": 179,
+      "delta_downloads": 18842,
+      "downloads_per_hour": 5088.99,
+      "project_count": 181,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.14.2",
       "loader": "quilt",
-      "delta_downloads": 20477,
-      "downloads_per_hour": 5109.32,
-      "project_count": 179,
+      "delta_downloads": 18842,
+      "downloads_per_hour": 5088.99,
+      "project_count": 181,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
-      "game_version": "1.16.3",
+      "game_version": "1.18.1",
+      "loader": "neoforge",
+      "delta_downloads": 18609,
+      "downloads_per_hour": 5026.06,
+      "project_count": 286,
+      "top_project_id": "c7m1mi73",
+      "top_project_title": "Packet Fixer",
+      "top_project_delta": 3631
+    },
+    {
+      "game_version": "1.16.4",
       "loader": "forge",
-      "delta_downloads": 19793,
-      "downloads_per_hour": 4938.65,
-      "project_count": 372,
+      "delta_downloads": 18091,
+      "downloads_per_hour": 4886.16,
+      "project_count": 409,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
-    },
-    {
-      "game_version": "1.16.2",
-      "loader": "forge",
-      "delta_downloads": 19602,
-      "downloads_per_hour": 4890.99,
-      "project_count": 343,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
-    },
-    {
-      "game_version": "1.21-rc1",
-      "loader": "fabric",
-      "delta_downloads": 18997,
-      "downloads_per_hour": 4740.03,
-      "project_count": 174,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21.5-pre2",
-      "loader": "fabric",
-      "delta_downloads": 18657,
-      "downloads_per_hour": 4655.2,
-      "project_count": 134,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21.5-pre1",
-      "loader": "fabric",
-      "delta_downloads": 18652,
-      "downloads_per_hour": 4653.95,
-      "project_count": 131,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 3423
     },
     {
       "game_version": "26.2-rc-2",
       "loader": "fabric",
-      "delta_downloads": 17618,
-      "downloads_per_hour": 4395.95,
-      "project_count": 152,
+      "delta_downloads": 18003,
+      "downloads_per_hour": 4862.39,
+      "project_count": 159,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.18",
+      "loader": "neoforge",
+      "delta_downloads": 17752,
+      "downloads_per_hour": 4794.6,
+      "project_count": 284,
+      "top_project_id": "c7m1mi73",
+      "top_project_title": "Packet Fixer",
+      "top_project_delta": 3631
+    },
+    {
+      "game_version": "1.21-rc1",
+      "loader": "fabric",
+      "delta_downloads": 17634,
+      "downloads_per_hour": 4762.73,
+      "project_count": 170,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.16.3",
+      "loader": "forge",
+      "delta_downloads": 16963,
+      "downloads_per_hour": 4581.5,
+      "project_count": 349,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 3423
+    },
+    {
+      "game_version": "1.21.5-pre2",
+      "loader": "fabric",
+      "delta_downloads": 16834,
+      "downloads_per_hour": 4546.66,
+      "project_count": 117,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.21.5-pre1",
+      "loader": "fabric",
+      "delta_downloads": 16833,
+      "downloads_per_hour": 4546.39,
+      "project_count": 116,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.16.2",
+      "loader": "forge",
+      "delta_downloads": 16808,
+      "downloads_per_hour": 4539.64,
+      "project_count": 326,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 3423
     },
     {
       "game_version": "1.21-pre2",
       "loader": "fabric",
-      "delta_downloads": 17289,
-      "downloads_per_hour": 4313.86,
-      "project_count": 170,
+      "delta_downloads": 16322,
+      "downloads_per_hour": 4408.37,
+      "project_count": 165,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.21-pre1",
-      "loader": "fabric",
-      "delta_downloads": 17230,
-      "downloads_per_hour": 4299.14,
-      "project_count": 166,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.21-pre4",
       "loader": "fabric",
-      "delta_downloads": 17221,
-      "downloads_per_hour": 4296.89,
-      "project_count": 170,
+      "delta_downloads": 16281,
+      "downloads_per_hour": 4397.3,
+      "project_count": 163,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.21-pre3",
       "loader": "fabric",
-      "delta_downloads": 17212,
-      "downloads_per_hour": 4294.65,
-      "project_count": 169,
+      "delta_downloads": 16269,
+      "downloads_per_hour": 4394.06,
+      "project_count": 161,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
-      "game_version": "1.16.1",
-      "loader": "forge",
-      "delta_downloads": 17078,
-      "downloads_per_hour": 4261.21,
-      "project_count": 304,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
-    },
-    {
-      "game_version": "24w19a",
+      "game_version": "1.21-pre1",
       "loader": "fabric",
-      "delta_downloads": 17030,
-      "downloads_per_hour": 4249.24,
-      "project_count": 151,
+      "delta_downloads": 16263,
+      "downloads_per_hour": 4392.44,
+      "project_count": 161,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "24w19b",
-      "loader": "fabric",
-      "delta_downloads": 17030,
-      "downloads_per_hour": 4249.24,
-      "project_count": 151,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "24w18a",
-      "loader": "fabric",
-      "delta_downloads": 17029,
-      "downloads_per_hour": 4248.99,
-      "project_count": 150,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "24w20a",
-      "loader": "fabric",
-      "delta_downloads": 17021,
-      "downloads_per_hour": 4246.99,
-      "project_count": 150,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.21.2-pre1",
       "loader": "fabric",
-      "delta_downloads": 17018,
-      "downloads_per_hour": 4246.24,
-      "project_count": 177,
+      "delta_downloads": 16224,
+      "downloads_per_hour": 4381.9,
+      "project_count": 174,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.16",
-      "loader": "forge",
-      "delta_downloads": 17014,
-      "downloads_per_hour": 4245.25,
-      "project_count": 287,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 4185
-    },
-    {
-      "game_version": "24w21a",
-      "loader": "fabric",
-      "delta_downloads": 17004,
-      "downloads_per_hour": 4242.75,
-      "project_count": 151,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "24w21b",
-      "loader": "fabric",
-      "delta_downloads": 17004,
-      "downloads_per_hour": 4242.75,
-      "project_count": 151,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w33a",
       "loader": "fabric",
-      "delta_downloads": 16964,
-      "downloads_per_hour": 4232.77,
-      "project_count": 172,
+      "delta_downloads": 16145,
+      "downloads_per_hour": 4360.57,
+      "project_count": 171,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w34a",
       "loader": "fabric",
-      "delta_downloads": 16962,
-      "downloads_per_hour": 4232.27,
-      "project_count": 170,
+      "delta_downloads": 16141,
+      "downloads_per_hour": 4359.49,
+      "project_count": 169,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w35a",
       "loader": "fabric",
-      "delta_downloads": 16951,
-      "downloads_per_hour": 4229.53,
-      "project_count": 168,
+      "delta_downloads": 16135,
+      "downloads_per_hour": 4357.87,
+      "project_count": 167,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
-      "game_version": "1.20.5-rc1",
+      "game_version": "24w18a",
       "loader": "fabric",
-      "delta_downloads": 16944,
-      "downloads_per_hour": 4227.78,
-      "project_count": 145,
+      "delta_downloads": 16082,
+      "downloads_per_hour": 4343.55,
+      "project_count": 149,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "24w19b",
+      "loader": "fabric",
+      "delta_downloads": 16082,
+      "downloads_per_hour": 4343.55,
+      "project_count": 149,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "24w19a",
+      "loader": "fabric",
+      "delta_downloads": 16081,
+      "downloads_per_hour": 4343.28,
+      "project_count": 148,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w40a",
       "loader": "fabric",
-      "delta_downloads": 16898,
-      "downloads_per_hour": 4216.3,
-      "project_count": 170,
+      "delta_downloads": 16077,
+      "downloads_per_hour": 4342.2,
+      "project_count": 168,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "24w20a",
+      "loader": "fabric",
+      "delta_downloads": 16071,
+      "downloads_per_hour": 4340.58,
+      "project_count": 147,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w39a",
       "loader": "fabric",
-      "delta_downloads": 16867,
-      "downloads_per_hour": 4208.57,
-      "project_count": 164,
+      "delta_downloads": 16052,
+      "downloads_per_hour": 4335.45,
+      "project_count": 162,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w36a",
       "loader": "fabric",
-      "delta_downloads": 16861,
-      "downloads_per_hour": 4207.07,
-      "project_count": 166,
+      "delta_downloads": 16048,
+      "downloads_per_hour": 4334.37,
+      "project_count": 164,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w37a",
       "loader": "fabric",
-      "delta_downloads": 16860,
-      "downloads_per_hour": 4206.82,
-      "project_count": 165,
+      "delta_downloads": 16043,
+      "downloads_per_hour": 4333.02,
+      "project_count": 162,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "24w38a",
       "loader": "fabric",
-      "delta_downloads": 16858,
-      "downloads_per_hour": 4206.32,
-      "project_count": 164,
+      "delta_downloads": 16043,
+      "downloads_per_hour": 4333.02,
+      "project_count": 162,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
-      "game_version": "1.20.5-rc2",
+      "game_version": "24w21b",
       "loader": "fabric",
-      "delta_downloads": 16827,
-      "downloads_per_hour": 4198.59,
-      "project_count": 145,
+      "delta_downloads": 16040,
+      "downloads_per_hour": 4332.21,
+      "project_count": 148,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
-      "game_version": "1.20.5-rc3",
+      "game_version": "24w21a",
       "loader": "fabric",
-      "delta_downloads": 16823,
-      "downloads_per_hour": 4197.59,
+      "delta_downloads": 16037,
+      "downloads_per_hour": 4331.4,
+      "project_count": 147,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5-rc1",
+      "loader": "fabric",
+      "delta_downloads": 15994,
+      "downloads_per_hour": 4319.78,
       "project_count": 143,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.20.5-pre1",
-      "loader": "fabric",
-      "delta_downloads": 16800,
-      "downloads_per_hour": 4191.85,
-      "project_count": 142,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.20.5-pre2",
-      "loader": "fabric",
-      "delta_downloads": 16796,
-      "downloads_per_hour": 4190.85,
-      "project_count": 141,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.20.5-pre3",
-      "loader": "fabric",
-      "delta_downloads": 16796,
-      "downloads_per_hour": 4190.85,
-      "project_count": 141,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "1.20.5-pre4",
-      "loader": "fabric",
-      "delta_downloads": 16796,
-      "downloads_per_hour": 4190.85,
-      "project_count": 141,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "24w12a",
-      "loader": "fabric",
-      "delta_downloads": 16794,
-      "downloads_per_hour": 4190.35,
-      "project_count": 138,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "24w13a",
-      "loader": "fabric",
-      "delta_downloads": 16794,
-      "downloads_per_hour": 4190.35,
-      "project_count": 138,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
-    },
-    {
-      "game_version": "24w14a",
-      "loader": "fabric",
-      "delta_downloads": 16792,
-      "downloads_per_hour": 4189.85,
-      "project_count": 138,
-      "top_project_id": "4H6sumDB",
-      "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
     },
     {
       "game_version": "1.21.2-pre2",
       "loader": "fabric",
-      "delta_downloads": 16777,
-      "downloads_per_hour": 4186.11,
-      "project_count": 176,
+      "delta_downloads": 15987,
+      "downloads_per_hour": 4317.89,
+      "project_count": 173,
       "top_project_id": "4H6sumDB",
       "top_project_title": "Euphoria Patches",
-      "top_project_delta": 6581
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "25w14craftmine",
+      "loader": "fabric",
+      "delta_downloads": 15886,
+      "downloads_per_hour": 4290.61,
+      "project_count": 135,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "24w44a",
+      "loader": "fabric",
+      "delta_downloads": 15858,
+      "downloads_per_hour": 4283.05,
+      "project_count": 179,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5-rc2",
+      "loader": "fabric",
+      "delta_downloads": 15853,
+      "downloads_per_hour": 4281.7,
+      "project_count": 144,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5-rc3",
+      "loader": "fabric",
+      "delta_downloads": 15848,
+      "downloads_per_hour": 4280.35,
+      "project_count": 142,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "24w46a",
+      "loader": "fabric",
+      "delta_downloads": 15834,
+      "downloads_per_hour": 4276.57,
+      "project_count": 175,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "24w45a",
+      "loader": "fabric",
+      "delta_downloads": 15832,
+      "downloads_per_hour": 4276.03,
+      "project_count": 174,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5-pre1",
+      "loader": "fabric",
+      "delta_downloads": 15812,
+      "downloads_per_hour": 4270.63,
+      "project_count": 143,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "24w12a",
+      "loader": "fabric",
+      "delta_downloads": 15806,
+      "downloads_per_hour": 4269.01,
+      "project_count": 140,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5-pre2",
+      "loader": "fabric",
+      "delta_downloads": 15806,
+      "downloads_per_hour": 4269.01,
+      "project_count": 141,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5-pre3",
+      "loader": "fabric",
+      "delta_downloads": 15805,
+      "downloads_per_hour": 4268.74,
+      "project_count": 140,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
+    },
+    {
+      "game_version": "1.20.5-pre4",
+      "loader": "fabric",
+      "delta_downloads": 15805,
+      "downloads_per_hour": 4268.74,
+      "project_count": 140,
+      "top_project_id": "4H6sumDB",
+      "top_project_title": "Euphoria Patches",
+      "top_project_delta": 6716
     }
   ]
 }
