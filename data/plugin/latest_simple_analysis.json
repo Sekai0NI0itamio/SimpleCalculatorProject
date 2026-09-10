@@ -1,24 +1,12 @@
 {
-  "timestamp": "2026-09-10T17-53-02",
+  "timestamp": "2026-09-10T23-04-29",
   "date": "2026-09-10",
   "project_type": "plugin",
   "analysis_type": "simple",
   "baseline_date": "2026-09-10",
-  "hours_between": 5.85,
-  "actual_hours_between": 5.85,
+  "hours_between": 5.19,
+  "actual_hours_between": 5.19,
   "trend_history": [
-    {
-      "date": "2026-09-05",
-      "timestamp": "2026-09-05T08-30-08",
-      "total_downloads": 323012917,
-      "new_downloads": 105317,
-      "lost_downloads": 17,
-      "net_change": 105300,
-      "growing_projects": 2444,
-      "declining_projects": 1,
-      "baseline_date": "2026-09-05",
-      "hours_between": 2.93
-    },
     {
       "date": "2026-09-05",
       "timestamp": "2026-09-05T11-45-22",
@@ -366,21 +354,33 @@
       "declining_projects": 1,
       "baseline_date": "2026-09-10",
       "hours_between": 4.9
+    },
+    {
+      "date": "2026-09-10",
+      "timestamp": "2026-09-10T17-53-02",
+      "total_downloads": 327890955,
+      "new_downloads": 139669,
+      "lost_downloads": 0,
+      "net_change": 139669,
+      "growing_projects": 3265,
+      "declining_projects": 0,
+      "baseline_date": "2026-09-10",
+      "hours_between": 5.85
     }
   ],
   "summary": {
     "total_projects": 10000,
-    "total_versions": 104471,
-    "total_downloads": 327890955,
+    "total_versions": 104480,
+    "total_downloads": 328091861,
     "baseline_date": "2026-09-10",
     "current_date": "2026-09-10",
-    "new_projects_since_baseline": 0,
-    "new_downloads_since_baseline": 139669,
+    "new_projects_since_baseline": 1,
+    "new_downloads_since_baseline": 204004,
     "lost_downloads_since_baseline": 0,
-    "net_download_change": 139669,
-    "growing_projects": 3265,
+    "net_download_change": 204004,
+    "growing_projects": 3298,
     "declining_projects": 0,
-    "downloads_per_hour": 23881.85
+    "downloads_per_hour": 39298.72
   },
   "category_rankings": [],
   "loader_rankings": [],
@@ -406,11 +406,11 @@
         "technology",
         "utility"
       ],
-      "current_downloads": 81198759,
-      "baseline_downloads": 81147547,
-      "delta_downloads": 51212,
-      "downloads_per_hour": 8756.68,
-      "growth_pct": 0.06
+      "current_downloads": 81272985,
+      "baseline_downloads": 81198759,
+      "delta_downloads": 74226,
+      "downloads_per_hour": 14298.67,
+      "growth_pct": 0.09
     },
     {
       "project_id": "9eGKb6K1",
@@ -433,11 +433,11 @@
         "velocity",
         "waterfall"
       ],
-      "current_downloads": 68295935,
-      "baseline_downloads": 68275371,
-      "delta_downloads": 20564,
-      "downloads_per_hour": 3516.22,
-      "growth_pct": 0.03
+      "current_downloads": 68329728,
+      "baseline_downloads": 68295935,
+      "delta_downloads": 33793,
+      "downloads_per_hour": 6509.78,
+      "growth_pct": 0.05
     },
     {
       "project_id": "vE2FN5qn",
@@ -453,11 +453,11 @@
         "purpur",
         "quilt"
       ],
-      "current_downloads": 23020000,
-      "baseline_downloads": 23011775,
-      "delta_downloads": 8225,
-      "downloads_per_hour": 1406.38,
-      "growth_pct": 0.04
+      "current_downloads": 23030773,
+      "baseline_downloads": 23020000,
+      "delta_downloads": 10773,
+      "downloads_per_hour": 2075.28,
+      "growth_pct": 0.05
     },
     {
       "project_id": "fALzjamp",
@@ -476,30 +476,11 @@
         "utility",
         "worldgen"
       ],
-      "current_downloads": 17657257,
-      "baseline_downloads": 17650612,
-      "delta_downloads": 6645,
-      "downloads_per_hour": 1136.22,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "lfHFW1mp",
-      "title": "JourneyMap",
-      "slug": "journeymap",
-      "categories": [
-        "adventure",
-        "fabric",
-        "forge",
-        "neoforge",
-        "paper",
-        "quilt",
-        "utility"
-      ],
-      "current_downloads": 14315065,
-      "baseline_downloads": 14309695,
-      "delta_downloads": 5370,
-      "downloads_per_hour": 918.21,
-      "growth_pct": 0.04
+      "current_downloads": 17666806,
+      "baseline_downloads": 17657257,
+      "delta_downloads": 9549,
+      "downloads_per_hour": 1839.49,
+      "growth_pct": 0.05
     },
     {
       "project_id": "4sP0LXxp",
@@ -517,11 +498,30 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 16753897,
-      "baseline_downloads": 16749296,
-      "delta_downloads": 4601,
-      "downloads_per_hour": 786.72,
-      "growth_pct": 0.03
+      "current_downloads": 16759832,
+      "baseline_downloads": 16753897,
+      "delta_downloads": 5935,
+      "downloads_per_hour": 1143.3,
+      "growth_pct": 0.04
+    },
+    {
+      "project_id": "lfHFW1mp",
+      "title": "JourneyMap",
+      "slug": "journeymap",
+      "categories": [
+        "adventure",
+        "fabric",
+        "forge",
+        "neoforge",
+        "paper",
+        "quilt",
+        "utility"
+      ],
+      "current_downloads": 14320854,
+      "baseline_downloads": 14315065,
+      "delta_downloads": 5789,
+      "downloads_per_hour": 1115.18,
+      "growth_pct": 0.04
     },
     {
       "project_id": "1u6JkXh5",
@@ -540,31 +540,11 @@
         "spigot",
         "utility"
       ],
-      "current_downloads": 10475519,
-      "baseline_downloads": 10472142,
-      "delta_downloads": 3377,
-      "downloads_per_hour": 577.43,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "HIuqnQpi",
-      "title": "Common Network",
-      "slug": "common-network",
-      "categories": [
-        "bukkit",
-        "fabric",
-        "forge",
-        "library",
-        "neoforge",
-        "paper",
-        "quilt",
-        "utility"
-      ],
-      "current_downloads": 3690336,
-      "baseline_downloads": 3687553,
-      "delta_downloads": 2783,
-      "downloads_per_hour": 475.86,
-      "growth_pct": 0.08
+      "current_downloads": 10481147,
+      "baseline_downloads": 10475519,
+      "delta_downloads": 5628,
+      "downloads_per_hour": 1084.16,
+      "growth_pct": 0.05
     },
     {
       "project_id": "dw7LChq9",
@@ -586,11 +566,31 @@
         "spigot",
         "utility"
       ],
-      "current_downloads": 2571014,
-      "baseline_downloads": 2568790,
-      "delta_downloads": 2224,
-      "downloads_per_hour": 380.28,
-      "growth_pct": 0.09
+      "current_downloads": 2574657,
+      "baseline_downloads": 2571014,
+      "delta_downloads": 3643,
+      "downloads_per_hour": 701.78,
+      "growth_pct": 0.14
+    },
+    {
+      "project_id": "HIuqnQpi",
+      "title": "Common Network",
+      "slug": "common-network",
+      "categories": [
+        "bukkit",
+        "fabric",
+        "forge",
+        "library",
+        "neoforge",
+        "paper",
+        "quilt",
+        "utility"
+      ],
+      "current_downloads": 3693919,
+      "baseline_downloads": 3690336,
+      "delta_downloads": 3583,
+      "downloads_per_hour": 690.22,
+      "growth_pct": 0.1
     },
     {
       "project_id": "pZ2wrerK",
@@ -610,11 +610,11 @@
         "quilt",
         "social"
       ],
-      "current_downloads": 7331681,
-      "baseline_downloads": 7329884,
-      "delta_downloads": 1797,
-      "downloads_per_hour": 307.27,
-      "growth_pct": 0.02
+      "current_downloads": 7334353,
+      "baseline_downloads": 7331681,
+      "delta_downloads": 2672,
+      "downloads_per_hour": 514.73,
+      "growth_pct": 0.04
     },
     {
       "project_id": "P1OZGk5p",
@@ -629,11 +629,11 @@
         "utility",
         "velocity"
       ],
-      "current_downloads": 2952346,
-      "baseline_downloads": 2951170,
-      "delta_downloads": 1176,
-      "downloads_per_hour": 201.08,
-      "growth_pct": 0.04
+      "current_downloads": 2954090,
+      "baseline_downloads": 2952346,
+      "delta_downloads": 1744,
+      "downloads_per_hour": 335.96,
+      "growth_pct": 0.06
     },
     {
       "project_id": "Vebnzrzj",
@@ -653,11 +653,11 @@
         "velocity",
         "waterfall"
       ],
-      "current_downloads": 2662020,
-      "baseline_downloads": 2660998,
-      "delta_downloads": 1022,
-      "downloads_per_hour": 174.75,
-      "growth_pct": 0.04
+      "current_downloads": 2663498,
+      "baseline_downloads": 2662020,
+      "delta_downloads": 1478,
+      "downloads_per_hour": 284.72,
+      "growth_pct": 0.06
     },
     {
       "project_id": "XoHTb2Ap",
@@ -671,75 +671,11 @@
         "quilt",
         "utility"
       ],
-      "current_downloads": 3214203,
-      "baseline_downloads": 3213276,
-      "delta_downloads": 927,
-      "downloads_per_hour": 158.51,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "NpvuJQoq",
-      "title": "ViaBackwards",
-      "slug": "viabackwards",
-      "categories": [
-        "bungeecord",
-        "fabric",
-        "folia",
-        "paper",
-        "sponge",
-        "utility",
-        "velocity"
-      ],
-      "current_downloads": 1983104,
-      "baseline_downloads": 1982276,
-      "delta_downloads": 828,
-      "downloads_per_hour": 141.58,
+      "current_downloads": 3215581,
+      "baseline_downloads": 3214203,
+      "delta_downloads": 1378,
+      "downloads_per_hour": 265.45,
       "growth_pct": 0.04
-    },
-    {
-      "project_id": "wKkoqHrH",
-      "title": "Geyser",
-      "slug": "geyser",
-      "categories": [
-        "bungeecord",
-        "fabric",
-        "neoforge",
-        "paper",
-        "spigot",
-        "utility",
-        "velocity"
-      ],
-      "current_downloads": 1283451,
-      "baseline_downloads": 1282792,
-      "delta_downloads": 659,
-      "downloads_per_hour": 112.68,
-      "growth_pct": 0.05
-    },
-    {
-      "project_id": "h1E7sQNL",
-      "title": "Customizable Player Models",
-      "slug": "custom-player-models",
-      "categories": [
-        "babric",
-        "bta-babric",
-        "bukkit",
-        "decoration",
-        "fabric",
-        "folia",
-        "forge",
-        "java-agent",
-        "neoforge",
-        "paper",
-        "purpur",
-        "quilt",
-        "social",
-        "spigot"
-      ],
-      "current_downloads": 2924828,
-      "baseline_downloads": 2924200,
-      "delta_downloads": 628,
-      "downloads_per_hour": 107.38,
-      "growth_pct": 0.02
     },
     {
       "project_id": "TsLS8Py5",
@@ -761,11 +697,11 @@
         "velocity",
         "waterfall"
       ],
-      "current_downloads": 1560388,
-      "baseline_downloads": 1559775,
-      "delta_downloads": 613,
-      "downloads_per_hour": 104.82,
-      "growth_pct": 0.04
+      "current_downloads": 1561569,
+      "baseline_downloads": 1560388,
+      "delta_downloads": 1181,
+      "downloads_per_hour": 227.5,
+      "growth_pct": 0.08
     },
     {
       "project_id": "1bZhdhsH",
@@ -785,29 +721,48 @@
         "utility",
         "velocity"
       ],
-      "current_downloads": 3919675,
-      "baseline_downloads": 3919114,
-      "delta_downloads": 561,
-      "downloads_per_hour": 95.92,
-      "growth_pct": 0.01
+      "current_downloads": 3920821,
+      "baseline_downloads": 3919675,
+      "delta_downloads": 1146,
+      "downloads_per_hour": 220.76,
+      "growth_pct": 0.03
     },
     {
-      "project_id": "DKY9btbd",
-      "title": "WorldGuard",
-      "slug": "worldguard",
+      "project_id": "NpvuJQoq",
+      "title": "ViaBackwards",
+      "slug": "viabackwards",
       "categories": [
-        "bukkit",
+        "bungeecord",
+        "fabric",
         "folia",
-        "library",
-        "management",
+        "paper",
+        "sponge",
+        "utility",
+        "velocity"
+      ],
+      "current_downloads": 1984162,
+      "baseline_downloads": 1983104,
+      "delta_downloads": 1058,
+      "downloads_per_hour": 203.81,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "wKkoqHrH",
+      "title": "Geyser",
+      "slug": "geyser",
+      "categories": [
+        "bungeecord",
+        "fabric",
+        "neoforge",
         "paper",
         "spigot",
-        "utility"
+        "utility",
+        "velocity"
       ],
-      "current_downloads": 819029,
-      "baseline_downloads": 818527,
-      "delta_downloads": 502,
-      "downloads_per_hour": 85.84,
+      "current_downloads": 1284285,
+      "baseline_downloads": 1283451,
+      "delta_downloads": 834,
+      "downloads_per_hour": 160.66,
       "growth_pct": 0.06
     },
     {
@@ -830,55 +785,37 @@
         "velocity",
         "waterfall"
       ],
-      "current_downloads": 1175127,
-      "baseline_downloads": 1174674,
-      "delta_downloads": 453,
-      "downloads_per_hour": 77.46,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "LJNGWSvH",
-      "title": "Grim Anticheat",
-      "slug": "grimac",
-      "categories": [
-        "bukkit",
-        "fabric",
-        "folia",
-        "game-mechanics",
-        "library",
-        "management",
-        "paper",
-        "purpur",
-        "spigot",
-        "technology",
-        "utility"
-      ],
-      "current_downloads": 661232,
-      "baseline_downloads": 660792,
-      "delta_downloads": 440,
-      "downloads_per_hour": 75.24,
+      "current_downloads": 1175891,
+      "baseline_downloads": 1175127,
+      "delta_downloads": 764,
+      "downloads_per_hour": 147.17,
       "growth_pct": 0.07
     },
     {
-      "project_id": "84zcagOb",
-      "title": "Voxy Server Side",
-      "slug": "voxy-server-side",
+      "project_id": "h1E7sQNL",
+      "title": "Customizable Player Models",
+      "slug": "custom-player-models",
       "categories": [
+        "babric",
+        "bta-babric",
+        "bukkit",
+        "decoration",
         "fabric",
         "folia",
+        "forge",
+        "java-agent",
         "neoforge",
-        "optimization",
         "paper",
         "purpur",
-        "technology",
-        "utility",
-        "worldgen"
+        "quilt",
+        "social",
+        "spigot"
       ],
-      "current_downloads": 185342,
-      "baseline_downloads": 184909,
-      "delta_downloads": 433,
-      "downloads_per_hour": 74.04,
-      "growth_pct": 0.23
+      "current_downloads": 2925581,
+      "baseline_downloads": 2924828,
+      "delta_downloads": 753,
+      "downloads_per_hour": 145.06,
+      "growth_pct": 0.03
     },
     {
       "project_id": "Y1ZEvtor",
@@ -899,10 +836,119 @@
         "quilt",
         "spigot"
       ],
-      "current_downloads": 636227,
-      "baseline_downloads": 635853,
-      "delta_downloads": 374,
-      "downloads_per_hour": 63.95,
+      "current_downloads": 636929,
+      "baseline_downloads": 636227,
+      "delta_downloads": 702,
+      "downloads_per_hour": 135.23,
+      "growth_pct": 0.11
+    },
+    {
+      "project_id": "DKY9btbd",
+      "title": "WorldGuard",
+      "slug": "worldguard",
+      "categories": [
+        "bukkit",
+        "folia",
+        "library",
+        "management",
+        "paper",
+        "spigot",
+        "utility"
+      ],
+      "current_downloads": 819693,
+      "baseline_downloads": 819029,
+      "delta_downloads": 664,
+      "downloads_per_hour": 127.91,
+      "growth_pct": 0.08
+    },
+    {
+      "project_id": "hXiIvTyT",
+      "title": "EssentialsX",
+      "slug": "essentialsx",
+      "categories": [
+        "bukkit",
+        "economy",
+        "game-mechanics",
+        "management",
+        "paper",
+        "social",
+        "spigot",
+        "transportation",
+        "utility"
+      ],
+      "current_downloads": 788223,
+      "baseline_downloads": 787621,
+      "delta_downloads": 602,
+      "downloads_per_hour": 115.97,
+      "growth_pct": 0.08
+    },
+    {
+      "project_id": "LJNGWSvH",
+      "title": "Grim Anticheat",
+      "slug": "grimac",
+      "categories": [
+        "bukkit",
+        "fabric",
+        "folia",
+        "game-mechanics",
+        "library",
+        "management",
+        "paper",
+        "purpur",
+        "spigot",
+        "technology",
+        "utility"
+      ],
+      "current_downloads": 661814,
+      "baseline_downloads": 661232,
+      "delta_downloads": 582,
+      "downloads_per_hour": 112.11,
+      "growth_pct": 0.09
+    },
+    {
+      "project_id": "84zcagOb",
+      "title": "Voxy Server Side",
+      "slug": "voxy-server-side",
+      "categories": [
+        "fabric",
+        "folia",
+        "neoforge",
+        "optimization",
+        "paper",
+        "purpur",
+        "technology",
+        "utility",
+        "worldgen"
+      ],
+      "current_downloads": 185854,
+      "baseline_downloads": 185342,
+      "delta_downloads": 512,
+      "downloads_per_hour": 98.63,
+      "growth_pct": 0.28
+    },
+    {
+      "project_id": "HYKaKraK",
+      "title": "PacketEvents",
+      "slug": "packetevents",
+      "categories": [
+        "bukkit",
+        "bungeecord",
+        "fabric",
+        "folia",
+        "library",
+        "paper",
+        "purpur",
+        "spigot",
+        "sponge",
+        "technology",
+        "utility",
+        "velocity",
+        "waterfall"
+      ],
+      "current_downloads": 789481,
+      "baseline_downloads": 789008,
+      "delta_downloads": 473,
+      "downloads_per_hour": 91.12,
       "growth_pct": 0.06
     },
     {
@@ -927,57 +973,11 @@
         "transportation",
         "utility"
       ],
-      "current_downloads": 593460,
-      "baseline_downloads": 593094,
-      "delta_downloads": 366,
-      "downloads_per_hour": 62.58,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "hXiIvTyT",
-      "title": "EssentialsX",
-      "slug": "essentialsx",
-      "categories": [
-        "bukkit",
-        "economy",
-        "game-mechanics",
-        "management",
-        "paper",
-        "social",
-        "spigot",
-        "transportation",
-        "utility"
-      ],
-      "current_downloads": 787621,
-      "baseline_downloads": 787262,
-      "delta_downloads": 359,
-      "downloads_per_hour": 61.39,
-      "growth_pct": 0.05
-    },
-    {
-      "project_id": "HYKaKraK",
-      "title": "PacketEvents",
-      "slug": "packetevents",
-      "categories": [
-        "bukkit",
-        "bungeecord",
-        "fabric",
-        "folia",
-        "library",
-        "paper",
-        "purpur",
-        "spigot",
-        "sponge",
-        "technology",
-        "utility",
-        "velocity",
-        "waterfall"
-      ],
-      "current_downloads": 789008,
-      "baseline_downloads": 788678,
-      "delta_downloads": 330,
-      "downloads_per_hour": 56.43,
-      "growth_pct": 0.04
+      "current_downloads": 593920,
+      "baseline_downloads": 593460,
+      "delta_downloads": 460,
+      "downloads_per_hour": 88.61,
+      "growth_pct": 0.08
     },
     {
       "project_id": "lKEzGugV",
@@ -990,11 +990,11 @@
         "spigot",
         "utility"
       ],
-      "current_downloads": 332676,
-      "baseline_downloads": 332384,
-      "delta_downloads": 292,
-      "downloads_per_hour": 49.93,
-      "growth_pct": 0.09
+      "current_downloads": 333092,
+      "baseline_downloads": 332676,
+      "delta_downloads": 416,
+      "downloads_per_hour": 80.14,
+      "growth_pct": 0.13
     },
     {
       "project_id": "3wmN97b8",
@@ -1011,11 +1011,11 @@
         "transportation",
         "worldgen"
       ],
-      "current_downloads": 783845,
-      "baseline_downloads": 783572,
-      "delta_downloads": 273,
-      "downloads_per_hour": 46.68,
-      "growth_pct": 0.03
+      "current_downloads": 784221,
+      "baseline_downloads": 783845,
+      "delta_downloads": 376,
+      "downloads_per_hour": 72.43,
+      "growth_pct": 0.05
     },
     {
       "project_id": "RPOSBQgq",
@@ -1031,58 +1031,11 @@
         "spigot",
         "storage"
       ],
-      "current_downloads": 2031009,
-      "baseline_downloads": 2030751,
-      "delta_downloads": 258,
-      "downloads_per_hour": 44.12,
-      "growth_pct": 0.01
-    },
-    {
-      "project_id": "swbUV1cr",
-      "title": "BlueMap",
-      "slug": "bluemap",
-      "categories": [
-        "adventure",
-        "fabric",
-        "folia",
-        "forge",
-        "management",
-        "neoforge",
-        "paper",
-        "purpur",
-        "spigot",
-        "sponge",
-        "utility"
-      ],
-      "current_downloads": 479003,
-      "baseline_downloads": 478768,
-      "delta_downloads": 235,
-      "downloads_per_hour": 40.18,
-      "growth_pct": 0.05
-    },
-    {
-      "project_id": "4BeAEBIb",
-      "title": "Chunksmith",
-      "slug": "chunksmith",
-      "categories": [
-        "bukkit",
-        "fabric",
-        "folia",
-        "forge",
-        "game-mechanics",
-        "management",
-        "neoforge",
-        "paper",
-        "quilt",
-        "spigot",
-        "utility",
-        "worldgen"
-      ],
-      "current_downloads": 10180,
-      "baseline_downloads": 9949,
-      "delta_downloads": 231,
-      "downloads_per_hour": 39.5,
-      "growth_pct": 2.32
+      "current_downloads": 2031365,
+      "baseline_downloads": 2031009,
+      "delta_downloads": 356,
+      "downloads_per_hour": 68.58,
+      "growth_pct": 0.02
     },
     {
       "project_id": "U6d1TJQm",
@@ -1097,11 +1050,129 @@
         "spigot",
         "utility"
       ],
-      "current_downloads": 315750,
-      "baseline_downloads": 315538,
-      "delta_downloads": 212,
-      "downloads_per_hour": 36.25,
+      "current_downloads": 316094,
+      "baseline_downloads": 315750,
+      "delta_downloads": 344,
+      "downloads_per_hour": 66.27,
+      "growth_pct": 0.11
+    },
+    {
+      "project_id": "TbHIxhx5",
+      "title": "ViaRewind",
+      "slug": "viarewind",
+      "categories": [
+        "bungeecord",
+        "fabric",
+        "folia",
+        "paper",
+        "sponge",
+        "utility",
+        "velocity"
+      ],
+      "current_downloads": 624191,
+      "baseline_downloads": 623852,
+      "delta_downloads": 339,
+      "downloads_per_hour": 65.3,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "z4HZZnLr",
+      "title": "FastAsyncWorldEdit",
+      "slug": "fastasyncworldedit",
+      "categories": [
+        "bukkit",
+        "management",
+        "optimization",
+        "paper",
+        "purpur",
+        "spigot",
+        "utility",
+        "worldgen"
+      ],
+      "current_downloads": 519898,
+      "baseline_downloads": 519578,
+      "delta_downloads": 320,
+      "downloads_per_hour": 61.64,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "xFNYAvMk",
+      "title": "Skript",
+      "slug": "skript",
+      "categories": [
+        "game-mechanics",
+        "library",
+        "paper",
+        "utility"
+      ],
+      "current_downloads": 222047,
+      "baseline_downloads": 221737,
+      "delta_downloads": 310,
+      "downloads_per_hour": 59.72,
+      "growth_pct": 0.14
+    },
+    {
+      "project_id": "EeyAn23L",
+      "title": "FancyNpcs",
+      "slug": "fancynpcs",
+      "categories": [
+        "decoration",
+        "folia",
+        "library",
+        "paper",
+        "social",
+        "utility"
+      ],
+      "current_downloads": 418644,
+      "baseline_downloads": 418341,
+      "delta_downloads": 303,
+      "downloads_per_hour": 58.37,
       "growth_pct": 0.07
+    },
+    {
+      "project_id": "Lu3KuzdV",
+      "title": "CoreProtect",
+      "slug": "coreprotect",
+      "categories": [
+        "bukkit",
+        "equipment",
+        "folia",
+        "library",
+        "management",
+        "paper",
+        "purpur",
+        "spigot",
+        "storage",
+        "utility"
+      ],
+      "current_downloads": 504518,
+      "baseline_downloads": 504264,
+      "delta_downloads": 254,
+      "downloads_per_hour": 48.93,
+      "growth_pct": 0.05
+    },
+    {
+      "project_id": "GOHbQGyX",
+      "title": "GSit",
+      "slug": "gsit",
+      "categories": [
+        "adventure",
+        "bukkit",
+        "folia",
+        "game-mechanics",
+        "magic",
+        "paper",
+        "purpur",
+        "social",
+        "spigot",
+        "transportation",
+        "utility"
+      ],
+      "current_downloads": 107435,
+      "baseline_downloads": 107183,
+      "delta_downloads": 252,
+      "downloads_per_hour": 48.54,
+      "growth_pct": 0.24
     },
     {
       "project_id": "IAvnm8Mq",
@@ -1123,11 +1194,112 @@
         "transportation",
         "utility"
       ],
-      "current_downloads": 450119,
-      "baseline_downloads": 449913,
-      "delta_downloads": 206,
-      "downloads_per_hour": 35.22,
+      "current_downloads": 450370,
+      "baseline_downloads": 450119,
+      "delta_downloads": 251,
+      "downloads_per_hour": 48.35,
+      "growth_pct": 0.06
+    },
+    {
+      "project_id": "9js4IEHC",
+      "title": "AuthMeReloaded",
+      "slug": "authmereloaded",
+      "categories": [
+        "bukkit",
+        "bungeecord",
+        "folia",
+        "management",
+        "paper",
+        "spigot",
+        "utility",
+        "velocity"
+      ],
+      "current_downloads": 122607,
+      "baseline_downloads": 122360,
+      "delta_downloads": 247,
+      "downloads_per_hour": 47.58,
+      "growth_pct": 0.2
+    },
+    {
+      "project_id": "WWLeFuHa",
+      "title": "Voice Messages",
+      "slug": "voicemessages",
+      "categories": [
+        "adventure",
+        "bukkit",
+        "fabric",
+        "folia",
+        "neoforge",
+        "paper",
+        "purpur",
+        "quilt",
+        "social",
+        "spigot",
+        "utility"
+      ],
+      "current_downloads": 291983,
+      "baseline_downloads": 291739,
+      "delta_downloads": 244,
+      "downloads_per_hour": 47.0,
+      "growth_pct": 0.08
+    },
+    {
+      "project_id": "7pdfxYHV",
+      "title": "Infinite Villager Trading",
+      "slug": "infinite-villager-trading",
+      "categories": [
+        "folia",
+        "game-mechanics",
+        "mobs",
+        "paper",
+        "purpur",
+        "spigot",
+        "utility"
+      ],
+      "current_downloads": 338544,
+      "baseline_downloads": 338305,
+      "delta_downloads": 239,
+      "downloads_per_hour": 46.04,
+      "growth_pct": 0.07
+    },
+    {
+      "project_id": "swbUV1cr",
+      "title": "BlueMap",
+      "slug": "bluemap",
+      "categories": [
+        "adventure",
+        "fabric",
+        "folia",
+        "forge",
+        "management",
+        "neoforge",
+        "paper",
+        "purpur",
+        "spigot",
+        "sponge",
+        "utility"
+      ],
+      "current_downloads": 479230,
+      "baseline_downloads": 479003,
+      "delta_downloads": 227,
+      "downloads_per_hour": 43.73,
       "growth_pct": 0.05
+    },
+    {
+      "project_id": "5QNgOj66",
+      "title": "FancyHolograms",
+      "slug": "fancyholograms",
+      "categories": [
+        "decoration",
+        "folia",
+        "paper",
+        "utility"
+      ],
+      "current_downloads": 295925,
+      "baseline_downloads": 295698,
+      "delta_downloads": 227,
+      "downloads_per_hour": 43.73,
+      "growth_pct": 0.08
     },
     {
       "project_id": "nUay74Bn",
@@ -1147,125 +1319,68 @@
         "spigot",
         "utility"
       ],
-      "current_downloads": 101216,
-      "baseline_downloads": 101017,
-      "delta_downloads": 199,
-      "downloads_per_hour": 34.03,
-      "growth_pct": 0.2
+      "current_downloads": 101443,
+      "baseline_downloads": 101216,
+      "delta_downloads": 227,
+      "downloads_per_hour": 43.73,
+      "growth_pct": 0.22
     },
     {
-      "project_id": "z4HZZnLr",
-      "title": "FastAsyncWorldEdit",
-      "slug": "fastasyncworldedit",
+      "project_id": "Gh3tnMca",
+      "title": "Simple Login",
+      "slug": "simple-login",
       "categories": [
         "bukkit",
+        "fabric",
+        "folia",
         "management",
-        "optimization",
         "paper",
         "purpur",
+        "spigot",
+        "utility"
+      ],
+      "current_downloads": 145651,
+      "baseline_downloads": 145432,
+      "delta_downloads": 219,
+      "downloads_per_hour": 42.19,
+      "growth_pct": 0.15
+    },
+    {
+      "project_id": "9kNC5Mrh",
+      "title": "BuildPaste - Instant Structures",
+      "slug": "buildpaste",
+      "categories": [
+        "bukkit",
+        "decoration",
+        "fabric",
+        "forge",
+        "neoforge",
+        "paper",
         "spigot",
         "utility",
         "worldgen"
       ],
-      "current_downloads": 519578,
-      "baseline_downloads": 519383,
-      "delta_downloads": 195,
-      "downloads_per_hour": 33.34,
-      "growth_pct": 0.04
+      "current_downloads": 310686,
+      "baseline_downloads": 310468,
+      "delta_downloads": 218,
+      "downloads_per_hour": 41.99,
+      "growth_pct": 0.07
     },
     {
-      "project_id": "EeyAn23L",
-      "title": "FancyNpcs",
-      "slug": "fancynpcs",
-      "categories": [
-        "decoration",
-        "folia",
-        "library",
-        "paper",
-        "social",
-        "utility"
-      ],
-      "current_downloads": 418341,
-      "baseline_downloads": 418146,
-      "delta_downloads": 195,
-      "downloads_per_hour": 33.34,
-      "growth_pct": 0.05
-    },
-    {
-      "project_id": "2UeET9aA",
-      "title": "TPS HUD",
-      "slug": "tps-hud",
+      "project_id": "1apsbntF",
+      "title": "SetHome",
+      "slug": "sethome",
       "categories": [
         "bukkit",
-        "fabric",
         "paper",
         "purpur",
-        "quilt",
-        "spigot",
-        "utility"
+        "spigot"
       ],
-      "current_downloads": 467185,
-      "baseline_downloads": 466993,
-      "delta_downloads": 192,
-      "downloads_per_hour": 32.83,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "TbHIxhx5",
-      "title": "ViaRewind",
-      "slug": "viarewind",
-      "categories": [
-        "bungeecord",
-        "fabric",
-        "folia",
-        "paper",
-        "sponge",
-        "utility",
-        "velocity"
-      ],
-      "current_downloads": 623852,
-      "baseline_downloads": 623666,
-      "delta_downloads": 186,
-      "downloads_per_hour": 31.8,
-      "growth_pct": 0.03
-    },
-    {
-      "project_id": "Lu3KuzdV",
-      "title": "CoreProtect",
-      "slug": "coreprotect",
-      "categories": [
-        "bukkit",
-        "equipment",
-        "folia",
-        "library",
-        "management",
-        "paper",
-        "purpur",
-        "spigot",
-        "storage",
-        "utility"
-      ],
-      "current_downloads": 504264,
-      "baseline_downloads": 504079,
-      "delta_downloads": 185,
-      "downloads_per_hour": 31.63,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "xFNYAvMk",
-      "title": "Skript",
-      "slug": "skript",
-      "categories": [
-        "game-mechanics",
-        "library",
-        "paper",
-        "utility"
-      ],
-      "current_downloads": 221737,
-      "baseline_downloads": 221553,
-      "delta_downloads": 184,
-      "downloads_per_hour": 31.46,
-      "growth_pct": 0.08
+      "current_downloads": 300774,
+      "baseline_downloads": 300558,
+      "delta_downloads": 216,
+      "downloads_per_hour": 41.61,
+      "growth_pct": 0.07
     },
     {
       "project_id": "GgG2my3y",
@@ -1283,189 +1398,67 @@
         "spigot",
         "utility"
       ],
-      "current_downloads": 186794,
-      "baseline_downloads": 186621,
-      "delta_downloads": 173,
-      "downloads_per_hour": 29.58,
-      "growth_pct": 0.09
+      "current_downloads": 187010,
+      "baseline_downloads": 186794,
+      "delta_downloads": 216,
+      "downloads_per_hour": 41.61,
+      "growth_pct": 0.12
     },
     {
-      "project_id": "9js4IEHC",
-      "title": "AuthMeReloaded",
-      "slug": "authmereloaded",
+      "project_id": "VuKoQN3Q",
+      "title": "PlayerKits 2",
+      "slug": "playerkits-2",
       "categories": [
-        "bukkit",
-        "bungeecord",
-        "folia",
-        "management",
-        "paper",
-        "spigot",
-        "utility",
-        "velocity"
-      ],
-      "current_downloads": 122360,
-      "baseline_downloads": 122198,
-      "delta_downloads": 162,
-      "downloads_per_hour": 27.7,
-      "growth_pct": 0.13
-    },
-    {
-      "project_id": "tRdRT5jS",
-      "title": "Click Mobs",
-      "slug": "clickmobs",
-      "categories": [
-        "adventure",
-        "bukkit",
-        "fabric",
+        "equipment",
         "game-mechanics",
-        "mobs",
-        "neoforge",
+        "management",
         "paper",
         "purpur",
         "spigot",
-        "transportation",
         "utility"
       ],
-      "current_downloads": 229776,
-      "baseline_downloads": 229620,
-      "delta_downloads": 156,
-      "downloads_per_hour": 26.67,
+      "current_downloads": 301800,
+      "baseline_downloads": 301589,
+      "delta_downloads": 211,
+      "downloads_per_hour": 40.65,
       "growth_pct": 0.07
     },
     {
-      "project_id": "GOHbQGyX",
-      "title": "GSit",
-      "slug": "gsit",
+      "project_id": "wkzK5379",
+      "title": "VoxelMap-Updated",
+      "slug": "voxelmap-updated",
       "categories": [
         "adventure",
-        "bukkit",
-        "folia",
-        "game-mechanics",
-        "magic",
-        "paper",
-        "purpur",
-        "social",
-        "spigot",
-        "transportation",
-        "utility"
-      ],
-      "current_downloads": 107183,
-      "baseline_downloads": 107033,
-      "delta_downloads": 150,
-      "downloads_per_hour": 25.65,
-      "growth_pct": 0.14
-    },
-    {
-      "project_id": "7pdfxYHV",
-      "title": "Infinite Villager Trading",
-      "slug": "infinite-villager-trading",
-      "categories": [
-        "folia",
-        "game-mechanics",
-        "mobs",
-        "paper",
-        "purpur",
-        "spigot",
-        "utility"
-      ],
-      "current_downloads": 338305,
-      "baseline_downloads": 338158,
-      "delta_downloads": 147,
-      "downloads_per_hour": 25.14,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "w02MKsTg",
-      "title": "DecentHolograms",
-      "slug": "decentholograms",
-      "categories": [
-        "decoration",
-        "paper",
-        "spigot",
-        "utility"
-      ],
-      "current_downloads": 259269,
-      "baseline_downloads": 259130,
-      "delta_downloads": 139,
-      "downloads_per_hour": 23.77,
-      "growth_pct": 0.05
-    },
-    {
-      "project_id": "9kNC5Mrh",
-      "title": "BuildPaste - Instant Structures",
-      "slug": "buildpaste",
-      "categories": [
-        "bukkit",
-        "decoration",
         "fabric",
         "forge",
         "neoforge",
         "paper",
-        "spigot",
-        "utility",
-        "worldgen"
-      ],
-      "current_downloads": 310468,
-      "baseline_downloads": 310332,
-      "delta_downloads": 136,
-      "downloads_per_hour": 23.25,
-      "growth_pct": 0.04
-    },
-    {
-      "project_id": "ayRaM8J7",
-      "title": "VaultUnlocked",
-      "slug": "vaultunlocked",
-      "categories": [
-        "bukkit",
-        "folia",
-        "paper",
         "purpur",
-        "spigot"
+        "quilt",
+        "spigot",
+        "utility"
       ],
-      "current_downloads": 135465,
-      "baseline_downloads": 135346,
-      "delta_downloads": 119,
-      "downloads_per_hour": 20.35,
-      "growth_pct": 0.09
+      "current_downloads": 1323548,
+      "baseline_downloads": 1323341,
+      "delta_downloads": 207,
+      "downloads_per_hour": 39.88,
+      "growth_pct": 0.02
     },
     {
-      "project_id": "9tQwxSFr",
-      "title": "SmartSpawner",
-      "slug": "smartspawner",
+      "project_id": "P5oyhfVZ",
+      "title": "Attribute Swap Fixer",
+      "slug": "attribute-swap-fixer",
       "categories": [
-        "economy",
-        "folia",
+        "equipment",
         "game-mechanics",
-        "management",
-        "optimization",
         "paper",
-        "purpur",
         "utility"
       ],
-      "current_downloads": 200614,
-      "baseline_downloads": 200497,
-      "delta_downloads": 117,
-      "downloads_per_hour": 20.01,
-      "growth_pct": 0.06
-    },
-    {
-      "project_id": "Y4NRwMW5",
-      "title": "NightCore",
-      "slug": "nightcore",
-      "categories": [
-        "folia",
-        "library",
-        "management",
-        "paper",
-        "purpur",
-        "spigot",
-        "utility"
-      ],
-      "current_downloads": 240725,
-      "baseline_downloads": 240609,
-      "delta_downloads": 116,
-      "downloads_per_hour": 19.83,
-      "growth_pct": 0.05
+      "current_downloads": 74679,
+      "baseline_downloads": 74472,
+      "delta_downloads": 207,
+      "downloads_per_hour": 39.88,
+      "growth_pct": 0.28
     }
   ],
   "declining_projects": [],
@@ -1473,2002 +1466,2002 @@
     {
       "game_version": "26.2",
       "loader": "fabric",
-      "delta_downloads": 33782,
-      "downloads_per_hour": 5776.35,
-      "project_count": 293,
+      "delta_downloads": 49019,
+      "downloads_per_hour": 9442.87,
+      "project_count": 395,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 18412
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "paper",
-      "delta_downloads": 24719,
-      "downloads_per_hour": 4226.67,
-      "project_count": 1925,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
-    },
-    {
-      "game_version": "26.2",
-      "loader": "quilt",
-      "delta_downloads": 24460,
-      "downloads_per_hour": 4182.39,
-      "project_count": 84,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 18412
-    },
-    {
-      "game_version": "26.1",
-      "loader": "paper",
-      "delta_downloads": 23628,
-      "downloads_per_hour": 4040.13,
-      "project_count": 1862,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "paper",
-      "delta_downloads": 23626,
-      "downloads_per_hour": 4039.78,
-      "project_count": 2902,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 979
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "paper",
-      "delta_downloads": 23562,
-      "downloads_per_hour": 4028.84,
-      "project_count": 1826,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
-    },
-    {
-      "game_version": "26.2",
-      "loader": "paper",
-      "delta_downloads": 23362,
-      "downloads_per_hour": 3994.64,
-      "project_count": 1580,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
+      "top_project_delta": 26673
     },
     {
       "game_version": "1.21.11",
       "loader": "fabric",
-      "delta_downloads": 22576,
-      "downloads_per_hour": 3860.25,
-      "project_count": 382,
+      "delta_downloads": 36639,
+      "downloads_per_hour": 7058.03,
+      "project_count": 428,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 9693
+      "top_project_delta": 16084
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "paper",
+      "delta_downloads": 36115,
+      "downloads_per_hour": 6957.08,
+      "project_count": 3104,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 1748
+    },
+    {
+      "game_version": "26.2",
+      "loader": "quilt",
+      "delta_downloads": 34853,
+      "downloads_per_hour": 6713.98,
+      "project_count": 115,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 26673
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "paper",
+      "delta_downloads": 34695,
+      "downloads_per_hour": 6683.54,
+      "project_count": 1992,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 3263
+    },
+    {
+      "game_version": "26.1",
+      "loader": "paper",
+      "delta_downloads": 33184,
+      "downloads_per_hour": 6392.47,
+      "project_count": 1942,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 3263
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "paper",
+      "delta_downloads": 33060,
+      "downloads_per_hour": 6368.58,
+      "project_count": 1913,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 3263
+    },
+    {
+      "game_version": "26.2",
+      "loader": "paper",
+      "delta_downloads": 32557,
+      "downloads_per_hour": 6271.68,
+      "project_count": 1643,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 3263
     },
     {
       "game_version": "1.21.8",
       "loader": "paper",
-      "delta_downloads": 20719,
-      "downloads_per_hour": 3542.72,
-      "project_count": 3047,
+      "delta_downloads": 31425,
+      "downloads_per_hour": 6053.62,
+      "project_count": 3239,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.10",
       "loader": "paper",
-      "delta_downloads": 20623,
-      "downloads_per_hour": 3526.3,
-      "project_count": 2902,
+      "delta_downloads": 31381,
+      "downloads_per_hour": 6045.14,
+      "project_count": 3110,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.9",
       "loader": "paper",
-      "delta_downloads": 20439,
-      "downloads_per_hour": 3494.84,
-      "project_count": 2873,
+      "delta_downloads": 31103,
+      "downloads_per_hour": 5991.59,
+      "project_count": 3072,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "paper",
-      "delta_downloads": 20291,
-      "downloads_per_hour": 3469.54,
-      "project_count": 3103,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.7",
       "loader": "paper",
-      "delta_downloads": 20222,
-      "downloads_per_hour": 3457.74,
-      "project_count": 3016,
+      "delta_downloads": 30688,
+      "downloads_per_hour": 5911.64,
+      "project_count": 3203,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.6",
       "loader": "paper",
-      "delta_downloads": 20157,
-      "downloads_per_hour": 3446.62,
-      "project_count": 3018,
+      "delta_downloads": 30609,
+      "downloads_per_hour": 5896.43,
+      "project_count": 3211,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "paper",
+      "delta_downloads": 30531,
+      "downloads_per_hour": 5881.4,
+      "project_count": 3284,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.4",
       "loader": "paper",
-      "delta_downloads": 19975,
-      "downloads_per_hour": 3415.5,
-      "project_count": 3173,
+      "delta_downloads": 30062,
+      "downloads_per_hour": 5791.05,
+      "project_count": 3356,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.1",
       "loader": "paper",
-      "delta_downloads": 18818,
-      "downloads_per_hour": 3217.67,
-      "project_count": 3097,
+      "delta_downloads": 28123,
+      "downloads_per_hour": 5417.53,
+      "project_count": 3254,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21",
       "loader": "paper",
-      "delta_downloads": 18399,
-      "downloads_per_hour": 3146.02,
-      "project_count": 3101,
+      "delta_downloads": 27532,
+      "downloads_per_hour": 5303.68,
+      "project_count": 3250,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.3",
       "loader": "paper",
-      "delta_downloads": 18116,
-      "downloads_per_hour": 3097.63,
-      "project_count": 3028,
+      "delta_downloads": 27230,
+      "downloads_per_hour": 5245.51,
+      "project_count": 3182,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.2",
       "loader": "paper",
-      "delta_downloads": 18028,
-      "downloads_per_hour": 3082.59,
-      "project_count": 2982,
+      "delta_downloads": 27061,
+      "downloads_per_hour": 5212.95,
+      "project_count": 3130,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "26.1.2",
       "loader": "folia",
-      "delta_downloads": 17968,
-      "downloads_per_hour": 3072.33,
-      "project_count": 931,
+      "delta_downloads": 24130,
+      "downloads_per_hour": 4648.33,
+      "project_count": 970,
       "top_project_id": "4sP0LXxp",
       "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
+      "top_project_delta": 3263
     },
     {
       "game_version": "26.1",
       "loader": "folia",
-      "delta_downloads": 17612,
-      "downloads_per_hour": 3011.46,
-      "project_count": 891,
+      "delta_downloads": 23653,
+      "downloads_per_hour": 4556.44,
+      "project_count": 924,
       "top_project_id": "4sP0LXxp",
       "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
+      "top_project_delta": 3263
     },
     {
       "game_version": "26.1.1",
       "loader": "folia",
-      "delta_downloads": 17586,
-      "downloads_per_hour": 3007.01,
-      "project_count": 877,
+      "delta_downloads": 23567,
+      "downloads_per_hour": 4539.88,
+      "project_count": 915,
       "top_project_id": "4sP0LXxp",
       "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
+      "top_project_delta": 3263
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "purpur",
+      "delta_downloads": 23479,
+      "downloads_per_hour": 4522.92,
+      "project_count": 2107,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 1748
     },
     {
       "game_version": "26.2",
       "loader": "folia",
-      "delta_downloads": 17361,
-      "downloads_per_hour": 2968.54,
-      "project_count": 766,
+      "delta_downloads": 23387,
+      "downloads_per_hour": 4505.2,
+      "project_count": 796,
       "top_project_id": "4sP0LXxp",
       "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
+      "top_project_delta": 3263
     },
     {
       "game_version": "26.1",
       "loader": "purpur",
-      "delta_downloads": 16829,
-      "downloads_per_hour": 2877.57,
-      "project_count": 1422,
+      "delta_downloads": 23240,
+      "downloads_per_hour": 4476.88,
+      "project_count": 1461,
       "top_project_id": "4sP0LXxp",
       "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
+      "top_project_delta": 3263
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "purpur",
+      "delta_downloads": 23087,
+      "downloads_per_hour": 4447.41,
+      "project_count": 1446,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 3263
     },
     {
       "game_version": "26.1.2",
       "loader": "purpur",
-      "delta_downloads": 16791,
-      "downloads_per_hour": 2871.07,
-      "project_count": 1430,
+      "delta_downloads": 23062,
+      "downloads_per_hour": 4442.59,
+      "project_count": 1461,
       "top_project_id": "4sP0LXxp",
       "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "purpur",
-      "delta_downloads": 16744,
-      "downloads_per_hour": 2863.04,
-      "project_count": 1396,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
-    },
-    {
-      "game_version": "26.2",
-      "loader": "purpur",
-      "delta_downloads": 16187,
-      "downloads_per_hour": 2767.8,
-      "project_count": 1171,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 2958
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "purpur",
-      "delta_downloads": 15123,
-      "downloads_per_hour": 2585.86,
-      "project_count": 2012,
-      "top_project_id": "4sP0LXxp",
-      "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 979
+      "top_project_delta": 3263
     },
     {
       "game_version": "1.21.11",
       "loader": "spigot",
-      "delta_downloads": 14995,
-      "downloads_per_hour": 2563.98,
-      "project_count": 1934,
+      "delta_downloads": 23037,
+      "downloads_per_hour": 4437.78,
+      "project_count": 2045,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.21.11",
       "loader": "folia",
-      "delta_downloads": 14971,
-      "downloads_per_hour": 2559.87,
-      "project_count": 1184,
+      "delta_downloads": 22451,
+      "downloads_per_hour": 4324.89,
+      "project_count": 1233,
       "top_project_id": "4sP0LXxp",
       "top_project_title": "VeinMiner Enchantment",
-      "top_project_delta": 979
+      "top_project_delta": 1748
     },
     {
-      "game_version": "1.20.6",
-      "loader": "paper",
-      "delta_downloads": 14946,
-      "downloads_per_hour": 2555.6,
-      "project_count": 1973,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "spigot",
-      "delta_downloads": 14335,
-      "downloads_per_hour": 2451.13,
-      "project_count": 2122,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "game_version": "26.2",
+      "loader": "purpur",
+      "delta_downloads": 22237,
+      "downloads_per_hour": 4283.67,
+      "project_count": 1209,
+      "top_project_id": "4sP0LXxp",
+      "top_project_title": "VeinMiner Enchantment",
+      "top_project_delta": 3263
     },
     {
       "game_version": "1.21.10",
       "loader": "spigot",
-      "delta_downloads": 14326,
-      "downloads_per_hour": 2449.59,
-      "project_count": 1995,
+      "delta_downloads": 22087,
+      "downloads_per_hour": 4254.77,
+      "project_count": 2098,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "spigot",
+      "delta_downloads": 22020,
+      "downloads_per_hour": 4241.87,
+      "project_count": 2208,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.21.4",
       "loader": "spigot",
-      "delta_downloads": 14228,
-      "downloads_per_hour": 2432.83,
-      "project_count": 2285,
+      "delta_downloads": 21875,
+      "downloads_per_hour": 4213.93,
+      "project_count": 2377,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "spigot",
+      "delta_downloads": 21816,
+      "downloads_per_hour": 4202.57,
+      "project_count": 2086,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "paper",
+      "delta_downloads": 21804,
+      "downloads_per_hour": 4200.26,
+      "project_count": 2026,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "spigot",
+      "delta_downloads": 21756,
+      "downloads_per_hour": 4191.01,
+      "project_count": 2287,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "spigot",
+      "delta_downloads": 21638,
+      "downloads_per_hour": 4168.28,
+      "project_count": 2203,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "spigot",
+      "delta_downloads": 21569,
+      "downloads_per_hour": 4154.99,
+      "project_count": 2215,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.11",
+      "loader": "quilt",
+      "delta_downloads": 20811,
+      "downloads_per_hour": 4008.97,
+      "project_count": 114,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 16084
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "spigot",
+      "delta_downloads": 20529,
+      "downloads_per_hour": 3954.64,
+      "project_count": 1326,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "spigot",
+      "delta_downloads": 20515,
+      "downloads_per_hour": 3951.95,
+      "project_count": 2357,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21",
+      "loader": "spigot",
+      "delta_downloads": 20482,
+      "downloads_per_hour": 3945.59,
+      "project_count": 2382,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "paper",
+      "delta_downloads": 20367,
+      "downloads_per_hour": 3923.44,
+      "project_count": 1898,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "purpur",
+      "delta_downloads": 20300,
+      "downloads_per_hour": 3910.53,
+      "project_count": 2155,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "purpur",
+      "delta_downloads": 20178,
+      "downloads_per_hour": 3887.03,
+      "project_count": 2222,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "purpur",
+      "delta_downloads": 20116,
+      "downloads_per_hour": 3875.09,
+      "project_count": 2137,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "26.1",
+      "loader": "spigot",
+      "delta_downloads": 20045,
+      "downloads_per_hour": 3861.41,
+      "project_count": 1347,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "paper",
+      "delta_downloads": 20044,
+      "downloads_per_hour": 3861.22,
+      "project_count": 1971,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "spigot",
+      "delta_downloads": 20029,
+      "downloads_per_hour": 3858.33,
+      "project_count": 2303,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "spigot",
+      "delta_downloads": 19991,
+      "downloads_per_hour": 3851.01,
+      "project_count": 2278,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "spigot",
+      "delta_downloads": 19861,
+      "downloads_per_hour": 3825.96,
+      "project_count": 1325,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "purpur",
+      "delta_downloads": 19844,
+      "downloads_per_hour": 3822.69,
+      "project_count": 2208,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "paper",
+      "delta_downloads": 19776,
+      "downloads_per_hour": 3809.59,
+      "project_count": 1966,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "purpur",
+      "delta_downloads": 19728,
+      "downloads_per_hour": 3800.34,
+      "project_count": 2247,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "paper",
+      "delta_downloads": 19718,
+      "downloads_per_hour": 3798.42,
+      "project_count": 1931,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "purpur",
+      "delta_downloads": 19683,
+      "downloads_per_hour": 3791.67,
+      "project_count": 2208,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "paper",
+      "delta_downloads": 19648,
+      "downloads_per_hour": 3784.93,
+      "project_count": 1907,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "fabric",
+      "delta_downloads": 19419,
+      "downloads_per_hour": 3740.82,
+      "project_count": 409,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 4285
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "purpur",
+      "delta_downloads": 19374,
+      "downloads_per_hour": 3732.15,
+      "project_count": 2292,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20",
+      "loader": "paper",
+      "delta_downloads": 19077,
+      "downloads_per_hour": 3674.94,
+      "project_count": 1913,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.19.4",
+      "loader": "paper",
+      "delta_downloads": 19026,
+      "downloads_per_hour": 3665.11,
+      "project_count": 1612,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "purpur",
+      "delta_downloads": 18987,
+      "downloads_per_hour": 3657.6,
+      "project_count": 2239,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "folia",
+      "delta_downloads": 18814,
+      "downloads_per_hour": 3624.27,
+      "project_count": 1267,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "folia",
+      "delta_downloads": 18775,
+      "downloads_per_hour": 3616.76,
+      "project_count": 1237,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.6",
+      "loader": "folia",
+      "delta_downloads": 18680,
+      "downloads_per_hour": 3598.46,
+      "project_count": 1259,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21",
+      "loader": "purpur",
+      "delta_downloads": 18664,
+      "downloads_per_hour": 3595.38,
+      "project_count": 2236,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "folia",
+      "delta_downloads": 18643,
+      "downloads_per_hour": 3591.33,
+      "project_count": 1215,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "folia",
+      "delta_downloads": 18641,
+      "downloads_per_hour": 3590.95,
+      "project_count": 1256,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "26.2",
+      "loader": "spigot",
+      "delta_downloads": 18638,
+      "downloads_per_hour": 3590.37,
+      "project_count": 1075,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "folia",
+      "delta_downloads": 18462,
+      "downloads_per_hour": 3556.46,
+      "project_count": 1271,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "purpur",
+      "delta_downloads": 18413,
+      "downloads_per_hour": 3547.02,
+      "project_count": 2192,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "26.1.2",
+      "loader": "fabric",
+      "delta_downloads": 18360,
+      "downloads_per_hour": 3536.82,
+      "project_count": 312,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 5936
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "fabric",
+      "delta_downloads": 18301,
+      "downloads_per_hour": 3525.45,
+      "project_count": 388,
+      "top_project_id": "dw7LChq9",
+      "top_project_title": "PatPat [Mod & Plugin]",
+      "top_project_delta": 2779
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "purpur",
+      "delta_downloads": 18279,
+      "downloads_per_hour": 3521.21,
+      "project_count": 2168,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "26.1",
+      "loader": "fabric",
+      "delta_downloads": 18105,
+      "downloads_per_hour": 3487.69,
+      "project_count": 293,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 5936
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "fabric",
+      "delta_downloads": 18093,
+      "downloads_per_hour": 3485.38,
+      "project_count": 288,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 5936
     },
     {
       "game_version": "1.21.1",
       "loader": "neoforge",
-      "delta_downloads": 14204,
-      "downloads_per_hour": 2428.73,
-      "project_count": 221,
+      "delta_downloads": 18002,
+      "downloads_per_hour": 3467.85,
+      "project_count": 215,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 6812
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "spigot",
-      "delta_downloads": 14204,
-      "downloads_per_hour": 2428.73,
-      "project_count": 2199,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "spigot",
-      "delta_downloads": 14151,
-      "downloads_per_hour": 2419.66,
-      "project_count": 1984,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "spigot",
-      "delta_downloads": 14063,
-      "downloads_per_hour": 2404.62,
-      "project_count": 2114,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "spigot",
-      "delta_downloads": 14013,
-      "downloads_per_hour": 2396.07,
-      "project_count": 2125,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "paper",
-      "delta_downloads": 13953,
-      "downloads_per_hour": 2385.81,
-      "project_count": 1846,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "fabric",
-      "delta_downloads": 13830,
-      "downloads_per_hour": 2364.78,
-      "project_count": 375,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 3029
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "paper",
-      "delta_downloads": 13594,
-      "downloads_per_hour": 2324.42,
-      "project_count": 1906,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "spigot",
-      "delta_downloads": 13502,
-      "downloads_per_hour": 2308.69,
-      "project_count": 1278,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "paper",
-      "delta_downloads": 13375,
-      "downloads_per_hour": 2286.98,
-      "project_count": 1872,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "paper",
-      "delta_downloads": 13372,
-      "downloads_per_hour": 2286.46,
-      "project_count": 1861,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21",
-      "loader": "spigot",
-      "delta_downloads": 13354,
-      "downloads_per_hour": 2283.39,
-      "project_count": 2294,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "spigot",
-      "delta_downloads": 13341,
-      "downloads_per_hour": 2281.16,
-      "project_count": 2268,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "paper",
-      "delta_downloads": 13316,
-      "downloads_per_hour": 2276.89,
-      "project_count": 1833,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "purpur",
-      "delta_downloads": 13206,
-      "downloads_per_hour": 2258.08,
-      "project_count": 2043,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "fabric",
-      "delta_downloads": 13195,
-      "downloads_per_hour": 2256.2,
-      "project_count": 272,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 4105
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "purpur",
-      "delta_downloads": 13134,
-      "downloads_per_hour": 2245.77,
-      "project_count": 2146,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "26.1",
-      "loader": "spigot",
-      "delta_downloads": 13121,
-      "downloads_per_hour": 2243.55,
-      "project_count": 1300,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "purpur",
-      "delta_downloads": 13080,
-      "downloads_per_hour": 2236.53,
-      "project_count": 2034,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "spigot",
-      "delta_downloads": 13021,
-      "downloads_per_hour": 2226.45,
-      "project_count": 1267,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "26.1",
-      "loader": "fabric",
-      "delta_downloads": 13001,
-      "downloads_per_hour": 2223.03,
-      "project_count": 253,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 4105
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "spigot",
-      "delta_downloads": 12996,
-      "downloads_per_hour": 2222.17,
-      "project_count": 2217,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "fabric",
-      "delta_downloads": 12988,
-      "downloads_per_hour": 2220.8,
-      "project_count": 248,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 4105
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "spigot",
-      "delta_downloads": 12982,
-      "downloads_per_hour": 2219.78,
-      "project_count": 2193,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20",
-      "loader": "paper",
-      "delta_downloads": 12923,
-      "downloads_per_hour": 2209.69,
-      "project_count": 1822,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "purpur",
-      "delta_downloads": 12895,
-      "downloads_per_hour": 2204.9,
-      "project_count": 2132,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "folia",
-      "delta_downloads": 12838,
-      "downloads_per_hour": 2195.16,
-      "project_count": 1230,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "purpur",
-      "delta_downloads": 12828,
-      "downloads_per_hour": 2193.45,
-      "project_count": 2156,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "fabric",
-      "delta_downloads": 12776,
-      "downloads_per_hour": 2184.55,
-      "project_count": 370,
-      "top_project_id": "dw7LChq9",
-      "top_project_title": "PatPat [Mod & Plugin]",
-      "top_project_delta": 1703
-    },
-    {
-      "game_version": "1.19.4",
-      "loader": "paper",
-      "delta_downloads": 12762,
-      "downloads_per_hour": 2182.16,
-      "project_count": 1533,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "purpur",
-      "delta_downloads": 12757,
-      "downloads_per_hour": 2181.31,
-      "project_count": 2120,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "folia",
-      "delta_downloads": 12730,
-      "downloads_per_hour": 2176.69,
-      "project_count": 1179,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.6",
-      "loader": "folia",
-      "delta_downloads": 12722,
-      "downloads_per_hour": 2175.32,
-      "project_count": 1215,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "purpur",
-      "delta_downloads": 12710,
-      "downloads_per_hour": 2173.27,
-      "project_count": 2210,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.11",
-      "loader": "quilt",
-      "delta_downloads": 12705,
-      "downloads_per_hour": 2172.41,
-      "project_count": 104,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 9693
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "folia",
-      "delta_downloads": 12694,
-      "downloads_per_hour": 2170.53,
-      "project_count": 1216,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "folia",
-      "delta_downloads": 12687,
-      "downloads_per_hour": 2169.34,
-      "project_count": 1223,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "folia",
-      "delta_downloads": 12669,
-      "downloads_per_hour": 2166.26,
-      "project_count": 1170,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "purpur",
-      "delta_downloads": 12497,
-      "downloads_per_hour": 2136.85,
-      "project_count": 2183,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21",
-      "loader": "purpur",
-      "delta_downloads": 12290,
-      "downloads_per_hour": 2101.45,
-      "project_count": 2194,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 8407
     },
     {
       "game_version": "1.21.4",
       "loader": "folia",
-      "delta_downloads": 12229,
-      "downloads_per_hour": 2091.02,
-      "project_count": 1210,
+      "delta_downloads": 17986,
+      "downloads_per_hour": 3464.77,
+      "project_count": 1274,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "26.2",
-      "loader": "spigot",
-      "delta_downloads": 12207,
-      "downloads_per_hour": 2087.26,
-      "project_count": 1006,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "paper",
-      "delta_downloads": 12105,
-      "downloads_per_hour": 2069.82,
-      "project_count": 1358,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "purpur",
-      "delta_downloads": 12082,
-      "downloads_per_hour": 2065.89,
-      "project_count": 2138,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "purpur",
-      "delta_downloads": 12000,
-      "downloads_per_hour": 2051.87,
-      "project_count": 2115,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "paper",
-      "delta_downloads": 11777,
-      "downloads_per_hour": 2013.74,
-      "project_count": 1409,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "paper",
-      "delta_downloads": 11767,
-      "downloads_per_hour": 2012.03,
-      "project_count": 1414,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.21.11",
       "loader": "bukkit",
-      "delta_downloads": 11703,
-      "downloads_per_hour": 2001.08,
-      "project_count": 1454,
+      "delta_downloads": 17982,
+      "downloads_per_hour": 3464.0,
+      "project_count": 1523,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "paper",
+      "delta_downloads": 17939,
+      "downloads_per_hour": 3455.71,
+      "project_count": 1427,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "paper",
+      "delta_downloads": 17644,
+      "downloads_per_hour": 3398.89,
+      "project_count": 1492,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "paper",
+      "delta_downloads": 17557,
+      "downloads_per_hour": 3382.13,
+      "project_count": 1487,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.19",
       "loader": "paper",
-      "delta_downloads": 11662,
-      "downloads_per_hour": 1994.07,
-      "project_count": 1401,
+      "delta_downloads": 17438,
+      "downloads_per_hour": 3359.2,
+      "project_count": 1487,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.19.1",
       "loader": "paper",
-      "delta_downloads": 11644,
-      "downloads_per_hour": 1990.99,
-      "project_count": 1380,
+      "delta_downloads": 17420,
+      "downloads_per_hour": 3355.74,
+      "project_count": 1468,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.20.6",
       "loader": "spigot",
-      "delta_downloads": 11584,
-      "downloads_per_hour": 1980.74,
-      "project_count": 1608,
+      "delta_downloads": 17178,
+      "downloads_per_hour": 3309.12,
+      "project_count": 1664,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.10",
+      "loader": "bukkit",
+      "delta_downloads": 17130,
+      "downloads_per_hour": 3299.87,
+      "project_count": 1576,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.5",
+      "loader": "bukkit",
+      "delta_downloads": 16987,
+      "downloads_per_hour": 3272.32,
+      "project_count": 1721,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.21.1",
       "loader": "folia",
-      "delta_downloads": 11579,
-      "downloads_per_hour": 1979.88,
-      "project_count": 1183,
+      "delta_downloads": 16974,
+      "downloads_per_hour": 3269.82,
+      "project_count": 1229,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.8",
+      "loader": "bukkit",
+      "delta_downloads": 16951,
+      "downloads_per_hour": 3265.39,
+      "project_count": 1653,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.7",
+      "loader": "bukkit",
+      "delta_downloads": 16937,
+      "downloads_per_hour": 3262.69,
+      "project_count": 1662,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "bukkit",
+      "delta_downloads": 16926,
+      "downloads_per_hour": 3260.57,
+      "project_count": 1778,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.9",
+      "loader": "bukkit",
+      "delta_downloads": 16886,
+      "downloads_per_hour": 3252.87,
+      "project_count": 1571,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.1",
       "loader": "forge",
-      "delta_downloads": 11510,
-      "downloads_per_hour": 1968.08,
-      "project_count": 215,
+      "delta_downloads": 16821,
+      "downloads_per_hour": 3240.35,
+      "project_count": 203,
       "top_project_id": "vE2FN5qn",
       "top_project_title": "Let Me Despawn",
-      "top_project_delta": 2702
-    },
-    {
-      "game_version": "1.21",
-      "loader": "folia",
-      "delta_downloads": 11325,
-      "downloads_per_hour": 1936.45,
-      "project_count": 1172,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.3",
-      "loader": "folia",
-      "delta_downloads": 11304,
-      "downloads_per_hour": 1932.86,
-      "project_count": 1161,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.2",
-      "loader": "folia",
-      "delta_downloads": 11297,
-      "downloads_per_hour": 1931.66,
-      "project_count": 1149,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.10",
-      "loader": "bukkit",
-      "delta_downloads": 11124,
-      "downloads_per_hour": 1902.08,
-      "project_count": 1508,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.5",
-      "loader": "bukkit",
-      "delta_downloads": 11088,
-      "downloads_per_hour": 1895.92,
-      "project_count": 1673,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.4",
-      "loader": "bukkit",
-      "delta_downloads": 11069,
-      "downloads_per_hour": 1892.68,
-      "project_count": 1725,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.8",
-      "loader": "bukkit",
-      "delta_downloads": 11058,
-      "downloads_per_hour": 1890.8,
-      "project_count": 1612,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.7",
-      "loader": "bukkit",
-      "delta_downloads": 11028,
-      "downloads_per_hour": 1885.67,
-      "project_count": 1616,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.9",
-      "loader": "bukkit",
-      "delta_downloads": 10984,
-      "downloads_per_hour": 1878.14,
-      "project_count": 1504,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "paper",
-      "delta_downloads": 10968,
-      "downloads_per_hour": 1875.41,
-      "project_count": 1189,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 3419
     },
     {
       "game_version": "1.21.6",
       "loader": "bukkit",
-      "delta_downloads": 10923,
-      "downloads_per_hour": 1867.71,
-      "project_count": 1623,
+      "delta_downloads": 16788,
+      "downloads_per_hour": 3233.99,
+      "project_count": 1666,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "1.20.5",
-      "loader": "spigot",
-      "delta_downloads": 10702,
-      "downloads_per_hour": 1829.92,
-      "project_count": 1526,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "game_version": "1.21",
+      "loader": "folia",
+      "delta_downloads": 16601,
+      "downloads_per_hour": 3197.97,
+      "project_count": 1227,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.3",
+      "loader": "folia",
+      "delta_downloads": 16574,
+      "downloads_per_hour": 3192.77,
+      "project_count": 1207,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21.2",
+      "loader": "folia",
+      "delta_downloads": 16566,
+      "downloads_per_hour": 3191.22,
+      "project_count": 1195,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.17.1",
+      "loader": "paper",
+      "delta_downloads": 16315,
+      "downloads_per_hour": 3142.87,
+      "project_count": 1245,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "26.1.2",
       "loader": "bukkit",
-      "delta_downloads": 10660,
-      "downloads_per_hour": 1822.74,
-      "project_count": 954,
+      "delta_downloads": 16302,
+      "downloads_per_hour": 3140.37,
+      "project_count": 965,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "1.18",
-      "loader": "paper",
-      "delta_downloads": 10626,
-      "downloads_per_hour": 1816.93,
-      "project_count": 1233,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "paper",
-      "delta_downloads": 10625,
-      "downloads_per_hour": 1816.76,
-      "project_count": 1217,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.20.4",
+      "game_version": "1.20.5",
       "loader": "spigot",
-      "delta_downloads": 10542,
-      "downloads_per_hour": 1802.56,
+      "delta_downloads": 15876,
+      "downloads_per_hour": 3058.3,
       "project_count": 1585,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "paper",
-      "delta_downloads": 10441,
-      "downloads_per_hour": 1785.29,
-      "project_count": 1093,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 946
     },
     {
       "game_version": "1.21",
       "loader": "bukkit",
-      "delta_downloads": 10390,
-      "downloads_per_hour": 1776.57,
-      "project_count": 1744,
+      "delta_downloads": 15835,
+      "downloads_per_hour": 3050.41,
+      "project_count": 1812,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.21.1",
-      "loader": "bukkit",
-      "delta_downloads": 10363,
-      "downloads_per_hour": 1771.96,
-      "project_count": 1722,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "spigot",
-      "delta_downloads": 10344,
-      "downloads_per_hour": 1768.71,
-      "project_count": 1553,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "spigot",
-      "delta_downloads": 10327,
-      "downloads_per_hour": 1765.8,
-      "project_count": 1559,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "26.1",
       "loader": "bukkit",
-      "delta_downloads": 10318,
-      "downloads_per_hour": 1764.26,
-      "project_count": 980,
+      "delta_downloads": 15823,
+      "downloads_per_hour": 3048.1,
+      "project_count": 989,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "1.20.3",
+      "game_version": "1.20.4",
       "loader": "spigot",
-      "delta_downloads": 10295,
-      "downloads_per_hour": 1760.33,
-      "project_count": 1531,
+      "delta_downloads": 15799,
+      "downloads_per_hour": 3043.47,
+      "project_count": 1646,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.1",
+      "loader": "bukkit",
+      "delta_downloads": 15791,
+      "downloads_per_hour": 3041.93,
+      "project_count": 1786,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.18",
+      "loader": "paper",
+      "delta_downloads": 15763,
+      "downloads_per_hour": 3036.54,
+      "project_count": 1294,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.18.1",
+      "loader": "paper",
+      "delta_downloads": 15757,
+      "downloads_per_hour": 3035.38,
+      "project_count": 1280,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "26.1.1",
+      "loader": "bukkit",
+      "delta_downloads": 15580,
+      "downloads_per_hour": 3001.28,
+      "project_count": 972,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.21.3",
       "loader": "bukkit",
-      "delta_downloads": 10187,
-      "downloads_per_hour": 1741.86,
-      "project_count": 1697,
+      "delta_downloads": 15571,
+      "downloads_per_hour": 2999.55,
+      "project_count": 1748,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "26.1.1",
-      "loader": "bukkit",
-      "delta_downloads": 10182,
-      "downloads_per_hour": 1741.01,
-      "project_count": 953,
+      "game_version": "1.16.5",
+      "loader": "paper",
+      "delta_downloads": 15568,
+      "downloads_per_hour": 2998.97,
+      "project_count": 1159,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.20.1",
+      "loader": "spigot",
+      "delta_downloads": 15547,
+      "downloads_per_hour": 2994.93,
+      "project_count": 1647,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "spigot",
+      "delta_downloads": 15502,
+      "downloads_per_hour": 2986.26,
+      "project_count": 1618,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.21.2",
       "loader": "bukkit",
-      "delta_downloads": 10129,
-      "downloads_per_hour": 1731.95,
-      "project_count": 1677,
+      "delta_downloads": 15479,
+      "downloads_per_hour": 2981.83,
+      "project_count": 1730,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "spigot",
+      "delta_downloads": 15440,
+      "downloads_per_hour": 2974.32,
+      "project_count": 1600,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.4",
       "loader": "spigot",
-      "delta_downloads": 10059,
-      "downloads_per_hour": 1719.98,
-      "project_count": 1321,
+      "delta_downloads": 15229,
+      "downloads_per_hour": 2933.67,
+      "project_count": 1386,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.17",
       "loader": "paper",
-      "delta_downloads": 10015,
-      "downloads_per_hour": 1712.45,
-      "project_count": 1108,
+      "delta_downloads": 14907,
+      "downloads_per_hour": 2871.64,
+      "project_count": 1176,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.20",
       "loader": "spigot",
-      "delta_downloads": 9943,
-      "downloads_per_hour": 1700.14,
-      "project_count": 1530,
+      "delta_downloads": 14905,
+      "downloads_per_hour": 2871.25,
+      "project_count": 1606,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.6",
-      "loader": "folia",
-      "delta_downloads": 9790,
-      "downloads_per_hour": 1673.98,
-      "project_count": 917,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21",
-      "loader": "fabric",
-      "delta_downloads": 9651,
-      "downloads_per_hour": 1650.21,
-      "project_count": 320,
-      "top_project_id": "vE2FN5qn",
-      "top_project_title": "Let Me Despawn",
-      "top_project_delta": 1940
-    },
-    {
-      "game_version": "1.20.5",
-      "loader": "folia",
-      "delta_downloads": 9642,
-      "downloads_per_hour": 1648.67,
-      "project_count": 869,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 946
     },
     {
       "game_version": "26.2",
       "loader": "bukkit",
-      "delta_downloads": 9620,
-      "downloads_per_hour": 1644.91,
-      "project_count": 751,
+      "delta_downloads": 14807,
+      "downloads_per_hour": 2852.38,
+      "project_count": 789,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.18.2",
       "loader": "spigot",
-      "delta_downloads": 9577,
-      "downloads_per_hour": 1637.56,
-      "project_count": 1212,
+      "delta_downloads": 14341,
+      "downloads_per_hour": 2762.61,
+      "project_count": 1260,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.20.4",
-      "loader": "folia",
-      "delta_downloads": 9466,
-      "downloads_per_hour": 1618.58,
-      "project_count": 874,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.20.2",
-      "loader": "folia",
-      "delta_downloads": 9385,
-      "downloads_per_hour": 1604.73,
-      "project_count": 851,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.20.3",
-      "loader": "folia",
-      "delta_downloads": 9371,
-      "downloads_per_hour": 1602.34,
-      "project_count": 844,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.20.1",
-      "loader": "folia",
-      "delta_downloads": 9231,
-      "downloads_per_hour": 1578.4,
-      "project_count": 829,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.6",
-      "loader": "purpur",
-      "delta_downloads": 9186,
-      "downloads_per_hour": 1570.7,
-      "project_count": 1488,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "loader": "folia",
+      "delta_downloads": 14112,
+      "downloads_per_hour": 2718.49,
+      "project_count": 938,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.19.2",
       "loader": "spigot",
-      "delta_downloads": 9172,
-      "downloads_per_hour": 1568.31,
-      "project_count": 1231,
+      "delta_downloads": 13959,
+      "downloads_per_hour": 2689.02,
+      "project_count": 1303,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "folia",
+      "delta_downloads": 13920,
+      "downloads_per_hour": 2681.51,
+      "project_count": 890,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.21",
+      "loader": "fabric",
+      "delta_downloads": 13919,
+      "downloads_per_hour": 2681.31,
+      "project_count": 354,
+      "top_project_id": "vE2FN5qn",
+      "top_project_title": "Let Me Despawn",
+      "top_project_delta": 2706
     },
     {
       "game_version": "1.19.3",
       "loader": "spigot",
-      "delta_downloads": 9138,
-      "downloads_per_hour": 1562.5,
-      "project_count": 1230,
+      "delta_downloads": 13860,
+      "downloads_per_hour": 2669.95,
+      "project_count": 1299,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.4",
+      "loader": "folia",
+      "delta_downloads": 13788,
+      "downloads_per_hour": 2656.08,
+      "project_count": 901,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.19",
       "loader": "spigot",
-      "delta_downloads": 9093,
-      "downloads_per_hour": 1554.8,
-      "project_count": 1230,
+      "delta_downloads": 13779,
+      "downloads_per_hour": 2654.35,
+      "project_count": 1302,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.1",
       "loader": "spigot",
-      "delta_downloads": 9066,
-      "downloads_per_hour": 1550.19,
-      "project_count": 1209,
+      "delta_downloads": 13758,
+      "downloads_per_hour": 2650.3,
+      "project_count": 1285,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.2",
+      "loader": "folia",
+      "delta_downloads": 13647,
+      "downloads_per_hour": 2628.92,
+      "project_count": 889,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.20.3",
+      "loader": "folia",
+      "delta_downloads": 13637,
+      "downloads_per_hour": 2626.99,
+      "project_count": 881,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.20.6",
+      "loader": "purpur",
+      "delta_downloads": 13605,
+      "downloads_per_hour": 2620.83,
+      "project_count": 1486,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.6",
       "loader": "bukkit",
-      "delta_downloads": 9041,
-      "downloads_per_hour": 1545.91,
-      "project_count": 1191,
+      "delta_downloads": 13593,
+      "downloads_per_hour": 2618.51,
+      "project_count": 1235,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "1.20",
+      "game_version": "1.20.1",
       "loader": "folia",
-      "delta_downloads": 9023,
-      "downloads_per_hour": 1542.83,
-      "project_count": 803,
+      "delta_downloads": 13496,
+      "downloads_per_hour": 2599.83,
+      "project_count": 884,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.20.4",
       "loader": "purpur",
-      "delta_downloads": 9004,
-      "downloads_per_hour": 1539.58,
-      "project_count": 1460,
+      "delta_downloads": 13447,
+      "downloads_per_hour": 2590.39,
+      "project_count": 1468,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.16",
       "loader": "paper",
-      "delta_downloads": 8986,
-      "downloads_per_hour": 1536.51,
-      "project_count": 974,
+      "delta_downloads": 13320,
+      "downloads_per_hour": 2565.92,
+      "project_count": 1029,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.16.4",
       "loader": "paper",
-      "delta_downloads": 8977,
-      "downloads_per_hour": 1534.97,
-      "project_count": 958,
+      "delta_downloads": 13319,
+      "downloads_per_hour": 2565.73,
+      "project_count": 1015,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.16.3",
       "loader": "paper",
-      "delta_downloads": 8975,
-      "downloads_per_hour": 1534.63,
-      "project_count": 956,
+      "delta_downloads": 13317,
+      "downloads_per_hour": 2565.35,
+      "project_count": 1013,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.16.1",
-      "loader": "paper",
-      "delta_downloads": 8974,
-      "downloads_per_hour": 1534.45,
-      "project_count": 957,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.16.2",
       "loader": "paper",
-      "delta_downloads": 8974,
-      "downloads_per_hour": 1534.45,
-      "project_count": 955,
+      "delta_downloads": 13315,
+      "downloads_per_hour": 2564.96,
+      "project_count": 1012,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
-      "game_version": "1.20.5",
-      "loader": "purpur",
-      "delta_downloads": 8905,
-      "downloads_per_hour": 1522.66,
-      "project_count": 1419,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "game_version": "1.16.1",
+      "loader": "paper",
+      "delta_downloads": 13307,
+      "downloads_per_hour": 2563.42,
+      "project_count": 1013,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.20.2",
       "loader": "purpur",
-      "delta_downloads": 8843,
-      "downloads_per_hour": 1512.05,
-      "project_count": 1426,
+      "delta_downloads": 13257,
+      "downloads_per_hour": 2553.79,
+      "project_count": 1439,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.1",
       "loader": "purpur",
-      "delta_downloads": 8812,
-      "downloads_per_hour": 1506.75,
-      "project_count": 1426,
+      "delta_downloads": 13213,
+      "downloads_per_hour": 2545.31,
+      "project_count": 1463,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.3",
       "loader": "purpur",
-      "delta_downloads": 8808,
-      "downloads_per_hour": 1506.07,
-      "project_count": 1406,
+      "delta_downloads": 13211,
+      "downloads_per_hour": 2544.93,
+      "project_count": 1425,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "1.19.4",
+      "game_version": "1.20.5",
+      "loader": "purpur",
+      "delta_downloads": 13203,
+      "downloads_per_hour": 2543.39,
+      "project_count": 1417,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20",
       "loader": "folia",
-      "delta_downloads": 8579,
-      "downloads_per_hour": 1466.91,
-      "project_count": 681,
+      "delta_downloads": 13120,
+      "downloads_per_hour": 2527.4,
+      "project_count": 865,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.17.1",
       "loader": "spigot",
-      "delta_downloads": 8547,
-      "downloads_per_hour": 1461.44,
-      "project_count": 1065,
+      "delta_downloads": 12898,
+      "downloads_per_hour": 2484.63,
+      "project_count": 1109,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20",
       "loader": "purpur",
-      "delta_downloads": 8491,
-      "downloads_per_hour": 1451.87,
-      "project_count": 1391,
+      "delta_downloads": 12709,
+      "downloads_per_hour": 2448.22,
+      "project_count": 1420,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.19.2",
-      "loader": "folia",
-      "delta_downloads": 8404,
-      "downloads_per_hour": 1436.99,
-      "project_count": 634,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.4",
       "loader": "bukkit",
-      "delta_downloads": 8403,
-      "downloads_per_hour": 1436.82,
-      "project_count": 1164,
+      "delta_downloads": 12662,
+      "downloads_per_hour": 2439.17,
+      "project_count": 1221,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.19.3",
-      "loader": "folia",
-      "delta_downloads": 8389,
-      "downloads_per_hour": 1434.43,
-      "project_count": 641,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.19",
-      "loader": "folia",
-      "delta_downloads": 8345,
-      "downloads_per_hour": 1426.9,
-      "project_count": 630,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "folia",
-      "delta_downloads": 8340,
-      "downloads_per_hour": 1426.05,
-      "project_count": 625,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "folia",
-      "delta_downloads": 8319,
-      "downloads_per_hour": 1422.46,
-      "project_count": 616,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.2",
       "loader": "bukkit",
-      "delta_downloads": 8284,
-      "downloads_per_hour": 1416.47,
-      "project_count": 1154,
+      "delta_downloads": 12510,
+      "downloads_per_hour": 2409.89,
+      "project_count": 1211,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "1.20.5",
-      "loader": "bukkit",
-      "delta_downloads": 8273,
-      "downloads_per_hour": 1414.59,
-      "project_count": 1145,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "game_version": "1.19.4",
+      "loader": "folia",
+      "delta_downloads": 12468,
+      "downloads_per_hour": 2401.8,
+      "project_count": 728,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.20.3",
       "loader": "bukkit",
-      "delta_downloads": 8251,
-      "downloads_per_hour": 1410.83,
-      "project_count": 1141,
+      "delta_downloads": 12451,
+      "downloads_per_hour": 2398.52,
+      "project_count": 1200,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.20.1",
       "loader": "bukkit",
-      "delta_downloads": 8209,
-      "downloads_per_hour": 1403.65,
-      "project_count": 1147,
+      "delta_downloads": 12448,
+      "downloads_per_hour": 2397.95,
+      "project_count": 1231,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.4",
       "loader": "bukkit",
-      "delta_downloads": 8194,
-      "downloads_per_hour": 1401.08,
-      "project_count": 975,
+      "delta_downloads": 12430,
+      "downloads_per_hour": 2394.48,
+      "project_count": 1021,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.20.5",
+      "loader": "bukkit",
+      "delta_downloads": 12429,
+      "downloads_per_hour": 2394.29,
+      "project_count": 1190,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.19.2",
+      "loader": "folia",
+      "delta_downloads": 12300,
+      "downloads_per_hour": 2369.43,
+      "project_count": 689,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.16.5",
+      "loader": "spigot",
+      "delta_downloads": 12262,
+      "downloads_per_hour": 2362.11,
+      "project_count": 1029,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.18",
       "loader": "spigot",
-      "delta_downloads": 8155,
-      "downloads_per_hour": 1394.41,
-      "project_count": 1096,
+      "delta_downloads": 12231,
+      "downloads_per_hour": 2356.14,
+      "project_count": 1140,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.18.1",
+      "loader": "spigot",
+      "delta_downloads": 12215,
+      "downloads_per_hour": 2353.06,
+      "project_count": 1127,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.19.3",
+      "loader": "folia",
+      "delta_downloads": 12214,
+      "downloads_per_hour": 2352.87,
+      "project_count": 690,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "folia",
+      "delta_downloads": 12180,
+      "downloads_per_hour": 2346.32,
+      "project_count": 668,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "folia",
+      "delta_downloads": 12164,
+      "downloads_per_hour": 2343.24,
+      "project_count": 679,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.19",
+      "loader": "folia",
+      "delta_downloads": 12155,
+      "downloads_per_hour": 2341.5,
+      "project_count": 682,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.12.2",
       "loader": "paper",
-      "delta_downloads": 8144,
-      "downloads_per_hour": 1392.53,
-      "project_count": 638,
+      "delta_downloads": 12120,
+      "downloads_per_hour": 2334.76,
+      "project_count": 737,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "spigot",
-      "delta_downloads": 8143,
-      "downloads_per_hour": 1392.36,
-      "project_count": 1079,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.18",
-      "loader": "folia",
-      "delta_downloads": 8142,
-      "downloads_per_hour": 1392.19,
-      "project_count": 580,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.18.1",
-      "loader": "folia",
-      "delta_downloads": 8132,
-      "downloads_per_hour": 1390.48,
-      "project_count": 574,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "spigot",
-      "delta_downloads": 8099,
-      "downloads_per_hour": 1384.84,
-      "project_count": 982,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "26.1.2",
-      "loader": "quilt",
-      "delta_downloads": 8086,
-      "downloads_per_hour": 1382.62,
-      "project_count": 82,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 4105
-    },
-    {
-      "game_version": "1.15.2",
-      "loader": "paper",
-      "delta_downloads": 7982,
-      "downloads_per_hour": 1364.83,
-      "project_count": 795,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.17.1",
-      "loader": "folia",
-      "delta_downloads": 7970,
-      "downloads_per_hour": 1362.78,
-      "project_count": 562,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.20",
       "loader": "bukkit",
-      "delta_downloads": 7953,
-      "downloads_per_hour": 1359.87,
-      "project_count": 1138,
+      "delta_downloads": 12014,
+      "downloads_per_hour": 2314.34,
+      "project_count": 1212,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "26.1",
-      "loader": "quilt",
-      "delta_downloads": 7925,
-      "downloads_per_hour": 1355.09,
-      "project_count": 70,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 4105
-    },
-    {
-      "game_version": "26.1.1",
-      "loader": "quilt",
-      "delta_downloads": 7925,
-      "downloads_per_hour": 1355.09,
-      "project_count": 70,
-      "top_project_id": "OhduvhIc",
-      "top_project_title": "VeinMiner",
-      "top_project_delta": 4105
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.4",
       "loader": "purpur",
-      "delta_downloads": 7923,
-      "downloads_per_hour": 1354.74,
-      "project_count": 1166,
+      "delta_downloads": 11963,
+      "downloads_per_hour": 2304.52,
+      "project_count": 1182,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.18",
+      "loader": "folia",
+      "delta_downloads": 11917,
+      "downloads_per_hour": 2295.65,
+      "project_count": 632,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.18.1",
+      "loader": "folia",
+      "delta_downloads": 11910,
+      "downloads_per_hour": 2294.31,
+      "project_count": 627,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.15.2",
+      "loader": "paper",
+      "delta_downloads": 11885,
+      "downloads_per_hour": 2289.49,
+      "project_count": 844,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.14.4",
       "loader": "paper",
-      "delta_downloads": 7903,
-      "downloads_per_hour": 1351.33,
-      "project_count": 779,
+      "delta_downloads": 11777,
+      "downloads_per_hour": 2268.69,
+      "project_count": 831,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.18.2",
       "loader": "bukkit",
-      "delta_downloads": 7883,
-      "downloads_per_hour": 1347.91,
-      "project_count": 913,
+      "delta_downloads": 11743,
+      "downloads_per_hour": 2262.14,
+      "project_count": 952,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.17",
-      "loader": "folia",
-      "delta_downloads": 7817,
-      "downloads_per_hour": 1336.62,
-      "project_count": 526,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.16.5",
-      "loader": "folia",
-      "delta_downloads": 7787,
-      "downloads_per_hour": 1331.49,
-      "project_count": 526,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.3",
       "loader": "purpur",
-      "delta_downloads": 7684,
-      "downloads_per_hour": 1313.88,
-      "project_count": 1101,
+      "delta_downloads": 11677,
+      "downloads_per_hour": 2249.42,
+      "project_count": 1131,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.2",
       "loader": "purpur",
-      "delta_downloads": 7654,
-      "downloads_per_hour": 1308.75,
-      "project_count": 1096,
+      "delta_downloads": 11657,
+      "downloads_per_hour": 2245.57,
+      "project_count": 1129,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.17.1",
+      "loader": "folia",
+      "delta_downloads": 11615,
+      "downloads_per_hour": 2237.48,
+      "project_count": 603,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.19",
+      "loader": "purpur",
+      "delta_downloads": 11609,
+      "downloads_per_hour": 2236.32,
+      "project_count": 1127,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.19.1",
+      "loader": "purpur",
+      "delta_downloads": 11608,
+      "downloads_per_hour": 2236.13,
+      "project_count": 1117,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.17",
       "loader": "spigot",
-      "delta_downloads": 7639,
-      "downloads_per_hour": 1306.18,
-      "project_count": 988,
+      "delta_downloads": 11533,
+      "downloads_per_hour": 2221.68,
+      "project_count": 1045,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
-      "game_version": "1.13.2",
-      "loader": "paper",
-      "delta_downloads": 7629,
-      "downloads_per_hour": 1304.47,
-      "project_count": 744,
+      "game_version": "1.16.5",
+      "loader": "folia",
+      "delta_downloads": 11409,
+      "downloads_per_hour": 2197.8,
+      "project_count": 573,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
-      "game_version": "1.19",
-      "loader": "purpur",
-      "delta_downloads": 7628,
-      "downloads_per_hour": 1304.3,
-      "project_count": 1096,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.19.1",
-      "loader": "purpur",
-      "delta_downloads": 7613,
-      "downloads_per_hour": 1301.74,
-      "project_count": 1080,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.18.2",
-      "loader": "purpur",
-      "delta_downloads": 7508,
-      "downloads_per_hour": 1283.78,
-      "project_count": 1035,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
-    },
-    {
-      "game_version": "1.19",
-      "loader": "bukkit",
-      "delta_downloads": 7483,
-      "downloads_per_hour": 1279.51,
-      "project_count": 948,
-      "top_project_id": "9eGKb6K1",
-      "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "game_version": "1.17",
+      "loader": "folia",
+      "delta_downloads": 11407,
+      "downloads_per_hour": 2197.41,
+      "project_count": 577,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.19.2",
       "loader": "bukkit",
-      "delta_downloads": 7478,
-      "downloads_per_hour": 1278.65,
-      "project_count": 938,
+      "delta_downloads": 11348,
+      "downloads_per_hour": 2186.04,
+      "project_count": 982,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.19",
+      "loader": "bukkit",
+      "delta_downloads": 11344,
+      "downloads_per_hour": 2185.27,
+      "project_count": 990,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.3",
       "loader": "bukkit",
-      "delta_downloads": 7473,
-      "downloads_per_hour": 1277.8,
-      "project_count": 935,
+      "delta_downloads": 11336,
+      "downloads_per_hour": 2183.73,
+      "project_count": 979,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
     },
     {
       "game_version": "1.19.1",
       "loader": "bukkit",
-      "delta_downloads": 7461,
-      "downloads_per_hour": 1275.75,
-      "project_count": 928,
+      "delta_downloads": 11333,
+      "downloads_per_hour": 2183.15,
+      "project_count": 976,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.13.2",
+      "loader": "paper",
+      "delta_downloads": 11314,
+      "downloads_per_hour": 2179.49,
+      "project_count": 802,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.18.2",
+      "loader": "purpur",
+      "delta_downloads": 11234,
+      "downloads_per_hour": 2164.08,
+      "project_count": 1053,
+      "top_project_id": "9eGKb6K1",
+      "top_project_title": "Simple Voice Chat",
+      "top_project_delta": 946
     },
     {
       "game_version": "1.15",
       "loader": "paper",
-      "delta_downloads": 7315,
-      "downloads_per_hour": 1250.78,
-      "project_count": 755,
+      "delta_downloads": 10887,
+      "downloads_per_hour": 2097.24,
+      "project_count": 812,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.12",
       "loader": "paper",
-      "delta_downloads": 7306,
-      "downloads_per_hour": 1249.24,
-      "project_count": 568,
+      "delta_downloads": 10885,
+      "downloads_per_hour": 2096.85,
+      "project_count": 663,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.15.1",
       "loader": "paper",
-      "delta_downloads": 7297,
-      "downloads_per_hour": 1247.71,
-      "project_count": 741,
+      "delta_downloads": 10873,
+      "downloads_per_hour": 2094.54,
+      "project_count": 803,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.12.1",
       "loader": "paper",
-      "delta_downloads": 7296,
-      "downloads_per_hour": 1247.53,
-      "project_count": 560,
+      "delta_downloads": 10868,
+      "downloads_per_hour": 2093.58,
+      "project_count": 660,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
-      "game_version": "1.14",
-      "loader": "paper",
-      "delta_downloads": 7234,
-      "downloads_per_hour": 1236.93,
-      "project_count": 736,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.21.1",
+      "game_version": "26.1.2",
       "loader": "quilt",
-      "delta_downloads": 7227,
-      "downloads_per_hour": 1235.74,
-      "project_count": 122,
+      "delta_downloads": 10842,
+      "downloads_per_hour": 2088.57,
+      "project_count": 103,
       "top_project_id": "OhduvhIc",
       "top_project_title": "VeinMiner",
-      "top_project_delta": 3029
+      "top_project_delta": 5936
     },
     {
       "game_version": "1.14.3",
       "loader": "paper",
-      "delta_downloads": 7224,
-      "downloads_per_hour": 1235.22,
-      "project_count": 728,
+      "delta_downloads": 10768,
+      "downloads_per_hour": 2074.32,
+      "project_count": 788,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.14",
+      "loader": "paper",
+      "delta_downloads": 10759,
+      "downloads_per_hour": 2072.58,
+      "project_count": 790,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.14.2",
       "loader": "paper",
-      "delta_downloads": 7221,
-      "downloads_per_hour": 1234.71,
-      "project_count": 727,
+      "delta_downloads": 10750,
+      "downloads_per_hour": 2070.85,
+      "project_count": 784,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
       "game_version": "1.14.1",
       "loader": "paper",
-      "delta_downloads": 7219,
-      "downloads_per_hour": 1234.37,
-      "project_count": 726,
+      "delta_downloads": 10748,
+      "downloads_per_hour": 2070.46,
+      "project_count": 783,
       "top_project_id": "P1OZGk5p",
       "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "top_project_delta": 1021
     },
     {
-      "game_version": "1.16",
-      "loader": "folia",
-      "delta_downloads": 7207,
-      "downloads_per_hour": 1232.32,
-      "project_count": 489,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "game_version": "26.1",
+      "loader": "quilt",
+      "delta_downloads": 10639,
+      "downloads_per_hour": 2049.46,
+      "project_count": 91,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 5936
     },
     {
-      "game_version": "1.16.2",
-      "loader": "folia",
-      "delta_downloads": 7203,
-      "downloads_per_hour": 1231.63,
-      "project_count": 484,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.16.3",
-      "loader": "folia",
-      "delta_downloads": 7203,
-      "downloads_per_hour": 1231.63,
-      "project_count": 484,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.16.4",
-      "loader": "folia",
-      "delta_downloads": 7203,
-      "downloads_per_hour": 1231.63,
-      "project_count": 484,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.16.1",
-      "loader": "folia",
-      "delta_downloads": 7197,
-      "downloads_per_hour": 1230.61,
-      "project_count": 483,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
-    },
-    {
-      "game_version": "1.13",
-      "loader": "paper",
-      "delta_downloads": 6976,
-      "downloads_per_hour": 1192.82,
-      "project_count": 708,
-      "top_project_id": "P1OZGk5p",
-      "top_project_title": "ViaVersion",
-      "top_project_delta": 741
+      "game_version": "26.1.1",
+      "loader": "quilt",
+      "delta_downloads": 10638,
+      "downloads_per_hour": 2049.27,
+      "project_count": 90,
+      "top_project_id": "OhduvhIc",
+      "top_project_title": "VeinMiner",
+      "top_project_delta": 5936
     },
     {
       "game_version": "1.17.1",
       "loader": "bukkit",
-      "delta_downloads": 6972,
-      "downloads_per_hour": 1192.13,
-      "project_count": 806,
+      "delta_downloads": 10524,
+      "downloads_per_hour": 2027.31,
+      "project_count": 840,
       "top_project_id": "9eGKb6K1",
       "top_project_title": "Simple Voice Chat",
-      "top_project_delta": 685
+      "top_project_delta": 946
+    },
+    {
+      "game_version": "1.21.4",
+      "loader": "fabric",
+      "delta_downloads": 10515,
+      "downloads_per_hour": 2025.58,
+      "project_count": 309,
+      "top_project_id": "vE2FN5qn",
+      "top_project_title": "Let Me Despawn",
+      "top_project_delta": 2706
+    },
+    {
+      "game_version": "1.16.4",
+      "loader": "folia",
+      "delta_downloads": 10470,
+      "downloads_per_hour": 2016.91,
+      "project_count": 524,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.16.2",
+      "loader": "folia",
+      "delta_downloads": 10469,
+      "downloads_per_hour": 2016.72,
+      "project_count": 523,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.16.3",
+      "loader": "folia",
+      "delta_downloads": 10469,
+      "downloads_per_hour": 2016.72,
+      "project_count": 523,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.16",
+      "loader": "folia",
+      "delta_downloads": 10468,
+      "downloads_per_hour": 2016.52,
+      "project_count": 528,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.16.1",
+      "loader": "folia",
+      "delta_downloads": 10460,
+      "downloads_per_hour": 2014.98,
+      "project_count": 522,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
+    },
+    {
+      "game_version": "1.11.2",
+      "loader": "paper",
+      "delta_downloads": 10324,
+      "downloads_per_hour": 1988.78,
+      "project_count": 623,
+      "top_project_id": "P1OZGk5p",
+      "top_project_title": "ViaVersion",
+      "top_project_delta": 1021
     }
   ]
 }
